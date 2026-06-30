@@ -12,7 +12,7 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-  export const metadata: Metadata = {
+export const metadata: Metadata = {
     title: "Dechen Web Studio | Sites modernos para empresas",
     description: "Criamos sites modernos, rápidos e profissionais para empresas que querem crescer.",
   };

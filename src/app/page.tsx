@@ -1,23 +1,23 @@
 const services = [
   {
-    title: "Web Design",
+    title: "Design Web",
     description:
-      "Pixel-perfect interfaces crafted with clarity, restraint, and purpose. Every detail considered.",
+      "Interfaces impecáveis criadas com clareza, sobriedade e propósito. Cada detalhe pensado.",
   },
   {
-    title: "Development",
+    title: "Desenvolvimento",
     description:
-      "Blazing-fast sites built on modern stacks — Next.js, React, and TypeScript at the core.",
+      "Sites ultrarrápidos com stacks modernas — Next.js, React e TypeScript no núcleo.",
   },
   {
-    title: "Brand Strategy",
+    title: "Estratégia de Marca",
     description:
-      "Cohesive digital identities that resonate. From concept to launch, we tell your story.",
+      "Identidades digitais coesas que ressoam. Do conceito ao lançamento, contamos sua história.",
   },
   {
     title: "Performance",
     description:
-      "Optimized for speed, accessibility, and search. Your site works beautifully everywhere.",
+      "Otimizados para velocidade, acessibilidade e SEO. Seu site funciona perfeitamente em qualquer lugar.",
   },
 ];
 
@@ -33,17 +33,17 @@ export default function Home() {
           <ul className="hidden items-center gap-8 text-sm text-white/60 md:flex">
             <li>
               <a href="#services" className="transition-colors hover:text-white">
-                Services
+                Serviços
               </a>
             </li>
             <li>
               <a href="#work" className="transition-colors hover:text-white">
-                Work
+                Trabalhos
               </a>
             </li>
             <li>
               <a href="#contact" className="transition-colors hover:text-white">
-                Contact
+                Contato
               </a>
             </li>
           </ul>
@@ -51,7 +51,7 @@ export default function Home() {
             href="#contact"
             className="rounded-full bg-[#0071e3] px-4 py-1.5 text-xs font-medium transition-colors hover:bg-[#0077ed]"
           >
-            Get in touch
+            Fale conosco
           </a>
         </nav>
       </header>
@@ -67,29 +67,29 @@ export default function Home() {
           </div>
 
           <p className="mb-6 text-sm font-medium tracking-widest text-[#0071e3] uppercase">
-            Web Agency
+            Agência Web
           </p>
           <h1 className="max-w-4xl text-5xl font-semibold tracking-tight sm:text-6xl lg:text-7xl">
-            Digital experiences,
+            Experiências digitais,
             <br />
-            <span className="text-white/40">crafted with intent.</span>
+            <span className="text-white/40">criadas com intenção.</span>
           </h1>
           <p className="mt-6 max-w-xl text-lg leading-relaxed text-white/50 sm:text-xl">
-            We design and build premium websites for brands that refuse to
-            settle for ordinary.
+            Criamos sites premium para marcas que não se contentam com o
+            comum.
           </p>
           <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row">
             <a
               href="#contact"
               className="inline-flex h-12 items-center justify-center rounded-full bg-[#0071e3] px-8 text-sm font-medium transition-all hover:bg-[#0077ed] hover:shadow-[0_0_40px_rgba(0,113,227,0.35)]"
             >
-              Start a project
+              Iniciar um projeto
             </a>
             <a
               href="#services"
               className="inline-flex h-12 items-center justify-center rounded-full border border-white/15 px-8 text-sm font-medium text-white/70 transition-colors hover:border-white/30 hover:text-white"
             >
-              Explore services
+              Conhecer serviços
             </a>
           </div>
         </section>
@@ -99,12 +99,12 @@ export default function Home() {
           <div className="mx-auto max-w-6xl">
             <div className="mb-16 max-w-2xl">
               <p className="mb-3 text-sm font-medium tracking-widest text-[#0071e3] uppercase">
-                What we do
+                O que fazemos
               </p>
               <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl lg:text-5xl">
-                Services built for
+                Serviços feitos para
                 <br />
-                ambitious brands.
+                marcas ambiciosas.
               </h2>
             </div>
             <div className="grid gap-px overflow-hidden rounded-2xl border border-white/10 bg-white/10 sm:grid-cols-2">
@@ -133,13 +133,13 @@ export default function Home() {
         >
           <div className="mx-auto max-w-3xl">
             <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl lg:text-5xl">
-              Ready to build something
+              Pronto para criar algo
               <br />
-              exceptional?
+              excepcional?
             </h2>
             <p className="mx-auto mt-6 max-w-lg text-lg text-white/50">
-              Tell us about your project. We&apos;ll respond within one business
-              day with a clear path forward.
+              Conte-nos sobre seu projeto. Respondemos em até um dia útil com
+              um caminho claro.
             </p>
             <a
               href="mailto:hello@dechenwebstudio.com"
@@ -155,8 +155,8 @@ export default function Home() {
       <footer className="border-t border-white/5 px-6 py-10">
         <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-6 sm:flex-row">
           <p className="text-sm text-white/40">
-            &copy; {new Date().getFullYear()} Dechen Web Studio. All rights
-            reserved.
+            &copy; {new Date().getFullYear()} Dechen Web Studio. Todos os
+            direitos reservados.
           </p>
           <ul className="flex items-center gap-6 text-sm text-white/40">
             <li>
