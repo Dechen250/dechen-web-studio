@@ -1,5 +1,13 @@
 import type { ReactNode } from "react";
 
+/* ── Tokens (Design System) ───────────────────────────────────────── */
+const EASE = "ease-out";
+const DURATION = "duration-[250ms]";
+const TRANSITION = `transition-all ${DURATION} ${EASE}`;
+const FOCUS =
+  "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#0070F3]";
+
+/* ── Data ─────────────────────────────────────────────────────────── */
 const indicators = [
   { label: "Performance", value: "95+" },
   { label: "Responsivo", value: "100%" },
@@ -88,6 +96,16 @@ const navLinks = [
   { href: "#contato", label: "Contato" },
 ];
 
+/* ── Primitives ───────────────────────────────────────────────────── */
+function GlassSheen() {
+  return (
+    <span
+      aria-hidden
+      className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent"
+    />
+  );
+}
+
 function GlassCard({
   children,
   className = "",
@@ -97,9 +115,10 @@ function GlassCard({
 }) {
   return (
     <div
-      className={`rounded-3xl border border-[#262626] bg-[#101010]/80 backdrop-blur-md transition-all duration-[250ms] ease-out hover:border-[#404040] hover:bg-[#101010] ${className}`}
+      className={`group/card relative overflow-hidden rounded-3xl border border-[#262626] bg-[#101010]/75 backdrop-blur-md ${TRANSITION} hover:-translate-y-0.5 hover:border-[#404040] hover:bg-[#101010]/90 hover:shadow-[0_12px_40px_rgba(0,0,0,0.35)] ${className}`}
     >
-      {children}
+      <GlassSheen />
+      <div className="relative">{children}</div>
     </div>
   );
 }
@@ -112,18 +131,30 @@ function DwsLogo({ size = "md" }: { size?: "sm" | "md" }) {
 
   return (
     <span
-      className={`relative flex items-center justify-center border border-[#0070F3]/30 bg-[#101010]/70 font-bold tracking-tight shadow-[0_0_20px_rgba(0,112,243,0.12)] backdrop-blur-md transition-all duration-[250ms] ease-out ${sizeClasses}`}
+      className={`relative flex items-center justify-center border border-[#0070F3]/25 bg-[#101010]/60 font-bold tracking-tight shadow-[0_0_16px_rgba(0,112,243,0.1)] backdrop-blur-md ${TRANSITION} ${sizeClasses}`}
     >
       <span
         aria-hidden
-        className="pointer-events-none absolute inset-0 rounded-[inherit] bg-gradient-to-br from-[#0070F3]/25 via-transparent to-transparent"
+        className="pointer-events-none absolute inset-0 rounded-[inherit] bg-gradient-to-br from-[#0070F3]/20 via-transparent to-transparent"
       />
-      <span
-        aria-hidden
-        className="pointer-events-none absolute inset-x-1 top-0 h-px rounded-full bg-gradient-to-r from-transparent via-white/30 to-transparent"
-      />
+      <GlassSheen />
       <span className="relative">DWS</span>
     </span>
+  );
+}
+
+function NavLink({ href, children }: { href: string; children: ReactNode }) {
+  return (
+    <a
+      href={href}
+      className={`group/link relative text-sm text-[#A1A1AA] ${TRANSITION} hover:text-white ${FOCUS}`}
+    >
+      {children}
+      <span
+        aria-hidden
+        className={`absolute -bottom-1 left-0 h-px w-0 bg-[#0070F3]/60 ${TRANSITION} group-hover/link:w-full`}
+      />
+    </a>
   );
 }
 
@@ -138,24 +169,29 @@ function GlassButton({
   variant?: "primary" | "secondary";
   className?: string;
 }) {
-  const base =
-    "group relative inline-flex h-14 items-center justify-center overflow-hidden rounded-full px-8 text-sm font-semibold transition-all duration-[300ms] ease-out focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0070F3] active:scale-[0.98]";
+  const base = `group/btn relative inline-flex h-14 items-center justify-center overflow-hidden rounded-full px-8 text-sm font-semibold ${TRANSITION} ${FOCUS} active:scale-[0.985] active:translate-y-0`;
 
   const styles =
     variant === "primary"
-      ? "border border-[#0070F3]/40 bg-gradient-to-b from-[#0070F3]/45 via-[#0070F3]/25 to-[#0070F3]/10 text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.15)] backdrop-blur-md hover:scale-[1.02] hover:border-[#0070F3]/60 hover:shadow-[0_0_40px_rgba(0,112,243,0.25),inset_0_1px_0_rgba(255,255,255,0.2)]"
-      : "border border-white/10 bg-[#101010]/50 text-[#A1A1AA] shadow-[inset_0_1px_0_rgba(255,255,255,0.06)] backdrop-blur-md hover:scale-[1.02] hover:border-white/20 hover:bg-[#101010]/70 hover:text-white hover:shadow-[0_0_24px_rgba(255,255,255,0.04),inset_0_1px_0_rgba(255,255,255,0.1)]";
+      ? "border border-[#0070F3]/35 bg-gradient-to-b from-[#0070F3]/40 via-[#0070F3]/22 to-[#0070F3]/8 text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.12),0_1px_2px_rgba(0,0,0,0.2)] backdrop-blur-lg hover:-translate-y-0.5 hover:scale-[1.015] hover:border-[#0070F3]/50 hover:shadow-[0_4px_24px_rgba(0,112,243,0.18),inset_0_1px_0_rgba(255,255,255,0.18)]"
+      : "border border-white/[0.08] bg-[#101010]/40 text-[#A1A1AA] shadow-[inset_0_1px_0_rgba(255,255,255,0.05)] backdrop-blur-lg hover:-translate-y-0.5 hover:scale-[1.015] hover:border-white/15 hover:bg-[#101010]/65 hover:text-white hover:shadow-[0_4px_20px_rgba(0,0,0,0.3),inset_0_1px_0_rgba(255,255,255,0.08)]";
 
   return (
     <a href={href} className={`${base} ${styles} ${className}`}>
       <span
         aria-hidden
-        className={`pointer-events-none absolute inset-x-0 top-0 h-1/2 rounded-t-full ${
+        className={`pointer-events-none absolute inset-x-0 top-0 h-[45%] rounded-t-full ${
           variant === "primary"
-            ? "bg-gradient-to-b from-white/20 to-transparent"
-            : "bg-gradient-to-b from-white/8 to-transparent"
+            ? "bg-gradient-to-b from-white/15 to-transparent"
+            : "bg-gradient-to-b from-white/6 to-transparent"
         }`}
       />
+      {variant === "primary" && (
+        <span
+          aria-hidden
+          className="pointer-events-none absolute inset-0 rounded-full opacity-0 shadow-[0_0_32px_rgba(0,112,243,0.15)] transition-opacity duration-[250ms] ease-out group-hover/btn:opacity-100"
+        />
+      )}
       <span className="relative">{children}</span>
     </a>
   );
@@ -169,18 +205,31 @@ function SectionLabel({ children }: { children: ReactNode }) {
   );
 }
 
-export default function Home() {
+function HeroBackground() {
   return (
-    <div className="min-h-full bg-[#050505] font-sans text-white selection:bg-[#0070F3]/30">
-      {/* Navbar flutuante — Liquid Glass */}
-      <header className="fixed inset-x-0 top-0 z-50 px-5 pt-4 md:px-6 lg:px-8">
-        <nav
-          className="mx-auto flex h-14 max-w-5xl items-center justify-between rounded-2xl border border-white/[0.08] bg-[#101010]/60 px-4 shadow-[0_8px_32px_rgba(0,0,0,0.45),0_0_48px_rgba(0,112,243,0.06)] backdrop-blur-xl md:h-16 md:rounded-3xl md:px-6 lg:max-w-6xl"
-          aria-label="Principal"
-        >
+    <div aria-hidden className="pointer-events-none absolute inset-0">
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_0%,rgba(0,112,243,0.1)_0%,transparent_55%)]" />
+      <div className="absolute top-[12%] left-1/2 h-[480px] w-[820px] -translate-x-1/2 rounded-full bg-[radial-gradient(ellipse_at_center,rgba(0,112,243,0.09)_0%,transparent_65%)]" />
+      <div className="absolute top-[6%] left-[6%] h-[280px] w-[280px] rounded-full bg-[radial-gradient(circle,rgba(0,112,243,0.06)_0%,transparent_70%)] blur-2xl" />
+      <div className="absolute right-[5%] bottom-[15%] h-[340px] w-[340px] rounded-full bg-[radial-gradient(circle,rgba(0,112,243,0.05)_0%,transparent_72%)] blur-3xl" />
+      <div className="absolute top-1/2 left-1/2 h-[560px] w-[560px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#0070F3]/[0.025] blur-[110px]" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_40%,rgba(5,5,5,0.4)_100%)]" />
+    </div>
+  );
+}
+
+function FloatingNavbar() {
+  return (
+    <header className="fixed inset-x-0 top-0 z-50 px-5 pt-5 md:px-6 md:pt-6 lg:px-8">
+      <nav
+        className={`group/nav relative mx-auto flex h-14 max-w-5xl items-center justify-between overflow-hidden rounded-2xl border border-white/[0.06] bg-[#101010]/50 px-4 shadow-[0_4px_24px_rgba(0,0,0,0.4),0_0_1px_rgba(255,255,255,0.05)_inset] backdrop-blur-2xl ${TRANSITION} hover:border-white/[0.09] hover:shadow-[0_8px_40px_rgba(0,0,0,0.45),0_0_48px_rgba(0,112,243,0.04)] md:h-16 md:rounded-3xl md:px-6 lg:max-w-6xl`}
+        aria-label="Principal"
+      >
+        <GlassSheen />
+        <div className="relative flex w-full items-center justify-between">
           <a
             href="#"
-            className="transition-transform duration-[250ms] ease-out hover:scale-[1.03] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#0070F3]"
+            className={`${TRANSITION} hover:scale-[1.04] active:scale-[0.98] ${FOCUS}`}
             aria-label="Dechen Web Studio — início"
           >
             <DwsLogo />
@@ -189,12 +238,7 @@ export default function Home() {
           <ul className="hidden items-center gap-8 md:flex">
             {navLinks.map((link) => (
               <li key={link.href}>
-                <a
-                  href={link.href}
-                  className="text-sm text-[#A1A1AA] transition-colors duration-[250ms] ease-out hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#0070F3]"
-                >
-                  {link.label}
-                </a>
+                <NavLink href={link.href}>{link.label}</NavLink>
               </li>
             ))}
           </ul>
@@ -210,38 +254,42 @@ export default function Home() {
           <GlassButton
             href="#contato"
             variant="primary"
-            className="inline-flex h-10 px-5 text-xs sm:hidden"
+            className="inline-flex h-10 shrink-0 px-4 text-xs sm:hidden"
           >
             Orçamento
           </GlassButton>
-        </nav>
-      </header>
+        </div>
+      </nav>
+    </header>
+  );
+}
+
+/* ── Page ─────────────────────────────────────────────────────────── */
+export default function Home() {
+  return (
+    <div className="min-h-full bg-[#050505] font-sans text-white selection:bg-[#0070F3]/30">
+      <FloatingNavbar />
 
       <main>
         {/* Hero */}
-        <section className="relative flex min-h-[92vh] flex-col items-center justify-center overflow-hidden px-5 pt-28 pb-32 md:px-6 md:pt-32 md:pb-40 lg:px-8 lg:pt-36 lg:pb-48">
-          <div aria-hidden className="pointer-events-none absolute inset-0">
-            <div className="absolute top-[15%] left-1/2 h-[520px] w-[900px] -translate-x-1/2 rounded-full bg-[radial-gradient(ellipse_at_center,rgba(0,112,243,0.14)_0%,transparent_68%)]" />
-            <div className="absolute top-[8%] left-[10%] h-[320px] w-[320px] rounded-full bg-[radial-gradient(circle,rgba(0,112,243,0.08)_0%,transparent_70%)] blur-2xl" />
-            <div className="absolute right-[8%] bottom-[18%] h-[380px] w-[380px] rounded-full bg-[radial-gradient(circle,rgba(0,112,243,0.06)_0%,transparent_72%)] blur-3xl" />
-            <div className="absolute top-1/2 left-1/2 h-[600px] w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#0070F3]/[0.03] blur-[100px]" />
-          </div>
+        <section className="relative flex min-h-[94vh] flex-col items-center justify-center overflow-hidden px-5 pt-32 pb-36 md:px-6 md:pt-36 md:pb-44 lg:px-8 lg:pt-40 lg:pb-52">
+          <HeroBackground />
 
           <div className="relative mx-auto w-full max-w-3xl text-center">
             <SectionLabel>Dechen Web Studio</SectionLabel>
-            <h1 className="text-4xl leading-[1.12] font-semibold tracking-tight md:text-5xl lg:text-[64px] lg:leading-[1.05]">
+            <h1 className="text-balance text-4xl leading-[1.1] font-semibold tracking-[-0.02em] md:text-5xl md:tracking-[-0.025em] lg:text-[64px] lg:leading-[1.04] lg:tracking-[-0.03em]">
               Seu site deveria trazer clientes,{" "}
               <span className="text-[#A1A1AA]">não apenas existir.</span>
             </h1>
-            <p className="mx-auto mt-8 max-w-2xl text-lg leading-relaxed text-[#A1A1AA] md:mt-10">
+            <p className="mx-auto mt-8 max-w-2xl text-pretty text-lg leading-[1.7] text-[#A1A1AA] md:mt-10 md:text-xl md:leading-[1.65]">
               Criamos sites rápidos, modernos e estratégicos para empresas que
               querem transmitir confiança, autoridade e crescer na internet.
             </p>
-            <div className="mt-14 flex flex-col items-center justify-center gap-4 sm:flex-row md:mt-16">
-              <GlassButton href="#contato" variant="primary">
+            <div className="mt-14 flex w-full flex-col items-stretch justify-center gap-4 sm:mt-16 sm:flex-row sm:items-center">
+              <GlassButton href="#contato" variant="primary" className="w-full sm:w-auto">
                 Solicitar orçamento
               </GlassButton>
-              <GlassButton href="#projetos" variant="secondary">
+              <GlassButton href="#projetos" variant="secondary" className="w-full sm:w-auto">
                 Ver projetos
               </GlassButton>
             </div>
@@ -278,14 +326,14 @@ export default function Home() {
             </div>
             <div className="grid gap-4 sm:grid-cols-2">
               {services.map((service) => (
-                <GlassCard key={service.title} className="group p-8">
+                <GlassCard key={service.title} className="p-8">
                   <div className="mb-4 flex items-center justify-between">
                     <h3 className="text-xl font-semibold tracking-tight md:text-2xl">
                       {service.title}
                     </h3>
                     <span
                       aria-hidden
-                      className="text-[#404040] transition-all duration-[250ms] ease-out group-hover:translate-x-1 group-hover:text-[#0070F3]"
+                      className={`text-[#404040] ${TRANSITION} group-hover/card:translate-x-1 group-hover/card:text-[#0070F3]`}
                     >
                       →
                     </span>
@@ -350,7 +398,10 @@ export default function Home() {
             <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
               {projects.map((project) => (
                 <article key={project.name} className="group">
-                  <div className="overflow-hidden rounded-3xl border border-[#262626] bg-[#101010]/80 backdrop-blur-md transition-all duration-[250ms] ease-out hover:border-[#404040]">
+                  <div
+                    className={`relative overflow-hidden rounded-3xl border border-[#262626] bg-[#101010]/75 backdrop-blur-md ${TRANSITION} hover:-translate-y-0.5 hover:border-[#404040] hover:shadow-[0_12px_40px_rgba(0,0,0,0.35)]`}
+                  >
+                    <GlassSheen />
                     <div
                       className={`relative flex h-48 items-end bg-gradient-to-br ${project.gradient} p-6`}
                     >
@@ -358,8 +409,10 @@ export default function Home() {
                         {project.category}
                       </span>
                     </div>
-                    <div className="p-8">
-                      <h3 className="mb-2 text-lg font-semibold tracking-tight transition-colors duration-[250ms] ease-out group-hover:text-[#0070F3] md:text-xl">
+                    <div className="relative p-8">
+                      <h3
+                        className={`mb-2 text-lg font-semibold tracking-tight md:text-xl ${TRANSITION} group-hover:text-[#0070F3]`}
+                      >
                         {project.name}
                       </h3>
                       <p className="text-sm leading-relaxed text-[#A1A1AA]">
@@ -379,10 +432,10 @@ export default function Home() {
           className="border-t border-[#262626]/80 px-5 py-24 md:px-6 lg:px-8 lg:py-32"
         >
           <div className="mx-auto max-w-3xl text-center">
-            <div className="relative overflow-hidden rounded-3xl border border-[#262626] bg-[#101010]/80 px-8 py-16 backdrop-blur-md sm:px-16">
+            <GlassCard className="px-8 py-16 sm:px-16">
               <div
                 aria-hidden
-                className="pointer-events-none absolute inset-0 bg-gradient-to-b from-[#0070F3]/[0.06] to-transparent"
+                className="pointer-events-none absolute inset-0 bg-gradient-to-b from-[#0070F3]/[0.05] to-transparent"
               />
               <div className="relative">
                 <SectionLabel>Vamos conversar</SectionLabel>
@@ -404,13 +457,13 @@ export default function Home() {
                   </GlassButton>
                   <a
                     href="mailto:hello@dechenwebstudio.com"
-                    className="text-sm text-[#A1A1AA] transition-colors duration-[250ms] ease-out hover:text-[#0070F3] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#0070F3]"
+                    className={`text-sm text-[#A1A1AA] ${TRANSITION} hover:text-[#0070F3] ${FOCUS}`}
                   >
                     hello@dechenwebstudio.com
                   </a>
                 </div>
               </div>
-            </div>
+            </GlassCard>
           </div>
         </section>
       </main>
@@ -425,15 +478,10 @@ export default function Home() {
             </p>
           </div>
           <nav aria-label="Rodapé">
-            <ul className="flex flex-wrap items-center justify-center gap-6 text-sm text-[#A1A1AA]">
+            <ul className="flex flex-wrap items-center justify-center gap-6 text-sm">
               {navLinks.map((link) => (
                 <li key={link.href}>
-                  <a
-                    href={link.href}
-                    className="transition-colors duration-[250ms] ease-out hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#0070F3]"
-                  >
-                    {link.label}
-                  </a>
+                  <NavLink href={link.href}>{link.label}</NavLink>
                 </li>
               ))}
             </ul>
