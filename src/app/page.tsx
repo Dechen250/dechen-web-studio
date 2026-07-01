@@ -1,4 +1,6 @@
-import type { ReactNode } from "react";
+"use client";
+
+import { useState, type ReactNode } from "react";
 
 /* ── Tokens (Design System) ───────────────────────────────────────── */
 const EASE = "ease-out";
@@ -6,6 +8,14 @@ const DURATION = "duration-[250ms]";
 const TRANSITION = `transition-all ${DURATION} ${EASE}`;
 const FOCUS =
   "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#0070F3]";
+
+/* ── Types ──────────────────────────────────────────────────────────── */
+type SectionKey = "services" | "process" | "projects";
+
+type ExpandedItem = {
+  section: SectionKey;
+  id: string;
+} | null;
 
 /* ── Data ─────────────────────────────────────────────────────────── */
 const indicators = [
@@ -17,75 +27,209 @@ const indicators = [
 
 const services = [
   {
+    id: "landing-pages",
     title: "Landing Pages",
     description:
       "Páginas focadas em conversão para campanhas, lançamentos e captação de leads.",
+    details:
+      "Uma landing page é construída com um único objetivo: transformar visitantes em ação. Cada elemento — headline, copy, CTA e estrutura — existe para gerar conversão, seja um contato, uma venda ou um cadastro.",
+    benefits: [
+      "Foco total em conversão",
+      "Carregamento ultrarrápido",
+      "Estrutura otimizada para campanhas de tráfego",
+      "Mensagem clara e direta ao público",
+    ],
+    audience: [
+      "Empresas lançando produtos ou serviços",
+      "Profissionais captando clientes online",
+      "Negócios com campanhas no Google ou redes sociais",
+    ],
   },
   {
+    id: "sites-institucionais",
     title: "Sites Institucionais",
     description:
       "Presença completa na web com páginas estratégicas e identidade visual sólida.",
+    details:
+      "Um site institucional é a base da presença digital da sua empresa. Apresenta quem você é, o que oferece e por que o cliente deve confiar em você — com páginas estratégicas e identidade visual consistente.",
+    benefits: [
+      "Múltiplas páginas com propósito definido",
+      "Identidade visual alinhada à marca",
+      "Base sólida para SEO e autoridade",
+      "Experiência profissional em todos os dispositivos",
+    ],
+    audience: [
+      "Empresas consolidadas que precisam de presença digital",
+      "Clínicas, consultórios e escritórios",
+      "Negócios que precisam transmitir confiança e credibilidade",
+    ],
   },
   {
+    id: "portfolios",
     title: "Portfólios",
     description:
       "Showcase elegante para profissionais e criativos que precisam se destacar.",
+    details:
+      "Seu portfólio é a vitrine do seu talento. Criamos uma experiência visual que destaca seus melhores trabalhos e comunica seu diferencial de forma memorável e profissional.",
+    benefits: [
+      "Apresentação visual de alto impacto",
+      "Destaque para projetos e cases",
+      "Experiência memorável para visitantes",
+      "Diferenciação frente à concorrência",
+    ],
+    audience: [
+      "Designers, criativos e desenvolvedores",
+      "Fotógrafos e videomakers",
+      "Arquitetos e profissionais autônomos",
+    ],
   },
   {
+    id: "manutencao",
     title: "Manutenção",
     description:
       "Atualizações, correções e melhorias contínuas para seu site sempre atual.",
+    details:
+      "Um site precisa de cuidado contínuo para permanecer seguro, rápido e relevante. Oferecemos suporte para atualizações, correções e melhorias — para você focar no que importa: seu negócio.",
+    benefits: [
+      "Correções e atualizações com agilidade",
+      "Monitoramento de performance",
+      "Site sempre seguro e funcional",
+      "Tranquilidade no dia a dia",
+    ],
+    audience: [
+      "Empresas com site já publicado",
+      "Negócios sem equipe técnica interna",
+      "Quem quer focar no core business",
+    ],
   },
 ];
 
 const processSteps = [
   {
+    id: "planejamento",
     step: "01",
     title: "Planejamento",
     description:
       "Entendemos seu negócio, público e objetivos para definir a estratégia certa.",
+    details:
+      "Tudo começa com escuta. Mapeamos seu negócio, entendemos o público-alvo e definimos objetivos claros antes de qualquer decisão visual ou técnica.",
+    deliverables: [
+      "Briefing estruturado",
+      "Mapa de páginas e conteúdo",
+      "Definição de objetivos e público",
+      "Cronograma do projeto",
+    ],
   },
   {
+    id: "design",
     step: "02",
     title: "Design",
     description:
       "Criamos layouts modernos alinhados à sua marca e focados em conversão.",
+    details:
+      "Transformamos a estratégia em interface. Cada tela é pensada para comunicar confiança, guiar o usuário e converter — com estética premium e clareza.",
+    deliverables: [
+      "Wireframes da estrutura",
+      "Layout visual final",
+      "Protótipo navegável",
+      "Guia de identidade aplicada",
+    ],
   },
   {
+    id: "desenvolvimento",
     step: "03",
     title: "Desenvolvimento",
     description:
       "Código limpo, performance alta e compatibilidade total com dispositivos.",
+    details:
+      "Construímos com tecnologias modernas, priorizando performance, acessibilidade e responsividade. Código limpo que facilita manutenção e evolução futura.",
+    deliverables: [
+      "Código responsivo e otimizado",
+      "Performance Lighthouse 95+",
+      "Testes em múltiplos dispositivos",
+      "Integrações necessárias",
+    ],
   },
   {
+    id: "publicacao",
     step: "04",
     title: "Publicação",
     description:
       "Deploy, testes finais e entrega pronta para gerar resultados.",
+    details:
+      "Publicamos seu site com todos os testes concluídos, domínio configurado e checklist de qualidade aprovado. Entrega pronta para gerar resultados desde o primeiro dia.",
+    deliverables: [
+      "Deploy em produção",
+      "Configuração de domínio e SSL",
+      "Checklist final de qualidade",
+      "Orientação de uso e manutenção",
+    ],
   },
 ];
 
 const projects = [
   {
+    id: "academia-mma",
     name: "Academia de MMA",
     category: "Landing Page",
     description:
       "Site de alta conversão para captar alunos e agendar aulas experimentais.",
     gradient: "from-[#0070F3]/20 via-[#0070F3]/5 to-transparent",
+    problem:
+      "A academia dependia de indicações e redes sociais, sem uma página focada em converter visitantes em alunos.",
+    solution:
+      "Landing page com proposta clara, prova social, planos visíveis e CTA direto para aula experimental.",
+    siteSections: [
+      "Hero com proposta de valor",
+      "Modalidades e diferenciais",
+      "Depoimentos de alunos",
+      "Planos e valores",
+      "Agendamento de aula experimental",
+    ],
+    expectedResult:
+      "Aumento na captação de leads qualificados e mais agendamentos de aulas experimentais via site.",
   },
   {
+    id: "barbearia-premium",
     name: "Barbearia Premium",
     category: "Site Institucional",
     description:
       "Presença digital elegante com agendamento online e portfólio de serviços.",
     gradient: "from-[#404040]/40 via-[#262626]/20 to-transparent",
+    problem:
+      "A barbearia transmitia qualidade no físico, mas o site não refletia o padrão premium do negócio.",
+    solution:
+      "Site institucional elegante com portfólio visual, serviços detalhados e agendamento online integrado.",
+    siteSections: [
+      "Hero com identidade visual forte",
+      "Serviços e preços",
+      "Galeria de cortes",
+      "Sobre a barbearia",
+      "Agendamento online",
+    ],
+    expectedResult:
+      "Presença digital alinhada ao posicionamento premium e mais agendamentos diretos pelo site.",
   },
   {
+    id: "clinica-moderna",
     name: "Clínica Moderna",
     category: "Site Institucional",
     description:
       "Interface limpa que transmite confiança e facilita o contato com pacientes.",
     gradient: "from-[#0070F3]/10 via-[#101010]/40 to-transparent",
+    problem:
+      "Pacientes em potencial não encontravam informações claras sobre especialidades, convênios e formas de contato.",
+    solution:
+      "Site institucional clean com hierarquia clara, informações acessíveis e múltiplos canais de contato.",
+    siteSections: [
+      "Hero com mensagem de confiança",
+      "Especialidades e equipe",
+      "Convênios aceitos",
+      "Localização e horários",
+      "Contato e agendamento",
+    ],
+    expectedResult:
+      "Mais contatos qualificados e redução de dúvidas recorrentes por telefone ou WhatsApp.",
   },
 ];
 
@@ -120,6 +264,82 @@ function GlassCard({
       <GlassSheen />
       <div className="relative">{children}</div>
     </div>
+  );
+}
+
+function DetailList({ title, items }: { title: string; items: string[] }) {
+  return (
+    <div>
+      <h4 className="mb-3 text-xs font-semibold tracking-[0.12em] text-[#0070F3] uppercase">
+        {title}
+      </h4>
+      <ul className="space-y-2">
+        {items.map((item) => (
+          <li
+            key={item}
+            className="flex gap-3 text-sm leading-relaxed text-[#A1A1AA]"
+          >
+            <span
+              aria-hidden
+              className="mt-2 h-1 w-1 shrink-0 rounded-full bg-[#0070F3]/70"
+            />
+            {item}
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+function ExpandableContent({
+  isExpanded,
+  children,
+}: {
+  isExpanded: boolean;
+  children: ReactNode;
+}) {
+  return (
+    <div
+      className={`grid transition-all duration-300 ease-out ${isExpanded ? "mt-6 grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"}`}
+    >
+      <div className="overflow-hidden">
+        <div className="border-t border-[#262626] pt-6">{children}</div>
+      </div>
+    </div>
+  );
+}
+
+function InteractiveCard({
+  isExpanded,
+  onClick,
+  ariaLabel,
+  children,
+  expandedContent,
+  className = "",
+}: {
+  isExpanded: boolean;
+  onClick: () => void;
+  ariaLabel: string;
+  children: ReactNode;
+  expandedContent: ReactNode;
+  className?: string;
+}) {
+  return (
+    <button
+      type="button"
+      onClick={onClick}
+      aria-expanded={isExpanded}
+      aria-label={ariaLabel}
+      className={`group/card relative w-full cursor-pointer overflow-hidden rounded-3xl border bg-[#101010]/75 text-left backdrop-blur-md ${TRANSITION} hover:-translate-y-0.5 hover:border-[#404040] hover:bg-[#101010]/90 hover:shadow-[0_12px_40px_rgba(0,0,0,0.35)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0070F3] active:scale-[0.99] ${isExpanded ? "border-[#0070F3]/40 shadow-[0_0_32px_rgba(0,112,243,0.12)]" : "border-[#262626]"} ${className}`}
+    >
+      <GlassSheen />
+      <div className="relative">
+        {children}
+        <ExpandableContent isExpanded={isExpanded}>
+          {expandedContent}
+        </ExpandableContent>
+      </div>
+    </button>
   );
 }
 
@@ -266,6 +486,19 @@ function FloatingNavbar() {
 
 /* ── Page ─────────────────────────────────────────────────────────── */
 export default function Home() {
+  const [expanded, setExpanded] = useState<ExpandedItem>(null);
+
+  const toggleItem = (section: SectionKey, id: string) => {
+    setExpanded((prev) =>
+      prev?.section === section && prev?.id === id
+        ? null
+        : { section, id },
+    );
+  };
+
+  const isExpanded = (section: SectionKey, id: string) =>
+    expanded?.section === section && expanded?.id === id;
+
   return (
     <div className="min-h-full bg-[#050505] font-sans text-white selection:bg-[#0070F3]/30">
       <FloatingNavbar />
@@ -325,24 +558,52 @@ export default function Home() {
               </h2>
             </div>
             <div className="grid gap-4 sm:grid-cols-2">
-              {services.map((service) => (
-                <GlassCard key={service.title} className="p-8">
-                  <div className="mb-4 flex items-center justify-between">
-                    <h3 className="text-xl font-semibold tracking-tight md:text-2xl">
-                      {service.title}
-                    </h3>
-                    <span
-                      aria-hidden
-                      className={`text-[#404040] ${TRANSITION} group-hover/card:translate-x-1 group-hover/card:text-[#0070F3]`}
+              {services.map((service) => {
+                const open = isExpanded("services", service.id);
+                return (
+                  <InteractiveCard
+                    key={service.id}
+                    isExpanded={open}
+                    onClick={() => toggleItem("services", service.id)}
+                    ariaLabel={`${open ? "Fechar" : "Abrir"} detalhes: ${service.title}`}
+                    className="p-8"
+                    expandedContent={
+                      <>
+                        <p className="mb-6 text-sm leading-relaxed text-[#A1A1AA] md:text-base">
+                          {service.details}
+                        </p>
+                        <div className="grid gap-6 sm:grid-cols-2">
+                          <DetailList title="Benefícios" items={service.benefits} />
+                          <DetailList
+                            title="Para quem é indicado"
+                            items={service.audience}
+                          />
+                        </div>
+                      </>
+                    }
+                  >
+                    <div className="mb-4 flex items-center justify-between">
+                      <h3 className="text-xl font-semibold tracking-tight md:text-2xl">
+                        {service.title}
+                      </h3>
+                      <span
+                        aria-hidden
+                        className={`text-[#404040] ${TRANSITION} ${open ? "rotate-90 text-[#0070F3]" : "group-hover/card:translate-x-1 group-hover/card:text-[#0070F3]"}`}
+                      >
+                        →
+                      </span>
+                    </div>
+                    <p className="text-sm leading-relaxed text-[#A1A1AA] md:text-base">
+                      {service.description}
+                    </p>
+                    <p
+                      className={`mt-4 text-xs ${TRANSITION} ${open ? "text-[#0070F3]" : "text-[#404040] group-hover/card:text-[#0070F3]/70"}`}
                     >
-                      →
-                    </span>
-                  </div>
-                  <p className="text-sm leading-relaxed text-[#A1A1AA] md:text-base">
-                    {service.description}
-                  </p>
-                </GlassCard>
-              ))}
+                      {open ? "Clique para fechar" : "Clique para saber mais"}
+                    </p>
+                  </InteractiveCard>
+                );
+              })}
             </div>
           </div>
         </section>
@@ -362,21 +623,47 @@ export default function Home() {
               </h2>
             </div>
             <ol className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-              {processSteps.map((step) => (
-                <li key={step.step}>
-                  <GlassCard className="flex h-full flex-col p-8">
-                    <span className="mb-6 text-sm font-medium tracking-widest text-[#0070F3]">
-                      {step.step}
-                    </span>
-                    <h3 className="mb-2 text-lg font-semibold tracking-tight md:text-xl">
-                      {step.title}
-                    </h3>
-                    <p className="text-sm leading-relaxed text-[#A1A1AA]">
-                      {step.description}
-                    </p>
-                  </GlassCard>
-                </li>
-              ))}
+              {processSteps.map((step) => {
+                const open = isExpanded("process", step.id);
+                return (
+                  <li key={step.id}>
+                    <InteractiveCard
+                      isExpanded={open}
+                      onClick={() => toggleItem("process", step.id)}
+                      ariaLabel={`${open ? "Fechar" : "Abrir"} etapa: ${step.title}`}
+                      className="flex h-full flex-col p-8"
+                      expandedContent={
+                        <>
+                          <p className="mb-6 text-sm leading-relaxed text-[#A1A1AA]">
+                            {step.details}
+                          </p>
+                          <DetailList
+                            title="Entregáveis da etapa"
+                            items={step.deliverables}
+                          />
+                        </>
+                      }
+                    >
+                      <span className="mb-6 text-sm font-medium tracking-widest text-[#0070F3]">
+                        {step.step}
+                      </span>
+                      <h3 className="mb-2 text-lg font-semibold tracking-tight md:text-xl">
+                        {step.title}
+                      </h3>
+                      <p className="text-sm leading-relaxed text-[#A1A1AA]">
+                        {step.description}
+                      </p>
+                      <p
+                        className={`mt-auto pt-4 text-xs ${TRANSITION} ${open ? "text-[#0070F3]" : "text-[#404040] group-hover/card:text-[#0070F3]/70"}`}
+                      >
+                        {open
+                          ? "Clique para fechar"
+                          : "Clique para ver entregáveis"}
+                      </p>
+                    </InteractiveCard>
+                  </li>
+                );
+              })}
             </ol>
           </div>
         </section>
@@ -396,12 +683,32 @@ export default function Home() {
               </h2>
             </div>
             <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-              {projects.map((project) => (
-                <article key={project.name} className="group">
-                  <div
-                    className={`relative overflow-hidden rounded-3xl border border-[#262626] bg-[#101010]/75 backdrop-blur-md ${TRANSITION} hover:-translate-y-0.5 hover:border-[#404040] hover:shadow-[0_12px_40px_rgba(0,0,0,0.35)]`}
+              {projects.map((project) => {
+                const open = isExpanded("projects", project.id);
+                return (
+                  <InteractiveCard
+                    key={project.id}
+                    isExpanded={open}
+                    onClick={() => toggleItem("projects", project.id)}
+                    ariaLabel={`${open ? "Fechar" : "Abrir"} projeto: ${project.name}`}
+                    className="p-0"
+                    expandedContent={
+                      <div className="px-8 pb-8">
+                        <div className="space-y-6">
+                          <DetailList title="Problema" items={[project.problem]} />
+                          <DetailList title="Solução" items={[project.solution]} />
+                          <DetailList
+                            title="Seções do site"
+                            items={project.siteSections}
+                          />
+                          <DetailList
+                            title="Resultado esperado"
+                            items={[project.expectedResult]}
+                          />
+                        </div>
+                      </div>
+                    }
                   >
-                    <GlassSheen />
                     <div
                       className={`relative flex h-48 items-end bg-gradient-to-br ${project.gradient} p-6`}
                     >
@@ -409,19 +716,26 @@ export default function Home() {
                         {project.category}
                       </span>
                     </div>
-                    <div className="relative p-8">
+                    <div className="p-8">
                       <h3
-                        className={`mb-2 text-lg font-semibold tracking-tight md:text-xl ${TRANSITION} group-hover:text-[#0070F3]`}
+                        className={`mb-2 text-lg font-semibold tracking-tight md:text-xl ${TRANSITION} ${open ? "text-[#0070F3]" : "group-hover/card:text-[#0070F3]"}`}
                       >
                         {project.name}
                       </h3>
                       <p className="text-sm leading-relaxed text-[#A1A1AA]">
                         {project.description}
                       </p>
+                      <p
+                        className={`mt-4 text-xs ${TRANSITION} ${open ? "text-[#0070F3]" : "text-[#404040] group-hover/card:text-[#0070F3]/70"}`}
+                      >
+                        {open
+                          ? "Clique para fechar"
+                          : "Clique para ver o conceito"}
+                      </p>
                     </div>
-                  </div>
-                </article>
-              ))}
+                  </InteractiveCard>
+                );
+              })}
             </div>
           </div>
         </section>
