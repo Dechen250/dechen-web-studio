@@ -104,6 +104,29 @@ function GlassCard({
   );
 }
 
+function DwsLogo({ size = "md" }: { size?: "sm" | "md" }) {
+  const sizeClasses =
+    size === "sm"
+      ? "h-8 w-8 rounded-[10px] text-[10px]"
+      : "h-10 w-10 rounded-[12px] text-xs";
+
+  return (
+    <span
+      className={`relative flex items-center justify-center border border-[#0070F3]/30 bg-[#101010]/70 font-bold tracking-tight shadow-[0_0_20px_rgba(0,112,243,0.12)] backdrop-blur-md transition-all duration-[250ms] ease-out ${sizeClasses}`}
+    >
+      <span
+        aria-hidden
+        className="pointer-events-none absolute inset-0 rounded-[inherit] bg-gradient-to-br from-[#0070F3]/25 via-transparent to-transparent"
+      />
+      <span
+        aria-hidden
+        className="pointer-events-none absolute inset-x-1 top-0 h-px rounded-full bg-gradient-to-r from-transparent via-white/30 to-transparent"
+      />
+      <span className="relative">DWS</span>
+    </span>
+  );
+}
+
 function GlassButton({
   href,
   children,
@@ -116,16 +139,24 @@ function GlassButton({
   className?: string;
 }) {
   const base =
-    "inline-flex h-14 items-center justify-center rounded-full px-8 text-sm font-semibold transition-all duration-[250ms] ease-out focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0070F3] active:scale-[0.98]";
+    "group relative inline-flex h-14 items-center justify-center overflow-hidden rounded-full px-8 text-sm font-semibold transition-all duration-[300ms] ease-out focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0070F3] active:scale-[0.98]";
 
   const styles =
     variant === "primary"
-      ? "border border-[#0070F3]/50 bg-gradient-to-b from-[#0070F3]/30 to-[#0070F3]/15 text-white backdrop-blur-md hover:border-[#0070F3]/70 hover:shadow-[0_0_32px_rgba(0,112,243,0.2)]"
-      : "border border-[#262626] bg-[#101010]/60 text-[#A1A1AA] backdrop-blur-md hover:border-[#404040] hover:bg-[#101010] hover:text-white";
+      ? "border border-[#0070F3]/40 bg-gradient-to-b from-[#0070F3]/45 via-[#0070F3]/25 to-[#0070F3]/10 text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.15)] backdrop-blur-md hover:scale-[1.02] hover:border-[#0070F3]/60 hover:shadow-[0_0_40px_rgba(0,112,243,0.25),inset_0_1px_0_rgba(255,255,255,0.2)]"
+      : "border border-white/10 bg-[#101010]/50 text-[#A1A1AA] shadow-[inset_0_1px_0_rgba(255,255,255,0.06)] backdrop-blur-md hover:scale-[1.02] hover:border-white/20 hover:bg-[#101010]/70 hover:text-white hover:shadow-[0_0_24px_rgba(255,255,255,0.04),inset_0_1px_0_rgba(255,255,255,0.1)]";
 
   return (
     <a href={href} className={`${base} ${styles} ${className}`}>
-      {children}
+      <span
+        aria-hidden
+        className={`pointer-events-none absolute inset-x-0 top-0 h-1/2 rounded-t-full ${
+          variant === "primary"
+            ? "bg-gradient-to-b from-white/20 to-transparent"
+            : "bg-gradient-to-b from-white/8 to-transparent"
+        }`}
+      />
+      <span className="relative">{children}</span>
     </a>
   );
 }
@@ -141,18 +172,18 @@ function SectionLabel({ children }: { children: ReactNode }) {
 export default function Home() {
   return (
     <div className="min-h-full bg-[#050505] font-sans text-white selection:bg-[#0070F3]/30">
-      {/* Navbar — 72px, Liquid Glass, backdrop blur */}
-      <header className="fixed inset-x-0 top-0 z-50 border-b border-[#262626]/80 bg-[#050505]/70 backdrop-blur-xl">
+      {/* Navbar flutuante — Liquid Glass */}
+      <header className="fixed inset-x-0 top-0 z-50 px-5 pt-4 md:px-6 lg:px-8">
         <nav
-          className="mx-auto flex h-[72px] max-w-7xl items-center justify-between px-5 md:px-6 lg:px-8"
+          className="mx-auto flex h-14 max-w-5xl items-center justify-between rounded-2xl border border-white/[0.08] bg-[#101010]/60 px-4 shadow-[0_8px_32px_rgba(0,0,0,0.45),0_0_48px_rgba(0,112,243,0.06)] backdrop-blur-xl md:h-16 md:rounded-3xl md:px-6 lg:max-w-6xl"
           aria-label="Principal"
         >
           <a
             href="#"
-            className="flex h-10 w-10 items-center justify-center rounded-[12px] border border-[#262626] bg-[#101010]/60 text-xs font-bold tracking-tight backdrop-blur-md transition-all duration-[250ms] ease-out hover:border-[#404040] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0070F3]"
+            className="transition-transform duration-[250ms] ease-out hover:scale-[1.03] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#0070F3]"
             aria-label="Dechen Web Studio — início"
           >
-            DWS
+            <DwsLogo />
           </a>
 
           <ul className="hidden items-center gap-8 md:flex">
@@ -171,7 +202,7 @@ export default function Home() {
           <GlassButton
             href="#contato"
             variant="primary"
-            className="hidden h-11 px-6 text-xs sm:inline-flex md:h-14 md:px-8 md:text-sm"
+            className="hidden h-11 px-6 text-xs sm:inline-flex md:h-12 md:px-7 md:text-sm"
           >
             Solicitar orçamento
           </GlassButton>
@@ -179,7 +210,7 @@ export default function Home() {
           <GlassButton
             href="#contato"
             variant="primary"
-            className="inline-flex h-11 px-5 text-xs sm:hidden"
+            className="inline-flex h-10 px-5 text-xs sm:hidden"
           >
             Orçamento
           </GlassButton>
@@ -188,22 +219,25 @@ export default function Home() {
 
       <main>
         {/* Hero */}
-        <section className="relative overflow-hidden px-5 pt-36 pb-24 md:px-6 lg:px-8 lg:pt-44 lg:pb-32">
+        <section className="relative flex min-h-[92vh] flex-col items-center justify-center overflow-hidden px-5 pt-28 pb-32 md:px-6 md:pt-32 md:pb-40 lg:px-8 lg:pt-36 lg:pb-48">
           <div aria-hidden className="pointer-events-none absolute inset-0">
-            <div className="absolute top-0 left-1/2 h-[600px] w-[900px] -translate-x-1/2 rounded-full bg-[#0070F3]/[0.06] blur-[120px]" />
+            <div className="absolute top-[15%] left-1/2 h-[520px] w-[900px] -translate-x-1/2 rounded-full bg-[radial-gradient(ellipse_at_center,rgba(0,112,243,0.14)_0%,transparent_68%)]" />
+            <div className="absolute top-[8%] left-[10%] h-[320px] w-[320px] rounded-full bg-[radial-gradient(circle,rgba(0,112,243,0.08)_0%,transparent_70%)] blur-2xl" />
+            <div className="absolute right-[8%] bottom-[18%] h-[380px] w-[380px] rounded-full bg-[radial-gradient(circle,rgba(0,112,243,0.06)_0%,transparent_72%)] blur-3xl" />
+            <div className="absolute top-1/2 left-1/2 h-[600px] w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#0070F3]/[0.03] blur-[100px]" />
           </div>
 
-          <div className="relative mx-auto max-w-4xl text-center">
+          <div className="relative mx-auto w-full max-w-3xl text-center">
             <SectionLabel>Dechen Web Studio</SectionLabel>
-            <h1 className="text-4xl leading-[1.1] font-semibold tracking-tight md:text-5xl lg:text-[64px] lg:leading-[1.05]">
+            <h1 className="text-4xl leading-[1.12] font-semibold tracking-tight md:text-5xl lg:text-[64px] lg:leading-[1.05]">
               Seu site deveria trazer clientes,{" "}
               <span className="text-[#A1A1AA]">não apenas existir.</span>
             </h1>
-            <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-[#A1A1AA]">
+            <p className="mx-auto mt-8 max-w-2xl text-lg leading-relaxed text-[#A1A1AA] md:mt-10">
               Criamos sites rápidos, modernos e estratégicos para empresas que
               querem transmitir confiança, autoridade e crescer na internet.
             </p>
-            <div className="mt-12 flex flex-col items-center justify-center gap-4 sm:flex-row">
+            <div className="mt-14 flex flex-col items-center justify-center gap-4 sm:flex-row md:mt-16">
               <GlassButton href="#contato" variant="primary">
                 Solicitar orçamento
               </GlassButton>
@@ -385,9 +419,7 @@ export default function Home() {
       <footer className="border-t border-[#262626]/80 px-5 py-12 md:px-6 lg:px-8">
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-8 sm:flex-row">
           <div className="flex items-center gap-3">
-            <span className="flex h-8 w-8 items-center justify-center rounded-[12px] border border-[#262626] bg-[#101010]/60 text-[10px] font-bold">
-              DWS
-            </span>
+            <DwsLogo size="sm" />
             <p className="text-sm text-[#A1A1AA]">
               &copy; {new Date().getFullYear()} Dechen Web Studio
             </p>
