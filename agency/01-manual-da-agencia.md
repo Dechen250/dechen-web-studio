@@ -32,6 +32,8 @@ Ser reconhecida como uma agência que combina design, estratégia e tecnologia p
 
 # # Nossos Valores
 
+
+
 ## Excelência
 
 Se vamos fazer, fazemos bem feito.
@@ -56,7 +58,11 @@ Criamos produtos digitais que geram resultados reais para nossos clientes.
 
 ---
 
-# Os Cinco Princípios
+
+
+# Os Seis Princípios
+
+
 
 ## 1. O cliente vem antes da tecnologia.
 
@@ -64,17 +70,23 @@ A tecnologia existe para resolver problemas reais. Nunca escolhemos uma ferramen
 
 ---
 
+
+
 ## 2. Menos, porém melhor.
 
 Preferimos simplicidade, clareza e qualidade a excesso de funcionalidades.
 
 ---
 
+
+
 ## 3. Performance faz parte do design.
 
 Um produto bonito que demora para carregar nunca oferece uma experiência premium.
 
 ---
+
+
 
 ## 4. AI-First, Human-Led.
 
@@ -86,9 +98,22 @@ Toda IA utilizada pela Dechen Web Studio deve seguir o DWS AI Operating System.
 
 ---
 
+
+
 ## 5. Nunca entregamos algo de que não teríamos orgulho.
 
 Cada projeto representa a reputação da Dechen Web Studio.
 
 Se não tivermos orgulho de mostrar o resultado, ele ainda não está pronto.
 
+---
+
+
+
+## 6. Valor antes da Beleza
+
+A beleza chama atenção.
+
+O valor gera resultados.
+
+Toda decisão de design deve contribuir para uma experiência melhor e para os objetivos do cliente.
