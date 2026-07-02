@@ -4,6 +4,7 @@ export type PortfolioDemo = {
   title: string;
   category: string;
   description: string;
+  href?: string;
   gradient: string;
   accentText: string;
   accentBorder: string;
@@ -33,59 +34,38 @@ export type PortfolioDemo = {
 export const portfolioDemos: PortfolioDemo[] = [
   {
     slug: "restaurante",
-    brand: "Villa Marés",
-    title: "Restaurante Premium",
+    brand: "Divina Cozinha",
+    title: "Divina Cozinha",
     category: "Gastronomia",
     description:
-      "Experiência digital que eleva a percepção do restaurante e aumenta reservas online.",
+      "Showcase completo com cardápio animado, reservas e experiência premium para restaurante contemporâneo.",
+    href: "/showcase/divina-cozinha",
     gradient: "from-amber-500/25 via-amber-900/10 to-transparent",
     accentText: "text-amber-400",
     accentBorder: "border-amber-500/30",
     accentGlow: "shadow-[0_0_40px_rgba(245,158,11,0.12)]",
     hero: {
-      eyebrow: "Alta gastronomia",
-      headline: "Sabores que contam histórias.",
+      eyebrow: "Culinária contemporânea",
+      headline: "Mais do que uma refeição.",
       subheadline:
-        "No Villa Marés, cada prato é uma experiência. Ingredientes selecionados, técnicas refinadas e um ambiente pensado para momentos memoráveis.",
+        "Ingredientes selecionados, ambiente acolhedor e alta gastronomia em uma experiência digital completa.",
       cta: "Reservar mesa",
     },
     valueProposition: {
-      title: "Mais do que um jantar. Uma experiência completa.",
+      title: "Uma experiência para ser lembrada.",
       description:
-        "Combinamos tradição culinária com inovação para criar pratos que surpreendem. Nosso espaço foi desenhado para acolher, impressionar e transformar cada visita em uma celebração.",
+        "Showcase oficial da Dechen Web Studio para o segmento gastronômico.",
     },
-    services: [
-      {
-        title: "Menu degustação",
-        description:
-          "Sequência exclusiva do chef com harmonização de vinhos selecionados.",
-      },
-      {
-        title: "Eventos privados",
-        description:
-          "Salão reservado para celebrações, jantares corporativos e ocasiões especiais.",
-      },
-      {
-        title: "Carta de vinhos",
-        description:
-          "Rótulos nacionais e importados escolhidos para complementar cada prato.",
-      },
-      {
-        title: "Reservas online",
-        description:
-          "Agendamento rápido com confirmação imediata e lembretes automáticos.",
-      },
-    ],
+    services: [],
     cta: {
-      title: "Reserve sua mesa esta semana.",
-      description:
-        "Garanta sua experiência no Villa Marés. Vagas limitadas para o menu degustação.",
-      button: "Fazer reserva",
+      title: "Conheça o showcase",
+      description: "Experiência completa desenvolvida para Divina Cozinha.",
+      button: "Ver demonstração",
     },
     meta: {
-      title: "Villa Marés | Restaurante Premium — Demonstração DWS",
+      title: "Divina Cozinha — Showcase DWS",
       description:
-        "Projeto demonstrativo de site para restaurante premium. Desenvolvido pela Dechen Web Studio.",
+        "Showcase completo de restaurante contemporâneo. Desenvolvido pela Dechen Web Studio.",
     },
   },
   {

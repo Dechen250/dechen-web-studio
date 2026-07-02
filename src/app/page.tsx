@@ -622,7 +622,7 @@ export default function Home() {
               {portfolioDemos.map((demo) => (
                 <Link
                   key={demo.slug}
-                  href={`/portfolio/${demo.slug}`}
+                  href={demo.href ?? `/portfolio/${demo.slug}`}
                   className={`group/card relative cursor-pointer overflow-hidden rounded-3xl border border-[#262626] bg-[#101010]/75 backdrop-blur-md ${TRANSITION} hover:-translate-y-0.5 hover:border-[#404040] hover:bg-[#101010]/90 hover:shadow-[0_12px_40px_rgba(0,0,0,0.35)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0070F3]`}
                 >
                   <GlassSheen />

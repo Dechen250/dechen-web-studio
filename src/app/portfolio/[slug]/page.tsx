@@ -11,7 +11,9 @@ type Props = {
 };
 
 export function generateStaticParams() {
-  return portfolioDemos.map((demo) => ({ slug: demo.slug }));
+  return portfolioDemos
+    .filter((demo) => !demo.href)
+    .map((demo) => ({ slug: demo.slug }));
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
