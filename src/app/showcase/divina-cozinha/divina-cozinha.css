@@ -1,0 +1,50 @@
+@import "tailwindcss";
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.showcase-divina {
+  --dc-bg: #faf9f6;
+  --dc-surface: #fffdf8;
+  --dc-text: #3d3832;
+  --dc-muted: #6b6560;
+  --dc-olive: #8b9a7d;
+  --dc-gold: #c9a962;
+  --dc-border: #e8e0d4;
+
+  scroll-behavior: smooth;
+  background-color: var(--dc-bg);
+  color: var(--dc-text);
+}
+
+.showcase-divina .font-display {
+  font-family: var(--font-cormorant), Georgia, serif;
+}
+
+.showcase-divina .font-sans {
+  font-family: var(--font-source-sans), system-ui, sans-serif;
+}
+
+.showcase-divina .rotate-y-0 {
+  transform: rotateY(0deg);
+}
+
+.showcase-divina .rotate-y-90 {
+  transform: rotateY(90deg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .showcase-divina * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
