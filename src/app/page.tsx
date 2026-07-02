@@ -1,6 +1,8 @@
 "use client";
 
+import Link from "next/link";
 import { useState, type ReactNode } from "react";
+import { portfolioDemos } from "@/data/portfolio-demos";
 
 /* ── Tokens (Design System) ───────────────────────────────────────── */
 const EASE = "ease-out";
@@ -10,7 +12,7 @@ const FOCUS =
   "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#0070F3]";
 
 /* ── Types ──────────────────────────────────────────────────────────── */
-type SectionKey = "services" | "process" | "projects";
+type SectionKey = "services" | "process";
 
 type ExpandedItem = {
   section: SectionKey;
@@ -167,76 +169,10 @@ const processSteps = [
   },
 ];
 
-const projects = [
-  {
-    id: "academia-mma",
-    name: "Academia de MMA",
-    category: "Landing Page",
-    description:
-      "Site de alta conversão para captar alunos e agendar aulas experimentais.",
-    gradient: "from-[#0070F3]/20 via-[#0070F3]/5 to-transparent",
-    problem:
-      "A academia dependia de indicações e redes sociais, sem uma página focada em converter visitantes em alunos.",
-    solution:
-      "Landing page com proposta clara, prova social, planos visíveis e CTA direto para aula experimental.",
-    siteSections: [
-      "Hero com proposta de valor",
-      "Modalidades e diferenciais",
-      "Depoimentos de alunos",
-      "Planos e valores",
-      "Agendamento de aula experimental",
-    ],
-    expectedResult:
-      "Aumento na captação de leads qualificados e mais agendamentos de aulas experimentais via site.",
-  },
-  {
-    id: "barbearia-premium",
-    name: "Barbearia Premium",
-    category: "Site Institucional",
-    description:
-      "Presença digital elegante com agendamento online e portfólio de serviços.",
-    gradient: "from-[#404040]/40 via-[#262626]/20 to-transparent",
-    problem:
-      "A barbearia transmitia qualidade no físico, mas o site não refletia o padrão premium do negócio.",
-    solution:
-      "Site institucional elegante com portfólio visual, serviços detalhados e agendamento online integrado.",
-    siteSections: [
-      "Hero com identidade visual forte",
-      "Serviços e preços",
-      "Galeria de cortes",
-      "Sobre a barbearia",
-      "Agendamento online",
-    ],
-    expectedResult:
-      "Presença digital alinhada ao posicionamento premium e mais agendamentos diretos pelo site.",
-  },
-  {
-    id: "clinica-moderna",
-    name: "Clínica Moderna",
-    category: "Site Institucional",
-    description:
-      "Interface limpa que transmite confiança e facilita o contato com pacientes.",
-    gradient: "from-[#0070F3]/10 via-[#101010]/40 to-transparent",
-    problem:
-      "Pacientes em potencial não encontravam informações claras sobre especialidades, convênios e formas de contato.",
-    solution:
-      "Site institucional clean com hierarquia clara, informações acessíveis e múltiplos canais de contato.",
-    siteSections: [
-      "Hero com mensagem de confiança",
-      "Especialidades e equipe",
-      "Convênios aceitos",
-      "Localização e horários",
-      "Contato e agendamento",
-    ],
-    expectedResult:
-      "Mais contatos qualificados e redução de dúvidas recorrentes por telefone ou WhatsApp.",
-  },
-];
-
 const navLinks = [
   { href: "#servicos", label: "Serviços" },
   { href: "#processo", label: "Processo" },
-  { href: "#projetos", label: "Projetos" },
+  { href: "#portfolio", label: "Portfólio" },
   { href: "#contato", label: "Contato" },
 ];
 
@@ -522,7 +458,7 @@ export default function Home() {
               <GlassButton href="#contato" variant="primary" className="w-full sm:w-auto">
                 Solicitar orçamento
               </GlassButton>
-              <GlassButton href="#projetos" variant="secondary" className="w-full sm:w-auto">
+              <GlassButton href="#portfolio" variant="secondary" className="w-full sm:w-auto">
                 Ver projetos
               </GlassButton>
             </div>
@@ -668,74 +604,56 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Projetos */}
+        {/* Portfólio */}
         <section
-          id="projetos"
+          id="portfolio"
           className="border-t border-[#262626]/80 px-5 py-24 md:px-6 lg:px-8 lg:py-32"
         >
           <div className="mx-auto max-w-7xl">
             <div className="mb-16 max-w-2xl">
-              <SectionLabel>Projetos</SectionLabel>
+              <SectionLabel>Portfólio</SectionLabel>
               <h2 className="text-3xl font-semibold tracking-tight md:text-4xl lg:text-5xl">
-                Conceitos que mostram
+                Projetos demonstrativos
                 <br />
-                <span className="text-[#A1A1AA]">o potencial da sua marca.</span>
+                <span className="text-[#A1A1AA]">que mostram nosso padrão.</span>
               </h2>
             </div>
-            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-              {projects.map((project) => {
-                const open = isExpanded("projects", project.id);
-                return (
-                  <InteractiveCard
-                    key={project.id}
-                    isExpanded={open}
-                    onClick={() => toggleItem("projects", project.id)}
-                    ariaLabel={`${open ? "Fechar" : "Abrir"} projeto: ${project.name}`}
-                    className="p-0"
-                    expandedContent={
-                      <div className="px-8 pb-8">
-                        <div className="space-y-6">
-                          <DetailList title="Problema" items={[project.problem]} />
-                          <DetailList title="Solução" items={[project.solution]} />
-                          <DetailList
-                            title="Seções do site"
-                            items={project.siteSections}
-                          />
-                          <DetailList
-                            title="Resultado esperado"
-                            items={[project.expectedResult]}
-                          />
-                        </div>
-                      </div>
-                    }
+            <div className="grid gap-6 sm:grid-cols-2">
+              {portfolioDemos.map((demo) => (
+                <Link
+                  key={demo.slug}
+                  href={`/portfolio/${demo.slug}`}
+                  className={`group/card relative cursor-pointer overflow-hidden rounded-3xl border border-[#262626] bg-[#101010]/75 backdrop-blur-md ${TRANSITION} hover:-translate-y-0.5 hover:border-[#404040] hover:bg-[#101010]/90 hover:shadow-[0_12px_40px_rgba(0,0,0,0.35)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0070F3]`}
+                >
+                  <GlassSheen />
+                  <div
+                    className={`relative flex h-44 items-start justify-between bg-gradient-to-br p-6 ${demo.gradient}`}
                   >
-                    <div
-                      className={`relative flex h-48 items-end bg-gradient-to-br ${project.gradient} p-6`}
+                    <span className="rounded-full border border-white/10 bg-[#101010]/70 px-3 py-1 text-[10px] font-medium tracking-widest text-[#A1A1AA] uppercase backdrop-blur-sm">
+                      Projeto demonstrativo
+                    </span>
+                    <span className="rounded-full border border-[#262626] bg-[#101010]/70 px-3 py-1 text-xs text-[#A1A1AA] backdrop-blur-sm">
+                      {demo.category}
+                    </span>
+                  </div>
+                  <div className="relative p-8">
+                    <h3
+                      className={`mb-2 text-xl font-semibold tracking-tight md:text-2xl ${TRANSITION} group-hover/card:text-[#0070F3]`}
                     >
-                      <span className="rounded-full border border-[#262626] bg-[#101010]/70 px-3 py-1 text-xs text-[#A1A1AA] backdrop-blur-sm">
-                        {project.category}
-                      </span>
-                    </div>
-                    <div className="p-8">
-                      <h3
-                        className={`mb-2 text-lg font-semibold tracking-tight md:text-xl ${TRANSITION} ${open ? "text-[#0070F3]" : "group-hover/card:text-[#0070F3]"}`}
-                      >
-                        {project.name}
-                      </h3>
-                      <p className="text-sm leading-relaxed text-[#A1A1AA]">
-                        {project.description}
-                      </p>
-                      <p
-                        className={`mt-4 text-xs ${TRANSITION} ${open ? "text-[#0070F3]" : "text-[#404040] group-hover/card:text-[#0070F3]/70"}`}
-                      >
-                        {open
-                          ? "Clique para fechar"
-                          : "Clique para ver o conceito"}
-                      </p>
-                    </div>
-                  </InteractiveCard>
-                );
-              })}
+                      {demo.title}
+                    </h3>
+                    <p className="mb-6 text-sm leading-relaxed text-[#A1A1AA] md:text-base">
+                      {demo.description}
+                    </p>
+                    <span
+                      className={`inline-flex items-center gap-2 text-sm font-medium text-[#0070F3] ${TRANSITION} group-hover/card:gap-3`}
+                    >
+                      Ver demonstração
+                      <span aria-hidden>→</span>
+                    </span>
+                  </div>
+                </Link>
+              ))}
             </div>
           </div>
         </section>

@@ -1,0 +1,266 @@
+export type PortfolioDemo = {
+  slug: string;
+  brand: string;
+  title: string;
+  category: string;
+  description: string;
+  gradient: string;
+  accentText: string;
+  accentBorder: string;
+  accentGlow: string;
+  hero: {
+    eyebrow: string;
+    headline: string;
+    subheadline: string;
+    cta: string;
+  };
+  valueProposition: {
+    title: string;
+    description: string;
+  };
+  services: { title: string; description: string }[];
+  cta: {
+    title: string;
+    description: string;
+    button: string;
+  };
+  meta: {
+    title: string;
+    description: string;
+  };
+};
+
+export const portfolioDemos: PortfolioDemo[] = [
+  {
+    slug: "restaurante",
+    brand: "Villa Marés",
+    title: "Restaurante Premium",
+    category: "Gastronomia",
+    description:
+      "Experiência digital que eleva a percepção do restaurante e aumenta reservas online.",
+    gradient: "from-amber-500/25 via-amber-900/10 to-transparent",
+    accentText: "text-amber-400",
+    accentBorder: "border-amber-500/30",
+    accentGlow: "shadow-[0_0_40px_rgba(245,158,11,0.12)]",
+    hero: {
+      eyebrow: "Alta gastronomia",
+      headline: "Sabores que contam histórias.",
+      subheadline:
+        "No Villa Marés, cada prato é uma experiência. Ingredientes selecionados, técnicas refinadas e um ambiente pensado para momentos memoráveis.",
+      cta: "Reservar mesa",
+    },
+    valueProposition: {
+      title: "Mais do que um jantar. Uma experiência completa.",
+      description:
+        "Combinamos tradição culinária com inovação para criar pratos que surpreendem. Nosso espaço foi desenhado para acolher, impressionar e transformar cada visita em uma celebração.",
+    },
+    services: [
+      {
+        title: "Menu degustação",
+        description:
+          "Sequência exclusiva do chef com harmonização de vinhos selecionados.",
+      },
+      {
+        title: "Eventos privados",
+        description:
+          "Salão reservado para celebrações, jantares corporativos e ocasiões especiais.",
+      },
+      {
+        title: "Carta de vinhos",
+        description:
+          "Rótulos nacionais e importados escolhidos para complementar cada prato.",
+      },
+      {
+        title: "Reservas online",
+        description:
+          "Agendamento rápido com confirmação imediata e lembretes automáticos.",
+      },
+    ],
+    cta: {
+      title: "Reserve sua mesa esta semana.",
+      description:
+        "Garanta sua experiência no Villa Marés. Vagas limitadas para o menu degustação.",
+      button: "Fazer reserva",
+    },
+    meta: {
+      title: "Villa Marés | Restaurante Premium — Demonstração DWS",
+      description:
+        "Projeto demonstrativo de site para restaurante premium. Desenvolvido pela Dechen Web Studio.",
+    },
+  },
+  {
+    slug: "barbearia",
+    brand: "Barba Noble",
+    title: "Barbearia Premium",
+    category: "Beleza masculina",
+    description:
+      "Presença digital que reflete o padrão da barbearia e gera mais agendamentos.",
+    gradient: "from-stone-400/20 via-stone-800/10 to-transparent",
+    accentText: "text-stone-300",
+    accentBorder: "border-stone-400/25",
+    accentGlow: "shadow-[0_0_40px_rgba(168,162,158,0.1)]",
+    hero: {
+      eyebrow: "Estilo & precisão",
+      headline: "O corte que define sua presença.",
+      subheadline:
+        "Na Barba Noble, cada detalhe importa. Ambiente premium, barbeiros experientes e um atendimento que respeita seu tempo.",
+      cta: "Agendar horário",
+    },
+    valueProposition: {
+      title: "Barbearia para quem valoriza o essencial.",
+      description:
+        "Unimos técnica clássica e tendências atuais para entregar cortes impecáveis, barba bem cuidada e uma experiência relaxante do início ao fim.",
+    },
+    services: [
+      {
+        title: "Corte premium",
+        description:
+          "Corte personalizado com finalização e consultoria de estilo.",
+      },
+      {
+        title: "Barba & navalha",
+        description:
+          "Design de barba, toalha quente e acabamento com produtos de alta qualidade.",
+      },
+      {
+        title: "Tratamentos",
+        description:
+          "Hidratação capilar, esfoliação e cuidados complementares.",
+      },
+      {
+        title: "Clube de assinatura",
+        description:
+          "Planos mensais com benefícios exclusivos e prioridade no agendamento.",
+      },
+    ],
+    cta: {
+      title: "Seu próximo corte começa aqui.",
+      description:
+        "Agende online em menos de um minuto. Horários disponíveis em tempo real.",
+      button: "Agendar agora",
+    },
+    meta: {
+      title: "Barba Noble | Barbearia Premium — Demonstração DWS",
+      description:
+        "Projeto demonstrativo de site para barbearia premium. Desenvolvido pela Dechen Web Studio.",
+    },
+  },
+  {
+    slug: "clinica",
+    brand: "Instituto Harmonia",
+    title: "Clínica Moderna",
+    category: "Saúde",
+    description:
+      "Site que transmite confiança e facilita o primeiro contato com pacientes.",
+    gradient: "from-[#0070F3]/20 via-cyan-900/10 to-transparent",
+    accentText: "text-[#0070F3]",
+    accentBorder: "border-[#0070F3]/30",
+    accentGlow: "shadow-[0_0_40px_rgba(0,112,243,0.12)]",
+    hero: {
+      eyebrow: "Cuidado humanizado",
+      headline: "Saúde com atenção de verdade.",
+      subheadline:
+        "No Instituto Harmonia, cada paciente é acompanhado com rigor técnico, empatia e um plano de cuidado personalizado.",
+      cta: "Agendar consulta",
+    },
+    valueProposition: {
+      title: "Medicina moderna com foco em você.",
+      description:
+        "Nossa equipe multidisciplinar oferece diagnóstico preciso, tratamentos atualizados e um ambiente acolhedor para que você se sinta seguro em cada etapa.",
+    },
+    services: [
+      {
+        title: "Clínica geral",
+        description:
+          "Avaliação completa, prevenção e encaminhamento para especialistas.",
+      },
+      {
+        title: "Especialidades",
+        description:
+          "Cardiologia, dermatologia, ortopedia e mais em um só lugar.",
+      },
+      {
+        title: "Exames & check-up",
+        description:
+          "Pacotes de exames com agendamento integrado e resultados digitais.",
+      },
+      {
+        title: "Telemedicina",
+        description:
+          "Consultas online para acompanhamento e orientações à distância.",
+      },
+    ],
+    cta: {
+      title: "Cuide da sua saúde com quem entende.",
+      description:
+        "Agende sua consulta pelo site ou entre em contato com nossa equipe de atendimento.",
+      button: "Agendar consulta",
+    },
+    meta: {
+      title: "Instituto Harmonia | Clínica Moderna — Demonstração DWS",
+      description:
+        "Projeto demonstrativo de site para clínica moderna. Desenvolvido pela Dechen Web Studio.",
+    },
+  },
+  {
+    slug: "empresa",
+    brand: "Vertex Consultoria",
+    title: "Empresa / Consultoria",
+    category: "Corporativo",
+    description:
+      "Presença institucional que transmite autoridade e gera leads qualificados.",
+    gradient: "from-[#0070F3]/25 via-indigo-900/10 to-transparent",
+    accentText: "text-[#0070F3]",
+    accentBorder: "border-[#0070F3]/30",
+    accentGlow: "shadow-[0_0_40px_rgba(0,112,243,0.15)]",
+    hero: {
+      eyebrow: "Estratégia & crescimento",
+      headline: "Decisões melhores. Resultados reais.",
+      subheadline:
+        "A Vertex Consultoria apoia empresas na estruturação de processos, expansão de mercado e tomada de decisão baseada em dados.",
+      cta: "Falar com consultor",
+    },
+    valueProposition: {
+      title: "Consultoria que entende o seu negócio.",
+      description:
+        "Atuamos lado a lado com líderes e equipes para identificar oportunidades, reduzir riscos e construir planos de crescimento sustentável.",
+    },
+    services: [
+      {
+        title: "Planejamento estratégico",
+        description:
+          "Diagnóstico, metas claras e roadmap de execução para os próximos 12–36 meses.",
+      },
+      {
+        title: "Gestão financeira",
+        description:
+          "Estruturação de fluxo de caixa, precificação e indicadores de performance.",
+      },
+      {
+        title: "Operações & processos",
+        description:
+          "Mapeamento, otimização e automação para ganho de eficiência.",
+      },
+      {
+        title: "Mentoria executiva",
+        description:
+          "Acompanhamento próximo de founders e diretores em decisões críticas.",
+      },
+    ],
+    cta: {
+      title: "Pronto para acelerar seu crescimento?",
+      description:
+        "Agende uma conversa diagnóstica sem compromisso com nossa equipe.",
+      button: "Solicitar conversa",
+    },
+    meta: {
+      title: "Vertex Consultoria | Empresa — Demonstração DWS",
+      description:
+        "Projeto demonstrativo de site institucional para consultoria. Desenvolvido pela Dechen Web Studio.",
+    },
+  },
+];
+
+export function getPortfolioDemo(slug: string) {
+  return portfolioDemos.find((demo) => demo.slug === slug);
+}
