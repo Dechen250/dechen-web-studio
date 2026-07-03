@@ -172,9 +172,20 @@ const processSteps = [
 const navLinks = [
   { href: "#servicos", label: "Serviços" },
   { href: "#processo", label: "Processo" },
-  { href: "#portfolio", label: "Portfólio" },
+  { href: "#projetos", label: "Projetos" },
   { href: "#contato", label: "Contato" },
 ];
+
+const agency = {
+  name: "Dechen Web Studio",
+  domain: "dechenwebstudio.com",
+  email: "hello@dechenwebstudio.com",
+  social: {
+    instagram: "#",
+    github: "#",
+    whatsapp: "#",
+  },
+};
 
 /* ── Primitives ───────────────────────────────────────────────────── */
 function GlassSheen() {
@@ -458,7 +469,7 @@ export default function Home() {
               <GlassButton href="#contato" variant="primary" className="w-full sm:w-auto">
                 Solicitar orçamento
               </GlassButton>
-              <GlassButton href="#portfolio" variant="secondary" className="w-full sm:w-auto">
+              <GlassButton href="#projetos" variant="secondary" className="w-full sm:w-auto">
                 Ver projetos
               </GlassButton>
             </div>
@@ -606,7 +617,7 @@ export default function Home() {
 
         {/* Portfólio */}
         <section
-          id="portfolio"
+          id="projetos"
           className="border-t border-[#262626]/80 px-5 py-24 md:px-6 lg:px-8 lg:py-32"
         >
           <div className="mx-auto max-w-7xl">
@@ -681,17 +692,14 @@ export default function Home() {
                   até 24 horas.
                 </p>
                 <div className="mt-10 flex flex-col items-center gap-4">
-                  <GlassButton
-                    href="mailto:hello@dechenwebstudio.com"
-                    variant="primary"
-                  >
+                  <GlassButton href="#contato" variant="primary">
                     Solicitar orçamento
                   </GlassButton>
                   <a
-                    href="mailto:hello@dechenwebstudio.com"
+                    href={`mailto:${agency.email}`}
                     className={`text-sm text-[#A1A1AA] ${TRANSITION} hover:text-[#0070F3] ${FOCUS}`}
                   >
-                    hello@dechenwebstudio.com
+                    {agency.email}
                   </a>
                 </div>
               </div>
@@ -702,22 +710,69 @@ export default function Home() {
 
       {/* Footer */}
       <footer className="border-t border-[#262626]/80 px-5 py-12 md:px-6 lg:px-8">
-        <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-8 sm:flex-row">
-          <div className="flex items-center gap-3">
-            <DwsLogo size="sm" />
-            <p className="text-sm text-[#A1A1AA]">
-              &copy; {new Date().getFullYear()} Dechen Web Studio
-            </p>
-          </div>
-          <nav aria-label="Rodapé">
-            <ul className="flex flex-wrap items-center justify-center gap-6 text-sm">
-              {navLinks.map((link) => (
-                <li key={link.href}>
-                  <NavLink href={link.href}>{link.label}</NavLink>
-                </li>
-              ))}
+        <div className="mx-auto max-w-7xl">
+          <div className="flex flex-col items-center justify-between gap-8 sm:flex-row sm:items-start">
+            <div className="flex flex-col items-center gap-3 sm:items-start">
+              <div className="flex items-center gap-3">
+                <DwsLogo size="sm" />
+                <div>
+                  <p className="text-sm font-semibold text-white">
+                    {agency.name}
+                  </p>
+                  <a
+                    href={`https://${agency.domain}`}
+                    className={`text-sm text-[#A1A1AA] ${TRANSITION} hover:text-[#0070F3] ${FOCUS}`}
+                  >
+                    {agency.domain}
+                  </a>
+                </div>
+              </div>
+              <p className="text-xs text-[#9C958D]">
+                &copy; {new Date().getFullYear()} {agency.name}. Todos os
+                direitos reservados.
+              </p>
+            </div>
+
+            <nav aria-label="Rodapé">
+              <ul className="flex flex-wrap items-center justify-center gap-6 text-sm">
+                {navLinks.map((link) => (
+                  <li key={link.href}>
+                    <NavLink href={link.href}>{link.label}</NavLink>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+
+            <ul className="flex items-center gap-6 text-sm">
+              <li>
+                <a
+                  href={agency.social.instagram}
+                  className={`text-[#A1A1AA] ${TRANSITION} hover:text-white ${FOCUS}`}
+                  aria-label="Instagram"
+                >
+                  Instagram
+                </a>
+              </li>
+              <li>
+                <a
+                  href={agency.social.github}
+                  className={`text-[#A1A1AA] ${TRANSITION} hover:text-white ${FOCUS}`}
+                  aria-label="GitHub"
+                >
+                  GitHub
+                </a>
+              </li>
+              <li>
+                <a
+                  href={agency.social.whatsapp}
+                  className={`text-[#A1A1AA] ${TRANSITION} hover:text-white ${FOCUS}`}
+                  aria-label="WhatsApp"
+                >
+                  WhatsApp
+                </a>
+              </li>
             </ul>
-          </nav>
+          </div>
         </div>
       </footer>
     </div>
