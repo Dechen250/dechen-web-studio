@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useState, type ReactNode } from "react";
+import { useState, type FormEvent, type ReactNode } from "react";
 import { portfolioDemos } from "@/data/portfolio-demos";
 
 /* ── Tokens (Design System) ───────────────────────────────────────── */
@@ -10,6 +10,8 @@ const DURATION = "duration-[250ms]";
 const TRANSITION = `transition-all ${DURATION} ${EASE}`;
 const FOCUS =
   "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#0070F3]";
+const SECTION =
+  "border-t border-[#262626]/80 px-5 py-20 md:px-6 md:py-28 lg:px-8 lg:py-32";
 
 /* ── Types ──────────────────────────────────────────────────────────── */
 type SectionKey = "services" | "process";
@@ -19,12 +21,50 @@ type ExpandedItem = {
   id: string;
 } | null;
 
+type ContactFormData = {
+  nome: string;
+  email: string;
+  whatsapp: string;
+  negocio: string;
+  mensagem: string;
+};
+
+const initialContactForm: ContactFormData = {
+  nome: "",
+  email: "",
+  whatsapp: "",
+  negocio: "",
+  mensagem: "",
+};
+
 /* ── Data ─────────────────────────────────────────────────────────── */
-const indicators = [
-  { label: "Performance", value: "95+" },
-  { label: "Responsivo", value: "100%" },
-  { label: "SEO", value: "Otimizado" },
-  { label: "Entrega rápida", value: "7–14 dias" },
+const benefits = [
+  {
+    value: "7–14 dias",
+    label: "Entrega ágil",
+    detail: "Do briefing ao site publicado",
+  },
+  {
+    value: "95+",
+    label: "Performance",
+    detail: "Velocidade que o Google valoriza",
+  },
+  {
+    value: "100%",
+    label: "Mobile first",
+    detail: "Seus clientes estão no celular",
+  },
+  {
+    value: "SEO",
+    label: "Visível no Google",
+    detail: "Estrutura pronta para ranquear",
+  },
+];
+
+const trustPoints = [
+  "Resposta em até 24h",
+  "Orçamento sem compromisso",
+  "Projeto 100% sob medida",
 ];
 
 const services = [
@@ -32,76 +72,76 @@ const services = [
     id: "landing-pages",
     title: "Landing Pages",
     description:
-      "Páginas focadas em conversão para campanhas, lançamentos e captação de leads.",
+      "Página única, foco total em conversão — ideal para campanhas, lançamentos e captação de leads qualificados.",
     details:
-      "Uma landing page é construída com um único objetivo: transformar visitantes em ação. Cada elemento — headline, copy, CTA e estrutura — existe para gerar conversão, seja um contato, uma venda ou um cadastro.",
+      "Quando você investe em anúncios ou divulga uma oferta, cada clique precisa virar ação. Construímos landing pages com copy estratégica, CTA visível e carregamento instantâneo para maximizar o retorno do seu investimento em tráfego.",
     benefits: [
-      "Foco total em conversão",
-      "Carregamento ultrarrápido",
-      "Estrutura otimizada para campanhas de tráfego",
-      "Mensagem clara e direta ao público",
+      "Estrutura pensada para campanhas pagas",
+      "Carregamento em menos de 2 segundos",
+      "Formulário e WhatsApp integrados visualmente",
+      "Mensagem direta para o seu público local",
     ],
     audience: [
-      "Empresas lançando produtos ou serviços",
-      "Profissionais captando clientes online",
-      "Negócios com campanhas no Google ou redes sociais",
+      "Negócios locais com campanhas no Google ou Instagram",
+      "Profissionais lançando serviços ou promoções",
+      "Empresas que precisam captar leads rapidamente",
     ],
   },
   {
     id: "sites-institucionais",
     title: "Sites Institucionais",
     description:
-      "Presença completa na web com páginas estratégicas e identidade visual sólida.",
+      "Presença digital completa que transmite confiança, autoridade e profissionalismo — a vitrine do seu negócio na internet.",
     details:
-      "Um site institucional é a base da presença digital da sua empresa. Apresenta quem você é, o que oferece e por que o cliente deve confiar em você — com páginas estratégicas e identidade visual consistente.",
+      "Antes de ligar ou visitar, seu cliente pesquisa no Google. Um site institucional bem construído responde às dúvidas, apresenta seus diferenciais e convence o visitante de que você é a escolha certa — 24 horas por dia.",
     benefits: [
-      "Múltiplas páginas com propósito definido",
-      "Identidade visual alinhada à marca",
-      "Base sólida para SEO e autoridade",
-      "Experiência profissional em todos os dispositivos",
+      "Páginas estratégicas: Sobre, Serviços, Contato",
+      "Identidade visual alinhada à sua marca",
+      "Base sólida para aparecer no Google",
+      "Experiência impecável em celular e desktop",
     ],
     audience: [
-      "Empresas consolidadas que precisam de presença digital",
       "Clínicas, consultórios e escritórios",
-      "Negócios que precisam transmitir confiança e credibilidade",
+      "Lojas, restaurantes e comércios locais",
+      "Empresas que precisam passar credibilidade online",
     ],
   },
   {
     id: "portfolios",
-    title: "Portfólios",
+    title: "Portfólios Profissionais",
     description:
-      "Showcase elegante para profissionais e criativos que precisam se destacar.",
+      "Vitrine elegante para mostrar seu trabalho, atrair clientes certos e cobrar o que você realmente vale.",
     details:
-      "Seu portfólio é a vitrine do seu talento. Criamos uma experiência visual que destaca seus melhores trabalhos e comunica seu diferencial de forma memorável e profissional.",
+      "Seu portfólio é o primeiro julgamento do seu talento. Criamos uma experiência visual premium que destaca seus melhores projetos, comunica seu diferencial e transforma visitantes em contratos.",
     benefits: [
       "Apresentação visual de alto impacto",
-      "Destaque para projetos e cases",
-      "Experiência memorável para visitantes",
-      "Diferenciação frente à concorrência",
+      "Destaque para cases e depoimentos",
+      "Posicionamento profissional e memorável",
+      "Diferenciação clara da concorrência",
     ],
     audience: [
-      "Designers, criativos e desenvolvedores",
-      "Fotógrafos e videomakers",
-      "Arquitetos e profissionais autônomos",
+      "Arquitetos, designers e criativos",
+      "Fotógrafos, videomakers e produtores",
+      "Consultores e profissionais autônomos",
     ],
   },
   {
     id: "manutencao",
-    title: "Manutenção",
+    title: "Manutenção & Suporte",
     description:
-      "Atualizações, correções e melhorias contínuas para seu site sempre atual.",
+      "Seu site sempre atualizado, seguro e funcionando — para você focar no negócio, não na tecnologia.",
     details:
-      "Um site precisa de cuidado contínuo para permanecer seguro, rápido e relevante. Oferecemos suporte para atualizações, correções e melhorias — para você focar no que importa: seu negócio.",
+      "Um site desatualizado ou fora do ar custa clientes. Oferecemos suporte contínuo com atualizações, correções e melhorias para que sua presença digital continue gerando resultados sem dor de cabeça.",
     benefits: [
       "Correções e atualizações com agilidade",
-      "Monitoramento de performance",
-      "Site sempre seguro e funcional",
-      "Tranquilidade no dia a dia",
+      "Monitoramento de performance e segurança",
+      "Ajustes de conteúdo quando precisar",
+      "Tranquilidade para focar no seu negócio",
     ],
     audience: [
       "Empresas com site já publicado",
       "Negócios sem equipe técnica interna",
-      "Quem quer focar no core business",
+      "Quem quer evitar surpresas e downtime",
     ],
   },
 ];
@@ -110,31 +150,31 @@ const processSteps = [
   {
     id: "planejamento",
     step: "01",
-    title: "Planejamento",
+    title: "Briefing & Estratégia",
     description:
-      "Entendemos seu negócio, público e objetivos para definir a estratégia certa.",
+      "Entendemos seu negócio, público e objetivo comercial antes de desenhar qualquer tela.",
     details:
-      "Tudo começa com escuta. Mapeamos seu negócio, entendemos o público-alvo e definimos objetivos claros antes de qualquer decisão visual ou técnica.",
+      "Começamos ouvindo. Mapeamos seu mercado, analisamos a concorrência e definimos o que o site precisa comunicar para gerar contatos e vendas — com metas claras e cronograma definido.",
     deliverables: [
-      "Briefing estruturado",
+      "Briefing estruturado do seu negócio",
       "Mapa de páginas e conteúdo",
-      "Definição de objetivos e público",
-      "Cronograma do projeto",
+      "Definição de público e objetivos",
+      "Cronograma com prazos reais",
     ],
   },
   {
     id: "design",
     step: "02",
-    title: "Design",
+    title: "Design Premium",
     description:
-      "Criamos layouts modernos alinhados à sua marca e focados em conversão.",
+      "Layout moderno alinhado à sua marca, pensado para converter visitantes em clientes.",
     details:
-      "Transformamos a estratégia em interface. Cada tela é pensada para comunicar confiança, guiar o usuário e converter — com estética premium e clareza.",
+      "Transformamos estratégia em interface. Cada seção guia o visitante, transmite confiança e facilita o contato — com estética premium que posiciona seu negócio acima da concorrência.",
     deliverables: [
       "Wireframes da estrutura",
-      "Layout visual final",
+      "Layout visual final aprovado",
       "Protótipo navegável",
-      "Guia de identidade aplicada",
+      "Identidade visual aplicada ao site",
     ],
   },
   {
@@ -142,34 +182,35 @@ const processSteps = [
     step: "03",
     title: "Desenvolvimento",
     description:
-      "Código limpo, performance alta e compatibilidade total com dispositivos.",
+      "Código limpo, performance alta e compatibilidade total — do celular ao desktop.",
     details:
-      "Construímos com tecnologias modernas, priorizando performance, acessibilidade e responsividade. Código limpo que facilita manutenção e evolução futura.",
+      "Construímos com tecnologias modernas, priorizando velocidade, acessibilidade e responsividade. Seu site carrega rápido, funciona em qualquer dispositivo e está pronto para crescer.",
     deliverables: [
       "Código responsivo e otimizado",
       "Performance Lighthouse 95+",
       "Testes em múltiplos dispositivos",
-      "Integrações necessárias",
+      "Integrações visuais (WhatsApp, mapas, etc.)",
     ],
   },
   {
     id: "publicacao",
     step: "04",
-    title: "Publicação",
+    title: "Publicação & Entrega",
     description:
-      "Deploy, testes finais e entrega pronta para gerar resultados.",
+      "Site no ar, domínio configurado e pronto para atrair clientes desde o primeiro dia.",
     details:
-      "Publicamos seu site com todos os testes concluídos, domínio configurado e checklist de qualidade aprovado. Entrega pronta para gerar resultados desde o primeiro dia.",
+      "Publicamos com checklist completo de qualidade, configuramos domínio e SSL, e entregamos orientações para você aproveitar ao máximo sua nova presença digital.",
     deliverables: [
       "Deploy em produção",
-      "Configuração de domínio e SSL",
+      "Domínio e SSL configurados",
       "Checklist final de qualidade",
-      "Orientação de uso e manutenção",
+      "Orientação de uso e próximos passos",
     ],
   },
 ];
 
 const navLinks = [
+  { href: "#beneficios", label: "Benefícios" },
   { href: "#servicos", label: "Serviços" },
   { href: "#processo", label: "Processo" },
   { href: "#projetos", label: "Projetos" },
@@ -186,6 +227,15 @@ const agency = {
     whatsapp: "#",
   },
 };
+
+const businessTypes = [
+  "Clínica / Consultório",
+  "Loja / Comércio local",
+  "Restaurante / Alimentação",
+  "Consultoria / Serviços",
+  "Profissional autônomo",
+  "Outro",
+];
 
 /* ── Primitives ───────────────────────────────────────────────────── */
 function GlassSheen() {
@@ -214,13 +264,55 @@ function GlassCard({
   );
 }
 
+function SectionLabel({ children }: { children: ReactNode }) {
+  return (
+    <p className="mb-3 text-xs font-semibold tracking-[0.18em] text-[#0070F3] uppercase sm:mb-4 sm:text-sm sm:tracking-[0.15em]">
+      {children}
+    </p>
+  );
+}
+
+function SectionHeader({
+  label,
+  title,
+  titleMuted,
+  description,
+  className = "",
+}: {
+  label: string;
+  title: string;
+  titleMuted?: string;
+  description?: string;
+  className?: string;
+}) {
+  return (
+    <div className={`max-w-2xl ${className}`}>
+      <SectionLabel>{label}</SectionLabel>
+      <h2 className="text-3xl font-semibold tracking-tight md:text-4xl lg:text-[2.75rem] lg:leading-[1.1]">
+        {title}
+        {titleMuted && (
+          <>
+            <br />
+            <span className="text-[#A1A1AA]">{titleMuted}</span>
+          </>
+        )}
+      </h2>
+      {description && (
+        <p className="mt-5 text-base leading-relaxed text-[#A1A1AA] md:mt-6 md:text-lg md:leading-relaxed">
+          {description}
+        </p>
+      )}
+    </div>
+  );
+}
+
 function DetailList({ title, items }: { title: string; items: string[] }) {
   return (
     <div>
       <h4 className="mb-3 text-xs font-semibold tracking-[0.12em] text-[#0070F3] uppercase">
         {title}
       </h4>
-      <ul className="space-y-2">
+      <ul className="space-y-2.5">
         {items.map((item) => (
           <li
             key={item}
@@ -364,11 +456,179 @@ function GlassButton({
   );
 }
 
-function SectionLabel({ children }: { children: ReactNode }) {
+function GlassSubmitButton({
+  children,
+  loading = false,
+  className = "",
+}: {
+  children: ReactNode;
+  loading?: boolean;
+  className?: string;
+}) {
   return (
-    <p className="mb-4 text-sm font-medium tracking-[0.15em] text-[#0070F3] uppercase">
+    <button
+      type="submit"
+      disabled={loading}
+      className={`group/btn relative inline-flex h-14 w-full items-center justify-center overflow-hidden rounded-full border border-[#0070F3]/35 bg-gradient-to-b from-[#0070F3]/40 via-[#0070F3]/22 to-[#0070F3]/8 px-8 text-sm font-semibold text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.12),0_1px_2px_rgba(0,0,0,0.2)] backdrop-blur-lg ${TRANSITION} hover:-translate-y-0.5 hover:border-[#0070F3]/50 hover:shadow-[0_4px_24px_rgba(0,112,243,0.18)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#0070F3] active:scale-[0.985] disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto ${className}`}
+    >
+      <span
+        aria-hidden
+        className="pointer-events-none absolute inset-x-0 top-0 h-[45%] rounded-t-full bg-gradient-to-b from-white/15 to-transparent"
+      />
+      <span className="relative">{loading ? "Enviando..." : children}</span>
+    </button>
+  );
+}
+
+function FormField({
+  label,
+  children,
+}: {
+  label: string;
+  children: ReactNode;
+}) {
+  return (
+    <label className="block">
+      <span className="mb-2 block text-sm font-medium text-[#A1A1AA]">
+        {label}
+      </span>
       {children}
-    </p>
+    </label>
+  );
+}
+
+const inputClass =
+  "w-full rounded-xl border border-[#262626] bg-[#101010]/60 px-4 py-3 text-sm text-white placeholder:text-[#404040] backdrop-blur-sm transition-colors focus:border-[#0070F3]/40 focus:outline-none focus:ring-1 focus:ring-[#0070F3]/30";
+
+function ContactForm() {
+  const [form, setForm] = useState<ContactFormData>(initialContactForm);
+  const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+
+  const update = (field: keyof ContactFormData, value: string) => {
+    setForm((prev) => ({ ...prev, [field]: value }));
+  };
+
+  const handleSubmit = (e: FormEvent) => {
+    e.preventDefault();
+    setLoading(true);
+    setTimeout(() => {
+      setLoading(false);
+      setSubmitted(true);
+    }, 1200);
+  };
+
+  if (submitted) {
+    return (
+      <div className="rounded-2xl border border-[#0070F3]/25 bg-[#101010]/50 p-8 text-center backdrop-blur-md sm:p-10">
+        <div className="mx-auto mb-5 flex h-14 w-14 items-center justify-center rounded-full border border-[#0070F3]/30 bg-[#0070F3]/10">
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            aria-hidden
+          >
+            <path
+              d="M5 13l4 4L19 7"
+              stroke="#0070F3"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
+        </div>
+        <h3 className="text-xl font-semibold tracking-tight">
+          Mensagem recebida!
+        </h3>
+        <p className="mt-3 text-sm leading-relaxed text-[#A1A1AA]">
+          Obrigado pelo contato. Analisaremos seu projeto e retornaremos em até
+          24 horas com um orçamento personalizado.
+        </p>
+        <button
+          type="button"
+          onClick={() => {
+            setSubmitted(false);
+            setForm(initialContactForm);
+          }}
+          className={`mt-6 text-sm text-[#0070F3] ${TRANSITION} hover:text-[#0070F3] ${FOCUS}`}
+        >
+          Enviar outra mensagem
+        </button>
+      </div>
+    );
+  }
+
+  return (
+    <form onSubmit={handleSubmit} className="space-y-5">
+      <div className="grid gap-5 sm:grid-cols-2">
+        <FormField label="Seu nome">
+          <input
+            type="text"
+            required
+            placeholder="Como podemos te chamar?"
+            value={form.nome}
+            onChange={(e) => update("nome", e.target.value)}
+            className={inputClass}
+          />
+        </FormField>
+        <FormField label="E-mail">
+          <input
+            type="email"
+            required
+            placeholder="seu@email.com"
+            value={form.email}
+            onChange={(e) => update("email", e.target.value)}
+            className={inputClass}
+          />
+        </FormField>
+      </div>
+      <div className="grid gap-5 sm:grid-cols-2">
+        <FormField label="WhatsApp">
+          <input
+            type="tel"
+            required
+            placeholder="(00) 00000-0000"
+            value={form.whatsapp}
+            onChange={(e) => update("whatsapp", e.target.value)}
+            className={inputClass}
+          />
+        </FormField>
+        <FormField label="Tipo de negócio">
+          <select
+            required
+            value={form.negocio}
+            onChange={(e) => update("negocio", e.target.value)}
+            className={`${inputClass} cursor-pointer`}
+          >
+            <option value="" disabled className="bg-[#101010]">
+              Selecione...
+            </option>
+            {businessTypes.map((type) => (
+              <option key={type} value={type} className="bg-[#101010]">
+                {type}
+              </option>
+            ))}
+          </select>
+        </FormField>
+      </div>
+      <FormField label="Conte sobre seu projeto">
+        <textarea
+          required
+          rows={4}
+          placeholder="O que você precisa? Qual o objetivo do site?"
+          value={form.mensagem}
+          onChange={(e) => update("mensagem", e.target.value)}
+          className={`${inputClass} resize-none`}
+        />
+      </FormField>
+      <GlassSubmitButton loading={loading}>
+        Quero meu orçamento gratuito
+      </GlassSubmitButton>
+      <p className="text-center text-xs text-[#404040]">
+        Sem compromisso · Resposta em até 24 horas
+      </p>
+    </form>
   );
 }
 
@@ -385,24 +645,45 @@ function HeroBackground() {
   );
 }
 
+function TrustLine() {
+  return (
+    <ul className="mt-8 flex flex-col items-center gap-3 sm:mt-10 sm:flex-row sm:flex-wrap sm:justify-center sm:gap-x-6 sm:gap-y-2">
+      {trustPoints.map((point) => (
+        <li
+          key={point}
+          className="flex items-center gap-2 text-xs text-[#A1A1AA] sm:text-sm"
+        >
+          <span
+            aria-hidden
+            className="flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-[#0070F3]/15 text-[10px] text-[#0070F3]"
+          >
+            ✓
+          </span>
+          {point}
+        </li>
+      ))}
+    </ul>
+  );
+}
+
 function FloatingNavbar() {
   return (
-    <header className="fixed inset-x-0 top-0 z-50 px-5 pt-5 md:px-6 md:pt-6 lg:px-8">
+    <header className="fixed inset-x-0 top-0 z-50 px-4 pt-4 sm:px-5 sm:pt-5 md:px-6 md:pt-6 lg:px-8">
       <nav
-        className={`group/nav relative mx-auto flex h-14 max-w-5xl items-center justify-between overflow-hidden rounded-2xl border border-white/[0.06] bg-[#101010]/50 px-4 shadow-[0_4px_24px_rgba(0,0,0,0.4),0_0_1px_rgba(255,255,255,0.05)_inset] backdrop-blur-2xl ${TRANSITION} hover:border-white/[0.09] hover:shadow-[0_8px_40px_rgba(0,0,0,0.45),0_0_48px_rgba(0,112,243,0.04)] md:h-16 md:rounded-3xl md:px-6 lg:max-w-6xl`}
+        className={`group/nav relative mx-auto flex h-14 max-w-5xl items-center justify-between overflow-hidden rounded-2xl border border-white/[0.06] bg-[#101010]/50 px-3 shadow-[0_4px_24px_rgba(0,0,0,0.4),0_0_1px_rgba(255,255,255,0.05)_inset] backdrop-blur-2xl ${TRANSITION} hover:border-white/[0.09] hover:shadow-[0_8px_40px_rgba(0,0,0,0.45),0_0_48px_rgba(0,112,243,0.04)] sm:px-4 md:h-16 md:rounded-3xl md:px-6 lg:max-w-6xl`}
         aria-label="Principal"
       >
         <GlassSheen />
-        <div className="relative flex w-full items-center justify-between">
+        <div className="relative flex w-full items-center justify-between gap-3">
           <a
             href="#"
-            className={`${TRANSITION} hover:scale-[1.04] active:scale-[0.98] ${FOCUS}`}
+            className={`shrink-0 ${TRANSITION} hover:scale-[1.04] active:scale-[0.98] ${FOCUS}`}
             aria-label="Dechen Web Studio — início"
           >
             <DwsLogo />
           </a>
 
-          <ul className="hidden items-center gap-8 md:flex">
+          <ul className="hidden items-center gap-6 lg:flex xl:gap-8">
             {navLinks.map((link) => (
               <li key={link.href}>
                 <NavLink href={link.href}>{link.label}</NavLink>
@@ -413,15 +694,15 @@ function FloatingNavbar() {
           <GlassButton
             href="#contato"
             variant="primary"
-            className="hidden h-11 px-6 text-xs sm:inline-flex md:h-12 md:px-7 md:text-sm"
+            className="hidden h-11 px-5 text-xs md:inline-flex md:h-12 md:px-7 md:text-sm"
           >
-            Solicitar orçamento
+            Orçamento gratuito
           </GlassButton>
 
           <GlassButton
             href="#contato"
             variant="primary"
-            className="inline-flex h-10 shrink-0 px-4 text-xs sm:hidden"
+            className="inline-flex h-10 shrink-0 px-3.5 text-xs md:hidden"
           >
             Orçamento
           </GlassButton>
@@ -452,58 +733,74 @@ export default function Home() {
 
       <main>
         {/* Hero */}
-        <section className="relative flex min-h-[94vh] flex-col items-center justify-center overflow-hidden px-5 pt-32 pb-36 md:px-6 md:pt-36 md:pb-44 lg:px-8 lg:pt-40 lg:pb-52">
+        <section className="relative flex min-h-[92vh] flex-col items-center justify-center overflow-hidden px-5 pt-28 pb-24 sm:px-6 sm:pt-32 sm:pb-28 md:pt-36 md:pb-36 lg:px-8 lg:pt-40 lg:pb-44">
           <HeroBackground />
 
-          <div className="relative mx-auto w-full max-w-3xl text-center">
-            <SectionLabel>Dechen Web Studio</SectionLabel>
-            <h1 className="text-balance text-4xl leading-[1.1] font-semibold tracking-[-0.02em] md:text-5xl md:tracking-[-0.025em] lg:text-[64px] lg:leading-[1.04] lg:tracking-[-0.03em]">
-              Seu site deveria trazer clientes,{" "}
-              <span className="text-[#A1A1AA]">não apenas existir.</span>
+          <div className="relative mx-auto w-full max-w-4xl text-center">
+            <SectionLabel>Para negócios locais e empreendedores</SectionLabel>
+            <h1 className="text-balance text-[2rem] leading-[1.12] font-semibold tracking-[-0.02em] sm:text-4xl md:text-5xl md:tracking-[-0.025em] lg:text-[3.5rem] lg:leading-[1.06] lg:tracking-[-0.03em]">
+              Transforme visitantes em clientes com um site que transmite{" "}
+              <span className="text-[#0070F3]">autoridade e confiança</span>
             </h1>
-            <p className="mx-auto mt-8 max-w-2xl text-pretty text-lg leading-[1.7] text-[#A1A1AA] md:mt-10 md:text-xl md:leading-[1.65]">
-              Criamos sites rápidos, modernos e estratégicos para empresas que
-              querem transmitir confiança, autoridade e crescer na internet.
+            <p className="mx-auto mt-6 max-w-2xl text-pretty text-base leading-[1.7] text-[#A1A1AA] sm:mt-8 sm:text-lg md:mt-10 md:text-xl md:leading-[1.65]">
+              Desenvolvemos sites premium para clínicas, lojas, consultorias e
+              empresas locais que precisam vender mais pela internet — com
+              design profissional, carregamento rápido e estrutura pensada para
+              gerar contatos.
             </p>
-            <div className="mt-14 flex w-full flex-col items-stretch justify-center gap-4 sm:mt-16 sm:flex-row sm:items-center">
-              <GlassButton href="#contato" variant="primary" className="w-full sm:w-auto">
-                Solicitar orçamento
+            <div className="mt-10 flex w-full flex-col items-stretch justify-center gap-3 sm:mt-12 sm:flex-row sm:items-center sm:gap-4">
+              <GlassButton
+                href="#contato"
+                variant="primary"
+                className="w-full sm:w-auto"
+              >
+                Quero meu orçamento gratuito
               </GlassButton>
-              <GlassButton href="#projetos" variant="secondary" className="w-full sm:w-auto">
-                Ver projetos
+              <GlassButton
+                href="#projetos"
+                variant="secondary"
+                className="w-full sm:w-auto"
+              >
+                Ver projetos demonstrativos
               </GlassButton>
             </div>
+            <TrustLine />
           </div>
         </section>
 
-        {/* Indicadores */}
-        <section aria-label="Indicadores" className="px-5 pb-24 md:px-6 lg:px-8">
-          <div className="mx-auto grid max-w-7xl grid-cols-2 gap-4 lg:grid-cols-4">
-            {indicators.map((item) => (
-              <GlassCard key={item.label} className="p-6 text-center">
-                <p className="text-2xl font-semibold tracking-tight text-[#0070F3]">
+        {/* Benefícios */}
+        <section
+          id="beneficios"
+          aria-label="Benefícios"
+          className="px-5 pb-16 sm:px-6 sm:pb-20 md:px-8 lg:pb-24"
+        >
+          <div className="mx-auto grid max-w-7xl grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-4">
+            {benefits.map((item) => (
+              <GlassCard key={item.label} className="p-5 sm:p-6">
+                <p className="text-xl font-semibold tracking-tight text-[#0070F3] sm:text-2xl">
                   {item.value}
                 </p>
-                <p className="mt-1 text-sm text-[#A1A1AA]">{item.label}</p>
+                <p className="mt-1 text-sm font-medium text-white">
+                  {item.label}
+                </p>
+                <p className="mt-1.5 text-xs leading-relaxed text-[#A1A1AA] sm:text-sm">
+                  {item.detail}
+                </p>
               </GlassCard>
             ))}
           </div>
         </section>
 
         {/* Serviços */}
-        <section
-          id="servicos"
-          className="border-t border-[#262626]/80 px-5 py-24 md:px-6 lg:px-8 lg:py-32"
-        >
+        <section id="servicos" className={SECTION}>
           <div className="mx-auto max-w-7xl">
-            <div className="mb-16 max-w-2xl">
-              <SectionLabel>Serviços</SectionLabel>
-              <h2 className="text-3xl font-semibold tracking-tight md:text-4xl lg:text-5xl">
-                Soluções para cada
-                <br />
-                <span className="text-[#A1A1AA]">etapa do seu crescimento.</span>
-              </h2>
-            </div>
+            <SectionHeader
+              className="mb-12 md:mb-16"
+              label="Serviços"
+              title="Tudo que seu negócio precisa"
+              titleMuted="para crescer online."
+              description="Cada solução é pensada para transmitir confiança, facilitar o contato do cliente e fortalecer sua presença digital — do primeiro clique à conversão."
+            />
             <div className="grid gap-4 sm:grid-cols-2">
               {services.map((service) => {
                 const open = isExpanded("services", service.id);
@@ -513,29 +810,32 @@ export default function Home() {
                     isExpanded={open}
                     onClick={() => toggleItem("services", service.id)}
                     ariaLabel={`${open ? "Fechar" : "Abrir"} detalhes: ${service.title}`}
-                    className="p-8"
+                    className="p-6 sm:p-8"
                     expandedContent={
                       <>
                         <p className="mb-6 text-sm leading-relaxed text-[#A1A1AA] md:text-base">
                           {service.details}
                         </p>
                         <div className="grid gap-6 sm:grid-cols-2">
-                          <DetailList title="Benefícios" items={service.benefits} />
                           <DetailList
-                            title="Para quem é indicado"
+                            title="O que você ganha"
+                            items={service.benefits}
+                          />
+                          <DetailList
+                            title="Ideal para"
                             items={service.audience}
                           />
                         </div>
                       </>
                     }
                   >
-                    <div className="mb-4 flex items-center justify-between">
-                      <h3 className="text-xl font-semibold tracking-tight md:text-2xl">
+                    <div className="mb-3 flex items-start justify-between gap-4 sm:mb-4">
+                      <h3 className="text-lg font-semibold tracking-tight sm:text-xl md:text-2xl">
                         {service.title}
                       </h3>
                       <span
                         aria-hidden
-                        className={`text-[#404040] ${TRANSITION} ${open ? "rotate-90 text-[#0070F3]" : "group-hover/card:translate-x-1 group-hover/card:text-[#0070F3]"}`}
+                        className={`mt-1 shrink-0 text-[#404040] ${TRANSITION} ${open ? "rotate-90 text-[#0070F3]" : "group-hover/card:translate-x-1 group-hover/card:text-[#0070F3]"}`}
                       >
                         →
                       </span>
@@ -546,7 +846,7 @@ export default function Home() {
                     <p
                       className={`mt-4 text-xs ${TRANSITION} ${open ? "text-[#0070F3]" : "text-[#404040] group-hover/card:text-[#0070F3]/70"}`}
                     >
-                      {open ? "Clique para fechar" : "Clique para saber mais"}
+                      {open ? "Clique para fechar" : "Ver detalhes do serviço"}
                     </p>
                   </InteractiveCard>
                 );
@@ -556,19 +856,15 @@ export default function Home() {
         </section>
 
         {/* Processo */}
-        <section
-          id="processo"
-          className="border-t border-[#262626]/80 px-5 py-24 md:px-6 lg:px-8 lg:py-32"
-        >
+        <section id="processo" className={SECTION}>
           <div className="mx-auto max-w-7xl">
-            <div className="mb-16 max-w-2xl">
-              <SectionLabel>Processo</SectionLabel>
-              <h2 className="text-3xl font-semibold tracking-tight md:text-4xl lg:text-5xl">
-                Simples, transparente
-                <br />
-                <span className="text-[#A1A1AA]">e sem surpresas.</span>
-              </h2>
-            </div>
+            <SectionHeader
+              className="mb-12 md:mb-16"
+              label="Processo"
+              title="Do primeiro contato"
+              titleMuted="ao site no ar."
+              description="Um processo claro e transparente — sem surpresas, sem jargão técnico. Você acompanha cada etapa e aprova antes de avançar."
+            />
             <ol className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
               {processSteps.map((step) => {
                 const open = isExpanded("process", step.id);
@@ -578,23 +874,23 @@ export default function Home() {
                       isExpanded={open}
                       onClick={() => toggleItem("process", step.id)}
                       ariaLabel={`${open ? "Fechar" : "Abrir"} etapa: ${step.title}`}
-                      className="flex h-full flex-col p-8"
+                      className="flex h-full flex-col p-6 sm:p-8"
                       expandedContent={
                         <>
                           <p className="mb-6 text-sm leading-relaxed text-[#A1A1AA]">
                             {step.details}
                           </p>
                           <DetailList
-                            title="Entregáveis da etapa"
+                            title="Entregáveis"
                             items={step.deliverables}
                           />
                         </>
                       }
                     >
-                      <span className="mb-6 text-sm font-medium tracking-widest text-[#0070F3]">
+                      <span className="mb-4 text-sm font-medium tracking-widest text-[#0070F3] sm:mb-6">
                         {step.step}
                       </span>
-                      <h3 className="mb-2 text-lg font-semibold tracking-tight md:text-xl">
+                      <h3 className="mb-2 text-base font-semibold tracking-tight sm:text-lg md:text-xl">
                         {step.title}
                       </h3>
                       <p className="text-sm leading-relaxed text-[#A1A1AA]">
@@ -605,7 +901,7 @@ export default function Home() {
                       >
                         {open
                           ? "Clique para fechar"
-                          : "Clique para ver entregáveis"}
+                          : "Ver entregáveis da etapa"}
                       </p>
                     </InteractiveCard>
                   </li>
@@ -616,20 +912,16 @@ export default function Home() {
         </section>
 
         {/* Portfólio */}
-        <section
-          id="projetos"
-          className="border-t border-[#262626]/80 px-5 py-24 md:px-6 lg:px-8 lg:py-32"
-        >
+        <section id="projetos" className={SECTION}>
           <div className="mx-auto max-w-7xl">
-            <div className="mb-16 max-w-2xl">
-              <SectionLabel>Portfólio</SectionLabel>
-              <h2 className="text-3xl font-semibold tracking-tight md:text-4xl lg:text-5xl">
-                Projetos demonstrativos
-                <br />
-                <span className="text-[#A1A1AA]">que mostram nosso padrão.</span>
-              </h2>
-            </div>
-            <div className="grid gap-6 sm:grid-cols-2">
+            <SectionHeader
+              className="mb-12 md:mb-16"
+              label="Portfólio"
+              title="Veja o padrão"
+              titleMuted="que entregamos."
+              description="Projetos demonstrativos que mostram nossa capacidade de criar experiências premium para diferentes segmentos — do restaurante à clínica."
+            />
+            <div className="grid gap-5 sm:grid-cols-2 sm:gap-6">
               {portfolioDemos.map((demo) => (
                 <Link
                   key={demo.slug}
@@ -638,22 +930,22 @@ export default function Home() {
                 >
                   <GlassSheen />
                   <div
-                    className={`relative flex h-44 items-start justify-between bg-gradient-to-br p-6 ${demo.gradient}`}
+                    className={`relative flex h-40 items-start justify-between bg-gradient-to-br p-5 sm:h-44 sm:p-6 ${demo.gradient}`}
                   >
                     <span className="rounded-full border border-white/10 bg-[#101010]/70 px-3 py-1 text-[10px] font-medium tracking-widest text-[#A1A1AA] uppercase backdrop-blur-sm">
-                      Projeto demonstrativo
+                      Demonstração
                     </span>
                     <span className="rounded-full border border-[#262626] bg-[#101010]/70 px-3 py-1 text-xs text-[#A1A1AA] backdrop-blur-sm">
                       {demo.category}
                     </span>
                   </div>
-                  <div className="relative p-8">
+                  <div className="relative p-6 sm:p-8">
                     <h3
-                      className={`mb-2 text-xl font-semibold tracking-tight md:text-2xl ${TRANSITION} group-hover/card:text-[#0070F3]`}
+                      className={`mb-2 text-lg font-semibold tracking-tight sm:text-xl md:text-2xl ${TRANSITION} group-hover/card:text-[#0070F3]`}
                     >
                       {demo.title}
                     </h3>
-                    <p className="mb-6 text-sm leading-relaxed text-[#A1A1AA] md:text-base">
+                    <p className="mb-5 text-sm leading-relaxed text-[#A1A1AA] sm:mb-6 md:text-base">
                       {demo.description}
                     </p>
                     <span
@@ -669,41 +961,60 @@ export default function Home() {
           </div>
         </section>
 
-        {/* CTA final */}
-        <section
-          id="contato"
-          className="border-t border-[#262626]/80 px-5 py-24 md:px-6 lg:px-8 lg:py-32"
-        >
-          <div className="mx-auto max-w-3xl text-center">
-            <GlassCard className="px-8 py-16 sm:px-16">
-              <div
-                aria-hidden
-                className="pointer-events-none absolute inset-0 bg-gradient-to-b from-[#0070F3]/[0.05] to-transparent"
-              />
-              <div className="relative">
-                <SectionLabel>Vamos conversar</SectionLabel>
-                <h2 className="text-3xl font-semibold tracking-tight md:text-4xl">
-                  Pronto para ter um site
-                  <br />
-                  <span className="text-[#A1A1AA]">que gera clientes?</span>
-                </h2>
-                <p className="mx-auto mt-4 max-w-md text-sm leading-relaxed text-[#A1A1AA] md:text-base">
-                  Conte sobre seu projeto e receba um orçamento personalizado em
-                  até 24 horas.
-                </p>
-                <div className="mt-10 flex flex-col items-center gap-4">
-                  <GlassButton href="#contato" variant="primary">
-                    Solicitar orçamento
-                  </GlassButton>
-                  <a
-                    href={`mailto:${agency.email}`}
-                    className={`text-sm text-[#A1A1AA] ${TRANSITION} hover:text-[#0070F3] ${FOCUS}`}
-                  >
-                    {agency.email}
-                  </a>
+        {/* Contato */}
+        <section id="contato" className={SECTION}>
+          <div className="mx-auto max-w-6xl">
+            <div className="grid gap-10 lg:grid-cols-2 lg:gap-16 lg:items-start">
+              <div>
+                <SectionHeader
+                  label="Contato"
+                  title="Pronto para ter um site"
+                  titleMuted="que gera clientes?"
+                  description="Conte sobre seu negócio e receba um orçamento personalizado em até 24 horas — sem compromisso, sem pressão."
+                />
+                <ul className="mt-8 space-y-4">
+                  {[
+                    "Atendimento direto, sem intermediários",
+                    "Proposta clara com prazo e investimento",
+                    "Projeto pensado para o seu mercado local",
+                  ].map((item) => (
+                    <li
+                      key={item}
+                      className="flex gap-3 text-sm leading-relaxed text-[#A1A1AA] sm:text-base"
+                    >
+                      <span
+                        aria-hidden
+                        className="mt-2 h-1 w-1 shrink-0 rounded-full bg-[#0070F3]"
+                      />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+                <a
+                  href={`mailto:${agency.email}`}
+                  className={`mt-8 inline-block text-sm text-[#A1A1AA] ${TRANSITION} hover:text-[#0070F3] ${FOCUS}`}
+                >
+                  Ou envie um e-mail:{" "}
+                  <span className="text-[#0070F3]">{agency.email}</span>
+                </a>
+              </div>
+
+              <div className="relative rounded-3xl border border-[#262626] bg-[#101010]/40 p-6 backdrop-blur-md sm:p-8">
+                <div
+                  aria-hidden
+                  className="pointer-events-none absolute inset-0 rounded-3xl bg-gradient-to-b from-[#0070F3]/[0.05] to-transparent"
+                />
+                <div className="relative">
+                  <h3 className="mb-1 text-lg font-semibold tracking-tight">
+                    Solicite seu orçamento
+                  </h3>
+                  <p className="mb-6 text-sm text-[#A1A1AA]">
+                    Preencha o formulário e retornaremos em breve.
+                  </p>
+                  <ContactForm />
                 </div>
               </div>
-            </GlassCard>
+            </div>
           </div>
         </section>
       </main>
@@ -727,14 +1038,16 @@ export default function Home() {
                   </a>
                 </div>
               </div>
-              <p className="text-xs text-[#9C958D]">
+              <p className="text-center text-xs text-[#404040] sm:text-left">
+                Sites premium para negócios que querem crescer online.
+                <br />
                 &copy; {new Date().getFullYear()} {agency.name}. Todos os
                 direitos reservados.
               </p>
             </div>
 
             <nav aria-label="Rodapé">
-              <ul className="flex flex-wrap items-center justify-center gap-6 text-sm">
+              <ul className="flex flex-wrap items-center justify-center gap-5 text-sm sm:gap-6">
                 {navLinks.map((link) => (
                   <li key={link.href}>
                     <NavLink href={link.href}>{link.label}</NavLink>
