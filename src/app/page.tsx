@@ -16,6 +16,8 @@ const SECTION =
 /* ── Types ──────────────────────────────────────────────────────────── */
 type SectionKey = "services" | "process";
 
+type PrimaryServiceId = "landing-pages" | "sites-institucionais";
+
 type ExpandedItem = {
   section: SectionKey;
   id: string;
@@ -145,6 +147,44 @@ const services = [
     ],
   },
 ];
+
+const primaryServiceIds: PrimaryServiceId[] = [
+  "landing-pages",
+  "sites-institucionais",
+];
+
+const serviceExamples: Record<
+  PrimaryServiceId,
+  {
+    title: string;
+    description: string;
+    sections: { label: string; hint: string }[];
+  }
+> = {
+  "landing-pages": {
+    title: "Exemplo de Landing Page",
+    description:
+      "Página focada em conversão para campanhas, lançamentos, captação de leads ou venda de um serviço específico.",
+    sections: [
+      { label: "Hero com promessa clara", hint: "Headline direta + botão de ação" },
+      { label: "Prova social", hint: "Depoimentos, logos e resultados" },
+      { label: "Benefícios", hint: "Por que escolher seu serviço" },
+      { label: "Chamada para ação", hint: "Formulário, WhatsApp ou agendamento" },
+    ],
+  },
+  "sites-institucionais": {
+    title: "Exemplo de Site Institucional",
+    description:
+      "Site completo para apresentar a empresa, transmitir autoridade e transformar visitantes em oportunidades de contato.",
+    sections: [
+      { label: "Página inicial", hint: "Primeira impressão e navegação clara" },
+      { label: "Sobre a empresa", hint: "História, missão e equipe" },
+      { label: "Serviços", hint: "O que você oferece ao mercado" },
+      { label: "Portfólio ou diferenciais", hint: "Cases, prêmios e provas" },
+      { label: "Contato", hint: "Formulário, mapa e canais diretos" },
+    ],
+  },
+};
 
 const processSteps = [
   {
@@ -379,6 +419,121 @@ function InteractiveCard({
         </ExpandableContent>
       </div>
     </button>
+  );
+}
+
+function ServiceExampleCard({
+  title,
+  description,
+  sections,
+}: {
+  title: string;
+  description: string;
+  sections: { label: string; hint: string }[];
+}) {
+  return (
+    <div
+      aria-label={title}
+      className={`relative flex h-full flex-col overflow-hidden rounded-3xl border border-[#0070F3]/20 bg-[#101010]/75 backdrop-blur-md ${TRANSITION}`}
+    >
+      <GlassSheen />
+      <div className="relative flex h-full flex-col p-6 sm:p-8">
+        <span className="mb-4 inline-flex w-fit rounded-full border border-[#0070F3]/25 bg-[#0070F3]/10 px-3 py-1 text-[10px] font-medium tracking-widest text-[#0070F3] uppercase">
+          Exemplo conceitual
+        </span>
+        <h3 className="text-lg font-semibold tracking-tight sm:text-xl">
+          {title}
+        </h3>
+        <p className="mt-2 text-sm leading-relaxed text-[#A1A1AA]">
+          {description}
+        </p>
+
+        <div className="mt-6 flex flex-1 flex-col rounded-2xl border border-[#262626] bg-[#050505]/80 p-4">
+          <div className="mb-4 flex items-center gap-1.5" aria-hidden>
+            <span className="h-2 w-2 rounded-full bg-[#262626]" />
+            <span className="h-2 w-2 rounded-full bg-[#262626]" />
+            <span className="h-2 w-2 rounded-full bg-[#262626]" />
+            <span className="ml-2 h-2 flex-1 rounded-full bg-[#262626]/60" />
+          </div>
+          <div className="space-y-2">
+            {sections.map((section, index) => (
+              <div
+                key={section.label}
+                className={`rounded-lg border p-3 ${TRANSITION} ${
+                  index === 0
+                    ? "border-[#0070F3]/25 bg-[#0070F3]/[0.06]"
+                    : "border-[#262626]/80 bg-[#101010]/60"
+                }`}
+              >
+                <p className="text-xs font-medium text-white">{section.label}</p>
+                <p className="mt-0.5 text-[10px] leading-relaxed text-[#404040]">
+                  {section.hint}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function PrimaryServiceSlot({
+  service,
+  activeService,
+  onToggle,
+}: {
+  service: (typeof services)[number];
+  activeService: PrimaryServiceId | null;
+  onToggle: (id: PrimaryServiceId) => void;
+}) {
+  const serviceId = service.id as PrimaryServiceId;
+  const isOpen = activeService === serviceId;
+  const showExample = activeService !== null && !isOpen;
+
+  if (showExample && activeService) {
+    const example = serviceExamples[activeService];
+    return <ServiceExampleCard {...example} />;
+  }
+
+  return (
+    <InteractiveCard
+      isExpanded={isOpen}
+      onClick={() => onToggle(serviceId)}
+      ariaLabel={`${isOpen ? "Fechar" : "Abrir"} detalhes: ${service.title}`}
+      className="h-full p-6 sm:p-8"
+      expandedContent={
+        <>
+          <p className="mb-6 text-sm leading-relaxed text-[#A1A1AA] md:text-base">
+            {service.details}
+          </p>
+          <div className="grid gap-6 sm:grid-cols-2">
+            <DetailList title="O que você ganha" items={service.benefits} />
+            <DetailList title="Ideal para" items={service.audience} />
+          </div>
+        </>
+      }
+    >
+      <div className="mb-3 flex items-start justify-between gap-4 sm:mb-4">
+        <h3 className="text-lg font-semibold tracking-tight sm:text-xl md:text-2xl">
+          {service.title}
+        </h3>
+        <span
+          aria-hidden
+          className={`mt-1 shrink-0 text-[#404040] ${TRANSITION} ${isOpen ? "rotate-90 text-[#0070F3]" : "group-hover/card:translate-x-1 group-hover/card:text-[#0070F3]"}`}
+        >
+          →
+        </span>
+      </div>
+      <p className="text-sm leading-relaxed text-[#A1A1AA] md:text-base">
+        {service.description}
+      </p>
+      <p
+        className={`mt-4 text-xs ${TRANSITION} ${isOpen ? "text-[#0070F3]" : "text-[#404040] group-hover/card:text-[#0070F3]/70"}`}
+      >
+        {isOpen ? "Clique para fechar" : "Ver detalhes do serviço"}
+      </p>
+    </InteractiveCard>
   );
 }
 
@@ -715,6 +870,9 @@ function FloatingNavbar() {
 /* ── Page ─────────────────────────────────────────────────────────── */
 export default function Home() {
   const [expanded, setExpanded] = useState<ExpandedItem>(null);
+  const [activeService, setActiveService] = useState<PrimaryServiceId | null>(
+    null,
+  );
 
   const toggleItem = (section: SectionKey, id: string) => {
     setExpanded((prev) =>
@@ -726,6 +884,17 @@ export default function Home() {
 
   const isExpanded = (section: SectionKey, id: string) =>
     expanded?.section === section && expanded?.id === id;
+
+  const togglePrimaryService = (id: PrimaryServiceId) => {
+    setActiveService((prev) => (prev === id ? null : id));
+  };
+
+  const primaryServices = services.filter((s) =>
+    primaryServiceIds.includes(s.id as PrimaryServiceId),
+  );
+  const secondaryServices = services.filter(
+    (s) => !primaryServiceIds.includes(s.id as PrimaryServiceId),
+  );
 
   return (
     <div className="min-h-full bg-[#050505] font-sans text-white selection:bg-[#0070F3]/30">
@@ -801,8 +970,19 @@ export default function Home() {
               titleMuted="para crescer online."
               description="Cada solução é pensada para transmitir confiança, facilitar o contato do cliente e fortalecer sua presença digital — do primeiro clique à conversão."
             />
-            <div className="grid gap-4 sm:grid-cols-2">
-              {services.map((service) => {
+            <div className="grid items-stretch gap-4 sm:grid-cols-2">
+              {primaryServices.map((service) => (
+                <PrimaryServiceSlot
+                  key={service.id}
+                  service={service}
+                  activeService={activeService}
+                  onToggle={togglePrimaryService}
+                />
+              ))}
+            </div>
+
+            <div className="mt-4 grid gap-4 sm:grid-cols-2">
+              {secondaryServices.map((service) => {
                 const open = isExpanded("services", service.id);
                 return (
                   <InteractiveCard
