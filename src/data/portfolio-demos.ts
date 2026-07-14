@@ -70,59 +70,38 @@ export const portfolioDemos: PortfolioDemo[] = [
   },
   {
     slug: "barbearia",
-    brand: "Barba Noble",
-    title: "Barbearia Premium",
+    brand: "Barbearia Royal",
+    title: "Barbearia Royal",
     category: "Beleza masculina",
     description:
-      "Presença digital que reflete o padrão da barbearia e gera mais agendamentos.",
-    gradient: "from-stone-400/20 via-stone-800/10 to-transparent",
-    accentText: "text-stone-300",
-    accentBorder: "border-stone-400/25",
-    accentGlow: "shadow-[0_0_40px_rgba(168,162,158,0.1)]",
+      "Showcase completo de barbearia premium: estética masculina sofisticada, serviços com preços e CTA de agendamento.",
+    href: "/showcase/barbearia-royal",
+    gradient: "from-amber-600/20 via-stone-900/30 to-transparent",
+    accentText: "text-amber-400",
+    accentBorder: "border-amber-500/25",
+    accentGlow: "shadow-[0_0_40px_rgba(196,163,90,0.12)]",
     hero: {
-      eyebrow: "Estilo & precisão",
-      headline: "O corte que define sua presença.",
+      eyebrow: "Barbearia de alto padrão",
+      headline: "Cortes precisos. Experiência de respeito.",
       subheadline:
-        "Na Barba Noble, cada detalhe importa. Ambiente premium, barbeiros experientes e um atendimento que respeita seu tempo.",
+        "Uma barbearia premium para homens que valorizam presença, estilo e atendimento de alto nível.",
       cta: "Agendar horário",
     },
     valueProposition: {
-      title: "Barbearia para quem valoriza o essencial.",
+      title: "O padrão que define a experiência.",
       description:
-        "Unimos técnica clássica e tendências atuais para entregar cortes impecáveis, barba bem cuidada e uma experiência relaxante do início ao fim.",
+        "Showcase oficial da Dechen Web Studio para o segmento de barbearia premium.",
     },
-    services: [
-      {
-        title: "Corte premium",
-        description:
-          "Corte personalizado com finalização e consultoria de estilo.",
-      },
-      {
-        title: "Barba & navalha",
-        description:
-          "Design de barba, toalha quente e acabamento com produtos de alta qualidade.",
-      },
-      {
-        title: "Tratamentos",
-        description:
-          "Hidratação capilar, esfoliação e cuidados complementares.",
-      },
-      {
-        title: "Clube de assinatura",
-        description:
-          "Planos mensais com benefícios exclusivos e prioridade no agendamento.",
-      },
-    ],
+    services: [],
     cta: {
-      title: "Seu próximo corte começa aqui.",
-      description:
-        "Agende online em menos de um minuto. Horários disponíveis em tempo real.",
-      button: "Agendar agora",
+      title: "Conheça o showcase",
+      description: "Experiência completa desenvolvida para Barbearia Royal.",
+      button: "Ver demonstração",
     },
     meta: {
-      title: "Barba Noble | Barbearia Premium — Demonstração DWS",
+      title: "Barbearia Royal — Showcase DWS",
       description:
-        "Projeto demonstrativo de site para barbearia premium. Desenvolvido pela Dechen Web Studio.",
+        "Showcase completo de barbearia premium. Desenvolvido pela Dechen Web Studio.",
     },
   },
   {

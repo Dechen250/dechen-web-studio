@@ -1,11 +1,69 @@
 "use client";
 
-import Image from "next/image";
 import { useCallback, useEffect, useState } from "react";
-import { menuCategories } from "@/data/divina-cozinha";
+import {
+  hasValidMenuImage,
+  menuCategories,
+  type MenuItem,
+} from "@/data/divina-cozinha";
 import { SectionHeading } from "./ui";
 
 const INTERVAL_MS = 10000;
+
+function MenuDishCard({
+  item,
+  categoryLabel,
+}: {
+  item: MenuItem;
+  categoryLabel: string;
+}) {
+  const showImage = hasValidMenuImage(item);
+
+  return (
+    <article className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-[#E8E0D4] bg-[#FFFDF8] transition-shadow duration-500 hover:shadow-[0_8px_30px_rgba(61,56,50,0.08)]">
+      <span
+        aria-hidden
+        className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#C9A962]/50 to-transparent"
+      />
+
+      {showImage && item.image && (
+        <div className="relative aspect-[16/10] overflow-hidden border-b border-[#E8E0D4]">
+          <img
+            src={item.image}
+            alt={item.imageAlt ?? item.name}
+            loading="lazy"
+            decoding="async"
+            className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.02]"
+          />
+        </div>
+      )}
+
+      <div className="flex flex-1 flex-col p-6">
+        <span className="mb-4 text-[10px] font-medium tracking-[0.22em] text-[#8B9A7D] uppercase">
+          {categoryLabel}
+        </span>
+
+        <div className="mb-4 flex items-start justify-between gap-4 border-b border-[#E8E0D4]/80 pb-4">
+          <h4 className="font-display text-lg font-medium leading-snug text-[#3D3832] md:text-xl">
+            {item.name}
+          </h4>
+          <span className="shrink-0 pt-0.5 font-sans text-sm font-medium tracking-wide text-[#C9A962]">
+            {item.price}
+          </span>
+        </div>
+
+        <p className="flex-1 font-sans text-sm leading-relaxed text-[#6B6560]">
+          {item.description}
+        </p>
+
+        <span
+          aria-hidden
+          className="mt-5 block h-px w-8 bg-[#C9A962]/35 transition-all duration-500 group-hover:w-14"
+        />
+      </div>
+    </article>
+  );
+}
 
 export function MenuBook() {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -87,35 +145,13 @@ export function MenuBook() {
               </p>
             </div>
 
-            <div className="grid gap-6 md:grid-cols-3">
+            <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3 lg:gap-6">
               {category.items.map((item) => (
-                <article
+                <MenuDishCard
                   key={item.name}
-                  className="group overflow-hidden rounded-2xl border border-[#E8E0D4] bg-[#FFFDF8] transition-shadow duration-500 hover:shadow-[0_8px_30px_rgba(61,56,50,0.08)]"
-                >
-                  <div className="relative aspect-[4/3] overflow-hidden">
-                    <Image
-                      src={item.image}
-                      alt={item.imageAlt}
-                      fill
-                      className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-                      sizes="(max-width: 768px) 100vw, 33vw"
-                    />
-                  </div>
-                  <div className="p-5">
-                    <div className="flex items-start justify-between gap-3">
-                      <h4 className="font-display text-lg font-medium text-[#3D3832]">
-                        {item.name}
-                      </h4>
-                      <span className="shrink-0 font-sans text-sm font-medium text-[#C9A962]">
-                        {item.price}
-                      </span>
-                    </div>
-                    <p className="mt-2 font-sans text-sm leading-relaxed text-[#6B6560]">
-                      {item.description}
-                    </p>
-                  </div>
-                </article>
+                  item={item}
+                  categoryLabel={category.title}
+                />
               ))}
             </div>
           </div>
