@@ -259,8 +259,8 @@ const navLinks = [
 
 const agency = {
   name: "Dechen Web Studio",
-  domain: "dechenwebstudio.com",
-  email: "hello@dechenwebstudio.com",
+  domain: "dechenwebstudio.com.br",
+  email: "contato@dechenwebstudio.com.br",
   social: {
     instagram: "#",
     github: "#",
