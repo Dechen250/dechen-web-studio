@@ -5,6 +5,7 @@ export type PortfolioDemo = {
   category: string;
   description: string;
   href?: string;
+  cover?: string;
   gradient: string;
   accentText: string;
   accentBorder: string;
@@ -40,6 +41,7 @@ export const portfolioDemos: PortfolioDemo[] = [
     description:
       "Showcase completo com cardápio animado, reservas e experiência premium para restaurante contemporâneo.",
     href: "/showcase/divina-cozinha",
+    cover: "/showcase/divina-cozinha/capa/capa.png",
     gradient: "from-amber-500/25 via-amber-900/10 to-transparent",
     accentText: "text-amber-400",
     accentBorder: "border-amber-500/30",
@@ -76,6 +78,7 @@ export const portfolioDemos: PortfolioDemo[] = [
     description:
       "Showcase completo de barbearia premium: estética masculina sofisticada, serviços com preços e CTA de agendamento.",
     href: "/showcase/barbearia-royal",
+    cover: "/showcase/barbearia-royal/capa/capa.png",
     gradient: "from-amber-600/20 via-stone-900/30 to-transparent",
     accentText: "text-amber-400",
     accentBorder: "border-amber-500/25",

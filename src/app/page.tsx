@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useState, type FormEvent, type ReactNode } from "react";
 import { portfolioDemos } from "@/data/portfolio-demos";
@@ -1110,12 +1111,22 @@ export default function Home() {
                 >
                   <GlassSheen />
                   <div
-                    className={`relative flex h-40 items-start justify-between bg-gradient-to-br p-5 sm:h-44 sm:p-6 ${demo.gradient}`}
+                    className={`relative flex h-40 items-start justify-between overflow-hidden bg-gradient-to-br p-5 sm:h-52 sm:p-6 ${demo.gradient}`}
                   >
-                    <span className="rounded-full border border-white/10 bg-[#101010]/70 px-3 py-1 text-[10px] font-medium tracking-widest text-[#A1A1AA] uppercase backdrop-blur-sm">
+                    {demo.cover ? (
+                      <Image
+                        src={demo.cover}
+                        alt={`Capa do showcase ${demo.title}`}
+                        fill
+                        sizes="(max-width: 640px) 100vw, 50vw"
+                        className={`object-cover object-top ${TRANSITION} group-hover/card:scale-[1.03]`}
+                      />
+                    ) : null}
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#101010]/55 via-transparent to-[#101010]/25" />
+                    <span className="relative z-10 rounded-full border border-white/10 bg-[#101010]/70 px-3 py-1 text-[10px] font-medium tracking-widest text-[#A1A1AA] uppercase backdrop-blur-sm">
                       Demonstração
                     </span>
-                    <span className="rounded-full border border-[#262626] bg-[#101010]/70 px-3 py-1 text-xs text-[#A1A1AA] backdrop-blur-sm">
+                    <span className="relative z-10 rounded-full border border-[#262626] bg-[#101010]/70 px-3 py-1 text-xs text-[#A1A1AA] backdrop-blur-sm">
                       {demo.category}
                     </span>
                   </div>
