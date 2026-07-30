@@ -5,7 +5,7 @@ const base =
 
 const variants = {
   primary:
-    "bg-[#2A7A6E] px-8 py-3.5 text-white shadow-[0_2px_16px_rgba(42,122,110,0.25)] hover:bg-[#24685E] hover:shadow-[0_4px_24px_rgba(42,122,110,0.3)] active:scale-[0.98]",
+    "bg-[#2A7A6E] px-8 py-3.5 text-white shadow-[0_2px_16px_rgba(42,122,110,0.25)] hover:bg-[#24685E] hover:shadow-[0_4px_28px_rgba(42,122,110,0.32)] active:scale-[0.98]",
   secondary:
     "border border-[#D5E4E0] bg-white px-8 py-3.5 text-[#1A2E2B] hover:border-[#2A7A6E]/40 hover:bg-[#E8F3F0]",
   ghost: "px-4 py-2 text-[#5A6F6A] hover:text-[#2A7A6E]",
@@ -18,6 +18,7 @@ type ButtonProps = {
   href?: string;
   type?: "button" | "submit";
   onClick?: () => void;
+  disabled?: boolean;
 };
 
 export function Button({
@@ -27,8 +28,11 @@ export function Button({
   href,
   type = "button",
   onClick,
+  disabled = false,
 }: ButtonProps) {
-  const classes = `${base} ${variants[variant]} ${className}`;
+  const classes = `${base} ${variants[variant]} ${className} ${
+    disabled ? "cursor-not-allowed opacity-60" : ""
+  }`;
 
   if (href) {
     return (
@@ -39,7 +43,7 @@ export function Button({
   }
 
   return (
-    <button type={type} onClick={onClick} className={classes}>
+    <button type={type} onClick={onClick} className={classes} disabled={disabled}>
       {children}
     </button>
   );
@@ -59,7 +63,7 @@ export function SectionHeading({
   const alignClass = align === "center" ? "text-center mx-auto" : "text-left";
 
   return (
-    <div className={`mb-12 max-w-2xl ${alignClass}`}>
+    <div className={`mb-14 max-w-2xl ${alignClass}`}>
       {label && (
         <p className="mb-3 font-sans text-xs font-medium tracking-[0.22em] text-[#2A7A6E] uppercase">
           {label}
@@ -80,13 +84,75 @@ export function SectionHeading({
 export function FadeIn({
   children,
   className = "",
+  delayMs = 0,
 }: {
   children: ReactNode;
   className?: string;
+  delayMs?: number;
 }) {
   return (
-    <div className={`animate-[fadeInUp_0.8s_ease-out_both] ${className}`}>
+    <div
+      className={`animate-[fadeInUp_0.8s_ease-out_both] ${className}`}
+      style={delayMs ? { animationDelay: `${delayMs}ms` } : undefined}
+    >
       {children}
     </div>
   );
+}
+
+export function SpecialtyIcon({ name }: { name: string }) {
+  const common = {
+    width: 22,
+    height: 22,
+    viewBox: "0 0 24 24",
+    fill: "none",
+    stroke: "#2A7A6E",
+    strokeWidth: 1.5,
+    strokeLinecap: "round" as const,
+    strokeLinejoin: "round" as const,
+    "aria-hidden": true,
+  };
+
+  switch (name) {
+    case "pulse":
+      return (
+        <svg {...common}>
+          <path d="M3 12h3l2-5 3 10 2-5h6" />
+        </svg>
+      );
+    case "leaf":
+      return (
+        <svg {...common}>
+          <path d="M5 19c8 0 12-6 14-14-8 2-14 6-14 14Z" />
+          <path d="M5 19c2-4 6-7 11-9" />
+        </svg>
+      );
+    case "bone":
+      return (
+        <svg {...common}>
+          <path d="M7 8a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5Zm10 13a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z" />
+          <path d="M8.5 7.5 15.5 16.5" />
+        </svg>
+      );
+    case "bowl":
+      return (
+        <svg {...common}>
+          <path d="M4 11h16a6 6 0 0 1-6 6H10a6 6 0 0 1-6-6Z" />
+          <path d="M8 7c1.5 1 3 1.5 4 1.5S14.5 8 16 7" />
+        </svg>
+      );
+    case "screen":
+      return (
+        <svg {...common}>
+          <rect x="3" y="5" width="18" height="12" rx="2" />
+          <path d="M8 21h8M12 17v4" />
+        </svg>
+      );
+    default:
+      return (
+        <svg {...common}>
+          <path d="M12 20s-7-4.5-7-10a4 4 0 0 1 7-2.5A4 4 0 0 1 19 10c0 5.5-7 10-7 10Z" />
+        </svg>
+      );
+  }
 }

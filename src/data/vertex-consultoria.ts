@@ -19,6 +19,7 @@ export const navLinks = [
   { href: "#metodo", label: "Método" },
   { href: "#servicos", label: "Serviços" },
   { href: "#resultados", label: "Resultados" },
+  { href: "#depoimentos", label: "Prova" },
   { href: "#sobre", label: "Sobre" },
   { href: "#contato", label: "Contato" },
 ] as const;
@@ -29,24 +30,32 @@ export const methodSteps = [
     title: "Diagnóstico",
     description:
       "Mapeamos operação, números e gargalos com clareza — sem slides vazios.",
+    detail:
+      "Entrevistas com liderança, leitura de indicadores e priorização do que move caixa.",
   },
   {
     step: "02",
     title: "Arquitetura",
     description:
       "Definimos prioridade, metas e o sistema de execução para os próximos ciclos.",
+    detail:
+      "Roadmap de 90 dias, rituais de gestão e donos claros por frente.",
   },
   {
     step: "03",
     title: "Execução",
     description:
       "Acompanhamos a implementação com rituais, indicadores e ajustes semanais.",
+    detail:
+      "Cadência semanal, bloqueio de desvios e foco no que gera resultado cedo.",
   },
   {
     step: "04",
     title: "Escala",
     description:
       "Consolidamos o que funciona e preparamos a operação para crescer com controle.",
+    detail:
+      "Padronização, handoff interno e indicadores de saúde da operação.",
   },
 ];
 
@@ -91,24 +100,57 @@ export const results = [
   },
 ];
 
+export const testimonials = [
+  {
+    quote: "Pela primeira vez o time decide com o mesmo mapa.",
+    name: "Fernanda Alves",
+    detail: "CEO · Operação B2B",
+  },
+  {
+    quote: "Saiu de slide e virou ritual. Margem acompanhou.",
+    name: "Diego Prado",
+    detail: "CFO · Indústria",
+  },
+  {
+    quote: "Diagnóstico duro, execução clara. Sem teatro.",
+    name: "Marina Costa",
+    detail: "COO · Serviços",
+  },
+];
+
 export const aboutPoints = [
-  "Atuação lado a lado com liderança — não relatório e sumiço.",
-  "Prioridade no que move caixa, operação e crescimento.",
-  "Linguagem clara para quem decide, não jargão para impressionar.",
+  {
+    title: "Lado a lado",
+    text: "Atuação com liderança — não relatório e sumiço.",
+  },
+  {
+    title: "Prioridade real",
+    text: "Foco no que move caixa, operação e crescimento.",
+  },
+  {
+    title: "Linguagem clara",
+    text: "Para quem decide — não jargão para impressionar.",
+  },
 ];
 
 export const resultImages = [
   {
     src: "/showcase/vertex-consultoria/resultados/escritorio.jpg",
     alt: "Escritório Vertex Consultoria",
+    title: "Espaço de trabalho",
+    subtitle: "Ambiente para decisão",
   },
   {
     src: "/showcase/vertex-consultoria/resultados/reuniao.jpg",
     alt: "Reunião estratégica com equipe",
+    title: "Rituais de gestão",
+    subtitle: "Cadência semanal",
   },
   {
     src: "/showcase/vertex-consultoria/resultados/analise.jpg",
     alt: "Análise de indicadores de crescimento",
+    title: "Indicadores",
+    subtitle: "Leitura que orienta",
   },
 ];
 

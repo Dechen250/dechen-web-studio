@@ -4,7 +4,10 @@ import { FadeIn, SectionHeading } from "./ui";
 
 export function Team() {
   return (
-    <section id="equipe" className="bg-[#E8F3F0]/55 px-5 py-20 md:px-8 md:py-28">
+    <section
+      id="equipe"
+      className="border-t border-[#D5E4E0]/70 bg-[#E8F3F0]/55 px-5 py-24 md:px-8 md:py-32"
+    >
       <div className="mx-auto max-w-6xl">
         <FadeIn>
           <SectionHeading
@@ -14,20 +17,24 @@ export function Team() {
           />
         </FadeIn>
 
-        <div className="grid gap-10 md:grid-cols-3">
-          {team.map((member) => (
-            <FadeIn key={member.name}>
-              <article>
-                <div className="relative mb-5 aspect-[4/5] overflow-hidden rounded-2xl bg-[#D5E4E0]">
+        <div className="grid gap-8 md:grid-cols-3 md:gap-7">
+          {team.map((member, index) => (
+            <FadeIn key={member.name} delayMs={index * 90}>
+              <article className="group">
+                <div className="relative mb-5 aspect-[4/5] overflow-hidden rounded-2xl border border-[#D5E4E0] bg-[#D5E4E0] shadow-[0_4px_24px_rgba(26,46,43,0.06)]">
                   <Image
                     src={member.image}
                     alt={member.name}
                     fill
-                    className="object-cover"
+                    className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"
                     sizes="(max-width: 768px) 100vw, 33vw"
                   />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#1A2E2B]/55 via-transparent to-transparent opacity-80" />
+                  <p className="absolute bottom-4 left-4 right-4 font-sans text-xs font-medium tracking-[0.18em] text-white/90 uppercase">
+                    {member.focus}
+                  </p>
                 </div>
-                <h3 className="font-display text-xl font-medium text-[#1A2E2B]">
+                <h3 className="font-display text-xl font-medium text-[#1A2E2B] md:text-2xl">
                   {member.name}
                 </h3>
                 <p className="mt-1 font-sans text-sm font-medium text-[#2A7A6E]">

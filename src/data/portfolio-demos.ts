@@ -113,7 +113,7 @@ export const portfolioDemos: PortfolioDemo[] = [
     title: "Instituto Harmonia",
     category: "Saúde",
     description:
-      "Showcase completo de clínica multidisciplinar: cuidado humanizado, equipe e agendamento via WhatsApp.",
+      "Showcase completo de clínica multidisciplinar: especialidades, equipe, depoimentos e agendamento via WhatsApp.",
     href: "/showcase/instituto-harmonia",
     cover: "/showcase/instituto-harmonia/capa/capa.jpg",
     gradient: "from-teal-500/20 via-emerald-900/10 to-transparent",
@@ -150,7 +150,7 @@ export const portfolioDemos: PortfolioDemo[] = [
     title: "Vertex Consultoria",
     category: "Corporativo",
     description:
-      "Showcase completo institucional: método, serviços, resultados e conversão para leads qualificados.",
+      "Showcase institucional completo: método, serviços, resultados, prova social e conversão via WhatsApp.",
     href: "/showcase/vertex-consultoria",
     cover: "/showcase/vertex-consultoria/capa/capa.jpg",
     gradient: "from-cyan-500/20 via-slate-900/40 to-transparent",

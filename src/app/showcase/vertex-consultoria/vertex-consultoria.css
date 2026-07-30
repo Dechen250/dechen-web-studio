@@ -21,6 +21,16 @@
   }
 }
 
+@keyframes subtleShine {
+  0%,
+  100% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.55;
+  }
+}
+
 .showcase-vertex {
   --vx-bg: #0b1118;
   --vx-surface: #121a24;
@@ -45,15 +55,51 @@
 
 .showcase-vertex .hero-grid {
   background-image:
-    linear-gradient(rgba(34, 211, 238, 0.06) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(34, 211, 238, 0.06) 1px, transparent 1px);
+    linear-gradient(rgba(34, 211, 238, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(34, 211, 238, 0.07) 1px, transparent 1px);
   background-size: 64px 64px;
-  mask-image: radial-gradient(ellipse 70% 60% at 70% 40%, black 20%, transparent 75%);
+  mask-image: radial-gradient(
+    ellipse 70% 60% at 70% 40%,
+    black 20%,
+    transparent 75%
+  );
   animation: gridPulse 8s ease-in-out infinite;
 }
 
 .showcase-vertex .hero-glow {
   background:
-    radial-gradient(ellipse 50% 40% at 75% 35%, rgba(34, 211, 238, 0.12), transparent 70%),
-    radial-gradient(ellipse 40% 50% at 15% 80%, rgba(34, 211, 238, 0.05), transparent 65%);
+    radial-gradient(
+      ellipse 50% 40% at 75% 35%,
+      rgba(34, 211, 238, 0.14),
+      transparent 70%
+    ),
+    radial-gradient(
+      ellipse 40% 50% at 15% 80%,
+      rgba(34, 211, 238, 0.06),
+      transparent 65%
+    );
+}
+
+.showcase-vertex .section-grid-fade {
+  background-image:
+    linear-gradient(rgba(34, 211, 238, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(34, 211, 238, 0.035) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: linear-gradient(to bottom, black 30%, transparent 100%);
+}
+
+.showcase-vertex .gallery-sheen {
+  animation: subtleShine 8s ease-in-out infinite;
+}
+
+.showcase-vertex .stat-glow {
+  text-shadow: 0 0 40px rgba(34, 211, 238, 0.25);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .showcase-vertex * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }

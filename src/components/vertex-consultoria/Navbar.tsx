@@ -18,7 +18,7 @@ export function Navbar() {
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-400 ease-out ${
         scrolled
-          ? "border-b border-[rgba(34,211,238,0.12)] bg-[#0B1118]/92 backdrop-blur-md"
+          ? "border-b border-[rgba(34,211,238,0.12)] bg-[#0B1118]/94 shadow-[0_2px_28px_rgba(0,0,0,0.4)] backdrop-blur-md"
           : "bg-transparent"
       }`}
     >
@@ -34,7 +34,7 @@ export function Navbar() {
           <span className="text-[#22D3EE]">.</span>
         </a>
 
-        <ul className="hidden items-center gap-8 lg:flex">
+        <ul className="hidden items-center gap-7 xl:flex">
           {navLinks.map((link) => (
             <li key={link.href}>
               <a
@@ -65,7 +65,7 @@ export function Navbar() {
       </nav>
 
       {menuOpen && (
-        <div className="border-t border-[rgba(34,211,238,0.12)] bg-[#0B1118]/95 px-5 py-6 backdrop-blur-md md:hidden">
+        <div className="border-t border-[rgba(34,211,238,0.12)] bg-[#0B1118]/96 px-5 py-6 backdrop-blur-md md:hidden">
           <ul className="flex flex-col gap-4">
             {navLinks.map((link) => (
               <li key={link.href}>

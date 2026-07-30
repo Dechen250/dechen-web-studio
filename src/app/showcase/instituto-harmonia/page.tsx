@@ -6,6 +6,7 @@ import { Location } from "@/components/instituto-harmonia/Location";
 import { Navbar } from "@/components/instituto-harmonia/Navbar";
 import { Specialties } from "@/components/instituto-harmonia/Specialties";
 import { Team } from "@/components/instituto-harmonia/Team";
+import { Testimonials } from "@/components/instituto-harmonia/Testimonials";
 
 export default function InstitutoHarmoniaPage() {
   return (
@@ -15,6 +16,7 @@ export default function InstitutoHarmoniaPage() {
         <Hero />
         <Specialties />
         <Team />
+        <Testimonials />
         <HowItWorks />
         <Appointment />
         <Location />

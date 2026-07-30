@@ -18,7 +18,7 @@ export function Navbar() {
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ease-out ${
         scrolled
-          ? "border-b border-[#D5E4E0]/80 bg-[#F4F8F7]/90 shadow-[0_2px_20px_rgba(26,46,43,0.06)] backdrop-blur-md"
+          ? "border-b border-[#D5E4E0]/80 bg-[#F4F8F7]/92 shadow-[0_2px_24px_rgba(26,46,43,0.08)] backdrop-blur-md"
           : "bg-transparent"
       }`}
     >
@@ -30,11 +30,10 @@ export function Navbar() {
           href="#"
           className="font-display text-xl font-medium tracking-tight text-[#1A2E2B] md:text-2xl"
         >
-          Instituto{" "}
-          <span className="text-[#2A7A6E]">Harmonia</span>
+          Instituto <span className="text-[#2A7A6E]">Harmonia</span>
         </a>
 
-        <ul className="hidden items-center gap-7 lg:flex">
+        <ul className="hidden items-center gap-6 xl:flex xl:gap-7">
           {navLinks.map((link) => (
             <li key={link.href}>
               <a
@@ -65,7 +64,7 @@ export function Navbar() {
       </nav>
 
       {menuOpen && (
-        <div className="border-t border-[#D5E4E0] bg-[#F4F8F7]/95 px-5 py-6 backdrop-blur-md md:hidden">
+        <div className="border-t border-[#D5E4E0] bg-[#F4F8F7]/96 px-5 py-6 backdrop-blur-md md:hidden">
           <ul className="flex flex-col gap-4">
             {navLinks.map((link) => (
               <li key={link.href}>

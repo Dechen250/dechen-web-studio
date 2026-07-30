@@ -3,7 +3,10 @@ import { FadeIn, SectionHeading } from "./ui";
 
 export function HowItWorks() {
   return (
-    <section id="como-funciona" className="px-5 py-20 md:px-8 md:py-28">
+    <section
+      id="como-funciona"
+      className="section-mist relative border-t border-[#D5E4E0]/70 px-5 py-24 md:px-8 md:py-32"
+    >
       <div className="mx-auto max-w-6xl">
         <FadeIn>
           <SectionHeading
@@ -14,23 +17,28 @@ export function HowItWorks() {
           />
         </FadeIn>
 
-        <ol className="grid gap-10 md:grid-cols-3 md:gap-8">
-          {steps.map((item) => (
-            <FadeIn key={item.step}>
-              <li className="text-center md:text-left">
-                <span className="font-display text-4xl font-medium text-[#2A7A6E]/35">
+        <div className="relative grid gap-8 md:grid-cols-3 md:gap-6">
+          <div
+            className="pointer-events-none absolute top-8 right-0 left-0 hidden h-px bg-gradient-to-r from-transparent via-[#2A7A6E]/30 to-transparent md:block"
+            aria-hidden
+          />
+
+          {steps.map((item, index) => (
+            <FadeIn key={item.step} delayMs={index * 100}>
+              <article className="card-surface relative rounded-2xl p-7 text-center md:p-8 md:text-left">
+                <span className="mb-5 inline-flex h-11 w-11 items-center justify-center rounded-full border border-[#2A7A6E]/30 bg-[#E8F3F0] font-sans text-xs font-semibold tracking-wider text-[#2A7A6E]">
                   {item.step}
                 </span>
-                <h3 className="mt-3 font-display text-xl font-medium text-[#1A2E2B] md:text-2xl">
+                <h3 className="font-display text-xl font-medium text-[#1A2E2B] md:text-2xl">
                   {item.title}
                 </h3>
                 <p className="mt-3 font-sans text-sm leading-relaxed text-[#5A6F6A] md:text-base">
                   {item.description}
                 </p>
-              </li>
+              </article>
             </FadeIn>
           ))}
-        </ol>
+        </div>
       </div>
     </section>
   );
