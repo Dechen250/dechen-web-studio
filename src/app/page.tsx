@@ -3,7 +3,13 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState, type FormEvent, type ReactNode } from "react";
+import { WhatsAppFloat } from "@/components/WhatsAppFloat";
 import { portfolioDemos } from "@/data/portfolio-demos";
+import {
+  WHATSAPP_DISPLAY,
+  buildQuoteMessage,
+  whatsappUrl,
+} from "@/lib/site";
 
 /* ── Tokens (Design System) ───────────────────────────────────────── */
 const EASE = "ease-out";
@@ -265,7 +271,7 @@ const agency = {
   social: {
     instagram: "#",
     github: "#",
-    whatsapp: "#",
+    whatsapp: whatsappUrl(),
   },
 };
 
@@ -658,8 +664,6 @@ const inputClass =
 
 function ContactForm() {
   const [form, setForm] = useState<ContactFormData>(initialContactForm);
-  const [submitted, setSubmitted] = useState(false);
-  const [loading, setLoading] = useState(false);
 
   const update = (field: keyof ContactFormData, value: string) => {
     setForm((prev) => ({ ...prev, [field]: value }));
@@ -667,53 +671,15 @@ function ContactForm() {
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
-    setLoading(true);
-    setTimeout(() => {
-      setLoading(false);
-      setSubmitted(true);
-    }, 1200);
+    const text = buildQuoteMessage({
+      name: form.nome,
+      email: form.email,
+      whatsapp: form.whatsapp,
+      business: form.negocio,
+      message: form.mensagem,
+    });
+    window.open(whatsappUrl(text), "_blank", "noopener,noreferrer");
   };
-
-  if (submitted) {
-    return (
-      <div className="rounded-2xl border border-[#0070F3]/25 bg-[#101010]/50 p-8 text-center backdrop-blur-md sm:p-10">
-        <div className="mx-auto mb-5 flex h-14 w-14 items-center justify-center rounded-full border border-[#0070F3]/30 bg-[#0070F3]/10">
-          <svg
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            aria-hidden
-          >
-            <path
-              d="M5 13l4 4L19 7"
-              stroke="#0070F3"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
-        </div>
-        <h3 className="text-xl font-semibold tracking-tight">
-          Mensagem recebida!
-        </h3>
-        <p className="mt-3 text-sm leading-relaxed text-[#A1A1AA]">
-          Obrigado pelo contato. Analisaremos seu projeto e retornaremos em até
-          24 horas com um orçamento personalizado.
-        </p>
-        <button
-          type="button"
-          onClick={() => {
-            setSubmitted(false);
-            setForm(initialContactForm);
-          }}
-          className={`mt-6 text-sm text-[#0070F3] ${TRANSITION} hover:text-[#0070F3] ${FOCUS}`}
-        >
-          Enviar outra mensagem
-        </button>
-      </div>
-    );
-  }
 
   return (
     <form onSubmit={handleSubmit} className="space-y-5">
@@ -778,11 +744,9 @@ function ContactForm() {
           className={`${inputClass} resize-none`}
         />
       </FormField>
-      <GlassSubmitButton loading={loading}>
-        Quero meu orçamento gratuito
-      </GlassSubmitButton>
+      <GlassSubmitButton>Enviar no WhatsApp</GlassSubmitButton>
       <p className="text-center text-xs text-[#404040]">
-        Sem compromisso · Resposta em até 24 horas
+        Abre o WhatsApp com sua mensagem pronta · Sem compromisso
       </p>
     </form>
   );
@@ -1161,7 +1125,7 @@ export default function Home() {
                   label="Contato"
                   title="Pronto para ter um site"
                   titleMuted="que gera clientes?"
-                  description="Conte sobre seu negócio e receba um orçamento personalizado em até 24 horas — sem compromisso, sem pressão."
+                  description="Preencha o formulário ou chame direto no WhatsApp. Resposta rápida, sem compromisso."
                 />
                 <ul className="mt-8 space-y-4">
                   {[
@@ -1182,8 +1146,24 @@ export default function Home() {
                   ))}
                 </ul>
                 <a
+                  href={whatsappUrl()}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`mt-8 inline-flex items-center gap-2.5 rounded-full bg-[#25D366] px-5 py-3 text-sm font-semibold text-white ${TRANSITION} hover:brightness-110 ${FOCUS}`}
+                >
+                  <svg
+                    className="h-5 w-5"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    aria-hidden
+                  >
+                    <path d="M20.52 3.48A11.86 11.86 0 0 0 12.06 0C5.5 0 .16 5.34.16 11.9c0 2.1.55 4.15 1.6 5.96L0 24l6.3-1.65a11.86 11.86 0 0 0 5.75 1.47h.01c6.56 0 11.9-5.34 11.9-11.9 0-3.18-1.24-6.17-3.44-8.44Zm-8.46 18.3h-.01a9.86 9.86 0 0 1-5.02-1.37l-.36-.21-3.74.98 1-3.64-.24-.37a9.86 9.86 0 0 1-1.51-5.27c0-5.45 4.43-9.88 9.9-9.88a9.83 9.83 0 0 1 9.88 9.89c0 5.45-4.43 9.87-9.9 9.87Zm5.42-7.4c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.47-1.75-1.64-2.04-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.05 1.02-1.05 2.49s1.07 2.89 1.22 3.09c.15.2 2.11 3.22 5.11 4.51.71.31 1.27.49 1.7.63.72.23 1.37.2 1.89.12.58-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.41-.07-.12-.27-.2-.57-.35Z" />
+                  </svg>
+                  WhatsApp {WHATSAPP_DISPLAY}
+                </a>
+                <a
                   href={`mailto:${agency.email}`}
-                  className={`mt-8 inline-block text-sm text-[#A1A1AA] ${TRANSITION} hover:text-[#0070F3] ${FOCUS}`}
+                  className={`mt-5 inline-block text-sm text-[#A1A1AA] ${TRANSITION} hover:text-[#0070F3] ${FOCUS}`}
                 >
                   Ou envie um e-mail:{" "}
                   <span className="text-[#0070F3]">{agency.email}</span>
@@ -1200,7 +1180,7 @@ export default function Home() {
                     Solicite seu orçamento
                   </h3>
                   <p className="mb-6 text-sm text-[#A1A1AA]">
-                    Preencha o formulário e retornaremos em breve.
+                    Preencha o formulário e envie direto no WhatsApp.
                   </p>
                   <ContactForm />
                 </div>
@@ -1269,6 +1249,8 @@ export default function Home() {
               <li>
                 <a
                   href={agency.social.whatsapp}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className={`text-[#A1A1AA] ${TRANSITION} hover:text-white ${FOCUS}`}
                   aria-label="WhatsApp"
                 >
@@ -1279,6 +1261,8 @@ export default function Home() {
           </div>
         </div>
       </footer>
+
+      <WhatsAppFloat />
     </div>
   );
 }
