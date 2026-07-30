@@ -1,0 +1,59 @@
+@import "tailwindcss";
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes gridPulse {
+  0%,
+  100% {
+    opacity: 0.35;
+  }
+  50% {
+    opacity: 0.55;
+  }
+}
+
+.showcase-vertex {
+  --vx-bg: #0b1118;
+  --vx-surface: #121a24;
+  --vx-text: #e8eef4;
+  --vx-muted: #8b9aab;
+  --vx-cyan: #22d3ee;
+  --vx-cyan-soft: #67e8f9;
+  --vx-border: rgba(34, 211, 238, 0.16);
+
+  scroll-behavior: smooth;
+  background-color: var(--vx-bg);
+  color: var(--vx-text);
+}
+
+.showcase-vertex .font-display {
+  font-family: var(--font-syne), system-ui, sans-serif;
+}
+
+.showcase-vertex .font-sans {
+  font-family: var(--font-manrope), system-ui, sans-serif;
+}
+
+.showcase-vertex .hero-grid {
+  background-image:
+    linear-gradient(rgba(34, 211, 238, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(34, 211, 238, 0.06) 1px, transparent 1px);
+  background-size: 64px 64px;
+  mask-image: radial-gradient(ellipse 70% 60% at 70% 40%, black 20%, transparent 75%);
+  animation: gridPulse 8s ease-in-out infinite;
+}
+
+.showcase-vertex .hero-glow {
+  background:
+    radial-gradient(ellipse 50% 40% at 75% 35%, rgba(34, 211, 238, 0.12), transparent 70%),
+    radial-gradient(ellipse 40% 50% at 15% 80%, rgba(34, 211, 238, 0.05), transparent 65%);
+}

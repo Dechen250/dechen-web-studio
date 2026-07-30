@@ -1064,7 +1064,7 @@ export default function Home() {
               label="Portfólio"
               title="Veja o padrão"
               titleMuted="que entregamos."
-              description="Projetos demonstrativos que mostram nossa capacidade de criar experiências premium para diferentes segmentos — do restaurante à clínica."
+              description="Projetos demonstrativos que mostram nossa capacidade de criar experiências premium para diferentes segmentos — do restaurante à consultoria."
             />
             <div className="grid gap-5 sm:grid-cols-2 sm:gap-6">
               {portfolioDemos.map((demo) => (

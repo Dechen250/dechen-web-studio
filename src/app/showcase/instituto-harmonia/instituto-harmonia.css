@@ -1,0 +1,55 @@
+@import "tailwindcss";
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes softDrift {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(0, -8px, 0);
+  }
+}
+
+.showcase-harmonia {
+  --ih-bg: #f4f8f7;
+  --ih-surface: #ffffff;
+  --ih-text: #1a2e2b;
+  --ih-muted: #5a6f6a;
+  --ih-teal: #2a7a6e;
+  --ih-teal-soft: #3d9b8c;
+  --ih-border: #d5e4e0;
+  --ih-mist: #e8f3f0;
+
+  scroll-behavior: smooth;
+  background-color: var(--ih-bg);
+  color: var(--ih-text);
+}
+
+.showcase-harmonia .font-display {
+  font-family: var(--font-fraunces), Georgia, serif;
+}
+
+.showcase-harmonia .font-sans {
+  font-family: var(--font-outfit), system-ui, sans-serif;
+}
+
+.showcase-harmonia .hero-wash {
+  background: linear-gradient(
+    105deg,
+    rgba(244, 248, 247, 0.97) 0%,
+    rgba(244, 248, 247, 0.88) 38%,
+    rgba(244, 248, 247, 0.35) 62%,
+    rgba(244, 248, 247, 0.08) 100%
+  );
+}

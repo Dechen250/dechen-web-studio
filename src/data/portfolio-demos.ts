@@ -110,14 +110,16 @@ export const portfolioDemos: PortfolioDemo[] = [
   {
     slug: "clinica",
     brand: "Instituto Harmonia",
-    title: "Clínica Moderna",
+    title: "Instituto Harmonia",
     category: "Saúde",
     description:
-      "Site que transmite confiança e facilita o primeiro contato com pacientes.",
-    gradient: "from-[#0070F3]/20 via-cyan-900/10 to-transparent",
-    accentText: "text-[#0070F3]",
-    accentBorder: "border-[#0070F3]/30",
-    accentGlow: "shadow-[0_0_40px_rgba(0,112,243,0.12)]",
+      "Showcase completo de clínica multidisciplinar: cuidado humanizado, equipe e agendamento via WhatsApp.",
+    href: "/showcase/instituto-harmonia",
+    cover: "/showcase/instituto-harmonia/capa/capa.jpg",
+    gradient: "from-teal-500/20 via-emerald-900/10 to-transparent",
+    accentText: "text-teal-400",
+    accentBorder: "border-teal-500/30",
+    accentGlow: "shadow-[0_0_40px_rgba(42,122,110,0.14)]",
     hero: {
       eyebrow: "Cuidado humanizado",
       headline: "Saúde com atenção de verdade.",
@@ -128,53 +130,33 @@ export const portfolioDemos: PortfolioDemo[] = [
     valueProposition: {
       title: "Medicina moderna com foco em você.",
       description:
-        "Nossa equipe multidisciplinar oferece diagnóstico preciso, tratamentos atualizados e um ambiente acolhedor para que você se sinta seguro em cada etapa.",
+        "Showcase oficial da Dechen Web Studio para o segmento de saúde.",
     },
-    services: [
-      {
-        title: "Clínica geral",
-        description:
-          "Avaliação completa, prevenção e encaminhamento para especialistas.",
-      },
-      {
-        title: "Especialidades",
-        description:
-          "Cardiologia, dermatologia, ortopedia e mais em um só lugar.",
-      },
-      {
-        title: "Exames & check-up",
-        description:
-          "Pacotes de exames com agendamento integrado e resultados digitais.",
-      },
-      {
-        title: "Telemedicina",
-        description:
-          "Consultas online para acompanhamento e orientações à distância.",
-      },
-    ],
+    services: [],
     cta: {
-      title: "Cuide da sua saúde com quem entende.",
-      description:
-        "Agende sua consulta pelo site ou entre em contato com nossa equipe de atendimento.",
-      button: "Agendar consulta",
+      title: "Conheça o showcase",
+      description: "Experiência completa desenvolvida para Instituto Harmonia.",
+      button: "Ver demonstração",
     },
     meta: {
-      title: "Instituto Harmonia | Clínica Moderna — Demonstração DWS",
+      title: "Instituto Harmonia — Showcase DWS",
       description:
-        "Projeto demonstrativo de site para clínica moderna. Desenvolvido pela Dechen Web Studio.",
+        "Showcase completo de clínica multidisciplinar. Desenvolvido pela Dechen Web Studio.",
     },
   },
   {
     slug: "empresa",
     brand: "Vertex Consultoria",
-    title: "Empresa / Consultoria",
+    title: "Vertex Consultoria",
     category: "Corporativo",
     description:
-      "Presença institucional que transmite autoridade e gera leads qualificados.",
-    gradient: "from-[#0070F3]/25 via-indigo-900/10 to-transparent",
-    accentText: "text-[#0070F3]",
-    accentBorder: "border-[#0070F3]/30",
-    accentGlow: "shadow-[0_0_40px_rgba(0,112,243,0.15)]",
+      "Showcase completo institucional: método, serviços, resultados e conversão para leads qualificados.",
+    href: "/showcase/vertex-consultoria",
+    cover: "/showcase/vertex-consultoria/capa/capa.jpg",
+    gradient: "from-cyan-500/20 via-slate-900/40 to-transparent",
+    accentText: "text-cyan-400",
+    accentBorder: "border-cyan-500/30",
+    accentGlow: "shadow-[0_0_40px_rgba(34,211,238,0.12)]",
     hero: {
       eyebrow: "Estratégia & crescimento",
       headline: "Decisões melhores. Resultados reais.",
@@ -185,40 +167,18 @@ export const portfolioDemos: PortfolioDemo[] = [
     valueProposition: {
       title: "Consultoria que entende o seu negócio.",
       description:
-        "Atuamos lado a lado com líderes e equipes para identificar oportunidades, reduzir riscos e construir planos de crescimento sustentável.",
+        "Showcase oficial da Dechen Web Studio para o segmento corporativo.",
     },
-    services: [
-      {
-        title: "Planejamento estratégico",
-        description:
-          "Diagnóstico, metas claras e roadmap de execução para os próximos 12–36 meses.",
-      },
-      {
-        title: "Gestão financeira",
-        description:
-          "Estruturação de fluxo de caixa, precificação e indicadores de performance.",
-      },
-      {
-        title: "Operações & processos",
-        description:
-          "Mapeamento, otimização e automação para ganho de eficiência.",
-      },
-      {
-        title: "Mentoria executiva",
-        description:
-          "Acompanhamento próximo de founders e diretores em decisões críticas.",
-      },
-    ],
+    services: [],
     cta: {
-      title: "Pronto para acelerar seu crescimento?",
-      description:
-        "Agende uma conversa diagnóstica sem compromisso com nossa equipe.",
-      button: "Solicitar conversa",
+      title: "Conheça o showcase",
+      description: "Experiência completa desenvolvida para Vertex Consultoria.",
+      button: "Ver demonstração",
     },
     meta: {
-      title: "Vertex Consultoria | Empresa — Demonstração DWS",
+      title: "Vertex Consultoria — Showcase DWS",
       description:
-        "Projeto demonstrativo de site institucional para consultoria. Desenvolvido pela Dechen Web Studio.",
+        "Showcase completo de consultoria institucional. Desenvolvido pela Dechen Web Studio.",
     },
   },
 ];
