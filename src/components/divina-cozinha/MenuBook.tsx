@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useCallback, useEffect, useState } from "react";
 import {
   hasValidMenuImage,
@@ -28,12 +29,12 @@ function MenuDishCard({
 
       {showImage && item.image && (
         <div className="relative aspect-[16/10] overflow-hidden border-b border-[#E8E0D4]">
-          <img
+          <Image
             src={item.image}
             alt={item.imageAlt ?? item.name}
-            loading="lazy"
-            decoding="async"
-            className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.02]"
+            fill
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+            className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.02]"
           />
         </div>
       )}
