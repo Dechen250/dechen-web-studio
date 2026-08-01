@@ -2,7 +2,12 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useState, type FormEvent, type ReactNode } from "react";
+import {
+  useEffect,
+  useState,
+  type FormEvent,
+  type ReactNode,
+} from "react";
 import { Reveal } from "@/components/motion/Reveal";
 import { WhatsAppFloat } from "@/components/WhatsAppFloat";
 import { portfolioDemos } from "@/data/portfolio-demos";
@@ -75,6 +80,24 @@ const trustPoints = [
   "Resposta em até 24h",
   "Orçamento sem compromisso",
   "Projeto 100% sob medida",
+];
+
+const proofPoints = [
+  {
+    title: "Contato sem fricção",
+    detail:
+      "WhatsApp e formulários no lugar certo — o visitante age em um toque, no celular ou no desktop.",
+  },
+  {
+    title: "Autoridade visual",
+    detail:
+      "Design alinhado ao posicionamento do negócio, para transmitir confiança antes da primeira conversa.",
+  },
+  {
+    title: "Pronto para anunciar",
+    detail:
+      "Estrutura rápida e com SEO de base, preparada para campanhas no Google e no Instagram.",
+  },
 ];
 
 const services = [
@@ -346,7 +369,7 @@ function SectionHeader({
         )}
       </h2>
       {description && (
-        <p className="mt-5 text-base leading-relaxed text-[#A1A1AA] md:mt-6 md:text-lg md:leading-relaxed">
+        <p className="mt-5 text-base leading-relaxed text-[#B4B4BE] md:mt-6 md:text-lg md:leading-relaxed">
           {description}
         </p>
       )}
@@ -387,10 +410,14 @@ function ExpandableContent({
 }) {
   return (
     <div
-      className={`grid transition-all duration-300 ease-out ${isExpanded ? "mt-6 grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"}`}
+      className={`grid transition-[grid-template-rows,opacity,margin] duration-300 ease-out ${isExpanded ? "mt-6 grid-rows-[1fr] opacity-100" : "mt-0 grid-rows-[0fr] opacity-0"}`}
     >
       <div className="overflow-hidden">
-        <div className="border-t border-[#262626] pt-6">{children}</div>
+        <div
+          className={`border-t border-[#262626] pt-6 transition-transform duration-300 ease-out ${isExpanded ? "translate-y-0" : "-translate-y-1"}`}
+        >
+          {children}
+        </div>
       </div>
     </div>
   );
@@ -565,16 +592,29 @@ function DwsLogo({ size = "md" }: { size?: "sm" | "md" }) {
   );
 }
 
-function NavLink({ href, children }: { href: string; children: ReactNode }) {
+function NavLink({
+  href,
+  children,
+  active = false,
+}: {
+  href: string;
+  children: ReactNode;
+  active?: boolean;
+}) {
   return (
     <a
       href={href}
-      className={`group/link relative text-sm text-[#A1A1AA] ${TRANSITION} hover:text-white ${FOCUS}`}
+      aria-current={active ? "true" : undefined}
+      className={`group/link relative text-sm ${TRANSITION} ${FOCUS} ${
+        active ? "text-white" : "text-[#B4B4BE] hover:text-white"
+      }`}
     >
       {children}
       <span
         aria-hidden
-        className={`absolute -bottom-1 left-0 h-px w-0 bg-[#0070F3]/60 ${TRANSITION} group-hover/link:w-full`}
+        className={`absolute -bottom-1 left-0 h-px bg-[#0070F3]/70 ${TRANSITION} ${
+          active ? "w-full" : "w-0 group-hover/link:w-full"
+        }`}
       />
     </a>
   );
@@ -638,40 +678,50 @@ function GlassSubmitButton({
         aria-hidden
         className="pointer-events-none absolute inset-x-0 top-0 h-[45%] rounded-t-full bg-gradient-to-b from-white/15 to-transparent"
       />
-      <span className="relative">{loading ? "Enviando..." : children}</span>
+      <span className="relative">
+        {loading ? "Abrindo WhatsApp..." : children}
+      </span>
     </button>
   );
 }
 
 function FormField({
   label,
+  htmlFor,
   children,
 }: {
   label: string;
+  htmlFor: string;
   children: ReactNode;
 }) {
   return (
-    <label className="block">
-      <span className="mb-2 block text-sm font-medium text-[#A1A1AA]">
+    <div className="block">
+      <label
+        htmlFor={htmlFor}
+        className="mb-2 block text-sm font-medium text-[#C4C4CC]"
+      >
         {label}
-      </span>
+      </label>
       {children}
-    </label>
+    </div>
   );
 }
 
 const inputClass =
-  "w-full rounded-xl border border-[#262626] bg-[#101010]/60 px-4 py-3 text-sm text-white placeholder:text-[#404040] backdrop-blur-sm transition-colors focus:border-[#0070F3]/40 focus:outline-none focus:ring-1 focus:ring-[#0070F3]/30";
+  "w-full rounded-xl border border-[#262626] bg-[#101010]/60 px-4 py-3 text-sm text-white placeholder:text-[#6B6B76] backdrop-blur-sm transition-colors focus:border-[#0070F3]/50 focus:outline-none focus:ring-2 focus:ring-[#0070F3]/35";
 
 function ContactForm() {
   const [form, setForm] = useState<ContactFormData>(initialContactForm);
+  const [status, setStatus] = useState<"idle" | "loading" | "opened">("idle");
 
   const update = (field: keyof ContactFormData, value: string) => {
     setForm((prev) => ({ ...prev, [field]: value }));
+    if (status === "opened") setStatus("idle");
   };
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
+    setStatus("loading");
     const text = buildQuoteMessage({
       name: form.nome,
       email: form.email,
@@ -680,25 +730,32 @@ function ContactForm() {
       message: form.mensagem,
     });
     window.open(whatsappUrl(text), "_blank", "noopener,noreferrer");
+    window.setTimeout(() => setStatus("opened"), 350);
   };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-5">
+    <form onSubmit={handleSubmit} className="space-y-5" noValidate={false}>
       <div className="grid gap-5 sm:grid-cols-2">
-        <FormField label="Seu nome">
+        <FormField label="Seu nome" htmlFor="contact-nome">
           <input
+            id="contact-nome"
+            name="nome"
             type="text"
             required
+            autoComplete="name"
             placeholder="Como podemos te chamar?"
             value={form.nome}
             onChange={(e) => update("nome", e.target.value)}
             className={inputClass}
           />
         </FormField>
-        <FormField label="E-mail">
+        <FormField label="E-mail" htmlFor="contact-email">
           <input
+            id="contact-email"
+            name="email"
             type="email"
             required
+            autoComplete="email"
             placeholder="seu@email.com"
             value={form.email}
             onChange={(e) => update("email", e.target.value)}
@@ -707,18 +764,24 @@ function ContactForm() {
         </FormField>
       </div>
       <div className="grid gap-5 sm:grid-cols-2">
-        <FormField label="WhatsApp">
+        <FormField label="WhatsApp" htmlFor="contact-whatsapp">
           <input
+            id="contact-whatsapp"
+            name="whatsapp"
             type="tel"
             required
+            autoComplete="tel"
+            inputMode="tel"
             placeholder="(00) 00000-0000"
             value={form.whatsapp}
             onChange={(e) => update("whatsapp", e.target.value)}
             className={inputClass}
           />
         </FormField>
-        <FormField label="Tipo de negócio">
+        <FormField label="Tipo de negócio" htmlFor="contact-negocio">
           <select
+            id="contact-negocio"
+            name="negocio"
             required
             value={form.negocio}
             onChange={(e) => update("negocio", e.target.value)}
@@ -735,8 +798,10 @@ function ContactForm() {
           </select>
         </FormField>
       </div>
-      <FormField label="Conte sobre seu projeto">
+      <FormField label="Conte sobre seu projeto" htmlFor="contact-mensagem">
         <textarea
+          id="contact-mensagem"
+          name="mensagem"
           required
           rows={4}
           placeholder="O que você precisa? Qual o objetivo do site?"
@@ -745,9 +810,17 @@ function ContactForm() {
           className={`${inputClass} resize-none`}
         />
       </FormField>
-      <GlassSubmitButton>Enviar no WhatsApp</GlassSubmitButton>
-      <p className="text-center text-xs text-[#404040]">
-        Abre o WhatsApp com sua mensagem pronta · Sem compromisso
+      <GlassSubmitButton loading={status === "loading"}>
+        Enviar no WhatsApp
+      </GlassSubmitButton>
+      <p
+        className="text-center text-xs text-[#8A8A96]"
+        role="status"
+        aria-live="polite"
+      >
+        {status === "opened"
+          ? "WhatsApp aberto com sua mensagem pronta. Se a janela foi bloqueada, permita pop-ups e envie de novo."
+          : "Ao enviar, abrimos o WhatsApp com sua mensagem pronta — sem cadastro e sem compromisso."}
       </p>
     </form>
   );
@@ -772,7 +845,7 @@ function TrustLine() {
       {trustPoints.map((point) => (
         <li
           key={point}
-          className="flex items-center gap-2 text-xs text-[#A1A1AA] sm:text-sm"
+          className="flex items-center gap-2 text-xs text-[#B4B4BE] sm:text-sm"
         >
           <span
             aria-hidden
@@ -788,6 +861,47 @@ function TrustLine() {
 }
 
 function FloatingNavbar() {
+  const [activeHref, setActiveHref] = useState("");
+
+  useEffect(() => {
+    const sectionIds = navLinks.map((link) => link.href.slice(1));
+    const elements = sectionIds
+      .map((id) => document.getElementById(id))
+      .filter((el): el is HTMLElement => Boolean(el));
+
+    if (elements.length === 0) return;
+
+    const visibility = new Map<string, number>();
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          visibility.set(entry.target.id, entry.intersectionRatio);
+        }
+
+        let bestId = "";
+        let bestRatio = 0;
+        for (const [id, ratio] of visibility) {
+          if (ratio > bestRatio) {
+            bestRatio = ratio;
+            bestId = id;
+          }
+        }
+
+        if (bestId && bestRatio > 0.12) {
+          setActiveHref(`#${bestId}`);
+        }
+      },
+      {
+        rootMargin: "-28% 0px -48% 0px",
+        threshold: [0.12, 0.25, 0.4, 0.6],
+      },
+    );
+
+    for (const el of elements) observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <header className="fixed inset-x-0 top-0 z-50 px-4 pt-4 sm:px-5 sm:pt-5 md:px-6 md:pt-6 lg:px-8">
       <nav
@@ -807,7 +921,9 @@ function FloatingNavbar() {
           <ul className="hidden items-center gap-6 lg:flex xl:gap-8">
             {navLinks.map((link) => (
               <li key={link.href}>
-                <NavLink href={link.href}>{link.label}</NavLink>
+                <NavLink href={link.href} active={activeHref === link.href}>
+                  {link.label}
+                </NavLink>
               </li>
             ))}
           </ul>
@@ -1077,6 +1193,48 @@ export default function Home() {
           </div>
         </section>
 
+        {/* Prova / confiança */}
+        <section id="confianca" aria-label="Por que funciona" className={SECTION}>
+          <div className="mx-auto max-w-7xl">
+            <Reveal>
+              <SectionHeader
+                className="mb-12 md:mb-16"
+                label="Confiança"
+                title="Feito para gerar"
+                titleMuted="contato de verdade."
+                description="Cada site é pensado para o momento em que o cliente decide — com clareza, autoridade e um caminho óbvio para falar com você."
+              />
+            </Reveal>
+            <div className="grid gap-4 md:grid-cols-3">
+              {proofPoints.map((item, index) => (
+                <Reveal key={item.title} delayMs={index * 70} className="h-full">
+                  <div className="relative h-full overflow-hidden rounded-3xl border border-[#262626] bg-[#101010]/50 px-6 py-7 backdrop-blur-md sm:px-7 sm:py-8">
+                    <GlassSheen />
+                    <span
+                      aria-hidden
+                      className="mb-5 block font-mono text-xs tracking-[0.18em] text-[#0070F3]"
+                    >
+                      {String(index + 1).padStart(2, "0")}
+                    </span>
+                    <h3 className="text-lg font-semibold tracking-tight sm:text-xl">
+                      {item.title}
+                    </h3>
+                    <p className="mt-3 text-sm leading-relaxed text-[#B4B4BE] md:text-base">
+                      {item.detail}
+                    </p>
+                  </div>
+                </Reveal>
+              ))}
+            </div>
+            <Reveal delayMs={120}>
+              <p className="mt-10 max-w-2xl text-sm leading-relaxed text-[#8A8A96] md:text-base">
+                Demonstrações em gastronomia, beleza masculina, saúde e
+                consultoria — veja o padrão completo nos projetos abaixo.
+              </p>
+            </Reveal>
+          </div>
+        </section>
+
         {/* Portfólio */}
         <section id="projetos" className={SECTION}>
           <div className="mx-auto max-w-7xl">
@@ -1160,7 +1318,7 @@ export default function Home() {
                     ].map((item) => (
                       <li
                         key={item}
-                        className="flex gap-3 text-sm leading-relaxed text-[#A1A1AA] sm:text-base"
+                        className="flex gap-3 text-sm leading-relaxed text-[#B4B4BE] sm:text-base"
                       >
                         <span
                           aria-hidden
