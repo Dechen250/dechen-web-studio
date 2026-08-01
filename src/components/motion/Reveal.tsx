@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, type CSSProperties, type ReactNode } from "react";
+import { useEffect, useRef, type ReactNode } from "react";
 
 type RevealProps = {
   children: ReactNode;
@@ -12,9 +12,11 @@ type RevealProps = {
 };
 
 /**
- * Scroll-aware fade-up reveal using a CSS keyframe animation.
- * Keyframes run reliably when the visible class is added (unlike transitions,
- * which can skip if the initial state never paints).
+ * Scroll-aware fade-up reveal powered by the Web Animations API.
+ * Uses commitStyles() so the final state sticks after the animation ends.
+ *
+ * Important: play-state is local to the effect (not a ref) so React Strict Mode
+ * remounts can still run the entrance animation.
  */
 export function Reveal({
   children,
@@ -28,50 +30,103 @@ export function Reveal({
     const node = ref.current;
     if (!node) return;
 
-    const reveal = () => {
-      node.classList.add("dws-reveal-visible");
+    let cancelled = false;
+    let played = false;
+    let animation: Animation | null = null;
+    let timer = 0;
+
+    const reduceMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    ).matches;
+
+    const showFinal = () => {
+      node.style.opacity = "1";
+      node.style.transform = "translateY(0px)";
     };
 
-    const media = window.matchMedia("(prefers-reduced-motion: reduce)");
-    if (media.matches) {
-      reveal();
+    const play = () => {
+      if (cancelled || played) return;
+      played = true;
+
+      if (reduceMotion || typeof node.animate !== "function") {
+        showFinal();
+        return;
+      }
+
+      node.style.opacity = "0";
+      node.style.transform = "translateY(40px)";
+
+      animation = node.animate(
+        [
+          { opacity: 0, transform: "translateY(40px)" },
+          { opacity: 1, transform: "translateY(0px)" },
+        ],
+        {
+          duration: 1100,
+          delay: delayMs,
+          easing: "cubic-bezier(0.16, 1, 0.3, 1)",
+          fill: "forwards",
+        },
+      );
+
+      animation.finished
+        .then(() => {
+          if (cancelled) return;
+          try {
+            animation?.commitStyles();
+            animation?.cancel();
+          } catch {
+            showFinal();
+          }
+        })
+        .catch(() => {
+          if (!cancelled) showFinal();
+        });
+    };
+
+    if (reduceMotion) {
+      showFinal();
       return;
     }
 
     if (immediate) {
-      // Double rAF: wait until after the browser paints opacity: 0
-      let inner = 0;
-      const outer = requestAnimationFrame(() => {
-        inner = requestAnimationFrame(reveal);
-      });
+      timer = window.setTimeout(play, 50);
+    } else {
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) {
+            play();
+            observer.disconnect();
+          }
+        },
+        { threshold: 0.2, rootMargin: "0px 0px -10% 0px" },
+      );
+
+      observer.observe(node);
+
       return () => {
-        cancelAnimationFrame(outer);
-        cancelAnimationFrame(inner);
+        cancelled = true;
+        observer.disconnect();
+        animation?.cancel();
       };
     }
 
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          reveal();
-          observer.disconnect();
-        }
-      },
-      { threshold: 0.08, rootMargin: "0px 0px -6% 0px" },
-    );
-
-    observer.observe(node);
-    return () => observer.disconnect();
-  }, [immediate]);
-
-  const style: CSSProperties | undefined =
-    delayMs > 0 ? { animationDelay: `${delayMs}ms` } : undefined;
+    return () => {
+      cancelled = true;
+      window.clearTimeout(timer);
+      animation?.cancel();
+    };
+  }, [delayMs, immediate]);
 
   return (
     <div
       ref={ref}
-      className={`dws-reveal${className ? ` ${className}` : ""}`}
-      style={style}
+      className={className}
+      data-reveal=""
+      style={{
+        opacity: 0,
+        transform: "translateY(40px)",
+      }}
     >
       {children}
     </div>
