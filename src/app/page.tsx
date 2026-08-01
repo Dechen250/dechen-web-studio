@@ -637,7 +637,9 @@ function GlassButton({
   variant?: "primary" | "secondary";
   className?: string;
 }) {
-  const base = `group/btn relative inline-flex h-14 items-center justify-center overflow-hidden rounded-full px-8 text-sm font-semibold ${TRANSITION} ${FOCUS} active:scale-[0.985] active:translate-y-0`;
+  // Size utilities (h/px/text) stay out of `base` so callers can override
+  // without fighting Tailwind's stylesheet order.
+  const base = `group/btn relative inline-flex items-center justify-center overflow-hidden rounded-full font-semibold ${TRANSITION} ${FOCUS} active:scale-[0.985] active:translate-y-0`;
 
   const styles =
     variant === "primary"
@@ -645,7 +647,10 @@ function GlassButton({
       : "border border-white/[0.08] bg-[#101010]/40 text-[#A1A1AA] shadow-[inset_0_1px_0_rgba(255,255,255,0.05)] backdrop-blur-lg hover:-translate-y-0.5 hover:scale-[1.015] hover:border-white/15 hover:bg-[#101010]/65 hover:text-white hover:shadow-[0_4px_20px_rgba(0,0,0,0.3),inset_0_1px_0_rgba(255,255,255,0.08)]";
 
   return (
-    <a href={href} className={`${base} ${styles} ${className}`}>
+    <a
+      href={href}
+      className={`${base} ${styles} h-14 px-8 text-sm ${className}`}
+    >
       <span
         aria-hidden
         className={`pointer-events-none absolute inset-x-0 top-0 h-[45%] rounded-t-full ${
@@ -939,7 +944,7 @@ function FloatingNavbar() {
           <GlassButton
             href="#contato"
             variant="primary"
-            className="h-9 shrink-0 px-3.5 text-xs sm:h-10 sm:px-5 md:h-12 md:px-7 md:text-sm"
+            className="!h-9 !shrink-0 !px-3.5 !text-xs sm:!h-10 sm:!px-5 md:!h-12 md:!px-7 md:!text-sm"
           >
             <span className="sm:hidden">Orçamento</span>
             <span className="hidden sm:inline">Orçamento gratuito</span>
