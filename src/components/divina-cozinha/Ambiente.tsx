@@ -18,6 +18,7 @@ export function Ambiente() {
           {ambienteGallery.map((item, index) => (
             <FadeIn
               key={item.title}
+              delayMs={index * 70}
               className={index === 0 ? "sm:col-span-2 lg:col-span-2" : ""}
             >
               <figure className="group relative overflow-hidden rounded-2xl">

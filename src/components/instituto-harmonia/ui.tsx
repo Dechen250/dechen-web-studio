@@ -81,24 +81,7 @@ export function SectionHeading({
   );
 }
 
-export function FadeIn({
-  children,
-  className = "",
-  delayMs = 0,
-}: {
-  children: ReactNode;
-  className?: string;
-  delayMs?: number;
-}) {
-  return (
-    <div
-      className={`animate-[fadeInUp_0.8s_ease-out_both] ${className}`}
-      style={delayMs ? { animationDelay: `${delayMs}ms` } : undefined}
-    >
-      {children}
-    </div>
-  );
-}
+export { Reveal as FadeIn } from "@/components/motion/Reveal";
 
 export function SpecialtyIcon({ name }: { name: string }) {
   const common = {

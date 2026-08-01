@@ -22,23 +22,23 @@ export function Hero() {
       </div>
 
       <div className="relative mx-auto flex min-h-[94vh] max-w-6xl flex-col justify-center px-5 py-32 md:px-8">
-        <FadeIn>
+        <FadeIn immediate>
           <p className="mb-4 font-display text-sm font-semibold tracking-[0.35em] text-[#22D3EE] uppercase">
             {siteInfo.name}
           </p>
         </FadeIn>
-        <FadeIn delayMs={90}>
+        <FadeIn immediate delayMs={90}>
           <h1 className="max-w-3xl font-display text-4xl leading-[1.05] font-semibold tracking-tight text-[#E8EEF4] md:text-6xl lg:text-7xl">
             {siteInfo.tagline}
           </h1>
         </FadeIn>
-        <FadeIn delayMs={180}>
+        <FadeIn immediate delayMs={180}>
           <p className="mt-6 max-w-xl font-sans text-base leading-relaxed text-[#8B9AAB] md:text-lg">
             Estruturamos operação, números e crescimento para empresas que
             precisam decidir com método — não com achismo.
           </p>
         </FadeIn>
-        <FadeIn delayMs={260}>
+        <FadeIn immediate delayMs={260}>
           <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center">
             <Button href="#contato">Falar com consultor</Button>
             <Button href="#metodo" variant="secondary">
@@ -46,7 +46,7 @@ export function Hero() {
             </Button>
           </div>
         </FadeIn>
-        <FadeIn delayMs={340}>
+        <FadeIn immediate delayMs={340}>
           <ul className="mt-14 grid max-w-2xl gap-6 border-t border-[rgba(34,211,238,0.14)] pt-8 sm:grid-cols-3">
             {results.map((item) => (
               <li key={item.label}>

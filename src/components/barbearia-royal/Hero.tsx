@@ -25,7 +25,7 @@ export function Hero() {
       </div>
 
       <div className="relative mx-auto flex min-h-[92vh] max-w-6xl flex-col justify-center px-5 py-32 md:px-8">
-        <FadeIn>
+        <FadeIn immediate>
           <p className="mb-5 font-sans text-xs font-medium tracking-[0.3em] text-[#C4A35A] uppercase">
             Barbearia de alto padrão
           </p>

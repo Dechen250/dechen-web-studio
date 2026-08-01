@@ -21,6 +21,7 @@ export function Gallery() {
           {galleryItems.map((item, index) => (
             <FadeIn
               key={item.title}
+              delayMs={index * 70}
               className={index === 0 ? "sm:col-span-2" : ""}
             >
               <figure
@@ -39,7 +40,7 @@ export function Gallery() {
                       : "(max-width: 768px) 100vw, 50vw"
                   }
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0C0A09]/90 via-[#0C0A09]/25 to-transparent" />
+                <div className="gallery-sheen absolute inset-0 bg-gradient-to-t from-[#0C0A09]/90 via-[#0C0A09]/25 to-transparent" />
 
                 <div
                   className="absolute top-4 left-4 h-6 w-6 border-t border-l border-[#C4A35A]/40"

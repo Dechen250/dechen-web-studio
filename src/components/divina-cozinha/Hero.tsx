@@ -19,7 +19,7 @@ export function Hero() {
       </div>
 
       <div className="relative mx-auto flex min-h-[92vh] max-w-6xl flex-col justify-center px-5 py-32 md:px-8">
-        <FadeIn>
+        <FadeIn immediate>
           <p className="mb-4 font-sans text-xs font-medium tracking-[0.25em] text-[#8B9A7D] uppercase">
             Culinária contemporânea
           </p>

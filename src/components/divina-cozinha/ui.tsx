@@ -78,18 +78,4 @@ export function SectionHeading({
   );
 }
 
-export function FadeIn({
-  children,
-  className = "",
-}: {
-  children: ReactNode;
-  className?: string;
-}) {
-  return (
-    <div
-      className={`animate-[fadeInUp_0.8s_ease-out_both] ${className}`}
-    >
-      {children}
-    </div>
-  );
-}
+export { Reveal as FadeIn } from "@/components/motion/Reveal";
