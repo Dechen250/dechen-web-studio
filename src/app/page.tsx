@@ -572,15 +572,21 @@ function PrimaryServiceSlot({
   );
 }
 
-function DwsLogo({ size = "md" }: { size?: "sm" | "md" }) {
+function DwsLogo({
+  size = "md",
+  className = "",
+}: {
+  size?: "sm" | "md";
+  className?: string;
+}) {
   const sizeClasses =
     size === "sm"
       ? "h-8 w-8 rounded-[10px] text-[10px]"
-      : "h-10 w-10 rounded-[12px] text-xs";
+      : "h-8 w-8 rounded-[10px] text-[10px] sm:h-10 sm:w-10 sm:rounded-[12px] sm:text-xs";
 
   return (
     <span
-      className={`relative flex items-center justify-center border border-[#0070F3]/25 bg-[#101010]/60 font-bold tracking-tight shadow-[0_0_16px_rgba(0,112,243,0.1)] backdrop-blur-md ${TRANSITION} ${sizeClasses}`}
+      className={`relative flex items-center justify-center border border-[#0070F3]/25 bg-[#101010]/60 font-bold tracking-tight shadow-[0_0_16px_rgba(0,112,243,0.1)] backdrop-blur-md ${TRANSITION} ${sizeClasses} ${className}`}
     >
       <span
         aria-hidden
@@ -903,13 +909,13 @@ function FloatingNavbar() {
   }, []);
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 px-4 pt-4 sm:px-5 sm:pt-5 md:px-6 md:pt-6 lg:px-8">
+    <header className="fixed inset-x-0 top-0 z-50 px-3 pt-3 sm:px-5 sm:pt-5 md:px-6 md:pt-6 lg:px-8">
       <nav
-        className={`group/nav relative mx-auto flex h-14 max-w-5xl items-center justify-between overflow-hidden rounded-2xl border border-white/[0.06] bg-[#101010]/50 px-3 shadow-[0_4px_24px_rgba(0,0,0,0.4),0_0_1px_rgba(255,255,255,0.05)_inset] backdrop-blur-2xl ${TRANSITION} hover:border-white/[0.09] hover:shadow-[0_8px_40px_rgba(0,0,0,0.45),0_0_48px_rgba(0,112,243,0.04)] sm:px-4 md:h-16 md:rounded-3xl md:px-6 lg:max-w-6xl`}
+        className={`group/nav relative mx-auto flex h-12 max-w-5xl items-center justify-between overflow-hidden rounded-2xl border border-white/[0.06] bg-[#101010]/50 px-2.5 shadow-[0_4px_24px_rgba(0,0,0,0.4),0_0_1px_rgba(255,255,255,0.05)_inset] backdrop-blur-2xl ${TRANSITION} hover:border-white/[0.09] hover:shadow-[0_8px_40px_rgba(0,0,0,0.45),0_0_48px_rgba(0,112,243,0.04)] sm:h-14 sm:px-4 md:h-16 md:rounded-3xl md:px-6 lg:max-w-6xl`}
         aria-label="Principal"
       >
         <GlassSheen />
-        <div className="relative flex w-full items-center justify-between gap-3">
+        <div className="relative flex w-full min-w-0 items-center justify-between gap-2 sm:gap-3">
           <a
             href="#"
             className={`shrink-0 ${TRANSITION} hover:scale-[1.04] active:scale-[0.98] ${FOCUS}`}
@@ -928,20 +934,15 @@ function FloatingNavbar() {
             ))}
           </ul>
 
+          {/* One CTA — responsive label. Avoid dual buttons: Tailwind
+              `hidden` loses to GlassButton's base `inline-flex`. */}
           <GlassButton
             href="#contato"
             variant="primary"
-            className="hidden h-11 px-5 text-xs md:inline-flex md:h-12 md:px-7 md:text-sm"
+            className="h-9 shrink-0 px-3.5 text-xs sm:h-10 sm:px-5 md:h-12 md:px-7 md:text-sm"
           >
-            Orçamento gratuito
-          </GlassButton>
-
-          <GlassButton
-            href="#contato"
-            variant="primary"
-            className="inline-flex h-10 shrink-0 px-3.5 text-xs md:hidden"
-          >
-            Orçamento
+            <span className="sm:hidden">Orçamento</span>
+            <span className="hidden sm:inline">Orçamento gratuito</span>
           </GlassButton>
         </div>
       </nav>
