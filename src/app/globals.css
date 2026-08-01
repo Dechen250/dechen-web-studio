@@ -29,3 +29,37 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* Shared motion — fade + translateY, ease-out, ~300ms (brand guide) */
+.dws-reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  transition:
+    opacity 300ms ease-out,
+    transform 300ms ease-out;
+}
+
+.dws-reveal-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (scripting: none) {
+  .dws-reveal {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .dws-reveal,
+  .dws-reveal-visible {
+    opacity: 1;
+    transform: none;
+    transition: none !important;
+  }
+}
