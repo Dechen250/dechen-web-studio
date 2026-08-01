@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState, type FormEvent, type ReactNode } from "react";
+import { Reveal } from "@/components/motion/Reveal";
 import { WhatsAppFloat } from "@/components/WhatsAppFloat";
 import { portfolioDemos } from "@/data/portfolio-demos";
 import {
@@ -871,34 +872,44 @@ export default function Home() {
           <HeroBackground />
 
           <div className="relative mx-auto w-full max-w-4xl text-center">
-            <SectionLabel>Para negócios locais e empreendedores</SectionLabel>
-            <h1 className="text-balance text-[2rem] leading-[1.12] font-semibold tracking-[-0.02em] sm:text-4xl md:text-5xl md:tracking-[-0.025em] lg:text-[3.5rem] lg:leading-[1.06] lg:tracking-[-0.03em]">
-              Transforme visitantes em clientes com um site que transmite{" "}
-              <span className="text-[#0070F3]">autoridade e confiança</span>
-            </h1>
-            <p className="mx-auto mt-6 max-w-2xl text-pretty text-base leading-[1.7] text-[#A1A1AA] sm:mt-8 sm:text-lg md:mt-10 md:text-xl md:leading-[1.65]">
-              Desenvolvemos sites premium para clínicas, lojas, consultorias e
-              empresas locais que precisam vender mais pela internet — com
-              design profissional, carregamento rápido e estrutura pensada para
-              gerar contatos.
-            </p>
-            <div className="mt-10 flex w-full flex-col items-stretch justify-center gap-3 sm:mt-12 sm:flex-row sm:items-center sm:gap-4">
-              <GlassButton
-                href="#contato"
-                variant="primary"
-                className="w-full sm:w-auto"
-              >
-                Quero meu orçamento gratuito
-              </GlassButton>
-              <GlassButton
-                href="#projetos"
-                variant="secondary"
-                className="w-full sm:w-auto"
-              >
-                Ver projetos demonstrativos
-              </GlassButton>
-            </div>
-            <TrustLine />
+            <Reveal immediate>
+              <SectionLabel>Para negócios locais e empreendedores</SectionLabel>
+            </Reveal>
+            <Reveal immediate delayMs={70}>
+              <h1 className="text-balance text-[2rem] leading-[1.12] font-semibold tracking-[-0.02em] sm:text-4xl md:text-5xl md:tracking-[-0.025em] lg:text-[3.5rem] lg:leading-[1.06] lg:tracking-[-0.03em]">
+                Transforme visitantes em clientes com um site que transmite{" "}
+                <span className="text-[#0070F3]">autoridade e confiança</span>
+              </h1>
+            </Reveal>
+            <Reveal immediate delayMs={140}>
+              <p className="mx-auto mt-6 max-w-2xl text-pretty text-base leading-[1.7] text-[#A1A1AA] sm:mt-8 sm:text-lg md:mt-10 md:text-xl md:leading-[1.65]">
+                Desenvolvemos sites premium para clínicas, lojas, consultorias e
+                empresas locais que precisam vender mais pela internet — com
+                design profissional, carregamento rápido e estrutura pensada para
+                gerar contatos.
+              </p>
+            </Reveal>
+            <Reveal immediate delayMs={210}>
+              <div className="mt-10 flex w-full flex-col items-stretch justify-center gap-3 sm:mt-12 sm:flex-row sm:items-center sm:gap-4">
+                <GlassButton
+                  href="#contato"
+                  variant="primary"
+                  className="w-full sm:w-auto"
+                >
+                  Quero meu orçamento gratuito
+                </GlassButton>
+                <GlassButton
+                  href="#projetos"
+                  variant="secondary"
+                  className="w-full sm:w-auto"
+                >
+                  Ver projetos demonstrativos
+                </GlassButton>
+              </div>
+            </Reveal>
+            <Reveal immediate delayMs={280}>
+              <TrustLine />
+            </Reveal>
           </div>
         </section>
 
@@ -909,18 +920,20 @@ export default function Home() {
           className="px-5 pb-16 sm:px-6 sm:pb-20 md:px-8 lg:pb-24"
         >
           <div className="mx-auto grid max-w-7xl grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-4">
-            {benefits.map((item) => (
-              <GlassCard key={item.label} className="p-5 sm:p-6">
-                <p className="text-xl font-semibold tracking-tight text-[#0070F3] sm:text-2xl">
-                  {item.value}
-                </p>
-                <p className="mt-1 text-sm font-medium text-white">
-                  {item.label}
-                </p>
-                <p className="mt-1.5 text-xs leading-relaxed text-[#A1A1AA] sm:text-sm">
-                  {item.detail}
-                </p>
-              </GlassCard>
+            {benefits.map((item, index) => (
+              <Reveal key={item.label} delayMs={index * 60} className="h-full">
+                <GlassCard className="h-full p-5 sm:p-6">
+                  <p className="text-xl font-semibold tracking-tight text-[#0070F3] sm:text-2xl">
+                    {item.value}
+                  </p>
+                  <p className="mt-1 text-sm font-medium text-white">
+                    {item.label}
+                  </p>
+                  <p className="mt-1.5 text-xs leading-relaxed text-[#A1A1AA] sm:text-sm">
+                    {item.detail}
+                  </p>
+                </GlassCard>
+              </Reveal>
             ))}
           </div>
         </section>
@@ -928,72 +941,76 @@ export default function Home() {
         {/* Serviços */}
         <section id="servicos" className={SECTION}>
           <div className="mx-auto max-w-7xl">
-            <SectionHeader
-              className="mb-12 md:mb-16"
-              label="Serviços"
-              title="Tudo que seu negócio precisa"
-              titleMuted="para crescer online."
-              description="Cada solução é pensada para transmitir confiança, facilitar o contato do cliente e fortalecer sua presença digital — do primeiro clique à conversão."
-            />
+            <Reveal>
+              <SectionHeader
+                className="mb-12 md:mb-16"
+                label="Serviços"
+                title="Tudo que seu negócio precisa"
+                titleMuted="para crescer online."
+                description="Cada solução é pensada para transmitir confiança, facilitar o contato do cliente e fortalecer sua presença digital — do primeiro clique à conversão."
+              />
+            </Reveal>
             <div className="grid items-stretch gap-4 sm:grid-cols-2">
-              {primaryServices.map((service) => (
-                <PrimaryServiceSlot
-                  key={service.id}
-                  service={service}
-                  activeService={activeService}
-                  onToggle={togglePrimaryService}
-                />
+              {primaryServices.map((service, index) => (
+                <Reveal key={service.id} delayMs={index * 70} className="h-full">
+                  <PrimaryServiceSlot
+                    service={service}
+                    activeService={activeService}
+                    onToggle={togglePrimaryService}
+                  />
+                </Reveal>
               ))}
             </div>
 
             <div className="mt-4 grid gap-4 sm:grid-cols-2">
-              {secondaryServices.map((service) => {
+              {secondaryServices.map((service, index) => {
                 const open = isExpanded("services", service.id);
                 return (
-                  <InteractiveCard
-                    key={service.id}
-                    isExpanded={open}
-                    onClick={() => toggleItem("services", service.id)}
-                    ariaLabel={`${open ? "Fechar" : "Abrir"} detalhes: ${service.title}`}
-                    className="p-6 sm:p-8"
-                    expandedContent={
-                      <>
-                        <p className="mb-6 text-sm leading-relaxed text-[#A1A1AA] md:text-base">
-                          {service.details}
-                        </p>
-                        <div className="grid gap-6 sm:grid-cols-2">
-                          <DetailList
-                            title="O que você ganha"
-                            items={service.benefits}
-                          />
-                          <DetailList
-                            title="Ideal para"
-                            items={service.audience}
-                          />
-                        </div>
-                      </>
-                    }
-                  >
-                    <div className="mb-3 flex items-start justify-between gap-4 sm:mb-4">
-                      <h3 className="text-lg font-semibold tracking-tight sm:text-xl md:text-2xl">
-                        {service.title}
-                      </h3>
-                      <span
-                        aria-hidden
-                        className={`mt-1 shrink-0 text-[#404040] ${TRANSITION} ${open ? "rotate-90 text-[#0070F3]" : "group-hover/card:translate-x-1 group-hover/card:text-[#0070F3]"}`}
-                      >
-                        →
-                      </span>
-                    </div>
-                    <p className="text-sm leading-relaxed text-[#A1A1AA] md:text-base">
-                      {service.description}
-                    </p>
-                    <p
-                      className={`mt-4 text-xs ${TRANSITION} ${open ? "text-[#0070F3]" : "text-[#404040] group-hover/card:text-[#0070F3]/70"}`}
+                  <Reveal key={service.id} delayMs={index * 70} className="h-full">
+                    <InteractiveCard
+                      isExpanded={open}
+                      onClick={() => toggleItem("services", service.id)}
+                      ariaLabel={`${open ? "Fechar" : "Abrir"} detalhes: ${service.title}`}
+                      className="h-full p-6 sm:p-8"
+                      expandedContent={
+                        <>
+                          <p className="mb-6 text-sm leading-relaxed text-[#A1A1AA] md:text-base">
+                            {service.details}
+                          </p>
+                          <div className="grid gap-6 sm:grid-cols-2">
+                            <DetailList
+                              title="O que você ganha"
+                              items={service.benefits}
+                            />
+                            <DetailList
+                              title="Ideal para"
+                              items={service.audience}
+                            />
+                          </div>
+                        </>
+                      }
                     >
-                      {open ? "Clique para fechar" : "Ver detalhes do serviço"}
-                    </p>
-                  </InteractiveCard>
+                      <div className="mb-3 flex items-start justify-between gap-4 sm:mb-4">
+                        <h3 className="text-lg font-semibold tracking-tight sm:text-xl md:text-2xl">
+                          {service.title}
+                        </h3>
+                        <span
+                          aria-hidden
+                          className={`mt-1 shrink-0 text-[#404040] ${TRANSITION} ${open ? "rotate-90 text-[#0070F3]" : "group-hover/card:translate-x-1 group-hover/card:text-[#0070F3]"}`}
+                        >
+                          →
+                        </span>
+                      </div>
+                      <p className="text-sm leading-relaxed text-[#A1A1AA] md:text-base">
+                        {service.description}
+                      </p>
+                      <p
+                        className={`mt-4 text-xs ${TRANSITION} ${open ? "text-[#0070F3]" : "text-[#404040] group-hover/card:text-[#0070F3]/70"}`}
+                      >
+                        {open ? "Clique para fechar" : "Ver detalhes do serviço"}
+                      </p>
+                    </InteractiveCard>
+                  </Reveal>
                 );
               })}
             </div>
@@ -1003,52 +1020,56 @@ export default function Home() {
         {/* Processo */}
         <section id="processo" className={SECTION}>
           <div className="mx-auto max-w-7xl">
-            <SectionHeader
-              className="mb-12 md:mb-16"
-              label="Processo"
-              title="Do primeiro contato"
-              titleMuted="ao site no ar."
-              description="Um processo claro e transparente — sem surpresas, sem jargão técnico. Você acompanha cada etapa e aprova antes de avançar."
-            />
+            <Reveal>
+              <SectionHeader
+                className="mb-12 md:mb-16"
+                label="Processo"
+                title="Do primeiro contato"
+                titleMuted="ao site no ar."
+                description="Um processo claro e transparente — sem surpresas, sem jargão técnico. Você acompanha cada etapa e aprova antes de avançar."
+              />
+            </Reveal>
             <ol className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-              {processSteps.map((step) => {
+              {processSteps.map((step, index) => {
                 const open = isExpanded("process", step.id);
                 return (
-                  <li key={step.id}>
-                    <InteractiveCard
-                      isExpanded={open}
-                      onClick={() => toggleItem("process", step.id)}
-                      ariaLabel={`${open ? "Fechar" : "Abrir"} etapa: ${step.title}`}
-                      className="flex h-full flex-col p-6 sm:p-8"
-                      expandedContent={
-                        <>
-                          <p className="mb-6 text-sm leading-relaxed text-[#A1A1AA]">
-                            {step.details}
-                          </p>
-                          <DetailList
-                            title="Entregáveis"
-                            items={step.deliverables}
-                          />
-                        </>
-                      }
-                    >
-                      <span className="mb-4 text-sm font-medium tracking-widest text-[#0070F3] sm:mb-6">
-                        {step.step}
-                      </span>
-                      <h3 className="mb-2 text-base font-semibold tracking-tight sm:text-lg md:text-xl">
-                        {step.title}
-                      </h3>
-                      <p className="text-sm leading-relaxed text-[#A1A1AA]">
-                        {step.description}
-                      </p>
-                      <p
-                        className={`mt-auto pt-4 text-xs ${TRANSITION} ${open ? "text-[#0070F3]" : "text-[#404040] group-hover/card:text-[#0070F3]/70"}`}
+                  <li key={step.id} className="h-full">
+                    <Reveal delayMs={index * 60} className="h-full">
+                      <InteractiveCard
+                        isExpanded={open}
+                        onClick={() => toggleItem("process", step.id)}
+                        ariaLabel={`${open ? "Fechar" : "Abrir"} etapa: ${step.title}`}
+                        className="flex h-full flex-col p-6 sm:p-8"
+                        expandedContent={
+                          <>
+                            <p className="mb-6 text-sm leading-relaxed text-[#A1A1AA]">
+                              {step.details}
+                            </p>
+                            <DetailList
+                              title="Entregáveis"
+                              items={step.deliverables}
+                            />
+                          </>
+                        }
                       >
-                        {open
-                          ? "Clique para fechar"
-                          : "Ver entregáveis da etapa"}
-                      </p>
-                    </InteractiveCard>
+                        <span className="mb-4 text-sm font-medium tracking-widest text-[#0070F3] sm:mb-6">
+                          {step.step}
+                        </span>
+                        <h3 className="mb-2 text-base font-semibold tracking-tight sm:text-lg md:text-xl">
+                          {step.title}
+                        </h3>
+                        <p className="text-sm leading-relaxed text-[#A1A1AA]">
+                          {step.description}
+                        </p>
+                        <p
+                          className={`mt-auto pt-4 text-xs ${TRANSITION} ${open ? "text-[#0070F3]" : "text-[#404040] group-hover/card:text-[#0070F3]/70"}`}
+                        >
+                          {open
+                            ? "Clique para fechar"
+                            : "Ver entregáveis da etapa"}
+                        </p>
+                      </InteractiveCard>
+                    </Reveal>
                   </li>
                 );
               })}
@@ -1059,19 +1080,21 @@ export default function Home() {
         {/* Portfólio */}
         <section id="projetos" className={SECTION}>
           <div className="mx-auto max-w-7xl">
-            <SectionHeader
-              className="mb-12 md:mb-16"
-              label="Portfólio"
-              title="Veja o padrão"
-              titleMuted="que entregamos."
-              description="Projetos demonstrativos que mostram nossa capacidade de criar experiências premium para diferentes segmentos — do restaurante à consultoria."
-            />
+            <Reveal>
+              <SectionHeader
+                className="mb-12 md:mb-16"
+                label="Portfólio"
+                title="Veja o padrão"
+                titleMuted="que entregamos."
+                description="Projetos demonstrativos que mostram nossa capacidade de criar experiências premium para diferentes segmentos — do restaurante à consultoria."
+              />
+            </Reveal>
             <div className="grid gap-5 sm:grid-cols-2 sm:gap-6">
-              {portfolioDemos.map((demo) => (
+              {portfolioDemos.map((demo, index) => (
+                <Reveal key={demo.slug} delayMs={index * 70} className="h-full">
                 <Link
-                  key={demo.slug}
                   href={demo.href ?? `/portfolio/${demo.slug}`}
-                  className={`group/card relative cursor-pointer overflow-hidden rounded-3xl border border-[#262626] bg-[#101010]/75 backdrop-blur-md ${TRANSITION} hover:-translate-y-0.5 hover:border-[#404040] hover:bg-[#101010]/90 hover:shadow-[0_12px_40px_rgba(0,0,0,0.35)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0070F3]`}
+                  className={`group/card relative flex h-full cursor-pointer flex-col overflow-hidden rounded-3xl border border-[#262626] bg-[#101010]/75 backdrop-blur-md ${TRANSITION} hover:-translate-y-0.5 hover:border-[#404040] hover:bg-[#101010]/90 hover:shadow-[0_12px_40px_rgba(0,0,0,0.35)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0070F3]`}
                 >
                   <GlassSheen />
                   <div
@@ -1111,6 +1134,7 @@ export default function Home() {
                     </span>
                   </div>
                 </Link>
+                </Reveal>
               ))}
             </div>
           </div>
@@ -1120,71 +1144,75 @@ export default function Home() {
         <section id="contato" className={SECTION}>
           <div className="mx-auto max-w-6xl">
             <div className="grid gap-10 lg:grid-cols-2 lg:gap-16 lg:items-start">
-              <div>
-                <SectionHeader
-                  label="Contato"
-                  title="Pronto para ter um site"
-                  titleMuted="que gera clientes?"
-                  description="Preencha o formulário ou chame direto no WhatsApp. Resposta rápida, sem compromisso."
-                />
-                <ul className="mt-8 space-y-4">
-                  {[
-                    "Atendimento direto, sem intermediários",
-                    "Proposta clara com prazo e investimento",
-                    "Projeto pensado para o seu mercado local",
-                  ].map((item) => (
-                    <li
-                      key={item}
-                      className="flex gap-3 text-sm leading-relaxed text-[#A1A1AA] sm:text-base"
-                    >
-                      <span
-                        aria-hidden
-                        className="mt-2 h-1 w-1 shrink-0 rounded-full bg-[#0070F3]"
-                      />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-                <a
-                  href={whatsappUrl()}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={`mt-8 inline-flex items-center gap-2.5 rounded-full bg-[#25D366] px-5 py-3 text-sm font-semibold text-white ${TRANSITION} hover:brightness-110 ${FOCUS}`}
-                >
-                  <svg
-                    className="h-5 w-5"
-                    viewBox="0 0 24 24"
-                    fill="currentColor"
-                    aria-hidden
+              <Reveal>
+                <div>
+                  <SectionHeader
+                    label="Contato"
+                    title="Pronto para ter um site"
+                    titleMuted="que gera clientes?"
+                    description="Preencha o formulário ou chame direto no WhatsApp. Resposta rápida, sem compromisso."
+                  />
+                  <ul className="mt-8 space-y-4">
+                    {[
+                      "Atendimento direto, sem intermediários",
+                      "Proposta clara com prazo e investimento",
+                      "Projeto pensado para o seu mercado local",
+                    ].map((item) => (
+                      <li
+                        key={item}
+                        className="flex gap-3 text-sm leading-relaxed text-[#A1A1AA] sm:text-base"
+                      >
+                        <span
+                          aria-hidden
+                          className="mt-2 h-1 w-1 shrink-0 rounded-full bg-[#0070F3]"
+                        />
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                  <a
+                    href={whatsappUrl()}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`mt-8 inline-flex items-center gap-2.5 rounded-full bg-[#25D366] px-5 py-3 text-sm font-semibold text-white ${TRANSITION} hover:brightness-110 ${FOCUS}`}
                   >
-                    <path d="M20.52 3.48A11.86 11.86 0 0 0 12.06 0C5.5 0 .16 5.34.16 11.9c0 2.1.55 4.15 1.6 5.96L0 24l6.3-1.65a11.86 11.86 0 0 0 5.75 1.47h.01c6.56 0 11.9-5.34 11.9-11.9 0-3.18-1.24-6.17-3.44-8.44Zm-8.46 18.3h-.01a9.86 9.86 0 0 1-5.02-1.37l-.36-.21-3.74.98 1-3.64-.24-.37a9.86 9.86 0 0 1-1.51-5.27c0-5.45 4.43-9.88 9.9-9.88a9.83 9.83 0 0 1 9.88 9.89c0 5.45-4.43 9.87-9.9 9.87Zm5.42-7.4c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.47-1.75-1.64-2.04-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.05 1.02-1.05 2.49s1.07 2.89 1.22 3.09c.15.2 2.11 3.22 5.11 4.51.71.31 1.27.49 1.7.63.72.23 1.37.2 1.89.12.58-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.41-.07-.12-.27-.2-.57-.35Z" />
-                  </svg>
-                  WhatsApp {WHATSAPP_DISPLAY}
-                </a>
-                <a
-                  href={`mailto:${agency.email}`}
-                  className={`mt-5 inline-block text-sm text-[#A1A1AA] ${TRANSITION} hover:text-[#0070F3] ${FOCUS}`}
-                >
-                  Ou envie um e-mail:{" "}
-                  <span className="text-[#0070F3]">{agency.email}</span>
-                </a>
-              </div>
-
-              <div className="relative rounded-3xl border border-[#262626] bg-[#101010]/40 p-6 backdrop-blur-md sm:p-8">
-                <div
-                  aria-hidden
-                  className="pointer-events-none absolute inset-0 rounded-3xl bg-gradient-to-b from-[#0070F3]/[0.05] to-transparent"
-                />
-                <div className="relative">
-                  <h3 className="mb-1 text-lg font-semibold tracking-tight">
-                    Solicite seu orçamento
-                  </h3>
-                  <p className="mb-6 text-sm text-[#A1A1AA]">
-                    Preencha o formulário e envie direto no WhatsApp.
-                  </p>
-                  <ContactForm />
+                    <svg
+                      className="h-5 w-5"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                      aria-hidden
+                    >
+                      <path d="M20.52 3.48A11.86 11.86 0 0 0 12.06 0C5.5 0 .16 5.34.16 11.9c0 2.1.55 4.15 1.6 5.96L0 24l6.3-1.65a11.86 11.86 0 0 0 5.75 1.47h.01c6.56 0 11.9-5.34 11.9-11.9 0-3.18-1.24-6.17-3.44-8.44Zm-8.46 18.3h-.01a9.86 9.86 0 0 1-5.02-1.37l-.36-.21-3.74.98 1-3.64-.24-.37a9.86 9.86 0 0 1-1.51-5.27c0-5.45 4.43-9.88 9.9-9.88a9.83 9.83 0 0 1 9.88 9.89c0 5.45-4.43 9.87-9.9 9.87Zm5.42-7.4c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.47-1.75-1.64-2.04-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.05 1.02-1.05 2.49s1.07 2.89 1.22 3.09c.15.2 2.11 3.22 5.11 4.51.71.31 1.27.49 1.7.63.72.23 1.37.2 1.89.12.58-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.41-.07-.12-.27-.2-.57-.35Z" />
+                    </svg>
+                    WhatsApp {WHATSAPP_DISPLAY}
+                  </a>
+                  <a
+                    href={`mailto:${agency.email}`}
+                    className={`mt-5 inline-block text-sm text-[#A1A1AA] ${TRANSITION} hover:text-[#0070F3] ${FOCUS}`}
+                  >
+                    Ou envie um e-mail:{" "}
+                    <span className="text-[#0070F3]">{agency.email}</span>
+                  </a>
                 </div>
-              </div>
+              </Reveal>
+
+              <Reveal delayMs={100}>
+                <div className="relative rounded-3xl border border-[#262626] bg-[#101010]/40 p-6 backdrop-blur-md sm:p-8">
+                  <div
+                    aria-hidden
+                    className="pointer-events-none absolute inset-0 rounded-3xl bg-gradient-to-b from-[#0070F3]/[0.05] to-transparent"
+                  />
+                  <div className="relative">
+                    <h3 className="mb-1 text-lg font-semibold tracking-tight">
+                      Solicite seu orçamento
+                    </h3>
+                    <p className="mb-6 text-sm text-[#A1A1AA]">
+                      Preencha o formulário e envie direto no WhatsApp.
+                    </p>
+                    <ContactForm />
+                  </div>
+                </div>
+              </Reveal>
             </div>
           </div>
         </section>
