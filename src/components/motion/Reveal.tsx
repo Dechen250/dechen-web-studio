@@ -12,9 +12,9 @@ type RevealProps = {
 };
 
 /**
- * Scroll-aware fade-up reveal.
- * Toggles a CSS class via IntersectionObserver (no React state) so motion
- * stays aligned with the brand guide and React Compiler lint rules.
+ * Scroll-aware fade-up reveal using a CSS keyframe animation.
+ * Keyframes run reliably when the visible class is added (unlike transitions,
+ * which can skip if the initial state never paints).
  */
 export function Reveal({
   children,
@@ -33,9 +33,21 @@ export function Reveal({
     };
 
     const media = window.matchMedia("(prefers-reduced-motion: reduce)");
-    if (media.matches || immediate) {
-      const frame = requestAnimationFrame(reveal);
-      return () => cancelAnimationFrame(frame);
+    if (media.matches) {
+      reveal();
+      return;
+    }
+
+    if (immediate) {
+      // Double rAF: wait until after the browser paints opacity: 0
+      let inner = 0;
+      const outer = requestAnimationFrame(() => {
+        inner = requestAnimationFrame(reveal);
+      });
+      return () => {
+        cancelAnimationFrame(outer);
+        cancelAnimationFrame(inner);
+      };
     }
 
     const observer = new IntersectionObserver(
@@ -45,7 +57,7 @@ export function Reveal({
           observer.disconnect();
         }
       },
-      { threshold: 0.14, rootMargin: "0px 0px -8% 0px" },
+      { threshold: 0.08, rootMargin: "0px 0px -6% 0px" },
     );
 
     observer.observe(node);
@@ -53,7 +65,7 @@ export function Reveal({
   }, [immediate]);
 
   const style: CSSProperties | undefined =
-    delayMs > 0 ? { transitionDelay: `${delayMs}ms` } : undefined;
+    delayMs > 0 ? { animationDelay: `${delayMs}ms` } : undefined;
 
   return (
     <div
