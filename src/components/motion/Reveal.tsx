@@ -1,12 +1,6 @@
 "use client";
 
-import {
-  useEffect,
-  useRef,
-  useState,
-  type CSSProperties,
-  type ReactNode,
-} from "react";
+import { useEffect, useRef, type CSSProperties, type ReactNode } from "react";
 
 type RevealProps = {
   children: ReactNode;
@@ -19,7 +13,8 @@ type RevealProps = {
 
 /**
  * Scroll-aware fade-up reveal.
- * Respects prefers-reduced-motion and brand motion tokens (ease-out, ~300ms).
+ * Toggles a CSS class via IntersectionObserver (no React state) so motion
+ * stays aligned with the brand guide and React Compiler lint rules.
  */
 export function Reveal({
   children,
@@ -28,28 +23,25 @@ export function Reveal({
   immediate = false,
 }: RevealProps) {
   const ref = useRef<HTMLDivElement>(null);
-  const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    const media = window.matchMedia("(prefers-reduced-motion: reduce)");
-
-    if (media.matches) {
-      setVisible(true);
-      return;
-    }
-
-    if (immediate) {
-      const frame = requestAnimationFrame(() => setVisible(true));
-      return () => cancelAnimationFrame(frame);
-    }
-
     const node = ref.current;
     if (!node) return;
+
+    const reveal = () => {
+      node.classList.add("dws-reveal-visible");
+    };
+
+    const media = window.matchMedia("(prefers-reduced-motion: reduce)");
+    if (media.matches || immediate) {
+      const frame = requestAnimationFrame(reveal);
+      return () => cancelAnimationFrame(frame);
+    }
 
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          setVisible(true);
+          reveal();
           observer.disconnect();
         }
       },
@@ -61,14 +53,12 @@ export function Reveal({
   }, [immediate]);
 
   const style: CSSProperties | undefined =
-    delayMs > 0 && visible
-      ? { transitionDelay: `${delayMs}ms` }
-      : undefined;
+    delayMs > 0 ? { transitionDelay: `${delayMs}ms` } : undefined;
 
   return (
     <div
       ref={ref}
-      className={`dws-reveal${visible ? " dws-reveal-visible" : ""}${className ? ` ${className}` : ""}`}
+      className={`dws-reveal${className ? ` ${className}` : ""}`}
       style={style}
     >
       {children}
