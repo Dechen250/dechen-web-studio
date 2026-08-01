@@ -30,42 +30,21 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-/* Shared motion — keyframes are more reliable than transitions for one-shot reveals */
-@keyframes dws-fade-up {
-  from {
-    opacity: 0;
-    transform: translate3d(0, 24px, 0);
-  }
-  to {
-    opacity: 1;
-    transform: translate3d(0, 0, 0);
-  }
-}
-
-.dws-reveal {
-  opacity: 0;
-}
-
-.dws-reveal-visible {
-  opacity: 1;
-  animation: dws-fade-up 0.75s ease-out both;
-}
-
-@media (scripting: none) {
-  .dws-reveal {
-    opacity: 1;
-  }
-}
-
+/* Reveal motion is driven by Web Animations API in Reveal.tsx */
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
   }
 
-  .dws-reveal,
-  .dws-reveal-visible {
-    opacity: 1;
-    transform: none;
-    animation: none !important;
+  [data-reveal] {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+@media (scripting: none) {
+  [data-reveal] {
+    opacity: 1 !important;
+    transform: none !important;
   }
 }

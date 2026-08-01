@@ -991,13 +991,13 @@ export default function Home() {
             <Reveal immediate>
               <SectionLabel>Para negócios locais e empreendedores</SectionLabel>
             </Reveal>
-            <Reveal immediate delayMs={70}>
+            <Reveal immediate delayMs={120}>
               <h1 className="text-balance text-[2rem] leading-[1.12] font-semibold tracking-[-0.02em] sm:text-4xl md:text-5xl md:tracking-[-0.025em] lg:text-[3.5rem] lg:leading-[1.06] lg:tracking-[-0.03em]">
                 Transforme visitantes em clientes com um site que transmite{" "}
                 <span className="text-[#0070F3]">autoridade e confiança</span>
               </h1>
             </Reveal>
-            <Reveal immediate delayMs={140}>
+            <Reveal immediate delayMs={240}>
               <p className="mx-auto mt-6 max-w-2xl text-pretty text-base leading-[1.7] text-[#A1A1AA] sm:mt-8 sm:text-lg md:mt-10 md:text-xl md:leading-[1.65]">
                 Desenvolvemos sites premium para clínicas, lojas, consultorias e
                 empresas locais que precisam vender mais pela internet — com
@@ -1005,7 +1005,7 @@ export default function Home() {
                 gerar contatos.
               </p>
             </Reveal>
-            <Reveal immediate delayMs={210}>
+            <Reveal immediate delayMs={360}>
               <div className="mt-10 flex w-full flex-col items-stretch justify-center gap-3 sm:mt-12 sm:flex-row sm:items-center sm:gap-4">
                 <GlassButton
                   href="#contato"
@@ -1023,7 +1023,7 @@ export default function Home() {
                 </GlassButton>
               </div>
             </Reveal>
-            <Reveal immediate delayMs={280}>
+            <Reveal immediate delayMs={480}>
               <TrustLine />
             </Reveal>
           </div>
