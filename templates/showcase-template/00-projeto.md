@@ -1,265 +1,164 @@
-# Projeto Conceito — [Nome do Projeto]
+# Projeto — [Nome do Projeto]
 
-> **Template oficial Dechen Web Studio**  
-> Substitua todos os placeholders entre colchetes antes de iniciar o desenvolvimento.
+**Tipo:** template · **Status:** ativo · **Versão:** 2.0
+
+Brief do showcase fictício. Preencha os placeholders antes de desenvolver. Documentação irmã: [01-brand-guide.md](01-brand-guide.md) · [02-sitemap.md](02-sitemap.md) · [03-copy.md](03-copy.md) · [04-assets.md](04-assets.md) · [05-prompts.md](05-prompts.md) · [06-roadmap.md](06-roadmap.md)
 
 ## Objetivo
 
-Criar um site premium para um negócio fictício do segmento **[Segmento]** que demonstre a capacidade da Dechen Web Studio de desenvolver experiências digitais elegantes, modernas e altamente funcionais.
+Criar um site de portfólio para um negócio fictício do segmento **[Segmento]**. O resultado deve **parecer cliente real** — visitante acredita que o negócio existe.
 
-Este projeto fará parte do portfólio oficial da agência.
+Este projeto demonstra a capacidade da Dechen Web Studio em experiências digitais completas para o segmento.
 
-O objetivo não é apenas apresentar o negócio, mas mostrar aos futuros clientes o nível de qualidade que entregamos.
+## Sobre a marca
 
----
-
-# Sobre a Marca
-
-## Nome
+### Nome
 
 [Nome do Projeto]
 
-## Segmento
+### Segmento
 
-[Segmento — ex.: clínica, barbearia, academia, consultoria, imobiliária, escritório, etc.]
+[Segmento — ex.: clínica, barbearia, consultoria, imobiliária]
 
-## Posicionamento
+### Posicionamento
 
-[Descreva em 1–2 frases como o negócio se posiciona no mercado. O que o diferencia? Qual promessa central transmite?]
+[1–2 frases: o que o negócio faz, para quem, e o que o diferencia.]
 
-Exemplo de estrutura:
+> [Frase de posicionamento opcional — tom do segmento, sem exagero comercial.]
 
-> Um [tipo de negócio] que une [diferencial 1], [diferencial 2] e [diferencial 3].
+### Público-alvo
 
-Cada detalhe deve transmitir [qualidade desejada] sem parecer exagerado.
+- [Perfil 1 — ex.: faixa etária, contexto]
+- [Perfil 2]
+- [Perfil 3]
+- [O que esse público valoriza na hora de contratar]
 
-## Público-alvo
+## Personalidade
 
-[Faixa etária ou perfil demográfico]
+Transmitir:
 
-[Perfil 1 — ex.: famílias, profissionais, empreendedores]
-
-[Perfil 2]
-
-[Perfil 3]
-
-[Pessoas que valorizam X, Y e Z em relação ao segmento]
-
----
-
-# Personalidade da Marca
-
-A marca deve transmitir:
-
-- [Traço 1 — ex.: confiança, elegância, energia]
+- [Traço 1]
 - [Traço 2]
 - [Traço 3]
-- [Traço 4]
-- [Traço 5]
-- [Traço 6]
 
-Nunca deve parecer [o que evitar — ex.: fria, genérica, agressiva, infantil].
+Evitar:
 
----
+- [Anti-trait 1 — ex.: genérico, agressivo, infantil]
+- [Anti-trait 2]
 
-# Direção Visual
+## Direção visual
 
-[Descreva se o site será claro, escuro ou misto.]
+[Claro / escuro / misto]. Sensação principal: [ex.: confiança, acolhimento, autoridade].
 
-A experiência deve transmitir [sensação principal — ex.: leveza, autoridade, modernidade].
+### Paleta
 
-## Paleta
+| Token | Valor | Uso |
+|-------|-------|-----|
+| Fundo | [hex ou nome] | Base da página |
+| Surface | [hex ou nome] | Blocos alternados |
+| Texto | [hex ou nome] | Corpo e títulos |
+| Muted | [hex ou nome] | Apoios e labels |
+| Acento | [hex ou nome] | CTA, links, destaques |
 
-- [Cor primária]
-- [Cor secundária]
-- [Cor de fundo]
-- [Cor de destaque]
-- [Cor complementar 1]
-- [Cor complementar 2]
-- [Cor de acento]
+Referência emocional: [o que a paleta deve evocar no segmento].
 
-A paleta deve remeter a [referência emocional ou visual do segmento].
+## Princípios de layout
 
----
+- **Hero full-bleed** — mídia ou atmosfera ocupando a largura; sem cards sobre a imagem
+- **Marca primeiro** — logo/nome legível antes de elementos decorativos
+- **Uma função por seção** — cada bloco responde a uma pergunta do visitante
+- **Conteúdo demonstrativo rotulado** — preços, depoimentos e métricas fictícias com flag clara
 
-# Estilo
+Ver detalhes visuais em [01-brand-guide.md](01-brand-guide.md) e [04-assets.md](04-assets.md).
 
-[Minimalista / Moderno / Corporativo / etc.]
+## Objetivos do site
 
-Muito espaço em branco.
+- Apresentar o negócio em poucos segundos
+- Mostrar [oferta principal — serviços, produtos, planos]
+- Conduzir para [ação de conversão — ex.: agendar, solicitar orçamento]
+- Transmitir confiança sem inventar fatos comerciais
 
-Tipografia [elegante / forte / limpa].
+## CTA principal
 
-Grandes imagens.
+**[Texto do CTA — ex.: Agendar consulta, Solicitar orçamento]**
 
-Animações suaves.
+Repetir em navbar, hero e seção de conversão. Microcopy em [03-copy.md](03-copy.md).
 
-Microinterações.
+## Estrutura da homepage
 
-[Descreva estética geral: cantos, sombras, densidade visual.]
+Estrutura detalhada em [02-sitemap.md](02-sitemap.md). Resumo:
 
-O visual deve priorizar [sensação desejada], sem excesso de efeitos visuais.
+| Seção | Função |
+|-------|--------|
+| Hero | Marca + headline + apoio + CTA |
+| Sobre | História e proposta em texto curto |
+| [Seção de destaque] | [Serviços / Produtos / Planos] |
+| [Seção visual] | [Galeria / Ambiente / Portfólio] |
+| [Seção de conversão] | Form ou WhatsApp |
+| Localização | Endereço, horários, mapa |
+| Footer | Contato, redes, nota demonstrativa |
 
----
+### Hero
 
-# Objetivos do Site
+Full-bleed. Sem cards flutuantes sobre a mídia.
 
-- Apresentar o negócio.
-- Despertar interesse.
-- Mostrar [produto/serviço principal].
-- Mostrar [diferencial visual ou institucional].
-- Facilitar [ação de conversão principal].
-- Transmitir confiança.
+- Headline: ver [03-copy.md](03-copy.md)
+- Apoio: 1–2 frases
+- CTA principal
+- Mídia: [descrever — foto de ambiente, atmosfera tipográfica, etc.]
 
----
+### [Seção de destaque]
 
-# CTA Principal
+Apresentar [oferta] com hierarquia clara — não lista simples.
 
-[Texto do CTA — ex.: Solicitar orçamento, Agendar consulta, Falar conosco]
+- Categorias: [Categoria 1], [Categoria 2], [Categoria 3]
+- Interação (se houver): [tabs, carrossel, filtros — descrever]
+- Preços ou métricas: rotular como **demonstrativo**
 
-Este botão deve aparecer diversas vezes ao longo do site.
+### [Seção visual]
 
----
+Mostrar o negócio por imagem.
 
-# Estrutura
-
-## Hero
-
-Imagem grande.
-
-Headline impactante.
-
-CTA principal.
-
----
-
-## Sobre
-
-História do negócio.
-
-Missão.
-
-[Proposta de valor / experiência oferecida]
-
----
-
-## [Seção de Destaque — ex.: Serviços, Produtos, Planos]
-
-Esta seção deve ser um dos destaques do projeto.
-
-Não utilizar listas simples.
-
-Criar uma experiência visual.
-
-### Funcionamento
-
-[Descreva interação especial, se houver — ex.: carrossel automático, tabs, filtros.]
-
-Categorias:
-
-- [Categoria 1]
-- [Categoria 2]
-- [Categoria 3]
-- [Categoria 4]
-
-[Descreva comportamento de transição/animação, se aplicável.]
-
-Animação suave.
-
-Elegante.
-
-Natural.
-
----
-
-## [Seção Visual — ex.: Ambiente, Galeria, Portfólio]
-
-Galeria de imagens.
-
-Mostrar:
-
-- [Elemento 1]
+- [Elemento 1 — ex.: ambiente, equipe, resultado]
 - [Elemento 2]
 - [Elemento 3]
-- [Elemento 4]
-- [Elemento 5]
 
----
+### [Seção de conversão]
 
-## [Seção de Conversão — ex.: Contato, Reservas, Agendamento]
+Converter visitante em lead.
 
-Botão principal:
+- Campos: [Campo 1], [Campo 2], [Campo 3]
+- CTA: [Texto do CTA]
+- Feedback de envio: ver microcopy em [03-copy.md](03-copy.md)
 
-[Texto do CTA]
+## Funcionalidades
 
-Campos:
+- Navbar fixa com scroll suave
+- Formulário de contato ou link WhatsApp
+- Mapa (Google Maps ou placeholder)
+- Responsividade mobile first
+- [Funcionalidade interativa — ex.: troca de categorias na seção de destaque]
 
-- [Campo 1]
-- [Campo 2]
-- [Campo 3]
-- [Campo 4]
-- [Campo 5]
+## Inspirações
 
----
+Referência de estrutura ou tom — não copiar visual:
 
-## Localização
-
-Mapa.
-
-Horários.
-
-Telefone.
-
-Endereço.
-
----
-
-## Footer
-
-[Rede social 1].
-
-[Rede social 2].
-
-Telefone.
-
-Endereço.
-
----
-
-# Funcionalidades
-
-- [Funcionalidade 1 — ex.: formulário de contato]
-- [Funcionalidade 2 — ex.: seção interativa]
-- Localização
-- WhatsApp
-- Instagram
-- Responsividade completa
-
----
-
-# Inspirações
-
-- [Referência 1 do segmento ou mercado]
+- [Referência 1 do segmento]
 - [Referência 2]
-- [Referência 3]
-- [Referência de experiência digital — ex.: Apple, Linear, Awwwards]
+- [Referência de UX — ex.: clareza de navegação, hierarquia tipográfica]
 
----
+## Definition of Done
 
-# Experiência
+Antes de considerar o showcase pronto:
 
-O visitante deve sentir que está conhecendo um negócio real e confiável do segmento **[Segmento]**.
+- [ ] Parece **cliente real** — visitante não percebe ficção imediata
+- [ ] Hero full-bleed, marca em destaque, sem cards no hero
+- [ ] Cada seção com uma função clara
+- [ ] Conteúdo fictício (preços, depoimentos, métricas) rotulado como demonstrativo
+- [ ] Copy final em [03-copy.md](03-copy.md); assets documentados em [04-assets.md](04-assets.md)
+- [ ] Responsivo; Lighthouse Performance / SEO / Best Practices ≥ 95
+- [ ] Footer com nota de projeto demonstrativo
 
-O site deve despertar vontade de [ação desejada] antes mesmo do primeiro contato.
+## Objetivo para a Dechen Web Studio
 
----
-
-# Objetivo para a Dechen Web Studio
-
-Este projeto deve parecer um trabalho entregue para um cliente real.
-
-Não deve aparentar ser uma demonstração genérica.
-
-Qualquer visitante do portfólio deve acreditar que o negócio realmente existe.
-
-Este projeto servirá como referência para futuras demonstrações da agência.
+Case de portfólio que convence futuros clientes: brief completo, execução alinhada, resultado que **parece entrega real**.

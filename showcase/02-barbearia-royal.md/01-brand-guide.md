@@ -1,108 +1,54 @@
-# Brand Guide — Barbearia Royal
+**Tipo:** brief · **Status:** ativo · **Versão:** 2.0
+
+> Identidade de marca fictícia para showcase Dechen Web Studio.
+
+# Barbearia Royal — Brand Guide
+
+Pack: [00-projeto.md](00-projeto.md) · [02-sitemap.md](02-sitemap.md) · [03-copy.md](03-copy.md) · [04-assets.md](04-assets.md)
 
 ## Identidade
 
-Barbearia Royal é uma barbearia premium para homens que valorizam presença, estilo e atendimento de alto nível.
+Barbearia premium para homens que valorizam presença, estilo e atendimento de alto nível. Sofisticação masculina pela precisão e pelo respeito — nunca ostentação ou genericidade.
 
-A marca transmite sofisticação masculina através da precisão e do respeito.
+A elegância está nos detalhes: corte, ambiente e tempo dedicado a cada cliente.
 
-Nunca deve parecer ostentosa ou genérica.
+## Posicionamento
 
-A elegância está nos detalhes — no corte, no ambiente e no tempo dedicado a cada cliente.
+Mais do que cortar cabelo, a Barbearia Royal entrega presença. Cada visita transmite respeito, pontualidade e acabamento impecável do início ao fim.
 
----
+## Personalidade
 
-# Posicionamento
+| É | Não é |
+|---|-------|
+| Precisa | Barulhenta |
+| Respeitosa | Popular demais |
+| Sofisticada | Ostentadora |
+| Masculina (sem agressividade) | Fria ou distante |
+| Confiante | Comercial em excesso |
+| Discreta | Infantil ou irônica |
+| Premium | — |
 
-Mais do que cortar cabelo, a Barbearia Royal entrega presença.
+## Público
 
-Cada visita deve transmitir respeito, pontualidade e um acabamento impecável do início ao fim.
+Homens de 25 a 55 anos — profissionais, executivos, noivos. Valorizam hora marcada, ambiente reservado e aparência com intenção.
 
----
-
-# Personalidade
-
-A marca é:
-
-- Precisa
-
-- Respeitosa
-
-- Sofisticada
-
-- Masculina (sem ser agressiva)
-
-- Confiante
-
-- Discreta
-
-- Premium
-
-Nunca deve parecer:
-
-- Barulhenta
-
-- Popular demais
-
-- Ostentadora
-
-- Fria ou distante
-
-- Comercial em excesso
-
-- Infantil ou irônica
-
----
-
-# Público
-
-Homens entre 25 e 55 anos.
-
-Profissionais e executivos.
-
-Homens que cuidam da aparência com intenção.
-
-Clientes que valorizam hora marcada e ambiente reservado.
-
-Noivos e convidados em ocasiões especiais.
-
----
-
-# Valores
+## Valores
 
 - Precisão técnica
-
 - Respeito ao tempo do cliente
-
 - Atendimento personalizado
-
 - Ambiente premium
-
 - Acabamento de alto padrão
-
 - Discrição e privacidade
-
 - Presença impecável
 
----
+## Direção visual
 
-# Direção Visual
+Exclusividade e profundidade. Design minimalista, escuro e organizado. Contraste controlado entre fundo escuro e detalhes dourados. Poucos elementos competindo pela atenção.
 
-O visual deve transmitir exclusividade e profundidade.
+**Nunca utilizar tema claro.**
 
-O visitante deve sentir que entrou em um espaço reservado ao navegar.
-
-O design deve ser minimalista, escuro e extremamente organizado.
-
-Muito contraste controlado entre fundo escuro e detalhes dourados.
-
-Poucos elementos competindo pela atenção.
-
----
-
-# Paleta
-
-## Cores principais
+## Paleta
 
 | Token | Hex | Uso |
 |-------|-----|-----|
@@ -111,185 +57,66 @@ Poucos elementos competindo pela atenção.
 | `--br-surface-elevated` | `#1A1612` | Hover, elevação |
 | `--br-text` | `#F2EBE0` | Texto principal |
 | `--br-muted` | `#9A9186` | Texto secundário |
-
-## Cor de destaque
-
-| Token | Hex | Uso |
-|-------|-----|-----|
 | `--br-gold` | `#C4A35A` | CTAs, labels, destaques |
 | `--br-gold-soft` | `#B8956C` | Variações suaves |
 | `--br-border` | `rgba(196,163,90,0.16)` | Bordas padrão |
 | `--br-border-strong` | `rgba(196,163,90,0.28)` | Bordas em destaque |
 
-A paleta deve lembrar madeira escura, couro, luz âmbar e acabamentos metálicos discretos.
+Referência: madeira escura, couro, luz âmbar, acabamentos metálicos discretos.
 
-**Nunca utilizar tema claro neste projeto.**
+## Tipografia
 
----
+### Display — Playfair Display
 
-# Tipografia
+Títulos e headlines. Pesos: 400, 500, 600, 700. Classe: `.font-display`.
 
-## Display — Playfair Display
+### Sans — DM Sans
 
-Títulos e headlines.
+Corpo, labels, botões, navegação. Pesos: 400, 500, 600, 700. Classe: `.font-sans`.
 
-Elegante, com presença e autoridade.
+### Hierarquia
 
-Pesos: 400, 500, 600, 700.
+- **Labels de seção:** uppercase, tracking 0.28em, dourado, 12px
+- **Títulos:** Playfair, 3xl–5xl, `#F2EBE0`
+- **Corpo:** DM Sans, base–lg, `#9A9186`
+- **Preços:** DM Sans, sm, medium, `#C4A35A`
 
-## Sans — DM Sans
+Textos curtos. Sem blocos longos.
 
-Textos, labels, botões e navegação.
+## Botões
 
-Muito legível.
+### Primary
 
-Contemporânea e limpa.
+Fundo `#C4A35A`, texto `#0C0A09`, sombra dourada sutil, hover `#D4B56A`, `rounded-sm`.
 
-Pesos: 400, 500, 600, 700.
+### Secondary
 
-## Hierarquia
+Borda dourada translúcida, fundo transparente, texto `#F2EBE0`, hover com fundo dourado sutil.
 
-- Labels de seção: uppercase, tracking amplo (0.28em), dourado, 12px
-- Títulos de seção: Playfair, 3xl–5xl, `#F2EBE0`
-- Corpo: DM Sans, base–lg, `#9A9186`
-- Preços: DM Sans, sm, medium, `#C4A35A`
+### Ghost
 
-Nunca utilizar textos longos e cansativos.
+Texto muted, hover dourado.
 
----
+**CTA principal:** Agendar horário
 
-# Botões
+## Hero — direção especial
 
-Os botões devem transmitir presença e refinamento.
+Sem fotografia. Atmosfera abstrata: gradientes radiais dourados e marrons, grid grain 48px, linha vertical dourada (desktop), círculos concêntricos (desktop), fade inferior.
 
-## Primary
+Classes: `.hero-atmosphere`, `.hero-grain`. Detalhes em [04-assets.md](04-assets.md).
 
-- Fundo dourado `#C4A35A`
-- Texto escuro `#0C0A09`
-- Sombra dourada sutil
-- Hover: dourado mais claro `#D4B56A`
-- Cantos levemente arredondados (`rounded-sm`)
+## Fotografia (galeria e demais seções)
 
-## Secondary
+**Não no hero.** Priorizar cadeiras premium, área de barba, ambientes reservados, luz âmbar, composição editorial.
 
-- Borda dourada translúcida
-- Fundo transparente
-- Texto `#F2EBE0`
-- Hover: fundo dourado muito sutil
+Evitar stock genérico, ambientes claros, selfies, baixa resolução.
 
-## Ghost
+## Tom de voz
 
-- Texto muted
-- Hover: dourado
+Calmo, confiante, respeitoso, preciso, discreto. Sem exagero comercial, agressividade ou ironia.
 
-CTA principal:
+## Sensação
 
-Agendar horário
+Um barbeiro experiente que recebe com pontualidade, ouve com atenção e entrega acabamento impecável — sem pressa e sem barulho.
 
----
-
-# Ícones
-
-Utilizar ícones minimalistas quando necessário.
-
-Traços finos.
-
-Sem excesso de detalhes.
-
-Preferir SVG inline ou ícones outline.
-
----
-
-# Hero — Direção Especial
-
-O hero **não utiliza fotografia**.
-
-Utilizar atmosfera abstrata composta por:
-
-- Gradientes radiais dourados e marrons escuros
-- Grid grain sutil (48px)
-- Linha vertical dourada decorativa (desktop)
-- Círculos geométricos concêntricos dourados (desktop)
-- Fade inferior para o fundo principal
-
-Classe CSS: `.hero-atmosphere`, `.hero-grain`.
-
-A sensação deve ser de exclusividade e profundidade — não de stock photo genérica.
-
----
-
-# Fotografia (Galeria e demais seções)
-
-As imagens de ambiente são parte essencial da experiência — mas **não no hero**.
-
-Priorizar:
-
-- Cadeiras premium em couro
-
-- Área de barba com navalha
-
-- Ambientes reservados com madeira escura
-
-- Luz âmbar e quente
-
-- Detalhes de finalização
-
-- Composição editorial, não casual
-
-Evitar:
-
-- Fotos artificiais ou stock genérico
-
-- Excesso de edição ou filtros
-
-- Ambientes claros ou populares
-
-- Selfies ou poses forçadas
-
-- Imagens pixeladas ou de baixa resolução
-
----
-
-# Experiência Digital
-
-Ao entrar no site o visitante deve sentir:
-
-"Quero agendar na Barbearia Royal."
-
-O design deve despertar desejo antes mesmo da leitura.
-
-A escuridão controlada e o dourado discreto devem evocar um ambiente reservado e premium.
-
----
-
-# Tom de Voz
-
-Calmo.
-
-Confiante.
-
-Respeitoso.
-
-Preciso.
-
-Discreto.
-
-Nunca exagerado.
-
-Nunca comercial em excesso.
-
-Nunca agressivo ou irônico.
-
----
-
-# Sensação
-
-Se a Barbearia Royal fosse uma pessoa, seria um barbeiro experiente que recebe cada cliente com pontualidade, ouve com atenção e entrega um acabamento impecável — sem pressa e sem barulho.
-
-Essa sensação deve estar presente em todo o projeto.
-
----
-
-# Objetivo
-
-A identidade visual deve transformar visitantes em futuros clientes, transmitindo confiança, precisão e sofisticação masculina através de uma experiência digital memorável.
+Copy aplicada em [03-copy.md](03-copy.md).

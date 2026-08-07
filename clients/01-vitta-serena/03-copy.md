@@ -1,14 +1,16 @@
 # Copy — Vitta Serena
 
+**Tipo:** copy · **Status:** em andamento · **Versão:** 2.0
+
+Pack: [00-projeto.md](00-projeto.md) · [01-brand-guide.md](01-brand-guide.md) · [02-sitemap.md](02-sitemap.md) · [04-assets.md](04-assets.md) · [05-prompts.md](05-prompts.md) · [06-roadmap.md](06-roadmap.md)
+
 ## Objetivo
 
 Definir a comunicação inicial do site da Vitta Serena.
 
 A copy deve transmitir delicadeza, confiança e elegância sem exageros. Informações comerciais ainda não confirmadas aparecem entre colchetes e devem ser substituídas antes da publicação.
 
----
-
-# Regra Principal
+## Regra principal
 
 Nunca inventar:
 
@@ -23,21 +25,17 @@ Nunca inventar:
 - Depoimentos
 - Descontos
 
----
+## Metadados
 
-# Metadados
-
-## Título da Home
+### Título da home
 
 Vitta Serena | Semijoias delicadas para todos os dias
 
-## Descrição
+### Descrição
 
 Descubra semijoias delicadas, elegantes e versáteis escolhidas para acompanhar sua rotina. Conheça a coleção Vitta Serena.
 
----
-
-# Navbar
+## Navbar
 
 - Início
 - Coleção
@@ -49,119 +47,109 @@ CTA:
 
 **Ver coleção**
 
----
+## Hero
 
-# Hero
-
-## Eyebrow
+### Eyebrow
 
 Vitta Serena Semijoias
 
-## Headline
+### Headline
 
 Delicadeza para acompanhar todos os seus dias.
 
-## Subheadline
+### Subheadline
 
 Peças elegantes e versáteis, escolhidas para trazer confiança, leveza e personalidade à sua rotina.
 
-## CTA principal
+### CTA principal
 
 Ver coleção
 
-## CTA secundário
+### CTA secundário
 
 Conhecer a Vitta Serena
 
----
+## Coleção em destaque
 
-# Coleção em Destaque
-
-## Eyebrow
+### Eyebrow
 
 Nossa seleção
 
-## Título
+### Título
 
 Peças escolhidas para fazer parte da sua rotina.
 
-## Texto
+### Texto
 
 Descubra acessórios delicados que combinam com diferentes momentos, estilos e formas de se expressar.
 
-## CTA
+### CTA
 
 Ver todos os produtos
 
----
+## Categorias
 
-# Categorias
-
-## Título
+### Título
 
 Encontre a peça que combina com você.
 
-## Brincos
+### Brincos
 
 Detalhes delicados que transformam qualquer composição.
 
-## Colares
+### Colares
 
 Camadas de personalidade para usar do seu jeito.
 
-## Pulseiras
+### Pulseiras
 
 Leveza e elegância em cada movimento.
 
-## Anéis
+### Anéis
 
 Pequenos detalhes que dizem muito.
 
-## Kits e presentes
+### Kits e presentes
 
 Escolhas especiais para presentear alguém — ou você mesma.
 
----
+## Benefícios
 
-# Benefícios
-
-## Título
+### Título
 
 Uma experiência simples e cuidadosa.
 
-### Curadoria delicada
+#### Curadoria delicada
 
 Peças selecionadas para combinar elegância, versatilidade e uso cotidiano.
 
-### Atendimento próximo
+#### Atendimento próximo
 
 Fale diretamente com a gente para tirar dúvidas e escolher com tranquilidade.
 
-### Compra simples
+#### Compra simples
 
 Escolha sua peça e continue o pedido pelo WhatsApp.
 
-### Embalagem cuidadosa
+#### Embalagem cuidadosa
 
 [Confirmar embalagem e condições antes da publicação.]
 
----
+## Produtos em destaque
 
-# Produtos em Destaque
-
-## Eyebrow
+### Eyebrow
 
 Destaques
 
-## Título
+### Título
 
 As peças que queremos mostrar primeiro.
 
-## Texto
+### Texto
 
 Uma seleção de novidades e favoritos da Vitta Serena.
 
-## Microcopy de disponibilidade
+### Microcopy de disponibilidade
 
 - Disponível
 - Últimas unidades
@@ -170,35 +158,31 @@ Uma seleção de novidades e favoritos da Vitta Serena.
 
 Só utilizar cada estado quando verdadeiro.
 
----
+## Sobre na home
 
-# Sobre na Home
-
-## Eyebrow
+### Eyebrow
 
 Sobre nós
 
-## Título
+### Título
 
 A beleza também mora nos dias comuns.
 
-## Texto
+### Texto
 
 A Vitta Serena nasceu para tornar a delicadeza parte da rotina. Selecionamos peças elegantes e versáteis para acompanhar diferentes momentos e ajudar cada mulher a se sentir ainda mais confiante.
 
-## CTA
+### CTA
 
 Conheça nossa história
 
----
+## Página Sobre
 
-# Página Sobre
-
-## Título
+### Título
 
 Vitta Serena: delicadeza que acompanha você.
 
-## Texto principal
+### Texto principal
 
 A Vitta Serena nasceu do desejo de criar uma marca próxima, elegante e feita para a vida real.
 
@@ -208,95 +192,89 @@ Cada item da nossa coleção é escolhido com atenção à beleza, à versatilid
 
 Estamos construindo a Vitta Serena com cuidado, transparência e vontade de fazer cada cliente se sentir bem atendida do início ao fim.
 
-## CTA
+### CTA
 
 Conhecer a coleção
 
----
+## Página de coleção
 
-# Página de Coleção
-
-## Título
+### Título
 
 Nossa coleção
 
-## Introdução
+### Introdução
 
 Explore as peças da Vitta Serena e encontre detalhes que combinam com seu estilo e sua rotina.
 
-## Estado vazio
+### Estado vazio
 
 Ainda não encontramos produtos com esses filtros.
 
-## Ação do estado vazio
+### Ação do estado vazio
 
 Limpar filtros
 
----
+## Página de categoria
 
-# Página de Categoria
+### Brincos
 
-## Brincos
-
-### Título
+#### Título
 
 Brincos
 
-### Descrição
+#### Descrição
 
 Peças delicadas para iluminar suas combinações e acompanhar diferentes momentos.
 
-## Colares
+### Colares
 
-### Título
+#### Título
 
 Colares
 
-### Descrição
+#### Descrição
 
 Modelos versáteis para usar sozinhos, em camadas ou do seu jeito.
 
-## Pulseiras
+### Pulseiras
 
-### Título
+#### Título
 
 Pulseiras
 
-### Descrição
+#### Descrição
 
 Detalhes leves e elegantes para completar sua composição.
 
-## Anéis
+### Anéis
 
-### Título
+#### Título
 
 Anéis
 
-### Descrição
+#### Descrição
 
 Peças que expressam personalidade nos menores detalhes.
 
-## Kits e presentes
+### Kits e presentes
 
-### Título
+#### Título
 
 Kits e presentes
 
-### Descrição
+#### Descrição
 
 Combinações especiais para transformar carinho em um presente delicado.
 
----
+## Página de produto
 
-# Página de Produto
-
-## Estrutura da descrição curta
+### Estrutura da descrição curta
 
 Uma peça delicada e versátil para acompanhar suas combinações do dia a dia.
 
 A descrição real deve explicar características visíveis e confirmadas do produto.
 
-## Labels
+### Labels
 
 - Código
 - Preço
@@ -308,31 +286,29 @@ A descrição real deve explicar características visíveis e confirmadas do pro
 - Quantidade
 - Cuidados
 
-## CTA principal
+### CTA principal
 
 Comprar pelo WhatsApp
 
-## CTA secundário
+### CTA secundário
 
 Tirar uma dúvida
 
-## Texto abaixo do CTA
+### Texto abaixo do CTA
 
 Você será direcionada ao WhatsApp com os dados desta peça.
 
-## Produto indisponível
+### Produto indisponível
 
 Esta peça está indisponível no momento.
 
-## CTA alternativo
+### CTA alternativo
 
 Ver peças semelhantes
 
----
+## WhatsApp
 
-# WhatsApp
-
-## Mensagem de compra
+### Mensagem de compra
 
 Olá! Tenho interesse na peça **[NOME DO PRODUTO]**, código **[SKU]**, na variação **[VARIAÇÃO]**.
 
@@ -342,27 +318,25 @@ Link: [URL DO PRODUTO]
 
 Poderia me confirmar a disponibilidade e as condições do pedido?
 
-## Mensagem geral
+### Mensagem geral
 
 Olá! Vim pelo site da Vitta Serena e gostaria de conhecer melhor as peças.
 
----
+## Cuidados
 
-# Cuidados
-
-## Título
+### Título
 
 Cuidados com suas peças
 
-## Introdução
+### Introdução
 
 Alguns cuidados simples ajudam a preservar a aparência das suas peças por mais tempo.
 
-## Aviso
+### Aviso
 
 As orientações abaixo devem ser adaptadas aos materiais reais da coleção antes da publicação.
 
-## Estrutura sugerida
+### Estrutura sugerida
 
 - Guarde cada peça separadamente
 - Evite atrito entre acessórios
@@ -370,141 +344,127 @@ As orientações abaixo devem ser adaptadas aos materiais reais da coleção ant
 - Limpe somente com o método recomendado
 - Em caso de dúvida, fale com a Vitta Serena
 
----
+## Entregas
 
-# Entregas
-
-## Título
+### Título
 
 Entregas
 
-## Introdução
+### Introdução
 
 Queremos que seu pedido chegue de forma simples e segura.
 
-## Conteúdo provisório
+### Conteúdo provisório
 
 As modalidades, regiões atendidas, valores e prazos serão informados de acordo com o endereço e a operação da marca.
 
 Substituir por regras reais antes do lançamento.
 
----
+## Trocas e devoluções
 
-# Trocas e Devoluções
-
-## Título
+### Título
 
 Trocas e devoluções
 
-## Introdução
+### Introdução
 
 Nosso objetivo é oferecer uma experiência clara e cuidadosa em todas as etapas.
 
-## Conteúdo provisório
+### Conteúdo provisório
 
 As condições, prazos e procedimentos de troca devem ser definidos e revisados antes da publicação.
 
 Para receber orientação, entre em contato pelos canais oficiais da Vitta Serena.
 
----
+## Perguntas frequentes
 
-# Perguntas Frequentes
-
-## Como faço meu pedido?
+### Como faço meu pedido?
 
 Escolha uma peça, abra a página do produto e toque em “Comprar pelo WhatsApp”. A mensagem será preenchida com os dados do item para facilitar o atendimento.
 
-## Quais são as formas de pagamento?
+### Quais são as formas de pagamento?
 
 [Inserir formas de pagamento confirmadas.]
 
-## Como funciona a entrega?
+### Como funciona a entrega?
 
 [Inserir regiões, modalidades, valores e prazos confirmados.]
 
-## Posso trocar uma peça?
+### Posso trocar uma peça?
 
 [Inserir condições e processo confirmados.]
 
-## Como cuidar das peças?
+### Como cuidar das peças?
 
 Consulte a página de cuidados e siga as orientações específicas do material da sua peça.
 
-## Como sei se o produto está disponível?
+### Como sei se o produto está disponível?
 
 A disponibilidade aparece na página do produto e é confirmada durante o atendimento.
 
----
+## Contato
 
-# Contato
-
-## Título
+### Título
 
 Fale com a Vitta Serena
 
-## Texto
+### Texto
 
 Ficou com alguma dúvida ou quer ajuda para escolher uma peça? Fale com a gente pelos nossos canais oficiais.
 
-## Botões
+### Botões
 
 - Chamar no WhatsApp
 - Visitar o Instagram
 - Enviar e-mail
 
-## Horário
+### Horário
 
 [Inserir horário real de atendimento.]
 
----
+## Newsletter ou lista de interesse
 
-# Newsletter ou Lista de Interesse
-
-## Título
+### Título
 
 Novidades da Vitta Serena
 
-## Texto
+### Texto
 
 Receba lançamentos, reposições e novidades da marca.
 
-## Campo
+### Campo
 
 Seu melhor e-mail
 
-## Botão
+### Botão
 
 Quero receber novidades
 
-## Confirmação
+### Confirmação
 
 Cadastro realizado. Em breve, você receberá novidades da Vitta Serena.
 
----
+## CTA final
 
-# CTA Final
-
-## Título
+### Título
 
 Encontre um detalhe para chamar de seu.
 
-## Texto
+### Texto
 
 Conheça a coleção e escolha a peça que combina com você.
 
-## CTA
+### CTA
 
 Ver coleção
 
----
+## Footer
 
-# Footer
-
-## Frase
+### Frase
 
 Delicadeza para todos os dias.
 
-## Links
+### Links
 
 - Coleção
 - Sobre
@@ -515,15 +475,13 @@ Delicadeza para todos os dias.
 - Privacidade
 - Termos
 
-## Direitos
+### Direitos
 
 © [ANO] Vitta Serena. Todos os direitos reservados.
 
----
+## Microcopys
 
-# Microcopys
-
-## Filtros
+### Filtros
 
 - Filtrar
 - Ordenar
@@ -533,7 +491,7 @@ Delicadeza para todos os dias.
 - Disponibilidade
 - Faixa de preço
 
-## Produto
+### Produto
 
 - Ver detalhes
 - Comprar pelo WhatsApp
@@ -543,7 +501,7 @@ Delicadeza para todos os dias.
 - Quantidade
 - Compartilhar
 
-## Formulários
+### Formulários
 
 - Campo obrigatório
 - E-mail inválido
@@ -552,7 +510,7 @@ Delicadeza para todos os dias.
 - Enviado com sucesso
 - Não foi possível enviar. Tente novamente.
 
-## Navegação
+### Navegação
 
 - Voltar
 - Início
@@ -561,9 +519,7 @@ Delicadeza para todos os dias.
 - Abrir menu
 - Fechar menu
 
----
-
-# Tom de Voz
+## Tom de voz
 
 Toda a comunicação deve transmitir:
 

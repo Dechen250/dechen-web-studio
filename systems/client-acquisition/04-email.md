@@ -1,217 +1,102 @@
 # Sistema de E-mail — Sistema de Captação
 
+**Tipo:** E-mail · **Status:** ativo · **Versão:** 2.0
+
 ## Objetivo
 
-Definir o funcionamento do sistema de envio e recebimento de e-mails da Dechen Web Studio.
+Definir envio e recebimento de notificações de leads. Todo formulário enviado gera alerta imediato à equipe.
 
-Todo lead enviado pelo formulário deve gerar uma notificação imediata para a equipe da agência.
+Documentação relacionada: [03-api.md](./03-api.md) · [01-arquitetura.md](./01-arquitetura.md)
 
-O sistema deve ser confiável, rápido e preparado para futuras automações.
+## Serviço
 
----
+| Item | Valor |
+|------|-------|
+| Provedor | Resend |
+| Motivos | Integração Next.js, API moderna, confiabilidade, manutenção simples |
 
-# Serviço
+## Endereços
 
-Serviço recomendado
+| Tipo | E-mail |
+|------|--------|
+| Principal (notificações) | contato@dechenwebstudio.com.br |
+| Futuro — comercial | comercial@dechenwebstudio.com.br |
+| Futuro — suporte | suporte@dechenwebstudio.com.br |
+| Futuro — financeiro | financeiro@dechenwebstudio.com.br |
 
-Resend
+## Fluxo
 
-Motivos
+```
+Cliente → Formulário → POST /api/contact → Supabase → Resend → contato@dechenwebstudio.com.br → Equipe
+```
 
-- Excelente integração com Next.js
+## Notificação de novo lead
 
-- API moderna
+### Assunto
 
-- Alta confiabilidade
-
-- Fácil manutenção
-
-- Boa documentação
-
----
-
-# E-mail Oficial
-
-Principal
-
-[contato@dechenwebstudio.com.br](mailto:contato@dechenwebstudio.com.br)
-
-Futuro
-
-[comercial@dechenwebstudio.com.br](mailto:comercial@dechenwebstudio.com.br)
-
-[suporte@dechenwebstudio.com.br](mailto:suporte@dechenwebstudio.com.br)
-
-[financeiro@dechenwebstudio.com.br](mailto:financeiro@dechenwebstudio.com.br)
-
----
-
-# Fluxo
-
-Cliente
-
-↓
-
-Envia formulário
-
-↓
-
-API recebe os dados
-
-↓
-
-Banco de dados
-
-↓
-
-Resend
-
-↓
-
-E-mail da agência
-
-↓
-
-Equipe recebe a notificação
-
----
-
-# Conteúdo do E-mail
-
-Assunto
-
+```txt
 Novo Lead — Dechen Web Studio
+```
 
----
+### Corpo (campos incluídos)
 
-Informações
+- Nome
+- Empresa
+- E-mail
+- WhatsApp
+- Serviço
+- Objetivo
+- Prazo
+- Orçamento
+- Mensagem
+- Data
+- Origem
 
-Nome
+## SLA
 
-Empresa
+Todos os leads enviados imediatamente. Atraso máximo aceitável: poucos segundos.
 
-E-mail
+## Confirmação ao cliente
 
-WhatsApp
+| Versão | Comportamento |
+|--------|---------------|
+| Inicial | Sem confirmação automática |
+| Futura | E-mail de agradecimento |
 
-Serviço
+### Exemplo futuro
 
-Objetivo
+**Assunto:** Recebemos sua solicitação.
 
-Prazo
+**Mensagem:**
 
-Orçamento
+> Olá!
+>
+> Recebemos sua solicitação de orçamento. Nossa equipe analisará seu projeto e entrará em contato o mais breve possível.
+>
+> Obrigado por escolher a Dechen Web Studio.
 
-Mensagem
-
-Data
-
-Origem
-
----
-
-# Prioridade
-
-Todos os leads devem ser enviados imediatamente.
-
-O atraso máximo aceitável é de poucos segundos.
-
----
-
-# Confirmação ao Cliente
-
-Versão Inicial
-
-Não enviar confirmação automática.
-
-Versão Futura
-
-Enviar um e-mail de confirmação agradecendo pelo contato.
-
-Exemplo
-
-Assunto
-
-Recebemos sua solicitação.
-
-Mensagem
-
-Olá!
-
-Recebemos sua solicitação de orçamento.
-
-Nossa equipe analisará seu projeto e entrará em contato o mais breve possível.
-
-Obrigado por escolher a Dechen Web Studio.
-
----
-
-# Templates
-
-Futuramente criar templates para:
+## Templates futuros
 
 - Novo Lead
-
 - Confirmação de Recebimento
-
 - Agendamento de Reunião
-
 - Envio de Proposta
-
 - Aprovação do Projeto
-
 - Boas-vindas ao Cliente
 
----
+## Segurança
 
-# Segurança
+- Nunca expor chaves da API no frontend
+- Todo envio via `POST /api/contact`
 
-Nunca expor chaves da API no frontend.
+## Logs
 
-Todo envio deve acontecer através da API:
+Registrar data, hora, destinatário e status do envio. Em falha: registrar erro e permitir nova tentativa.
 
-POST /api/contact
+## Escalabilidade
 
----
+Integrações futuras: CRM, RD Station, Slack, Discord, WhatsApp, Google Calendar — sem alterar o frontend.
 
-# Logs
+## Objetivo
 
-Registrar:
-
-- Data
-
-- Hora
-
-- Destinatário
-
-- Status do envio
-
-Em caso de falha:
-
-Registrar o erro e permitir nova tentativa.
-
----
-
-# Escalabilidade
-
-O sistema deve permitir futuras integrações com:
-
-- CRM próprio
-
-- RD Station
-
-- Slack
-
-- Discord
-
-- WhatsApp
-
-- Google Calendar
-
-Sem alterar a estrutura do frontend.
-
----
-
-# Objetivo Final
-
-Criar um sistema de comunicação confiável, profissional e escalável, garantindo que cada novo lead seja entregue rapidamente à equipe da Dechen Web Studio e preparando a infraestrutura para futuras automações comerciais.
+Comunicação confiável e escalável: cada lead entregue rapidamente à equipe, com infraestrutura pronta para automações comerciais ([05-roadmap.md](./05-roadmap.md)).

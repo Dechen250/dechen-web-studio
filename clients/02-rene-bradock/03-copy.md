@@ -1,22 +1,22 @@
 # Copy — Renê Bradock
 
+**Tipo:** copy · **Status:** ativo · **Versão:** 2.0
+
+Pack: [00-projeto.md](00-projeto.md) · [01-brand-guide.md](01-brand-guide.md) · [02-sitemap.md](02-sitemap.md) · [04-assets.md](04-assets.md) · [06-roadmap.md](06-roadmap.md)
+
 ## Meta / SEO
 
 - Title: `Renê Bradock | Marido de aluguel em São Paulo`
 - Description: `Elétrica, hidráulica, móveis e acabamentos. Peça orçamento pelo WhatsApp com o Renê Bradock — atendimento em São Paulo e região.`
 
----
-
-# Navbar
+## Navbar
 
 - Serviços
 - Sobre
 - Contato
 - CTA: `WhatsApp`
 
----
-
-# Hero
+## Hero
 
 **Marca:** Renê Bradock
 
@@ -31,9 +31,7 @@
 - Primário: `Pedir orçamento no WhatsApp`
 - Secundário: `Ver serviços`
 
----
-
-# Serviços
+## Serviços
 
 **Título:** O que eu resolvo
 
@@ -46,9 +44,7 @@
 | Móveis | Montagem, ajustes e reparos em móveis. |
 | Acabamento | Pequenos reparos e serviços de acabamento residenciais e comerciais. |
 
----
-
-# Por que contratar
+## Por que contratar
 
 **Título:** Atendimento que faz a diferença
 
@@ -58,9 +54,7 @@
 2. **São Paulo e região** — atendimento próximo, no DDD 11.
 3. **Orçamento sem complicação** — chame no WhatsApp e explique o que precisa.
 
----
-
-# Como funciona
+## Como funciona
 
 **Título:** Como funciona
 
@@ -68,9 +62,7 @@
 2. **Receba o orçamento** — alinhamos escopo e valor.
 3. **Agende o serviço** — execução com atenção e pontualidade.
 
----
-
-# Contato
+## Contato
 
 **Título:** Peça seu orçamento
 
@@ -104,8 +96,6 @@ Serviço: {servico}
 Mensagem: {mensagem}
 ```
 
----
-
-# Footer
+## Footer
 
 Renê Bradock · São Paulo e região · WhatsApp (11) 95254-1429

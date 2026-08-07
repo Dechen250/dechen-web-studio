@@ -1,69 +1,70 @@
 # Design System — Royal Growth
 
-**Status:** alinhado ao esboço do cliente (`SITE 2026/0.2 - PROMPT LOVABLE.md`).  
-**Mudança vs. proposta anterior:** acento passa de **menta** (site legado) para **azul royal**. O site deve parecer infraestrutura tecnológica, não agência.
+**Tipo:** design · **Status:** alinhado ao SITE 2026 · **Versão:** 2.0
 
-Validar hex oficiais com o cliente quando houver manual/logo.
+Pack: [00-projeto.md](00-projeto.md) · [02-sitemap.md](02-sitemap.md) · [03-copy.md](03-copy.md) · [04-assets.md](04-assets.md) · [06-roadmap.md](06-roadmap.md) · Esboço: [`SITE 2026/0.2 - PROMPT LOVABLE.md`](SITE%202026/0.2%20-%20PROMPT%20LOVABLE.md)
 
----
+## Objetivo
 
-# 1. Essência
+Definir tokens, componentes e princípios visuais do novo site.
 
-## Quem é
+**Mudança vs. site legado:** acento passa de **menta** para **azul royal**. O site deve parecer infraestrutura tecnológica, não agência.
+
+Validar hex oficiais com o cliente quando houver manual ou logo.
+
+## Essência
+
+### Quem é
 
 Royal Growth estrutura aquisição, conversão e operação para que o crescimento aconteça **sem aumento proporcional de time**.
 
-## Ideia central
+### Ideia central
 
 **Escala quando a operação deixa de ser gargalo.**
 
-## Personalidade
+### Personalidade
 
-| É | Não é |
-|---|--------|
+| Atributo | Evitar |
+|----------|--------|
 | Precisa | Genérica |
-| Técnica | “Agência criativa” |
-| Sóbrica | Barulhenta |
-| Confiável | Vendedora |
+| Técnica | Agência criativa barulhenta |
+| Sóbria | Vendedora |
 | Profunda | Corporativa vazia |
 | Clara | Cheia de jargão |
 
-## Sensação desejada
+### Sensação desejada
 
 > “Essa empresa não vende marketing. Ela organiza operação.”
 
----
-
-# 2. Princípios de UX
+## Princípios de UX
 
 Referência de **princípios** (não de visual): [n8n.io](https://n8n.io/).
 
-1. Hero extremamente claro, com alto impacto tipográfico  
-2. Leitura escaneável, blocos definidos  
-3. Progressão: problema → diagnóstico → estrutura → prova → ação  
-4. Alternância entre densidade e respiro  
-5. Sensação de produto técnico, robusto, confiável  
-6. Microinterações elegantes (hover, transições curtas)  
-7. Layout modular; tipografia dominante  
-8. Uma função por seção  
+1. Hero claro, com impacto tipográfico
+2. Leitura escaneável, blocos definidos
+3. Progressão: problema → diagnóstico → estrutura → prova → ação
+4. Alternância entre densidade e respiro
+5. Sensação de produto técnico, robusto, confiável
+6. Microinterações elegantes (hover, transições curtas)
+7. Layout modular; tipografia dominante
+8. Uma função por seção
 
 ### Evitar
 
-- Landing genérica de agência  
-- Clean corporativo vazio  
-- Excesso decorativo, glow, outline, blur de scroll  
-- Gradientes chamativos / paleta “startup IA” (purple neon)  
-- Cards no hero; badges flutuantes sobre mídia  
+- Landing genérica de agência
+- Clean corporativo vazio
+- Excesso decorativo: glow, outline, blur de scroll
+- Gradientes chamativos / paleta “startup IA” (purple neon)
+- Cards no hero; badges flutuantes sobre mídia
+- Residual de **menta** do site legado misturado com royal
 
----
+## Paleta
 
-# 3. Paleta
-
-**Cor principal:** Azul Royal (destaque — CTAs, links, ênfase).  
-**Base:** preto profundo (versão dark recomendada para o MVP) **ou** branco (versão clara alternativa).  
+**Cor principal:** Azul Royal (CTAs, links, ênfase).  
+**Base:** preto profundo (dark — padrão MVP) **ou** branco (alternativa clara).  
 **Apoio:** neutros derivados.
 
-## Tokens — tema dark (padrão proposto)
+### Tokens — tema dark (padrão proposto)
 
 | Token | Hex | Uso |
 |-------|-----|-----|
@@ -95,16 +96,16 @@ Referência de **princípios** (não de visual): [n8n.io](https://n8n.io/).
 | `--rg-ok` | `#2F9E7A` | Sucesso / confirmação (raro) |
 | `--rg-danger` | `#D94B4B` | Erro de form |
 
-> Hex do azul royal é **proposta Dechen**. Substituir se o cliente enviar pantone/manual.
+> Hex do azul royal é **proposta Dechen**. Substituir se o cliente enviar pantone ou manual.
 
-## Regras de cor
+### Regras de cor
 
-- Fundo dark (ou branco) domina; azul royal é **destaque estratégico**, não chapado em grandes áreas  
-- Um acento dominante — não misturar menta legado + royal no mesmo layout  
-- Contraste AA em texto e UI  
-- Evitar gradientes chamativos; se houver glow, máximo sutil no hero (`rgba` do royal ≤ 12% opacidade)
+- Fundo dark (ou branco) domina; azul royal é **destaque estratégico**, não chapado em grandes áreas
+- Um acento dominante — não misturar menta legado + royal no mesmo layout
+- Contraste AA em texto e UI
+- Glow no hero, se usado: máximo sutil (`rgba` do royal ≤ 12% opacidade)
 
-## Gradiente permitido (hero)
+### Gradiente permitido (hero)
 
 ```css
 --rg-hero-glow:
@@ -112,13 +113,11 @@ Referência de **princípios** (não de visual): [n8n.io](https://n8n.io/).
   linear-gradient(165deg, #0A0E16 0%, #05070C 50%, #121826 100%);
 ```
 
----
-
-# 4. Tipografia
+## Tipografia
 
 | Papel | Fonte | Motivo |
 |-------|-------|--------|
-| Display / títulos | **Syne** | Presença técnica, não “agência glossy” |
+| Display / títulos | **Syne** | Presença técnica |
 | Corpo / UI | **Plus Jakarta Sans** | Leitura longa (Sobre, Cases, Conteúdo) |
 
 ```css
@@ -128,7 +127,7 @@ Referência de **princípios** (não de visual): [n8n.io](https://n8n.io/).
 
 **Não usar:** Inter, Roboto (legado Elementor), Arial, script, outline fill em blocos longos.
 
-## Escala
+### Escala
 
 | Token | Valor | Uso |
 |-------|-------|-----|
@@ -142,111 +141,100 @@ Referência de **princípios** (não de visual): [n8n.io](https://n8n.io/).
 
 Pesos: display 700–800 · títulos 600–700 · corpo 400–500 · nav 500–600.
 
-Line-height: corpo `1.65` (texto longo) · títulos `1.15`.
+Line-height: corpo `1.65` · títulos `1.15`.
 
----
+## Logo
 
-# 5. Logo
-
-- Wordmark Royal Growth + símbolo do leão  
-- Versões: claro sobre dark (padrão), escuro sobre paper, ícone isolado, favicon  
-- SVG + PNG em `assets/brand/`  
-- Badges RD Diamond: hierarquia menor que a marca; nunca competindo no hero  
+- Wordmark Royal Growth + símbolo do leão
+- Versões: claro sobre dark (padrão), escuro sobre paper, ícone isolado, favicon
+- SVG + PNG em `assets/brand/`
+- Badge RD Diamond: hierarquia menor que a marca; nunca competindo no hero
 
 Não esticar, não recolorir fora da paleta, não sombra pesada.
 
----
+## Layout e espaço
 
-# 6. Layout e espaço
+- Conteúdo máx.: **1120–1200px**
+- Gutter mobile 20–24px · desktop 32–48px
+- Padding de seção: `clamp(4rem, 10vw, 7.5rem)`
+- Escala: `4 · 8 · 12 · 16 · 24 · 32 · 48 · 64 · 96 · 128`
+- Radius padrão: **8px** (`--radius-md`)
 
-- Conteúdo máx.: **1120–1200px**  
-- Gutter mobile 20–24px · desktop 32–48px  
-- Padding de seção: `clamp(4rem, 10vw, 7.5rem)`  
-- Escala: `4 · 8 · 12 · 16 · 24 · 32 · 48 · 64 · 96 · 128`  
-- Radius padrão: **8px** (`--radius-md`) — evitar pill SaaS em tudo  
+## Componentes
 
----
+### Botões
 
-# 7. Componentes
+**Primário — Solicitar diagnóstico**
 
-## Botões
+- Fundo `--rg-royal` · texto `--rg-pure`
+- Padding `14px 28px` · radius `8px` · weight 600
+- Hover `--rg-royal-deep` · focus ring royal 2px
 
-### Primário — Solicitar diagnóstico
+**Secundário — Ghost**
 
-- Fundo `--rg-royal` · texto `--rg-pure`  
-- Padding `14px 28px` · radius `8px` · weight 600  
-- Hover `--rg-royal-deep` · focus ring royal 2px  
+- Borda / texto `--rg-royal` · hover fundo `rgba(30,79,214,.08)`
 
-### Secundário — Ghost
+**Terciário**
 
-- Borda / texto `--rg-royal` · hover fundo `rgba(30,79,214,.08)`  
-
-### Terciário
-
-- Link texto; hover underline / royal  
+- Link texto; hover underline / royal
 
 Um CTA primário por viewport.
 
-## Nav
+### Nav
 
-- Transparent no hero → `ink` + blur leve no scroll  
-- Links white / ativo royal  
-- CTA à direita  
-- Sem pipes `|` entre itens  
+- Transparent no hero → `ink` + blur leve no scroll
+- Links white / ativo royal
+- CTA à direita
+- Sem pipes `|` entre itens
 
-## Case block (Resultados)
+### Case block (Resultados)
 
-- Preferir **bloco tipográfico** full-width com divisor, ou card paper se for clicável  
-- Título do cliente + subtítulo do ângulo + corpo  
-- Sem métricas inventadas; sem glow  
+- Bloco tipográfico full-width com divisor, ou card paper se clicável
+- Título do cliente + subtítulo do ângulo + corpo
+- Sem métricas inventadas; sem glow
 
-## Fluxo do Sistema
+### Fluxo do Sistema
 
-- Seções numeradas ou âncoras (Leitura → Fluxo → Continuidade → Automação → Integração)  
-- Conectores discretos com `--rg-line`  
-- Visual técnico (diagrama simples opcional), não ilustração “marketing”  
+- Seções numeradas ou âncoras (Leitura → Fluxo → Continuidade → Automação → Integração)
+- Conectores discretos com `--rg-line`
+- Diagrama simples opcional — visual técnico, não ilustração de marketing
 
-## Formulário (Contato)
+### Formulário (Contato)
 
-- Campos em `--rg-elevated`, borda `--rg-line`, focus royal  
-- Labels acima · erro `--rg-danger`  
-- Select/textarea para campos longos (ferramentas, descrição, faixa)  
-- Submit: **Enviar para análise**  
+- Campos em `--rg-elevated`, borda `--rg-line`, focus royal
+- Labels acima · erro `--rg-danger`
+- Select/textarea para campos longos
+- Submit: **Enviar para análise**
 
-## Conteúdo (hub)
+### Conteúdo (hub)
 
-- Layout editorial: título forte, lead, lista de temas, grid de posts (fase 2)  
+- Layout editorial: título forte, lead, lista de temas, grid de posts (fase 2)
 
-## Footer
+### Footer
 
-- Void · CNPJ · links legais · CTA textual discreto  
+- Void · CNPJ · links legais · CTA textual discreto
 
----
-
-# 8. Motion
+## Motion
 
 2–3 movimentos no MVP:
 
-1. Hero enter (fade + translateY curto, ≤ 600ms)  
-2. Reveal de seção no scroll (12–16px)  
-3. Hover de CTA / links (150–200ms)  
+1. Hero enter (fade + translateY curto, ≤ 600ms)
+2. Reveal de seção no scroll (12–16px)
+3. Hover de CTA / links (150–200ms)
 
-Respeitar `prefers-reduced-motion`.  
+Respeitar `prefers-reduced-motion`.
+
 Proibido: blur de texto, outline infinito, parallax agressivo, digitação em parágrafo.
 
----
+## Tom na UI
 
-# 9. Tom na UI
+Labels e microcopy no registro de `SITE 2026/0.0 - REFINO DO TEXTO.md`:
 
-Labels e microcopy no mesmo registro do `SITE 2026/0.0`:
+- Direto, preciso, sem urgência falsa
+- CTAs: **Solicitar diagnóstico** / **Enviar para análise** / **Acessar conteúdos**
+- Evitar: “Falar com um assessor”, “Imprescindível”, “Garanta já”
 
-- Direto, preciso, sem urgência falsa  
-- CTAs: **Solicitar diagnóstico** / **Enviar para análise** / **Acessar conteúdos**  
-- Evitar: “Falar com um assessor”, “Imprescindível”, “Garanta já”  
-
----
-
-# 10. Tokens CSS
+## Tokens CSS (referência)
 
 ```css
 :root {
@@ -284,21 +272,17 @@ Labels e microcopy no mesmo registro do `SITE 2026/0.0`:
 }
 ```
 
----
+## Checklist pré-build
 
-# 11. Checklist
+- [ ] Hex royal validado com o cliente
+- [ ] Logos SVG claro/escuro
+- [ ] Badge RD Diamond
+- [ ] Fontes Syne + Plus Jakarta Sans
+- [ ] Botões / nav / form / case block
+- [ ] Contraste AA
+- [ ] `prefers-reduced-motion`
+- [ ] Remover residual de menta do legado
 
-- [ ] Hex royal validado com o cliente  
-- [ ] Logos SVG claro/escuro  
-- [ ] Badge RD Diamond  
-- [ ] Fontes Syne + Plus Jakarta Sans  
-- [ ] Botões / nav / form / case block  
-- [ ] Contraste AA  
-- [ ] `prefers-reduced-motion`  
-- [ ] Remover qualquer residual de menta do site legado  
+## Objetivo final
 
----
-
-# Objetivo final
-
-Visual **premium, técnico e preciso** — azul royal como sinal de controle — para sustentar a narrativa de operação e escala, não de campanha de marketing.
+Visual **premium, técnico e preciso** — azul royal como sinal de controle — para sustentar a narrativa de operação e escala.

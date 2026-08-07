@@ -1,235 +1,104 @@
 # Pós-venda
 
+**Tipo:** Etapa comercial · **Status:** ativo · **Versão:** 2.0
+
 ## Objetivo
 
-O Pós-venda tem como objetivo garantir o sucesso do cliente após a entrega do projeto, fortalecer o relacionamento e identificar novas oportunidades de parceria.
+Garantir sucesso do cliente após [Entrega](./06-entrega.md), fortalecer relacionamento e identificar novas oportunidades. A entrega marca o início do relacionamento, não o fim.
 
-Na Dechen Web Studio, a entrega do projeto representa o início do relacionamento, não o seu encerramento.
+Posição no funil: [01-funil.md](./01-funil.md) — etapa 9, antes de **Cliente Recorrente**.
 
----
+## Critérios de entrada e saída
 
-# Missão
+| | Condição |
+|---|----------|
+| **Entrada** | Entrega concluída ([06-entrega.md](./06-entrega.md)) |
+| **Saída** | Funcionamento confirmado · Feedback registrado · Caminho para Cliente Recorrente |
 
-Acompanhar o cliente após a publicação do projeto, garantindo que ele obtenha resultados reais e tenha suporte sempre que necessário.
+## Fluxo
 
----
+```
+Entrega → Confirmação → Feedback → Acompanhamento → Suporte → Novas Oportunidades → Cliente Recorrente
+```
 
-# Filosofia
+## 1. Confirmação de funcionamento
 
-Nosso objetivo não é apenas entregar um site.
+Após entrega, verificar:
 
-Nosso objetivo é contribuir para o crescimento do negócio do cliente.
+- [ ] Site funcionando em produção
+- [ ] Domínio configurado
+- [ ] Formulários operacionais
+- [ ] Cliente recebeu todos os acessos
+- [ ] Cliente conseguiu acessar o projeto
 
-Clientes satisfeitos geram:
+## 2. Feedback
 
-- Indicações
+Solicitar e registrar:
 
-- Novos projetos
+- Como foi a experiência?
+- Projeto atendeu expectativas?
+- Ajustes necessários?
+- Funcionalidades futuras desejadas?
 
-- Relacionamentos de longo prazo
+## 3. Suporte (período de garantia)
 
----
+- Corrigir bugs
+- Esclarecer dúvidas
+- Auxiliar o cliente
 
-# Fluxo
+Mudanças de escopo → nova [Proposta](./04-proposta.md).
 
-Entrega
+## 4. Acompanhamento
 
-↓
+Contato periódico para:
 
-Confirmação de Funcionamento
+- Performance do projeto
+- Dificuldades do cliente
+- Novas necessidades
+- Manutenção do relacionamento
 
-↓
+## 5. Novas oportunidades
 
-Primeiro Feedback
+Analisar quando agregar valor:
 
-↓
+- Landing Pages · SEO · Performance · Blog
+- Sistema interno · Integrações · Automações · Novas páginas
 
-Acompanhamento
+## Indicações
 
-↓
+Quando satisfeito, solicitar indicação com tom leve — sem pressão.
 
-Suporte
+> *"Se conhecer alguma empresa que também precise de uma presença digital profissional, ficaremos felizes com sua indicação."*
 
-↓
+## Depoimentos
 
-Novas Oportunidades
+Com autorização do cliente:
 
-↓
+- Solicitar depoimento
+- Publicar no site e redes sociais
+- Usar como prova social
 
-Cliente Recorrente
-
----
-
-# Etapa 1 — Confirmação
-
-Após a entrega, confirmar:
-
-- Site funcionando corretamente.
-
-- Domínio configurado.
-
-- Formulários funcionando.
-
-- Cliente recebeu todos os acessos.
-
-- Cliente conseguiu acessar o projeto.
-
-Objetivo
-
-Garantir que tudo esteja funcionando em produção.
-
----
-
-# Etapa 2 — Feedback
-
-Solicitar feedback.
-
-Perguntas
-
-- Como foi sua experiência?
-
-- O projeto atendeu às expectativas?
-
-- Existe algum ajuste necessário?
-
-- Há alguma funcionalidade que gostaria de adicionar futuramente?
-
-Registrar todas as respostas.
-
----
-
-# Etapa 3 — Suporte
-
-Durante o período de garantia:
-
-- Corrigir bugs.
-
-- Esclarecer dúvidas.
-
-- Auxiliar o cliente.
-
-Mudanças de escopo devem gerar uma nova proposta.
-
----
-
-# Etapa 4 — Acompanhamento
-
-Entrar em contato periodicamente.
-
-Objetivos
-
-- Saber como o projeto está performando.
-
-- Identificar dificuldades.
-
-- Descobrir novas necessidades.
-
-- Manter relacionamento.
-
----
-
-# Etapa 5 — Novas Oportunidades
-
-Analisar oportunidades como:
-
-- Landing Pages
-
-- SEO
-
-- Performance
-
-- Blog
-
-- Sistema interno
-
-- Integrações
-
-- Automações
-
-- Novas páginas
-
-Sempre recomendar soluções que realmente agreguem valor.
-
----
-
-# Indicações
-
-Quando o cliente estiver satisfeito, solicitar uma indicação.
-
-Exemplo
-
-"Se conhecer alguma empresa que também precise de uma presença digital profissional, ficaremos felizes com sua indicação."
-
-Nunca pressionar o cliente.
-
----
-
-# Depoimentos
-
-Quando autorizado pelo cliente:
-
-- Solicitar um depoimento.
-
-- Publicar no site.
-
-- Publicar nas redes sociais.
-
-- Utilizar como prova social.
-
----
-
-# Métricas
-
-Acompanhar:
+## Métricas
 
 - Clientes recorrentes
-
 - Taxa de satisfação
-
 - Indicações recebidas
-
 - Novos projetos por cliente
-
 - Tempo médio de relacionamento
 
----
+## Boas práticas
 
-# Boas Práticas
+- Responder rapidamente; comunicação clara
+- Registrar interações; cumprir prazos
+- Demonstrar interesse genuíno
 
-- Responder rapidamente.
+## Evitar
 
-- Manter comunicação clara.
+- Desaparecer após entrega
+- Ignorar dúvidas
+- Prometer o inalcançável
+- Pressionar por novas vendas
 
-- Demonstrar interesse genuíno.
+## Resultado esperado
 
-- Registrar todas as interações.
-
-- Cumprir prazos.
-
----
-
-# Evitar
-
-- Desaparecer após a entrega.
-
-- Ignorar dúvidas.
-
-- Prometer o que não pode cumprir.
-
-- Pressionar por novas vendas.
-
----
-
-# Objetivo Final
-
-Transformar clientes em parceiros de longo prazo.
-
-O sucesso da Dechen Web Studio será medido não apenas pelo número de projetos entregues, mas pela quantidade de clientes que escolhem continuar trabalhando conosco ao longo dos anos.
-
----
-
-# Filosofia Final
-
-A melhor estratégia de marketing é entregar um trabalho tão bom que o próprio cliente tenha vontade de recomendar a Dechen Web Studio.
-
-Relacionamentos duradouros são construídos com confiança, qualidade e consistência.
+Clientes transformados em parceiros de longo prazo. Sucesso medido também pela continuidade do relacionamento, não só por projetos entregues.

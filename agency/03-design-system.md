@@ -1,385 +1,149 @@
-# Design System
+# Design System — Dechen Web Studio
 
-# Dechen Web Studio
+**Tipo:** produto · **Status:** ativo · **Versão:** 2.0
 
-Versão 1.0
+Regras técnicas de interface da marca DWS. Filosofia e voz: [Brand Guide](02-brand-guide.md). Comportamento de IAs: [DWS AI OS](04-dws-ai-operating-system.md).
 
----
+## Objetivo
 
-# Objetivo
+Consistência entre superfícies da agência. Cada componente deve parecer do mesmo ecossistema.
 
-Este documento define todas as regras técnicas utilizadas na construção das interfaces da Dechen Web Studio.
+Em projetos de cliente, o design system **do cliente** prevalece; use este documento só quando a UI for DWS.
 
-Nosso objetivo é garantir consistência entre todos os projetos.
+## Tokens CSS (referência)
 
-Cada componente deve parecer fazer parte do mesmo ecossistema.
+```css
+:root {
+  --color-primary: #0070F3;
+  --color-bg: #050505;
+  --color-surface: #101010;
+  --color-border: #262626;
+  --color-text: #FFFFFF;
+  --color-text-muted: #A1A1AA;
 
----
+  --radius-sm: 12px;
+  --radius-md: 18px;
+  --radius-lg: 24px;
+  --radius-full: 9999px;
 
-# Filosofia
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+  --space-9: 96px;
+  --space-10: 128px;
 
-Nossa interface deve transmitir:
+  --container-max: 1280px;
+  --nav-height: 72px;
+  --control-height: 56px;
 
-• Clareza
+  --motion-fast: 200ms;
+  --motion-base: 250ms;
+  --motion-slow: 300ms;
+  --ease-standard: ease-out;
+}
+```
 
-• Rapidez
+Nunca inventar valores fora da escala de espaçamento.
 
-• Elegância
+## Grid e layout
 
-• Sofisticação
+| Token | Valor |
+|-------|-------|
+| Container máx. | 1280px |
+| Padding desktop | 32px |
+| Padding tablet | 24px |
+| Padding mobile | 20px |
 
-• Modernidade
+## Breakpoints
 
-Toda decisão visual deve facilitar a vida do usuário.
+| Nome | Largura |
+|------|---------|
+| Mobile | ~390px |
+| Tablet | 768px |
+| Laptop | 1024px |
+| Desktop | ≥1280px |
 
----
+## Tipografia (escala)
 
-# Grid
+| Nível | Desktop | Tablet | Mobile |
+|-------|---------|--------|--------|
+| H1 | 64px | 48px | 36px |
+| H2 | 48px | — | — |
+| H3 | 32px | — | — |
+| Body | 18px | — | — |
+| Small | 14px | — | — |
 
-Container máximo
+Face: Geist (marca DWS). Ajustar line-height para leitura confortável; não comprimir blocos de texto.
 
-1280px
+## Componentes — anatomia mínima
 
-Padding Desktop
+Todo componente interativo precisa de: default, hover, focus, active, disabled.
 
-32px
+### Botão primário
 
-Tablet
+- Altura: 56px · radius: full · padding horizontal: 32px · peso: 600 · transição: 250ms
+- Fundo: gradiente/azul primário; glow discreto quando Liquid Glass
 
-24px
+### Botão secundário
 
-Mobile
+- Mesmo tamanho; fundo transparente ou surface; contorno `--color-border`
 
-20px
+### Card
 
----
+- Radius: 24px · padding: 32px · border: 1px `--color-border` · background: surface  
+- Usar cards só quando a interação ou o agrupamento exigir — não por padrão em marketing.
 
-# Border Radius
+### Input
 
-Small
+- Altura: 56px · radius: 18px · border: 1px · placeholder em texto muted
 
-12px
+### Navbar
 
-Medium
+- Altura: 72px · posição fixa · backdrop-blur (Liquid Glass em superfícies DWS)
 
-18px
+## Liquid Glass (implementação)
 
-Large
+Em componentes premium DWS:
 
-24px
+- `backdrop-filter: blur(...)`
+- Transparência controlada
+- Reflexo/borda sutil
+- Glow discreto
+- Sombras profundas, não espalhadas
 
-Full
+Não exagerar. Em sites de cliente, só se o brief pedir.
 
-9999px
+## Motion
 
----
+Curva: `ease-out`. Durações: 200 / 250 / 300ms. Preferir opacity, transform e blur leves.
 
-# Espaçamento
+## Ícones
 
-Escala oficial
+Lucide, outline, peso uniforme.
 
-4
+## Performance (metas)
 
-8
+- Lighthouse Performance / Best Practices / SEO: **95+**
+- CLS estável (evitar saltos de layout)
+- LCP otimizado (imagens dimensionadas, prioridade no hero)
+- Bundle enxuto; lazy load quando fizer sentido
 
-12
+## Acessibilidade
 
-16
+- Contraste AA
+- Focus visível
+- HTML semântico
+- ARIA só quando necessário
+- Navegação por teclado obrigatória
 
-24
+## Checklist antes de criar componente
 
-32
-
-48
-
-64
-
-96
-
-128
-
-Nunca utilizar valores aleatórios.
-
----
-
-# Sistema de Cores
-
-Primary
-
-#0070F3
-
-Background
-
-#050505
-
-Surface
-
-#101010
-
-Border
-
-#262626
-
-Text Primary
-
-#FFFFFF
-
-Text Secondary
-
-#A1A1AA
-
----
-
-# Tipografia
-
-H1
-
-64px
-
-Desktop
-
-48px
-
-Tablet
-
-36px
-
-Mobile
-
----
-
-H2
-
-48px
-
----
-
-H3
-
-32px
-
----
-
-Body
-
-18px
-
----
-
-Small
-
-14px
-
----
-
-# Componentes
-
-Todos os componentes devem possuir:
-
-✓ Estados
-
-✓ Hover
-
-✓ Focus
-
-✓ Disabled
-
-✓ Active
-
----
-
-# Botões
-
-Primário
-
-Altura
-
-56px
-
-Radius
-
-9999px
-
-Padding
-
-32px
-
-Peso
-
-600
-
-Transição
-
-250ms
-
----
-
-Secundário
-
-Mesmo tamanho
-
-Sem preenchimento
-
-Contorno discreto
-
----
-
-# Cards
-
-Radius
-
-24px
-
-Padding
-
-32px
-
-Border
-
-1px
-
-Background
-
-Surface
-
----
-
-# Inputs
-
-Altura
-
-56px
-
-Radius
-
-18px
-
-Border
-
-1px
-
-Placeholder cinza
-
----
-
-# Navbar
-
-Altura
-
-72px
-
-Fixa
-
-Backdrop Blur
-
-Liquid Glass
-
----
-
-# Liquid Glass
-
-Todos os componentes premium utilizam:
-
-Backdrop Blur
-
-Transparência
-
-Reflexo suave
-
-Glow discreto
-
-Sombras profundas
-
-Jamais exagerar efeitos.
-
----
-
-# Motion
-
-Curva padrão
-
-ease-out
-
-Duração
-
-200ms
-
-250ms
-
-300ms
-
----
-
-# Ícones
-
-Lucide
-
-Outline
-
-Peso uniforme
-
----
-
-# Responsividade
-
-Desktop
-
-≥1280
-
-Laptop
-
-1024
-
-Tablet
-
-768
-
-Mobile
-
-390
-
----
-
-# Performance
-
-Lighthouse
-
-95+
-
-CLS
-
-Excelente
-
-LCP
-
-Excelente
-
-Bundle otimizado
-
-Lazy Loading
-
-Sempre que possível
-
----
-
-# Acessibilidade
-
-Contraste AA
-
-Focus visível
-
-HTML semântico
-
-ARIA quando necessário
-
-Navegação por teclado
-
-Obrigatória
-
----
-
-# Regra de Ouro
-
-Antes de criar qualquer componente, pergunte:
-
-Este componente parece pertencer à Dechen Web Studio?
+1. Já existe algo reutilizável?
+2. Usa tokens deste documento?
+3. Tem todos os estados?
+4. Parece Dechen Web Studio (ou a marca do cliente, se for o caso)?

@@ -1,271 +1,112 @@
 # Descoberta
 
+**Tipo:** Etapa comercial · **Status:** ativo · **Versão:** 2.0
+
 ## Objetivo
 
-A etapa de Descoberta tem como objetivo compreender profundamente o negócio do cliente antes de qualquer proposta comercial.
+Compreender profundamente o negócio do cliente **antes** de qualquer proposta. Ouvir, perguntar, registrar — sem vender solução ou preço nesta etapa.
 
-Nenhuma solução deve ser apresentada nesta etapa.
+Posição no funil: [01-funil.md](./01-funil.md) — etapa 3, entre **Lead** e **Diagnóstico**.
 
-Nosso papel é ouvir, fazer perguntas e entender o cenário.
+## Critérios de entrada e saída
 
----
+| | Condição |
+|---|----------|
+| **Entrada** | Lead qualificado; reunião agendada ou contato iniciado |
+| **Saída** | Informações obrigatórias registradas; pronto para [Diagnóstico](./03-diagnostico.md) |
 
-# Objetivos da Reunião
+## Objetivos da reunião
 
-- Conhecer o cliente.
+- Conhecer o cliente e o negócio
+- Identificar problemas e oportunidades
+- Compreender objetivos e métricas de sucesso
+- Coletar dados para o diagnóstico estratégico
 
-- Entender o negócio.
+## Postura
 
-- Identificar problemas.
+Falar menos, ouvir mais. Não vender — compreender. Quanto melhor o entendimento, melhor a solução posterior.
 
-- Descobrir oportunidades.
+## Estrutura da reunião
 
-- Compreender os objetivos.
+### 1. Apresentação
 
-- Coletar informações para o diagnóstico.
+Criar conexão e confiança. Apresentar a Dechen Web Studio, explicar o fluxo da reunião, demonstrar interesse genuíno.
 
----
+### 2. Conhecendo a empresa
 
-# Mentalidade
+- O que a empresa faz?
+- Há quanto tempo existe?
+- Principais serviços?
+- Diferenciais frente à concorrência?
 
-Durante a Descoberta, falamos menos e ouvimos mais.
+### 3. Público-alvo
 
-Não estamos tentando vender.
+- Quem é o cliente ideal?
+- Onde está? Como encontra a empresa?
+- O que procura?
 
-Estamos tentando compreender.
+### 4. Objetivos
 
-Quanto melhor entendermos o cliente, melhor será a solução apresentada.
+- Principal objetivo do projeto?
+- O que espera alcançar?
+- Como medirá o sucesso?
 
----
+### 5. Situação atual
 
-# Estrutura da Reunião
+- Já possui site?
+- O que funciona? O que precisa melhorar?
+- Dificuldades atuais?
 
-## 1. Apresentação
+### 6. Concorrência
 
-Objetivo
+- Principais concorrentes?
+- Sites de referência ou admiração?
 
-Criar conexão e gerar confiança.
+### 7. Escopo inicial
 
-Exemplos
+- Páginas imaginadas?
+- Funcionalidades essenciais?
+- Integrações necessárias?
 
-- Apresentar a Dechen Web Studio.
+### 8. Cronograma
 
-- Explicar como funciona a reunião.
+- Data limite?
+- Eventos importantes?
 
-- Mostrar interesse genuíno pelo negócio.
+### 9. Orçamento
 
----
+- Orçamento previsto?
 
-## 2. Conhecendo a Empresa
+Se o cliente não souber, não insistir. Pode ser definido depois.
 
-Perguntas
+### 10. Encerramento
 
-- O que sua empresa faz?
+Explicar próximos passos:
 
-- Há quanto tempo ela existe?
+```
+Descoberta → Diagnóstico → Proposta → Build → Entrega
+```
 
-- Quais são seus principais serviços?
+## Informações obrigatórias (registrar)
 
-- O que diferencia sua empresa dos concorrentes?
+- Nome · Empresa · Cargo · E-mail · WhatsApp
+- Segmento · Objetivos · Público-alvo · Problemas
+- Prazo · Observações
 
-Objetivo
+## Boas práticas
 
-Entender a identidade do negócio.
+- Ouvir atentamente; perguntas abertas
+- Não interromper; confirmar entendimento
+- Registrar tudo no sistema
 
----
+## Evitar
 
-## 3. Público-Alvo
+- Falar de preço cedo demais
+- Prometer funcionalidades
+- Criticar concorrentes
+- Pressionar o cliente
+- Suposições sem confirmação
 
-Perguntas
+## Resultado esperado
 
-- Quem é seu cliente ideal?
-
-- Onde ele está?
-
-- Como ele encontra sua empresa?
-
-- O que ele procura?
-
-Objetivo
-
-Compreender para quem o projeto será desenvolvido.
-
----
-
-## 4. Objetivos
-
-Perguntas
-
-- Qual o principal objetivo deste projeto?
-
-- O que você espera alcançar?
-
-- Como você medirá o sucesso?
-
-Objetivo
-
-Definir resultados esperados.
-
----
-
-## 5. Situação Atual
-
-Perguntas
-
-- Você já possui um site?
-
-- O que funciona bem?
-
-- O que precisa melhorar?
-
-- Quais dificuldades enfrenta hoje?
-
-Objetivo
-
-Identificar problemas e oportunidades.
-
----
-
-## 6. Concorrência
-
-Perguntas
-
-- Quem são seus principais concorrentes?
-
-- Existe algum site que você admira?
-
-- Há alguma referência que gostaria de seguir?
-
-Objetivo
-
-Compreender expectativas.
-
----
-
-## 7. Escopo
-
-Perguntas
-
-- Quais páginas imagina?
-
-- Existe alguma funcionalidade essencial?
-
-- Há integrações necessárias?
-
-Objetivo
-
-Ter uma visão inicial do projeto.
-
----
-
-## 8. Cronograma
-
-Perguntas
-
-- Existe uma data limite?
-
-- Há algum evento importante?
-
-Objetivo
-
-Definir prioridades.
-
----
-
-## 9. Orçamento
-
-Perguntas
-
-- Existe um orçamento previsto para este projeto?
-
-Caso o cliente não saiba responder, não insistir.
-
-O orçamento poderá ser definido posteriormente.
-
----
-
-## 10. Encerramento
-
-Explicar os próximos passos.
-
-Fluxo
-
-Descoberta
-
-↓
-
-Diagnóstico
-
-↓
-
-Proposta
-
-↓
-
-Build
-
-↓
-
-Entrega
-
----
-
-# Informações Obrigatórias
-
-Registrar:
-
-- Nome
-
-- Empresa
-
-- Cargo
-
-- E-mail
-
-- WhatsApp
-
-- Segmento
-
-- Objetivos
-
-- Público-alvo
-
-- Problemas
-
-- Prazo
-
-- Observações
-
----
-
-# Boas Práticas
-
-- Ouvir atentamente.
-
-- Fazer perguntas abertas.
-
-- Não interromper o cliente.
-
-- Confirmar entendimento.
-
-- Registrar todas as informações.
-
----
-
-# Evitar
-
-- Falar de preço muito cedo.
-
-- Prometer funcionalidades.
-
-- Criticar concorrentes.
-
-- Pressionar o cliente.
-
-- Fazer suposições sem confirmação.
-
----
-
-# Resultado Esperado
-
-Ao final da Descoberta, a Dechen Web Studio deve possuir informações suficientes para realizar um diagnóstico estratégico e construir uma proposta personalizada, alinhada aos objetivos reais do cliente.
+Informações suficientes para [Diagnóstico](./03-diagnostico.md) e proposta personalizada alinhada aos objetivos reais do cliente.

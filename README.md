@@ -1,36 +1,59 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Dechen Web Studio
 
-## Getting Started
+**Tipo:** ops · **Status:** ativo · **Versão:** 2.0
 
-First, run the development server:
+Monorepo da Dechen Web Studio: site institucional, showcases de portfólio, documentação operacional da agência e packs de projetos de clientes.
+
+Não criamos apenas sites. Criamos presença digital que transmite confiança, autoridade e converte visitantes em oportunidades.
+
+## Stack
+
+- Next.js 16 (App Router)
+- React 19
+- TypeScript
+- Tailwind CSS 4
+
+## Como rodar
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Abra [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Outros scripts: `npm run build`, `npm run start`, `npm run lint`.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Mapa do repositório
 
-## Learn More
+| Pasta | Função |
+|-------|--------|
+| [`agency/`](agency/00-index.md) | Sistema operacional da agência (estratégia, marca, produto, comercial, operação) |
+| [`systems/`](systems/client-acquisition/00-visao.md) | Captação de leads e processo comercial detalhado |
+| [`clients/`](clients/01-vitta-serena/00-projeto.md) | Packs de clientes reais (brief, copy, assets, roadmap) |
+| [`showcase/`](showcase/01-divina-cozinha.md/00-projeto.md) | Packs de projetos fictícios de portfólio |
+| [`templates/showcase-template/`](templates/showcase-template/00-projeto.md) | Template em branco para novos showcases |
+| `src/` | Código da aplicação (páginas, componentes, dados) |
+| `public/` | Assets estáticos (imagens de showcase, etc.) |
 
-To learn more about Next.js, take a look at the following resources:
+## Documentação
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Comece por [`agency/00-index.md`](agency/00-index.md).
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Padrão editorial dos Markdown:
 
-## Deploy on Vercel
+- Cabeçalho com tipo, status e versão
+- Um `#` por arquivo; hierarquia real com `##` / `###`
+- PT-BR
+- Fatos comerciais e IDs legais não se inventam
+- Showcases marcam conteúdo demonstrativo; clientes usam `[placeholders]` até confirmação
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Showcases no app
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Rotas típicas sob `/showcase/...` (ex.: Divina Cozinha, Barbearia Royal). Os packs em `showcase/` são a fonte de brief e copy; o código vive em `src/`.
+
+## Contribuição
+
+1. Leia o Manual e o DWS AI OS antes de mudanças estruturais.
+2. Para projeto novo de cliente ou showcase, copie `templates/showcase-template/` (ou o pack de cliente mais próximo).
+3. Não preencha placeholders comerciais com dados inventados.

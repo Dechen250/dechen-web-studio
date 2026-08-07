@@ -1,14 +1,16 @@
 # Assets — Vitta Serena
 
+**Tipo:** assets · **Status:** em andamento · **Versão:** 2.0
+
+Pack: [00-projeto.md](00-projeto.md) · [01-brand-guide.md](01-brand-guide.md) · [02-sitemap.md](02-sitemap.md) · [03-copy.md](03-copy.md) · [05-prompts.md](05-prompts.md) · [06-roadmap.md](06-roadmap.md) · Staging: [assets/README.md](assets/README.md)
+
 ## Objetivo
 
 Definir todos os arquivos visuais, dados e recursos necessários para desenvolver e manter o site da Vitta Serena.
 
 Nenhum asset deve ser adicionado sem organização, nome claro e finalidade definida.
 
----
-
-# Área de recebimento (staging)
+## Área de recebimento (staging)
 
 Enquanto o repositório do site ainda não existir, receber e organizar arquivos em:
 
@@ -33,9 +35,7 @@ Fluxo:
 2. Preencher `cadastro/produtos.csv` só com dados confirmados.
 3. Quando o repo `vitta-serena` existir, copiar o conteúdo organizado para `public/vitta-serena/`.
 
----
-
-# Estrutura Recomendada
+## Estrutura recomendada
 
 No repositório do site (destino final):
 
@@ -68,9 +68,7 @@ public/
     └── social-proof/
 ```
 
----
-
-# Regras de Nomenclatura
+## Regras de nomenclatura
 
 - Usar minúsculas
 - Não usar espaços
@@ -89,11 +87,9 @@ products/br-001/02-fecho.webp
 products/br-001/03-uso.webp
 ```
 
----
+## Identidade visual
 
-# Identidade Visual
-
-## Arquivos obrigatórios
+### Arquivos obrigatórios
 
 - Logo principal em SVG
 - Logo clara em SVG
@@ -106,7 +102,7 @@ products/br-001/03-uso.webp
 - Documento com tipografias
 - Regras de área de proteção
 
-## Validação
+### Validação
 
 Antes de usar:
 
@@ -116,11 +112,9 @@ Antes de usar:
 - Testar em fundo claro e escuro
 - Não converter SVG limpo em imagem raster sem necessidade
 
----
+## Fotografias de produto
 
-# Fotografias de Produto
-
-## Quantidade mínima recomendada
+### Quantidade mínima recomendada
 
 Cada produto deve possuir ao menos:
 
@@ -134,7 +128,7 @@ Quando possível:
 5. Foto da embalagem
 6. Foto em composição com outra peça
 
-## Requisitos
+### Requisitos
 
 - Fundo limpo
 - Cor fiel
@@ -146,35 +140,31 @@ Quando possível:
 - Espaço seguro para recorte
 - Imagens próprias ou com direito de uso
 
----
+## Proporções
 
-# Proporções
-
-## Cards de produto
+### Cards de produto
 
 Preferência:
 
 - `4:5`
 - `1:1` somente se todas as fotos seguirem o mesmo padrão
 
-## Hero
+### Hero
 
 Preferência:
 
 - Desktop: horizontal
 - Mobile: versão vertical ou recorte planejado
 
-## Open Graph
+### Open Graph
 
 - `1200 × 630 px`
 
-## Favicon
+### Favicon
 
 - Múltiplos tamanhos gerados a partir do símbolo oficial
 
----
-
-# Formatos e Otimização
+## Formatos e otimização
 
 Preferir:
 
@@ -190,7 +180,7 @@ Evitar:
 - SVG exportado com dados desnecessários
 - Upload direto de arquivos originais pesados
 
-## Meta de peso
+### Meta de peso
 
 - Card de produto: preferencialmente abaixo de 200 KB
 - Imagem principal: preferencialmente abaixo de 400 KB
@@ -199,9 +189,7 @@ Evitar:
 
 Os limites são metas, não justificativa para destruir a qualidade visual.
 
----
-
-# Alt Text
+## Alt text
 
 O texto alternativo deve descrever o produto com objetividade.
 
@@ -223,13 +211,11 @@ semijoia linda barata
 
 Não repetir palavras-chave artificialmente.
 
----
-
-# Dados de Produto
+## Dados de produto
 
 Criar uma fonte única de dados.
 
-## Campos obrigatórios
+### Campos obrigatórios
 
 - ID
 - SKU
@@ -244,7 +230,7 @@ Criar uma fonte única de dados.
 - Destaque
 - Novidade
 
-## Campos condicionais
+### Campos condicionais
 
 - Preço promocional
 - Material
@@ -259,9 +245,7 @@ Criar uma fonte única de dados.
 - Coleção
 - Produtos relacionados
 
----
-
-# Planilha de Cadastro
+## Planilha de cadastro
 
 Antes do desenvolvimento, criar uma planilha com colunas:
 
@@ -291,9 +275,7 @@ novidade
 
 A planilha deve ser a base de conferência, mesmo que os dados sejam convertidos para TypeScript ou CMS.
 
----
-
-# Códigos de Produto
+## Códigos de produto
 
 Criar um padrão simples.
 
@@ -307,11 +289,9 @@ Exemplo:
 
 Não alterar códigos depois que os produtos começarem a ser vendidos, salvo necessidade real.
 
----
+## Imagens da home
 
-# Imagens da Home
-
-## Hero
+### Hero
 
 Deve transmitir:
 
@@ -322,11 +302,11 @@ Deve transmitir:
 
 Não usar montagem genérica de banco de imagem como se representasse a coleção.
 
-## Categorias
+### Categorias
 
 Usar produtos reais de cada categoria.
 
-## Sobre
+### Sobre
 
 Preferir:
 
@@ -338,9 +318,7 @@ Preferir:
 
 A escolha deve ser aprovada pela Gabi.
 
----
-
-# Embalagem
+## Embalagem
 
 Registrar:
 
@@ -354,9 +332,7 @@ Registrar:
 
 Fotografar somente a embalagem definitiva.
 
----
-
-# Ícones
+## Ícones
 
 Preferir uma única biblioteca consistente ou ícones próprios.
 
@@ -378,9 +354,7 @@ Preferir uma única biblioteca consistente ou ícones próprios.
 
 Não misturar estilos filled, outline e duotone sem regra.
 
----
-
-# Vídeos
+## Vídeos
 
 Vídeos são opcionais no MVP.
 
@@ -400,9 +374,7 @@ Regras:
 - Com legenda quando necessário
 - Otimizado para mobile
 
----
-
-# Dados Institucionais
+## Dados institucionais
 
 Reunir:
 
@@ -421,9 +393,7 @@ Reunir:
 
 Não deixar dados fictícios no site de produção.
 
----
-
-# Assets Pendentes
+## Assets pendentes
 
 Após a ida aos fornecedores, depositar em `clients/01-vitta-serena/assets/`:
 
@@ -436,9 +406,7 @@ Após a ida aos fornecedores, depositar em `clients/01-vitta-serena/assets/`:
 - Logos oficiais → `brand/`
 - Hero / sobre → `home/`
 
----
-
-# Checklist de Qualidade
+## Checklist de qualidade
 
 Antes de publicar:
 
@@ -455,9 +423,7 @@ Antes de publicar:
 - Sem arquivos duplicados
 - Sem imagens de teste no build final
 
----
-
-# Objetivo Final
+## Objetivo final
 
 Os assets devem fazer a Vitta Serena parecer consistente e profissional em qualquer tela.
 

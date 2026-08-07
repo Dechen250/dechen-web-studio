@@ -1,371 +1,98 @@
 # Banco de Dados — Sistema de Captação
 
+**Tipo:** Banco de dados · **Status:** ativo · **Versão:** 2.0
+
 ## Objetivo
 
-Definir a estrutura do banco de dados responsável por armazenar todos os leads recebidos pela Dechen Web Studio.
-
-O banco deve ser simples inicialmente, mas preparado para evoluir para um CRM completo.
-
----
-
-# Tecnologia
-
-Banco de Dados
-
-Supabase
-
-Modelo
-
-PostgreSQL
-
----
-
-# Tabela Principal
-
-Nome da tabela
-
-```txt
-
-leads
-
-```
-
----
-
-# Estrutura
-
-## id
-
-Tipo
-
-UUID
-
-Descrição
-
-Identificador único do lead.
-
----
-
-## created_at
-
-Tipo
-
-Timestamp
-
-Descrição
-
-Data e horário de criação.
-
----
-
-## updated_at
-
-Tipo
-
-Timestamp
-
-Descrição
-
-Última atualização do registro.
-
----
-
-## status
-
-Tipo
-
-Text
-
-Valor padrão
-
-```txt
-
-novo
-
-```
-
-Descrição
-
-Status atual do lead.
-
-Valores previstos:
-
-- novo
-
-- contatado
-
-- reunião marcada
-
-- proposta enviada
-
-- fechado
-
-- perdido
-
----
-
-## nome
-
-Tipo
-
-Text
-
-Obrigatório
-
-Sim
-
----
-
-## empresa
-
-Tipo
-
-Text
-
-Obrigatório
-
-Não
-
----
-
-## email
-
-Tipo
-
-Text
-
-Obrigatório
-
-Sim
-
----
-
-## whatsapp
-
-Tipo
-
-Text
-
-Obrigatório
-
-Sim
-
----
-
-## servico
-
-Tipo
-
-Text
-
-Obrigatório
-
-Sim
-
-Exemplos
+Definir a estrutura do banco que armazena leads recebidos pela Dechen Web Studio. Simples na v1, preparado para CRM completo.
+
+Documentação relacionada: [01-arquitetura.md](./01-arquitetura.md) · [03-api.md](./03-api.md) · [05-roadmap.md](./05-roadmap.md)
+
+## Tecnologia
+
+| Item | Valor |
+|------|-------|
+| Plataforma | Supabase |
+| Modelo | PostgreSQL |
+
+## Tabela principal: `leads`
+
+### Campos
+
+| Campo | Tipo | Obrigatório | Padrão | Descrição |
+|-------|------|-------------|--------|-----------|
+| `id` | UUID | Sim | auto | Identificador único |
+| `created_at` | Timestamp | Sim | auto | Data/hora de criação |
+| `updated_at` | Timestamp | Sim | auto | Última atualização |
+| `status` | Text | Sim | `novo` | Status atual do lead |
+| `nome` | Text | Sim | — | Nome do contato |
+| `empresa` | Text | Não | — | Empresa |
+| `email` | Text | Sim | — | E-mail |
+| `whatsapp` | Text | Sim | — | WhatsApp |
+| `servico` | Text | Sim | — | Serviço solicitado |
+| `objetivo` | Text | Não | — | Objetivo do projeto |
+| `prazo` | Text | Não | — | Prazo desejado |
+| `orcamento` | Text | Não | — | Orçamento previsto |
+| `mensagem` | Text | Sim | — | Mensagem do lead |
+| `origem` | Text | Sim | `website` | Canal de origem |
+
+### Enum `status`
+
+- `novo`
+- `contatado`
+- `reunião marcada`
+- `proposta enviada`
+- `fechado`
+- `perdido`
+
+### Valores de `servico` (exemplos)
 
 - Landing Page
-
 - Site Institucional
-
 - Portfólio
-
 - Manutenção
-
 - Outro
 
----
+### Valores de `origem` (exemplos)
 
-## objetivo
+- `website`
+- `instagram`
+- `indicação`
+- `linkedin`
 
-Tipo
+## Índices
 
-Text
+Criar índices em:
 
-Obrigatório
+- `email`
+- `status`
+- `created_at`
 
-Não
+## Regras de integridade
 
----
+- Todo lead possui UUID
+- E-mail com formato válido
+- `nome` e `mensagem` não vazios
+- `created_at` preenchido automaticamente
 
-## prazo
+## Campos futuros (evolução)
 
-Tipo
+- `telefone_secundario`
+- `cidade`, `estado`
+- `segmento`, `tamanho_empresa`, `faturamento`
+- `observacoes`, `ultima_interacao`
+- `responsavel`, `prioridade`, `origem_detalhada`
 
-Text
+## Tabelas futuras
 
-Obrigatório
+| Tabela | Finalidade |
+|--------|------------|
+| `usuarios` | Equipe da agência |
+| `propostas` | Orçamentos enviados |
+| `reunioes` | Reuniões com clientes |
+| `tarefas` | Acompanhamento interno |
+| `interacoes` | Histórico de contatos |
 
-Não
+## Objetivo
 
----
-
-## orcamento
-
-Tipo
-
-Text
-
-Obrigatório
-
-Não
-
----
-
-## mensagem
-
-Tipo
-
-Text
-
-Obrigatório
-
-Sim
-
----
-
-## origem
-
-Tipo
-
-Text
-
-Valor padrão
-
-```txt
-
-website
-
-```
-
-Descrição
-
-Origem do lead.
-
-Exemplos:
-
-- website
-
-- instagram
-
-- indicação
-
-- linkedin
-
----
-
-# Índices
-
-Criar índices para:
-
-- email
-
-- status
-
-- created_at
-
-Isso melhora consultas futuras.
-
----
-
-# Integridade
-
-Regras:
-
-- Todo lead deve possuir um UUID.
-
-- Email deve possuir formato válido.
-
-- Nome não pode estar vazio.
-
-- Mensagem não pode estar vazia.
-
-- created_at deve ser preenchido automaticamente.
-
----
-
-# Evolução Futura
-
-Campos previstos para futuras versões:
-
-- telefone_secundario
-
-- cidade
-
-- estado
-
-- segmento
-
-- tamanho_empresa
-
-- faturamento
-
-- observacoes
-
-- ultima_interacao
-
-- responsavel
-
-- prioridade
-
-- origem_detalhada
-
----
-
-# Relacionamentos Futuros
-
-O banco deve permitir a criação das seguintes tabelas:
-
-```txt
-
-usuarios
-
-```
-
-Equipe da agência.
-
----
-
-```txt
-
-propostas
-
-```
-
-Orçamentos enviados.
-
----
-
-```txt
-
-reunioes
-
-```
-
-Reuniões com clientes.
-
----
-
-```txt
-
-tarefas
-
-```
-
-Acompanhamento interno.
-
----
-
-```txt
-
-interacoes
-
-```
-
-Histórico completo de contatos com cada lead.
-
----
-
-# Objetivo Final
-
-O banco de dados deve servir como a base do futuro CRM da Dechen Web Studio, permitindo armazenar, organizar e acompanhar toda a jornada de cada cliente desde o primeiro contato até o fechamento do projeto.
+Servir como base do CRM da Dechen Web Studio, rastreando cada cliente do primeiro contato ao fechamento ([Sistema Comercial](../sales/01-funil.md)).

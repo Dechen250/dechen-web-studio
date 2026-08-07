@@ -1,253 +1,160 @@
 # Brand Guide — Instituto Harmonia
 
+**Tipo:** showcase · **Status:** ativo · **Versão:** 2.0
+
+Identidade visual e tom do showcase. Brief: [00-projeto.md](00-projeto.md). Copy: [03-copy.md](03-copy.md). Assets: [04-assets.md](04-assets.md).
+
+> **Projeto demonstrativo.** Marca, equipe e contatos são ficção editorial.
+
 ## Identidade
 
-Instituto Harmonia é uma clínica multidisciplinar que une rigor técnico, acolhimento genuíno e acompanhamento personalizado.
+Instituto Harmonia é uma clínica multidisciplinar fictícia que une rigor técnico, acolhimento genuíno e acompanhamento personalizado.
 
-A marca transmite confiança através da simplicidade.
+A marca transmite confiança pela simplicidade — não por excesso de efeitos.
 
-Nunca deve parecer hospital frio ou burocrático.
+## Posicionamento
 
-A humanidade está nos detalhes.
+Mais do que tratar sintomas isolados, o Instituto Harmonia acompanha pessoas. Cada consulta busca transmitir calma, clareza e um plano de cuidado explicado com transparência.
 
----
+Tagline: **Saúde com atenção de verdade.**
 
-# Posicionamento
+## Personalidade
 
-Mais do que tratar sintomas, o Instituto Harmonia acompanha pessoas.
+| É | Não é |
+|---|-------|
+| Calma | Fria ou burocrática |
+| Confiável | Agressiva comercialmente |
+| Humana | Infantil ou genérica |
+| Clara | Exagerada ou artificial |
+| Cuidadosa | Hospital frio |
+| Moderna com leveza | Spa genérico |
 
-Cada consulta deve transmitir calma, clareza e um plano de cuidado explicado com transparência.
+## Público
 
----
+- Adultos de 28 a 65 anos e famílias
+- Profissionais que valorizam prevenção e acompanhamento contínuo
+- Quem busca atendimento respeitoso, claro e com processo organizado
+- Objeção comum: medo de clínica impessoal ou burocrática
 
-# Personalidade
-
-A marca é:
-
-- Calma
-
-- Confiável
-
-- Humana
-
-- Clara
-
-- Cuidadosa
-
-- Moderna com leveza
-
-Nunca deve parecer:
-
-- Fria ou burocrática
-
-- Agressiva comercialmente
-
-- Exagerada
-
-- Infantil
-
-- Artificial ou genérica
-
----
-
-# Público
-
-Adultos entre 28 e 65 anos.
-
-Famílias.
-
-Profissionais que valorizam prevenção.
-
-Pessoas que buscam atendimento respeitoso, claro e sem espera desnecessária.
-
----
-
-# Valores
+## Valores
 
 - Atenção de verdade
-
 - Rigor técnico
-
 - Acolhimento humano
-
 - Clareza na comunicação
-
 - Prevenção e acompanhamento contínuo
-
 - Respeito ao tempo do paciente
 
----
+## Direção visual
 
-# Direção Visual
+Sensação ao navegar: calma, frescor, confiança.
 
-O visual deve transmitir frescor e tranquilidade.
+Estilo: minimalista, muito respiro, cantos arredondados, sombras discretas. Tema **claro** — nunca escuro.
 
-O visitante deve sentir calma ao navegar.
+### Regras de layout
 
-O design deve ser minimalista, organizado e extremamente legível.
+1. **Hero full-bleed** — foto de ambiente com wash para legibilidade
+2. **Marca primeiro** — logo/nome visível no hero e navbar
+3. **Sem cards no hero**
+4. **Uma função por seção**
 
-Muito espaço em branco.
+## Paleta
 
-Poucos elementos competindo pela atenção.
+| Token | Hex | Uso |
+|-------|-----|-----|
+| Off-white | `#F4F8F7` | Fundo principal |
+| Branco | `#FFFFFF` | Superfícies |
+| Teal primário | `#2A7A6E` | CTA, links |
+| Teal suave | `#3D9B8C` | Hover |
+| Texto | `#1A2E2B` | Corpo e títulos |
+| Muted | `#5A6F6A` | Apoios |
+| Borda | `#D5E4E0` | Divisores |
+| Acento claro | `#E8F3F0` | Destaques |
 
----
+Referência: natureza, saúde, limpeza, acolhimento.
 
-# Paleta
+Evitar: `#0070F3`, cream + terracotta, roxo, visual de outros showcases.
 
-## Cores principais
+## Tipografia
 
-- Off-white `#F4F8F7`
+### Títulos
 
-- Branco `#FFFFFF`
+- Face: **Fraunces** — humanista, serif
+- Escala generosa; muito espaço entre seções
 
-- Teal primário `#2A7A6E`
+### Corpo
 
-- Teal suave `#3D9B8C`
+- Face: **Outfit** — sans limpa
+- Tamanho base 16–18px; parágrafos curtos
 
-- Texto escuro `#1A2E2B`
+Nunca: blocos longos; jargão médico desnecessário.
 
-- Texto secundário `#5A6F6A`
+## Botões
 
-## Cores de apoio
+| Variante | Uso |
+|----------|-----|
+| Primário | **Agendar consulta** — teal `#2A7A6E` |
+| Secundário | **Ver especialidades** — outline ou ghost |
+| Ghost / link | Navegação inline |
 
-- Borda `#D5E4E0`
+- Cantos arredondados; sombra discreta
+- Hover suave; transições lentas (200–300ms)
+- Focus: contorno visível para teclado
 
-- Acento claro `#E8F3F0`
+## Ícones
 
-A paleta deve lembrar natureza, saúde, limpeza e acolhimento.
+- Estilo: outline, traço fino, minimalista
+- Tamanho: 20–24px
+- Reforçam rótulo — não substituem texto essencial
 
----
-
-# Tipografia
-
-Títulos
-
-Fraunces.
-
-Humanista.
-
-Grandes.
-
-Respirados.
-
-Com bastante espaço entre seções.
-
-Textos
-
-Outfit.
-
-Muito legíveis.
-
-Leves.
-
-Com excelente contraste.
-
-Nunca utilizar textos longos e cansativos.
-
----
-
-# Botões
-
-Os botões devem transmitir confiança e acolhimento.
-
-Características:
-
-- Teal primário `#2A7A6E`
-
-- Cantos arredondados
-
-- Sombra extremamente discreta
-
-- Hover suave
-
-- Animações lentas
-
-- Feedback visual refinado
-
-CTA principal:
-
-Agendar consulta
-
----
-
-# Ícones
-
-Utilizar ícones minimalistas.
-
-Traços finos.
-
-Sem excesso de detalhes.
-
----
-
-# Fotografia
-
-As imagens são parte essencial da experiência.
+## Fotografia
 
 Priorizar:
 
-- Ambientes clínicos acolhedores
-
-- Luz natural
-
-- Consultórios limpos e humanos
-
-- Recepção calorosa
-
-- Profissionais em contexto real
-
+- Ambientes clínicos acolhedores, luz natural
+- Consultórios limpos, recepção calorosa
+- Profissionais em contexto (ficção demonstrativa)
 - Tons claros e frescos
 
 Evitar:
 
-- Fotos artificiais ou stock genérico
-
+- Stock genérico no centro do hero
 - Ambientes frios e hospitalares
-
-- Excesso de edição
-
-- Imagens escuras ou clínicas demais
-
+- Excesso de edição; imagens escuras
 - Cards sobrepostos no hero
 
----
+Detalhes: [04-assets.md](04-assets.md).
 
-# Experiência
+## Tom de voz
 
-Ao entrar no site o visitante deve sentir:
+- Calmo, direto, acolhedor, claro
+- Sem jargão médico desnecessário
+- Sem superlativos vazios ou urgência falsa
 
-"Posso confiar neste lugar."
+### Limites clínicos (obrigatório)
 
-O design deve transmitir calma antes mesmo da leitura.
+- **Não** prometer resultados garantidos ou curas
+- **Não** usar linguagem absoluta (“sem espera”, “100%”, “sempre”)
+- **Não** fazer claims médicos não verificáveis
+- Preferir: “buscamos”, “orientamos”, “acompanhamos”, “explicamos com clareza”
 
----
+Copy completa: [03-copy.md](03-copy.md).
 
-# Tom de Voz
+## Sensação desejada
 
-Calmo.
+> "Posso confiar neste lugar. Eles escutam antes de indicar."
 
-Direto.
+Se a marca fosse uma pessoa: médico atento que explica com clareza e acompanha de perto.
 
-Acolhedor.
+## Conteúdo demonstrativo
 
-Claro.
+Showcase fictício. Rotular:
 
-Nunca exagerado.
+- Clínica, endereço, telefone, e-mail → **ficção demonstrativa**
+- Bios da equipe → **fictícias / demonstrativas**
+- Horários e contatos → **demonstrativos**
+- Footer → **Projeto demonstrativo**
 
-Nunca comercial em excesso.
+## Objetivo
 
-Sem jargão médico desnecessário.
-
----
-
-# Sensação
-
-Se o Instituto Harmonia fosse uma pessoa, seria um médico atento que escuta antes de indicar, explica com clareza e acompanha de perto.
-
-Essa sensação deve estar presente em todo o projeto.
-
----
-
-# Objetivo
-
-A identidade visual deve transformar visitantes em futuros pacientes, transmitindo confiança, cuidado e profissionalismo através de uma experiência digital memorável.
+Identidade coerente do hero ao footer. Resultado: **parece cliente real**, com ficção transparente onde necessário.

@@ -1,51 +1,53 @@
 # Assets — Royal Growth
 
+**Tipo:** assets · **Status:** pendências com cliente · **Versão:** 2.0
+
+Pack: [00-projeto.md](00-projeto.md) · [01-analise-site-atual.md](01-analise-site-atual.md) · [02-sitemap.md](02-sitemap.md) · [03-copy.md](03-copy.md) · [05-design-system.md](05-design-system.md) · [06-roadmap.md](06-roadmap.md) · Staging: [assets/README.md](assets/README.md)
+
 ## Objetivo
 
-Organizar logos, cases, selos RD e materiais enviados pelo cliente.
+Organizar logos, cases, selos RD e materiais enviados pelo cliente para implementação do site.
 
----
+Nenhum asset entra em produção sem nome claro, pasta definida e autorização quando aplicável.
 
-# Staging
+## Estrutura de staging
 
 ```text
-assets/
-├── _inbox/         ← tudo que o cliente enviar
-├── brand/          ← logo, favicon, variações, manual
-├── cases/          ← logos e mídia dos cases
-└── social-proof/   ← RD Diamond, selos, depoimentos
+clients/03-Royal-Growth/assets/
+├── README.md          ← índice rápido
+├── _inbox/            ← originais brutos do cliente
+├── brand/             ← logo, favicon, manual
+├── cases/             ← logos e mídia dos cases autorizados
+└── social-proof/      ← RD Diamond, selos, depoimentos
 ```
 
-Fonte de conteúdo textual dos cases: `SITE 2026/3 - RESULTADOS.md` e `03-copy.md`.
+Copy textual dos cases: `03-copy.md` e `SITE 2026/3 - RESULTADOS.md`. Em conflito, **`SITE 2026/` prevalece**.
 
----
-
-# Disponíveis hoje
+## Disponíveis hoje
 
 | Item | Onde |
 |------|------|
 | Copy completa das páginas | `03-copy.md` / `SITE 2026/` |
-| Direção visual (texto) | `05-design-system.md` / `SITE 2026/0.2` |
+| Direção visual (texto) | `05-design-system.md` / `SITE 2026/0.2 - PROMPT LOVABLE.md` |
+| Sitemap e seções | `02-sitemap.md` |
 
-Arquivos de marca/imagem: **ainda não versionados** neste repositório.
+Arquivos de marca e imagem: **ainda não versionados** neste repositório.
 
----
+## Pendentes (pedir ao cliente)
 
-# Pendentes (pedir ao cliente)
-
-## Marca
+### Marca
 
 - [ ] Logo SVG + PNG (claro / escuro / ícone leão)
 - [ ] Favicon
 - [ ] Manual ou hex oficial do **azul royal**
 - [ ] Tipografias oficiais (se diferentes de Syne + Plus Jakarta Sans)
 
-## Credenciais
+### Credenciais
 
 - [ ] Badge / arte **RD Station Tier Diamond**
 - [ ] Autorização de uso da menção “top 10 / 2.500+”
 
-## Cases (12 no material)
+### Cases (12 no material)
 
 Autorização de nome + logo (quando houver) para:
 
@@ -62,7 +64,7 @@ Autorização de nome + logo (quando houver) para:
 - [ ] FranklinCovey Brasil
 - [ ] CEAGESP Festivais
 
-## Conteúdo / operação
+### Conteúdo e operação
 
 - [ ] Acervo de posts (ou ok MVP só com hub)
 - [ ] Destino do formulário (e-mail / CRM / RD / WhatsApp)
@@ -70,14 +72,13 @@ Autorização de nome + logo (quando houver) para:
 - [ ] Foto do Maurício (opcional — Sobre)
 - [ ] WhatsApp / e-mail oficiais no footer
 
-## Legal
+### Legal
 
 - [ ] Termos e privacidade atualizados
 - [ ] Autorizações por escrito dos cases
 
----
+## Regras
 
-# Regra
-
-Nenhum case, número ou depoimento inventado.  
-Preview pode usar placeholders marcados; produção só com liberação.
+- Nenhum case, número ou depoimento inventado
+- Preview pode usar placeholders marcados; produção só com liberação
+- Não publicar logo de cliente sem autorização explícita

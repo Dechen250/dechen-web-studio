@@ -1,3 +1,11 @@
+# Home — Royal Growth
+
+**Tipo:** copy · **Status:** ativo · **Versão:** 2.0 · fonte SITE 2026
+
+Copy da página inicial. Tom: [0.0 - REFINO DO TEXTO.md](./0.0%20-%20REFINO%20DO%20TEXTO.md). Estrutura: [0.1 - ESTRUTURA.md](./0.1%20-%20ESTRUTURA.md). Implementação: [03-copy.md](../03-copy.md).
+
+---
+
 ## Hero
 
 **Título**  
@@ -21,7 +29,7 @@ Ele começa a custar mais do que deveria.
 
 Existe um ponto em que o problema deixa de estar na geração de demanda. O volume continua vindo. O investimento segue acontecendo. O time continua em movimento. Ainda assim, o resultado já não cresce na mesma proporção.
 
-Não é uma queda repentina. É uma perda silenciosa de eficiência.
+O que aparece, na prática, é uma perda silenciosa de eficiência.
 
 O que antes fluía passa a exigir compensação. Mais intervenção. Mais acompanhamento. Mais energia para sustentar o que já deveria estar funcionando com consistência. E é nesse momento que o crescimento começa a expor o limite da operação.
 
@@ -119,9 +127,9 @@ O processo passa a absorver melhor o volume. A resposta ganha padrão. O acompan
 **Título**  
 Escala começa quando o processo deixa de depender de execução individual.
 
-Organizar a operação não é torná-la mais complexa. É torná-la menos vulnerável.
+Organizar a operação torna a estrutura menos vulnerável — com menos ruído, menos improviso e menos dependência de quem está executando naquele momento.
 
-É criar uma lógica em que o que precisa acontecer aconteça dentro de um padrão, com menos ruído, menos improviso e menos dependência de quem está executando naquele momento.
+É criar uma lógica em que o que precisa acontecer aconteça dentro de um padrão.
 
 Esse tipo de clareza muda a forma como a empresa cresce.
 
@@ -140,8 +148,5 @@ Mas chega um momento em que insistir no mesmo modelo já não produz crescimento
 
 Se hoje o resultado da sua empresa ainda depende de intervenção constante para se manter, o limite provavelmente não está na demanda. Está na forma como a operação foi estruturada.
 
----
-## **CTA**  
-
+**CTA**  
 Solicitar diagnóstico
-

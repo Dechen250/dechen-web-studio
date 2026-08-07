@@ -1,11 +1,16 @@
-## Título
+# Contato — Royal Growth
 
-Nem toda empresa precisa de mais demanda.  
-Muitas precisam de uma operação que consiga sustentar o que já gera.
+**Tipo:** copy · **Status:** ativo · **Versão:** 2.0 · fonte SITE 2026
+
+Copy da página Contato. Tom: [0.0 - REFINO DO TEXTO.md](./0.0%20-%20REFINO%20DO%20TEXTO.md). Estrutura: [0.1 - ESTRUTURA.md](./0.1%20-%20ESTRUTURA.md). Implementação: [03-copy.md](../03-copy.md).
 
 ---
 
 ## Introdução
+
+**Título**  
+Nem toda empresa precisa de mais demanda.  
+Muitas precisam de uma operação que consiga sustentar o que já gera.
 
 Este contato não foi pensado como um pedido automático de proposta.
 
@@ -15,7 +20,7 @@ A Royal Growth atua em empresas que já possuem movimento comercial, geração d
 
 Quando esse é o cenário, a conversa faz sentido.
 
-Quando não é, o mais correto é não forçar uma proposta antes da hora.
+Quando o cenário é outro, o mais correto é não forçar uma proposta antes da hora.
 
 ---
 
@@ -23,19 +28,13 @@ Quando não é, o mais correto é não forçar uma proposta antes da hora.
 
 A conversa costuma fazer sentido quando alguns sinais já estão presentes na operação.
 
-A demanda existe, mas parte dela se perde na passagem entre marketing, atendimento e comercial.
+- A demanda existe, mas parte dela se perde na passagem entre marketing, atendimento e comercial.
+- O time está em movimento, mas a continuidade depende demais de acompanhamento manual.
+- O processo funciona, mas varia mais do que deveria conforme quem executa.
+- O crescimento acontece, mas cobra energia demais para se manter.
+- Os dados existem, mas ainda não dão clareza suficiente para orientar decisões com segurança.
 
-O time está em movimento, mas a continuidade depende demais de acompanhamento manual.
-
-O processo funciona, mas varia mais do que deveria conforme quem executa.
-
-O crescimento acontece, mas cobra energia demais para se manter.
-
-Os dados existem, mas ainda não dão clareza suficiente para orientar decisões com segurança.
-
-Não se trata, necessariamente, de falta de ferramenta.
-
-Na maioria das vezes, trata-se da forma como a operação foi organizada para responder ao próprio crescimento.
+Na maioria das vezes, o problema está na forma como a operação foi organizada para responder ao próprio crescimento — não necessariamente na falta de ferramenta.
 
 ---
 
@@ -57,27 +56,24 @@ Se não houver, isso também fica claro desde o início.
 
 ## Formulário
 
-**Nome**  
-**Empresa**  
-**Cargo**  
-**WhatsApp**  
-**E-mail corporativo**  
-**Faixa de faturamento mensal**  
-**Quantos leads, em média, sua operação recebe por mês?**  
-**Hoje, onde você percebe mais perda: entrada, atendimento, follow-up, comercial ou gestão?**  
-**Quais ferramentas fazem parte da sua operação hoje?**  
-**Descreva brevemente como funciona sua operação comercial atualmente**
+| Campo | Tipo |
+|-------|------|
+| Nome | texto |
+| Empresa | texto |
+| Cargo | texto |
+| WhatsApp | telefone |
+| E-mail corporativo | e-mail |
+| Faixa de faturamento mensal | seleção |
+| Quantos leads, em média, sua operação recebe por mês? | número |
+| Hoje, onde você percebe mais perda: entrada, atendimento, follow-up, comercial ou gestão? | seleção |
+| Quais ferramentas fazem parte da sua operação hoje? | texto |
+| Descreva brevemente como funciona sua operação comercial atualmente | texto longo |
 
 ---
 
 ## Encerramento
 
-Nem sempre o próximo passo é acelerar mais.
+Em muitas empresas, o próximo passo é estruturar melhor — não acelerar mais.
 
-Em muitas empresas, o próximo passo é estruturar melhor.
-
----
-
-## CTA
-
+**CTA**  
 Enviar para análise

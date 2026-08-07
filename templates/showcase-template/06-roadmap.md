@@ -1,162 +1,136 @@
 # Roadmap — [Nome do Projeto]
 
-> **Template oficial Dechen Web Studio**  
-> Atualize o status e as versões conforme o showcase evolui.
+**Tipo:** template · **Status:** ativo · **Versão:** 2.0
+
+Evolução planejada do showcase. Brief: [00-projeto.md](00-projeto.md). Prompts: [05-prompts.md](05-prompts.md).
 
 ## Objetivo
 
-Este documento define a evolução planejada do projeto [Nome do Projeto].
+Guiar entregas do showcase fictício em versões incrementais. Cada fase mantém identidade e avança em direção ao DoD: **parece cliente real**.
 
-Ele garante que futuras melhorias respeitem a identidade da marca e mantenham a qualidade do projeto.
+## Status da documentação
 
----
+- [ ] [00-projeto.md](00-projeto.md) — brief preenchido
+- [ ] [01-brand-guide.md](01-brand-guide.md) — identidade definida
+- [ ] [02-sitemap.md](02-sitemap.md) — estrutura fechada
+- [ ] [03-copy.md](03-copy.md) — copy completa
+- [ ] [04-assets.md](04-assets.md) — assets listados
+- [ ] [05-prompts.md](05-prompts.md) — prompts revisados
+- [ ] [06-roadmap.md](06-roadmap.md) — roadmap atualizado
 
-# Status Atual
+## v1.0 — MVP do showcase
 
-## Concluído
+**Meta:** homepage funcional que já **parece cliente real**.
 
-- [ ] Briefing do projeto
-- [ ] Brand Guide
-- [ ] Sitemap
-- [ ] Copy
-- [ ] Assets
-- [ ] Estrutura da documentação
+### Escopo
 
----
-
-# Versão 1.0
-
-Objetivo:
-
-Criar uma demonstração completa e profissional.
-
-### Homepage
-
-- Hero
-- Sobre
-- [Seção de destaque]
-- [Seção visual]
-- [Seção de conversão]
-- Localização
-- Footer
+| Seção | Entrega |
+|-------|---------|
+| Hero | Full-bleed, marca, headline, CTA |
+| Sobre | Texto de [03-copy.md](03-copy.md) |
+| [Seção destaque] | Grid ou lista com categorias |
+| [Seção visual] | Galeria estática |
+| [Seção conversão] | Form simulado ou WhatsApp |
+| Localização | Endereço + mapa placeholder |
+| Footer | Contato + **Projeto demonstrativo** |
 
 ### Funcionalidades
 
-- [Funcionalidade interativa principal]
-- Botão de [ação de conversão]
-- Navegação responsiva
-- Scroll suave
+- Navbar fixa + scroll suave
+- Responsivo mobile first
+- Copy de [03-copy.md](03-copy.md) integrada
+- Flags demonstrativas onde houver ficção
+
+### Critérios de saída
+
+- [ ] Hero sem cards
+- [ ] Uma função por seção
+- [ ] Lighthouse ≥ 90 (baseline)
 
 ---
 
-# Versão 1.1
+## v1.1 — Refino de UX
 
-Melhorias de UX
+**Meta:** polir interação sem mudar estrutura.
 
-- Microinterações
-- Melhorar animações
-- Refinar responsividade
-- Melhorar acessibilidade
-- Revisão de performance
+- Microinterações (hover, fade in scroll)
+- Menu mobile revisado
+- Focus visível e navegação por teclado
+- Ajustes de spacing e tipografia
+- Lighthouse ≥ 95
 
----
-
-# Versão 1.2
-
-Experiência
-
-- [Conversão simulada — ex.: formulário com feedback]
-- Confirmação elegante
-- Loader personalizado
-- Melhorias nas transições
+Prompt: [05-prompts.md](05-prompts.md) — Prompt 02 e 04.
 
 ---
 
-# Versão 2.0
+## v1.2 — Conversão simulada
 
-Experiência Premium
+**Meta:** fluxo de lead completo (simulado).
 
-- [Seção de destaque totalmente interativa]
-- Imagens em alta resolução
-- Galeria moderna
-- Scroll animations
-- Efeitos refinados
+- Form com estados: enviando, sucesso, erro
+- Confirmação visual pós-envio
+- Pré-mensagem WhatsApp (se CTA for WhatsApp)
+- Microcopy de [03-copy.md](03-copy.md) integrada
 
----
-
-# Versão 3.0
-
-Projeto Completo
-
-- [Integração real ou simulada de conversão]
-- Google Maps
-- Depoimentos de clientes
-- [Funcionalidade avançada do segmento]
-- [Conteúdo complementar — ex.: blog, FAQ, área de membros]
+Prompt: [05-prompts.md](05-prompts.md) — Prompt 03 (componente de form).
 
 ---
 
-# Melhorias Futuras
+## v2.0 — Experiência completa
 
-## Hero
+**Meta:** showcase referência da agência para o segmento **[Segmento]**.
 
-[Ex.: Adicionar vídeo curto em background.]
+- [Seção destaque] interativa ([tabs / carrossel — definir em 02-sitemap.md](02-sitemap.md))
+- Galeria com lightbox ou transição
+- Imagens em alta resolução + lazy load
+- OG image e SEO completos
+- Depoimentos demonstrativos (se no escopo)
+- Animações refinadas — sem exagero
 
----
+### Critérios de saída
 
-## [Seção de Destaque]
+- [ ] **Parece cliente real** — visitante não percebe ficção de imediato
+- [ ] Demonstrativos rotulados onde necessário
+- [ ] Lighthouse Performance / SEO / Best Practices ≥ 95
+- [ ] Código organizado e componentizado
 
-[Ex.: Permitir troca manual entre categorias. Adicionar animação de transição.]
-
----
-
-## [Seção Visual]
-
-[Ex.: Galeria em tela cheia. Lightbox.]
-
----
-
-## [Seção de Conversão]
-
-[Ex.: Integração com calendário. Confirmação automática.]
+Prompt: [05-prompts.md](05-prompts.md) — Prompts 04, 05, 06.
 
 ---
 
-## Performance
+## v3.0 — Extensões (opcional)
 
-Nota acima de 95 no Lighthouse.
+Só avançar se fizer sentido para o segmento:
 
----
+- [ ] Página interna ([ex.: serviço individual, case])
+- [ ] Blog ou FAQ
+- [ ] Integração real de form (Formspree, Resend, CRM)
+- [ ] Google Maps embed real (com endereço fictício claro)
+- [ ] Schema.org (LocalBusiness ou equivalente)
 
-## SEO
-
-Otimização completa.
-
-Schema.org.
-
-Open Graph.
-
-Meta Tags.
+Manter nota demonstrativa em footer e conteúdo fictício.
 
 ---
 
-# Critérios de Qualidade
+## Melhorias futuras (backlog)
 
-Antes de considerar o projeto concluído:
+| Área | Ideia |
+|------|-------|
+| Hero | [ex.: vídeo curto em loop, parallax leve] |
+| [Seção destaque] | [ex.: filtros, comparação de planos] |
+| [Seção visual] | [ex.: galeria fullscreen] |
+| Performance | Code split por rota; imagens AVIF |
+| SEO | Blog com artigos do segmento (fictícios, rotulados) |
 
-- Responsividade perfeita
-- Performance acima de 95
-- SEO configurado
-- Código organizado
-- Componentes reutilizáveis
-- Experiência premium
-- Animações suaves
-- Sem bugs conhecidos
+## Critérios de qualidade (todas as versões)
 
----
+- Hero full-bleed; marca primeiro; sem cards no hero
+- Uma função por seção
+- Conteúdo demonstrativo rotulado
+- Responsivo sem regressões
+- Copy fiel a [03-copy.md](03-copy.md)
+- **Parece cliente real**
 
-# Objetivo Final
+## Objetivo final
 
-O projeto [Nome do Projeto] deve parecer um site desenvolvido para um negócio real do segmento **[Segmento]**.
-
-Ele deve servir como demonstração oficial da qualidade da Dechen Web Studio e convencer futuros clientes de que somos capazes de desenvolver experiências digitais completas, sofisticadas e profissionais.
+Showcase [Nome do Projeto] como case oficial da Dechen Web Studio: brief completo, execução alinhada, resultado que convence visitantes de que entregamos sites reais — porque este **parece** um.

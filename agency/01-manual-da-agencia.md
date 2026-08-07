@@ -1,119 +1,71 @@
-# Dechen Web Studio
+# Manual da Agência
 
-> Manual Oficial da Agência
+**Tipo:** estratégia · **Status:** ativo · **Versão:** 2.0
 
-Versão: 1.0
+Filosofia, valores e princípios da Dechen Web Studio. Sem tokens de UI — isso vive no [Design System](03-design-system.md) e no [Brand Guide](02-brand-guide.md).
 
-Este documento reúne a filosofia, os princípios, os processos e os padrões da Dechen Web Studio.
-
-Toda decisão importante da empresa deve ser documentada aqui.
-
----
-
-# Nosso propósito
+## Propósito
 
 Não criamos apenas sites.
 
 Criamos a presença digital que empresas precisam para transmitir confiança, autoridade e conquistar novos clientes.
 
-# Nossa missão
+## Missão
 
-Ajudar empresas a crescer por meio de experiências digitais modernas que transmitam confiança, autoridade e profissionalismo.  
+Ajudar empresas a crescer com experiências digitais modernas que geram resultado — não só estética.
 
----
+## Visão
 
-# Nossa visão
+Ser reconhecida como agência que combina design, estratégia e tecnologia em entregas de alto nível.
 
-Ser reconhecida como uma agência que combina design, estratégia e tecnologia para criar experiências digitais de alto nível.  
+## Valores
 
----
-
-
-
-# # Nossos Valores
-
-
-
-## Excelência
+### Excelência
 
 Se vamos fazer, fazemos bem feito.
 
-## Honestidade
+### Honestidade
 
 Nunca prometemos o que não podemos entregar.
 
-## Evolução
+### Evolução
 
-Estamos sempre aprendendo, testando e melhorando.
+Sempre aprendendo, testando e melhorando.
 
-## Simplicidade
+### Simplicidade
 
 As melhores soluções são claras, intuitivas e elegantes.
 
-## Resultado
+### Resultado
 
-Nosso objetivo não é apenas criar sites bonitos.
+Sites bonitos não bastam. Entregamos produtos digitais que geram resultado real para o cliente.
 
-Criamos produtos digitais que geram resultados reais para nossos clientes.
+## Os seis princípios
 
----
+1. **O cliente vem antes da tecnologia.** Ferramentas existem para resolver problemas reais — não para seguir moda.
+2. **Menos, porém melhor.** Clareza e qualidade acima de excesso de funcionalidades.
+3. **Performance faz parte do design.** Lento nunca é premium.
+4. **AI-First, Human-Led.** IA acelera pesquisa e execução; decisões estratégicas, criativas e de negócio permanecem humanas. Toda IA segue o [DWS AI OS](04-dws-ai-operating-system.md).
+5. **Nunca entregamos algo de que não teríamos orgulho.** Se não mostramos no portfólio, ainda não está pronto.
+6. **Valor antes da beleza.** A beleza chama atenção; o valor gera resultado. Design existe para a experiência e para os objetivos do cliente.
 
+## Para quem trabalhamos
 
+Empresas e profissionais que precisam de presença digital séria: sites institucionais, landings, portfólios e produtos digitais com conversão clara (WhatsApp, formulário, diagnóstico).
 
-# Os Seis Princípios
+Priorizamos clientes que valorizam clareza, processo e qualidade — não “site barato rápido”.
 
+## O que oferecemos (resumo)
 
+Landing pages, sites institucionais, portfólios, redesign, manutenção, performance e SEO básico. Detalhes em [Serviços](05-servicos.md).
 
-## 1. O cliente vem antes da tecnologia.
+## Onde vivem as decisões
 
-A tecnologia existe para resolver problemas reais. Nunca escolhemos uma ferramenta apenas porque ela é nova ou popular.
-
----
-
-
-
-## 2. Menos, porém melhor.
-
-Preferimos simplicidade, clareza e qualidade a excesso de funcionalidades.
-
----
-
-
-
-## 3. Performance faz parte do design.
-
-Um produto bonito que demora para carregar nunca oferece uma experiência premium.
-
----
-
-
-
-## 4. AI-First, Human-Led.
-
-Utilizamos Inteligência Artificial para acelerar pesquisas, desenvolvimento e execução.
-
-As decisões estratégicas, criativas e de negócio permanecem humanas.
-
-Toda IA utilizada pela Dechen Web Studio deve seguir o DWS AI Operating System.
-
----
-
-
-
-## 5. Nunca entregamos algo de que não teríamos orgulho.
-
-Cada projeto representa a reputação da Dechen Web Studio.
-
-Se não tivermos orgulho de mostrar o resultado, ele ainda não está pronto.
-
----
-
-
-
-## 6. Valor antes da Beleza
-
-A beleza chama atenção.
-
-O valor gera resultados.
-
-Toda decisão de design deve contribuir para uma experiência melhor e para os objetivos do cliente.
+| Tema | Documento |
+|------|-----------|
+| Marca e tom DWS | [Brand Guide](02-brand-guide.md) |
+| UI / tokens | [Design System](03-design-system.md) |
+| Trabalho com IA | [DWS AI OS](04-dws-ai-operating-system.md) |
+| Comercial | [Processo Comercial](06-processo-comercial.md) + `systems/sales/` |
+| Captação | `systems/client-acquisition/` |
+| Projeto específico | pack em `clients/` ou `showcase/` |

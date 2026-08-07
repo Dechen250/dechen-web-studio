@@ -1,165 +1,121 @@
-# Prompts — Divina Cozinha
+**Tipo:** ops · **Status:** ativo · **Versão:** 2.0
 
-## Objetivo
+> Prompts de desenvolvimento — leitura obrigatória da documentação do pack antes de gerar código.
 
-Este documento reúne os prompts utilizados durante o desenvolvimento do projeto Divina Cozinha.
+# Divina Cozinha — Prompts
 
-Todos os prompts devem seguir rigorosamente a documentação existente nesta pasta.
+Pack: [00-projeto.md](00-projeto.md) · [01-brand-guide.md](01-brand-guide.md) · [02-sitemap.md](02-sitemap.md) · [03-copy.md](03-copy.md) · [04-assets.md](04-assets.md) · [06-roadmap.md](06-roadmap.md)
 
-Antes de gerar qualquer código, a IA deve obrigatoriamente ler:
+## Pré-requisito
 
-- [00-projeto.md](http://00-projeto.md)
-
-- [01-brand-guide.md](http://01-brand-guide.md)
-
-- [02-sitemap.md](http://02-sitemap.md)
-
-- [03-copy.md](http://03-copy.md)
-
-- [04-assets.md](http://04-assets.md)
-
-Nenhuma decisão deve contrariar esses documentos.
+Antes de gerar código, ler todos os arquivos acima. Nenhuma decisão deve contrariar a documentação.
 
 ---
 
-# Prompt 01 — Desenvolvimento Inicial
+## Prompt 01 — Desenvolvimento inicial
 
-Você é o Lead Product Designer e Front-end Engineer da Dechen Web Studio.
+Você é Lead Product Designer e Front-end Engineer da Dechen Web Studio.
 
-Sua missão é desenvolver o projeto Divina Cozinha seguindo rigorosamente toda a documentação desta pasta.
+Desenvolva o projeto Divina Cozinha seguindo rigorosamente a documentação desta pasta.
 
-Objetivo:
+**Objetivo:** site premium que pareça entregue a cliente real.
 
-Criar um site premium para um restaurante contemporâneo.
+**Diretrizes:**
 
-O resultado deve parecer um projeto entregue para um cliente real.
+- Tema claro (`#FAF9F6`) — nunca escuro
+- Tipografia: Cormorant Garamond + Source Sans 3
+- Seções: Hero → Sobre → Cardápio → Ambiente → Reservas → Localização → Footer
+- Nav: Sobre, Cardápio, Ambiente, Reservas, Localização
+- CTA: Reservar mesa
+- Cardápio: 4 categorias, troca automática 10s, efeito virada de página
+- Dados: `src/data/divina-cozinha.ts`
+- Componentes: `src/components/divina-cozinha/`
+- CSS scoped: `divina-cozinha.css` com tokens `--dc-*`
 
-Prioridades:
+**Prioridades:** UX, performance, elegância, responsividade, código limpo.
 
-- Experiência do usuário
-
-- Performance
-
-- Elegância
-
-- Responsividade
-
-- Código limpo
-
-Nunca alterar a identidade da marca.
+Preços e reservas são **demonstrativos**.
 
 ---
 
-# Prompt 02 — Melhorias
+## Prompt 02 — Melhorias
 
-Sua missão é melhorar o projeto existente.
+Melhore o projeto existente. Não refaça o site.
 
-Não refaça o site.
+Mantenha identidade clara e acolhedora. Melhore UX, performance, microinterações, responsividade, organização e acessibilidade.
 
-Mantenha toda a identidade visual.
-
-Melhore apenas:
-
-- UX
-
-- Performance
-
-- Microinterações
-
-- Responsividade
-
-- Organização do código
-
-- Acessibilidade
-
-Evite alterações desnecessárias.
+Nunca introduza tema escuro.
 
 ---
 
-# Prompt 03 — Componentes
+## Prompt 03 — Componentes
 
-Crie componentes reutilizáveis para o projeto.
+Componentes esperados:
 
-Seguir toda a documentação.
+- Navbar (fixa, menu mobile)
+- Hero (imagem + headline)
+- About (história da marca)
+- MenuBook (cardápio animado, 4 categorias, preços demonstrativos)
+- Ambiente (galeria 6 imagens)
+- ReservasForm (formulário demonstrativo + confirmação simulada)
+- Localizacao (endereço, horários, mapa embed)
+- Footer (contato + créditos Dechen)
+- UI: Button, SectionHeading, FadeIn
 
-Priorizar:
-
-- Legibilidade
-
-- Reutilização
-
-- Organização
-
-Não instalar bibliotecas sem necessidade.
+Tokens CSS `--dc-*`. Sem bibliotecas desnecessárias.
 
 ---
 
-# Prompt 04 — Animações
+## Prompt 04 — Animações
 
-Adicionar microinterações elegantes.
+Microinterações elegantes, nunca exageradas:
 
-Nunca exagerar.
-
-Priorizar:
-
-- Hover
-
-- Fade
-
-- Scale suave
-
-- Scroll Reveal
-
+- fadeInUp no scroll
+- Cardápio: flip/rotateY a cada 10s + tabs manuais
+- Hover suave em cards e imagens
 - Transições naturais
 
-Toda animação deve parecer sofisticada.
+Respeitar `prefers-reduced-motion`. Sem bounce ou parallax pesado.
 
 ---
 
-# Prompt 05 — Responsividade
+## Prompt 05 — Responsividade
 
-Revisar completamente a responsividade.
+Excelente experiência em desktop, notebook, tablet e smartphone.
 
-Garantir excelente experiência em:
-
-- Desktop
-
-- Notebook
-
-- Tablet
-
-- Smartphone
-
-Nenhum componente deve quebrar.
+Pontos críticos: menu hamburger, cardápio legível em mobile, galeria adaptável, formulário de reservas em telas pequenas.
 
 ---
 
-# Prompt 06 — Performance
+## Prompt 06 — Performance e SEO
 
-Revisar o projeto buscando:
+Implementar:
 
-- Performance
+- Metadata (title, description, Open Graph, locale pt_BR)
+- Schema.org Restaurant (JSON-LD)
+- Imagens otimizadas (WebP)
+- `prefers-reduced-motion`
+- aria-labels em links externos
+- Focus visible nos botões
 
-- SEO
-
-- Acessibilidade
-
-- Código limpo
-
-Eliminar código duplicado.
-
-Melhorar organização sempre que possível.
+Eliminar duplicação. Melhorar organização.
 
 ---
 
-# Regras Gerais
+## Prompt 07 — Documentação v2.0
 
-Sempre seguir a documentação.
+Reescrever os 7 arquivos do docs pack no padrão editorial v2.0:
 
-Nunca criar elementos que contrariem a identidade da marca.
+- Extrair copy, cardápio, contatos e tokens do código implementado
+- Marcar preços e reservas como demonstrativos
+- Cross-links entre arquivos do pack
+- Profundidade equivalente ao showcase Barbearia Royal
 
-Toda melhoria deve aumentar a percepção de qualidade do projeto.
+---
 
-A experiência do usuário deve ter prioridade sobre efeitos visuais.
+## Regras gerais
 
-O objetivo é criar um projeto que possa ser apresentado como um case real da Dechen Web Studio.
+- Seguir documentação sempre
+- Nunca tema escuro
+- UX > efeitos visuais
+- Case real da Dechen no segmento gastronomia contemporânea

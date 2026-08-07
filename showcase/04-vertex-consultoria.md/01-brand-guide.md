@@ -1,273 +1,150 @@
 # Brand Guide — Vertex Consultoria
 
+**Tipo:** showcase · **Status:** ativo · **Versão:** 2.0
+
+Identidade visual e tom do showcase. Brief: [00-projeto.md](00-projeto.md). Copy: [03-copy.md](03-copy.md). Assets: [04-assets.md](04-assets.md).
+
+> **Projeto demonstrativo.** Marca, contatos e métricas são ficção editorial.
+
 ## Identidade
 
-Vertex Consultoria é uma consultoria estratégica que une método estruturado, gestão orientada a números e execução acompanhada de perto.
+Vertex Consultoria é uma consultoria estratégica fictícia que une método estruturado, gestão orientada a números e execução acompanhada de perto.
 
-A marca transmite autoridade através da precisão visual e da clareza na comunicação.
+A marca transmite autoridade pela precisão visual e clareza na comunicação — não por excesso de efeitos.
 
-Nunca deve parecer genérica, agressiva ou visualmente confundível com outros showcases da agência.
+## Posicionamento
 
-A confiança executiva está nos detalhes.
+Mais do que entregar relatórios, a Vertex proporciona decisões melhores e resultados reais.
 
----
+Tagline: **Decisões melhores. Resultados reais.**
 
-# Posicionamento
+Cada interação reforça clareza, análise rigorosa e confiança executiva.
 
-Mais do que entregar relatórios, a Vertex Consultoria proporciona decisões melhores e resultados reais.
+## Personalidade
 
-Cada interação deve transmitir clareza, análise rigorosa e confiança executiva.
+| É | Não é |
+|---|-------|
+| Autoridade | Genérica (agência comum) |
+| Precisa | Hype de startup |
+| Clara | Luxuosa em excesso |
+| Analítica | Barulhenta ou exagerada |
+| Confiante | Artificial ou corporativa demais |
+| Disciplinada | Visual de outros showcases |
 
-Tagline oficial:
+## Público
 
-> Decisões melhores. Resultados reais.
+- Founders e diretores (30–55 anos) em empresas em crescimento
+- Negócios com operação consolidada que buscam escalar com controle
+- Líderes que precisam de estrutura, números e execução no mesmo plano
+- Objeção comum: consultoria que entrega slide e desaparece
 
----
-
-# Personalidade
-
-A marca é:
-
-- Autoridade
-
-- Precisa
-
-- Clara
-
-- Analítica
-
-- Confiante
-
-- Disciplinada
-
-Nunca deve parecer:
-
-- Genérica (visual de agência comum)
-
-- Hype de startup
-
-- Luxuosa em excesso
-
-- Barulhenta ou exagerada
-
-- Artificial ou corporativa demais
-
----
-
-# Público
-
-Founders e diretores de empresas em crescimento.
-
-Executivos entre 30 e 55 anos.
-
-Negócios com operação consolidada que buscam escalar com controle.
-
-Líderes que precisam de estrutura, números e execução no mesmo plano.
-
----
-
-# Valores
+## Valores
 
 - Método
-
 - Transparência
-
 - Precisão analítica
-
 - Execução acompanhada
-
 - Clareza na comunicação
-
 - Resultados mensuráveis
 
----
+## Direção visual
 
-# Direção Visual
+Sensação ao navegar: confiança executiva — sala de reunião preparada, não pitch de vendas.
 
-O visual deve transmitir autoridade e precisão.
+Estilo: corporativo moderno, tema **escuro frio**, cantos retos (`rounded-none`), glow ciano sutil.
 
-O visitante deve sentir confiança ao navegar — como entrar em uma sala de reunião preparada, não em um pitch de vendas.
+### Regras de layout
 
-O design deve ser corporativo moderno, limpo e extremamente organizado.
+1. **Hero tipográfico full-bleed** — grade geométrica; sem foto de stock central
+2. **Marca primeiro** — VERTEX. (ponto ciano) no hero e navbar
+3. **Sem cards no hero**
+4. **Uma função por seção**
 
-Espaço generoso entre seções.
+## Paleta
 
-Poucos elementos competindo pela atenção.
+| Token | Hex | Uso |
+|-------|-----|-----|
+| Cold slate | `#0B1118` | Fundo principal |
+| Surface | `#121A24` | Superfícies alternadas |
+| Footer deep | `#070B10` | Footer |
+| Texto | `#E8EEF4` | Corpo e títulos |
+| Muted | `#8B9AAB` | Apoios |
+| Ciano | `#22D3EE` | CTA, links |
+| Ciano soft | `#67E8F9` | Hover |
+| Borda | `rgba(34, 211, 238, 0.16)` | Divisores |
 
-Tema escuro frio — nunca claro, nunca teal suave, nunca gradientes roxos.
+Referência: decisão executiva, dados, precisão.
 
----
+Evitar: dourado Barbearia Royal, teal Harmonia, gradientes roxos.
 
-# Paleta
+## Tipografia
 
-## Cores principais
+### Títulos
 
-- Cold slate — `#0B1118`
+- Face: **Syne** — geométrica, tracking tight
+- Marca: **VERTEX.** — ponto em ciano
+- Labels de seção: uppercase, tracking amplo, cor ciano
 
-- Surface — `#121A24`
+### Corpo
 
-- Texto — `#E8EEF4`
+- Face: **Manrope**
+- Tamanho base 16–18px; parágrafos curtos; excelente contraste sobre fundo escuro
 
-- Muted — `#8B9AAB`
+## Botões
 
-- Footer deep — `#070B10`
-
-## Cor de destaque
-
-- Ciano — `#22D3EE`
-
-- Ciano soft — `#67E8F9` (hover)
-
-- Borda — `rgba(34, 211, 238, 0.16)`
-
-A paleta deve lembrar ambientes de decisão executiva, dados e precisão — nunca a estética dourada da Barbearia Royal ou o teal suave da Harmonia.
-
----
-
-# Tipografia
-
-Títulos
-
-Syne (display).
-
-Grandes.
-
-Respirados.
-
-Tracking tight.
-
-Com bastante espaço entre seções.
-
-Marca no hero e navbar: VERTEX. (ponto em ciano).
-
-Textos
-
-Manrope (sans).
-
-Muito legíveis.
-
-Leves.
-
-Com excelente contraste sobre fundo escuro.
-
-Nunca utilizar textos longos e cansativos.
-
-Labels de seção em uppercase com tracking amplo e cor ciano.
-
----
-
-# Botões
-
-Os botões devem transmitir precisão e ação decisiva.
-
-Características:
-
-- Ciano sólido no primário (`#22D3EE`)
+| Variante | Uso |
+|----------|-----|
+| Primário | **Falar com consultor** — ciano sólido `#22D3EE` |
+| Secundário | **Ver o método** — borda ciano, fundo transparente |
+| Ghost / link | Navegação inline |
 
 - Cantos retos (`rounded-none`) — nunca arredondados
+- Glow ciano discreto no hover; transição 400ms
+- Active: scale 0.98
 
-- Glow ciano discreto no hover
+## Ícones
 
-- Hover suave para ciano soft
+- Estilo: outline, traço fino — usar com moderação
+- Preferir tipografia e números (01–04) a ícones decorativos
 
-- Animações de 400ms
+## Fotografia
 
-- Feedback visual refinado (scale 0.98 no active)
+Priorizar (fora do hero):
 
-CTA principal:
-
-Falar com consultor
-
-CTA secundário:
-
-Borda ciano, fundo transparente.
-
----
-
-# Ícones
-
-Utilizar ícones minimalistas quando necessário.
-
-Traços finos.
-
-Sem excesso de detalhes.
-
-Preferir tipografia e números a ícones decorativos.
-
----
-
-# Fotografia
-
-As imagens complementam a experiência — nunca dominam o hero.
-
-Priorizar:
-
-- Ambientes corporativos reais
-
-- Reuniões estratégicas
-
-- Análise de indicadores
-
-- Escritórios modernos
-
-- Luz controlada e tom frio
-
-- Contexto de trabalho executivo
+- Ambientes corporativos, reuniões estratégicas
+- Análise de indicadores, escritórios modernos
+- Luz controlada, tom frio
 
 Evitar:
 
-- Fotos de stock genéricas no centro do hero
+- Stock genérico no centro do hero
+- Filtros quentes, poses artificiais
+- Estética de agência criativa genérica
 
-- Excesso de edição ou filtros quentes
+Detalhes: [04-assets.md](04-assets.md).
 
-- Ambientes que contradigam a identidade fria e analítica
+## Tom de voz
 
-- Imagens genéricas de banco de imagens com aparência de agência criativa
+- Direto, analítico, confiante, claro
+- Frases curtas; propostas concretas
+- Sem jargão vazio ou slides vazios
 
-- Pessoas sorrindo para câmera em poses artificiais
+Copy completa: [03-copy.md](03-copy.md).
 
----
+## Sensação desejada
 
-# Experiência
+> "Quero falar com essa consultoria. Eles traduzem números em decisões."
 
-Ao entrar no site o visitante deve sentir:
+Se a marca fosse uma pessoa: consultor sênior que acompanha a execução até o resultado aparecer — sem desaparecer após o relatório.
 
-"Quero falar com essa consultoria."
+## Conteúdo demonstrativo
 
-O design deve transmitir autoridade antes mesmo da leitura completa.
+Showcase fictício. Rotular:
 
-A grade geométrica do hero reforça precisão e método — não decoração gratuita.
+- Consultoria, endereço, telefone, e-mail → **ficção demonstrativa**
+- Métricas (38%, 2.4x, 90 dias) → **indicadores demonstrativos**
+- Footer → **Projeto demonstrativo**
 
----
+## Objetivo
 
-# Tom de Voz
-
-Direto.
-
-Analítico.
-
-Confiante.
-
-Claro.
-
-Nunca exagerado.
-
-Nunca comercial em excesso.
-
-Nunca jargão vazio para impressionar.
-
-Frases curtas. Propostas concretas. Sem slides vazios.
-
----
-
-# Sensação
-
-Se a Vertex Consultoria fosse uma pessoa, seria um consultor sênior que senta ao lado da liderança, traduz números em decisões e acompanha a execução até o resultado aparecer — sem desaparecer após o relatório.
-
-Essa sensação deve estar presente em todo o projeto.
-
----
-
-# Objetivo
-
-A identidade visual deve transformar visitantes em leads qualificados, transmitindo confiança, autoridade e precisão através de uma experiência digital memorável e distinta dos demais showcases da Dechen Web Studio.
+Identidade coerente do hero ao footer. Resultado: **parece cliente real**, com ficção transparente onde necessário.

@@ -1,221 +1,143 @@
 # Roadmap — Vertex Consultoria
 
+**Tipo:** showcase · **Status:** ativo · **Versão:** 2.0
+
+Evolução planejada do showcase. Brief: [00-projeto.md](00-projeto.md). Prompts: [05-prompts.md](05-prompts.md).
+
 ## Objetivo
 
-Este documento define a evolução planejada do projeto Vertex Consultoria.
+Guiar entregas em versões incrementais. Cada fase mantém identidade e avança em direção ao DoD: **parece cliente real**, com ficção rotulada.
 
-Ele garante que futuras melhorias respeitem a identidade da marca e mantenham a qualidade do projeto.
+## Status da documentação
 
----
+- [x] [00-projeto.md](00-projeto.md) — brief v2.0
+- [x] [01-brand-guide.md](01-brand-guide.md) — identidade v2.0
+- [x] [02-sitemap.md](02-sitemap.md) — estrutura v2.0
+- [x] [03-copy.md](03-copy.md) — copy v2.0
+- [x] [04-assets.md](04-assets.md) — assets v2.0
+- [x] [05-prompts.md](05-prompts.md) — prompts v2.0
+- [x] [06-roadmap.md](06-roadmap.md) — roadmap v2.0
 
-# Status Atual
+## v1.0 — MVP do showcase
 
-## Concluído
+**Meta:** homepage funcional que **parece cliente real**.
 
-- [x] Briefing do projeto
+**Status:** Concluída
 
-- [x] Brand Guide
+### Escopo
 
-- [x] Sitemap
-
-- [x] Copy
-
-- [x] Assets
-
-- [x] Prompts
-
-- [x] Estrutura da documentação
-
----
-
-# Versão 1.0
-
-Objetivo:
-
-Criar uma demonstração completa e profissional.
-
-Status: **Concluída**
-
-### Homepage
-
-- [x] Hero tipográfico com grade geométrica
-
-- [x] Método (4 etapas)
-
-- [x] Serviços (4 frentes)
-
-- [x] Resultados (métricas + galeria)
-
-- [x] Sobre
-
-- [x] Contato (formulário → WhatsApp)
-
-- [x] Footer
+| Seção | Entrega |
+|-------|---------|
+| Hero | Tipográfico, grade geométrica, VERTEX., CTAs |
+| Método | Grid 4 etapas |
+| Serviços | Grid 2×2, 4 frentes |
+| Resultados | Métricas demonstrativas + galeria |
+| Sobre | Posicionamento + endereço |
+| Contato | Form → WhatsApp |
+| Footer | Contato + **Projeto demonstrativo** |
 
 ### Funcionalidades
 
-- [x] Formulário de lead com redirecionamento WhatsApp
+- Formulário de lead → WhatsApp
+- Navbar fixa com scroll blur
+- Menu mobile responsivo
+- Scroll suave, fade-in up
+- Meta tags e Open Graph
 
-- [x] Navbar fixa com scroll blur
+### Critérios de saída
 
-- [x] Menu mobile responsivo
-
-- [x] Navegação responsiva
-
-- [x] Scroll suave
-
-- [x] Animações fade-in up
-
-- [x] Meta tags e Open Graph
+- [x] Hero tipográfico sem stock photo
+- [x] Paleta dark/ciano consistente
+- [x] Botões rounded-none
+- [x] Site implementado
 
 ---
 
-# Versão 1.1
+## v1.1 — Refino de UX
 
-Melhorias de UX
+**Meta:** polir interação sem mudar estrutura.
 
 - Microinterações refinadas
+- Scroll reveal aprimorado
+- Responsividade em breakpoints intermediários
+- Acessibilidade (ARIA, focus visible)
+- Lighthouse ≥ 95
 
-- Melhorar animações de scroll reveal
-
-- Refinar responsividade em breakpoints intermediários
-
-- Melhorar acessibilidade (ARIA, focus visible)
-
-- Revisão de performance
+Prompt: [05-prompts.md](05-prompts.md) — Prompt 02 e 04.
 
 ---
 
-# Versão 1.2
+## v1.2 — Conversão simulada
 
-Experiência
+**Meta:** fluxo de lead completo (simulado).
 
-- Confirmação elegante após envio do formulário
-
-- Loader personalizado
-
-- Melhorias nas transições entre seções
-
+- Form com estados: enviando, sucesso, erro
+- Confirmação visual pós-envio
+- Pré-mensagem WhatsApp integrada
 - Validação de campos com feedback visual
 
+Prompt: [05-prompts.md](05-prompts.md) — Prompt 03.
+
 ---
 
-# Versão 2.0
+## v2.0 — Experiência completa
 
-Experiência Premium
+**Meta:** showcase referência da agência para consultoria B2B.
 
+**Status:** Documentação concluída; evolução visual em andamento.
+
+- Documentação editorial v2.0 (copy, brand, sitemap, assets, prompts)
+- Métricas rotuladas como **demonstrativas**
 - Método com interação expandida (detalhes por etapa)
+- Imagens em alta resolução + lazy load
+- Galeria com lightbox
+- Scroll animations avançadas; grade do hero refinada
+- OG image e SEO completos
 
-- Imagens em alta resolução otimizadas
+### Critérios de saída
 
-- Galeria de resultados com lightbox
+- [x] Documentação v2.0 alinhada ao template editorial
+- [ ] **Parece cliente real** — ficção transparente no footer
+- [ ] Demonstrativos rotulados (38%, 2.4x, 90 dias)
+- [ ] Lighthouse Performance / SEO / Best Practices ≥ 95
 
-- Scroll animations avançadas
-
-- Efeitos refinados na grade do hero
+Prompt: [05-prompts.md](05-prompts.md) — Prompts 04, 05, 06.
 
 ---
 
-# Versão 3.0
-
-Projeto Completo
+## v3.0 — Extensões (opcional)
 
 - Integração com CRM ou pipeline de leads
-
 - Google Maps embed
-
-- Depoimentos de clientes
-
+- Depoimentos de clientes (fictícios, rotulados)
 - Cases detalhados por segmento
-
 - Blog ou insights executivos
 
----
-
-# Melhorias Futuras
-
-## Hero
-
-Adicionar variação sutil de parallax na grade geométrica.
-
-Explorar contador animado de métricas no hero (opcional).
+Manter nota demonstrativa em footer.
 
 ---
 
-## Método
+## Melhorias futuras (backlog)
 
-Permitir expandir cada etapa com mais detalhes.
+| Área | Ideia |
+|------|-------|
+| Hero | Parallax sutil na grade; contador animado de métricas (opcional) |
+| Método | Expandir etapas; linha de conexão animada (desktop) |
+| Resultados | Lightbox; animação de contagem nos números (demonstrativos) |
+| Contato | Integração com calendário para diagnóstico |
+| Performance | Lighthouse ≥ 95; imagens AVIF |
+| SEO | Schema.org (ProfessionalService); Open Graph |
 
-Adicionar linha de conexão animada entre etapas (desktop).
+## Critérios de qualidade (todas as versões)
 
----
-
-## Resultados
-
-Galeria em tela cheia.
-
-Lightbox.
-
-Animação de contagem nos números (38%, 2.4x, 90 dias).
-
----
-
-## Contato
-
-Integração com calendário para agendamento de diagnóstico.
-
-Confirmação automática por email.
-
----
-
-## Performance
-
-Nota acima de 95 no Lighthouse.
-
----
-
-## SEO
-
-Otimização completa.
-
-Schema.org (ProfessionalService).
-
-Open Graph.
-
-Meta Tags.
-
----
-
-# Critérios de Qualidade
-
-Antes de considerar o projeto concluído:
-
-- Responsividade perfeita
-
-- Performance acima de 95
-
-- SEO configurado
-
-- Código organizado
-
-- Componentes reutilizáveis
-
-- Experiência premium
-
-- Animações suaves
-
-- Sem bugs conhecidos
-
-- Hero tipográfico sem stock photo
-
+- Hero tipográfico; sem stock central; rounded-none
+- Uma função por seção
+- Métricas rotuladas como demonstrativas
 - Paleta dark/ciano consistente
+- Responsivo sem regressões
+- Copy fiel a [03-copy.md](03-copy.md)
+- **Parece cliente real**
 
-- Botões rounded-none
+## Objetivo final
 
----
-
-# Objetivo Final
-
-O projeto Vertex Consultoria deve parecer um site desenvolvido para uma consultoria real do segmento B2B.
-
-Ele deve servir como demonstração oficial da qualidade da Dechen Web Studio e convencer futuros clientes de que somos capazes de desenvolver experiências digitais completas, sofisticadas e profissionais — com identidade visual distinta e orientada à conversão.
+Showcase Vertex Consultoria como case B2B oficial da Dechen Web Studio: brief completo, identidade distinta, resultado que convence visitantes — porque **parece** uma consultoria real, com ficção transparente.

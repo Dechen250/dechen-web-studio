@@ -1,183 +1,164 @@
-# Copy — Divina Cozinha
+**Tipo:** copy · **Status:** ativo · **Versão:** 2.0
+
+> Textos fictícios para showcase — preços, cardápio e reservas são **demonstrativos**.
+
+# Divina Cozinha — Copy
+
+Pack: [00-projeto.md](00-projeto.md) · [01-brand-guide.md](01-brand-guide.md) · [02-sitemap.md](02-sitemap.md) · [04-assets.md](04-assets.md)
 
 ## Objetivo
 
-Definir toda a comunicação do site.
+Comunicação que desperta desejo, transmite sofisticação acolhedora e conduz à reserva — sem tom comercial excessivo.
 
-A copy deve despertar desejo, transmitir sofisticação e incentivar a reserva de uma mesa.
+## Hero
 
-Nunca utilizar linguagem exageradamente comercial.
+| Campo | Texto |
+|-------|-------|
+| Headline | Mais do que uma refeição. Uma experiência para ser lembrada. |
+| Subheadline | Na Divina Cozinha, ingredientes selecionados, ambiente acolhedor e alta gastronomia se unem para criar momentos inesquecíveis. |
+| CTA | Reservar mesa |
 
-O visitante deve sentir que está sendo convidado para uma experiência gastronômica.
+## Sobre
 
----
+**Título:** Uma paixão pela gastronomia.
 
-# Hero
+**Texto:** A Divina Cozinha nasceu da ideia de transformar refeições em experiências memoráveis. Cada prato é preparado com ingredientes cuidadosamente selecionados, respeitando sabores tradicionais e técnicas contemporâneas. Mais do que servir comida, queremos proporcionar momentos especiais.
 
-## Headline
+## Cardápio
 
-Mais do que uma refeição.
+**Título:** Sabores preparados para surpreender.
 
-Uma experiência para ser lembrada.
+**Introdução:** Cada receita foi criada para valorizar ingredientes frescos, equilíbrio de sabores e apresentação impecável. Preços **demonstrativos** para este showcase.
 
-## Subheadline
+### Entradas
 
-Na Divina Cozinha, ingredientes selecionados, ambiente acolhedor e alta gastronomia se unem para criar momentos inesquecíveis.
+**Descrição da categoria:** Pequenos pratos que despertam o paladar e preparam o início da experiência.
 
-## CTA
+| Prato | Preço (demonstrativo) | Descrição |
+|-------|----------------------|-----------|
+| Bruschetta de tomate confit | R$ 48 | Pão artesanal, tomates confitados, manjericão e azeite trufado. |
+| Burrata com figos | R$ 62 | Burrata cremosa, figos frescos, mel silvestre e redução balsâmica. |
+| Carpaccio de vitela | R$ 58 | Lâminas finas, rúcula, parmesão e alcaparras. |
 
-Reservar Mesa
+### Pratos principais
 
----
+**Descrição da categoria:** Receitas autorais que unem tradição, criatividade e ingredientes selecionados.
 
-# Sobre
+| Prato | Preço (demonstrativo) | Descrição |
+|-------|----------------------|-----------|
+| Risoto de funghi | R$ 89 | Arborio, mix de cogumelos, parmesão e finalização com trufa. |
+| Linguine ao frutos do mar | R$ 98 | Massa fresca, camarões, lulas e molho de tomate delicado. |
+| Filé ao molho de vinho | R$ 112 | Medalhão grelhado, purê de batata trufado e legumes da estação. |
 
-## Título
+### Sobremesas
 
-Uma paixão pela gastronomia.
+**Descrição da categoria:** Finalizações delicadas para tornar sua experiência ainda mais especial.
 
-## Texto
+| Prato | Preço (demonstrativo) | Descrição |
+|-------|----------------------|-----------|
+| Cheesecake de frutas vermelhas | R$ 38 | Base crocante, creme leve e calda de frutas da estação. |
+| Tiramisù clássico | R$ 42 | Mascarpone, café espresso e cacau amargo. |
+| Petit gâteau | R$ 45 | Chocolate belga, sorvete de baunilha e frutas frescas. |
 
-A Divina Cozinha nasceu da ideia de transformar refeições em experiências memoráveis.
+### Bebidas
 
-Cada prato é preparado com ingredientes cuidadosamente selecionados, respeitando sabores tradicionais e técnicas contemporâneas.
+**Descrição da categoria:** Seleção de vinhos, drinks e bebidas para harmonizar com cada prato.
 
-Mais do que servir comida, queremos proporcionar momentos especiais.
+| Item | Preço (demonstrativo) | Descrição |
+|------|----------------------|-----------|
+| Seleção de vinhos | A partir de R$ 68 | Rótulos nacionais e importados — consulte nossa carta completa. |
+| Spritz Divina | R$ 36 | Drink autoral com prosecco, bitter e toque cítrico. |
+| Espresso & digestivos | R$ 18 | Café especial e seleção de licores finos. |
 
----
+## Ambiente
 
-# Cardápio
+**Título:** Um ambiente pensado para receber você.
 
-## Título
+**Texto:** Cada detalhe da Divina Cozinha foi planejado para proporcionar conforto, elegância e momentos inesquecíveis. Nossa decoração combina elementos contemporâneos com um ambiente acolhedor, ideal para encontros, celebrações e experiências gastronômicas.
 
-Sabores preparados para surpreender.
+| Item | Alt text |
+|------|----------|
+| Salão principal | Salão principal do restaurante com iluminação quente |
+| Mesas | Mesa elegante preparada para jantar |
+| Cozinha aberta | Cozinha aberta com chefs em ação |
+| Iluminação | Detalhes de iluminação acolhedora |
+| Decoração | Decoração contemporânea com plantas e madeira |
+| Adega | Adega com garrafas selecionadas |
 
-## Introdução
+## Reservas
 
-Cada receita foi criada para valorizar ingredientes frescos, equilíbrio de sabores e uma apresentação impecável.
+**Título:** Reserve sua mesa.
 
----
+**Texto:** Garanta sua experiência na Divina Cozinha. Escolha a melhor data e horário, e deixe o restante conosco.
 
-## Entradas
+**CTA:** Reservar mesa
 
-Pequenos pratos que despertam o paladar e preparam o início da experiência.
+**Nota legal:** Demonstração — formulário ilustrativo, sem envio real.
 
----
+### Campos do formulário
 
-## Pratos Principais
+Nome · Quantidade de pessoas · Data · Horário · Telefone
 
-Receitas autorais que unem tradição, criatividade e ingredientes selecionados.
+### Confirmação (demonstrativa)
 
----
+**Título:** Reserva realizada com sucesso.
 
-## Sobremesas
+**Texto:** Entraremos em contato em breve para confirmar sua mesa.
 
-Finalizações delicadas para tornar sua experiência ainda mais especial.
+## Localização
 
----
+**Título:** Esperamos por você.
 
-## Bebidas
+**Texto:** Estamos prontos para recebê-lo em um ambiente acolhedor, sofisticado e preparado para transformar sua visita em uma experiência memorável.
 
-Uma seleção de vinhos, drinks e bebidas cuidadosamente escolhidas para harmonizar com cada prato.
+## Footer
 
----
+**Tagline:** Uma experiência gastronômica inesquecível.
 
-# Ambiente
+**Contato:** (11) 3456-7890 · Rua das Oliveiras, 128 — Jardins, São Paulo — SP
 
-## Título
+**Créditos:** © [ano] Divina Cozinha. Projeto demonstrativo. Showcase por Dechen Web Studio.
 
-Um ambiente pensado para receber você.
+## Microcopy
 
-## Texto
+### Botões
 
-Cada detalhe da Divina Cozinha foi planejado para proporcionar conforto, elegância e momentos inesquecíveis.
+Reservar mesa · Conhecer o cardápio · Ver ambiente · Como chegar
 
-Nossa decoração combina elementos contemporâneos com um ambiente acolhedor, ideal para encontros, celebrações e experiências gastronômicas.
+### Cardápio (tabs)
 
----
+Entradas · Pratos Principais · Sobremesas · Bebidas
 
-# Reservas
+### Formulário
 
-## Título
+Labels: Nome · Pessoas · Data · Horário · Telefone
 
-Reserve sua mesa.
+Placeholder pessoas padrão: 2
 
-## Texto
+Estados: Enviando… · Reservar mesa
 
-Garanta sua experiência na Divina Cozinha.
+### Menu mobile
 
-Escolha a melhor data e horário, e deixe o restante conosco.
+Abrir menu · Fechar menu
 
-## CTA
+### Acessibilidade
 
-Reservar Mesa
+Instagram (aria-label) · WhatsApp (aria-label) · Mapa (title: Localização Divina Cozinha)
 
----
+## Meta e SEO
 
-# Localização
+| Campo | Valor |
+|-------|-------|
+| **Title** | Divina Cozinha \| Restaurante Contemporâneo em São Paulo — Showcase Dechen Web Studio |
+| **Description** | Landing page demonstrativa: ingredientes selecionados, ambiente acolhedor e alta gastronomia. Reserve sua mesa. Desenvolvido pela Dechen Web Studio. |
+| **OG Title** | Divina Cozinha \| Restaurante Contemporâneo |
+| **OG Description** | Uma experiência gastronômica inesquecível no coração dos Jardins, São Paulo. Showcase pela Dechen Web Studio. |
+| **OG Locale** | pt_BR |
 
-## Título
+## Tom de voz
 
-Esperamos por você.
+**Transmitir:** elegância, hospitalidade, sofisticação, leveza, proximidade.
 
-## Texto
+**Evitar:** linguagem agressiva, marketing excessivo, textos longos, promessas exageradas.
 
-Estamos prontos para recebê-lo em um ambiente acolhedor, sofisticado e preparado para transformar sua visita em uma experiência memorável.
-
----
-
-# Footer
-
-## Frase
-
-Uma experiência gastronômica inesquecível.
-
----
-
-# Microcopys
-
-## Botões
-
-Reservar Mesa
-
-Conhecer o Cardápio
-
-Ver Ambiente
-
-Como Chegar
-
----
-
-## Mensagens
-
-Reserva realizada com sucesso.
-
-Entraremos em contato em breve para confirmar sua mesa.
-
----
-
-# Tom de Voz
-
-Toda a comunicação deve transmitir:
-
-- Elegância
-
-- Hospitalidade
-
-- Sofisticação
-
-- Leveza
-
-- Proximidade
-
-Evitar:
-
-- Linguagem agressiva
-
-- Excesso de marketing
-
-- Textos longos
-
-- Promessas exageradas
-
-O visitante deve sentir que está sendo convidado para uma experiência exclusiva, mas acolhedora.
+O visitante deve sentir convite para uma experiência exclusiva e acolhedora.

@@ -1,286 +1,152 @@
-# Projeto Conceito — Vertex Consultoria
+# Projeto — Vertex Consultoria
+
+**Tipo:** showcase · **Status:** ativo · **Versão:** 2.0
+
+Brief do showcase fictício de consultoria estratégica B2B. Documentação irmã: [01-brand-guide.md](01-brand-guide.md) · [02-sitemap.md](02-sitemap.md) · [03-copy.md](03-copy.md) · [04-assets.md](04-assets.md) · [05-prompts.md](05-prompts.md) · [06-roadmap.md](06-roadmap.md)
+
+> **Projeto demonstrativo.** Vertex Consultoria é uma consultoria fictícia criada para o portfólio da Dechen Web Studio. Contatos, endereço e métricas são ficção editorial.
 
 ## Objetivo
 
-Criar um site premium para uma consultoria fictícia que demonstre a capacidade da Dechen Web Studio de desenvolver experiências digitais elegantes, modernas e altamente funcionais.
+Criar um site premium que **pareça cliente real** e demonstre a capacidade da Dechen Web Studio em experiências digitais B2B — autoridade, clareza e conversão de leads qualificados.
 
-Este projeto fará parte do portfólio oficial da agência.
+## Sobre a marca
 
-O objetivo não é apenas apresentar a consultoria, mas mostrar aos futuros clientes o nível de qualidade que entregamos — especialmente em segmentos B2B que exigem autoridade, clareza e conversão de leads qualificados.
-
----
-
-# Sobre a Marca
-
-## Nome
+### Nome
 
 Vertex Consultoria
 
-## Segmento
+### Segmento
 
 Consultoria estratégica para empresas em crescimento.
 
-## Posicionamento
+### Posicionamento
 
-Uma consultoria que une método estruturado, gestão orientada a números e execução acompanhada de perto.
+Método estruturado, gestão orientada a números e execução acompanhada de perto. Autoridade executiva e precisão analítica — sem parecer genérica ou exagerada.
 
-Cada detalhe deve transmitir autoridade executiva e precisão analítica, sem parecer genérica ou exagerada.
+> Decisões melhores. Resultados reais.
 
-> A Vertex estrutura operação, números e crescimento para empresas que precisam decidir com método — não com achismo.
+### Público-alvo
 
-## Público-alvo
+- Founders e diretores de empresas em fase de crescimento (30–55 anos)
+- Negócios com faturamento recorrente que buscam escalar com controle
+- Líderes que valorizam clareza, indicadores e acompanhamento próximo
 
-Founders e diretores de empresas em fase de crescimento.
+## Personalidade
 
-Executivos entre 30 e 55 anos.
+| É | Não é |
+|---|-------|
+| Autoridade | Genérica (visual de agência comum) |
+| Precisa | Hype de startup |
+| Clara | Luxuosa em excesso |
+| Analítica | Barulhenta ou exagerada |
+| Confiante | Corporativa demais |
+| Disciplinada | Visual de outros showcases (gold, teal, roxo) |
 
-Negócios com faturamento recorrente que buscam escalar com controle.
+## Direção visual
 
-Líderes que valorizam clareza, indicadores e acompanhamento próximo — não relatórios genéricos.
+Tema **escuro e frio**. Sensação: autoridade, precisão, modernidade analítica.
 
----
+### Paleta
 
-# Personalidade da Marca
+| Token | Hex | Uso |
+|-------|-----|-----|
+| Cold slate | `#0B1118` | Fundo principal |
+| Surface | `#121A24` | Blocos alternados |
+| Footer deep | `#070B10` | Footer |
+| Texto | `#E8EEF4` | Corpo e títulos |
+| Muted | `#8B9AAB` | Apoios |
+| Ciano | `#22D3EE` | CTA, links, destaques |
+| Ciano soft | `#67E8F9` | Hover |
+| Borda | `rgba(34, 211, 238, 0.16)` | Divisores |
 
-A marca deve transmitir:
+Referência: ambientes corporativos de alta performance, dados, decisão estratégica.
 
-- Autoridade
-- Precisão
-- Clareza
-- Análise
-- Confiança executiva
-- Disciplina operacional
+Evitar: dourado Barbearia Royal, teal Harmonia, gradientes roxos, estética de agência criativa genérica.
 
-Nunca deve parecer genérica, agressiva comercialmente ou visualmente igual a outros showcases da agência.
+### Tipografia
 
-Evitar explicitamente:
+- Display: **Syne** — geométrica, tracking tight
+- Corpo: **Manrope** — sans limpa
+- Marca: **VERTEX.** (ponto em ciano)
 
-- Visual de agência genérica
-- Estética de startup hype
-- Círculos dourados da Barbearia Royal
-- Teal suave da Harmonia
-- Gradientes roxos
+## Princípios de layout
 
----
+- **Hero tipográfico full-bleed** — grade geométrica animada; sem foto de stock no centro
+- **Marca primeiro** — VERTEX. legível antes de ornamentos
+- **Uma função por seção**
+- **Métricas rotuladas como demonstrativas** — 38%, 2.4x, 90 dias são ficção editorial
 
-# Direção Visual
+Ver [01-brand-guide.md](01-brand-guide.md) e [04-assets.md](04-assets.md).
 
-O site deve possuir aparência escura e fria.
+## Objetivos do site
 
-Fundo em cold slate (#0B1118) com acento ciano (#22D3EE).
+- Apresentar consultoria e método
+- Despertar confiança imediata
+- Mostrar frentes de atuação e resultados (demonstrativos)
+- Conduzir para contato qualificado via WhatsApp
 
-A experiência deve transmitir autoridade, precisão e modernidade analítica.
+## CTA principal
 
-## Paleta
+**Falar com consultor**
 
-- Cold slate — `#0B1118` (fundo principal)
-- Surface — `#121A24` (blocos e seções alternadas)
-- Texto — `#E8EEF4`
-- Muted — `#8B9AAB`
-- Ciano — `#22D3EE` (acento principal)
-- Ciano soft — `#67E8F9` (hover e destaques)
-- Borda — `rgba(34, 211, 238, 0.16)`
+Repetir em navbar, hero e seção Contato. Microcopy em [03-copy.md](03-copy.md).
 
-A paleta deve remeter a ambientes corporativos de alta performance, dados e decisão estratégica — nunca a estética de agência criativa genérica.
+## Estrutura da homepage
 
----
+Detalhes em [02-sitemap.md](02-sitemap.md).
 
-# Estilo
+| Seção | Função |
+|-------|--------|
+| Hero | Marca + headline + CTAs |
+| Método | 4 etapas numeradas em grid |
+| Serviços | 4 frentes de atuação |
+| Resultados | Métricas demonstrativas + galeria |
+| Sobre | Posicionamento + endereço |
+| Contato | Formulário → WhatsApp |
+| Footer | Contato + nota demonstrativa |
 
-Corporativo moderno.
+### Método
 
-Tipografia forte e geométrica (Syne) para display; sans limpa (Manrope) para corpo.
+Grid responsivo (1→2→4 colunas):
 
-Hero tipográfico full-bleed com grade geométrica — sem foto de stock no centro.
+1. Diagnóstico
+2. Arquitetura
+3. Execução
+4. Escala
 
-Animações suaves.
+### Serviços
 
-Microinterações discretas.
+Planejamento estratégico · Gestão financeira · Operações & processos · Mentoria executiva
 
-Botões com cantos retos (`rounded-none`), bordas precisas e glow ciano sutil no hover.
+### Resultados (demonstrativos)
 
-O visual deve priorizar clareza e autoridade, sem excesso de efeitos visuais ou elementos decorativos gratuitos.
+- **38%** — aumento médio de margem
+- **2.4x** — mais previsibilidade
+- **90 dias** — primeiros ganhos
 
----
+## Funcionalidades
 
-# Objetivos do Site
-
-- Apresentar a consultoria e seu método.
-- Despertar confiança imediata.
-- Mostrar as frentes de atuação (serviços).
-- Demonstrar resultados com métricas concretas.
-- Facilitar contato qualificado via WhatsApp.
-- Transmitir autoridade executiva.
-
----
-
-# CTA Principal
-
-Falar com consultor
-
-Este botão deve aparecer diversas vezes ao longo do site — navbar, hero e seção de contato.
-
----
-
-# Estrutura
-
-## Hero
-
-Hero tipográfico full-bleed.
-
-Marca VERTEX. em destaque.
-
-Headline impactante: Decisões melhores. Resultados reais.
-
-Atmosfera de grade geométrica animada — sem foto de stock no centro.
-
-CTA principal: Falar com consultor.
-
-CTA secundário: Ver o método.
-
----
-
-## Método
-
-Esta seção deve ser um dos destaques do projeto.
-
-Não utilizar listas simples.
-
-Criar uma experiência visual em grid com quatro etapas numeradas.
-
-### Funcionamento
-
-Quatro etapas dispostas em grid responsivo (1 coluna mobile, 2 tablet, 4 desktop).
-
-Etapas:
-
-- 01 Diagnóstico
-- 02 Arquitetura
-- 03 Execução
-- 04 Escala
-
-Separadores com bordas ciano discretas.
-
-Animação suave de entrada (fade-in up).
-
-Elegante.
-
-Preciso.
-
-Natural.
-
----
-
-## Serviços
-
-Grid de quatro frentes de atuação.
-
-Mostrar:
-
-- Planejamento estratégico
-- Gestão financeira
-- Operações & processos
-- Mentoria executiva
-
-Hover sutil em surface alternada.
-
----
-
-## Resultados
-
-Métricas de impacto.
-
-Mostrar:
-
-- 38% aumento médio de margem
-- 2.4x mais previsibilidade
-- 90 dias para primeiros ganhos
-
-Galeria de imagens de contexto (escritório, reunião, análise).
-
----
-
-## Sobre
-
-Posicionamento da consultoria.
-
-Proposta de valor para founders e diretores.
-
-Endereço institucional.
-
----
-
-## Contato
-
-Botão principal:
-
-Enviar no WhatsApp
-
-Campos:
-
-- Nome
-- Empresa
-- Telefone
-- Desafio
-
-Formulário monta mensagem e abre WhatsApp com os dados preenchidos.
-
----
-
-## Footer
-
-LinkedIn.
-
-WhatsApp.
-
-Telefone.
-
-Endereço.
-
-Tagline da marca.
-
-Crédito Dechen Web Studio.
-
----
-
-# Funcionalidades
-
-- Formulário de contato com redirecionamento para WhatsApp
-- Seção de método em grid interativo
-- Métricas de resultados
-- Navegação fixa com scroll suave
+- Formulário de contato → WhatsApp
+- Navbar fixa com scroll blur
 - Menu mobile responsivo
-- LinkedIn
+- Métricas e galeria de resultados
 - Responsividade completa
 
----
+## Inspirações
 
-# Inspirações
+- Consultorias estratégicas (McKinsey, Bain — tom, não visual literal)
+- Linear, Vercel, Stripe
+- Awwwards (dark corporativo, tipográfico)
 
-- Consultorias estratégicas de alto nível (McKinsey, Bain — tom, não visual literal)
-- Linear
-- Vercel
-- Stripe
-- Experiências digitais Awwwards com estética dark e tipográfica
+## Definition of Done
 
----
+- [ ] Parece **cliente real**; ficção transparente no footer
+- [ ] Hero tipográfico; sem stock no centro; botões `rounded-none`
+- [ ] Métricas rotuladas como **demonstrativas**
+- [ ] Copy em [03-copy.md](03-copy.md); assets em [04-assets.md](04-assets.md)
+- [ ] Lighthouse Performance / SEO / Best Practices ≥ 95
 
-# Experiência
+## Objetivo para a Dechen Web Studio
 
-O visitante deve sentir que está conhecendo uma consultoria real, sólida e preparada para apoiar decisões críticas.
-
-O site deve despertar vontade de solicitar um diagnóstico antes mesmo do primeiro contato.
-
-A primeira impressão deve ser de precisão e confiança — não de marketing vazio.
-
----
-
-# Objetivo para a Dechen Web Studio
-
-Este projeto deve parecer um trabalho entregue para um cliente real.
-
-Não deve aparentar ser uma demonstração genérica.
-
-Qualquer visitante do portfólio deve acreditar que a Vertex Consultoria realmente existe.
-
-Este projeto servirá como referência para futuras demonstrações da agência no segmento de consultoria e serviços B2B.
+Case B2B de portfólio: brief completo, identidade distinta, resultado que **parece entrega real** — com ficção claramente rotulada.

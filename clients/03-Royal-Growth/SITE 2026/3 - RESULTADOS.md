@@ -1,10 +1,15 @@
-## Título
+# Resultados — Royal Growth
 
-Operações diferentes. O mesmo tipo de problema. O mesmo padrão de ajuste.
+**Tipo:** copy · **Status:** ativo · **Versão:** 2.0 · fonte SITE 2026
+
+Copy da página Resultados (cases). Tom: [0.0 - REFINO DO TEXTO.md](./0.0%20-%20REFINO%20DO%20TEXTO.md). Estrutura: [0.1 - ESTRUTURA.md](./0.1%20-%20ESTRUTURA.md). Implementação: [03-copy.md](../03-copy.md).
 
 ---
 
 ## Introdução
+
+**Título**  
+Operações diferentes. O mesmo tipo de problema. O mesmo padrão de ajuste.
 
 Cada empresa chega em um ponto diferente.
 
@@ -48,9 +53,7 @@ Isso limitava ajuste, leitura e evolução.
 
 A operação foi reorganizada com o RD Conversas como base central, conectando formulários, site e canais de entrada em uma lógica única. O agendamento de visitas passou a acontecer automaticamente, eliminando etapas intermediárias e reduzindo atrito.
 
-A mudança principal não foi a ferramenta.
-
-Foi transformar o atendimento em fluxo. Com começo, continuidade e visibilidade.
+A mudança principal foi transformar o atendimento em fluxo — com começo, continuidade e visibilidade.
 
 ---
 
@@ -164,7 +167,7 @@ Foi criado um sistema que conecta tráfego, páginas, rastreamento e triagem ini
 
 O lead passa por qualificação automatizada e é direcionado considerando região, contexto e disponibilidade comercial. O vendedor recebe o contato com mais informação e maior chance de condução eficiente.
 
-O ganho principal não foi apenas velocidade. Foi reduzir ruído na passagem do lead e dar mais consistência à distribuição.
+O ganho principal foi reduzir ruído na passagem do lead e dar mais consistência à distribuição — além de ganhar velocidade.
 
 ---
 
@@ -196,7 +199,7 @@ A transformação começou pela redefinição da oferta, com a introdução de u
 
 Foram estruturadas novas formas de entrada, nutrição e continuidade, combinando eventos, conteúdo e presença digital em uma lógica comercial mais escalável.
 
-O resultado não foi apenas abrir um novo canal. Foi construir um modelo capaz de crescer sem depender da mesma estrutura física de antes.
+O resultado foi construir um modelo capaz de crescer sem depender da mesma estrutura física de antes — não apenas abrir um novo canal.
 
 ---
 
@@ -224,12 +227,7 @@ Quando a operação não está organizada, o crescimento cobra esforço demais p
 
 É isso que esses projetos têm em comum.
 
-Não a ferramenta. Não o segmento. Não o tamanho da empresa.
+O ponto de virada foi estruturar a operação para que ela pudesse sustentar o que já estava tentando crescer — independentemente de ferramenta, segmento ou tamanho da empresa.
 
-O ponto de virada foi estruturar a operação para que ela pudesse sustentar o que já estava tentando crescer.
-
----
-
-## CTA
-
+**CTA**  
 Solicitar diagnóstico

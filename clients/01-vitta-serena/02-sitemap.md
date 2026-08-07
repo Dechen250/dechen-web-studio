@@ -1,14 +1,16 @@
 # Sitemap — Vitta Serena
 
+**Tipo:** sitemap · **Status:** em andamento · **Versão:** 2.0
+
+Pack: [00-projeto.md](00-projeto.md) · [01-brand-guide.md](01-brand-guide.md) · [03-copy.md](03-copy.md) · [04-assets.md](04-assets.md) · [05-prompts.md](05-prompts.md) · [06-roadmap.md](06-roadmap.md)
+
 ## Objetivo
 
 Organizar o site para que a visitante descubra a marca, encontre produtos e avance para a compra com o menor atrito possível.
 
 A experiência deve ser mobile first e orientada à conversão.
 
----
-
-# Estrutura Geral
+## Estrutura geral
 
 ```text
 Home
@@ -31,9 +33,7 @@ Home
 
 As categorias devem ser ajustadas após a definição da primeira coleção.
 
----
-
-# URLs Recomendadas
+## URLs recomendadas
 
 ```text
 /
@@ -55,11 +55,9 @@ As categorias devem ser ajustadas após a definição da primeira coleção.
 
 Utilizar slugs minúsculos, sem acentos e separados por hífen.
 
----
+## Navegação principal
 
-# Navegação Principal
-
-## Navbar
+### Navbar
 
 Itens:
 
@@ -72,7 +70,7 @@ Itens:
 - Instagram
 - CTA de compra ou ícone de sacola, conforme a versão
 
-## Comportamento
+### Comportamento
 
 - Fixa ou sticky
 - Compacta durante o scroll
@@ -82,17 +80,15 @@ Itens:
 - Sem excesso de links
 - Fundo com contraste suficiente sobre o hero
 
----
+## Home
 
-# Home
+### 1. Hero
 
-## 1. Hero
-
-### Objetivo
+#### Objetivo
 
 Apresentar a marca e levar a visitante para a coleção.
 
-### Conteúdo
+#### Conteúdo
 
 - Logo ou assinatura visual
 - Headline
@@ -101,19 +97,17 @@ Apresentar a marca e levar a visitante para a coleção.
 - Imagem real de uma peça ou composição
 - Link secundário para conhecer a marca
 
-### Conversão
+#### Conversão
 
 O CTA deve levar para a coleção ou para a seção de produtos em destaque.
 
----
+### 2. Coleção em destaque
 
-## 2. Coleção em Destaque
-
-### Objetivo
+#### Objetivo
 
 Apresentar o lançamento ou seleção principal.
 
-### Conteúdo
+#### Conteúdo
 
 - Nome da coleção
 - Pequena descrição
@@ -122,15 +116,13 @@ Apresentar o lançamento ou seleção principal.
 
 A coleção só deve receber um nome temático quando esse nome estiver aprovado.
 
----
+### 3. Categorias
 
-## 3. Categorias
-
-### Objetivo
+#### Objetivo
 
 Facilitar a exploração.
 
-### Conteúdo
+#### Conteúdo
 
 Cards visuais para:
 
@@ -142,11 +134,9 @@ Cards visuais para:
 
 Mostrar apenas categorias que possuam produtos.
 
----
+### 4. Benefícios
 
-## 4. Benefícios
-
-### Objetivo
+#### Objetivo
 
 Reduzir dúvidas e aumentar confiança.
 
@@ -160,11 +150,9 @@ Possíveis itens, condicionados à confirmação operacional:
 
 Não prometer frete, garantia, material ou prazo sem validação.
 
----
+### 5. Produtos em destaque
 
-## 5. Produtos em Destaque
-
-### Objetivo
+#### Objetivo
 
 Levar rapidamente aos itens com maior potencial de venda.
 
@@ -177,26 +165,22 @@ Critérios:
 
 Não usar dados falsos para criar popularidade.
 
----
+### 6. Sobre a Vitta Serena
 
-## 6. Sobre a Vitta Serena
-
-### Objetivo
+#### Objetivo
 
 Humanizar a marca e apresentar sua intenção.
 
-### Conteúdo
+#### Conteúdo
 
 - História breve
 - Propósito
 - Foto da fundadora ou bastidores, se aprovado
 - CTA para a página Sobre
 
----
+### 7. Prova social
 
-## 7. Prova Social
-
-### Objetivo
+#### Objetivo
 
 Aumentar segurança.
 
@@ -209,11 +193,9 @@ Conteúdo futuro:
 
 No lançamento, ocultar a seção caso não existam provas sociais reais.
 
----
+### 8. Perguntas frequentes
 
-## 8. Perguntas Frequentes
-
-### Objetivo
+#### Objetivo
 
 Responder objeções antes do contato.
 
@@ -228,11 +210,9 @@ Perguntas previstas:
 
 As respostas devem usar regras operacionais reais.
 
----
+### 9. CTA final
 
-## 9. CTA Final
-
-### Objetivo
+#### Objetivo
 
 Criar uma última oportunidade de conversão.
 
@@ -242,9 +222,7 @@ Conteúdo:
 - Botão “Ver coleção”
 - Link para o WhatsApp
 
----
-
-## 10. Footer
+### 10. Footer
 
 Conteúdo:
 
@@ -258,15 +236,13 @@ Conteúdo:
 - Direitos autorais
 - Crédito discreto da Dechen Web Studio, se aprovado
 
----
+## Página de coleção
 
-# Página de Coleção
-
-## Objetivo
+### Objetivo
 
 Permitir que a visitante encontre produtos sem esforço.
 
-## Elementos
+### Elementos
 
 - Título
 - Introdução curta
@@ -277,7 +253,7 @@ Permitir que a visitante encontre produtos sem esforço.
 - Estado vazio
 - Paginação ou carregamento progressivo, se necessário
 
-## Filtros iniciais
+### Filtros iniciais
 
 - Categoria
 - Disponibilidade
@@ -286,22 +262,20 @@ Permitir que a visitante encontre produtos sem esforço.
 
 Só adicionar filtros quando houver volume suficiente de produtos.
 
-## Ordenação
+### Ordenação
 
 - Destaques
 - Novidades
 - Menor preço
 - Maior preço
 
----
+## Página de produto
 
-# Página de Produto
-
-## Objetivo
+### Objetivo
 
 Fornecer segurança suficiente para a decisão de compra.
 
-## Ordem de conteúdo
+### Ordem de conteúdo
 
 1. Galeria
 2. Nome
@@ -316,35 +290,33 @@ Fornecer segurança suficiente para a decisão de compra.
 11. Entrega e troca
 12. Produtos relacionados
 
-## CTA
+### CTA
 
 Comprar pelo WhatsApp
 
-## Estados
+### Estados
 
-### Disponível
+#### Disponível
 
 CTA ativo.
 
-### Últimas unidades
+#### Últimas unidades
 
 Exibir somente quando confirmado.
 
-### Indisponível
+#### Indisponível
 
 - Desativar compra
 - Oferecer aviso de reposição, se existir
 - Sugerir produtos relacionados
 
----
+## Página Sobre
 
-# Página Sobre
-
-## Objetivo
+### Objetivo
 
 Apresentar a história e criar conexão com a marca.
 
-## Conteúdo
+### Conteúdo
 
 - Origem da Vitta Serena
 - Significado da marca
@@ -354,15 +326,13 @@ Apresentar a história e criar conexão com a marca.
 - Foto ou bastidores reais
 - CTA para a coleção
 
----
+## Página Cuidados
 
-# Página Cuidados
-
-## Objetivo
+### Objetivo
 
 Ensinar a cliente a conservar as peças.
 
-## Conteúdo
+### Conteúdo
 
 Somente orientações aprovadas conforme os materiais reais.
 
@@ -376,11 +346,9 @@ Possíveis tópicos:
 
 Não generalizar instruções sem conhecer o material.
 
----
+## Página Entregas
 
-# Página Entregas
-
-## Conteúdo
+### Conteúdo
 
 - Regiões atendidas
 - Modalidades
@@ -391,11 +359,9 @@ Não generalizar instruções sem conhecer o material.
 
 Todos os dados devem ser confirmados antes da publicação.
 
----
+## Página Trocas e devoluções
 
-# Página Trocas e Devoluções
-
-## Conteúdo
+### Conteúdo
 
 - Condições
 - Prazos
@@ -406,11 +372,9 @@ Todos os dados devem ser confirmados antes da publicação.
 
 O texto definitivo deve ser revisado conforme a operação e a legislação aplicável antes da publicação.
 
----
+## Página Contato
 
-# Página Contato
-
-## Conteúdo
+### Conteúdo
 
 - WhatsApp
 - Instagram
@@ -420,9 +384,7 @@ O texto definitivo deve ser revisado conforme a operação e a legislação apli
 
 Priorizar o canal que a marca realmente consegue responder.
 
----
-
-# Jornada Principal
+## Jornada principal
 
 ```text
 Instagram
@@ -444,11 +406,9 @@ Entrega
 Pós-venda
 ```
 
----
+## Jornadas secundárias
 
-# Jornadas Secundárias
-
-## Presente
+### Presente
 
 ```text
 Home
@@ -462,7 +422,7 @@ Dúvidas sobre embalagem
 WhatsApp
 ```
 
-## Confiança
+### Confiança
 
 ```text
 Produto
@@ -478,7 +438,7 @@ Retorno ao produto
 Compra
 ```
 
-## Produto indisponível
+### Produto indisponível
 
 ```text
 Produto indisponível
@@ -490,9 +450,7 @@ Novo produto
 Compra
 ```
 
----
-
-# Prioridade da Informação
+## Prioridade da informação
 
 1. Produtos
 2. Preço
@@ -503,9 +461,7 @@ Compra
 7. Materiais e cuidados
 8. História da marca
 
----
-
-# Regras de Navegação
+## Regras de navegação
 
 - Nenhuma informação essencial deve exigir mais de dois cliques
 - O WhatsApp deve estar acessível sem cobrir conteúdo
@@ -516,9 +472,7 @@ Compra
 - O foco nunca deve ficar preso
 - Toda página deve possuir caminho claro para continuar
 
----
-
-# SEO Estrutural
+## SEO estrutural
 
 Cada página deve possuir:
 
@@ -531,9 +485,7 @@ Cada página deve possuir:
 - Dados estruturados quando aplicáveis
 - Breadcrumb em páginas internas, se útil
 
----
-
-# Experiência Esperada
+## Experiência esperada
 
 A visitante deve compreender a proposta da marca em poucos segundos, encontrar uma peça com facilidade e iniciar o pedido com confiança.
 

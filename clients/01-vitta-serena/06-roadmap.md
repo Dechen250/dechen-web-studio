@@ -1,16 +1,18 @@
 # Roadmap — Vitta Serena
 
+**Tipo:** roadmap · **Status:** em andamento · **Versão:** 2.0
+
+Pack: [00-projeto.md](00-projeto.md) · [01-brand-guide.md](01-brand-guide.md) · [02-sitemap.md](02-sitemap.md) · [03-copy.md](03-copy.md) · [04-assets.md](04-assets.md) · [05-prompts.md](05-prompts.md)
+
 ## Objetivo
 
 Definir a evolução do site da Vitta Serena desde o planejamento até uma operação de e-commerce completa.
 
 O roadmap deve acompanhar a maturidade real da marca. Funcionalidades não devem ser antecipadas sem necessidade operacional.
 
----
+## Status atual
 
-# Status Atual
-
-## Concluído
+### Concluído
 
 - Nome definitivo: Vitta Serena
 - Instagram definido: @vittaserena.semijoias
@@ -20,7 +22,7 @@ O roadmap deve acompanhar a maturidade real da marca. Funcionalidades não devem
 - Decisão de criar o site como ativo estratégico
 - Estrutura inicial da documentação
 
-## Em andamento
+### Em andamento
 
 - Definição da primeira coleção
 - Pesquisa de fornecedores
@@ -30,19 +32,17 @@ O roadmap deve acompanhar a maturidade real da marca. Funcionalidades não devem
 - Preparação de operação e conteúdo
 - Área de staging de assets pronta em `clients/01-vitta-serena/assets/`
 
-## Marco próximo
+### Marco próximo
 
 Visita à região da 25 de Março em **22 de julho de 2026** para pesquisa e definição de fornecedores e produtos.
 
----
+## Fase 0 — Descoberta e validação
 
-# Fase 0 — Descoberta e Validação
-
-## Objetivo
+### Objetivo
 
 Reunir dados reais antes de desenvolver o catálogo definitivo.
 
-## Tarefas
+### Tarefas
 
 - Mapear fornecedores
 - Comparar qualidade e custo
@@ -58,22 +58,20 @@ Reunir dados reais antes de desenvolver o catálogo definitivo.
 - Fotografar ou planejar ensaio
 - Confirmar canais oficiais
 
-## Saída
+### Saída
 
 - Planilha de produtos
 - Operação inicial definida
 - Pendências documentadas
 - Conteúdo mínimo disponível
 
----
+## Fase 1 — Fundação técnica
 
-# Fase 1 — Fundação Técnica
-
-## Objetivo
+### Objetivo
 
 Criar uma base independente e profissional.
 
-## Tarefas
+### Tarefas
 
 - Criar repositório `vitta-serena`
 - Criar projeto Next.js
@@ -89,7 +87,7 @@ Criar uma base independente e profissional.
 - Configurar ambiente de preview/staging na VPS
 - Definir variáveis de ambiente no servidor
 
-## Critério de conclusão
+### Critério de conclusão
 
 - Build funcionando
 - Estrutura aprovada
@@ -98,17 +96,15 @@ Criar uma base independente e profissional.
 - Repositório separado da agência
 - Deploy de staging acessível na VPS (ainda sem domínio final, se necessário)
 
----
+## Fase 2 — MVP comercial
 
-# Fase 2 — MVP Comercial
-
-## Objetivo
+### Objetivo
 
 Publicar um site capaz de apresentar produtos e gerar pedidos.
 
-## Entregas
+### Entregas
 
-### Home
+#### Home
 
 - Navbar
 - Hero
@@ -121,7 +117,7 @@ Publicar um site capaz de apresentar produtos e gerar pedidos.
 - CTA final
 - Footer
 
-### Catálogo
+#### Catálogo
 
 - Todos os produtos
 - Categorias
@@ -130,7 +126,7 @@ Publicar um site capaz de apresentar produtos e gerar pedidos.
 - Estados vazios
 - Responsividade
 
-### Produto
+#### Produto
 
 - Galeria
 - Dados
@@ -139,7 +135,7 @@ Publicar um site capaz de apresentar produtos e gerar pedidos.
 - CTA de WhatsApp
 - Produtos relacionados
 
-### Institucional
+#### Institucional
 
 - Sobre
 - Cuidados
@@ -149,7 +145,7 @@ Publicar um site capaz de apresentar produtos e gerar pedidos.
 - Privacidade
 - Termos
 
-### Técnico
+#### Técnico
 
 - SEO
 - Open Graph
@@ -160,15 +156,13 @@ Publicar um site capaz de apresentar produtos e gerar pedidos.
 - Performance
 - Testes
 
----
+## Fase 3 — Preparação de lançamento
 
-# Fase 3 — Preparação de Lançamento
-
-## Objetivo
+### Objetivo
 
 Eliminar riscos antes de apontar o domínio.
 
-## Checklist de conteúdo
+### Checklist de conteúdo
 
 - Todos os nomes corretos
 - Preços conferidos
@@ -182,7 +176,7 @@ Eliminar riscos antes de apontar o domínio.
 - Contatos corretos
 - Nenhum placeholder
 
-## Checklist técnico
+### Checklist técnico
 
 - Lint
 - Typecheck
@@ -199,7 +193,7 @@ Eliminar riscos antes de apontar o domínio.
 - Navegação por teclado
 - Formulários
 
-## Checklist comercial
+### Checklist comercial
 
 - Atendimento preparado
 - Respostas rápidas preparadas
@@ -208,15 +202,13 @@ Eliminar riscos antes de apontar o domínio.
 - Processo de entrega definido
 - Pós-venda definido
 
----
+## Fase 4 — Lançamento
 
-# Fase 4 — Lançamento
-
-## Objetivo
+### Objetivo
 
 Publicar com controle e acompanhar a jornada real.
 
-## Ações
+### Ações
 
 - Aprovar preview/staging final na VPS
 - Apontar DNS do domínio para a VPS
@@ -231,7 +223,7 @@ Publicar com controle e acompanhar a jornada real.
 - Registrar dúvidas frequentes
 - Registrar falhas operacionais
 
-## Primeiros indicadores
+### Primeiros indicadores
 
 - Visitas
 - Origem
@@ -243,15 +235,13 @@ Publicar com controle e acompanhar a jornada real.
 - Dúvidas mais frequentes
 - Tempo de resposta
 
----
+## Fase 5 — Otimização pós-lançamento
 
-# Fase 5 — Otimização Pós-Lançamento
-
-## Objetivo
+### Objetivo
 
 Melhorar com base em comportamento real.
 
-## Possíveis melhorias
+### Possíveis melhorias
 
 - Ajustar hero
 - Reordenar produtos
@@ -269,11 +259,9 @@ Melhorar com base em comportamento real.
 
 Toda mudança deve ser comparada com dados anteriores.
 
----
+## Fase 6 — E-commerce completo
 
-# Fase 6 — E-commerce Completo
-
-## Condição para iniciar
+### Condição para iniciar
 
 Só iniciar quando a operação conseguir manter:
 
@@ -285,7 +273,7 @@ Só iniciar quando a operação conseguir manter:
 - Atendimento
 - Atualização de produtos
 
-## Funcionalidades
+### Funcionalidades
 
 - Carrinho
 - Checkout
@@ -300,11 +288,9 @@ Só iniciar quando a operação conseguir manter:
 - Integração com analytics
 - Recuperação de carrinho dentro das regras aplicáveis
 
----
+## Fase 7 — Crescimento
 
-# Fase 7 — Crescimento
-
-## Possibilidades
+### Possibilidades
 
 - Coleções sazonais
 - Programa de indicação
@@ -320,11 +306,9 @@ Só iniciar quando a operação conseguir manter:
 - Automação de pós-venda
 - Internacionalização futura, se fizer sentido
 
----
+## Backlog priorizado
 
-# Backlog Priorizado
-
-## Prioridade alta
+### Prioridade alta
 
 - Dados reais dos produtos
 - Fotografias
@@ -337,7 +321,7 @@ Só iniciar quando a operação conseguir manter:
 - SEO
 - Performance
 
-## Prioridade média
+### Prioridade média
 
 - Newsletter
 - Produtos relacionados
@@ -346,7 +330,7 @@ Só iniciar quando a operação conseguir manter:
 - Lista de reposição
 - Busca
 
-## Prioridade baixa no início
+### Prioridade baixa no início
 
 - Blog
 - Programa de fidelidade
@@ -356,9 +340,7 @@ Só iniciar quando a operação conseguir manter:
 - Área de cliente
 - Integrações pesadas
 
----
-
-# Critérios de Qualidade
+## Critérios de qualidade
 
 Antes de considerar o MVP concluído:
 
@@ -380,9 +362,7 @@ Antes de considerar o MVP concluído:
 - Boa performance
 - Manutenção simples
 
----
-
-# Bloqueadores de Publicação
+## Bloqueadores de publicação
 
 O site não pode entrar em produção com:
 
@@ -399,11 +379,9 @@ O site não pode entrar em produção com:
 - Erro crítico em celular
 - Domínio apontado para preview incorreto
 
----
+## Métricas
 
-# Métricas
-
-## Aquisição
+### Aquisição
 
 - Sessões
 - Origem
@@ -411,7 +389,7 @@ O site não pode entrar em produção com:
 - Dispositivo
 - Página de entrada
 
-## Interesse
+### Interesse
 
 - Visualização de coleção
 - Visualização de produto
@@ -419,7 +397,7 @@ O site não pode entrar em produção com:
 - Produto compartilhado
 - Retorno ao site
 
-## Conversão
+### Conversão
 
 - Clique no WhatsApp
 - Clique por produto
@@ -428,7 +406,7 @@ O site não pode entrar em produção com:
 - Receita
 - Conversão
 
-## Operação
+### Operação
 
 - Tempo de resposta
 - Produto indisponível solicitado
@@ -437,9 +415,7 @@ O site não pode entrar em produção com:
 - Dúvidas
 - Recompra
 
----
-
-# Processo de Revisão
+## Processo de revisão
 
 A cada versão:
 
@@ -454,9 +430,7 @@ A cada versão:
 9. Medir
 10. Registrar aprendizado
 
----
-
-# Objetivo Final
+## Objetivo final
 
 A Vitta Serena deve possuir uma presença digital que cresça junto com a operação.
 

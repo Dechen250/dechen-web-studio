@@ -1,217 +1,147 @@
 # Brand Guide — [Nome do Projeto]
 
-> **Template oficial Dechen Web Studio**  
-> Preencha todos os campos antes de iniciar o design e o desenvolvimento.
+**Tipo:** template · **Status:** ativo · **Versão:** 2.0
+
+Identidade visual e tom do showcase. Brief geral: [00-projeto.md](00-projeto.md). Copy: [03-copy.md](03-copy.md). Assets: [04-assets.md](04-assets.md).
 
 ## Identidade
 
-[Nome do Projeto] é um negócio do segmento **[Segmento]** que une [proposta central 1], [proposta central 2] e [proposta central 3].
+[Nome do Projeto] é um negócio fictício do segmento **[Segmento]**.
 
-A marca transmite [qualidade principal] através da simplicidade.
+Proposta central: [proposta em uma frase].
 
-Nunca deve parecer [o que evitar].
+A marca transmite [atributo principal] pela clareza visual — não por excesso de efeitos.
 
-A elegância está nos detalhes.
+## Posicionamento
 
----
+Mais do que [ação básica do segmento], [Nome do Projeto] oferece [benefício concreto].
 
-# Posicionamento
+Cada superfície do site reforça [valor 1], [valor 2] e [valor 3].
 
-Mais do que [ação básica do segmento], [Nome do Projeto] proporciona [benefício emocional ou experiencial].
+## Personalidade
 
-Cada interação deve transmitir [valor 1], [valor 2] e [valor 3].
+| É | Não é |
+|---|-------|
+| [Traço 1] | [Anti-trait 1] |
+| [Traço 2] | [Anti-trait 2] |
+| [Traço 3] | [Anti-trait 3] |
 
----
+## Público
 
-# Personalidade
+- [Perfil demográfico ou contexto]
+- [Motivação de compra 1]
+- [Motivação de compra 2]
+- [Objeção comum que o site deve dissipar]
 
-A marca é:
+## Valores
 
-- [Traço 1]
-- [Traço 2]
-- [Traço 3]
-- [Traço 4]
-- [Traço 5]
-- [Traço 6]
-
-Nunca deve parecer:
-
-- [Anti-trait 1]
-- [Anti-trait 2]
-- [Anti-trait 3]
-- [Anti-trait 4]
-- [Anti-trait 5]
-
----
-
-# Público
-
-[Perfil demográfico principal]
-
-[Perfil 1]
-
-[Perfil 2]
-
-[Perfil 3]
-
-[Pessoas que buscam X no segmento]
-
----
-
-# Valores
-
-- [Valor 1 — ex.: excelência]
-- [Valor 2 — ex.: transparência]
+- [Valor 1]
+- [Valor 2]
 - [Valor 3]
-- [Valor 4]
-- [Valor 5]
-- [Valor 6]
 
----
+## Direção visual
 
-# Direção Visual
+Sensação ao navegar: [ex.: calma, autoridade, proximidade].
 
-O visual deve transmitir [sensação principal].
+Estilo geral: [minimalista / corporativo / acolhedor / técnico]. Densidade: [muito respiro / equilibrado]. Cantos: [radius — ex.: 12px, 24px]. Sombras: [discretas / nenhuma].
 
-O visitante deve sentir [emoção ao navegar].
+### Regras de layout
 
-O design deve ser [estilo], [qualidade] e extremamente organizado.
+1. **Hero full-bleed** — mídia ou fundo ocupa a largura; texto sobre wash ou contraste legível
+2. **Marca primeiro** — logo/nome visível no hero e navbar sem competir com ornamentos
+3. **Sem cards no hero** — cards só em seções de conteúdo, quando agrupamento exigir
+4. **Uma função por seção** — um título, um apoio, um propósito por bloco
 
-Muito espaço em branco.
+## Paleta
 
-Poucos elementos competindo pela atenção.
+| Token | Hex | Uso |
+|-------|-----|-----|
+| [Nome token 1] | [#______] | Fundo principal |
+| [Nome token 2] | [#______] | Superfícies |
+| [Nome token 3] | [#______] | Texto |
+| [Nome token 4] | [#______] | Texto secundário |
+| [Nome token 5] | [#______] | Acento / CTA |
 
----
+Referência: [o que a paleta remete no segmento].
 
-# Paleta
+Evitar: [cores ou combinações que conflitam com outros showcases ou parecem genéricas].
 
-## Cores principais
+## Tipografia
 
-- [Cor 1]
-- [Cor 2]
-- [Cor 3]
-- [Cor 4]
-- [Cor 5]
+### Títulos
 
-## Cor de destaque
+- Face: [nome da fonte — ex.: serifada, sans geométrica]
+- Escala: H1 hero [tamanho desktop] · H2 seção [tamanho] · H3 card [tamanho]
+- Peso: [600 / 700 para títulos]
 
-- [Cor de acento]
+### Corpo
 
-A paleta deve lembrar [referência visual ou emocional do segmento].
+- Face: [nome da fonte]
+- Tamanho base: [16–18px]
+- Line-height confortável; parágrafos curtos
 
----
+Nunca: blocos longos sem quebra; texto decorativo ilegível.
 
-# Tipografia
+## Botões
 
-Títulos
+| Variante | Uso |
+|----------|-----|
+| Primário | CTA principal — [Texto do CTA] |
+| Secundário | Ações de apoio — [ex.: Ver serviços] |
+| Ghost / link | Navegação inline |
 
-[Elegantes / Fortes / Modernas].
+- Altura: [ex.: 48–56px]
+- Radius: [ex.: full ou 12px]
+- Hover: transição [200–300ms], feedback claro
+- Focus: contorno visível para teclado
 
-Grandes.
+## Ícones
 
-Respirados.
+- Biblioteca: [Lucide / outra — outline, peso uniforme]
+- Tamanho padrão: [20–24px]
+- Uso: reforçar rótulo, não substituir texto essencial
 
-Com bastante espaço entre seções.
-
-Textos
-
-Muito legíveis.
-
-Leves.
-
-Com excelente contraste.
-
-Nunca utilizar textos longos e cansativos.
-
----
-
-# Botões
-
-Os botões devem transmitir [sensação desejada].
-
-Características:
-
-- [Estilo de cor]
-- Cantos arredondados
-- Sombra extremamente discreta
-- Hover suave
-- Animações lentas
-- Feedback visual refinado
-
-CTA principal:
-
-[Texto do CTA]
-
----
-
-# Ícones
-
-Utilizar ícones minimalistas.
-
-Traços finos.
-
-Sem excesso de detalhes.
-
----
-
-# Fotografia
-
-As imagens são parte essencial da experiência.
+## Fotografia
 
 Priorizar:
 
-- [Tipo de imagem 1 relevante ao segmento]
-- [Tipo de imagem 2]
-- Luz natural ou iluminação coerente com a marca
-- Pessoas reais (quando aplicável)
-- Ambiente alinhado ao posicionamento
-- [Elemento visual do segmento]
-- [Elemento visual do segmento]
-- [Elemento visual do segmento]
+- [Tipo de imagem relevante ao segmento — ex.: ambiente real, produto, equipe]
+- Luz coerente com a marca ([natural / estúdio / dramática])
+- Composição horizontal para hero quando for foto
 
 Evitar:
 
-- Fotos artificiais
-- Excesso de edição
-- Ambientes que contradigam a identidade
-- Imagens genéricas de banco de imagens
+- Stock genérico no centro do hero
+- Excesso de filtro ou HDR
+- Imagens que contradizem o posicionamento
 
----
+Detalhes por seção: [04-assets.md](04-assets.md).
 
-# Experiência
+## Tom de voz
 
-Ao entrar no site o visitante deve sentir:
+- [Tom 1 — ex.: direto]
+- [Tom 2 — ex.: acolhedor]
+- [Tom 3 — ex.: técnico quando necessário]
 
-"[Frase desejada — ex.: Quero conhecer esse negócio / Quero agendar uma consulta]"
+Evitar: superlativos vazios, jargão de marketing, promessas sem base.
 
-O design deve despertar desejo antes mesmo da leitura.
+Copy completa: [03-copy.md](03-copy.md).
 
----
+## Sensação desejada
 
-# Tom de Voz
+Ao entrar no site, o visitante pensa:
 
-[Tom 1 — ex.: calmo].
+> "[Frase interna desejada — ex.: Parece confiável. Quero saber mais.]"
 
-[Tom 2 — ex.: elegante].
+## Conteúdo demonstrativo
 
-[Tom 3 — ex.: convidativo].
+Showcase fictício. Sempre rotular:
 
-[Tom 4 — ex.: próximo].
+- Preços → **demonstrativo**
+- Depoimentos → **fictícios / demonstrativos**
+- Métricas ou resultados → **indicadores demonstrativos**
+- Footer → **Projeto demonstrativo**
 
-Nunca exagerado.
+## Objetivo
 
-Nunca comercial em excesso.
-
----
-
-# Sensação
-
-Se [Nome do Projeto] fosse uma pessoa, seria [metáfora de personalidade — ex.: um profissional experiente que transmite confiança e acolhimento].
-
-Essa sensação deve estar presente em todo o projeto.
-
----
-
-# Objetivo
-
-A identidade visual deve transformar visitantes em futuros clientes, transmitindo confiança, qualidade e [atributo do segmento] através de uma experiência digital memorável.
+Identidade coerente do hero ao footer. Resultado final: **parece cliente real**, com ficção transparente onde necessário.

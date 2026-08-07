@@ -1,24 +1,26 @@
 # Projeto — Site Renê Bradock
 
+**Tipo:** brief · **Status:** ativo · **Versão:** 2.0
+
+Pack: [01-brand-guide.md](01-brand-guide.md) · [02-sitemap.md](02-sitemap.md) · [03-copy.md](03-copy.md) · [04-assets.md](04-assets.md) · [06-roadmap.md](06-roadmap.md)
+
 ## Objetivo
 
 Criar o site oficial do **Renê Bradock**, profissional de pequenos reparos residenciais e comerciais (marido de aluguel / serviços de acabamento), para gerar confiança, organizar a oferta de serviços e converter visitantes em pedidos de orçamento via WhatsApp.
 
 Este é o primeiro pedido pago da Dechen Web Studio.
 
----
+## Contexto do negócio
 
-# Contexto do Negócio
-
-## Nome
+### Nome
 
 Renê Bradock
 
-## Segmento
+### Segmento
 
 Serviços de manutenção e acabamento — marido de aluguel.
 
-## Serviços principais
+### Serviços principais
 
 - Elétrica
 - Hidráulica
@@ -26,26 +28,24 @@ Serviços de manutenção e acabamento — marido de aluguel.
 - Serviços de acabamento
 - Pequenos reparos residenciais e comerciais
 
-## Posicionamento
+### Posicionamento
 
 Um profissional acessível e confiável que resolve o dia a dia da casa e do comércio: elétrica, hidráulica, móveis e acabamentos, com atendimento próximo em São Paulo e região.
 
-## Público inicial
+### Público inicial
 
 - Moradores de São Paulo e região que precisam de reparos rápidos
 - Proprietários de imóveis e síndicos
 - Comércios locais com demandas pontuais
 - Pessoas que valorizam confiança, clareza e praticidade no atendimento
 
-## Referência de gosto do cliente
+### Referência de gosto do cliente
 
 O cliente gostou da estrutura e do tom de [Roma Madeiras](https://romamadeiras.com.br/): hero forte, blocos de confiança, mix claro e contato evidente.
 
 A inspiração é estrutural e de tom — não de conteúdo de madeireira.
 
----
-
-# Papel Estratégico do Site
+## Papel estratégico do site
 
 O site deve:
 
@@ -55,9 +55,7 @@ O site deve:
 - Reduzir fricção para o WhatsApp
 - Servir como cartão de visitas digital compartilhado
 
----
-
-# Documentação
+## Documentação
 
 Caminho no repositório da agência:
 
@@ -74,7 +72,7 @@ clients/
         └── brand/
 ```
 
-## Implementação
+### Implementação
 
 O site real deve possuir um repositório próprio, separado do site da agência.
 
@@ -84,26 +82,22 @@ O site real deve possuir um repositório próprio, separado do site da agência.
 
 Não desenvolver o site real dentro das rotas de `showcase/` da agência.
 
----
+## Objetivos de negócio
 
-# Objetivos de Negócio
-
-## Objetivo principal
+### Objetivo principal
 
 Converter visitantes em pedidos de orçamento pelo WhatsApp.
 
-## Objetivos secundários
+### Objetivos secundários
 
 - Transmitir confiança e profissionalismo
 - Deixar claro o que ele faz
 - Facilitar o primeiro contato
 - Apoiar indicações e compartilhamento
 
----
+## Conversão principal
 
-# Conversão Principal
-
-## MVP
+### MVP
 
 **Pedir orçamento pelo WhatsApp**
 
@@ -121,27 +115,21 @@ Mensagem sugerida:
 Olá, Renê! Vim pelo site e gostaria de um orçamento.
 ```
 
-## Conversão secundária
+### Conversão secundária
 
 Formulário de orçamento na seção de contato, que redireciona ou monta mensagem para o WhatsApp.
 
----
-
-# Área de Atendimento
+## Área de atendimento
 
 São Paulo e região (DDD 11).
 
----
-
-# Domínio
+## Domínio
 
 Sugestão: `renebradock.com.br`
 
 Status: **placeholder** — não incluso no orçamento atual. Deploy inicial via URL da Vercel.
 
----
-
-# Contatos oficiais
+## Contatos oficiais
 
 | Canal | Valor |
 |-------|--------|
@@ -149,9 +137,7 @@ Status: **placeholder** — não incluso no orçamento atual. Deploy inicial via
 | Área | São Paulo e região |
 | Domínio | Placeholder |
 
----
-
-# Escopo do MVP
+## Escopo do MVP
 
 Inclui:
 

@@ -1,15 +1,17 @@
 # Sitemap — Renê Bradock
 
+**Tipo:** sitemap · **Status:** ativo · **Versão:** 2.0
+
+Pack: [00-projeto.md](00-projeto.md) · [01-brand-guide.md](01-brand-guide.md) · [03-copy.md](03-copy.md) · [04-assets.md](04-assets.md) · [06-roadmap.md](06-roadmap.md)
+
 ## Objetivo
 
 Organizar a navegação da landing one-page para conversão rápida via WhatsApp.
 
----
+## Estrutura geral
 
-# Estrutura Geral
-
+```text
 Home (one-page)
-
 ├── Navbar
 ├── Hero
 ├── Serviços
@@ -17,12 +19,11 @@ Home (one-page)
 ├── Como funciona
 ├── Contato / Orçamento
 └── Footer
+```
 
----
+## Navegação
 
-# Navegação
-
-## Navbar
+### Navbar
 
 - Logo Renê Bradock
 - Serviços
@@ -30,18 +31,16 @@ Home (one-page)
 - Contato
 - CTA: WhatsApp
 
-## Footer
+### Footer
 
 - Nome
 - Área: São Paulo e região
 - WhatsApp
 - Crédito Dechen Web Studio (discreto)
 
----
+## Seções
 
-# Seções
-
-## Hero
+### Hero
 
 - Marca em nível herói
 - Headline única
@@ -49,7 +48,7 @@ Home (one-page)
 - CTAs: WhatsApp + Orçamento
 - Visual full-bleed (logo / atmosfera de oficina)
 
-## Serviços
+### Serviços
 
 Quatro pilares:
 
@@ -58,7 +57,7 @@ Quatro pilares:
 3. Móveis
 4. Acabamento e pequenos reparos
 
-## Por que contratar
+### Por que contratar
 
 Blocos de confiança:
 
@@ -66,22 +65,20 @@ Blocos de confiança:
 - Atendimento em São Paulo e região
 - Orçamento claro pelo WhatsApp
 
-## Como funciona
+### Como funciona
 
 1. Chame no WhatsApp
 2. Conte o problema / peça orçamento
 3. Agende e execute
 
-## Contato
+### Contato
 
 - Formulário (nome, telefone, serviço, mensagem)
 - Envio monta mensagem no WhatsApp
 - Número visível: +55 11 95254-1429
 - Botão WhatsApp flutuante (mobile)
 
----
-
-# Rotas
+## Rotas
 
 | Rota | Página |
 |------|--------|

@@ -1,291 +1,150 @@
 # Sitemap — Vertex Consultoria
 
+**Tipo:** showcase · **Status:** ativo · **Versão:** 2.0
+
+Estrutura de navegação e função de cada seção. Brief: [00-projeto.md](00-projeto.md). Copy: [03-copy.md](03-copy.md). Brand: [01-brand-guide.md](01-brand-guide.md).
+
 ## Objetivo
 
-Organizar a estrutura de navegação do site para proporcionar uma experiência intuitiva, elegante e orientada à conversão.
+Homepage intuitiva, elegante e orientada à conversão B2B. Cada seção tem **uma função** — informação crítica em poucos scrolls.
 
-O visitante deve conseguir encontrar qualquer informação importante em poucos segundos.
+## Estrutura geral
 
----
-
-# Estrutura Geral
-
+```
 Home
-
-├── Hero
-
-├── Método
-
-├── Serviços
-
-├── Resultados
-
-├── Sobre
-
-├── Contato
-
-└── Footer
-
----
-
-# Navegação
+├── Hero              → autoridade imediata
+├── Método            → processo em 4 etapas
+├── Serviços          → frentes de atuação
+├── Resultados        → métricas demonstrativas + galeria
+├── Sobre             → posicionamento
+├── Contato           → conversão WhatsApp
+└── Footer            → contato + nota demonstrativa
+```
 
 ## Navbar
 
-Logo VERTEX. (ponto em ciano)
+| Elemento | Conteúdo |
+|----------|----------|
+| Logo | VERTEX. (ponto em ciano) |
+| Links | Método · Serviços · Resultados · Sobre · Contato |
+| CTA | Falar com consultor |
 
-Links:
+Fixa no scroll. Ao rolar: fundo semi-transparente com blur e borda inferior ciano. Menu mobile: hamburger + drawer compacto.
 
-- Método
+## Hero
 
-- Serviços
+**Função:** autoridade, proposta e CTA em segundos.
 
-- Resultados
+**Layout:** tipográfico full-bleed com grade geométrica. Sem foto de stock central.
 
-- Sobre
+| Elemento | Fonte |
+|----------|-------|
+| Label | Vertex Consultoria |
+| Headline | [03-copy.md](03-copy.md) — Decisões melhores. Resultados reais. |
+| Apoio | Estruturação de operação, números e crescimento |
+| CTA primário | Falar com consultor |
+| CTA secundário | Ver o método |
+| Atmosfera | Grade 64×64px ciano 6%; glow radial; quadrado decorativo (desktop) |
 
-- Contato
+## Método
 
-CTA Principal:
+**Função:** apresentar processo de consultoria em grid visual.
 
-Falar com consultor
+| Elemento | Conteúdo |
+|----------|----------|
+| Label | Método |
+| Título | Um sistema. Quatro etapas. |
+| Etapas | 01 Diagnóstico · 02 Arquitetura · 03 Execução · 04 Escala |
+| Layout | Grid 1→2→4 colunas; separadores verticais (desktop) |
+| Interação | Fade-in up ao entrar na viewport |
 
-A navbar deve permanecer fixa durante a navegação.
+Copy por etapa em [03-copy.md](03-copy.md).
 
-Ao rolar, recebe fundo semi-transparente com blur e borda inferior ciano discreta.
+## Serviços
 
-Menu mobile com hamburger e drawer compacto.
+**Função:** apresentar quatro frentes de atuação.
 
----
+| Elemento | Conteúdo |
+|----------|----------|
+| Título | Onde a Vertex atua. |
+| Categorias | Planejamento estratégico · Gestão financeira · Operações & processos · Mentoria executiva |
+| Layout | Grid 2×2 com gap 1px ciano; hover em surface alternada |
 
-# Hero
+## Resultados
 
-Objetivo:
+**Função:** demonstrar impacto. **Métricas fictícias — demonstrativas.**
 
-Criar autoridade imediatamente.
+| Métrica | Descrição |
+|---------|-----------|
+| **38%** | Aumento médio de margem |
+| **2.4x** | Mais previsibilidade no forecast |
+| **90 dias** | Primeiros ganhos com foco em gargalos |
 
-Conteúdo:
+Galeria: 3 imagens (escritório, reunião, análise). Paths em [04-assets.md](04-assets.md).
 
-- Label: Vertex Consultoria
+## Sobre
 
-- Headline: Decisões melhores. Resultados reais.
+**Função:** posicionamento e diferenciais.
 
-- Subheadline sobre estruturação de operação, números e crescimento
+| Elemento | Conteúdo |
+|----------|----------|
+| Label | Sobre |
+| Título | Consultoria para quem precisa decidir. |
+| Diferenciais | 3 pontos com borda ciano à esquerda |
+| Endereço | Av. Brigadeiro Faria Lima, 3477 — Itaim Bibi, São Paulo — SP (**demonstrativo**) |
 
-- Botão "Falar com consultor"
+## Contato
 
-- Botão secundário "Ver o método"
+**Função:** converter visitante em lead via WhatsApp.
 
-- Atmosfera tipográfica com grade geométrica animada
+| Elemento | Conteúdo |
+|----------|----------|
+| Título | Solicite um diagnóstico. |
+| Campos | Nome · Empresa · Telefone/WhatsApp · Desafio atual |
+| CTA | Enviar no WhatsApp |
+| Alternativa | Ou fale direto no WhatsApp → |
+| Contato | (11) 3045-8890 · contato@vertexconsultoria.com.br |
 
-- Elemento geométrico decorativo (quadrado com cruz ciano) — sem foto de stock no centro
+Templates WhatsApp em [03-copy.md](03-copy.md).
 
----
+## Footer
 
-# Método
-
-Objetivo:
-
-Apresentar o processo de consultoria de forma clara e visual.
-
-Conteúdo:
-
-- Label: Método
-
-- Título: Um sistema. Quatro etapas.
-
-- Descrição sobre rituais e indicadores
-
-Etapas:
-
-- 01 Diagnóstico
-
-- 02 Arquitetura
-
-- 03 Execução
-
-- 04 Escala
-
-Funcionalidade:
-
-Grid responsivo com separadores verticais entre etapas (desktop).
-
-Animação fade-in up ao entrar na viewport.
-
----
-
-# Serviços
-
-Objetivo:
-
-Apresentar as frentes de atuação de forma elegante.
-
-Categorias:
-
-- Planejamento estratégico
-
-- Gestão financeira
-
-- Operações & processos
-
-- Mentoria executiva
-
-Funcionalidade:
-
-Grid 2×2 com gap de 1px em cor ciano.
-
-Hover sutil em background alternado.
-
----
-
-# Resultados
-
-Objetivo:
-
-Demonstrar impacto com métricas concretas e contexto visual.
-
-Conteúdo:
-
-- 38% aumento médio de margem
-
-- 2.4x mais previsibilidade
-
-- 90 dias para primeiros ganhos
-
-- Galeria de três imagens (escritório, reunião, análise)
-
----
-
-# Sobre
-
-Objetivo:
-
-Apresentar o posicionamento da consultoria.
-
-Conteúdo:
-
-- Label: Sobre
-
-- Título: Consultoria para quem precisa decidir.
-
-- Descrição para founders e diretores
-
-- Três pontos de diferenciação com borda ciano à esquerda
-
-- Endereço: Av. Brigadeiro Faria Lima, 3477 — Itaim Bibi, São Paulo — SP
-
----
-
-# Contato
-
-Objetivo:
-
-Converter visitantes em leads qualificados via WhatsApp.
-
-Campos:
-
-- Nome
-
-- Empresa
-
-- Telefone / WhatsApp
-
-- Desafio atual
-
-CTA:
-
-Enviar no WhatsApp
-
-Link alternativo:
-
-Ou fale direto no WhatsApp →
-
-Telefone: (11) 3045-8890
-
-WhatsApp: 551130458890
-
-Email: contato@vertexconsultoria.com.br
-
----
-
-# Footer
-
-Conteúdo:
-
-- Logo VERTEX.
-
-- Tagline: Decisões melhores. Resultados reais.
-
+- Logo VERTEX. + tagline: Decisões melhores. Resultados reais.
 - LinkedIn: linkedin.com/company/vertexconsultoria
-
-- WhatsApp
-
-- Telefone: (11) 3045-8890
-
-- Endereço: Av. Brigadeiro Faria Lima, 3477 — Itaim Bibi, São Paulo — SP
-
-- Direitos autorais
-
+- WhatsApp · Telefone · Endereço
+- © Vertex Consultoria. **Projeto demonstrativo.**
 - Crédito Dechen Web Studio
 
----
+## Jornada do visitante
 
-# Jornada do Usuário
+```
+Entrada (Hero)
+    ↓ autoridade
+Método
+    ↓ entende o processo
+Serviços
+    ↓ conhece a oferta
+Resultados
+    ↓ valida impacto (demonstrativo)
+Sobre
+    ↓ contexto
+Contato
+    ↓ conversão WhatsApp
+Footer
+```
 
-Visitante
+## Prioridade da informação
 
-↓
+1. Hero — marca + CTA
+2. Método — processo
+3. Serviços — oferta
+4. Resultados — prova (demonstrativa)
+5. Contato — conversão
+6. Sobre — contexto
 
-Hero
+## Regras
 
-↓
-
-Entende o método
-
-↓
-
-Conhece os serviços
-
-↓
-
-Valida resultados
-
-↓
-
-Lê sobre a consultoria
-
-↓
-
-Preenche formulário
-
-↓
-
-Contato via WhatsApp
-
----
-
-# Prioridade da Informação
-
-1. Hero
-
-2. Método
-
-3. Serviços
-
-4. Resultados
-
-5. Contato
-
-6. Sobre
-
----
-
-# Experiência Esperada
-
-A navegação deve ser simples.
-
-Nenhuma informação importante deve exigir mais de dois cliques.
-
-Toda a estrutura deve conduzir naturalmente o visitante até o contato com um consultor.
-
-O scroll suave conecta todas as seções via âncoras na navbar.
+- Hero tipográfico; sem stock no centro; botões `rounded-none`
+- Métricas rotuladas como **demonstrativas**
+- Conteúdo fictício rotulado
+- DoD: **parece cliente real** — ver [00-projeto.md](00-projeto.md)

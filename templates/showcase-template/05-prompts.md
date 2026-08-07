@@ -1,143 +1,185 @@
 # Prompts — [Nome do Projeto]
 
-> **Template oficial Dechen Web Studio**  
-> Substitua `[Nome do Projeto]` e `[Segmento]` em todos os prompts antes de usar.
+**Tipo:** template · **Status:** ativo · **Versão:** 2.0
 
-## Objetivo
+Prompts para desenvolvimento do showcase. Antes de gerar código, ler toda a pasta:
 
-Este documento reúne os prompts utilizados durante o desenvolvimento do showcase [Nome do Projeto].
+- [00-projeto.md](00-projeto.md)
+- [01-brand-guide.md](01-brand-guide.md)
+- [02-sitemap.md](02-sitemap.md)
+- [03-copy.md](03-copy.md)
+- [04-assets.md](04-assets.md)
+- [06-roadmap.md](06-roadmap.md)
 
-Todos os prompts devem seguir rigorosamente a documentação existente nesta pasta.
+Nenhuma decisão de UI ou copy deve contradizer esses documentos.
 
-Antes de gerar qualquer código, a IA deve obrigatoriamente ler:
+## Regras gerais (todas as fases)
 
-- 00-projeto.md
-- 01-brand-guide.md
-- 02-sitemap.md
-- 03-copy.md
-- 04-assets.md
-
-Nenhuma decisão deve contrariar esses documentos.
-
----
-
-# Prompt 01 — Desenvolvimento Inicial
-
-Você é o Lead Product Designer e Front-end Engineer da Dechen Web Studio.
-
-Sua missão é desenvolver o projeto [Nome do Projeto] seguindo rigorosamente toda a documentação desta pasta.
-
-Objetivo:
-
-Criar um site premium para um negócio fictício do segmento [Segmento].
-
-O resultado deve parecer um projeto entregue para um cliente real.
-
-Prioridades:
-
-- Experiência do usuário
-- Performance
-- Elegância
-- Responsividade
-- Código limpo
-
-Nunca alterar a identidade da marca.
+1. **Hero full-bleed** — mídia ou atmosfera na largura; sem cards sobre a imagem
+2. **Marca primeiro** — logo/nome legível no hero e navbar
+3. **Uma função por seção** — não misturar oferta, prova e conversão no mesmo bloco
+4. **Conteúdo demonstrativo rotulado** — preços, depoimentos, métricas fictícias com flag clara
+5. **DoD:** resultado **parece cliente real**
+6. Não inventar copy ou dados comerciais — usar [03-copy.md](03-copy.md) ou `[placeholder]`
+7. Lighthouse Performance / SEO / Best Practices ≥ 95
 
 ---
 
-# Prompt 02 — Melhorias
+## Prompt 01 — Desenvolvimento inicial
 
-Sua missão é melhorar o projeto existente.
+```
+Você é o desenvolvedor front-end da Dechen Web Studio.
 
-Não refaça o site.
+Desenvolva o showcase [Nome do Projeto] (segmento: [Segmento]) seguindo
+rigorosamente os arquivos desta pasta.
 
-Mantenha toda a identidade visual.
+Leia antes de codar:
+- 00-projeto.md, 01-brand-guide.md, 02-sitemap.md, 03-copy.md, 04-assets.md
 
-Melhore apenas:
+Regras de layout:
+- Hero full-bleed; marca em destaque; sem cards no hero
+- Uma função por seção
+- Conteúdo fictício rotulado como demonstrativo
+- Copy exata de 03-copy.md — não reescrever
 
-- UX
-- Performance
-- Microinterações
-- Responsividade
-- Organização do código
-- Acessibilidade
+Stack: Next.js (App Router), React, TypeScript, Tailwind CSS.
 
-Evite alterações desnecessárias.
+Prioridades: UX, performance, responsividade, código organizado.
+
+DoD: parece cliente real.
+```
 
 ---
 
-# Prompt 03 — Componentes
+## Prompt 02 — Melhorias incrementais
 
-Crie componentes reutilizáveis para o projeto.
+```
+Melhore o showcase [Nome do Projeto] existente.
 
-Seguir toda a documentação.
+NÃO refaça o site do zero. Mantenha identidade visual e estrutura do sitemap.
 
-Priorizar:
+Melhorar apenas:
+- UX e fluxo de conversão
+- Microinterações (hover, fade, scroll reveal — sem exagero)
+- Responsividade e acessibilidade (focus, contraste, teclado)
+- Performance e organização do código
 
-- Legibilidade
-- Reutilização
-- Organização
+Consulte 01-brand-guide.md e 04-assets.md para motion e componentes.
+
+DoD: parece cliente real.
+```
+
+---
+
+## Prompt 03 — Componentes
+
+```
+Extraia componentes reutilizáveis do showcase [Nome do Projeto].
+
+Seguir tokens de 01-brand-guide.md e anatomia de 04-assets.md.
+
+Componentes esperados (ajustar ao sitemap):
+- Navbar (fixa, logo, links, CTA)
+- Hero (full-bleed, sem cards)
+- SectionHeader (título + apoio)
+- [Componente da seção de destaque]
+- [Componente de conversão — form ou WhatsApp CTA]
+- Footer (com nota demonstrativa)
+
+Estados obrigatórios: default, hover, focus, disabled.
 
 Não instalar bibliotecas sem necessidade.
+```
 
 ---
 
-# Prompt 04 — Animações
+## Prompt 04 — Animações
 
-Adicionar microinterações elegantes.
+```
+Adicione motion ao showcase [Nome do Projeto].
 
-Nunca exagerar.
+Referência: 04-assets.md (seção Motion).
 
-Priorizar:
+Permitido:
+- Hover em botões e links (200–250ms, ease-out)
+- Fade in no scroll (Intersection Observer)
+- Transição suave entre categorias na [seção de destaque]
 
-- Hover
-- Fade
-- Scale suave
-- Scroll Reveal
-- Transições naturais
+Proibido:
+- Parallax pesado, bounce, shake
+- Animações que atrasam leitura ou atrapalham mobile
+- Cards animados no hero
 
-Toda animação deve parecer sofisticada.
-
----
-
-# Prompt 05 — Responsividade
-
-Revisar completamente a responsividade.
-
-Garantir excelente experiência em:
-
-- Desktop
-- Notebook
-- Tablet
-- Smartphone
-
-Nenhum componente deve quebrar.
+DoD: refinado, não decorativo.
+```
 
 ---
 
-# Prompt 06 — Performance
+## Prompt 05 — Responsividade
 
-Revisar o projeto buscando:
+```
+Revise responsividade completa do showcase [Nome do Projeto].
 
-- Performance
-- SEO
-- Acessibilidade
-- Código limpo
+Breakpoints: mobile (~390px), tablet (768px), desktop (≥1280px).
 
-Eliminar código duplicado.
+Verificar:
+- Hero full-bleed legível em todas as larguras
+- Navbar → menu mobile funcional
+- CTAs tocáveis (min 44px)
+- Imagens dimensionadas (sem CLS)
+- Formulário usável no mobile
+- Nenhum overflow horizontal
 
-Melhorar organização sempre que possível.
+Testar scroll, form e links em viewport estreita.
+```
 
 ---
 
-# Regras Gerais
+## Prompt 06 — Performance e SEO
 
-Sempre seguir a documentação.
+```
+Audite performance e SEO do showcase [Nome do Projeto].
 
-Nunca criar elementos que contrariem a identidade da marca.
+Metas: Lighthouse Performance, SEO, Best Practices ≥ 95.
 
-Toda melhoria deve aumentar a percepção de qualidade do projeto.
+Verificar:
+- Meta title e description de 03-copy.md
+- OG tags e favicon
+- Imagens: formatos modernos, lazy load, priority no hero
+- HTML semântico (header, main, section, footer)
+- Alt text em todas as imagens
+- Bundle enxuto — eliminar código morto
 
-A experiência do usuário deve ter prioridade sobre efeitos visuais.
+Footer deve conter: "Projeto demonstrativo."
+```
 
-O objetivo é criar um projeto que possa ser apresentado como um case real da Dechen Web Studio.
+---
+
+## Prompt 07 — Copy e conteúdo demonstrativo
+
+```
+Revise copy e flags demonstrativas do showcase [Nome do Projeto].
+
+Fonte: 03-copy.md.
+
+Confirmar:
+- Headline do hero ≤ ~10 palavras
+- Preços rotulados como demonstrativos
+- Depoimentos com autor "Cliente demonstrativo"
+- Métricas com nota "indicadores demonstrativos"
+- Footer: "Projeto demonstrativo"
+- Nenhum fato comercial inventado fora do escopo fictício
+
+Não reescrever para "vender mais" — clareza acima de persuasão.
+```
+
+---
+
+## Checklist antes de entregar
+
+- [ ] Documentação da pasta lida e respeitada
+- [ ] Hero full-bleed, marca primeiro, sem cards no hero
+- [ ] Uma função por seção
+- [ ] Demonstrativos rotulados
+- [ ] Responsivo e Lighthouse ≥ 95
+- [ ] **Parece cliente real**

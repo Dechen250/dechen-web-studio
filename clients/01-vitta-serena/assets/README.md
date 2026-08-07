@@ -1,101 +1,89 @@
-# Assets — Área de recebimento (Vitta Serena)
+# Assets — staging Vitta Serena
 
-Pasta de **staging** no repositório da Dechen Web Studio.
+**Tipo:** assets (staging) · **Status:** em andamento · **Versão:** 2.0
 
-Quando o site tiver repositório próprio, estes arquivos devem ser copiados para:
+Guia completo: [../04-assets.md](../04-assets.md) · Pack: [../00-projeto.md](../00-projeto.md) · [../03-copy.md](../03-copy.md)
+
+## Objetivo
+
+Pasta de **staging** no repositório da Dechen Web Studio. Receber, organizar e validar arquivos antes de copiar para o repositório do site.
+
+Destino final quando o repo existir:
 
 ```text
 public/vitta-serena/
 ```
 
-Não inventar produtos, preços, materiais ou fotos de banco de imagem como se fossem da coleção.
+## Mapa de pastas
 
----
+```text
+assets/
+├── README.md          ← este guia
+├── _inbox/            ← entrega bruta
+├── brand/
+├── home/
+├── categories/
+├── products/          ← uma pasta por SKU
+├── packaging/
+├── social-proof/
+└── cadastro/
+    ├── produtos-template.csv
+    └── produtos.csv
+```
 
-## Como entregar as fotos
+| Pasta | Conteúdo | README |
+|-------|----------|--------|
+| `_inbox/` | Originais, ZIP, nomes de câmera | [_inbox/README.md](_inbox/README.md) |
+| `brand/` | Logos e símbolo | [brand/README.md](brand/README.md) |
+| `home/` | Hero, sobre, coleção | [home/README.md](home/README.md) |
+| `categories/` | Uma imagem por categoria | [categories/README.md](categories/README.md) |
+| `products/` | Fotos por SKU | [products/README.md](products/README.md) |
+| `packaging/` | Embalagem definitiva | [packaging/README.md](packaging/README.md) |
+| `social-proof/` | Depoimentos autorizados | [social-proof/README.md](social-proof/README.md) |
+| `cadastro/` | Planilha de produtos | [cadastro/README.md](cadastro/README.md) |
+
+## Como entregar
 
 ### Opção A — Rápida (recomendado no início)
 
 1. Coloque tudo em `_inbox/` (originais, ZIP, nomes de câmera etc.).
-2. Aviste a DWS.
+2. Avise a DWS.
 3. A equipe organiza, renomeia e move para as pastas corretas.
 
 ### Opção B — Já organizada
 
-Coloque cada arquivo direto na pasta certa, com o nome final (veja abaixo).
+Coloque cada arquivo direto na pasta certa, com o nome final (veja nomenclatura abaixo).
 
----
+## Nomenclatura
 
-## Onde colocar cada tipo
-
-| Pasta | O que vai aqui | Nomes esperados |
-|-------|----------------|-----------------|
-| `brand/` | Logo e símbolo | `logo-principal.svg`, `logo-clara.svg`, `logo-escura.svg`, `simbolo.svg`, `favicon.png` |
-| `home/` | Hero, sobre, coleção | `hero.webp`, `sobre.webp`, `colecao-destaque.webp` |
-| `categories/` | Uma imagem por categoria com produto | `brincos.webp`, `colares.webp`, `pulseiras.webp`, `aneis.webp`, `kits-presentes.webp` |
-| `products/[sku]/` | Fotos de cada peça | `01-principal.webp`, `02-detalhe.webp`, `03-uso.webp`, `04-embalagem.webp` (opcional) |
-| `packaging/` | Embalagem definitiva | nomes livres, minúsculas com hífen |
-| `social-proof/` | Depoimentos/fotos autorizadas | só com autorização explícita |
-| `cadastro/` | Planilha de produtos | `produtos.csv` (usar o template) |
-| `_inbox/` | Entrega bruta | qualquer formato temporário |
-
-Categorias só devem receber imagem se existirem produtos reais nessa categoria.
-
----
-
-## Produtos — pasta por SKU
-
-Exemplo (SKU real, não inventar):
-
-```text
-products/br-001/
-  01-principal.webp
-  02-detalhe.webp
-  03-uso.webp
-  04-embalagem.webp   ← opcional
-```
-
-Padrão sugerido de SKU (confirmar na operação):
-
-- `br-001` brincos  
-- `cl-001` colares  
-- `pl-001` pulseiras  
-- `an-001` anéis  
-- `kt-001` kits  
-
-Mínimo por produto: **principal + detalhe + uso/escala**.
-
----
-
-## Regras de nome
-
-- Minúsculas, sem espaços, sem acentos  
-- Separar com hífen  
-- Não usar `IMG_1234`, `foto final`, `sem título`  
-- Preferir **WebP** (PNG/JPG originais podem ir em `_inbox/` para conversão)  
-- Cor fiel, fundo limpo, sem marca d’água  
+- Minúsculas, sem espaços, sem acentos
+- Separar palavras com hífen
+- Não usar `IMG_1234`, `foto final`, `sem título`
+- Preferir **WebP** (PNG/JPG originais podem ir em `_inbox/` para conversão)
+- Cor fiel, fundo limpo, sem marca d’água
 
 Metas de peso (orientação, não destruir qualidade):
 
-- Card: preferencialmente abaixo de 200 KB  
-- Principal: preferencialmente abaixo de 400 KB  
+- Card: preferencialmente abaixo de 200 KB
+- Principal: preferencialmente abaixo de 400 KB
 
+## Fluxo
 
----
+1. Entregar fotos em `_inbox/` ou já renomeadas nas pastas finais.
+2. Preencher `cadastro/produtos.csv` só com dados confirmados.
+3. Quando o repo `vitta-serena` existir, copiar o conteúdo organizado para `public/vitta-serena/`.
 
-## Cadastro junto com as fotos
+## Regra
 
-Preencha `cadastro/produtos.csv` (copie de `produtos-template.csv`).
+**Nunca inventar** produtos, preços, materiais ou fotos de banco de imagem como se fossem da coleção.
 
-Só preencha campos **confirmados**. Deixe vazio o que ainda não souber — não invente.
+Categorias só devem receber imagem se existirem produtos reais nessa categoria.
 
----
+## Checklist antes de considerar “entregue”
 
-## Checklist rápido antes de considerar “entregue”
-
-- [ ] Fotos das peças da primeira coleção  
-- [ ] Pelo menos 3 imagens por produto (ou raw em `_inbox/` + lista de SKUs)  
-- [ ] Planilha `cadastro/produtos.csv` iniciada  
-- [ ] Logos oficiais em `brand/` (quando disponíveis)  
-- [ ] Nenhuma foto de produto que não será vendida  
-- [ ] Direitos de uso confirmados  
+- [ ] Fotos das peças da primeira coleção
+- [ ] Pelo menos 3 imagens por produto (ou raw em `_inbox/` + lista de SKUs)
+- [ ] Planilha `cadastro/produtos.csv` iniciada
+- [ ] Logos oficiais em `brand/` (quando disponíveis)
+- [ ] Nenhuma foto de produto que não será vendida
+- [ ] Direitos de uso confirmados

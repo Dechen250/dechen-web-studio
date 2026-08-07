@@ -1,207 +1,97 @@
 # Entrega
 
+**Tipo:** Etapa de execução · **Status:** ativo · **Versão:** 2.0
+
 ## Objetivo
 
-A etapa de Entrega representa a conclusão oficial do projeto.
+Concluir oficialmente o projeto: publicar com segurança e garantir que o cliente saiba utilizar a solução.
 
-Nosso objetivo é garantir que o cliente receba uma solução completa, funcional e pronta para gerar resultados.
+Posição no funil: [01-funil.md](./01-funil.md) — etapa 8, após **Build**.
 
-A entrega deve transmitir organização, profissionalismo e confiança.
+Projeto concluído quando funciona em produção e o cliente se sente seguro — não apenas quando o código está pronto.
 
----
+## Critérios de entrada e saída
 
-# Objetivo Principal
+| | Condição |
+|---|----------|
+| **Entrada** | [Build](./05-build.md) aprovado pelo cliente |
+| **Saída** | Site publicado · Testes aprovados · Cliente confirmou recebimento · Documentação e credenciais entregues |
 
-Publicar o projeto com segurança e garantir que o cliente tenha total conhecimento sobre sua utilização.
+## Fluxo
 
-Nenhum projeto é considerado concluído apenas porque foi desenvolvido.
+```
+Aprovação Final → Deploy → Testes em Produção → Entrega ao Cliente → Treinamento → Encerramento
+```
 
-Ele é concluído quando está funcionando corretamente e o cliente se sente seguro para utilizá-lo.
+## Checklist de publicação
 
----
+Antes do deploy:
 
-# Fluxo
+- [ ] Links funcionando
+- [ ] Formulários funcionando
+- [ ] Responsividade completa
+- [ ] Performance validada
+- [ ] SEO básico e Meta Tags
+- [ ] Favicon
+- [ ] Domínio configurado
+- [ ] HTTPS ativo
+- [ ] Analytics (quando contratado)
 
-Aprovação Final
+Nenhum projeto publicado sem este checklist.
 
-↓
+## Deploy
 
-Deploy
+- Publicação na Vercel
+- Configuração de domínio e SSL
+- Verificação de DNS
+- Testes finais em produção
 
-↓
+## Testes em produção
 
-Testes em Produção
+Validar após deploy:
 
-↓
+- Homepage · Navegação · Botões · Formulários
+- Imagens · Responsividade · Performance · SEO · Velocidade
 
-Entrega ao Cliente
+Entrega somente após aprovação.
 
-↓
-
-Treinamento
-
-↓
-
-Encerramento do Projeto
-
----
-
-# Checklist de Publicação
-
-Antes do deploy verificar:
-
-- Todos os links funcionando.
-
-- Formulários funcionando.
-
-- Responsividade completa.
-
-- Performance validada.
-
-- SEO básico configurado.
-
-- Meta Tags configuradas.
-
-- Favicon.
-
-- Domínio configurado.
-
-- HTTPS ativo.
-
-- Analytics (quando contratado).
-
-Nenhum projeto deve ser publicado sem esse checklist.
-
----
-
-# Deploy
-
-Responsabilidades
-
-- Publicação na Vercel.
-
-- Configuração do domínio.
-
-- Configuração do SSL.
-
-- Verificação dos DNS.
-
-- Testes finais em produção.
-
----
-
-# Testes em Produção
-
-Após o deploy validar:
-
-- Homepage
-
-- Navegação
-
-- Botões
-
-- Formulários
-
-- Imagens
-
-- Responsividade
-
-- Performance
-
-- SEO
-
-- Velocidade
-
-O projeto somente será entregue após aprovação nesses testes.
-
----
-
-# Entrega ao Cliente
+## Entrega ao cliente
 
 Apresentar:
 
-- Site publicado.
+- Site publicado
+- Funcionalidades implementadas
+- Objetivos alcançados
+- Melhorias realizadas
 
-- Funcionalidades implementadas.
+Coletar feedback e responder dúvidas.
 
-- Objetivos alcançados.
+## Treinamento (quando necessário)
 
-- Melhorias realizadas.
+- Acesso ao site
+- Atualização de conteúdos
+- Visualização de leads
+- Uso de integrações
+- Como solicitar suporte
 
-Responder dúvidas e coletar feedback.
+## Materiais entregues (quando aplicável)
 
----
+- Link do site · Domínio · Credenciais
+- Documentação · Manual de uso
+- Código-fonte (quando contratado)
 
-# Treinamento
+## Garantia
 
-Quando necessário, orientar o cliente sobre:
+Período para correção de problemas relacionados ao escopo entregue. **Não inclui** novas funcionalidades ou mudanças de escopo (geram nova proposta).
 
-- Como acessar o site.
+## Critérios de encerramento
 
-- Como atualizar conteúdos.
+- [ ] Site publicado
+- [ ] Testes aprovados
+- [ ] Cliente confirmou recebimento
+- [ ] Documentação organizada
+- [ ] Credenciais entregues
 
-- Como visualizar leads.
+## Resultado esperado
 
-- Como utilizar integrações.
-
-- Como solicitar suporte.
-
----
-
-# Materiais Entregues
-
-Quando aplicável:
-
-- Link do site.
-
-- Domínio.
-
-- Credenciais.
-
-- Documentação.
-
-- Manual de uso.
-
-- Código-fonte (quando contratado).
-
----
-
-# Garantia
-
-Após a entrega, oferecer um período para correção de eventuais problemas relacionados ao projeto entregue.
-
-A garantia não inclui novas funcionalidades ou mudanças de escopo.
-
----
-
-# Critérios para Encerramento
-
-O projeto somente será considerado concluído quando:
-
-- O site estiver publicado.
-
-- Todos os testes forem aprovados.
-
-- O cliente confirmar o recebimento.
-
-- Toda a documentação estiver organizada.
-
-- As credenciais tiverem sido entregues.
-
----
-
-# Filosofia
-
-A entrega não representa o fim do relacionamento.
-
-Ela marca o início da presença digital do cliente.
-
-Nosso objetivo é garantir que ele tenha confiança para utilizar a solução e saiba que poderá contar com a Dechen Web Studio sempre que precisar.
-
----
-
-# Resultado Esperado
-
-O cliente deve sair da entrega com a sensação de que recebeu um produto de alta qualidade, acompanhado de um processo organizado, transparente e profissional.
-
-A experiência de entrega deve reforçar a confiança na Dechen Web Studio e abrir caminho para futuras parcerias.
+Cliente recebe produto de qualidade com processo organizado e transparente. Experiência que reforça confiança e abre caminho para [Pós-venda](./07-pos-venda.md).

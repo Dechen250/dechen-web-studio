@@ -1,253 +1,102 @@
-# Brand Guide — Divina Cozinha
+**Tipo:** brief · **Status:** ativo · **Versão:** 2.0
+
+> Identidade de marca fictícia para showcase Dechen Web Studio.
+
+# Divina Cozinha — Brand Guide
+
+Pack: [00-projeto.md](00-projeto.md) · [02-sitemap.md](02-sitemap.md) · [03-copy.md](03-copy.md) · [04-assets.md](04-assets.md)
 
 ## Identidade
 
-Divina Cozinha é um restaurante contemporâneo que une alta gastronomia, ambiente acolhedor e uma experiência memorável.
+Restaurante contemporâneo que une alta gastronomia, ambiente acolhedor e experiência memorável. Sofisticação pela simplicidade — nunca extravagância.
 
-A marca transmite sofisticação através da simplicidade.
+A elegância está nos detalhes: ingredientes, apresentação e recepção.
 
-Nunca deve parecer extravagante.
+## Posicionamento
 
-A elegância está nos detalhes.
+Mais do que servir pratos, a Divina Cozinha proporciona momentos. Cada visita transmite conforto, qualidade e experiência gastronômica inesquecível.
 
----
+## Personalidade
 
-# Posicionamento
+| É | Não é |
+|---|-------|
+| Elegante | Luxuosa em excesso |
+| Acolhedora | Barulhenta |
+| Refinada | Exagerada |
+| Moderna | Infantil |
+| Leve | Artificial |
+| Atemporal | Fria |
 
-Mais do que servir pratos, a Divina Cozinha proporciona momentos.
+## Público
 
-Cada visita deve transmitir conforto, qualidade e uma experiência gastronômica inesquecível.
+Adultos de 25 a 60 anos — casais, famílias, executivos, turistas. Apaixonados por boa gastronomia.
 
----
-
-# Personalidade
-
-A marca é:
-
-- Elegante
-
-- Acolhedora
-
-- Refinada
-
-- Moderna
-
-- Leve
-
-- Atemporal
-
-Nunca deve parecer:
-
-- Luxuosa em excesso
-
-- Barulhenta
-
-- Exagerada
-
-- Infantil
-
-- Artificial
-
----
-
-# Público
-
-Adultos entre 25 e 60 anos.
-
-Casais.
-
-Famílias.
-
-Executivos.
-
-Turistas.
-
-Pessoas apaixonadas por boa gastronomia.
-
----
-
-# Valores
+## Valores
 
 - Excelência
-
 - Hospitalidade
-
 - Ingredientes de qualidade
-
 - Respeito à tradição
-
 - Inovação gastronômica
-
 - Atenção aos detalhes
 
----
+## Direção visual
 
-# Direção Visual
+Leveza e tranquilidade na navegação. Design minimalista, claro e organizado. Muito espaço em branco. Poucos elementos competindo pela atenção.
 
-O visual deve transmitir leveza.
+**Nunca utilizar tema escuro.**
 
-O visitante deve sentir tranquilidade ao navegar.
+## Paleta
 
-O design deve ser minimalista, elegante e extremamente organizado.
+| Token | Hex | Uso |
+|-------|-----|-----|
+| `--dc-bg` | `#FAF9F6` | Fundo principal |
+| `--dc-surface` | `#FFFDF8` | Cards, blocos |
+| `--dc-text` | `#3D3832` | Texto principal |
+| `--dc-muted` | `#6B6560` | Texto secundário |
+| `--dc-olive` | `#8B9A7D` | Acento natural |
+| `--dc-gold` | `#C9A962` | CTAs, destaques |
+| `--dc-border` | `#E8E0D4` | Bordas |
 
-Muito espaço em branco.
+Referência: ingredientes naturais, madeira, cerâmica, luz natural, tons pastel.
 
-Poucos elementos competindo pela atenção.
+## Tipografia
 
----
+### Display — Cormorant Garamond
 
-# Paleta
+Títulos e headlines. Pesos: 400, 500, 600. Classe: `.font-display`.
 
-## Cores principais
+### Sans — Source Sans 3
 
-- Off-white
+Corpo, labels, botões, navegação. Pesos: 400, 500, 600. Classe: `.font-sans`.
 
-- Branco quente
+### Hierarquia
 
-- Bege
+- **Títulos:** Cormorant, 3xl–5xl, `#3D3832`
+- **Corpo:** Source Sans, base–lg, `#6B6560`
+- **Preços:** Source Sans, sm, medium, `#C9A962`
+- **Labels:** uppercase opcional, tracking amplo, olive ou gold
 
-- Verde oliva suave
+Textos curtos. Sem blocos longos.
 
-- Marrom claro
+## Botões
 
-## Cor de destaque
+Tons pastéis, cantos arredondados (`rounded-full` ou `rounded-3xl`), sombra discreta, hover suave, transições lentas.
 
-- Dourado discreto
+**CTA principal:** Reservar mesa
 
-A paleta deve lembrar ingredientes naturais, madeira, cerâmica e luz natural.
+## Fotografia
 
----
+Parte essencial da experiência. Priorizar pratos bem iluminados, ingredientes frescos, luz natural, ambiente elegante, madeira, cerâmica.
 
-# Tipografia
+Evitar fotos artificiais, excesso de edição, ambientes escuros, stock genérico.
 
-Títulos
+## Tom de voz
 
-Elegantes.
+Calmo, elegante, convidativo, próximo. Sem exagero comercial.
 
-Grandes.
+## Sensação
 
-Respirados.
+Um chef apaixonado que recebe cada cliente como convidado em sua própria casa.
 
-Com bastante espaço entre seções.
-
-Textos
-
-Muito legíveis.
-
-Leves.
-
-Com excelente contraste.
-
-Nunca utilizar textos longos e cansativos.
-
----
-
-# Botões
-
-Os botões devem transmitir elegância.
-
-Características:
-
-- Tons pastéis
-
-- Cantos arredondados
-
-- Sombra extremamente discreta
-
-- Hover suave
-
-- Animações lentas
-
-- Feedback visual refinado
-
-CTA principal:
-
-Reservar mesa
-
----
-
-# Ícones
-
-Utilizar ícones minimalistas.
-
-Traços finos.
-
-Sem excesso de detalhes.
-
----
-
-# Fotografia
-
-As imagens são parte essencial da experiência.
-
-Priorizar:
-
-- Pratos bem iluminados
-
-- Ingredientes frescos
-
-- Luz natural
-
-- Pessoas reais
-
-- Ambiente elegante
-
-- Madeira
-
-- Cerâmica
-
-- Vinhos
-
-- Massas
-
-- Sobremesas
-
-Evitar:
-
-- Fotos artificiais
-
-- Excesso de edição
-
-- Ambientes escuros
-
-- Imagens genéricas
-
----
-
-# Experiência
-
-Ao entrar no site o visitante deve sentir:
-
-"Quero conhecer esse restaurante."
-
-O design deve despertar desejo antes mesmo da leitura.
-
----
-
-# Tom de Voz
-
-Calmo.
-
-Elegante.
-
-Convidativo.
-
-Próximo.
-
-Nunca exagerado.
-
-Nunca comercial em excesso.
-
----
-
-# Sensação
-
-Se a Divina Cozinha fosse uma pessoa, seria um chef apaixonado pela gastronomia, que recebe cada cliente como um convidado especial em sua própria casa.
-
-Essa sensação deve estar presente em todo o projeto.
-
----
-
-# Objetivo
-
-A identidade visual deve transformar visitantes em futuros clientes, transmitindo confiança, qualidade e sofisticação através de uma experiência digital memorável.
+Copy aplicada em [03-copy.md](03-copy.md).

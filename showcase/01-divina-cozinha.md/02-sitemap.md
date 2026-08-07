@@ -1,249 +1,126 @@
-# Sitemap — Divina Cozinha
+**Tipo:** ops · **Status:** ativo · **Versão:** 2.0
+
+> Estrutura de navegação fictícia — âncoras e jornada orientadas à reserva demonstrativa.
+
+# Divina Cozinha — Sitemap
+
+Pack: [00-projeto.md](00-projeto.md) · [01-brand-guide.md](01-brand-guide.md) · [03-copy.md](03-copy.md) · [04-assets.md](04-assets.md)
 
 ## Objetivo
 
-Organizar a estrutura de navegação do site para proporcionar uma experiência intuitiva, elegante e orientada à conversão.
+Navegação intuitiva que conduz o visitante à reserva em poucos cliques. Cardápio e ambiente reforçam desejo; reservas convertem.
 
-O visitante deve conseguir encontrar qualquer informação importante em poucos segundos.
+## Estrutura geral
 
----
-
-# Estrutura Geral
-
+```
 Home
-
 ├── Hero
-
-├── Sobre
-
-├── Cardápio
-
-├── Ambiente
-
-├── Reservas
-
-├── Localização
-
+├── Sobre (#sobre)
+├── Cardápio (#cardapio)
+├── Ambiente (#ambiente)
+├── Reservas (#reservas)
+├── Localização (#localizacao)
 └── Footer
-
----
-
-# Navegação
+```
 
 ## Navbar
 
-Logo Divina Cozinha
+**Logo:** Divina Cozinha
 
-Links:
+| Link | Âncora |
+|------|--------|
+| Sobre | `#sobre` |
+| Cardápio | `#cardapio` |
+| Ambiente | `#ambiente` |
+| Reservas | `#reservas` |
+| Localização | `#localizacao` |
 
-- Sobre
+**CTA:** Reservar mesa → `#reservas`
 
-- Cardápio
+Fixa no scroll. Mobile: hamburger, links empilhados, CTA full-width.
 
-- Ambiente
+## Seções
 
-- Reservas
+### Hero
 
-- Localização
+| Elemento | Conteúdo |
+|----------|----------|
+| Headline | Mais do que uma refeição. Uma experiência para ser lembrada. |
+| Subheadline | Ingredientes selecionados, ambiente acolhedor e alta gastronomia |
+| CTA | Reservar mesa |
+| Visual | Imagem principal do restaurante/prato |
 
-CTA Principal:
+### Sobre — `#sobre`
 
-Reservar Mesa
+**Título:** Uma paixão pela gastronomia.
 
-A navbar deve permanecer fixa durante a navegação.
+História da marca, filosofia, ingredientes, experiência gastronômica.
 
----
+### Cardápio — `#cardapio`
 
-# Hero
+**Título:** Sabores preparados para surpreender.
 
-Objetivo:
+4 categorias com troca automática a cada **10 segundos** (efeito virada de página) + navegação manual por tabs.
 
-Criar desejo imediatamente.
+| Categoria | Itens |
+|-----------|-------|
+| Entradas | 3 pratos |
+| Pratos Principais | 3 pratos |
+| Sobremesas | 3 pratos |
+| Bebidas | 3 itens |
 
-Conteúdo:
+Preços **demonstrativos** — ver [03-copy.md](03-copy.md). Fotos em `public/showcase/divina-cozinha/cardapio/`.
 
-- Headline
+### Ambiente — `#ambiente`
 
-- Subheadline
+**Título:** Um ambiente pensado para receber você.
 
-- Botão "Reservar Mesa"
+6 imagens: salão, mesas, cozinha aberta, iluminação, decoração, adega.
 
-- Imagem principal do restaurante
+Caminho: `public/showcase/divina-cozinha/ambiente/`
 
----
+### Reservas — `#reservas`
 
-# Sobre
+**Título:** Reserve sua mesa.
 
-Objetivo:
+Formulário **demonstrativo** — campos: nome, pessoas, data, horário, telefone.
 
-Apresentar a história da marca.
+Confirmação simulada após submit (sem envio real). Nota legal em [03-copy.md](03-copy.md).
 
-Conteúdo:
+### Localização — `#localizacao`
 
-- História
+**Título:** Esperamos por você.
 
-- Filosofia
+Endereço, horários, telefone, WhatsApp, Google Maps embed.
 
-- Ingredientes
+### Footer
 
-- Experiência gastronômica
+Logo · tagline · Instagram · WhatsApp · telefone · endereço · copyright · link "Showcase por Dechen Web Studio" → `/#projetos`
 
----
+## Contato (referência)
 
-# Cardápio
+| Canal | Valor |
+|-------|-------|
+| Telefone | (11) 3456-7890 |
+| WhatsApp | wa.me/551134567890 |
+| E-mail | reservas@divinacozinha.com.br |
+| Instagram | instagram.com/divinacozinha |
+| Endereço | Rua das Oliveiras, 128 — Jardins, São Paulo — SP |
+| CEP | 01415-000 |
 
-Objetivo:
+**Horários:** Ter–Qui 12h–15h/19h–23h · Sex–Sáb 12h–00h · Dom 12h–17h · Seg fechado.
 
-Apresentar os pratos de forma elegante.
+## Jornada do usuário
 
-Categorias:
+Hero → Sobre → Cardápio → Ambiente → Reservas → Localização
 
-- Entradas
-
-- Pratos Principais
-
-- Sobremesas
-
-- Bebidas
-
-Funcionalidade:
-
-Cardápio visual com transição automática entre categorias a cada 10 segundos.
-
-O visitante também poderá navegar manualmente.
-
----
-
-# Ambiente
-
-Objetivo:
-
-Mostrar o restaurante.
-
-Conteúdo:
-
-- Galeria de fotos
-
-- Espaço interno
-
-- Área externa
-
-- Cozinha
-
-- Decoração
-
----
-
-# Reservas
-
-Objetivo:
-
-Converter visitantes em clientes.
-
-Campos:
-
-- Nome
-
-- Quantidade de pessoas
-
-- Data
-
-- Horário
-
-- Telefone
-
-CTA:
-
-Reservar Mesa
-
----
-
-# Localização
-
-Objetivo:
-
-Facilitar a visita.
-
-Conteúdo:
-
-- Endereço
-
-- Horário de funcionamento
-
-- Telefone
-
-- WhatsApp
-
-- Google Maps
-
----
-
-# Footer
-
-Conteúdo:
-
-- Logo
-
-- Redes sociais
-
-- Endereço
-
-- Telefone
-
-- Direitos autorais
-
----
-
-# Jornada do Usuário
-
-Visitante
-
-↓
-
-Hero
-
-↓
-
-Conhece o restaurante
-
-↓
-
-Visualiza o cardápio
-
-↓
-
-Conhece o ambiente
-
-↓
-
-Decide reservar
-
-↓
-
-Reserva realizada
-
----
-
-# Prioridade da Informação
+## Prioridade da informação
 
 1. Hero
-
 2. Cardápio
-
 3. Reservas
-
 4. Ambiente
-
 5. Sobre
-
 6. Localização
 
----
-
-# Experiência Esperada
-
-A navegação deve ser simples.
-
-Nenhuma informação importante deve exigir mais de dois cliques.
-
-Toda a estrutura deve conduzir naturalmente o visitante até a reserva da mesa.
+Scroll suave entre âncoras. Navbar acessível em qualquer ponto.

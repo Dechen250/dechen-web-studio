@@ -1,165 +1,91 @@
-# Sistema Comercial — Visão
+# Sistema Comercial
+
+**Tipo:** Visão do sistema · **Status:** ativo · **Versão:** 2.0
 
 ## Objetivo
 
-O Sistema Comercial da Dechen Web Studio define o processo utilizado para transformar visitantes em clientes satisfeitos.
+Definir o processo comercial da Dechen Web Studio para transformar visitantes em clientes satisfeitos. Fluxo padronizado, documentado e escalável — do primeiro contato ao pós-venda.
 
-Ele estabelece um fluxo claro, organizado e padronizado para todas as etapas da jornada comercial, desde o primeiro contato até o pós-venda.
+## Documentação relacionada
 
-O objetivo é garantir uma experiência profissional, consistente e escalável para todos os clientes da agência.
+| Documento | Conteúdo |
+|-----------|----------|
+| [01-funil.md](./01-funil.md) | Jornada comercial (10 etapas) |
+| [02-descoberta.md](./02-descoberta.md) | Reunião de descoberta |
+| [03-diagnostico.md](./03-diagnostico.md) | Análise estratégica |
+| [04-proposta.md](./04-proposta.md) | Proposta comercial |
+| [05-build.md](./05-build.md) | Execução do projeto |
+| [06-entrega.md](./06-entrega.md) | Publicação e handoff |
+| [07-pos-venda.md](./07-pos-venda.md) | Relacionamento pós-entrega |
+| [08-roadmap.md](./08-roadmap.md) | Evolução planejada |
 
----
+Integração com [Sistema de Captação](../client-acquisition/00-visao.md) na etapa **Lead**.
 
-# Missão
+## Jornada comercial (canônica)
 
-Compreender profundamente o negócio do cliente antes de propor qualquer solução.
+Dez etapas definidas em [01-funil.md](./01-funil.md):
 
-Não vendemos apenas sites.
+```
+Visitante → Lead → Descoberta → Diagnóstico → Proposta → Cliente → Build → Entrega → Pós-venda → Cliente Recorrente
+```
 
-Criamos experiências digitais capazes de gerar resultados reais.
+**Diagnóstico** é etapa obrigatória entre Descoberta e Proposta. A proposta é consequência do diagnóstico, nunca o contrário.
 
----
+## Princípios operacionais
 
-# Filosofia
+### Cliente primeiro
 
-Todo projeto começa entendendo pessoas, não tecnologia.
+Entender objetivos de negócio antes de design ou código.
 
-O foco da Dechen Web Studio é resolver problemas de negócio através de soluções digitais.
+### Transparência
 
-Cada etapa do processo comercial existe para reduzir riscos, aumentar a confiança e entregar mais valor ao cliente.
+Propostas claras e honestas. Não prometer o que não pode ser entregue.
 
----
+### Valor antes da venda
 
-# Princípios
+Ajudar o cliente a tomar a melhor decisão — mesmo quando isso significa não fechar.
 
-## O cliente vem primeiro.
+### Organização
 
-Antes de pensar em design ou código, entendemos os objetivos do cliente.
+Todo contato segue processo documentado. Informações registradas, não dependem de memória.
 
----
+### Excelência
 
-## Transparência.
+Atendimento profissional e consistente em cada etapa.
 
-Nunca prometemos aquilo que não podemos entregar.
+## Objetivos do sistema
 
-Toda proposta deve ser clara, objetiva e honesta.
+- Padronizar atendimento
+- Melhorar experiência do cliente
+- Organizar informações comerciais
+- Facilitar criação de propostas
+- Reduzir retrabalho
+- Preparar a agência para crescimento
 
----
+## Integrações futuras
 
-## Valor antes da venda.
-
-Nosso objetivo é ajudar o cliente a tomar a melhor decisão, mesmo que isso signifique não fechar um contrato.
-
----
-
-## Organização.
-
-Todo contato deve seguir um processo documentado.
-
-Nenhuma informação importante deve depender da memória.
-
----
-
-## Excelência.
-
-Cada cliente deve sentir que está sendo acompanhado por uma empresa organizada, profissional e comprometida.
-
----
-
-# Jornada Comercial
-
-Lead
-
-↓
-
-Descoberta
-
-↓
-
-Proposta
-
-↓
-
-Build
-
-↓
-
-Entrega
-
-↓
-
-Pós-venda
-
-↓
-
-Novos projetos
-
----
-
-# Objetivos do Sistema
-
-- Padronizar o atendimento.
-
-- Melhorar a experiência do cliente.
-
-- Organizar informações comerciais.
-
-- Facilitar a criação de propostas.
-
-- Reduzir retrabalho.
-
-- Preparar a agência para crescer.
-
----
-
-# Integrações Futuras
-
-O sistema comercial deverá integrar-se ao:
-
-- Sistema de Captação
-
-- CRM
-
-- Banco de Dados
-
+- [Sistema de Captação](../client-acquisition/00-visao.md)
+- CRM próprio
+- Banco de dados
 - Google Calendar
-
 - WhatsApp
-
 - E-mail
-
 - Automações
+- Dashboard administrativo
 
-- Dashboard Administrativo
-
----
-
-# Indicadores
-
-O sistema deverá permitir acompanhar:
+## Indicadores
 
 - Número de leads
-
 - Taxa de conversão
-
 - Tempo médio de resposta
-
 - Tempo médio de fechamento
-
 - Ticket médio
-
-- Receita mensal
-
-- Receita anual
-
+- Receita mensal e anual
 - Projetos entregues
-
 - Clientes recorrentes
 
----
+Detalhamento por etapa em [01-funil.md](./01-funil.md).
 
-# Objetivo Final
+## Resultado esperado
 
-Criar um processo comercial que permita à Dechen Web Studio crescer de forma organizada, mantendo um atendimento de alta qualidade independentemente da quantidade de clientes.
-
-Todo novo cliente deve passar pela mesma metodologia, garantindo consistência, confiança e excelência em cada etapa da jornada.
+Processo comercial que permite crescer com organização e qualidade constante. Todo novo cliente passa pela mesma metodologia.

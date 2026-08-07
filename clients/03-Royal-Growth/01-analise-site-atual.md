@@ -1,36 +1,37 @@
 # Análise do Site Atual — Royal Growth
 
+**Tipo:** diagnóstico · **Status:** legado documentado · **Versão:** 2.0
+
+Pack: [00-projeto.md](00-projeto.md) · [02-sitemap.md](02-sitemap.md) · [03-copy.md](03-copy.md) · [04-assets.md](04-assets.md) · [05-design-system.md](05-design-system.md) · [06-roadmap.md](06-roadmap.md)
+
 **URL:** [https://royalgrowth.com.br/](https://royalgrowth.com.br/)  
-**Data da análise:** 28/07/2026  
-**Objetivo deste documento:** diagnóstico do site legado.
+**Data da análise:** 28/07/2026
 
-> **Atualização (29/07/2026):** o esboço do cliente em `SITE 2026/` definiu posicionamento, sitemap, copy e direção visual (azul royal, tom maduro, CTA “Solicitar diagnóstico”). Este arquivo permanece como diagnóstico do site antigo; a fonte da verdade do novo site é `00-projeto.md` + `02` + `03` + `05`.
+## Objetivo
 
----
+Registrar o diagnóstico do site legado (WordPress vigente). Este arquivo **não** define o novo site.
 
-# Veredito
+> **Atualização:** o esboço do cliente em `SITE 2026/` definiu posicionamento, sitemap, copy e direção visual (azul royal, tom maduro, CTA “Solicitar diagnóstico”). A fonte da verdade do novo site é `00-projeto.md` + `02-sitemap.md` + `03-copy.md` + `05-design-system.md`. Em conflito, **`SITE 2026/` prevalece**. Refinamentos do esboço são tratados em outro fluxo (pasta `SITE 2026/`).
+
+## Veredito
 
 O site tem **personalidade e posicionamento fortes**, mas funciona mais como **manifesto** do que como **ferramenta de conversão**. O discurso de resultado é intenso; a prova e a clareza da oferta ainda são fracas.
 
----
-
-# O que já funciona
+## O que já funciona
 
 | Ponto | Observação |
 |-------|------------|
 | Identidade | Logo com leão, nome Royal Growth, visual dark + verde menta |
-| Tom de voz | Memorável, confrontador, anti-“agência genérica” |
+| Tom de voz | Memorável, confrontador, anti-agência genérica |
 | CTA único | “Falar com um assessor” aparece de forma consistente |
 | Longevidade | Desde 2011 — ativo de confiança pouco explorado |
 | Cases (início) | Cards com métricas (ex.: SBIE +500%, School of Healing, CEAGESP) |
 | Parceiros | Badge de parceiro (ex.: Google Partner) no header |
 | Método | “Método Growth” em 7 etapas citado em Soluções |
 
----
+## Estrutura observada
 
-# Estrutura observada
-
-## Páginas
+### Páginas
 
 | Página | URL (observada) | Conteúdo principal |
 |--------|-----------------|--------------------|
@@ -40,7 +41,7 @@ O site tem **personalidade e posicionamento fortes**, mas funciona mais como **m
 | Contato | `/contato/` | Formulário (Nome, E-mail, WhatsApp, Mensagem) |
 | CTA intermediária | `/verdadeiro-marketing/` | Destino de “Falar com um assessor” |
 
-## Homepage — fluxo de mensagem
+### Homepage — fluxo de mensagem
 
 1. Hero: **ROYAL GROWTH** + “Assessoria de Marketing Dedicada a Acelerar Negócios”
 2. “Você não precisa de uma **AGÊNCIA** de marketing”
@@ -52,11 +53,9 @@ O site tem **personalidade e posicionamento fortes**, mas funciona mais como **m
 8. Quem Somos + reforço de missão desde 2011
 9. CTA final
 
----
+## Diagnóstico por área
 
-# Diagnóstico por área
-
-## 1. Conteúdo e conversão
+### 1. Conteúdo e conversão
 
 **Problema:** muito discurso, pouca decisão.
 
@@ -67,18 +66,18 @@ O site tem **personalidade e posicionamento fortes**, mas funciona mais como **m
 
 **Melhoria:** enxugar manifesto → problema → prova → método → CTA. Uma ideia por seção.
 
-## 2. Prova social
+### 2. Prova social
 
 **Problema:** números sem contexto.
 
-- Cards com % grandes (+500%, 21.328%, 50%) sem explicar baseline, canal, prazo ou narrativa.
-- Sem depoimentos com nome/foto/cargo.
+- Cards com percentuais grandes (+500%, 21.328%, 50%) sem explicar baseline, canal, prazo ou narrativa.
+- Sem depoimentos com nome, foto ou cargo.
 - Sem cases em página própria.
-- Sem vídeo ou “antes / depois”.
+- Sem vídeo ou antes/depois estruturado.
 
-**Melhoria:** 2–4 cases com história curta (desafio → ação → resultado → citação). Autorização do cliente obrigatória.
+**Melhoria:** cases com história curta (desafio → ação → resultado). Autorização do cliente obrigatória. No novo site, ver lista em `02-sitemap.md` e textos em `03-copy.md`.
 
-## 3. Oferta / Soluções
+### 3. Oferta / Soluções
 
 **Problema:** Método Growth existe no texto, mas não na experiência.
 
@@ -86,75 +85,67 @@ O site tem **personalidade e posicionamento fortes**, mas funciona mais como **m
 - Lista de serviços ambígua (“temos todos esses e mais… mas isso é irrelevante”).
 - Bom para postura; ruim para quem precisa saber **o que está comprando**.
 
-**Melhoria:** página Soluções com: para quem é, o que inclui, etapas do método, o que acontece depois do contato, o que não fazem.
+**Melhoria:** página Sistema com fluxo operacional, etapas e critérios de fit — conforme `SITE 2026/`.
 
-## 4. Visual e UX
+### 4. Visual e UX
 
 **Problema:** estilo premium dark, porém barulhento.
 
 - Tipografia outline, glow, blur no scroll, linhas tracejadas vermelhas.
 - Header carregado (nav + logo central + badges + CTA).
-- Hierarquia tipográfica compete consigo mesma (vários “MARKETING” em pesos/estilos diferentes).
-- Dark mode total: ok para marca, mas exige contraste e legibilidade mais cuidadosos.
+- Hierarquia tipográfica compete consigo mesma.
+- Dark mode total: exige contraste e legibilidade mais cuidadosos.
 
-**Melhoria:** menos efeito, mais composição; hero limpo; prova cedo; tipografia legível em mobile.
+**Melhoria:** menos efeito, mais composição; hero limpo; prova cedo; tipografia legível em mobile. Nova direção: azul royal (`05-design-system.md`).
 
-## 5. Confiança e operação
+### 5. Confiança e operação
 
 **Problema:** ativos de confiança subexplorados.
 
 - Desde 2011 aparece tarde / de forma genérica.
 - CNPJ no footer (bom), mas equipe, processo e critérios de fit ausentes.
-- Sem FAQ / objeções típicas (“quanto custa?”, “para quem não serve?”, “como é o onboarding?”).
+- Sem FAQ ou objeções típicas.
 
-## 6. Técnico / conteúdo observável
+### 6. Técnico
 
 - Stack aparente: WordPress.
 - SEO on-page básico existe (títulos por página).
-- Animações/efeitos podem prejudicar performance e acessibilidade — validar no redesign.
-- Mobile: CTA e nav precisam ser prioridade na nova versão (site de assessoria vende no celular).
+- Animações/efeitos podem prejudicar performance e acessibilidade.
+- Mobile: CTA e nav precisam ser prioridade (site de assessoria vende no celular).
 
----
-
-# Oportunidades priorizadas
+## Oportunidades priorizadas
 
 | Prioridade | Melhoria | Por quê |
 |------------|----------|---------|
 | Alta | Cases com narrativa + prova real | Sustenta o discurso de resultado |
-| Alta | Soluções / Método claros | Remove dúvida “o que eu compro?” |
+| Alta | Sistema / método claros | Remove dúvida “o que eu compro?” |
 | Alta | Hero direto (problema → promessa → CTA) | Acelera compreensão e conversão |
 | Média | Design mais limpo e tipografia legível | Moderniza sem perder marca |
 | Média | Processo + “como é trabalhar conosco” | Qualifica o lead e reduz atrito |
 | Média | Contato polido + WhatsApp evidente | Fecha o funil |
 | Baixa | Blog / conteúdo / SEO de inbound | Autoridade contínua (fase 2) |
 
----
-
-# Tom de voz — decisão estratégica
+## Tom de voz — decisão estratégica
 
 O tom atual é um **diferencial** e um **risco**:
 
 - **A favor:** marca memorável, corta ruído, atrai quem já está frustrado com agência.
-- **Contra:** pode afastar públicos mais corporativos ou conservadores; cansa se repetido em toda a página.
+- **Contra:** pode afastar públicos mais corporativos; cansa se repetido em toda a página.
 
-**Pergunta-chave ao cliente:** manter o tom agressivo, suavizar, ou usar agressividade só em momentos específicos (hero / anti-agência) e autoridade sóbria no restante?
+**Decisão (SITE 2026):** tom maduro, preciso, anti-jargão — sem confronto performático do legado.
 
----
+## O que preservar (hipótese — site antigo)
 
-# O que preservar (hipótese)
-
-Até o cliente dizer o contrário, preservar:
+Até o cliente dizer o contrário, no legado valia preservar:
 
 - Nome e símbolo do leão
-- Posicionamento “assessoria / crescimento / resultado”
-- CTA “Falar com um assessor”
-- Método Growth (conteúdo a esclarecer)
+- Posicionamento assessoria / crescimento / resultado
+- CTA “Falar com um assessor” (substituído por **Solicitar diagnóstico** no novo site)
+- Método Growth (conteúdo a esclarecer → virou **Sistema**)
 - Referência a 2011 e prova de parceiros
-- Personalidade da marca (ainda que calibrada)
+- Personalidade da marca (calibrada no novo tom)
 
----
-
-# O que evoluir (hipótese)
+## O que evoluir
 
 - Densidade e repetição de copy
 - Efeitos visuais excessivos
@@ -163,9 +154,6 @@ Até o cliente dizer o contrário, preservar:
 - Funil pós-CTA
 - Estrutura de páginas (menos manifesto, mais decisão)
 
----
+## Próximo passo
 
-# Próximo passo
-
-Usar este diagnóstico na conversa com o cliente e preencher as perguntas em aberto em `00-projeto.md`.  
-Com as respostas, atualizar `02-sitemap.md`, criar `03-copy.md` e avançar brand/direção visual.
+Usar este diagnóstico como referência histórica. Implementação segue `02-sitemap.md`, `03-copy.md` e `05-design-system.md`, com precedência de `SITE 2026/` em conflitos de conteúdo.

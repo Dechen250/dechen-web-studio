@@ -1,273 +1,151 @@
 # Assets — Instituto Harmonia
 
+**Tipo:** showcase · **Status:** ativo · **Versão:** 2.0
+
+Referências visuais do showcase. Brand: [01-brand-guide.md](01-brand-guide.md). Estrutura: [02-sitemap.md](02-sitemap.md). Brief: [00-projeto.md](00-projeto.md).
+
 ## Objetivo
 
-Este documento reúne todas as referências visuais, elementos gráficos, imagens e inspirações utilizadas no projeto Instituto Harmonia.
+Documentar mídia, motion e inspirações. Assets reforçam sensação de **cliente real** — sem stock genérico no hero.
 
-Todo desenvolvimento deve seguir estas referências.
+## Estilo fotográfico
 
----
+| Atributo | Direção |
+|----------|---------|
+| Luz | Natural, ambiente clínico acolhedor |
+| Tom | Claro, fresco, tons de saúde e bem-estar |
+| Composição | Horizontal para hero; variado para galeria |
+| Tratamento | Natural; sem HDR exagerado |
 
-# Estilo Fotográfico
-
-As fotografias devem transmitir:
-
-- Acolhimento
-
-- Naturalidade
-
-- Saúde e bem-estar
-
-- Luz natural
-
-- Ambiente clínico humano
-
-Priorizar fotografias horizontais em alta resolução.
-
----
-
-# Fotografias
+Evitar: stock genérico no hero, ambientes frios/hospitalares, excesso de edição.
 
 ## Hero
 
-Imagem full-bleed mostrando ambiente clínico acolhedor e acolhedor.
+**Layout:** full-bleed com wash suave à esquerda para legibilidade.
 
-Preferencialmente:
+Cena ideal: recepção iluminada, consultório com luz natural ou sala de espera confortável.
 
-- Recepção iluminada
+| Checklist | |
+|-----------|---|
+| Resolução mínima | 1920×1080 |
+| Wash/gradiente | Esquerda + inferior suave |
+| Sem cards | Sobre a imagem |
 
-- Consultório com luz natural
+**Path:** `public/showcase/instituto-harmonia/capa/capa.jpg`
 
-- Sala de espera confortável
+## Ambiente (galeria Local)
 
-- Ambiente limpo e humano
+| # | Assunto | Path |
+|---|---------|------|
+| 1 | Consultório acolhedor | `public/showcase/instituto-harmonia/ambiente/consultorio.jpg` |
+| 2 | Recepção | `public/showcase/instituto-harmonia/ambiente/recepcao.jpg` |
+| 3 | Sala de espera | `public/showcase/instituto-harmonia/ambiente/sala-espera.jpg` |
 
-Sempre com wash suave à esquerda para legibilidade do texto.
+Priorizar: luz natural, tons claros, plantas e detalhes humanos.
 
-Caminho:
+## Equipe (ficção demonstrativa)
 
-`public/showcase/instituto-harmonia/capa/capa.jpg`
+| Profissional | Cargo | Path |
+|--------------|-------|------|
+| Dra. Helena Vasconcelos | Clínica geral · Diretora médica | `public/showcase/instituto-harmonia/equipe/dra-helena.jpg` |
+| Dr. Marcus Oliveira | Cardiologista | `public/showcase/instituto-harmonia/equipe/dr-marcus.jpg` |
+| Dra. Sofia Mendes | Dermatologista | `public/showcase/instituto-harmonia/equipe/dra-sofia.jpg` |
 
----
+Fotos profissionais; bios fictícias em [03-copy.md](03-copy.md).
 
-## Ambiente
+## Logo e marca
 
-Utilizar imagens de:
+| Asset | Formato | Notas |
+|-------|---------|-------|
+| Logo principal | Texto Fraunces | Instituto Harmonia |
+| Favicon | ICO / PNG 32×32 | Derivado da marca |
+| OG image | 1200×630 | Ambiente clínico + tagline |
 
-- Consultório acolhedor
+## Ícones
 
-- Recepção
+- Estilo: outline, traço fino
+- Tamanhos: 20px (inline) · 24px (cards)
+- Minimalistas — sem excesso de detalhe
 
-- Sala de espera
+## Ilustrações
 
-- Iluminação natural
+Evitar. Priorizar fotografias reais.
 
-- Tons claros e frescos
+## Texturas
 
-- Plantas e detalhes humanos
+Usar com moderação:
 
-Caminhos:
+- Off-white `#F4F8F7`, branco `#FFFFFF`
+- Acento claro `#E8F3F0`, bordas `#D5E4E0`
 
-- `public/showcase/instituto-harmonia/ambiente/consultorio.jpg`
-- `public/showcase/instituto-harmonia/ambiente/recepcao.jpg`
-- `public/showcase/instituto-harmonia/ambiente/sala-espera.jpg`
+Nunca texturas pesadas.
 
----
+## Componentes visuais
 
-## Equipe
+| Componente | Especificação |
+|------------|---------------|
+| Card | Cantos arredondados · borda `#D5E4E0` · sombra suave |
+| Botão primário | Teal `#2A7A6E` · hover `#3D9B8C` |
+| Input | Altura 48–56px · cantos arredondados |
+| Navbar | Fixa · backdrop blur opcional |
 
-Fotografias profissionais dos médicos.
+**Regra:** sem cards no hero.
 
-Profissionais:
+## Motion
 
-### Dra. Helena Vasconcelos
+| Tipo | Duração | Curva |
+|------|---------|-------|
+| Hover botão | 200–300ms | ease-out |
+| Fade in scroll | 250–300ms | ease-out |
+| Entrada de seções | Leve deslocamento vertical | ease-out |
 
-- Clínica geral · Diretora médica
-- `public/showcase/instituto-harmonia/equipe/dra-helena.jpg`
+Evitar: bounce, shake, parallax pesado, animações agressivas.
 
-### Dr. Marcus Oliveira
+### Hero
 
-- Cardiologista
-- `public/showcase/instituto-harmonia/equipe/dr-marcus.jpg`
+- Wash gradiente à esquerda
+- Gradiente inferior para transição com fundo
 
-### Dra. Sofia Mendes
+## Paleta (referência rápida)
 
-- Dermatologista
-- `public/showcase/instituto-harmonia/equipe/dra-sofia.jpg`
+| Token | Hex |
+|-------|-----|
+| Fundo | `#F4F8F7` |
+| Surface | `#FFFFFF` |
+| Texto | `#1A2E2B` |
+| Muted | `#5A6F6A` |
+| Teal primário | `#2A7A6E` |
+| Teal suave | `#3D9B8C` |
+| Borda | `#D5E4E0` |
+| Acento claro | `#E8F3F0` |
 
----
+Evitar: `#0070F3`, cream + terracotta, roxo.
 
-# Ícones
+## Tipografia
 
-Utilizar ícones minimalistas.
+- Display: **Fraunces**
+- Corpo: **Outfit**
 
-Traço fino.
+## Inspirações
 
-Outline.
+| Referência | O que observar |
+|------------|----------------|
+| Clínicas premium SP / Jardins | Tom acolhedor, fotografia de ambiente |
+| Apple / Airbnb | Hierarquia, respiro, legibilidade |
+| Awwwards (saúde) | Craft de scroll e tipografia |
 
-Nunca utilizar ícones exagerados.
+## Responsividade
 
----
+| Breakpoint | Ajustes |
+|------------|---------|
+| Mobile (~390px) | Hero empilhado; CTA full-width; menu hamburger |
+| Tablet (768px) | Grid 2 colunas (especialidades, equipe) |
+| Desktop (≥1280px) | Grid 3 colunas; hero full-bleed completo |
 
-# Ilustrações
+## Checklist de assets
 
-Evitar ilustrações.
-
-Priorizar fotografias reais.
-
----
-
-# Texturas
-
-Utilizar discretamente:
-
-- Off-white `#F4F8F7`
-
-- Branco `#FFFFFF`
-
-- Acento claro `#E8F3F0`
-
-- Bordas suaves `#D5E4E0`
-
-Nunca utilizar texturas pesadas.
-
----
-
-# Componentes
-
-Os componentes devem possuir:
-
-- Cantos arredondados
-
-- Bordas discretas
-
-- Sombras suaves
-
-- Muito espaço em branco
-
-Evitar cards sobrepostos no hero.
-
----
-
-# Botões
-
-Características:
-
-- Teal primário `#2A7A6E`
-
-- Hover suave
-
-- Transições elegantes
-
-- Bordas arredondadas
-
-CTA principal:
-
-Agendar consulta
-
----
-
-# Animações
-
-Todas as animações devem transmitir calma.
-
-Velocidade:
-
-Lenta.
-
-Natural.
-
-Suave.
-
-Nunca utilizar animações agressivas.
-
----
-
-## Entrada de seções
-
-Fade in suave com leve deslocamento vertical.
-
-Scroll reveal discreto.
-
----
-
-## Hero
-
-Wash gradiente à esquerda.
-
-Gradiente inferior suave para transição com o fundo.
-
----
-
-# Paleta de Cores
-
-Referência completa:
-
-- Fundo: `#F4F8F7`
-- Surface: `#FFFFFF`
-- Texto: `#1A2E2B`
-- Muted: `#5A6F6A`
-- Teal primário: `#2A7A6E`
-- Teal suave: `#3D9B8C`
-- Borda: `#D5E4E0`
-- Acento claro: `#E8F3F0`
-
-Evitar:
-
-- Azul de agência `#0070F3`
-- Cream + terracotta
-- Roxo
-
----
-
-# Tipografia
-
-Display:
-
-Fraunces — serif humanista para títulos e nome da marca.
-
-Corpo:
-
-Outfit — sans clean para textos, labels e botões.
-
----
-
-# Inspirações
-
-Referências de experiência:
-
-- Apple
-
-- Airbnb
-
-- Awwwards
-
-- Clínicas premium de São Paulo
-
-- Consultórios contemporâneos nos Jardins
-
-- Experiências digitais de saúde humanizadas
-
----
-
-# Responsividade
-
-Todo componente deve funcionar perfeitamente em:
-
-- Desktop
-
-- Notebook
-
-- Tablet
-
-- Smartphone
-
-Nenhuma animação deve prejudicar a experiência mobile.
-
----
-
-# Objetivo Final
-
-O visitante deve sentir que está navegando pelo site de uma clínica real, acolhedora e profissional.
-
-O projeto deve parecer uma marca consolidada e pronta para receber pacientes.
+- [ ] Hero full-bleed definido
+- [ ] 3 fotos de ambiente + 3 de equipe listadas
+- [ ] OG image preparada
+- [ ] Conteúdo demonstrativo não confundido com asset real
+- [ ] Resultado **parece cliente real**

@@ -1,14 +1,16 @@
 # Prompts — Vitta Serena
 
+**Tipo:** prompts · **Status:** em andamento · **Versão:** 2.0
+
+Pack: [00-projeto.md](00-projeto.md) · [01-brand-guide.md](01-brand-guide.md) · [02-sitemap.md](02-sitemap.md) · [03-copy.md](03-copy.md) · [04-assets.md](04-assets.md) · [06-roadmap.md](06-roadmap.md)
+
 ## Objetivo
 
 Reunir os prompts que serão utilizados no Cursor durante o planejamento, desenvolvimento, revisão e publicação do site.
 
 Todos os prompts devem respeitar a documentação desta pasta.
 
----
-
-# Regra Obrigatória
+## Regra obrigatória
 
 Antes de gerar qualquer código, a IA deve ler integralmente:
 
@@ -23,9 +25,7 @@ Nenhuma decisão pode contradizer esses documentos.
 
 Quando uma informação comercial estiver ausente, utilizar placeholder explícito no ambiente de desenvolvimento e registrar a pendência. Nunca inventar dados.
 
----
-
-# Prompt 00 — Leitura e Plano
+## Prompt 00 — Leitura e plano
 
 ```text
 Você é o Lead Product Designer e Front-end Engineer responsável pelo site real da Vitta Serena.
@@ -48,9 +48,7 @@ Regras:
 - Priorize simplicidade, performance, acessibilidade e manutenção.
 ```
 
----
-
-# Prompt 01 — Criar o Projeto
+## Prompt 01 — Criar o projeto
 
 ```text
 Crie a base do site da Vitta Serena seguindo toda a documentação em clients/01-vitta-serena.
@@ -79,9 +77,7 @@ Não use dados falsos como se fossem reais.
 Não copie o layout de outra marca.
 ```
 
----
-
-# Prompt 02 — Design System
+## Prompt 02 — Design system
 
 ```text
 Implemente o design system da Vitta Serena com base no brand guide.
@@ -111,9 +107,7 @@ Regras:
 - Não exagerar no dourado ou no rosé
 ```
 
----
-
-# Prompt 03 — Homepage
+## Prompt 03 — Homepage
 
 ```text
 Implemente a homepage da Vitta Serena seguindo o sitemap e a copy aprovados.
@@ -140,9 +134,7 @@ Regras:
 - Garantir ótima experiência em telas pequenas
 ```
 
----
-
-# Prompt 04 — Catálogo
+## Prompt 04 — Catálogo
 
 ```text
 Implemente a página de coleção e as páginas de categoria.
@@ -163,9 +155,7 @@ Não adicione filtros sem utilidade real.
 Não simule estoque ou popularidade.
 ```
 
----
-
-# Prompt 05 — Página de Produto
+## Prompt 05 — Página de produto
 
 ```text
 Implemente a página dinâmica de produto com base no modelo tipado.
@@ -202,9 +192,7 @@ Estados:
 Adicionar metadados únicos e dados estruturados quando aplicável.
 ```
 
----
-
-# Prompt 06 — Páginas Institucionais
+## Prompt 06 — Páginas institucionais
 
 ```text
 Implemente:
@@ -224,9 +212,7 @@ Não produza políticas definitivas sem dados operacionais revisados.
 Crie uma apresentação visual consistente, simples e legível.
 ```
 
----
-
-# Prompt 07 — WhatsApp
+## Prompt 07 — WhatsApp
 
 ```text
 Implemente a conversão pelo WhatsApp.
@@ -244,9 +230,7 @@ Crie uma função reutilizável para montar a URL.
 Adicione testes unitários para a montagem da mensagem.
 ```
 
----
-
-# Prompt 08 — Cadastro de Produtos
+## Prompt 08 — Cadastro de produtos
 
 ```text
 Crie uma estrutura tipada para produtos e adicione somente os itens fornecidos na planilha oficial.
@@ -265,9 +249,7 @@ Crie mensagens claras para erros de cadastro.
 Não preencha campos desconhecidos por inferência.
 ```
 
----
-
-# Prompt 09 — Responsividade e Acessibilidade
+## Prompt 09 — Responsividade e acessibilidade
 
 ```text
 Revise integralmente o projeto.
@@ -297,9 +279,7 @@ Verifique:
 Corrija os problemas sem alterar a identidade.
 ```
 
----
-
-# Prompt 10 — Performance e SEO
+## Prompt 10 — Performance e SEO
 
 ```text
 Faça uma revisão técnica completa.
@@ -322,9 +302,7 @@ Objetivos:
 Não sacrifique qualidade visual de produto de forma perceptível.
 ```
 
----
-
-# Prompt 11 — Analytics
+## Prompt 11 — Analytics
 
 ```text
 Implemente analytics com consentimento e configuração adequados.
@@ -343,9 +321,7 @@ Não enviar dados pessoais na URL ou no nome do evento.
 Documentar cada evento.
 ```
 
----
-
-# Prompt 12 — Revisão de Conteúdo
+## Prompt 12 — Revisão de conteúdo
 
 ```text
 Audite todo o conteúdo do site antes do lançamento.
@@ -365,9 +341,7 @@ Procure:
 Crie uma lista objetiva de bloqueadores e não publique enquanto houver bloqueador crítico.
 ```
 
----
-
-# Prompt 13 — Testes
+## Prompt 13 — Testes
 
 ```text
 Crie e execute testes relevantes para o MVP.
@@ -391,9 +365,7 @@ Execute:
 Relate qualquer falha com causa e correção.
 ```
 
----
-
-# Prompt 14 — Deploy (VPS)
+## Prompt 14 — Deploy (VPS)
 
 ```text
 Prepare o deploy da Vitta Serena na VPS (não usar Vercel).
@@ -423,9 +395,7 @@ Não apontar o domínio de produção antes da aprovação final.
 Não deixar secrets no Git.
 ```
 
----
-
-# Prompt 15 — Melhorias Futuras
+## Prompt 15 — Melhorias futuras
 
 ```text
 Analise o site existente e proponha melhorias sem refazer o projeto.
@@ -444,9 +414,7 @@ Não adicionar efeitos ou funcionalidades apenas para parecer mais sofisticado.
 Toda melhoria deve ter justificativa de negócio ou experiência.
 ```
 
----
-
-# Regras Gerais
+## Regras gerais
 
 - Ler a documentação antes de agir
 - Fazer mudanças pequenas e verificáveis

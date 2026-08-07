@@ -1,235 +1,103 @@
 # Roadmap — Sistema Comercial
 
+**Tipo:** Roadmap · **Status:** ativo · **Versão:** 2.0
+
 ## Objetivo
 
-Definir a evolução planejada do Sistema Comercial da Dechen Web Studio.
+Definir a evolução planejada do Sistema Comercial. Crescimento organizado, documentado e escalável.
 
-O crescimento da agência deve acontecer de forma organizada, documentada e escalável, permitindo que novos processos sejam incorporados sem perder qualidade.
+Documentação relacionada: [00-visao.md](./00-visao.md) · [Captação](../client-acquisition/05-roadmap.md)
 
----
+## Status atual
 
-# Status Atual
-
-## Concluído
+### Concluído
 
 - Visão do Sistema Comercial
+- Funil Comercial ([01-funil.md](./01-funil.md))
+- Descoberta · Diagnóstico · Proposta
+- Build · Entrega · Pós-venda
 
-- Funil Comercial
+Processo comercial documentado e padronizado.
 
-- Descoberta
+## Versão 1.0
 
-- Diagnóstico
+**Objetivo:** Processo comercial sólido.
 
-- Proposta
+**Implementar:**
 
-- Build
+- Processo comercial documentado
+- Formulário de captação ([Captação](../client-acquisition/00-visao.md))
+- Sistema de propostas
+- Processo de entrega e pós-venda
 
-- Entrega
+**Resultado:** Todo cliente segue o mesmo fluxo comercial.
 
-- Pós-venda
+## Versão 1.1
 
-O processo comercial da Dechen Web Studio está documentado e padronizado.
+**Padronização — modelos oficiais:**
 
----
+- Propostas · Contratos · E-mails
+- Checklist de reuniões · Checklist de entrega
 
-# Versão 1.0
+**Objetivo:** Reduzir retrabalho.
 
-Objetivo
+## Versão 2.0
 
-Estruturar um processo comercial sólido.
-
-Implementar
-
-- Processo comercial documentado.
-
-- Formulário de captação.
-
-- Sistema de propostas.
-
-- Processo de entrega.
-
-- Processo de pós-venda.
-
-Resultado esperado
-
-Todo cliente segue exatamente o mesmo fluxo comercial.
-
----
-
-# Versão 1.1
-
-Padronização
-
-Criar modelos oficiais para:
-
-- Propostas
-
-- Contratos
-
-- E-mails
-
-- Checklist de reuniões
-
-- Checklist de entrega
-
-Objetivo
-
-Reduzir retrabalho.
-
----
-
-# Versão 2.0
-
-CRM
-
-Implementar um CRM próprio.
-
-Funcionalidades
+**CRM:**
 
 - Cadastro de leads
-
 - Histórico de contatos
-
 - Pipeline comercial
-
 - Status dos projetos
+- Agenda · Dashboard
 
-- Agenda
+## Versão 2.5
 
-- Dashboard
+**Automação comercial:**
 
----
-
-# Versão 2.5
-
-Automação Comercial
-
-Adicionar:
-
-- Follow-up automático
-
-- Lembretes
-
+- Follow-up automático · Lembretes
 - E-mails automáticos
+- Confirmação de reuniões e propostas
 
-- Confirmação de reuniões
+## Versão 3.0
 
-- Confirmação de propostas
+**Business Intelligence — dashboards:**
 
----
+- Leads por mês · Conversão · Receita
+- Ticket médio · Tempo médio de fechamento
+- Origem dos clientes · Serviços mais vendidos
 
-# Versão 3.0
+## Integrações futuras
 
-Business Intelligence
+- [Sistema de Captação](../client-acquisition/00-visao.md)
+- CRM · Google Calendar · Google Meet
+- WhatsApp · Gmail · Google Drive
+- RD Station · Meta Ads · Google Analytics
+- Stripe · Notion
 
-Criar dashboards para acompanhar:
+## Inteligência artificial
 
-- Leads por mês
+IA poderá auxiliar em:
 
-- Conversão
-
-- Receita
-
-- Ticket médio
-
-- Tempo médio de fechamento
-
-- Origem dos clientes
-
-- Serviços mais vendidos
-
----
-
-# Integrações Futuras
-
-O Sistema Comercial deverá integrar-se com:
-
-- Sistema de Captação
-
-- CRM
-
-- Google Calendar
-
-- Google Meet
-
-- WhatsApp
-
-- Gmail
-
-- Google Drive
-
-- RD Station
-
-- Meta Ads
-
-- Google Analytics
-
-- Stripe
-
-- Notion
-
----
-
-# Inteligência Artificial
-
-No futuro, a IA poderá auxiliar em:
-
-- Resumo de reuniões
-
-- Geração de propostas
-
-- Análise de diagnósticos
-
-- Sugestão de cronogramas
-
-- Geração de contratos
-
-- Acompanhamento de projetos
-
+- Resumo de reuniões · Geração de propostas
+- Análise de diagnósticos · Sugestão de cronogramas
+- Geração de contratos · Acompanhamento de projetos
 - Follow-up inteligente
 
-Toda IA deverá seguir o DWS AI Operating System.
+Toda IA segue o DWS AI Operating System.
 
----
+## Indicadores contínuos
 
-# Indicadores
-
-Acompanhar continuamente:
-
-- Número de leads
-
-- Conversão
-
+- Número de leads · Conversão
 - Tempo médio de resposta
+- Tempo médio até proposta · Tempo médio de fechamento
+- Receita mensal e anual
+- Clientes recorrentes · Índice de satisfação · Indicações
 
-- Tempo médio até a proposta
+## Visão de longo prazo
 
-- Tempo médio de fechamento
+Plataforma completa de gestão da Dechen Web Studio. Toda jornada do cliente — do primeiro contato a novos projetos — em ecossistema integrado com [Captação](../client-acquisition/05-roadmap.md).
 
-- Receita mensal
+## Objetivo final
 
-- Receita anual
-
-- Clientes recorrentes
-
-- Índice de satisfação
-
-- Número de indicações
-
----
-
-# Visão de Longo Prazo
-
-O Sistema Comercial deverá evoluir para uma plataforma completa de gestão da Dechen Web Studio.
-
-Toda a jornada do cliente — desde o primeiro contato até novos projetos — deverá acontecer dentro de um único ecossistema integrado.
-
----
-
-# Objetivo Final
-
-Construir um sistema comercial que permita à Dechen Web Studio crescer sem perder organização, qualidade ou proximidade com seus clientes.
-
-Cada novo processo implementado deve reduzir tarefas manuais, aumentar a eficiência da equipe e melhorar a experiência do cliente.
-
-O sucesso da agência será consequência de um processo comercial consistente, escalável e orientado à geração de valor.
+Crescer sem perder organização, qualidade ou proximidade. Cada processo implementado reduz tarefas manuais, aumenta eficiência e melhora experiência do cliente.

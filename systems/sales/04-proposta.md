@@ -1,217 +1,91 @@
-# # Proposta
+# Proposta
+
+**Tipo:** Etapa comercial · **Status:** ativo · **Versão:** 2.0
 
 ## Objetivo
 
-A etapa de Proposta tem como objetivo apresentar uma solução personalizada para o cliente, baseada nas informações coletadas durante a Descoberta e analisadas no Diagnóstico.
+Apresentar solução personalizada baseada na [Descoberta](./02-descoberta.md) e no [Diagnóstico](./03-diagnostico.md). Demonstrar compreensão do problema e clareza na solução — não apenas informar preço.
 
-A proposta deve transmitir clareza, profissionalismo e confiança.
+Posição no funil: [01-funil.md](./01-funil.md) — etapa 5, entre **Diagnóstico** e **Cliente**.
 
-Nosso objetivo não é apenas informar um preço.
+## Critérios de entrada e saída
 
-Nosso objetivo é demonstrar que compreendemos o problema e possuímos uma solução para ele.
+| | Condição |
+|---|----------|
+| **Entrada** | Diagnóstico aprovado internamente |
+| **Saída** | Proposta enviada; cliente aprova → etapa **Cliente** |
 
----
+## Objetivos da proposta
 
-# Objetivos da Proposta
+- Apresentar solução recomendada e demonstrar valor
+- Definir escopo e cronograma
+- Informar investimento e forma de pagamento
+- Formalizar próximos passos
 
-- Apresentar a solução recomendada.
+## Estrutura obrigatória
 
-- Demonstrar valor.
+### Apresentação
 
-- Definir o escopo do projeto.
+Resumo do projeto, contextualização, objetivos do cliente.
 
-- Estabelecer cronograma.
+### Diagnóstico (resumo)
 
-- Definir investimento.
+Principais problemas, oportunidades e objetivos estratégicos identificados.
 
-- Formalizar os próximos passos.
+### Solução recomendada
 
----
+- O que será desenvolvido
+- Como resolve os problemas
+- Benefícios esperados
 
-# Estrutura
+### Escopo
 
-A proposta deve conter:
+Tudo incluído: Landing Page · Site Institucional · Sistema · SEO · Performance · Integrações · Formulários.
 
-## Apresentação
+Deixar explícito o que **não** faz parte do escopo.
 
-Resumo do projeto.
+### Cronograma
 
-Contextualização.
+Estimativa de execução:
 
-Objetivos do cliente.
+```
+Planejamento → Design → Desenvolvimento → Testes → Entrega
+```
 
----
+### Investimento
 
-## Diagnóstico
+- Valor do projeto
+- Forma de pagamento e condições
+- Entrada (quando aplicável)
 
-Resumo dos principais problemas identificados.
+Valores claros e objetivos.
 
-Principais oportunidades.
+### Próximos passos (se aprovada)
 
-Objetivos estratégicos.
+- Assinatura do contrato
+- Pagamento inicial
+- Kickoff
+- Início do [Build](./05-build.md)
 
----
+## Boas práticas
 
-## Solução Recomendada
+Proposta personalizada, objetiva, visualmente organizada e alinhada ao diagnóstico.
 
-Explicar claramente:
+## Evitar
 
-- O que será desenvolvido.
+- Propostas genéricas
+- Linguagem excessivamente técnica
+- Promessas impossíveis
+- Escopo ambíguo
 
-- Como isso resolverá os problemas.
+## Checklist antes do envio
 
-- Benefícios esperados.
+- [ ] Objetivos corretos
+- [ ] Escopo definido
+- [ ] Valores revisados
+- [ ] Cronograma validado
+- [ ] Informações completas
 
----
+## Resultado esperado
 
-## Escopo
-
-Descrever tudo que está incluído.
-
-Exemplos:
-
-- Landing Page
-
-- Site Institucional
-
-- Sistema
-
-- SEO
-
-- Performance
-
-- Integrações
-
-- Formulários
-
-Também deixar claro o que não faz parte do escopo.
-
----
-
-## Cronograma
-
-Apresentar uma estimativa de execução.
-
-Exemplo
-
-Planejamento
-
-↓
-
-Design
-
-↓
-
-Desenvolvimento
-
-↓
-
-Testes
-
-↓
-
-Entrega
-
----
-
-## Investimento
-
-Informar:
-
-- Valor do projeto.
-
-- Forma de pagamento.
-
-- Condições.
-
-- Entrada (quando aplicável).
-
-Os valores devem ser apresentados de forma clara e objetiva.
-
----
-
-## Próximos Passos
-
-Caso a proposta seja aprovada:
-
-- Assinatura do contrato.
-
-- Pagamento inicial.
-
-- Kickoff.
-
-- Início do Build.
-
----
-
-# Boas Práticas
-
-Toda proposta deve ser:
-
-- Personalizada.
-
-- Objetiva.
-
-- Fácil de entender.
-
-- Visualmente organizada.
-
-- Alinhada ao diagnóstico.
-
----
-
-# Evitar
-
-- Propostas genéricas.
-
-- Linguagem excessivamente técnica.
-
-- Promessas impossíveis.
-
-- Escopo mal definido.
-
-- Ambiguidade.
-
----
-
-# Critérios de Aprovação
-
-Antes do envio verificar:
-
-- Objetivos corretos.
-
-- Escopo definido.
-
-- Valores revisados.
-
-- Cronograma validado.
-
-- Informações completas.
-
----
-
-# Resultado Esperado
-
-Ao final desta etapa, o cliente deve compreender exatamente:
-
-- O problema identificado.
-
-- A solução proposta.
-
-- O que será entregue.
-
-- Quanto irá investir.
-
-- Como será o desenvolvimento.
-
-A proposta deve gerar confiança suficiente para que o cliente tome uma decisão consciente e segura.
-
----
-
-# Filosofia
-
-Na Dechen Web Studio, uma proposta não é apenas um orçamento.
-
-Ela representa um compromisso com a estratégia, a qualidade e os resultados esperados pelo cliente.
-
-Toda proposta deve refletir o profissionalismo da agência e demonstrar que cada solução foi construída especificamente para aquele negócio.
+Cliente compreende: problema identificado · solução proposta · entregáveis · investimento · cronograma de desenvolvimento. Confiança para decisão consciente.

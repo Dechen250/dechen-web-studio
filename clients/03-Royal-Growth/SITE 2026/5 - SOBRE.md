@@ -1,15 +1,16 @@
-Aqui está a página completa, reescrita para copiar e colar.
+# Sobre — Royal Growth
 
-# SOBRE
+**Tipo:** copy · **Status:** ativo · **Versão:** 2.0 · fonte SITE 2026
 
-## Título
-
-A Royal Growth não nasceu de uma tese.  
-Nasceu do ponto em que crescer deixou de bastar.
+Copy da página Sobre. Tom: [0.0 - REFINO DO TEXTO.md](./0.0%20-%20REFINO%20DO%20TEXTO.md). Contexto: [00-projeto.md](../00-projeto.md). Implementação: [03-copy.md](../03-copy.md).
 
 ---
 
 ## Introdução
+
+**Título**  
+A Royal Growth não nasceu de uma tese.  
+Nasceu do ponto em que crescer deixou de bastar.
 
 Existem operações que continuam crescendo por um tempo à base de esforço, presença constante e compensação manual.
 
@@ -65,8 +66,7 @@ Começou com a necessidade de interromper um padrão que já não se justificava
 
 O foco saiu da ampliação de esforço e passou para a construção de estrutura. Automação, inteligência artificial e integração entre sistemas deixaram de entrar como apoio pontual e passaram a ocupar o centro da operação.
 
-Não como tendência.  
-Como resposta.
+Como resposta concreta — não como tendência.
 
 Ao longo de 2024, a Royal Growth foi redesenhada a partir dessa lógica.
 
@@ -84,9 +84,7 @@ Maurício conduz a empresa sozinho.
 
 O que antes exigia um time inteiro hoje acontece dentro de uma estrutura construída para funcionar com continuidade, controle e muito menos atrito operacional.
 
-O ponto central não está em fazer mais com menos como slogan.
-
-Está em ter reorganizado a operação para que o resultado deixe de depender de esforço ampliado como condição permanente.
+O ponto central está em ter reorganizado a operação para que o resultado deixe de depender de esforço ampliado como condição permanente.
 
 ---
 
@@ -104,7 +102,7 @@ Ela atua quando a empresa já tem demanda, já tem esforço, já tem estrutura, 
 
 ---
 
-## Sobre a Royal
+## Posicionamento
 
 A Royal Growth organiza operações que já possuem tração, mas ainda operam com dependência excessiva de execução manual, intervenção constante e esforço acumulado.
 
@@ -127,10 +125,5 @@ Escalar não é simplesmente aumentar.
 Foi dessa necessidade que a Royal Growth nasceu.  
 E é para isso que ela foi construída.
 
----
-
-## CTA
-
+**CTA**  
 Solicitar diagnóstico
-
-Baseado no material enviado, com ajustes para ganhar mais precisão, mais autoridade e mais fluidez, sem descaracterizar o estilo original.

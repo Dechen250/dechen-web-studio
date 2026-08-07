@@ -1,28 +1,28 @@
 # Brand Guide — Renê Bradock
 
+**Tipo:** brand guide · **Status:** ativo · **Versão:** 2.0
+
+Pack: [00-projeto.md](00-projeto.md) · [02-sitemap.md](02-sitemap.md) · [03-copy.md](03-copy.md) · [04-assets.md](04-assets.md) · [06-roadmap.md](06-roadmap.md)
+
 ## Identidade
 
 Renê Bradock é um profissional de pequenos reparos residenciais e comerciais. A marca pessoal transmite confiança, prontidão e proximidade — o “marido de aluguel” que resolve elétrica, hidráulica, móveis e acabamentos.
 
----
+## Essência
 
-# Essência
-
-## Propósito
+### Propósito
 
 Facilitar a vida de quem precisa de reparos e serviços de acabamento com atendimento claro, acessível e confiável.
 
-## Promessa
+### Promessa
 
 Um profissional que faz o serviço com atenção, explica o que será feito e está pronto para resolver o dia a dia da casa ou do comércio.
 
-## Ideia central
+### Ideia central
 
 **Resolvido com confiança.**
 
----
-
-# Posicionamento
+## Posicionamento
 
 O Renê deve parecer profissional sem parecer inacessível. A percepção desejada é:
 
@@ -35,24 +35,20 @@ O Renê deve parecer profissional sem parecer inacessível. A percepção deseja
 
 Nunca deve parecer genérico, frio, amador ou agressivo demais.
 
----
+## Público
 
-# Público
-
-## Público principal
+### Público principal
 
 Moradores e comércios de São Paulo e região que precisam de reparos e acabamentos sem complicação.
 
-## Necessidades
+### Necessidades
 
 - Encontrar alguém de confiança
 - Entender o que ele faz
 - Pedir orçamento rápido
 - Sentir segurança antes de chamar
 
----
-
-# Personalidade
+## Personalidade
 
 A marca é:
 
@@ -70,19 +66,17 @@ A marca nunca deve parecer:
 - Infantil
 - “Barata” ou precária
 
----
+## Direção visual
 
-# Direção Visual
-
-## Referência do cliente
+### Referência do cliente
 
 Estrutura e tom de confiança inspirados em [Roma Madeiras](https://romamadeiras.com.br/), adaptados para serviço local.
 
-## Atmosfera
+### Atmosfera
 
 Oficina quente, luz amarela, ferramentas, azul institucional. O Renê (logo) é o rosto da marca.
 
-## Paleta
+### Paleta
 
 Extraída da logo oficial:
 
@@ -99,14 +93,14 @@ Extraída da logo oficial:
 | `--wood` | `#8B5E3C` | Detalhe madeira / oficina |
 | `--white` | `#FFFFFF` | Contraste e cards de interação |
 
-## Tipografia
+### Tipografia
 
 - Display / títulos: **Barlow Condensed** (forte, industrial, limpa)
 - Corpo: **Source Sans 3** (legível, profissional)
 
 Evitar Inter, Roboto, Arial e stacks genéricas.
 
-## Estilo
+### Estilo
 
 - One-page clara e direta
 - Hero full-bleed com marca em destaque
@@ -115,7 +109,7 @@ Evitar Inter, Roboto, Arial e stacks genéricas.
 - CTAs grandes e óbvios (WhatsApp)
 - Microanimações discretas (entrada do hero, reveal de serviços)
 
-## Logo
+### Logo
 
 Arquivo oficial: `assets/brand/logo-rene-bradock.png`
 
@@ -125,9 +119,7 @@ Uso:
 - Hero como âncora visual dominante
 - Navbar (versão compacta)
 
----
-
-# Tom de Voz
+## Tom de voz
 
 - Direto e humano
 - Português brasileiro claro

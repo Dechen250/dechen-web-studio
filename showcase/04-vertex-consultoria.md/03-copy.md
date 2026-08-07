@@ -1,265 +1,225 @@
 # Copy — Vertex Consultoria
 
+**Tipo:** showcase · **Status:** ativo · **Versão:** 2.0
+
+Textos do site. Tom em [01-brand-guide.md](01-brand-guide.md). Estrutura em [02-sitemap.md](02-sitemap.md). Brief: [00-projeto.md](00-projeto.md).
+
+> **Projeto demonstrativo.** Consultoria, contatos e métricas são ficção editorial.
+
 ## Objetivo
 
-Definir toda a comunicação do site.
+Headline, corpo, CTAs e microcopy com tom direto e analítico. Uma ideia por bloco. Métricas rotuladas como **demonstrativas**.
 
-A copy deve despertar confiança, transmitir autoridade e incentivar o contato com um consultor.
+## Hero
 
-Nunca utilizar linguagem exageradamente comercial.
-
-O visitante deve sentir que está sendo convidado para uma conversa estratégica — não para um pitch de vendas.
-
----
-
-# Hero
-
-## Headline
+### Headline
 
 Decisões melhores. Resultados reais.
 
-## Subheadline
+### Apoio
 
 Estruturamos operação, números e crescimento para empresas que precisam decidir com método — não com achismo.
 
-## CTA
+### CTA
 
-Falar com consultor
+- Primário: **Falar com consultor**
+- Secundário: **Ver o método**
 
-## CTA secundário
+## Método
 
-Ver o método
+### Label
 
----
+Método
 
-# Método
-
-## Título
+### Título
 
 Um sistema. Quatro etapas.
 
-## Introdução
+### Introdução
 
 Do diagnóstico à escala — com rituais e indicadores que a liderança consegue acompanhar.
 
----
-
-## 01 Diagnóstico
+### 01 Diagnóstico
 
 Mapeamos operação, números e gargalos com clareza — sem slides vazios.
 
----
-
-## 02 Arquitetura
+### 02 Arquitetura
 
 Definimos prioridade, metas e o sistema de execução para os próximos ciclos.
 
----
-
-## 03 Execução
+### 03 Execução
 
 Acompanhamos a implementação com rituais, indicadores e ajustes semanais.
 
----
-
-## 04 Escala
+### 04 Escala
 
 Consolidamos o que funciona e preparamos a operação para crescer com controle.
 
----
+## Serviços
 
-# Serviços
-
-## Título
+### Título
 
 Onde a Vertex atua.
 
-## Introdução
+### Introdução
 
 Frentes que conectam estratégia, caixa e operação — sem diluir o foco.
 
----
+### Planejamento estratégico
 
-## Planejamento estratégico
+**Planejamento estratégico**
 
 Diagnóstico, metas claras e roadmap de execução para 12–36 meses.
 
----
+### Gestão financeira
 
-## Gestão financeira
+**Gestão financeira**
 
 Fluxo de caixa, precificação e indicadores que orientam decisão.
 
----
+### Operações & processos
 
-## Operações & processos
+**Operações & processos**
 
 Mapeamento, otimização e automação para ganho real de eficiência.
 
----
+### Mentoria executiva
 
-## Mentoria executiva
+**Mentoria executiva**
 
 Acompanhamento próximo de founders e diretores em decisões críticas.
 
----
+## Resultados
 
-# Resultados
+> Métricas **demonstrativas** — indicadores fictícios para este showcase.
 
-## Título
+### Título
 
 Números que a operação sente.
 
-## Texto
+### Apoio
 
 Indicadores típicos em projetos onde o método é seguido com disciplina.
 
----
+### Métricas
 
-## Métricas
+| Valor | Descrição |
+|-------|-----------|
+| **38%** | Aumento médio de margem em operações reestruturadas em 12 meses |
+| **2.4x** | Mais previsibilidade no forecast comercial após rituais de gestão |
+| **90 dias** | Primeiros ganhos com foco em gargalos de maior impacto |
 
-**38%** — aumento médio de margem em operações reestruturadas em 12 meses.
+## Sobre
 
-**2.4x** — mais previsibilidade no forecast comercial após rituais de gestão.
+### Label
 
-**90 dias** — para primeiros ganhos com foco em gargalos de maior impacto.
+Sobre
 
----
-
-# Sobre
-
-## Título
+### Título
 
 Consultoria para quem precisa decidir.
 
-## Texto
+### Texto
 
 A Vertex atua com founders e diretores que querem crescimento com controle — estrutura, números e execução no mesmo plano.
 
----
-
-## Diferenciais
+### Diferenciais
 
 - Atuação lado a lado com liderança — não relatório e sumiço.
-
 - Prioridade no que move caixa, operação e crescimento.
-
 - Linguagem clara para quem decide, não jargão para impressionar.
 
----
+## Contato
 
-# Contato
-
-## Título
+### Título
 
 Solicite um diagnóstico.
 
-## Texto
+### Apoio
 
 Conte o momento da empresa. Abrimos o WhatsApp com sua mensagem pronta.
 
-## CTA
+### CTA
 
-Enviar no WhatsApp
+**Enviar no WhatsApp**
 
-## Link alternativo
+### Link alternativo
 
 Ou fale direto no WhatsApp →
 
----
+## Footer
 
-# Footer
-
-## Frase
+### Frase
 
 Decisões melhores. Resultados reais.
 
----
+### Legal
 
-# Microcopys
+© Vertex Consultoria. **Projeto demonstrativo.**
 
-## Botões
+## Microcopy
 
-Falar com consultor
+### Botões
 
-Ver o método
+| Contexto | Texto |
+|----------|-------|
+| CTA principal | Falar com consultor |
+| Secundário | Ver o método |
+| Enviar form | Enviar no WhatsApp |
+| WhatsApp direto | Ou fale direto no WhatsApp → |
 
-Enviar no WhatsApp
+### Labels de formulário
 
-Ou fale direto no WhatsApp →
+Nome · Empresa · Telefone / WhatsApp · Desafio atual
 
----
+### Placeholders
 
-## Labels de formulário
+- Seu nome
+- Nome da empresa
+- (11) 90000-0000
+- O que precisa resolver agora?
 
-Nome
+### WhatsApp — mensagem padrão
 
-Empresa
-
-Telefone / WhatsApp
-
-Desafio atual
-
----
-
-## Placeholders
-
-Seu nome
-
-Nome da empresa
-
-(11) 90000-0000
-
-O que precisa resolver agora?
-
----
-
-## Mensagens WhatsApp
-
-Mensagem padrão:
-
+```
 Olá! Vim pelo site da Vertex Consultoria e gostaria de falar com um consultor.
+```
 
-Mensagem com formulário:
+### WhatsApp — mensagem com formulário
 
+```
 Olá! Vim pelo site da Vertex Consultoria.
 
 Nome: [nome]
-
 Empresa: [empresa]
-
 Telefone: [telefone]
-
 Desafio: [desafio]
+```
 
----
+## SEO
 
-# Tom de Voz
+| Campo | Conteúdo |
+|-------|----------|
+| Meta title | Vertex Consultoria — Decisões melhores. Resultados reais. |
+| Meta description | Consultoria estratégica para empresas em crescimento. Método, números e execução. Fale com um consultor. |
+| OG title | Vertex Consultoria — Decisões melhores. Resultados reais. |
+| OG description | Estruturamos operação, números e crescimento. Projeto demonstrativo Dechen Web Studio. |
 
-Toda a comunicação deve transmitir:
+## Tom de voz — checklist
 
-- Autoridade
-
-- Precisão
-
-- Clareza
-
-- Análise
-
-- Confiança executiva
+Transmitir: autoridade · precisão · clareza · análise · confiança executiva
 
 Evitar:
 
-- Linguagem agressiva
+- Linguagem agressiva ou urgência falsa
+- Superlativos vazios
+- Jargão que o público não entende
+- Frases de efeito sem substância
+- Métricas apresentadas como garantia de resultado
 
-- Excesso de marketing
+## Definition of Done
 
-- Textos longos
-
-- Promessas exageradas
-
-- Jargões que o público não entende
-
-- Frases de efeito vazias
-
-O visitante deve sentir que está sendo convidado para uma conversa estratégica séria, mas acessível.
+- [ ] Headline ≤ ~10 palavras; apoio ≤ 2 frases
+- [ ] Métricas rotuladas como **demonstrativas**
+- [ ] Footer com nota de projeto demonstrativo
+- [ ] Copy alinhada ao sitemap — **parece cliente real**

@@ -1,47 +1,49 @@
 # Projeto — Site Royal Growth
 
+**Tipo:** brief · **Status:** documentação alinhada · **Versão:** 2.0
+
+Pack: [01-analise-site-atual.md](01-analise-site-atual.md) · [02-sitemap.md](02-sitemap.md) · [03-copy.md](03-copy.md) · [04-assets.md](04-assets.md) · [05-design-system.md](05-design-system.md) · [06-roadmap.md](06-roadmap.md) · Esboço: [`SITE 2026/`](SITE%202026/)
+
 ## Objetivo
 
 Repaginar o site oficial da **Royal Growth** ([royalgrowth.com.br](https://royalgrowth.com.br/)) com base no esboço do cliente em `SITE 2026/`.
 
-O novo site posiciona a Royal como empresa que **estrutura operação para escalar** — aquisição, conversão e operação conectadas por automação, integrações e dados — não como agência de marketing genérica.
+O novo site posiciona a Royal como empresa que **estrutura operação para escalar** — aquisição, conversão e operação conectadas por automação, integrações e dados — e não como agência de marketing genérica.
 
-**Status:** documentação alinhada ao material do cliente. Próximo: validar visual (azul royal / logos) e implementar MVP.
+**Próximo passo:** validar visual (azul royal / logos) e implementar MVP.
 
----
-
-# Fonte da verdade (conteúdo)
+## Precedência de conteúdo
 
 | Camada | Fonte |
 |--------|--------|
 | Narrativa, tom, páginas | `SITE 2026/` (esboço do cliente) |
 | Diagnóstico do site antigo | `01-analise-site-atual.md` |
-| Sitemap / copy / design | `02`, `03`, `05` (este pacote Dechen) |
+| Sitemap, copy, design | `02`, `03`, `05` (este pacote Dechen) |
 
-O material em `SITE 2026/` prevalece sobre o discurso do site atual quando houver conflito.
+**Em conflito, o material em `SITE 2026/` prevalece** sobre o discurso do site atual ou sobre versões anteriores deste pack.
 
----
+> **Nota:** a pasta `SITE 2026/` é mantida e refinada por outro agente. Este pack consolida o que implementação precisa; não duplicar edições desnecessárias lá.
 
-# Contexto do Negócio
+## Contexto do negócio
 
-## Nome
+### Nome
 
 Royal Growth
 
-## Razão social (site atual)
+### Razão social
 
 Royal Growth Marketing Digital LTDA  
 CNPJ 40.869.199/0001-03
 
-## Site atual
+### Site atual
 
 [https://royalgrowth.com.br/](https://royalgrowth.com.br/)
 
-## Fundador
+### Fundador
 
-Maurício Dantas — empreende em marketing digital desde 2010; Royal Growth criada em 2020; virada operacional com automação/IA a partir de 2024. Hoje a estrutura é conduzida com agentes, automações e integrações (operação enxuta).
+Maurício Dantas — empreende em marketing digital desde 2010; Royal Growth criada em 2020; virada operacional com automação e IA a partir de 2024. Hoje a estrutura é conduzida com agentes, automações e integrações (operação enxuta).
 
-## O que a Royal entrega
+### O que a Royal entrega
 
 Organiza operações comerciais conectando:
 
@@ -52,33 +54,32 @@ Organiza operações comerciais conectando:
 - integração com operação (CRM, ERP, APIs — ex.: RD Station, TOTVS Protheus)
 - escala sem aumento proporcional de time
 
-**Não vende:** ferramenta isolada, “marketing genérico”, servicinhos soltos.
+Fora do escopo: ferramenta isolada, marketing genérico, serviços soltos sem lógica de sistema.
 
-## Credencial central
+### Credencial central
 
-Parceira **RD Station Tier Diamond**, entre as **10 principais operações** do programa (universo com mais de 2.500 empresas).  
+Parceira **RD Station Tier Diamond**, entre as **10 principais operações** do programa (universo com mais de 2.500 empresas).
+
 Credencial silenciosa — reforça profundidade; não define o trabalho sozinha.
 
-## Posicionamento (SITE 2026)
+### Posicionamento (SITE 2026)
 
-- Escala real = sustentar o que já vende, sem depender de esforço/time proporcional
+- Escala real = sustentar o que já vende, sem depender de esforço ou time proporcional
 - Gargalo costuma estar **dentro da operação**, não no mercado
-- Tom maduro, preciso, anti-jargão — sem frases de efeito nem “não é X, é Y”
+- Tom maduro, preciso, anti-jargão — sem frases de efeito
 - Visual: mais próximo de **infraestrutura tecnológica** do que de agência
 
-## Posicionamento antigo (site atual — a superar)
+### Posicionamento antigo (site atual — a superar)
 
-Tom confrontador (“charlatões”, manifesto tipográfico, menta + dark). Mantém-se apenas se o cliente pedir trechos específicos; o esboço 2026 aponta outro caminho.
+Tom confrontador (manifesto tipográfico, menta + dark). Mantém-se apenas se o cliente pedir trechos específicos; o esboço 2026 aponta outro caminho.
 
-## Público
+### Público
 
-Empresas que **já têm demanda / movimento comercial**, mas sentem que crescer exige esforço demais: perda entre marketing e comercial, follow-up manual, processo que varia por pessoa, dados que não sustentam decisão.
+Empresas que **já têm demanda e movimento comercial**, mas sentem que crescer exige esforço demais: perda entre marketing e comercial, follow-up manual, processo que varia por pessoa, dados que não sustentam decisão.
 
-Não é o público ideal quem só precisa de “mais leads” sem operação para absorver.
+Não é o público ideal quem só precisa de mais leads sem operação para absorver.
 
----
-
-# Papel Estratégico do Novo Site
+## Papel estratégico do novo site
 
 O site deve:
 
@@ -93,9 +94,7 @@ Sensação desejada no visitante:
 
 > “Essa empresa não vende marketing. Ela organiza operação.”
 
----
-
-# Documentação
+## Documentação
 
 ```text
 clients/
@@ -115,7 +114,7 @@ clients/
         └── social-proof/
 ```
 
-## Implementação
+### Implementação
 
 - Repositório do site: `E:\DechenWebStudio\royal-growth` (Git próprio)
 - Baseline no Git: pasta `site-atual/` (snapshot do WordPress vigente)
@@ -125,15 +124,13 @@ clients/
 
 Não desenvolver o site real dentro das rotas de `showcase/` da agência.
 
----
+## Objetivos de negócio
 
-# Objetivos de Negócio
-
-## Objetivo principal
+### Objetivo principal
 
 Converter visitantes qualificados em **solicitação de diagnóstico**.
 
-## Objetivos secundários
+### Objetivos secundários
 
 - Reposicionar a marca (operação / escala, não agência)
 - Explicar o sistema de ponta a ponta
@@ -141,31 +138,27 @@ Converter visitantes qualificados em **solicitação de diagnóstico**.
 - Gerar autoridade via conteúdo
 - Filtrar leads desalinhados no formulário
 
----
+## Conversão
 
-# Conversão
-
-## Primária
+### Primária
 
 **Solicitar diagnóstico** → página Contato (formulário qualificatório)
 
-## Secundária
+### Secundária
 
-CTA “Acessar conteúdos” na página Conteúdo (quando o acervo existir)
+CTA **Acessar conteúdos** na página Conteúdo (quando o acervo existir)
 
-## Fluxo pós-envio (copy do cliente)
+### Fluxo pós-envio
 
 1. Leitura do cenário (não proposta automática)
 2. Se houver aderência → aprofundar diagnóstico e linha de atuação
 3. Se não houver → deixar claro cedo
 
-WhatsApp / e-mail / CRM de destino — **pendentes de asset operacional**.
+WhatsApp, e-mail e CRM de destino — **pendentes de asset operacional**.
 
----
+## Escopo do MVP
 
-# Escopo do MVP
-
-## Inclui
+### Inclui
 
 - Home
 - Sistema
@@ -175,29 +168,25 @@ WhatsApp / e-mail / CRM de destino — **pendentes de asset operacional**.
 - Contato (form completo)
 - SEO técnico, OG, analytics
 - Mobile-first
-- Design system azul royal (ver `05`)
+- Design system azul royal (ver `05-design-system.md`)
 
-## Fase 2
+### Fase 2
 
 - Posts do blog / CMS
 - Cases em URLs individuais (se SEO exigir)
 - Depoimentos em vídeo
 - Landings de campanha
 
----
-
-# Tom de voz (obrigatório)
+## Tom de voz (obrigatório)
 
 Definido em `SITE 2026/0.0 - REFINO DO TEXTO.md`:
 
 - Linguagem brasileira, natural, madura
-- Observação → entendimento → organização → solução
-- Sem jargão de marketing, frases de efeito, “não é X, é Y”, tom de vendedor
-- Escrever para **fazer sentido**, não para convencer com impacto vazio
+- Progressão: observação → entendimento → organização → solução
+- Sem jargão de marketing, frases de efeito ou tom de vendedor
+- **Não escreva para convencer, escreva para fazer sentido**
 
----
-
-# Perguntas restantes (validação curta)
+## Perguntas restantes (validação curta)
 
 A maior parte do briefing já veio no `SITE 2026`. Resta:
 
@@ -207,9 +196,7 @@ A maior parte do briefing já veio no `SITE 2026`. Resta:
 4. Destino do form (e-mail, CRM, WhatsApp, RD)
 5. Prazo e prioridade de go-live
 
----
-
-# Princípios de Experiência
+## Princípios de experiência
 
 - Referência de UX: princípios do [n8n.io](https://n8n.io/) (clareza, hierarquia, fluidez) — **sem copiar** o visual
 - Progressão: problema → diagnóstico → estrutura → prova → ação
@@ -217,9 +204,7 @@ A maior parte do briefing já veio no `SITE 2026`. Resta:
 - Cara de produto técnico / infraestrutura, não landing de agência
 - Mobile first; sem inventar métricas
 
----
-
-# Restrições
+## Restrições
 
 - Não inventar cases, números ou depoimentos
 - Não publicar case sem autorização
@@ -227,8 +212,6 @@ A maior parte do briefing já veio no `SITE 2026`. Resta:
 - Não reintroduzir tom “charlatão / corja” do site antigo, salvo pedido explícito
 - Não tratar RD Station como o produto — é credencial e ferramenta dentro do sistema
 
----
-
-# Objetivo Final
+## Objetivo final
 
 O visitante entende que a Royal **estrutura operação para escala**, vê **prova e método**, e solicita um **diagnóstico** se o cenário dele for o certo — com clareza de empresa técnica, não de agência barulhenta.

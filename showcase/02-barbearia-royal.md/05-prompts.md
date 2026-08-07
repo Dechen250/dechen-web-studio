@@ -1,256 +1,122 @@
-# Prompts — Barbearia Royal
+**Tipo:** ops · **Status:** ativo · **Versão:** 2.0
 
-## Objetivo
+> Prompts de desenvolvimento — leitura obrigatória da documentação do pack antes de gerar código.
 
-Este documento reúne os prompts utilizados durante o desenvolvimento do projeto Barbearia Royal.
+# Barbearia Royal — Prompts
 
-Todos os prompts devem seguir rigorosamente a documentação existente nesta pasta.
+Pack: [00-projeto.md](00-projeto.md) · [01-brand-guide.md](01-brand-guide.md) · [02-sitemap.md](02-sitemap.md) · [03-copy.md](03-copy.md) · [04-assets.md](04-assets.md) · [06-roadmap.md](06-roadmap.md)
 
-Antes de gerar qualquer código, a IA deve obrigatoriamente ler:
+## Pré-requisito
 
-- [00-projeto.md](http://00-projeto.md)
-
-- [01-brand-guide.md](http://01-brand-guide.md)
-
-- [02-sitemap.md](http://02-sitemap.md)
-
-- [03-copy.md](http://03-copy.md)
-
-- [04-assets.md](http://04-assets.md)
-
-Nenhuma decisão deve contrariar esses documentos.
+Antes de gerar código, ler todos os arquivos acima. Nenhuma decisão deve contrariar a documentação.
 
 ---
 
-# Prompt 01 — Desenvolvimento Inicial
+## Prompt 01 — Desenvolvimento inicial
 
-Você é o Lead Product Designer e Front-end Engineer da Dechen Web Studio.
+Você é Lead Product Designer e Front-end Engineer da Dechen Web Studio.
 
-Sua missão é desenvolver o projeto Barbearia Royal seguindo rigorosamente toda a documentação desta pasta.
+Desenvolva o projeto Barbearia Royal seguindo rigorosamente a documentação desta pasta.
 
-Objetivo:
+**Objetivo:** site premium que pareça entregue a cliente real.
 
-Criar um site premium para uma barbearia de alto padrão.
+**Diretrizes:**
 
-O resultado deve parecer um projeto entregue para um cliente real.
-
-Diretrizes obrigatórias:
-
-- Tema escuro (#0C0A09) com dourado (#C4A35A) — nunca tema claro
-- Hero atmosférico abstrato (grain + círculos geométricos dourados) — sem foto hero
-- Tipografia: Playfair Display (display) + DM Sans (corpo)
+- Tema escuro `#0C0A09` + dourado `#C4A35A` — nunca claro
+- Hero atmosférico abstrato (grain + geométricos dourados) — sem foto hero
+- Tipografia: Playfair Display + DM Sans
 - Seções: Hero → Diferenciais → Serviços → Experiência → Depoimentos → Galeria → FinalCTA → Footer
 - Nav: Diferenciais, Serviços, Experiência, Depoimentos, Ambiente
-- CTA principal: Agendar horário
-- Dados centralizados em `src/data/barbearia-royal.ts`
-- Componentes em `src/components/barbearia-royal/`
-- CSS scoped em `barbearia-royal.css` com tokens `--br-*`
+- CTA: Agendar horário
+- Dados: `src/data/barbearia-royal.ts`
+- Componentes: `src/components/barbearia-royal/`
+- CSS scoped: `barbearia-royal.css` com tokens `--br-*`
 
-Prioridades:
-
-- Experiência do usuário
-
-- Performance
-
-- Sofisticação masculina
-
-- Responsividade
-
-- Código limpo
-
-Nunca alterar a identidade da marca.
+**Prioridades:** UX, performance, sofisticação masculina, responsividade, código limpo.
 
 ---
 
-# Prompt 02 — Melhorias
+## Prompt 02 — Melhorias
 
-Sua missão é melhorar o projeto existente.
+Melhore o projeto existente. Não refaça o site.
 
-Não refaça o site.
-
-Mantenha toda a identidade visual escura e dourada.
-
-Melhore apenas:
-
-- UX
-
-- Performance
-
-- Microinterações
-
-- Responsividade
-
-- Organização do código
-
-- Acessibilidade
-
-Evite alterações desnecessárias.
+Mantenha identidade escura e dourada. Melhore UX, performance, microinterações, responsividade, organização e acessibilidade.
 
 Nunca introduza tema claro ou foto hero.
 
 ---
 
-# Prompt 03 — Componentes
-
-Crie componentes reutilizáveis para o projeto.
-
-Seguir toda a documentação.
+## Prompt 03 — Componentes
 
 Componentes esperados:
 
 - Navbar (fixa, scroll-aware, menu mobile)
 - Hero (atmosfera abstrata)
 - Differentials (grid 4 cards)
-- Services (grid 6 cards com preços)
+- Services (grid 6 cards, preços demonstrativos)
 - Experience (timeline 4 etapas)
-- Testimonials (3 blockquotes)
+- Testimonials (3 blockquotes fictícios)
 - Gallery (4 imagens com overlay)
 - FinalCTA (agendamento demonstrativo)
 - Footer (contato + créditos Dechen)
 - UI: Button, SectionHeading, FadeIn
 
-Priorizar:
-
-- Legibilidade
-
-- Reutilização
-
-- Organização
-
-- Tokens CSS `--br-*`
-
-Não instalar bibliotecas sem necessidade.
+Tokens CSS `--br-*`. Sem bibliotecas desnecessárias.
 
 ---
 
-# Prompt 04 — Animações
+## Prompt 04 — Animações
 
-Adicionar microinterações elegantes.
+Microinterações elegantes, nunca exageradas:
 
-Nunca exagerar.
-
-Priorizar:
-
-- fadeInUp no scroll/entrada
-
-- Hover suave em cards (border, background)
-
+- fadeInUp no scroll
+- Hover suave em cards
 - Scale 1.05 em imagens da galeria
+- Transições 300–700ms
+- Navbar com transição no scroll
 
-- Transições de 300–700ms
-
-- Navbar com transição de estado no scroll
-
-Toda animação deve parecer sofisticada e controlada.
-
-Respeitar `prefers-reduced-motion`.
-
-Nunca utilizar animações agressivas, bounce ou parallax pesado.
+Respeitar `prefers-reduced-motion`. Sem bounce ou parallax pesado.
 
 ---
 
-# Prompt 05 — Responsividade
+## Prompt 05 — Responsividade
 
-Revisar completamente a responsividade.
+Excelente experiência em desktop (max-w-6xl), notebook, tablet e smartphone.
 
-Garantir excelente experiência em:
-
-- Desktop (max-w-6xl)
-
-- Notebook
-
-- Tablet
-
-- Smartphone
-
-Pontos críticos:
-
-- Menu hamburger funcional no mobile
-
-- Grid de serviços: 3 → 2 → 1 colunas
-
-- Grid de diferenciais: 4 → 2 → 1 colunas
-
-- Galeria: primeira imagem full-width, demais 2 colunas
-
-- Hero legível em telas pequenas (text-4xl → text-6xl)
-
-Nenhum componente deve quebrar.
+Pontos críticos: menu hamburger, grids 3→2→1 e 4→2→1, galeria full-width + 2 colunas, hero legível (text-4xl → text-6xl).
 
 ---
 
-# Prompt 06 — Performance e SEO
-
-Revisar o projeto buscando:
-
-- Performance
-
-- SEO
-
-- Acessibilidade
-
-- Código limpo
+## Prompt 06 — Performance e SEO
 
 Implementar:
 
 - Metadata (title, description, Open Graph)
-
 - Schema.org HairSalon (JSON-LD)
-
-- Imagens otimizadas (WebP onde possível)
-
+- Imagens otimizadas (WebP)
 - `prefers-reduced-motion`
-
 - aria-labels em links externos
-
 - Focus visible nos botões
 
-Eliminar código duplicado.
-
-Melhorar organização sempre que possível.
+Eliminar duplicação. Melhorar organização.
 
 ---
 
-# Prompt 07 — Documentação Retroativa
+## Prompt 07 — Documentação v2.0
 
-Este prompt foi utilizado para criar a documentação deste projeto após o site já ter sido entregue.
-
-Objetivo:
-
-Escrever os 7 arquivos do docs pack seguindo o template oficial Dechen (referência: Divina Cozinha).
-
-Requisitos:
+Reescrever os 7 arquivos do docs pack no padrão editorial v2.0:
 
 - Extrair copy, estrutura e tokens do código implementado
-- Marcar docs structure + v1.0 como concluídos no roadmap
-- Profundidade equivalente à Divina Cozinha
-- Sem placeholders
-- Refletir fielmente o site shipped
-
-Arquivos:
-
-- 00-projeto.md
-- 01-brand-guide.md
-- 02-sitemap.md
-- 03-copy.md
-- 04-assets.md
-- 05-prompts.md
-- 06-roadmap.md
+- Marcar preços, depoimentos e agendamento como demonstrativos
+- Cross-links entre arquivos do pack
+- Profundidade equivalente entre showcases do portfólio
 
 ---
 
-# Regras Gerais
+## Regras gerais
 
-Sempre seguir a documentação.
-
-Nunca criar elementos que contrariem a identidade da marca.
-
-Nunca utilizar tema claro.
-
-Nunca utilizar foto hero — hero é atmosfera abstrata.
-
-Toda melhoria deve aumentar a percepção de qualidade do projeto.
-
-A experiência do usuário deve ter prioridade sobre efeitos visuais.
-
-O objetivo é criar um projeto que possa ser apresentado como um case real da Dechen Web Studio no segmento de beleza masculina premium.
+- Seguir documentação sempre
+- Nunca tema claro
+- Nunca foto hero
+- UX > efeitos visuais
+- Case real da Dechen no segmento beleza masculina premium

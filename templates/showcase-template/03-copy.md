@@ -1,180 +1,225 @@
 # Copy — [Nome do Projeto]
 
-> **Template oficial Dechen Web Studio**  
-> Substitua os exemplos abaixo por textos finais alinhados ao segmento **[Segmento]** e ao tom de voz definido no Brand Guide.
+**Tipo:** template · **Status:** ativo · **Versão:** 2.0
+
+Textos do site. Tom definido em [01-brand-guide.md](01-brand-guide.md). Estrutura em [02-sitemap.md](02-sitemap.md). Brief: [00-projeto.md](00-projeto.md).
 
 ## Objetivo
 
-Definir toda a comunicação do site.
+Definir headline, corpo, CTAs e microcopy. Uma ideia por bloco. Benefício concreto antes de adjetivo.
 
-A copy deve despertar interesse, transmitir [qualidade desejada] e incentivar [ação de conversão principal].
+Conteúdo fictício (preços, depoimentos, métricas): rotular **demonstrativo**.
 
-Nunca utilizar linguagem exageradamente comercial.
+## Hero
 
-O visitante deve sentir que está sendo convidado para uma experiência com [Nome do Projeto].
+### Headline
 
----
+[Headline principal — até ~10 palavras]
 
-# Hero
+[Segunda linha opcional]
 
-## Headline
+### Apoio
 
-[Headline principal — máximo impacto em poucas palavras]
+[1–2 frases: proposta de valor e diferencial sem exagero.]
 
-[Segunda linha opcional — complemento emocional ou racional]
+### CTA
 
-## Subheadline
+- Primário: **[Texto do CTA]**
+- Secundário (opcional): **[Texto — ex.: Conheça os serviços]**
 
-[Parágrafo curto que explica a proposta de valor. Mencione diferenciais sem exagerar.]
+## Sobre
 
-## CTA
+### Título
 
-[Texto do CTA]
+[Título da seção — ex.: Quem somos, Nossa história]
 
----
+### Texto
 
-# Sobre
+[Parágrafo 1 — origem ou propósito.]
 
-## Título
+[Parágrafo 2 — como opera, o que prioriza.]
 
-[Título da seção — ex.: Uma história de dedicação / Nossa missão]
+[Parágrafo 3 — fechamento de confiança — opcional.]
 
-## Texto
+## [Seção de destaque — ex.: Serviços / Produtos / Planos]
 
-[Parágrafo 1 — origem ou propósito do negócio]
-
-[Parágrafo 2 — como o negócio opera, o que prioriza, o que entrega]
-
-[Parágrafo 3 — fechamento emocional ou de confiança]
-
----
-
-# [Seção de Destaque — ex.: Serviços / Produtos / Planos]
-
-## Título
+### Título
 
 [Título da seção]
 
-## Introdução
+### Introdução
 
-[Texto introdutório curto sobre o que o visitante encontrará]
+[Uma frase sobre o que o visitante encontra aqui.]
 
----
+### [Categoria 1]
 
-## [Categoria 1]
+**[Nome da categoria]**
 
-[Descrição curta da categoria]
+[Descrição curta — benefício, não lista de features.]
 
----
+[Preço ou duração — se aplicável: **demonstrativo**]
 
-## [Categoria 2]
+### [Categoria 2]
 
-[Descrição curta da categoria]
+**[Nome da categoria]**
 
----
+[Descrição curta.]
 
-## [Categoria 3]
+[Preço ou duração — **demonstrativo**]
 
-[Descrição curta da categoria]
+### [Categoria 3]
 
----
+**[Nome da categoria]**
 
-## [Categoria 4]
+[Descrição curta.]
 
-[Descrição curta da categoria]
+### [Categoria 4]
 
----
+**[Nome da categoria]**
 
-# [Seção Visual — ex.: Galeria / Ambiente / Portfólio]
+[Descrição curta.]
 
-## Título
+### Nota de preços (se houver)
+
+> Preços demonstrativos para este showcase.
+
+## [Seção visual — ex.: Galeria / Ambiente / Portfólio]
+
+### Título
 
 [Título da seção]
 
-## Texto
+### Apoio
 
-[Parágrafo 1 — descreva o ambiente, resultado ou experiência visual]
+[Parágrafo 1 — o que as imagens mostram.]
 
-[Parágrafo 2 — reforce confiança, qualidade ou diferencial]
+[Parágrafo 2 — reforço de confiança ou diferencial — opcional.]
 
----
+## Depoimentos (opcional)
 
-# [Seção de Conversão — ex.: Contato / Agendamento / Reservas]
+### Título
 
-## Título
+[Título — ex.: O que dizem nossos clientes]
 
-[Título da seção — ex.: Fale conosco / Agende agora]
+### Nota
 
-## Texto
+> Depoimentos fictícios para fins demonstrativos deste showcase.
 
-[Convite claro para a ação]
+### Depoimento 1
 
-[Instrução ou tranquilização — ex.: responderemos em até X horas]
+**"[Texto do depoimento — 1–2 frases.]"**
 
-## CTA
+— [Nome fictício], [contexto — ex.: cliente desde 2023]
 
-[Texto do CTA]
+Autor: **Cliente demonstrativo**
 
----
+### Depoimento 2
 
-# Localização
+**"[Texto do depoimento.]"**
 
-## Título
+— [Nome fictício], [contexto]
 
-[Título — ex.: Estamos prontos para recebê-lo / Encontre-nos]
+Autor: **Cliente demonstrativo**
 
-## Texto
+### Depoimento 3
 
-[Texto curto reforçando acessibilidade, horários ou facilidade de contato]
+**"[Texto do depoimento.]"**
 
----
+— [Nome fictício], [contexto]
 
-# Footer
+Autor: **Cliente demonstrativo**
 
-## Frase
+## [Seção de conversão — ex.: Contato / Agendamento]
 
-[Frase de fechamento da marca — curta e memorável]
+### Título
 
----
+[Título — ex.: Fale conosco, Agende agora]
 
-# Microcopys
+### Apoio
 
-## Botões
+[Convite direto para a ação.]
 
-[CTA principal]
+[Expectativa de retorno — ex.: Respondemos em até 24 horas.]
 
-[CTA secundário 1]
+### CTA
 
-[CTA secundário 2]
+**[Texto do CTA]**
 
-[CTA secundário 3]
+## Localização
 
----
+### Título
 
-## Mensagens
+[Título — ex.: Onde estamos]
 
-[Mensagem de sucesso — ex.: Solicitação enviada com sucesso.]
+### Apoio
 
-[Mensagem de confirmação — ex.: Entraremos em contato em breve.]
+[Frase sobre acessibilidade, horário ou facilidade de chegar.]
 
----
+### Dados
 
-# Tom de Voz
+- Endereço: [Endereço]
+- Horário: [Horário]
+- Telefone: [(XX) XXXXX-XXXX]
 
-Toda a comunicação deve transmitir:
+## Footer
 
-- [Traço 1]
-- [Traço 2]
-- [Traço 3]
-- [Traço 4]
-- [Traço 5]
+### Frase (opcional)
+
+[Frase curta de fechamento da marca.]
+
+### Legal
+
+© [ano] [Nome do Projeto]. **Projeto demonstrativo.**
+
+## Microcopy
+
+### Botões
+
+| Contexto | Texto |
+|----------|-------|
+| CTA principal | [Texto do CTA] |
+| Secundário | [Texto] |
+| WhatsApp | [Texto — ex.: Chamar no WhatsApp] |
+| Enviar form | [Texto — ex.: Enviar mensagem] |
+
+### Formulário
+
+| Estado | Mensagem |
+|--------|----------|
+| Enviando | [ex.: Enviando…] |
+| Sucesso | [ex.: Mensagem enviada. Retornaremos em breve.] |
+| Erro | [ex.: Não foi possível enviar. Tente novamente.] |
+| Campo obrigatório | [ex.: Preencha este campo.] |
+
+### WhatsApp (pré-mensagem)
+
+```
+[Olá! Vim pelo site da [Nome do Projeto] e gostaria de [ação].]
+```
+
+## SEO
+
+| Campo | Conteúdo |
+|-------|----------|
+| Meta title | [~50–60 caracteres — marca + segmento + cidade se relevante] |
+| Meta description | [~140–160 caracteres — proposta + CTA implícito] |
+| OG title | [Título para compartilhamento] |
+| OG description | [Descrição para compartilhamento] |
+
+## Tom de voz — checklist
+
+Transmitir: [Traço 1] · [Traço 2] · [Traço 3]
 
 Evitar:
 
-- Linguagem agressiva
-- Excesso de marketing
-- Textos longos
-- Promessas exageradas
-- Jargões que o público não entende
+- Linguagem agressiva ou urgência falsa
+- Superlativos vazios (melhor, único, revolucionário)
+- Parágrafos longos
+- Promessas sem base (especialmente saúde, finanças, resultados)
 
-O visitante deve sentir que está sendo convidado para uma experiência exclusiva, mas acolhedora.
+## Definition of Done
+
+- [ ] Headline ≤ ~10 palavras; apoio do hero ≤ 2 frases
+- [ ] Preços, depoimentos e métricas rotulados como demonstrativos
+- [ ] Footer com nota de projeto demonstrativo
+- [ ] Copy alinhada ao sitemap — **parece cliente real**

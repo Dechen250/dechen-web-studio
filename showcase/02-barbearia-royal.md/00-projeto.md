@@ -1,307 +1,126 @@
-# Projeto Conceito — Barbearia Royal
+**Tipo:** brief · **Status:** ativo · **Versão:** 2.0
+
+> Projeto fictício de portfólio — marca, contatos, preços e agendamento são **demonstrativos**.
+
+# Barbearia Royal — Brief do Projeto
+
+Pack: [01-brand-guide.md](01-brand-guide.md) · [02-sitemap.md](02-sitemap.md) · [03-copy.md](03-copy.md) · [04-assets.md](04-assets.md) · [05-prompts.md](05-prompts.md) · [06-roadmap.md](06-roadmap.md)
 
 ## Objetivo
 
-Criar um site premium para uma barbearia fictícia que demonstre a capacidade da Dechen Web Studio de desenvolver experiências digitais elegantes, modernas e altamente funcionais.
+Site premium para barbearia fictícia que demonstra a capacidade da Dechen Web Studio em experiências digitais elegantes, funcionais e orientadas à conversão. Case de referência no segmento de beleza masculina e serviços premium.
 
-Este projeto fará parte do portfólio oficial da agência.
+O visitante do portfólio deve perceber um projeto entregue — não uma demo superficial.
 
-O objetivo não é apenas apresentar uma barbearia, mas mostrar aos futuros clientes o nível de qualidade que entregamos — especialmente em segmentos de beleza masculina, serviços premium e marcas com identidade visual forte.
+## Marca
 
----
+| Campo | Valor |
+|-------|-------|
+| Nome | Barbearia Royal |
+| Segmento | Barbearia premium / beleza masculina |
+| Tagline | Cortes precisos. Experiência de respeito. |
+| Posicionamento | Alto padrão para homens que valorizam presença, estilo e atendimento de respeito |
 
-# Sobre a Marca
+### Público-alvo
 
-## Nome
+Homens de 25 a 55 anos — profissionais, executivos, noivos e convidados em ocasiões especiais. Valorizam pontualidade, privacidade e acabamento impecável.
 
-Barbearia Royal
+### Personalidade
 
-## Segmento
+**Transmitir:** presença, respeito, precisão, sofisticação masculina, confiança, exclusividade discreta.
 
-Barbearia premium / beleza masculina.
+**Evitar:** barulho, genericidade, ostentação, frieza, tom comercial excessivo.
 
-## Posicionamento
+## Direção visual
 
-Uma barbearia de alto padrão para homens que valorizam presença, estilo e atendimento de respeito.
+Tema **escuro** — nunca claro. Minimalista, com respiro generoso, hierarquia tipográfica clara e microinterações refinadas.
 
-Cada detalhe transmite sofisticação masculina sem parecer ostentação ou exagero.
+### Paleta
 
-## Tagline
+| Token | Hex | Uso |
+|-------|-----|-----|
+| Fundo | `#0C0A09` | Base da página |
+| Superfície | `#14110E` | Cards |
+| Superfície elevada | `#1A1612` | Hover |
+| Texto | `#F2EBE0` | Principal |
+| Muted | `#9A9186` | Secundário |
+| Dourado | `#C4A35A` | CTAs, destaques |
+| Dourado suave | `#B8956C` | Variações |
+| Borda | `rgba(196,163,90,0.16)` | Contornos |
 
-Cortes precisos. Experiência de respeito.
+Remete a madeira escura, couro, luz âmbar e acabamentos premium.
 
-## Público-alvo
+### Tipografia
 
-Homens de 25 a 55 anos.
+- **Display:** Playfair Display — títulos e headlines
+- **Corpo:** DM Sans — textos, labels, botões
 
-Profissionais e executivos.
+### Hero
 
-Homens que cuidam da aparência com intenção.
+Atmosfera abstrata (gradientes escuros, grain 48px, círculos geométricos dourados). **Sem fotografia no hero.**
 
-Clientes que valorizam pontualidade, privacidade e acabamento impecável.
+Detalhes em [04-assets.md](04-assets.md).
 
-Noivos e convidados em ocasiões especiais.
+## CTA principal
 
----
+**Agendar horário** — navbar, hero, seção final de agendamento.
 
-# Personalidade da Marca
+## Estrutura da homepage
 
-A marca deve transmitir:
+1. **Hero** — tagline, subheadline, CTAs primário e secundário
+2. **Diferenciais** — 4 pilares (hora marcada, barbeiros, ambiente, acabamento)
+3. **Serviços** — 6 cards com preços **demonstrativos**
+4. **Experiência** — 4 etapas do atendimento
+5. **Depoimentos** — 3 citações fictícias **demonstrativas**
+6. **Galeria (Ambiente)** — 4 imagens em `public/showcase/barbearia-royal/ambiente/`
+7. **Final CTA** — agendamento ilustrativo, sem envio real
+8. **Footer** — contato, redes, créditos Dechen
 
-- Presença
-- Respeito
-- Precisão
-- Sofisticação masculina
-- Confiança
-- Exclusividade discreta
+Copy completa em [03-copy.md](03-copy.md). Mapa de seções em [02-sitemap.md](02-sitemap.md).
 
-Nunca deve parecer:
+## Serviços e preços (demonstrativos)
 
-- Barulhenta ou agressiva
-- Genérica ou popular demais
-- Ostentadora
-- Fria ou distante
-- Comercial em excesso
+| Serviço | Preço |
+|---------|-------|
+| Corte masculino | R$ 90 |
+| Barba completa | R$ 70 |
+| Corte + barba | R$ 145 |
+| Acabamento / pezinho | R$ 45 |
+| Sobrancelha | R$ 35 |
+| Dia do noivo | R$ 280 |
 
----
+## Contato e localização (fictícios)
 
-# Direção Visual
+| Canal | Valor |
+|-------|-------|
+| Telefone | (11) 4000-2929 |
+| WhatsApp | 551140002929 |
+| E-mail | contato@barbeariaroyal.com.br |
+| Instagram | instagram.com/barbeariaroyal |
+| Endereço | Rua Augusta, 1840 — Consolação, São Paulo — SP |
+| CEP | 01412-000 |
 
-O site deve possuir aparência **escura e refinada**.
-
-Utilizar tema dark como base — não claro.
-
-A experiência deve transmitir presença, exclusividade e precisão.
-
-## Paleta
-
-- Preto profundo (#0C0A09)
-- Superfícies escuras em camadas (#14110E, #1A1612)
-- Texto claro quente (#F2EBE0)
-- Texto secundário (#9A9186)
-- Dourado como cor de destaque (#C4A35A)
-- Dourado suave (#B8956C)
-- Bordas douradas translúcidas (rgba 196, 163, 90)
-
-A paleta deve remeter a madeira escura, couro, luz âmbar e acabamentos premium.
-
----
-
-# Tipografia
-
-## Display (títulos)
-
-Playfair Display — serif elegante, com presença e autoridade.
-
-## Corpo (textos)
-
-DM Sans — sans-serif limpa, legível e contemporânea.
-
----
-
-# Estilo
-
-Minimalista e escuro.
-
-Muito respiro entre seções.
-
-Tipografia com hierarquia clara.
-
-Hero atmosférico abstrato — **não utilizar foto hero**.
-
-Animações suaves (fade-in, hover discretos).
-
-Microinterações refinadas.
-
-Elementos da interface com cantos levemente arredondados, bordas douradas sutis e sombras profundas.
-
-O visual deve priorizar a sensação de exclusividade e precisão, sem excesso de efeitos visuais.
-
----
-
-# Objetivos do Site
-
-- Apresentar a barbearia como referência de alto padrão.
-- Despertar desejo de agendar.
-- Mostrar serviços e preços com clareza.
-- Comunicar o processo de atendimento (experiência).
-- Transmitir confiança através de depoimentos e ambiente.
-- Facilitar contato e agendamento.
-
----
-
-# CTA Principal
-
-Agendar horário
-
-Este botão deve aparecer diversas vezes ao longo do site: navbar, hero, seção final de agendamento.
-
----
-
-# Estrutura
-
-## Hero
-
-Atmosfera abstrata (gradientes escuros, grain sutil, círculos geométricos dourados).
-
-Headline com tagline.
-
-Subheadline sobre presença e atendimento premium.
-
-CTA "Agendar horário" + secundário "Ver serviços".
-
-**Não utilizar foto de barbeiro ou ambiente no hero.**
-
----
-
-## Diferenciais
-
-Quatro pilares da experiência:
-
-1. Atendimento com hora marcada
-2. Barbeiros experientes
-3. Ambiente premium
-4. Acabamento de alto padrão
-
----
-
-## Serviços
-
-Grade de cards com nome, descrição e preço.
-
-Serviços:
-
-- Corte masculino — R$ 90
-- Barba completa — R$ 70
-- Corte + barba — R$ 145
-- Acabamento / pezinho — R$ 45
-- Sobrancelha — R$ 35
-- Dia do noivo — R$ 280
-
----
-
-## Experiência
-
-Quatro etapas do atendimento:
-
-1. Recepção
-2. Consultoria de estilo
-3. Execução
-4. Finalização premium
-
----
-
-## Depoimentos
-
-Três depoimentos fictícios para prova social demonstrativa.
-
----
-
-## Galeria (Ambiente)
-
-Quatro imagens do ambiente:
-
-- Cadeira premium
-- Área de barba
-- Ambiente reservado
-- Finalização
-
-Arquivos em `public/showcase/barbearia-royal/ambiente/`.
-
----
-
-## Final CTA (Agendamento)
-
-Chamada final para agendar.
-
-Demonstração ilustrativa — sem envio real.
-
----
-
-## Footer
-
-Instagram.
-
-WhatsApp.
-
-Telefone.
-
-Endereço.
-
-Link para showcase Dechen Web Studio.
-
----
-
-# Contato e Localização
-
-## Telefone
-
-(11) 4000-2929
-
-## WhatsApp
-
-551140002929
-
-## E-mail
-
-contato@barbeariaroyal.com.br
-
-## Instagram
-
-instagram.com/barbeariaroyal
-
-## Endereço
-
-Rua Augusta, 1840 — Consolação, São Paulo — SP
-
-CEP: 01412-000
-
-## Horários
+### Horários
 
 - Terça a Sexta: 10h — 20h
 - Sábado: 9h — 18h
 - Domingo e Segunda: Fechado
 
----
+## Funcionalidades
 
-# Funcionalidades
-
-- Navegação fixa com scroll suave
-- Menu mobile responsivo
-- Cards de serviços com preços
-- Galeria de ambiente com hover
-- Botão de agendamento (demonstrativo)
-- Links para WhatsApp e Instagram
-- Schema.org HairSalon
+- Navbar fixa com scroll suave e menu mobile
+- Cards de serviços com preços demonstrativos
+- Galeria com hover
+- Botão de agendamento demonstrativo
+- Links WhatsApp e Instagram
+- Schema.org `HairSalon`
 - Responsividade completa
 - Animações com respeito a `prefers-reduced-motion`
 
----
+## Inspirações
 
-# Inspirações
+Barbearias premium de São Paulo, salões masculinos de alto padrão, hotéis boutique, marcas de relógios e alfaiataria, estética dark luxury contemporânea.
 
-- Barbearias premium de São Paulo
-- Salões masculinos de alto padrão
-- Hotéis boutique
-- Marcas de relógios e alfaiataria
-- Estética dark luxury contemporânea
+## Objetivo Dechen
 
----
-
-# Experiência
-
-O visitante deve sentir que está entrando em uma barbearia reservada, onde cada minuto é respeitado e cada corte é executado com precisão.
-
-O site deve despertar vontade de agendar antes mesmo da primeira visita.
-
----
-
-# Objetivo para a Dechen Web Studio
-
-Este projeto deve parecer um trabalho entregue para um cliente real.
-
-Não deve aparentar ser uma demonstração superficial.
-
-Qualquer visitante do portfólio deve acreditar que a barbearia realmente existe.
-
-Este projeto servirá como referência para futuras demonstrações da agência no segmento de beleza masculina e serviços premium.
+Referência para futuras demonstrações no segmento de beleza masculina. Identidade escura e dourada, hero atmosférico e copy de precisão devem permanecer intactos em evoluções futuras — ver [06-roadmap.md](06-roadmap.md).

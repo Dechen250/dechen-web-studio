@@ -1,265 +1,110 @@
-# Roadmap — Barbearia Royal
+**Tipo:** ops · **Status:** ativo · **Versão:** 2.0
 
-## Objetivo
+> Evolução planejada do showcase Barbearia Royal.
 
-Este documento define a evolução planejada do projeto Barbearia Royal.
+# Barbearia Royal — Roadmap
 
-Ele garante que futuras melhorias respeitem a identidade da marca e mantenham a qualidade do projeto.
+Pack: [00-projeto.md](00-projeto.md) · [04-assets.md](04-assets.md) · [05-prompts.md](05-prompts.md)
 
----
+## Status atual
 
-# Status Atual
+### Concluído
 
-## Concluído
-
-- Briefing do projeto
-
-- Brand Guide
-
-- Sitemap
-
-- Copy
-
-- Assets
-
-- Prompts
-
-- Estrutura da documentação (docs pack completo — 7 arquivos)
-
+- Docs pack completo (7 arquivos) — **v2.0**
 - Desenvolvimento v1.0 (site shipped)
+- Briefing, brand guide, sitemap, copy, assets, prompts
 
 ---
 
-# Versão 1.0
+## v1.0 — Concluído
 
-**Status: Concluído**
-
-Objetivo:
-
-Criar uma demonstração completa e profissional de barbearia premium.
+Demonstração completa de barbearia premium.
 
 ### Homepage
 
-- Hero (atmosfera abstrata escura + grain + geométricos dourados)
-
-- Diferenciais (4 cards)
-
-- Serviços (6 cards com preços)
-
-- Experiência (4 etapas)
-
-- Depoimentos (3 blockquotes)
-
-- Galeria / Ambiente (4 imagens)
-
-- Final CTA (agendamento demonstrativo)
-
-- Footer (contato + créditos)
+Hero (atmosfera abstrata) · Diferenciais (4) · Serviços (6, preços demonstrativos) · Experiência (4 etapas) · Depoimentos (3 fictícios) · Galeria (4 imagens) · Final CTA (demonstrativo) · Footer
 
 ### Funcionalidades
 
-- Navbar fixa com scroll-aware background
-
-- Menu mobile responsivo
-
-- Scroll suave entre âncoras
-
-- Cards de serviços com preços demonstrativos
-
-- Galeria com hover scale e overlay
-
-- Links WhatsApp e Instagram
-
-- Schema.org HairSalon
-
-- Metadata e Open Graph
-
-- Animações fadeInUp
-
-- Suporte a prefers-reduced-motion
-
-- Responsividade completa
+Navbar fixa scroll-aware · menu mobile · scroll suave · preços demonstrativos · galeria hover · WhatsApp/Instagram · Schema.org HairSalon · metadata/OG · fadeInUp · prefers-reduced-motion · responsividade
 
 ### Stack
 
-- Next.js App Router
-
-- Tailwind CSS v4
-
-- Playfair Display + DM Sans (Google Fonts)
-
-- Dados em `src/data/barbearia-royal.ts`
-
-- Componentes em `src/components/barbearia-royal/`
-
-- CSS scoped em `barbearia-royal.css`
-
-- Rota: `/showcase/barbearia-royal`
+Next.js App Router · Tailwind CSS v4 · Playfair + DM Sans · `src/data/barbearia-royal.ts` · `src/components/barbearia-royal/` · `barbearia-royal.css` · rota `/showcase/barbearia-royal`
 
 ---
 
-# Versão 1.1
-
-Melhorias de UX
+## v1.1 — UX
 
 - Refinar microinterações nos cards
-
-- Melhorar animações de entrada (stagger opcional)
-
-- Refinar responsividade em breakpoints intermediários
-
-- Melhorar acessibilidade (skip link, focus trap no menu mobile)
-
-- Revisão de performance (Lighthouse)
-
-- Otimizar carregamento de imagens da galeria
+- Stagger opcional nas entradas
+- Breakpoints intermediários
+- Skip link, focus trap no menu mobile
+- Lighthouse performance
+- Lazy load galeria
 
 ---
 
-# Versão 1.2
-
-Experiência
+## v1.2 — Experiência
 
 - Agendamento simulado com feedback visual
-
-- Confirmação elegante pós-clique
-
-- Loader personalizado na transição
-
-- Melhorias nas transições entre seções
-
-- Integração do botão "Agendar" com WhatsApp (link direto com mensagem pré-preenchida)
+- Confirmação pós-clique
+- Loader personalizado
+- Botão "Agendar" → WhatsApp com mensagem pré-preenchida
 
 ---
 
-# Versão 2.0
+## v2.0 — Premium
 
-Experiência Premium
-
-- Galeria com lightbox em tela cheia
-
-- Fotos em alta resolução adicionais
-
-- Scroll animations com Intersection Observer
-
+- Galeria lightbox full-screen
+- Fotos adicionais em alta resolução
+- Scroll animations (Intersection Observer)
 - Parallax sutil no hero (respeitando reduced-motion)
-
-- Seção de barbeiros / equipe
-
-- Vídeo curto de ambiente (opcional, não no hero)
+- Seção equipe / barbeiros
+- Vídeo curto de ambiente (não no hero)
 
 ---
 
-# Versão 3.0
-
-Projeto Completo
+## v3.0 — Projeto completo
 
 - Agendamento integrado (calendário real)
-
 - Google Maps embed
-
-- Avaliações de clientes reais
-
-- Blog / dicas de grooming
-
-- Pacotes sazonais (Dia dos Pais, formaturas)
-
-- Multi-idioma (PT/EN)
+- Avaliações reais
+- Blog / grooming
+- Pacotes sazonais
+- Multi-idioma PT/EN
 
 ---
 
-# Melhorias Futuras
+## Melhorias futuras
 
-## Hero
-
-Manter atmosfera abstrata.
-
-Opcional: animação sutil nos círculos geométricos dourados.
-
-Nunca substituir por foto hero.
-
----
-
-## Serviços
-
-Adicionar filtros por categoria (corte, barba, pacotes).
-
-Destaque visual para "Dia do noivo".
+| Área | Direção |
+|------|---------|
+| Hero | Manter abstrato; animação sutil nos círculos; nunca foto |
+| Serviços | Filtros por categoria; destaque "Dia do noivo" |
+| Galeria | Lightbox, mais fotos, lazy loading |
+| Agendamento | Calendly/Google Calendar, confirmação WhatsApp |
+| Performance | Lighthouse 95+, Core Web Vitals verdes |
+| SEO | Schema expandido (openingHours, geo), OG image, sitemap XML |
 
 ---
 
-## Galeria
+## Critérios de qualidade
 
-Lightbox em tela cheia.
-
-Mais fotos de ambiente (produtos, detalhes, recepção).
-
-Lazy loading otimizado.
-
----
-
-## Agendamento
-
-Integração com calendário (Calendly, Google Calendar ou similar).
-
-Confirmação automática por WhatsApp.
-
-Formulário com validação.
-
----
-
-## Performance
-
-Nota acima de 95 no Lighthouse.
-
-Core Web Vitals verdes.
-
----
-
-## SEO
-
-Otimização completa.
-
-Schema.org HairSalon expandido (openingHours, geo).
-
-Open Graph com imagem de preview.
-
-Meta Tags completas.
-
-Sitemap XML.
-
----
-
-# Critérios de Qualidade
-
-Antes de considerar uma versão concluída:
+Antes de fechar uma versão:
 
 - Responsividade perfeita
-
-- Performance acima de 90 (ideal 95+)
-
+- Performance ≥ 90 (ideal 95+)
 - SEO configurado
-
-- Código organizado
-
-- Componentes reutilizáveis
-
-- Experiência premium
-
-- Animações suaves
-
+- Código organizado, componentes reutilizáveis
 - Tema escuro consistente
-
-- Sem bugs conhecidos
-
 - Documentação atualizada
+- Sem bugs conhecidos
 
 ---
 
-# Objetivo Final
+## Objetivo final
 
-O projeto Barbearia Royal deve parecer um site desenvolvido para uma barbearia real de alto padrão.
+Site que pareça desenvolvido para barbearia real de alto padrão. Demonstração oficial da Dechen no segmento beleza masculina premium.
 
-Ele deve servir como demonstração oficial da qualidade da Dechen Web Studio no segmento de beleza masculina premium e convencer futuros clientes de que somos capazes de desenvolver experiências digitais completas, sofisticadas e profissionais.
-
-A identidade escura e dourada, o hero atmosférico e a copy de precisão e respeito devem permanecer intactos em todas as evoluções futuras.
+Identidade escura e dourada, hero atmosférico e copy de precisão permanecem intactos em todas as evoluções.

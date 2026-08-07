@@ -1,201 +1,109 @@
-# Roadmap — Divina Cozinha
+**Tipo:** ops · **Status:** ativo · **Versão:** 2.0
 
-## Objetivo
+> Evolução planejada do showcase Divina Cozinha.
 
-Este documento define a evolução planejada do projeto Divina Cozinha.
+# Divina Cozinha — Roadmap
 
-Ele garante que futuras melhorias respeitem a identidade da marca e mantenham a qualidade do projeto.
+Pack: [00-projeto.md](00-projeto.md) · [04-assets.md](04-assets.md) · [05-prompts.md](05-prompts.md)
 
----
+## Status atual
 
-# Status Atual
+### Concluído
 
-## Concluído
-
-- Briefing do projeto
-
-- Brand Guide
-
-- Sitemap
-
-- Copy
-
-- Assets
-
-- Estrutura da documentação
+- Docs pack completo (7 arquivos) — **v2.0**
+- Desenvolvimento v1.0 (site shipped)
+- Briefing, brand guide, sitemap, copy, assets, prompts
 
 ---
 
-# Versão 1.0
+## v1.0 — Concluído
 
-Objetivo:
-
-Criar uma demonstração completa e profissional.
+Demonstração completa de restaurante contemporâneo.
 
 ### Homepage
 
-- Hero
-
-- Sobre
-
-- Cardápio
-
-- Ambiente
-
-- Reservas
-
-- Localização
-
-- Footer
+Hero · Sobre · Cardápio (4 categorias, animação 10s) · Ambiente (6 imagens) · Reservas (formulário demonstrativo) · Localização (mapa embed) · Footer
 
 ### Funcionalidades
 
-- Cardápio animado
+Cardápio animado com tabs manuais · reserva simulada com confirmação · scroll suave · navegação responsiva · WhatsApp/Instagram · Schema.org Restaurant · metadata/OG · prefers-reduced-motion · responsividade
 
-- Botão de reserva
+### Stack
 
-- Navegação responsiva
-
-- Scroll suave
+Next.js App Router · Tailwind CSS v4 · Cormorant Garamond + Source Sans 3 · `src/data/divina-cozinha.ts` · `src/components/divina-cozinha/` · `divina-cozinha.css` · rota `/showcase/divina-cozinha`
 
 ---
 
-# Versão 1.1
+## v1.1 — UX
 
-Melhorias de UX
-
-- Microinterações
-
-- Melhorar animações
-
-- Refinar responsividade
-
-- Melhorar acessibilidade
-
-- Revisão de performance
+- Refinar microinterações no cardápio e cards
+- Melhorar animação de virada de página
+- Breakpoints intermediários
+- Skip link, focus trap no menu mobile
+- Lighthouse performance
+- Lazy load galeria e cardápio
 
 ---
 
-# Versão 1.2
+## v1.2 — Experiência
 
-Experiência
-
-- Reserva simulada
-
-- Confirmação elegante
-
+- Reserva simulada com feedback visual aprimorado
+- Confirmação pós-clique mais elaborada
 - Loader personalizado
-
-- Melhorias nas transições
-
----
-
-# Versão 2.0
-
-Experiência Premium
-
-- Cardápio totalmente interativo
-
-- Fotos em alta resolução
-
-- Galeria moderna
-
-- Scroll animations
-
-- Efeitos refinados
+- Botão "Reservar" → WhatsApp com mensagem pré-preenchida
 
 ---
 
-# Versão 3.0
+## v2.0 — Premium
 
-Projeto Completo
+- Cardápio totalmente interativo (filtros, busca)
+- Fotos em alta resolução adicionais
+- Galeria lightbox full-screen
+- Scroll animations (Intersection Observer)
+- Vídeo curto de ambiente (não no hero)
 
-- Reserva integrada
+---
 
-- Google Maps
+## v3.0 — Projeto completo
 
-- Avaliações de clientes
-
-- Eventos especiais
-
+- Reserva integrada (calendário real)
+- Google Maps com rotas
+- Avaliações reais
+- Eventos especiais e menu degustação
 - Blog gastronômico
+- Multi-idioma PT/EN
 
 ---
 
-# Melhorias Futuras
+## Melhorias futuras
 
-## Hero
-
-Adicionar vídeo curto em background.
-
----
-
-## Cardápio
-
-Permitir troca manual entre categorias.
-
-Adicionar animação semelhante à virada de páginas.
+| Área | Direção |
+|------|---------|
+| Hero | Vídeo curto em background (opcional) |
+| Cardápio | Filtros, destaque prato do dia, animação virada refinada |
+| Ambiente | Lightbox, mais fotos (externa, bar) |
+| Reservas | Calendly/OpenTable, confirmação WhatsApp |
+| Performance | Lighthouse 95+, Core Web Vitals verdes |
+| SEO | Schema expandido (openingHours, menu, geo), OG image, sitemap XML |
 
 ---
 
-## Ambiente
+## Critérios de qualidade
 
-Galeria em tela cheia.
-
-Lightbox.
-
----
-
-## Reservas
-
-Integração com calendário.
-
-Confirmação automática.
-
----
-
-## Performance
-
-Nota acima de 95 no Lighthouse.
-
----
-
-## SEO
-
-Otimização completa.
-
-[Schema.org](http://Schema.org).
-
-Open Graph.
-
-Meta Tags.
-
----
-
-# Critérios de Qualidade
-
-Antes de considerar o projeto concluído:
+Antes de fechar uma versão:
 
 - Responsividade perfeita
-
-- Performance acima de 95
-
+- Performance ≥ 90 (ideal 95+)
 - SEO configurado
-
-- Código organizado
-
-- Componentes reutilizáveis
-
-- Experiência premium
-
-- Animações suaves
-
+- Código organizado, componentes reutilizáveis
+- Tema claro consistente
+- Documentação atualizada
 - Sem bugs conhecidos
 
 ---
 
-# Objetivo Final
+## Objetivo final
 
-O projeto Divina Cozinha deve parecer um site desenvolvido para um restaurante real.
+Site que pareça desenvolvido para restaurante real e consolidado. Demonstração oficial da Dechen em gastronomia contemporânea.
 
-Ele deve servir como demonstração oficial da qualidade da Dechen Web Studio e convencer futuros clientes de que somos capazes de desenvolver experiências digitais completas, sofisticadas e profissionais.
+Identidade clara e acolhedora, cardápio interativo e copy convidativa permanecem intactos em todas as evoluções.

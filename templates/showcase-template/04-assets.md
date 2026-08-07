@@ -1,215 +1,166 @@
 # Assets — [Nome do Projeto]
 
-> **Template oficial Dechen Web Studio**  
-> Documente aqui todas as referências visuais antes e durante o desenvolvimento.
+**Tipo:** template · **Status:** ativo · **Versão:** 2.0
+
+Referências visuais do showcase. Brand: [01-brand-guide.md](01-brand-guide.md). Estrutura: [02-sitemap.md](02-sitemap.md). Brief: [00-projeto.md](00-projeto.md).
 
 ## Objetivo
 
-Este documento reúne todas as referências visuais, elementos gráficos, imagens e inspirações utilizadas no projeto [Nome do Projeto].
+Documentar mídia, ícones, motion e inspirações antes e durante o desenvolvimento. Todo asset deve reforçar a sensação de **cliente real** — sem stock genérico no hero.
 
-Todo desenvolvimento deve seguir estas referências.
+## Estilo fotográfico
 
----
+| Atributo | Direção |
+|----------|---------|
+| Luz | [Natural / estúdio / dramática] |
+| Tom | [Quente / frio / neutro] |
+| Composição | [Ambiente amplo / detalhe / retrato] |
+| Tratamento | [Natural / leve contraste / P&B parcial] |
 
-# Estilo Fotográfico
-
-As fotografias devem transmitir:
-
-- [Qualidade 1 — ex.: elegância, confiança, energia]
-- Naturalidade
-- [Contexto do segmento]
-- Luz natural ou iluminação coerente
-- Ambiente alinhado à marca
-
-Priorizar fotografias horizontais em alta resolução, quando aplicável.
-
----
-
-# Fotografias
+Evitar: HDR exagerado, filtros inconsistentes, pessoas genéricas de banco de imagem no centro do hero.
 
 ## Hero
 
-[Descreva a imagem ideal do hero — o que deve aparecer, qual sensação transmitir.]
+**Layout:** full-bleed. Marca legível sobre mídia ou fundo tipográfico.
 
-Preferencialmente:
+### Opção A — Foto
 
-- [Tipo de imagem 1]
-- [Tipo de imagem 2]
-- [Tipo de imagem 3]
-- [Tipo de imagem 4]
+[Descrever cena ideal: o que aparece, sensação, enquadramento.]
 
-Sempre acompanhados por boa iluminação.
+Checklist:
 
----
+- [ ] Resolução mínima [ex.: 1920×1080]
+- [ ] Wash ou gradiente para legibilidade do texto
+- [ ] Sem elementos que compitam com logo/headline
 
-## [Seção Visual]
+### Opção B — Atmosfera tipográfica
 
-Utilizar imagens de:
+[Descrever: grade, textura, gradiente, geometria — sem foto de stock central.]
 
-- [Elemento 1]
-- [Elemento 2]
-- [Elemento 3]
-- [Elemento 4]
-- [Elemento 5]
-- [Elemento 6]
+Checklist:
 
----
+- [ ] Marca em destaque
+- [ ] Hierarquia headline > apoio > CTA
+- [ ] Sem cards flutuantes sobre a área principal
 
-## [Seção de Destaque]
+## [Seção visual — ex.: Galeria / Ambiente]
 
-Fotografias ou representações profissionais de [produtos / serviços / planos].
+| # | Assunto | Uso |
+|---|---------|-----|
+| 1 | [Elemento — ex.: recepção, produto, equipe] | Grid / carrossel |
+| 2 | [Elemento] | Grid / carrossel |
+| 3 | [Elemento] | Grid / carrossel |
+| 4 | [Elemento] | Grid / carrossel |
+| 5 | [Elemento] | Grid / carrossel |
+| 6 | [Elemento] | Grid / carrossel |
 
-Categorias:
+Formato preferido: horizontal para hero; variado para galeria. Lazy load abaixo da dobra.
+
+## [Seção de destaque — ex.: Serviços]
+
+Representação por categoria:
 
 ### [Categoria 1]
 
-- [Item 1]
-- [Item 2]
-- [Item 3]
+- Imagem ou ícone: [descrever]
+- Alt text: [descrição acessível]
 
 ### [Categoria 2]
 
-- [Item 1]
-- [Item 2]
-- [Item 3]
+- Imagem ou ícone: [descrever]
+- Alt text: [descrição acessível]
 
 ### [Categoria 3]
 
-- [Item 1]
-- [Item 2]
-- [Item 3]
+- Imagem ou ícone: [descrever]
+- Alt text: [descrição acessível]
 
 ### [Categoria 4]
 
-- [Item 1]
-- [Item 2]
-- [Item 3]
+- Imagem ou ícone: [descrever]
+- Alt text: [descrição acessível]
 
----
+## Logo e marca
 
-# Ícones
+| Asset | Formato | Notas |
+|-------|---------|-------|
+| Logo principal | [SVG / PNG] | Versão para [fundo claro / escuro] |
+| Favicon | ICO / PNG 32×32 | Derivado do logo |
+| OG image | 1200×630 | Marca + headline ou ambiente |
 
-Utilizar ícones minimalistas.
+## Ícones
 
-Traço fino.
+- Biblioteca: [Lucide / outra]
+- Estilo: outline, traço uniforme
+- Tamanhos: 20px (inline) · 24px (cards) · 32px (destaque)
 
-Outline.
+## Ilustrações
 
-Nunca utilizar ícones exagerados.
+[Usar / evitar / usar com moderação]
 
----
+[Justificar conforme segmento — ex.: consultoria pode ser tipográfica; clínica prioriza foto real.]
 
-# Ilustrações
+## Texturas e padrões (opcional)
 
-[Evitar / Usar com moderação / Priorizar ilustrações customizadas]
+Usar com moderação:
 
-[Justifique a decisão conforme o segmento e a identidade visual.]
-
----
-
-# Texturas
-
-Utilizar discretamente:
-
-- [Textura 1]
+- [Textura ou padrão 1 — ex.: grain sutil, grid geométrico]
 - [Textura 2]
-- [Textura 3]
-- [Textura 4]
-- [Textura 5]
 
-Nunca utilizar texturas pesadas.
+Nunca dominar o layout — reforço de fundo apenas.
 
----
+## Componentes visuais
 
-# Componentes
+| Componente | Especificação |
+|------------|---------------|
+| Card | Radius [valor] · padding [valor] · border [1px cor] — só quando agrupamento exigir |
+| Botão primário | Ver [01-brand-guide.md](01-brand-guide.md) |
+| Input | Altura [48–56px] · radius [valor] |
+| Navbar | Altura [72px] · backdrop blur [sim/não] |
 
-Os componentes devem possuir:
+**Regra:** sem cards no hero.
 
-- Cantos arredondados
-- Bordas discretas
-- Sombras suaves
-- Muito espaço em branco
+## Motion
 
----
+| Tipo | Duração | Curva |
+|------|---------|-------|
+| Hover botão | 200–250ms | ease-out |
+| Fade in scroll | 250–300ms | ease-out |
+| Troca de categoria | [300–400ms] | ease-out |
 
-# Botões
+Evitar: bounce, shake, parallax pesado, animações que atrasam leitura.
 
-Características:
+### [Seção interativa — se aplicável]
 
-- [Estilo de cor]
-- Hover suave
-- Transições elegantes
-- Bordas arredondadas
+[Descrever transição entre categorias — ex.: fade + slide, crossfade de imagem.]
 
-CTA principal:
+Intervalo automático (se houver): [8–10s] · pausa no hover · controle manual acessível.
 
-[Texto do CTA]
+## Inspirações
 
----
+Referência de estrutura ou craft — não copiar pixel a pixel:
 
-# Animações
+| Referência | O que observar |
+|------------|----------------|
+| [Site ou marca 1] | [ex.: hierarquia tipográfica, hero full-bleed] |
+| [Site ou marca 2] | [ex.: grid de serviços] |
+| [Site ou marca 3] | [ex.: tom fotográfico] |
 
-Todas as animações devem transmitir elegância.
+## Responsividade
 
-Velocidade:
+| Breakpoint | Ajustes principais |
+|------------|-------------------|
+| Mobile (~390px) | Hero empilhado; CTA full-width; menu hamburger |
+| Tablet (768px) | Grid 2 colunas onde couber |
+| Desktop (≥1280px) | Layout completo; container max [1280px] |
 
-Lenta.
+Nenhuma animação deve quebrar ou travar no mobile.
 
-Natural.
+## Checklist de assets
 
-Suave.
-
-Nunca utilizar animações agressivas.
-
----
-
-## [Seção Interativa — se aplicável]
-
-[Descreva animação especial da seção de destaque.]
-
-Troca de categoria / estado:
-
-- [Categoria 1]
-- [Categoria 2]
-- [Categoria 3]
-- [Categoria 4]
-
-Tempo:
-
-[Ex.: 8–10 segundos, ou manual apenas]
-
-[Descreva o tipo de transição desejada.]
-
----
-
-# Inspirações
-
-Referências de experiência:
-
-- Apple
-- Linear
-- Awwwards
-- [Referência do segmento 1]
-- [Referência do segmento 2]
-- [Referência do segmento 3]
-
----
-
-# Responsividade
-
-Todo componente deve funcionar perfeitamente em:
-
-- Desktop
-- Notebook
-- Tablet
-- Smartphone
-
-Nenhuma animação deve prejudicar a experiência mobile.
-
----
-
-# Objetivo Final
-
-O visitante deve sentir que está navegando pelo site de um negócio real do segmento **[Segmento]**.
-
-O projeto deve parecer uma marca consolidada e pronta para [ação de conversão principal].
+- [ ] Hero full-bleed definido (foto ou atmosfera)
+- [ ] Logo em SVG (claro + escuro se necessário)
+- [ ] Imagens de galeria listadas com alt text
+- [ ] OG image preparada
+- [ ] Conteúdo demonstrativo não confundido com asset real
+- [ ] Resultado **parece cliente real**

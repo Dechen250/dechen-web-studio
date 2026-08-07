@@ -1,123 +1,65 @@
 # Sistema de Captação de Leads
 
-## Visão
+**Tipo:** Visão do sistema · **Status:** ativo · **Versão:** 2.0
 
-O Sistema de Captação de Leads da Dechen Web Studio tem como objetivo transformar visitantes do site em oportunidades reais de negócio.
+## Objetivo
 
-Mais do que um simples formulário de contato, este sistema foi projetado para centralizar, organizar e acompanhar todas as solicitações recebidas pela agência.
+Transformar visitantes do site em leads registrados, notificados e prontos para o [Sistema Comercial](../sales/00-visao.md). O formulário centraliza solicitações, elimina processos manuais e prepara a base para um CRM próprio.
 
-Toda interação deve ser rápida, confiável e oferecer uma excelente experiência para o visitante.
+## Documentação relacionada
 
----
+| Documento | Conteúdo |
+|-----------|----------|
+| [01-arquitetura.md](./01-arquitetura.md) | Fluxo técnico e stack |
+| [02-banco.md](./02-banco.md) | Schema da tabela `leads` |
+| [03-api.md](./03-api.md) | `POST /api/contact` |
+| [04-email.md](./04-email.md) | Notificações via Resend |
+| [05-roadmap.md](./05-roadmap.md) | Evolução planejada |
 
-# Objetivos
+## Fluxo geral
 
-- Capturar informações de potenciais clientes.
+```
+Visitante → Homepage → Formulário → POST /api/contact → Supabase → Resend → contato@dechenwebstudio.com.br → CRM (futuro)
+```
 
-- Armazenar todos os leads em um banco de dados.
+## Objetivos operacionais
 
-- Enviar uma notificação para o e-mail oficial da agência.
+- Capturar informações de potenciais clientes
+- Armazenar todos os leads no Supabase (PostgreSQL)
+- Notificar a equipe por e-mail imediatamente
+- Preparar estrutura para CRM e automações futuras
+- Eliminar perda de leads e retrabalho manual
 
-- Preparar a estrutura para um CRM próprio no futuro.
+## Princípios
 
-- Eliminar a necessidade de processos manuais.
+### Simplicidade
 
----
+O visitante solicita orçamento em poucos minutos. Campos obrigatórios mínimos; opcionais enriquecem o primeiro contato.
 
-# Filosofia
+### Confiabilidade
 
-O formulário deve ser simples para o cliente e poderoso para a agência.
+Nenhum lead pode ser perdido. Toda solicitação é persistida antes da resposta ao usuário.
 
-Quanto menor o esforço para solicitar um orçamento, maior a probabilidade de conversão.
+### Escalabilidade
 
-Ao mesmo tempo, as informações coletadas devem ser suficientes para que a equipe compreenda o projeto antes do primeiro contato.
+Arquitetura permite novos serviços, integrações e automações sem reconstrução.
 
----
+### Organização
 
-# Princípios
+Informações centralizadas na tabela `leads`, com status rastreável e histórico consultável.
 
-## Simplicidade
+## Integração com o funil comercial
 
-O visitante deve conseguir solicitar um orçamento em poucos minutos.
+Após captação, o lead entra na etapa **Lead** do [funil comercial](../sales/01-funil.md):
 
----
+```
+Lead → Descoberta → Diagnóstico → Proposta → Cliente → Build → Entrega → Pós-venda → Cliente Recorrente
+```
 
-## Confiabilidade
+## Visão de longo prazo
 
-Nenhum lead pode ser perdido.
+Evoluir para CRM próprio com status de leads, reuniões, propostas, negociações, métricas e automações — integrado ao [Sistema Comercial](../sales/08-roadmap.md).
 
-Todas as solicitações devem ser armazenadas com segurança.
+## Resultado esperado
 
----
-
-## Escalabilidade
-
-A arquitetura deve permitir crescimento sem necessidade de reconstrução.
-
-Novos serviços, integrações e automações devem ser adicionados facilmente.
-
----
-
-## Organização
-
-Todas as informações devem permanecer centralizadas.
-
-Cada lead deve possuir um histórico claro e fácil de consultar.
-
----
-
-# Fluxo Geral
-
-Visitante
-
-↓
-
-Homepage
-
-↓
-
-Formulário
-
-↓
-
-API
-
-↓
-
-Banco de Dados
-
-↓
-
-E-mail da Agência
-
-↓
-
-CRM (futuro)
-
----
-
-# Objetivo de Longo Prazo
-
-O Sistema de Captação de Leads deve evoluir para um CRM próprio da Dechen Web Studio.
-
-No futuro, será possível:
-
-- acompanhar o status de cada lead;
-
-- registrar reuniões;
-
-- armazenar propostas;
-
-- acompanhar negociações;
-
-- visualizar métricas;
-
-- automatizar tarefas;
-
-- integrar ferramentas externas.
-
----
-
-# Resultado Esperado
-
-Criar uma base sólida para que a Dechen Web Studio receba, organize e acompanhe novos clientes de forma profissional, escalável e preparada para o crescimento da agência.
+Base sólida para receber, organizar e acompanhar novos clientes de forma profissional e escalável.

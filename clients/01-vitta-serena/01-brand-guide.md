@@ -1,30 +1,30 @@
 # Brand Guide — Vitta Serena
 
+**Tipo:** brand guide · **Status:** em andamento · **Versão:** 2.0
+
+Pack: [00-projeto.md](00-projeto.md) · [02-sitemap.md](02-sitemap.md) · [03-copy.md](03-copy.md) · [04-assets.md](04-assets.md) · [05-prompts.md](05-prompts.md) · [06-roadmap.md](06-roadmap.md)
+
 ## Identidade
 
 Vitta Serena é uma marca de semijoias elegantes, delicadas e minimalistas para mulheres jovens e para o uso cotidiano.
 
 A marca existe para tornar pequenos momentos mais bonitos e ajudar cada cliente a se sentir confiante sem precisar esperar uma ocasião especial.
 
----
+## Essência
 
-# Essência
-
-## Propósito
+### Propósito
 
 Ajudar mulheres a se sentirem confiantes e bonitas no dia a dia por meio de acessórios delicados, versáteis e acessíveis.
 
-## Promessa
+### Promessa
 
 Peças escolhidas para acompanhar a rotina com leveza, elegância e personalidade.
 
-## Ideia central
+### Ideia central
 
 **A beleza também mora nos dias comuns.**
 
----
-
-# Posicionamento
+## Posicionamento
 
 A Vitta Serena deve ocupar o espaço entre acessórios genéricos de baixo valor percebido e marcas excessivamente formais ou inacessíveis.
 
@@ -40,19 +40,17 @@ A percepção desejada é:
 
 A marca não deve competir apenas por preço. O valor percebido deve vir da seleção das peças, apresentação, experiência, atendimento e cuidado.
 
----
+## Público
 
-# Público
-
-## Público principal
+### Público principal
 
 Mulheres jovens que desejam acessórios versáteis para escola, faculdade, trabalho, encontros e momentos cotidianos.
 
-## Público secundário
+### Público secundário
 
 Pessoas que buscam presentes delicados e acessíveis.
 
-## Necessidades do público
+### Necessidades do público
 
 - Sentir-se mais bonita
 - Encontrar peças fáceis de combinar
@@ -62,9 +60,7 @@ Pessoas que buscam presentes delicados e acessíveis.
 - Encontrar opções de presente
 - Evitar sites confusos ou com aparência duvidosa
 
----
-
-# Personalidade
+## Personalidade
 
 A marca é:
 
@@ -88,9 +84,7 @@ A marca nunca deve parecer:
 - Barata
 - Artificial
 
----
-
-# Valores
+## Valores
 
 - Confiança
 - Delicadeza
@@ -101,9 +95,7 @@ A marca nunca deve parecer:
 - Qualidade percebida
 - Respeito à cliente
 
----
-
-# Direção Visual
+## Direção visual
 
 O visual deve ser leve, feminino e sofisticado.
 
@@ -111,9 +103,7 @@ A interface deve usar bastante espaço vazio, imagens limpas, composições orga
 
 A referência estética pode observar a clareza e a apresentação de marcas consolidadas de acessórios, sem copiar identidade, layout, textos ou elementos proprietários.
 
----
-
-# Paleta
+## Paleta
 
 A identidade visual aprovada deve ser a fonte definitiva.
 
@@ -126,7 +116,7 @@ Enquanto os arquivos oficiais não estiverem importados, utilizar uma base semâ
 - Texto principal: grafite quente
 - Detalhe premium: dourado fosco discreto
 
-## Paleta provisória sugerida
+### Paleta provisória sugerida
 
 - Marfim: `#F8F5F1`
 - Branco quente: `#FFFDFC`
@@ -137,7 +127,7 @@ Enquanto os arquivos oficiais não estiverem importados, utilizar uma base semâ
 
 Substituir esses códigos caso a identidade aprovada utilize valores diferentes.
 
-## Uso
+### Uso
 
 - Fundos claros devem dominar
 - Rosé e dourado devem ser acentos
@@ -145,11 +135,9 @@ Substituir esses códigos caso a identidade aprovada utilize valores diferentes.
 - Não usar dourado com gradiente exagerado
 - Não misturar muitos tons de rosa
 
----
+## Tipografia
 
-# Tipografia
-
-## Títulos
+### Títulos
 
 Usar uma fonte serifada elegante ou uma sans editorial de alto contraste.
 
@@ -161,7 +149,7 @@ Características:
 - Boa presença em tamanhos grandes
 - Sem aparência excessivamente formal
 
-## Textos e interface
+### Textos e interface
 
 Usar uma fonte sans-serif limpa.
 
@@ -172,7 +160,7 @@ Características:
 - Pesos bem definidos
 - Boa renderização em tamanhos pequenos
 
-## Regras
+### Regras
 
 - Limitar a duas famílias tipográficas
 - Evitar fontes manuscritas em textos funcionais
@@ -180,9 +168,7 @@ Características:
 - Manter contraste adequado
 - Usar uma escala tipográfica consistente
 
----
-
-# Logotipo
+## Logotipo
 
 Utilizar apenas versões oficiais.
 
@@ -206,13 +192,11 @@ Nunca:
 - Alterar proporções
 - Redesenhar dentro do código
 
----
-
-# Fotografia
+## Fotografia
 
 As imagens são o principal elemento de venda.
 
-## Estilo desejado
+### Estilo desejado
 
 - Luz natural ou luz suave
 - Fundo limpo
@@ -223,7 +207,7 @@ As imagens são o principal elemento de venda.
 - Sensação cotidiana
 - Acabamento profissional
 
-## Tipos de fotografia
+### Tipos de fotografia
 
 - Produto isolado
 - Produto em uso
@@ -233,7 +217,7 @@ As imagens são o principal elemento de venda.
 - Sugestão de presente
 - Bastidores da seleção e preparação
 
-## Evitar
+### Evitar
 
 - Filtros pesados
 - Saturação exagerada
@@ -244,11 +228,9 @@ As imagens são o principal elemento de venda.
 - Bancos de imagem que não representem os produtos reais
 - Fotos que alterem a cor real da peça
 
----
+## Componentes de interface
 
-# Componentes de Interface
-
-## Botões
+### Botões
 
 - Cantos suaves
 - Altura confortável para toque
@@ -265,7 +247,7 @@ CTA secundário:
 
 **Ver coleção**
 
-## Cards de produto
+### Cards de produto
 
 Devem mostrar:
 
@@ -278,16 +260,14 @@ Devem mostrar:
 
 Evitar excesso de bordas, sombras e informações.
 
-## Ícones
+### Ícones
 
 - Traço fino
 - Estilo consistente
 - Sem ilustrações caricatas
 - Acompanhados por texto quando houver risco de ambiguidade
 
----
-
-# Selos e Estados
+## Selos e estados
 
 Selos permitidos:
 
@@ -303,9 +283,7 @@ Regras:
 - Não criar escassez artificial
 - “Mais desejado” deve ser baseado em vendas ou interesse real
 
----
-
-# Animações
+## Animações
 
 As animações devem reforçar delicadeza e qualidade.
 
@@ -327,9 +305,7 @@ Evitar:
 
 Respeitar `prefers-reduced-motion`.
 
----
-
-# Tom de Voz
+## Tom de voz
 
 A comunicação deve ser:
 
@@ -341,7 +317,7 @@ A comunicação deve ser:
 - Elegante
 - Humana
 
-## Linguagem
+### Linguagem
 
 Preferir:
 
@@ -361,11 +337,9 @@ Evitar:
 - Promessas de qualidade não comprovadas
 - Pressão artificial
 
----
+## Exemplos de voz
 
-# Exemplos de Voz
-
-## Correto
+### Correto
 
 “Uma peça delicada para acompanhar seus dias.”
 
@@ -373,7 +347,7 @@ Evitar:
 
 “Veja os detalhes da peça antes de decidir.”
 
-## Incorreto
+### Incorreto
 
 “Você não pode ficar sem!”
 
@@ -381,17 +355,13 @@ Evitar:
 
 “A melhor semijoia do Brasil.”
 
----
-
-# Sensação Desejada
+## Sensação desejada
 
 Ao entrar no site, a cliente deve pensar:
 
 **“Essas peças combinam comigo e eu me sentiria bonita usando.”**
 
----
-
-# Objetivo Final
+## Objetivo final
 
 Toda expressão da Vitta Serena deve transformar simplicidade em valor percebido.
 

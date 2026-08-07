@@ -1,15 +1,32 @@
 # Copy — Royal Growth (Site 2026)
 
-**Fonte:** textos do cliente em `SITE 2026/` (páginas 1–6), com tom definido em `0.0 - REFINO DO TEXTO.md`.  
-**Uso:** implementação do site. Em conflito, preferir o arquivo original em `SITE 2026/`.
+**Tipo:** copy · **Status:** alinhado ao SITE 2026 · **Versão:** 2.0
+
+Pack: [00-projeto.md](00-projeto.md) · [01-analise-site-atual.md](01-analise-site-atual.md) · [02-sitemap.md](02-sitemap.md) · [04-assets.md](04-assets.md) · [05-design-system.md](05-design-system.md) · [06-roadmap.md](06-roadmap.md) · Esboço: [`SITE 2026/`](SITE%202026/)
+
+## Objetivo
+
+Consolidar a copy das seis páginas do MVP para implementação web. Hierarquia abaixo mapeia **seção → campos** (título, subtítulo, corpo, CTA).
+
+## Fonte e precedência
+
+| Prioridade | Fonte |
+|------------|--------|
+| 1 | `SITE 2026/` (páginas 1–6) — **prevalece em conflito** |
+| 2 | Tom em `SITE 2026/0.0 - REFINO DO TEXTO.md` |
+| 3 | Este arquivo |
+
+> Refinamentos do esboço em `SITE 2026/` são tratados por outro agente. Não editar lá a partir deste pack salvo alinhamento explícito.
 
 ## Regras globais
 
 - CTA principal: **Solicitar diagnóstico** → `/contato`
-- Credencial: Parceiro RD Station Tier Diamond, entre as 10 principais operações do programa (+ de 2.500 empresas) — usar com naturalidade, sem propaganda
-- Evitar: jargão, frases de efeito, “não é X, é Y”, tom de vendedor, bullet desnecessário na prosa longa
+- Credencial RD: Parceiro RD Station Tier Diamond, entre as 10 principais operações do programa (+ de 2.500 empresas) — usar com naturalidade, sem propaganda
+- Tom: não escreva para convencer, escreva para fazer sentido
+- Evitar: jargão, frases de efeito, estruturas “não é X, é Y”, tom de vendedor, bullets desnecessários na prosa longa
+- Não inventar cases, métricas ou depoimentos
 
-## UI (nav / footer)
+## Chrome (nav / footer)
 
 | Elemento | Texto |
 |----------|--------|
@@ -20,28 +37,34 @@
 
 ---
 
-# 1. Home
+## Home
 
-Fonte: `SITE 2026/1 - HOME.md`
+Rota: `/` · Fonte: `SITE 2026/1 - HOME.md`
 
-## Hero
+### Hero
 
-**Título**  
+#### Título
+
 Sua empresa não para de gerar demanda.  
 Ela para de escalar quando a operação não acompanha.
 
-**Subtítulo**  
+#### Subtítulo
+
 A Royal Growth estrutura aquisição, conversão e operação para que o crescimento deixe de depender de aumento proporcional de time, esforço manual e improviso. Tráfego, páginas, rastreamento, automação e dados conectados dentro de uma lógica contínua.  
 Parceiro RD Station Tier Diamond, entre as 10 principais operações do programa.
 
-**CTA**  
+#### CTA
+
 Solicitar diagnóstico
 
-## Abertura
+### Abertura
 
-**Título**  
+#### Título
+
 O crescimento raramente trava de forma brusca.  
 Ele começa a custar mais do que deveria.
+
+#### Corpo
 
 Existe um ponto em que o problema deixa de estar na geração de demanda. O volume continua vindo. O investimento segue acontecendo. O time continua em movimento. Ainda assim, o resultado já não cresce na mesma proporção.
 
@@ -49,11 +72,14 @@ Não é uma queda repentina. É uma perda silenciosa de eficiência.
 
 O que antes fluía passa a exigir compensação. Mais intervenção. Mais acompanhamento. Mais energia para sustentar o que já deveria estar funcionando com consistência. E é nesse momento que o crescimento começa a expor o limite da operação.
 
-## Desenvolvimento
+### Desenvolvimento
 
-**Título**  
+#### Título
+
 O improviso ajuda a empresa a crescer no começo.  
 Mas impede que ela sustente esse crescimento depois.
+
+#### Corpo
 
 No início, a operação costuma tolerar falhas. O processo ainda é simples o bastante para que decisões pontuais resolvam o que aparece no caminho. Um lead recebe atenção extra. Um fluxo é corrigido manualmente. Uma oportunidade é recuperada porque alguém percebeu a tempo.
 
@@ -65,11 +91,14 @@ Nesse estágio, atenção já não resolve. Estrutura resolve.
 
 Sem estrutura, a empresa continua crescendo com esforço. Mas deixa de crescer com controle.
 
-## O que fazemos
+### O que fazemos
 
-**Título**  
+#### Título
+
 Escalar não é apenas vender mais.  
 É conseguir sustentar o volume sem ampliar o caos.
+
+#### Corpo
 
 A Royal Growth atua exatamente nesse ponto.
 
@@ -83,11 +112,14 @@ O ganho não está só em eficiência. Está na mudança de comportamento da emp
 
 O crescimento deixa de exigir correção constante e passa a ser sustentado por uma estrutura capaz de absorver volume com mais controle, continuidade e previsibilidade.
 
-## Contexto
+### Contexto
 
-**Título**  
+#### Título
+
 Na maioria das empresas, o gargalo não está no mercado.  
 Está na forma como a operação responde ao mercado.
+
+#### Corpo
 
 Gerar demanda hoje deixou de ser a parte mais rara. O ponto decisivo está na capacidade de receber essa demanda, conduzi-la com consistência e transformar volume em resultado sem depender de esforço desproporcional.
 
@@ -99,11 +131,14 @@ Entre a entrada do lead e a continuidade comercial.
 
 Quando essa transição depende de intervenção o tempo todo, o crescimento deixa de representar avanço e começa a gerar sobrecarga.
 
-## Sobre RD Station
+### Sobre RD Station
 
-**Título**  
+#### Título
+
 Ferramenta não sustenta crescimento sozinha.  
 Mas evidencia a profundidade de quem estrutura a operação.
+
+#### Corpo
 
 As ferramentas entram como parte da estrutura, não como solução isolada.
 
@@ -111,10 +146,13 @@ A Royal Growth atua como parceira Tier Diamond da RD Station e está entre as 10
 
 Essa posição não define a qualidade do trabalho por si só. Mas sinaliza a capacidade de atuar com profundidade quando a ferramenta precisa deixar de ser apenas operacional e passar a sustentar uma lógica real de crescimento.
 
-## Operação
+### Operação
 
-**Título**  
+#### Título
+
 Quando o crescimento depende demais de pessoas, ele encontra um teto.
+
+#### Corpo
 
 Sem estrutura, o padrão costuma se repetir.
 
@@ -126,10 +164,13 @@ Quando a operação é organizada, esse comportamento muda.
 
 O processo passa a absorver melhor o volume. A resposta ganha padrão. O acompanhamento deixa de oscilar. E o crescimento deixa de depender de compensação contínua.
 
-## Clareza operacional
+### Clareza operacional
 
-**Título**  
+#### Título
+
 Escala começa quando o processo deixa de depender de execução individual.
+
+#### Corpo
 
 Organizar a operação não é torná-la mais complexa. É torná-la menos vulnerável.
 
@@ -139,10 +180,13 @@ Esse tipo de clareza muda a forma como a empresa cresce.
 
 A operação ganha consistência. O resultado deixa de oscilar tanto. E o esforço deixa de ser o principal motor da manutenção.
 
-## Encerramento
+### Encerramento
 
-**Título**  
+#### Título
+
 Toda empresa cresce até o ponto em que precisa escolher entre insistir no esforço ou construir estrutura.
+
+#### Corpo
 
 Toda operação consegue avançar por um tempo com base em execução, energia e acompanhamento de perto.
 
@@ -150,20 +194,23 @@ Mas chega um momento em que insistir no mesmo modelo já não produz crescimento
 
 Se hoje o resultado da sua empresa ainda depende de intervenção constante para se manter, o limite provavelmente não está na demanda. Está na forma como a operação foi estruturada.
 
-**CTA**  
+#### CTA
+
 Solicitar diagnóstico
 
 ---
 
-# 2. Sistema
+## Sistema
 
-Fonte: `SITE 2026/2 - SISTEMA.md`
+Rota: `/sistema/` · Fonte: `SITE 2026/2 - SISTEMA.md`
 
-## Título
+### Introdução
+
+#### Título
 
 Escala depende de como a operação responde ao próprio crescimento.
 
-## Introdução
+#### Corpo
 
 Crescer, por si só, raramente é o problema.
 
@@ -175,7 +222,9 @@ O que antes fluía passa a depender de atenção constante. Pequenos atrasos dei
 
 É nesse ponto que a operação precisa deixar de apenas funcionar e começar a sustentar.
 
-## Leitura da operação
+### Leitura da operação
+
+#### Corpo
 
 Esse tipo de cenário quase nunca nasce de um único erro.
 
@@ -191,7 +240,9 @@ O histórico existe, mas não cria leitura suficiente para decisão.
 
 Quando isso acontece, a operação começa a crescer com esforço, não com estrutura.
 
-## Organização do fluxo
+### Organização do fluxo
+
+#### Corpo
 
 A partir dessa leitura, o trabalho deixa de ser reagir e passa a ser estruturar.
 
@@ -205,7 +256,9 @@ O próximo passo deixa de ficar sujeito à memória ou à urgência do dia.
 
 A operação deixa de ser uma soma de ações desconectadas e passa a funcionar como fluxo.
 
-## Continuidade
+### Continuidade
+
+#### Corpo
 
 O centro da escala não está só na entrada do lead.
 
@@ -217,7 +270,9 @@ Quando isso acontece, o crescimento deixa de pressionar a estrutura o tempo todo
 
 Ele passa a ser absorvido com mais estabilidade.
 
-## Automação
+### Automação
+
+#### Corpo
 
 A automação entra para sustentar essa continuidade.
 
@@ -229,11 +284,14 @@ O ganho não está só em velocidade.
 
 Está em consistência.
 
-## Integração
+### Integração
 
-**Título**  
+#### Título
+
 Tecnologia deve servir ao processo.  
 Não o contrário.
+
+#### Corpo
 
 As ferramentas passam a ter função clara dentro da operação.
 
@@ -245,7 +303,9 @@ Quando a integração é bem construída, o dado deixa de ficar espalhado. O his
 
 A atuação da Royal Growth como parceira Tier Diamond da RD Station, entre as 10 principais operações do programa, reforça a profundidade com que esse ambiente pode ser estruturado quando necessário. Mas o valor não está na ferramenta em si. Está na forma como ela é inserida dentro da operação.
 
-## Resultado
+### Resultado
+
+#### Corpo
 
 Quando a operação é organizada, o comportamento da empresa muda.
 
@@ -255,7 +315,9 @@ O que muda não é apenas o volume vendido.
 
 É a forma como esse volume passa a ser absorvido.
 
-## Encerramento
+### Encerramento
+
+#### Corpo
 
 Escalar não é apenas acelerar.
 
@@ -263,21 +325,25 @@ Escalar não é apenas acelerar.
 
 Quando o processo suporta o próprio crescimento, a empresa deixa de depender de esforço crescente para continuar avançando. O resultado ganha continuidade. A operação ganha controle. E a escala deixa de ser uma fase instável para se tornar uma condição construída.
 
-**CTA**  
+#### CTA
+
 Solicitar diagnóstico
 
 ---
 
-# 3. Resultados
+## Resultados
 
-Fonte: `SITE 2026/3 - RESULTADOS.md`  
-**Nota:** publicar apenas cases com autorização. Texto abaixo = versão autorizável do cliente.
+Rota: `/resultados/` · Fonte: `SITE 2026/3 - RESULTADOS.md`
 
-## Título
+> Publicar apenas cases com autorização. Texto abaixo = versão autorizável do cliente.
+
+### Introdução
+
+#### Título
 
 Operações diferentes. O mesmo tipo de problema. O mesmo padrão de ajuste.
 
-## Introdução
+#### Corpo
 
 Cada empresa chega em um ponto diferente.
 
@@ -289,9 +355,13 @@ O que se repete é a natureza da intervenção.
 
 A Royal Growth entra quando a operação já não precisa de mais movimento. Precisa de mais coerência. Mais continuidade. Mais capacidade de sustentar resultado sem depender de esforço crescente para tudo continuar funcionando.
 
-## Pitney Bowes Brasil
+### Case — Pitney Bowes Brasil
 
-**Integração de sistemas e controle de dados em uma operação de alta complexidade**
+#### Subtítulo
+
+Integração de sistemas e controle de dados em uma operação de alta complexidade
+
+#### Corpo
 
 A operação já era robusta, baseada em Salesforce, com múltiplos pontos de contato e forte dependência de integrações externas.
 
@@ -305,9 +375,13 @@ A integração com o Protheus foi mantida de forma direta, sem intermediários d
 
 O resultado foi uma operação mais estável, mais previsível e com menos exposição a rupturas invisíveis no fluxo.
 
-## Colégio Arcádia
+### Case — Colégio Arcádia
 
-**Do atendimento solto para uma operação rastreável**
+#### Subtítulo
+
+Do atendimento solto para uma operação rastreável
+
+#### Corpo
 
 O atendimento existia, mas não como processo.
 
@@ -317,13 +391,15 @@ Isso limitava ajuste, leitura e evolução.
 
 A operação foi reorganizada com o RD Conversas como base central, conectando formulários, site e canais de entrada em uma lógica única. O agendamento de visitas passou a acontecer automaticamente, eliminando etapas intermediárias e reduzindo atrito.
 
-A mudança principal não foi a ferramenta.
+A mudança principal foi transformar o atendimento em fluxo. Com começo, continuidade e visibilidade.
 
-Foi transformar o atendimento em fluxo. Com começo, continuidade e visibilidade.
+### Case — Minas Pet Shop
 
-## Minas Pet Shop
+#### Subtítulo
 
-**Padronização comercial em uma operação excessivamente dependente do vendedor**
+Padronização comercial em uma operação excessivamente dependente do vendedor
+
+#### Corpo
 
 A venda acontecia via WhatsApp Web, sem controle central, sem histórico confiável e com forte variação entre atendentes.
 
@@ -335,9 +411,13 @@ Com a implementação do RD Conversas, cada interação passou a ser registrada 
 
 A evolução comercial deixou de depender de talento isolado e passou a ser sustentada por processo.
 
-## Eben Empreendimentos
+### Case — Eben Empreendimentos
 
-**Absorção de volume com inteligência no início do atendimento**
+#### Subtítulo
+
+Absorção de volume com inteligência no início do atendimento
+
+#### Corpo
 
 A geração de leads era alta, principalmente em campanhas com entrada direta no WhatsApp.
 
@@ -351,9 +431,13 @@ Integrado ao RD Conversas, o fluxo passou a registrar histórico, manter context
 
 O comercial deixou de gastar energia no começo da jornada e passou a atuar onde a decisão realmente acontece.
 
-## Portal Créditos
+### Case — Portal Créditos
 
-**Continuidade comercial em um cenário de duplicidade recorrente**
+#### Subtítulo
+
+Continuidade comercial em um cenário de duplicidade recorrente
+
+#### Corpo
 
 O próprio comportamento do lead criava um problema estrutural.
 
@@ -365,9 +449,13 @@ Foi criada uma automação integrada via API ao CRM, capaz de identificar o hist
 
 A empresa deixou de ter múltiplas abordagens concorrendo entre si e passou a sustentar uma linha única de relacionamento.
 
-## Revanche Jeans
+### Case — Revanche Jeans
 
-**Migração de plataforma sem ruptura da lógica comercial**
+#### Subtítulo
+
+Migração de plataforma sem ruptura da lógica comercial
+
+#### Corpo
 
 A operação já possuía estrutura. Havia carteiras específicas por vendedor e uma lógica de distribuição consolidada.
 
@@ -379,9 +467,13 @@ As automações garantiram que novos leads continuassem seguindo a mesma regra d
 
 A transição aconteceu sem ruptura. A plataforma mudou. A lógica comercial permaneceu íntegra.
 
-## Alpha Strong
+### Case — Alpha Strong
 
-**Qualificação antes da venda em uma operação com múltiplos pontos de entrada**
+#### Subtítulo
+
+Qualificação antes da venda em uma operação com múltiplos pontos de entrada
+
+#### Corpo
 
 A operação exigia organização desde a origem do lead.
 
@@ -393,9 +485,13 @@ Antes de chegar ao vendedor, o lead passa por uma triagem automatizada que organ
 
 O vendedor deixa de atuar sobre volume bruto e passa a trabalhar sobre oportunidade melhor construída.
 
-## Você no Shape
+### Case — Você no Shape
 
-**Transformação do social selling em processo contínuo**
+#### Subtítulo
+
+Transformação do social selling em processo contínuo
+
+#### Corpo
 
 O crescimento vinha das redes sociais, mas de forma dispersa.
 
@@ -407,9 +503,13 @@ Além da abordagem inicial, a estrutura incluiu automações para recuperação 
 
 O comercial deixou de entrar cedo demais e passou a atuar quando já existe intenção mais clara de avanço.
 
-## Movement Equipamentos Fitness
+### Case — Movement Equipamentos Fitness
 
-**Distribuição inteligente em uma operação multiunidade**
+#### Subtítulo
+
+Distribuição inteligente em uma operação multiunidade
+
+#### Corpo
 
 A operação envolve diferentes regiões, equipes e contextos comerciais.
 
@@ -419,11 +519,15 @@ Foi criado um sistema que conecta tráfego, páginas, rastreamento e triagem ini
 
 O lead passa por qualificação automatizada e é direcionado considerando região, contexto e disponibilidade comercial. O vendedor recebe o contato com mais informação e maior chance de condução eficiente.
 
-O ganho principal não foi apenas velocidade. Foi reduzir ruído na passagem do lead e dar mais consistência à distribuição.
+O ganho principal foi reduzir ruído na passagem do lead e dar mais consistência à distribuição.
 
-## SBIE
+### Case — SBIE
 
-**De ações isoladas para uma base de crescimento contínuo**
+#### Subtítulo
+
+De ações isoladas para uma base de crescimento contínuo
+
+#### Corpo
 
 A SBIE já tinha presença e produção de conteúdo, mas não uma estrutura capaz de sustentar crescimento com previsibilidade.
 
@@ -435,9 +539,13 @@ Com a operação organizada, outras camadas puderam evoluir com mais consistênc
 
 O crescimento deixou de depender de ações soltas e passou a ser consequência de continuidade.
 
-## FranklinCovey Brasil
+### Case — FranklinCovey Brasil
 
-**Mudança de modelo com sustentação operacional**
+#### Subtítulo
+
+Mudança de modelo com sustentação operacional
+
+#### Corpo
 
 A operação era sólida, mas construída sobre uma lógica fortemente presencial.
 
@@ -447,11 +555,15 @@ A transformação começou pela redefinição da oferta, com a introdução de u
 
 Foram estruturadas novas formas de entrada, nutrição e continuidade, combinando eventos, conteúdo e presença digital em uma lógica comercial mais escalável.
 
-O resultado não foi apenas abrir um novo canal. Foi construir um modelo capaz de crescer sem depender da mesma estrutura física de antes.
+O resultado foi construir um modelo capaz de crescer sem depender da mesma estrutura física de antes.
 
-## CEAGESP Festivais
+### Case — CEAGESP Festivais
 
-**Redução da distância entre intenção e presença real**
+#### Subtítulo
+
+Redução da distância entre intenção e presença real
+
+#### Corpo
 
 A demanda existia, mas nem toda reserva se convertia em comparecimento.
 
@@ -463,7 +575,9 @@ A operação passou a conduzir melhor quem já demonstrava interesse.
 
 O efeito foi reduzir a distância entre o que a pessoa dizia que faria e o que de fato acontecia no evento.
 
-## Encerramento
+### Encerramento
+
+#### Corpo
 
 Os contextos mudam. O padrão, não.
 
@@ -471,25 +585,26 @@ Quando a operação não está organizada, o crescimento cobra esforço demais p
 
 É isso que esses projetos têm em comum.
 
-Não a ferramenta. Não o segmento. Não o tamanho da empresa.
-
 O ponto de virada foi estruturar a operação para que ela pudesse sustentar o que já estava tentando crescer.
 
-**CTA**  
+#### CTA
+
 Solicitar diagnóstico
 
 ---
 
-# 4. Conteúdo
+## Conteúdo
 
-Fonte: `SITE 2026/4 - CONTEÚDO.md`
+Rota: `/conteudo/` · Fonte: `SITE 2026/4 - CONTEÚDO.md`
 
-## Título
+### Introdução
+
+#### Título
 
 Nem todo problema operacional pede mais ferramenta.  
 Muitos pedem leitura.
 
-## Introdução
+#### Corpo
 
 Grande parte dos travamentos que aparecem em uma operação não começa na tecnologia.
 
@@ -499,37 +614,33 @@ A empresa sente o efeito, mas nem sempre enxerga a causa. Ajusta a ponta errada.
 
 Este espaço existe para organizar essa leitura.
 
-Não para produzir opinião solta. Nem para repetir conteúdo genérico sobre marketing, vendas ou automação.
-
 O objetivo aqui é dar clareza ao que costuma ficar confuso quando a operação cresce, se fragmenta ou começa a exigir esforço demais para continuar funcionando.
 
-## O que você vai encontrar aqui
+### O que você vai encontrar
 
-O conteúdo da Royal não foi pensado para ensinar teoria.
+#### Corpo
 
-Foi pensado para explicar o que trava uma operação e o que precisa ser ajustado para que ela volte a funcionar com mais coerência.
+O conteúdo da Royal foi pensado para explicar o que trava uma operação e o que precisa ser ajustado para que ela volte a funcionar com mais coerência.
 
 Aqui entram análises de situações reais, decisões que parecem pequenas mas alteram o desempenho da estrutura, e interpretações sobre pontos que muitas vezes passam despercebidos no dia a dia.
 
 Alguns textos tratam de aquisição e geração de demanda. Outros entram em processo comercial, automação, integração entre sistemas, histórico de atendimento, comportamento de lead e confiabilidade dos dados.
 
-O ponto em comum é simples.
+O ponto em comum é tornar legível o que, em muitas empresas, já está acontecendo sem receber o nome certo.
 
-Tornar legível o que, em muitas empresas, já está acontecendo sem receber o nome certo.
+### Como ler
 
-## Como esse conteúdo deve ser lido
+#### Corpo
 
 Este não é um espaço feito para consumo rápido.
 
 Alguns textos exigem mais atenção porque tratam de problemas que não são superficiais. E esse é exatamente o ponto.
 
-A intenção não é simplificar demais o que é complexo. É dar forma ao que já existe para que ele possa ser entendido com mais critério.
+A intenção é dar forma ao que já existe para que ele possa ser entendido com mais critério.
 
-Quando um conteúdo fizer sentido enquanto você lê, o mais provável é que ele não esteja te ensinando algo totalmente novo.
+Quando um conteúdo fizer sentido enquanto você lê, o mais provável é que ele esteja colocando em ordem algo que sua operação já vinha mostrando, mas ainda sem clareza suficiente para orientar uma decisão melhor.
 
-Provavelmente está colocando em ordem algo que sua operação já vinha mostrando, mas ainda sem clareza suficiente para orientar uma decisão melhor.
-
-## Temas recorrentes
+### Temas recorrentes
 
 Estrutura de aquisição e geração de demanda.  
 Organização do processo comercial.  
@@ -538,50 +649,48 @@ Integração entre sistemas e fluxo de informação.
 Leitura, confiabilidade e uso prático dos dados.  
 Gargalos operacionais e dependência excessiva de execução individual.
 
-Esses temas não entram como tendência, repertório de mercado ou teoria desconectada.
+Esses temas entram como parte da realidade operacional de empresas que precisam crescer sem transformar cada avanço em mais esforço manual, mais ruído e mais fragilidade.
 
-Entram como parte da realidade operacional de empresas que precisam crescer sem transformar cada avanço em mais esforço manual, mais ruído e mais fragilidade.
+### Relação com a Royal
 
-## Relação com a Royal
+#### Corpo
 
-Esse conteúdo não existe separado do trabalho da Royal Growth.
-
-Ele nasce da prática.
+Esse conteúdo nasce da prática.
 
 Nasce das implementações, dos ajustes, dos erros recorrentes, dos pontos de ruptura e dos padrões que se repetem em empresas de setores diferentes, mas com problemas estruturais muito parecidos.
 
-O que aparece aqui não vem de observação distante.
+O que aparece aqui vem de operação real.
 
-Vem de operação real.
+Por isso, o conteúdo tenta explicar com precisão aquilo que, quando mal interpretado, compromete crescimento, continuidade e capacidade de resposta.
 
-Por isso, o conteúdo não tenta impressionar pela complexidade da linguagem. Ele tenta explicar com precisão aquilo que, quando mal interpretado, compromete crescimento, continuidade e capacidade de resposta.
+### Encerramento
 
-## Encerramento
-
-Nem sempre o que falta em uma empresa é mais ação.
+#### Corpo
 
 Muitas vezes, o que falta é leitura suficiente para agir no ponto certo.
 
 Quando a operação passa a ser melhor compreendida, a decisão melhora. O ajuste fica mais preciso. E o crescimento deixa de depender tanto de correção constante para continuar acontecendo.
 
-**CTAs**  
-Acessar conteúdos  
-Solicitar diagnóstico
+#### CTAs
 
-> Se não houver posts no MVP: ocultar “Acessar conteúdos” ou apontar para âncora de temas / newsletter futura.
+Acessar conteúdos · Solicitar diagnóstico
+
+> MVP sem posts: ocultar “Acessar conteúdos” ou apontar para âncora de temas / newsletter futura.
 
 ---
 
-# 5. Sobre
+## Sobre
 
-Fonte: `SITE 2026/5 - SOBRE.md`
+Rota: `/sobre/` · Fonte: `SITE 2026/5 - SOBRE.md`
 
-## Título
+### Introdução
+
+#### Título
 
 A Royal Growth não nasceu de uma tese.  
 Nasceu do ponto em que crescer deixou de bastar.
 
-## Introdução
+#### Corpo
 
 Existem operações que continuam crescendo por um tempo à base de esforço, presença constante e compensação manual.
 
@@ -591,7 +700,9 @@ A Royal Growth nasce exatamente desse ponto.
 
 Não de uma ideia abstrata sobre escala, tecnologia ou automação. Mas da experiência concreta de perceber que uma operação pode estar funcionando, faturando e avançando, e ainda assim estar construída sobre um modelo que cobra energia demais para continuar de pé.
 
-## Trajetória
+### Trajetória
+
+#### Corpo
 
 Maurício Dantas empreende no marketing digital desde 2010.
 
@@ -607,7 +718,9 @@ Ela funcionava.
 
 Mas não se sustentava.
 
-## Expansão
+### Expansão
+
+#### Corpo
 
 Entre 2022 e 2023, a tentativa foi escalar da forma que o mercado normalmente chama de crescimento.
 
@@ -623,7 +736,9 @@ O crescimento continuava exigindo compensação constante.
 
 Foi nesse momento que o problema deixou de ser capacidade e passou a ser modelo.
 
-## Mudança de direção
+### Mudança de direção
+
+#### Corpo
 
 A virada não começou com uma busca por inovação.
 
@@ -631,14 +746,13 @@ Começou com a necessidade de interromper um padrão que já não se justificava
 
 O foco saiu da ampliação de esforço e passou para a construção de estrutura. Automação, inteligência artificial e integração entre sistemas deixaram de entrar como apoio pontual e passaram a ocupar o centro da operação.
 
-Não como tendência.  
-Como resposta.
-
 Ao longo de 2024, a Royal Growth foi redesenhada a partir dessa lógica.
 
 Tarefas repetitivas deixaram de depender de pessoas. Processos fragmentados foram reorganizados em fluxos contínuos. Atendimento, qualificação, acompanhamento e diversas rotinas operacionais passaram a funcionar dentro de uma estrutura pensada para manter ritmo, reduzir ruído e sustentar volume sem exigir expansão proporcional.
 
-## Hoje
+### Hoje
+
+#### Corpo
 
 Hoje, a Royal Growth opera de forma diferente do modelo tradicional de agência.
 
@@ -648,62 +762,59 @@ Maurício conduz a empresa sozinho.
 
 O que antes exigia um time inteiro hoje acontece dentro de uma estrutura construída para funcionar com continuidade, controle e muito menos atrito operacional.
 
-O ponto central não está em fazer mais com menos como slogan.
+O ponto central está em ter reorganizado a operação para que o resultado deixe de depender de esforço ampliado como condição permanente.
 
-Está em ter reorganizado a operação para que o resultado deixe de depender de esforço ampliado como condição permanente.
+### O que essa história sustenta
 
-## O que essa história sustenta
+#### Corpo
 
-Essa trajetória não aparece aqui como narrativa inspiracional.
+Essa trajetória aparece porque explica a origem do trabalho da Royal Growth.
 
-Ela aparece porque explica a origem do trabalho da Royal Growth.
+A empresa foi construída depois de viver esse problema por dentro.
 
-A empresa não foi construída a partir de uma visão externa sobre o problema. Foi construída depois de viver esse problema por dentro.
+Por isso, a Royal atua quando a empresa já tem demanda, já tem esforço, já tem estrutura, mas ainda não consegue transformar isso em uma operação que sustente o próprio crescimento com continuidade.
 
-Por isso, a Royal não atua apenas aumentando movimento, adicionando ferramenta ou desenhando novas camadas sobre operações já sobrecarregadas.
+### Sobre a Royal
 
-Ela atua quando a empresa já tem demanda, já tem esforço, já tem estrutura, mas ainda não consegue transformar isso em uma operação que sustente o próprio crescimento com continuidade.
-
-## Sobre a Royal
+#### Corpo
 
 A Royal Growth organiza operações que já possuem tração, mas ainda operam com dependência excessiva de execução manual, intervenção constante e esforço acumulado.
 
-O trabalho não está em gerar volume por gerar.
-
-Está em estruturar a forma como esse volume entra, é tratado, circula pela operação e se converte em resultado sem ampliar o caos no caminho.
+O trabalho está em estruturar a forma como o volume entra, é tratado, circula pela operação e se converte em resultado sem ampliar o caos no caminho.
 
 Aquisição, conversão, processo comercial, rastreamento, automação e integração passam a funcionar dentro de uma lógica única.
 
 A empresa cresce melhor quando a operação para de reagir o tempo todo e começa a responder com estrutura.
 
-## Encerramento
+### Encerramento
 
-Escalar não é simplesmente aumentar.
+#### Corpo
 
-É conseguir manter resultado, continuidade e controle quando o ritmo sobe.
+Escalar é conseguir manter resultado, continuidade e controle quando o ritmo sobe.
 
 Foi dessa necessidade que a Royal Growth nasceu.  
 E é para isso que ela foi construída.
 
-**CTA**  
+#### CTA
+
 Solicitar diagnóstico
 
 ---
 
-# 6. Contato
+## Contato
 
-Fonte: `SITE 2026/6 - CONTATO.md`
+Rota: `/contato/` · Fonte: `SITE 2026/6 - CONTATO.md`
 
-## Título
+### Introdução
+
+#### Título
 
 Nem toda empresa precisa de mais demanda.  
 Muitas precisam de uma operação que consiga sustentar o que já gera.
 
-## Introdução
+#### Corpo
 
-Este contato não foi pensado como um pedido automático de proposta.
-
-Ele existe como ponto inicial de leitura.
+Este contato existe como ponto inicial de leitura.
 
 A Royal Growth atua em empresas que já possuem movimento comercial, geração de demanda e operação ativa, mas começam a perceber que o crescimento exige esforço demais para continuar acontecendo com consistência.
 
@@ -711,7 +822,9 @@ Quando esse é o cenário, a conversa faz sentido.
 
 Quando não é, o mais correto é não forçar uma proposta antes da hora.
 
-## Quando vale abrir essa conversa
+### Quando vale abrir a conversa
+
+#### Corpo
 
 A conversa costuma fazer sentido quando alguns sinais já estão presentes na operação.
 
@@ -725,15 +838,13 @@ O crescimento acontece, mas cobra energia demais para se manter.
 
 Os dados existem, mas ainda não dão clareza suficiente para orientar decisões com segurança.
 
-Não se trata, necessariamente, de falta de ferramenta.
-
 Na maioria das vezes, trata-se da forma como a operação foi organizada para responder ao próprio crescimento.
 
-## O que acontece depois do envio
+### O que acontece depois do envio
 
-O primeiro passo não é apresentar uma proposta pronta.
+#### Corpo
 
-É entender o cenário com critério.
+O primeiro passo é entender o cenário com critério.
 
 A leitura começa pela estrutura atual. Como a demanda entra, como o lead é tratado, onde o processo perde continuidade, o que já funciona bem e o que está impondo limite ao crescimento.
 
@@ -743,7 +854,7 @@ Se houver aderência, o próximo passo é o aprofundamento do diagnóstico e a c
 
 Se não houver, isso também fica claro desde o início.
 
-## Formulário
+### Formulário
 
 | Campo | Tipo sugerido |
 |-------|----------------|
@@ -758,21 +869,22 @@ Se não houver, isso também fica claro desde o início.
 | Quais ferramentas fazem parte da sua operação hoje? | textarea |
 | Descreva brevemente como funciona sua operação comercial atualmente | textarea |
 
-## Encerramento
+### Encerramento
 
-Nem sempre o próximo passo é acelerar mais.
+#### Corpo
 
 Em muitas empresas, o próximo passo é estruturar melhor.
 
-**CTA**  
+#### CTA (submit)
+
 Enviar para análise
 
 ---
 
-# Metadados SEO (rascunho)
+## Metadados SEO (rascunho)
 
-| Página | Title sugerido | Description sugerida |
-|--------|----------------|----------------------|
+| Página | Title | Description |
+|--------|-------|-------------|
 | Home | Royal Growth — Operação estruturada para escalar | Estruturamos aquisição, conversão e operação para o crescimento deixar de depender de esforço e time proporcional. |
 | Sistema | Sistema — Royal Growth | Como organizamos demanda, conversão, continuidade, automação e integração para sustentar escala. |
 | Resultados | Resultados — Royal Growth | Cases de operações que deixaram de depender de improviso e passaram a sustentar crescimento com estrutura. |
@@ -780,4 +892,4 @@ Enviar para análise
 | Sobre | Sobre — Royal Growth | A origem da Royal Growth: do limite do esforço à operação sustentada por estrutura. |
 | Contato | Contato / Diagnóstico — Royal Growth | Solicite um diagnóstico quando o crescimento já existe, mas a operação não acompanha. |
 
-Ajustar titles/descriptions após validação do cliente.
+Ajustar titles e descriptions após validação do cliente.

@@ -1,5 +1,9 @@
 # Projeto — Site Vitta Serena
 
+**Tipo:** brief · **Status:** em andamento · **Versão:** 2.0
+
+Pack: [01-brand-guide.md](01-brand-guide.md) · [02-sitemap.md](02-sitemap.md) · [03-copy.md](03-copy.md) · [04-assets.md](04-assets.md) · [05-prompts.md](05-prompts.md) · [06-roadmap.md](06-roadmap.md)
+
 ## Objetivo
 
 Criar o site oficial da **Vitta Serena**, marca real de semijoias da Gabi, transformando sua presença digital em um ativo comercial próprio desde o início.
@@ -8,29 +12,27 @@ O site deve apresentar a marca, organizar o catálogo, transmitir confiança e c
 
 A Vitta Serena não é um showcase fictício. Todas as decisões devem considerar uma operação real: produtos, estoque, preços, atendimento, entrega, políticas comerciais, dados de clientes e crescimento futuro.
 
----
+## Contexto da marca
 
-# Contexto da Marca
-
-## Nome
+### Nome
 
 Vitta Serena
 
-## Instagram
+### Instagram
 
 @vittaserena.semijoias
 
-## Segmento
+### Segmento
 
 Semijoias femininas para uso cotidiano.
 
-## Posicionamento
+### Posicionamento
 
 Uma marca elegante, delicada e minimalista, criada para ajudar mulheres jovens a se sentirem confiantes e bonitas no dia a dia.
 
 A Vitta Serena deve parecer acessível sem parecer barata e refinada sem parecer distante.
 
-## Público inicial
+### Público inicial
 
 - Mulheres jovens
 - Clientes que usam acessórios no cotidiano
@@ -38,15 +40,13 @@ A Vitta Serena deve parecer acessível sem parecer barata e refinada sem parecer
 - Compradores de presentes acessíveis e elegantes
 - Seguidores que descobrem produtos pelo Instagram e procuram segurança antes de comprar
 
-## Hipótese comercial inicial
+### Hipótese comercial inicial
 
 A faixa de preço inicialmente estudada é de aproximadamente **R$ 20 a R$ 30 por peça**.
 
 Essa faixa ainda é uma hipótese operacional. Ela não deve ser fixada na comunicação institucional até a definição final de fornecedores, custos, margens e coleção.
 
----
-
-# Papel Estratégico do Site
+## Papel estratégico do site
 
 O site deve:
 
@@ -63,11 +63,9 @@ O site deve:
 
 O desenvolvimento será realizado pela Dechen Web Studio, sem custo externo de desenvolvimento para a Vitta Serena. Isso permite tratar o site como um ativo estratégico desde o início.
 
----
+## Decisão de arquitetura
 
-# Decisão de Arquitetura
-
-## Documentação
+### Documentação
 
 A documentação pode permanecer no repositório da Dechen Web Studio para centralizar a gestão do projeto e manter o histórico de atendimento.
 
@@ -94,7 +92,7 @@ clients/
         └── cadastro/
 ```
 
-## Implementação
+### Implementação
 
 O site real deve possuir um repositório próprio, separado do site da agência.
 
@@ -111,7 +109,7 @@ Estrutura recomendada:
 
 Não desenvolver o site real dentro das rotas de `showcase/` da agência.
 
-## Hospedagem (VPS)
+### Hospedagem (VPS)
 
 Decisão: publicar na VPS da Dechen Web Studio / operação definida pela agência, com controle total de domínio, SSL e processos.
 
@@ -133,15 +131,13 @@ Responsabilidades no lançamento:
 
 Não usar Vercel neste projeto.
 
----
+## Objetivos de negócio
 
-# Objetivos de Negócio
-
-## Objetivo principal
+### Objetivo principal
 
 Converter interesse em pedidos de forma simples, elegante e confiável.
 
-## Objetivos secundários
+### Objetivos secundários
 
 - Construir percepção de marca
 - Aumentar o valor percebido das peças
@@ -152,9 +148,7 @@ Converter interesse em pedidos de forma simples, elegante e confiável.
 - Permitir crescimento sem reconstruir toda a estrutura
 - Aprender quais produtos e coleções geram mais interesse
 
----
-
-# Objetivos da Cliente
+## Objetivos da cliente
 
 A visitante deve conseguir:
 
@@ -168,11 +162,9 @@ A visitante deve conseguir:
 - Sentir segurança para comprar de uma marca nova
 - Descobrir peças relacionadas ao seu estilo
 
----
+## Conversão principal
 
-# Conversão Principal
-
-## MVP
+### MVP
 
 **Comprar pelo WhatsApp**
 
@@ -191,7 +183,7 @@ Olá! Tenho interesse no produto Brinco Aurora, código BR-001, na cor dourada.
 Link: [URL]
 ```
 
-## Evolução
+### Evolução
 
 Adicionar carrinho e checkout online quando estiverem validados:
 
@@ -203,11 +195,9 @@ Adicionar carrinho e checkout online quando estiverem validados:
 - Processo de separação
 - Processo de pós-venda
 
----
+## Escopo do MVP
 
-# Escopo do MVP
-
-## Homepage
+### Homepage
 
 - Navbar
 - Hero
@@ -221,7 +211,7 @@ Adicionar carrinho e checkout online quando estiverem validados:
 - CTA final
 - Footer
 
-## Catálogo
+### Catálogo
 
 Categorias inicialmente previstas:
 
@@ -233,7 +223,7 @@ Categorias inicialmente previstas:
 
 As categorias devem ser confirmadas após a definição da primeira coleção.
 
-## Página de Produto
+### Página de produto
 
 - Galeria de imagens
 - Nome
@@ -249,7 +239,7 @@ As categorias devem ser confirmadas após a definição da primeira coleção.
 - CTA de compra
 - Produtos relacionados
 
-## Páginas institucionais
+### Páginas institucionais
 
 - Sobre
 - Entregas
@@ -259,9 +249,7 @@ As categorias devem ser confirmadas após a definição da primeira coleção.
 - Termos
 - Contato
 
----
-
-# Funcionalidades do MVP
+## Funcionalidades do MVP
 
 - Catálogo responsivo
 - Filtros simples por categoria
@@ -280,9 +268,7 @@ As categorias devem ser confirmadas após a definição da primeira coleção.
 
 A busca interna só deve ser adicionada se o tamanho da primeira coleção justificar.
 
----
-
-# Modelo Inicial de Produto
+## Modelo inicial de produto
 
 Cada produto deve possuir, no mínimo:
 
@@ -311,9 +297,7 @@ type Product = {
 
 Nenhuma propriedade comercial deve ser preenchida com informação inventada.
 
----
-
-# Requisitos de Conteúdo
+## Requisitos de conteúdo
 
 Antes da implementação final, reunir:
 
@@ -337,9 +321,7 @@ Antes da implementação final, reunir:
 
 Nenhuma informação desconhecida deve ser inventada no site publicado.
 
----
-
-# Princípios de Experiência
+## Princípios de experiência
 
 - Mobile first
 - Navegação simples
@@ -354,9 +336,7 @@ Nenhuma informação desconhecida deve ser inventada no site publicado.
 - Sem pop-ups agressivos
 - Sem falsa urgência
 
----
-
-# Restrições
+## Restrições
 
 - Não parecer marketplace genérico
 - Não usar linguagem agressiva de promoção
@@ -369,11 +349,9 @@ Nenhuma informação desconhecida deve ser inventada no site publicado.
 - Não esconder custos ou condições importantes
 - Não publicar políticas incompletas como definitivas
 
----
+## Indicadores de sucesso
 
-# Indicadores de Sucesso
-
-## Lançamento
+### Lançamento
 
 - Site publicado sem erros críticos
 - Navegação perfeita em celular
@@ -385,7 +363,7 @@ Nenhuma informação desconhecida deve ser inventada no site publicado.
 - Metadados sociais funcionando
 - Nenhum dado fictício apresentado como real
 
-## Operação
+### Operação
 
 - Cliques em “Comprar pelo WhatsApp”
 - Conversão por produto
@@ -397,9 +375,7 @@ Nenhuma informação desconhecida deve ser inventada no site publicado.
 - Produtos mais solicitados
 - Abandono entre página de produto e WhatsApp
 
----
-
-# Dependência Operacional Atual
+## Dependência operacional atual
 
 A ida à região da 25 de Março, planejada para **22 de julho de 2026**, deve ajudar a definir fornecedores, produtos e primeira coleção.
 
@@ -416,9 +392,7 @@ Após essa etapa, atualizar esta documentação com dados reais de:
 - Prazos
 - Formas de entrega
 
----
-
-# Objetivo Final
+## Objetivo final
 
 O site deve fazer a Vitta Serena parecer uma marca jovem, organizada e confiável desde o primeiro lançamento.
 

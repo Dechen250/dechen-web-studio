@@ -1,291 +1,123 @@
 # API — Sistema de Captação
 
+**Tipo:** API · **Status:** ativo · **Versão:** 2.0
+
 ## Objetivo
 
-Definir o funcionamento da API responsável por receber, validar e processar todos os leads enviados pelo formulário da Dechen Web Studio.
+Definir o endpoint que recebe, valida e processa leads do formulário do site.
 
-A API deve ser segura, organizada e preparada para crescimento.
+Documentação relacionada: [01-arquitetura.md](./01-arquitetura.md) · [02-banco.md](./02-banco.md) · [04-email.md](./04-email.md)
 
----
-
-# Endpoint
+## Endpoint
 
 ```txt
-
 POST /api/contact
-
 ```
 
-Este endpoint será responsável por receber todos os formulários enviados pelo site.
+Responsável por todos os envios do formulário de contato.
 
----
+## Fluxo
 
-# Fluxo
+```
+Cliente → Formulário → Validação frontend → POST /api/contact → Validação API → Supabase → Resend → Resposta ao usuário
+```
 
-Cliente
-
-↓
-
-Preenche formulário
-
-↓
-
-Frontend valida os dados
-
-↓
-
-POST /api/contact
-
-↓
-
-API valida novamente
-
-↓
-
-Salva no banco de dados
-
-↓
-
-Envia e-mail para a agência
-
-↓
-
-Retorna sucesso ao usuário
-
----
-
-# Payload
+## Payload
 
 ```json
-
 {
-
   "nome": "",
-
   "empresa": "",
-
   "email": "",
-
   "whatsapp": "",
-
   "servico": "",
-
   "objetivo": "",
-
   "prazo": "",
-
   "orcamento": "",
-
   "mensagem": ""
-
 }
-
 ```
 
----
+## Validações
 
-# Validações
-
-Campos obrigatórios:
+### Campos obrigatórios
 
 - Nome
-
-- Email
-
+- E-mail
 - WhatsApp
-
 - Serviço
-
 - Mensagem
 
-Validações:
+### Regras
 
-- Email válido
-
+- E-mail válido
 - WhatsApp válido
-
 - Nome não vazio
-
 - Mensagem não vazia
-
 - Limite máximo de caracteres
 
----
+## Respostas
 
-# Resposta de Sucesso
-
-Status
-
-```txt
-
-200 OK
-
-```
-
-Exemplo
+### Sucesso — `200 OK`
 
 ```json
-
 {
-
   "success": true,
-
   "message": "Solicitação enviada com sucesso."
-
 }
-
 ```
 
----
-
-# Resposta de Erro
-
-Status
-
-```txt
-
-400 Bad Request
-
-```
-
-Exemplo
+### Erro de validação — `400 Bad Request`
 
 ```json
-
 {
-
   "success": false,
-
   "message": "Dados inválidos."
-
 }
-
 ```
 
----
-
-# Resposta de Erro Interno
-
-Status
-
-```txt
-
-500 Internal Server Error
-
-```
-
-Exemplo
+### Erro interno — `500 Internal Server Error`
 
 ```json
-
 {
-
   "success": false,
-
   "message": "Ocorreu um erro interno."
-
 }
-
 ```
 
----
+## Persistência
 
-# Segurança
+Após validação, criar registro na tabela `leads`:
 
-A API deve:
+| Campo | Valor inicial |
+|-------|---------------|
+| `status` | `novo` |
+| `origem` | `website` |
 
-- validar todos os dados recebidos;
+Ver schema completo em [02-banco.md](./02-banco.md).
 
-- nunca confiar apenas na validação do frontend;
+## E-mail
 
-- impedir campos vazios;
+Após salvar, enviar notificação para `contato@dechenwebstudio.com.br` via Resend com todas as informações do lead. Detalhes em [04-email.md](./04-email.md).
 
-- limitar tamanho das mensagens;
+## Segurança
 
-- registrar erros de forma segura.
+- Validar todos os dados no servidor
+- Impedir campos vazios
+- Limitar tamanho das mensagens
+- Registrar erros de forma segura
 
-Futuramente implementar:
+### Futuro
 
-- Rate Limit
-
+- Rate limit
 - CAPTCHA
-
 - Proteção contra bots
+- Logs e monitoramento
 
-- Logs
+## Escalabilidade
 
-- Monitoramento
+Integrações futuras (CRM, RD Station, Notion, Slack, Discord, WhatsApp, Google Calendar) no backend, sem alterar o frontend.
 
----
+## Princípio
 
-# Banco de Dados
-
-Após validar os dados, a API deve criar um novo registro na tabela:
-
-```txt
-
-leads
-
-```
-
-Status inicial:
-
-```txt
-
-novo
-
-```
-
-Origem:
-
-```txt
-
-website
-
-```
-
----
-
-# Integração com E-mail
-
-Após salvar o lead no banco:
-
-Enviar uma cópia para:
-
-```txt
-
-[contato@dechenwebstudio.com.br](mailto:contato@dechenwebstudio.com.br)
-
-```
-
-O e-mail deve conter todas as informações enviadas pelo cliente.
-
----
-
-# Escalabilidade
-
-A API deve ser construída para permitir futuras integrações com:
-
-- CRM próprio
-
-- RD Station
-
-- Notion
-
-- Slack
-
-- Discord
-
-- WhatsApp
-
-- Google Calendar
-
-Sem necessidade de alterar o frontend.
-
----
-
-# Princípio
-
-A API é o núcleo do sistema de captação.
-
-Ela deve garantir que nenhum lead seja perdido, mantendo a integridade dos dados e permitindo a evolução da plataforma sem mudanças estruturais.
+A API garante que nenhum lead seja perdido e mantém integridade dos dados para evolução da plataforma.

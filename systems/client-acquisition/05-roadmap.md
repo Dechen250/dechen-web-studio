@@ -1,225 +1,114 @@
 # Roadmap — Sistema de Captação
 
+**Tipo:** Roadmap · **Status:** ativo · **Versão:** 2.0
+
 ## Objetivo
 
-Definir a evolução planejada do Sistema de Captação de Leads da Dechen Web Studio.
+Definir a evolução planejada do Sistema de Captação de Leads. Crescimento gradual, com estabilidade e escalabilidade.
 
-O sistema deve evoluir gradualmente, mantendo estabilidade, organização e escalabilidade.
+Documentação relacionada: [00-visao.md](./00-visao.md) · [Roadmap Comercial](../sales/08-roadmap.md)
 
----
+## Status atual
 
-# Status Atual
+### Planejamento concluído
 
-## Planejamento
-
-- Documentação concluída
-
+- Documentação
 - Arquitetura definida
-
 - Banco de dados planejado
-
 - API planejada
-
 - Sistema de e-mail planejado
 
----
+## Versão 1.0
 
-# Versão 1.0
+**Objetivo:** Receber leads de forma confiável.
 
-Objetivo
-
-Receber leads de forma confiável.
-
-Implementar:
+**Implementar:**
 
 - Formulário funcional
-
-- API
-
-- Banco de dados
-
-- Notificação por e-mail
-
+- API (`POST /api/contact`)
+- Banco de dados (Supabase)
+- Notificação por e-mail (Resend)
 - Validação de campos
-
 - Mensagem de sucesso
 
-Resultado esperado
+**Resultado:** Nenhum lead perdido.
 
-Nenhum lead perdido.
+## Versão 1.1
 
----
-
-# Versão 1.1
-
-Melhorias
+**Melhorias:**
 
 - Loading elegante
-
 - Melhor feedback visual
-
 - Tratamento de erros
-
 - Melhor responsividade
-
 - Melhor acessibilidade
 
----
+## Versão 1.2
 
-# Versão 1.2
+**Segurança:**
 
-Segurança
-
-Implementar:
-
-- Rate Limit
-
+- Rate limit
 - Proteção contra spam
-
 - Honeypot
-
 - Validações avançadas
-
 - Logs
 
----
+## Versão 2.0
 
-# Versão 2.0
-
-CRM Inicial
-
-Implementar:
+**CRM inicial:**
 
 - Dashboard administrativo
-
 - Lista de leads
-
-- Pesquisa
-
-- Filtros
-
+- Pesquisa e filtros
 - Alteração de status
-
 - Histórico
 
-Status disponíveis
+**Status disponíveis:** Novo · Contatado · Reunião Marcada · Proposta Enviada · Fechado · Perdido
 
-- Novo
+## Versão 2.5
 
-- Contatado
-
-- Reunião Marcada
-
-- Proposta Enviada
-
-- Fechado
-
-- Perdido
-
----
-
-# Versão 2.5
-
-Produtividade
-
-Adicionar:
+**Produtividade:**
 
 - Observações internas
-
 - Responsável pelo lead
-
 - Prioridade
-
 - Upload de arquivos
-
 - Histórico de interações
 
----
+## Versão 3.0
 
-# Versão 3.0
-
-Automações
-
-Implementar:
+**Automações:**
 
 - Resposta automática
-
 - Follow-up automático
-
 - Lembretes
-
 - Notificações internas
-
 - Agendamento de reuniões
 
----
+## Versão 4.0
 
-# Versão 4.0
-
-CRM Completo
-
-Adicionar:
+**CRM completo:**
 
 - Pipeline comercial
-
 - Dashboard com métricas
-
 - Conversão por origem
-
-- Receita prevista
-
-- Receita fechada
-
+- Receita prevista e fechada
 - Tempo médio de fechamento
 
----
+## Integrações futuras
 
-# Integrações Futuras
+WhatsApp · Google Calendar · Google Meet · Notion · Slack · Discord · RD Station · Meta Pixel · Google Analytics
 
-- WhatsApp
-
-- Google Calendar
-
-- Google Meet
-
-- Notion
-
-- Slack
-
-- Discord
-
-- RD Station
-
-- Meta Pixel
-
-- Google Analytics
-
----
-
-# Métricas
-
-Acompanhar:
+## Métricas
 
 - Leads por mês
-
 - Conversão
-
 - Origem dos leads
-
 - Serviços mais solicitados
-
 - Tempo de resposta
-
 - Taxa de fechamento
-
 - Ticket médio
 
----
+## Objetivo final
 
-# Objetivo Final
-
-Transformar o Sistema de Captação em um CRM próprio da Dechen Web Studio.
-
-Toda a jornada comercial — desde o primeiro contato até a entrega do projeto — deverá acontecer dentro de um único ecossistema, organizado, seguro e escalável.
-
-O sistema deve reduzir tarefas manuais, melhorar a experiência do cliente e fornecer informações estratégicas para o crescimento da agência.
+Transformar captação em CRM próprio da Dechen Web Studio. Toda a jornada — do primeiro contato à entrega — em um ecossistema integrado com o [Sistema Comercial](../sales/00-visao.md), reduzindo tarefas manuais e fornecendo dados estratégicos.

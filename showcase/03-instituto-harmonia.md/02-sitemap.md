@@ -1,261 +1,145 @@
 # Sitemap — Instituto Harmonia
 
+**Tipo:** showcase · **Status:** ativo · **Versão:** 2.0
+
+Estrutura de navegação e função de cada seção. Brief: [00-projeto.md](00-projeto.md). Copy: [03-copy.md](03-copy.md). Brand: [01-brand-guide.md](01-brand-guide.md).
+
 ## Objetivo
 
-Organizar a estrutura de navegação do site para proporcionar uma experiência intuitiva, calma e orientada à conversão.
+Homepage intuitiva, calma e orientada à conversão. Cada seção tem **uma função** — informação crítica em poucos scrolls, sem mais de dois cliques.
 
-O visitante deve conseguir encontrar qualquer informação importante em poucos segundos.
+## Estrutura geral
 
----
-
-# Estrutura Geral
-
+```
 Home
-
-├── Hero
-
-├── Especialidades
-
-├── Equipe
-
-├── Como funciona
-
-├── Agendar
-
-├── Local
-
-└── Footer
-
----
-
-# Navegação
+├── Hero              → confiança imediata
+├── Especialidades    → oferta principal
+├── Equipe            → humanização (ficção demonstrativa)
+├── Como funciona     → reduzir fricção
+├── Agendar           → conversão WhatsApp
+├── Local             → presença física (fictícia)
+└── Footer            → contato + nota demonstrativa
+```
 
 ## Navbar
 
-Logo Instituto Harmonia
+| Elemento | Conteúdo |
+|----------|----------|
+| Logo | Instituto Harmonia |
+| Links | Especialidades · Equipe · Como funciona · Agendar · Local |
+| CTA | Agendar consulta |
 
-Links:
+Fixa no scroll. Marca sempre legível.
 
-- Especialidades
+## Hero
 
-- Equipe
+**Função:** marca, proposta e CTA em segundos.
 
-- Como funciona
+**Layout:** full-bleed com wash à esquerda. Sem cards sobre mídia.
 
-- Agendar
+| Elemento | Fonte |
+|----------|-------|
+| Marca | Instituto Harmonia |
+| Headline | [03-copy.md](03-copy.md) — Saúde com atenção de verdade. |
+| Apoio | Cuidado multidisciplinar com acolhimento real |
+| CTA primário | Agendar consulta |
+| CTA secundário | Ver especialidades |
+| Mídia | Foto full-bleed — [04-assets.md](04-assets.md) |
+| Pontos de confiança | 3 bullets — sem promessas absolutas |
 
-- Local
+## Especialidades
 
-CTA Principal:
+**Função:** apresentar seis áreas de cuidado em grid responsivo.
 
-Agendar consulta
+| Elemento | Conteúdo |
+|----------|----------|
+| Label | Especialidades |
+| Título | Cuidado completo, no mesmo lugar. |
+| Categorias | Clínica geral · Cardiologia · Dermatologia · Ortopedia · Nutrição · Telemedicina |
+| Layout | Grid com título, descrição e borda superior discreta |
+| Interação | Animação suave de entrada |
 
-A navbar deve permanecer fixa durante a navegação.
+Cada item: nome + descrição curta. Copy em [03-copy.md](03-copy.md).
 
----
+## Equipe
 
-# Hero
+**Função:** humanizar a clínica. **Bios fictícias — demonstrativas.**
 
-Objetivo:
+| Profissional | Cargo |
+|--------------|-------|
+| Dra. Helena Vasconcelos | Clínica geral · Diretora médica |
+| Dr. Marcus Oliveira | Cardiologista |
+| Dra. Sofia Mendes | Dermatologista |
 
-Transmitir confiança e acolhimento imediatamente.
+Cada card: foto, cargo, bio curta.
 
-Conteúdo:
+## Como funciona
 
-- Nome da marca como sinal principal
+**Função:** explicar o processo de agendamento em três passos.
 
-- Tagline: Saúde com atenção de verdade.
+| Passo | Título |
+|-------|--------|
+| 01 | Escolha a especialidade |
+| 02 | Agende pelo site |
+| 03 | Receba o cuidado |
 
-- Subheadline de apoio
+## Agendar
 
-- Botão "Agendar consulta"
+**Função:** converter visitante em contato via WhatsApp.
 
-- Botão secundário "Ver especialidades"
+| Elemento | Conteúdo |
+|----------|----------|
+| Título | Marque sua consulta pelo WhatsApp. |
+| Campos | Nome · Telefone/WhatsApp · Especialidade · Mensagem |
+| CTA | Enviar no WhatsApp |
+| Alternativa | Ou chame direto no WhatsApp |
 
-- Imagem full-bleed de ambiente clínico acolhedor
+Formulário monta mensagem pré-preenchida. Templates em [03-copy.md](03-copy.md).
 
-- Wash suave à esquerda
+## Local
 
-- Pontos de confiança
-
----
-
-# Especialidades
-
-Objetivo:
-
-Apresentar as áreas de cuidado de forma clara e organizada.
-
-Categorias:
-
-- Clínica geral
-
-- Cardiologia
-
-- Dermatologia
-
-- Ortopedia
-
-- Nutrição
-
-- Telemedicina
-
-Layout:
-
-Grid responsivo com título, descrição e borda superior discreta.
-
----
-
-# Equipe
-
-Objetivo:
-
-Humanizar a clínica e transmitir confiança.
-
-Conteúdo:
-
-- Dra. Helena Vasconcelos — Clínica geral · Diretora médica
-
-- Dr. Marcus Oliveira — Cardiologista
-
-- Dra. Sofia Mendes — Dermatologista
-
-Cada profissional possui foto, cargo e bio curta.
-
----
-
-# Como funciona
-
-Objetivo:
-
-Reduzir fricção e explicar o processo de agendamento.
-
-Passos:
-
-- 01 — Escolha a especialidade
-
-- 02 — Agende pelo site
-
-- 03 — Receba o cuidado
-
----
-
-# Agendar
-
-Objetivo:
-
-Converter visitantes em pacientes.
-
-Campos:
-
-- Nome
-
-- Telefone / WhatsApp
-
-- Especialidade
-
-- Mensagem
-
-CTA:
-
-Enviar no WhatsApp
-
-Link alternativo:
-
-Ou chame direto no WhatsApp
-
----
-
-# Local
-
-Objetivo:
-
-Facilitar a visita.
-
-Conteúdo:
+**Função:** facilitar visita. **Endereço e horários demonstrativos.**
 
 - Endereço: Rua Oscar Freire, 742 — Jardins, São Paulo — SP
-
-- Horário de funcionamento
-
+- Horário: Seg–Sex 8h–19h · Sáb 8h–13h · Dom fechado
 - Telefone: (11) 3088-4410
+- Galeria de ambiente (3 imagens)
 
-- Galeria de ambiente
+## Footer
 
----
-
-# Footer
-
-Conteúdo:
-
-- Logo
-
-- Tagline
-
-- Instagram
-
-- WhatsApp
-
-- Telefone
-
-- Endereço
-
-- Direitos autorais
-
+- Logo + tagline: Saúde com atenção de verdade.
+- Instagram · WhatsApp · Telefone · Endereço
+- © Instituto Harmonia. **Projeto demonstrativo.**
 - Crédito Dechen Web Studio
 
----
+## Jornada do visitante
 
-# Jornada do Usuário
+```
+Entrada (Hero)
+    ↓ confiança
+Especialidades
+    ↓ entende a oferta
+Equipe
+    ↓ humanização
+Como funciona
+    ↓ reduz fricção
+Agendar
+    ↓ conversão WhatsApp
+Local / Footer
+```
 
-Visitante
+## Prioridade da informação
 
-↓
+1. Hero — marca + CTA
+2. Especialidades — oferta
+3. Agendar — conversão
+4. Equipe — confiança
+5. Como funciona — processo
+6. Local — presença
 
-Hero
+## Regras
 
-↓
-
-Conhece as especialidades
-
-↓
-
-Conhece a equipe
-
-↓
-
-Entende como funciona
-
-↓
-
-Preenche formulário
-
-↓
-
-Agendamento via WhatsApp
-
----
-
-# Prioridade da Informação
-
-1. Hero
-
-2. Especialidades
-
-3. Agendar
-
-4. Equipe
-
-5. Como funciona
-
-6. Local
-
----
-
-# Experiência Esperada
-
-A navegação deve ser simples.
-
-Nenhuma informação importante deve exigir mais de dois cliques.
-
-Toda a estrutura deve conduzir naturalmente o visitante até o agendamento da consulta.
+- Hero full-bleed; sem cards no hero
+- Conteúdo fictício rotulado como demonstrativo
+- Copy sem overclaims médicos
+- DoD: **parece cliente real** — ver [00-projeto.md](00-projeto.md)

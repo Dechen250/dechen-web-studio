@@ -1,319 +1,157 @@
 # Assets — Vertex Consultoria
 
+**Tipo:** showcase · **Status:** ativo · **Versão:** 2.0
+
+Referências visuais do showcase. Brand: [01-brand-guide.md](01-brand-guide.md). Estrutura: [02-sitemap.md](02-sitemap.md). Brief: [00-projeto.md](00-projeto.md).
+
 ## Objetivo
 
-Este documento reúne todas as referências visuais, elementos gráficos, imagens e inspirações utilizadas no projeto Vertex Consultoria.
+Documentar mídia, motion e inspirações. Hero tipográfico — sem stock no centro. Métricas são **demonstrativas**.
 
-Todo desenvolvimento deve seguir estas referências.
+## Estilo fotográfico
 
----
+| Atributo | Direção |
+|----------|---------|
+| Luz | Controlada, tom frio |
+| Tom | Corporativo moderno, decisão executiva |
+| Composição | Horizontal 4:3 na galeria de resultados |
+| Tratamento | Natural; sem filtros quentes |
 
-# Estilo Fotográfico
-
-As fotografias devem transmitir:
-
-- Autoridade
-
-- Precisão
-
-- Ambiente corporativo moderno
-
-- Luz controlada e tom frio
-
-- Contexto de decisão executiva
-
-Priorizar fotografias horizontais em alta resolução, com aspect ratio 4:3 na galeria de resultados.
-
-Nunca utilizar foto de stock no centro do hero — o hero é tipográfico com grade geométrica.
-
----
-
-# Fotografias
+Evitar: stock genérico no hero, poses artificiais, estética de agência criativa.
 
 ## Hero
 
-Sem fotografia central.
+**Layout:** tipográfico full-bleed — sem fotografia central.
 
-O hero utiliza atmosfera tipográfica full-bleed com:
+Atmosfera construída com CSS puro:
 
-- Grade geométrica animada (64px × 64px, ciano 6% opacidade)
+| Elemento | Especificação |
+|----------|---------------|
+| Grade geométrica | 64×64px, ciano 6% opacidade, animação gridPulse 8s |
+| Glow radial | Ciano nos cantos, estático |
+| Decorativo | Quadrado com cruz e bordas ciano (desktop) |
+| Gradiente inferior | Transição suave para seção seguinte |
+| Marca | VERTEX. em Syne |
+| Headline | Tipografia display |
 
-- Glow radial ciano nos cantos
+Checklist:
 
-- Elemento decorativo: quadrado com cruz e bordas ciano (desktop)
+- [ ] Marca em destaque
+- [ ] Hierarquia headline > apoio > CTA
+- [ ] Sem cards flutuantes
+- [ ] Sem foto de stock central
 
-- Gradiente inferior para transição suave
+## Resultados (galeria)
 
-Preferencialmente:
+| # | Assunto | Path |
+|---|---------|------|
+| 1 | Escritório Vertex Consultoria | `/showcase/vertex-consultoria/resultados/escritorio.jpg` |
+| 2 | Reunião estratégica com equipe | `/showcase/vertex-consultoria/resultados/reuniao.jpg` |
+| 3 | Análise de indicadores de crescimento | `/showcase/vertex-consultoria/resultados/analise.jpg` |
 
-- Marca VERTEX. em Syne
-
-- Headline em tipografia display
-
-- Nenhuma imagem de pessoas ou stock no centro
-
----
-
-## Resultados
-
-Utilizar imagens de:
-
-- Escritório Vertex Consultoria
-
-- Reunião estratégica com equipe
-
-- Análise de indicadores de crescimento
-
-Paths:
-
-- `/showcase/vertex-consultoria/resultados/escritorio.jpg`
-
-- `/showcase/vertex-consultoria/resultados/reuniao.jpg`
-
-- `/showcase/vertex-consultoria/resultados/analise.jpg`
-
-Borda ciano discreta.
-
-Opacidade 85% com hover para 100%.
-
----
+Borda ciano discreta. Opacidade 85% → 100% no hover (500ms).
 
 ## Capa (portfólio)
 
-Imagem de capa para listagem no portfólio Dechen Web Studio.
-
-Path:
-
-- `/showcase/vertex-consultoria/capa/capa.jpg`
+Path: `/showcase/vertex-consultoria/capa/capa.jpg`
 
 Deve transmitir autoridade e estética dark/ciano alinhada ao site.
 
----
-
 ## Serviços
 
-Sem fotografias individuais por serviço.
+Sem fotografias individuais. Representação tipográfica em grid 2×2 com hover em surface alternada (`#121A24` → `#15202C`).
 
-Representação tipográfica em grid com hover em surface alternada.
+| Categoria | Destaques |
+|-----------|-----------|
+| Planejamento estratégico | Diagnóstico · Roadmap 12–36 meses · Priorização |
+| Gestão financeira | Fluxo de caixa · Precificação · Indicadores |
+| Operações & processos | Mapeamento · Otimização · Automação |
+| Mentoria executiva | Founders · Decisões críticas · Rituais de gestão |
 
-Categorias:
+## Logo e marca
 
-### Planejamento estratégico
+| Asset | Formato | Notas |
+|-------|---------|-------|
+| Logo principal | Texto Syne | VERTEX. — ponto em ciano |
+| Favicon | ICO / PNG 32×32 | Derivado da marca |
+| OG image | 1200×630 | Dark/ciano + headline |
 
-- Diagnóstico e metas
+## Ícones
 
-- Roadmap 12–36 meses
+- Estilo: outline, traço fino — usar com moderação
+- Preferir números (01–04) e tipografia como elementos visuais
 
-- Priorização de frentes
+## Ilustrações
 
-### Gestão financeira
+Evitar ilustrações genéricas. Hero construído com grade geométrica CSS — não banco de imagens.
 
-- Fluxo de caixa
+## Texturas
 
-- Precificação
-
-- Indicadores de decisão
-
-### Operações & processos
-
-- Mapeamento
-
-- Otimização
-
-- Automação
-
-### Mentoria executiva
-
-- Acompanhamento de founders
-
-- Decisões críticas
-
-- Rituais de gestão
-
----
-
-# Ícones
-
-Utilizar ícones minimalistas quando necessário.
-
-Traço fino.
-
-Outline.
-
-Nunca utilizar ícones exagerados ou decorativos em excesso.
-
-Preferir números (01–04) e tipografia como elementos visuais principais.
-
----
-
-# Ilustrações
-
-Evitar ilustrações genéricas.
-
-Priorizar grade geométrica CSS e elementos estruturais.
-
-A atmosfera do hero é construída com CSS puro — não com ilustrações de banco.
-
----
-
-# Texturas
-
-Utilizar discretamente:
+Usar com moderação:
 
 - Grade geométrica (hero-grid)
-
 - Bordas ciano semi-transparentes
-
 - Glow radial sutil
+- Separadores 1px rgba ciano
+- Gradientes escuros entre seções
 
-- Separadores de 1px em rgba ciano
+Nunca: texturas pesadas, dourado, gradientes roxos.
 
-- Gradientes escuros para transição entre seções
+## Componentes visuais
 
-Nunca utilizar texturas pesadas, douradas ou gradientes roxos.
+| Componente | Especificação |
+|------------|---------------|
+| Card | Cantos retos (`rounded-none`) · borda ciano · surface `#121A24` |
+| Botão primário | Ciano `#22D3EE` · glow no hover · `rounded-none` |
+| Input | Altura 48–56px · cantos retos |
+| Navbar | Fixa · scroll blur · borda inferior ciano |
 
----
+**Regra:** sem cards no hero; botões nunca arredondados.
 
-# Componentes
+## Motion
 
-Os componentes devem possuir:
+| Tipo | Duração | Curva |
+|------|---------|-------|
+| Hover botão | 400ms | ease-out |
+| Fade in scroll | 250–300ms | ease-out |
+| Grid pulse (hero) | 8s | ease-in-out infinite |
+| Hover galeria | 500ms | opacity 85%→100% |
 
-- Cantos retos (`rounded-none`)
+Evitar: bounce, shake, parallax pesado.
 
-- Bordas ciano discretas
+### Método
 
-- Sombras ciano no glow (botões primários)
+Fade-in up por etapa ao entrar na viewport. Separadores verticais entre colunas (desktop).
 
-- Espaço generoso entre seções
+### Serviços
 
-- Surface alternada (`#121A24`) para blocos de destaque
+Hover background `#121A24` → `#15202C`, transição suave.
 
----
+## Inspirações
 
-# Botões
+| Referência | O que observar |
+|------------|----------------|
+| Linear / Vercel / Stripe | Dark corporativo, tipografia, hierarquia |
+| Apple | Craft tipográfico |
+| Awwwards (dark B2B) | Scroll e motion discreto |
+| Consultorias estratégicas | Tom e autoridade — não visual literal |
 
-Características:
+Evitar: agências criativas genéricas, startups hype, Barbearia Royal (gold), Harmonia (teal), roxo.
 
-- Ciano sólido no primário
+## Responsividade
 
-- Hover suave para ciano soft
+| Breakpoint | Ajustes |
+|------------|---------|
+| Mobile (~390px) | Hero empilhado; CTA full-width; drawer mobile |
+| Tablet (768px) | Método 2 colunas; serviços 2 colunas |
+| Desktop (≥1280px) | Método 4 colunas; layout completo |
 
-- Transições de 400ms
+Grid método: 1→2→4 colunas. Grid serviços: 1→2 colunas.
 
-- Cantos retos (nunca arredondados)
+## Checklist de assets
 
-- Glow ciano no hover
-
-CTA principal:
-
-Falar com consultor
-
----
-
-# Animações
-
-Todas as animações devem transmitir precisão e elegância.
-
-Velocidade:
-
-Lenta.
-
-Natural.
-
-Suave.
-
-Nunca utilizar animações agressivas.
-
----
-
-## Hero
-
-Grade geométrica com animação gridPulse (8s ease-in-out infinite).
-
-Glow radial estático.
-
-Fade-in up no conteúdo (0.75s ease-out).
-
----
-
-## Método
-
-Fade-in up por etapa ao entrar na viewport.
-
-Separadores verticais entre colunas (desktop).
-
----
-
-## Serviços
-
-Hover em background de `#121A24` para `#15202C`.
-
-Transição de cor suave.
-
----
-
-## Resultados
-
-Fade-in up nas métricas e imagens.
-
-Hover de opacidade nas fotografias (85% → 100%, 500ms).
-
----
-
-# Inspirações
-
-Referências de experiência:
-
-- Linear
-
-- Vercel
-
-- Stripe
-
-- Apple (tipografia e hierarquia)
-
-- Awwwards (sites dark corporativos)
-
-- Consultorias estratégicas (tom e autoridade, não visual literal)
-
-Evitar referências visuais de:
-
-- Agências criativas genéricas
-
-- Startups com estética hype
-
-- Barbearia Royal (círculos dourados)
-
-- Harmonia (teal suave)
-
-- Gradientes roxos
-
----
-
-# Responsividade
-
-Todo componente deve funcionar perfeitamente em:
-
-- Desktop
-
-- Notebook
-
-- Tablet
-
-- Smartphone
-
-Nenhuma animação deve prejudicar a experiência mobile.
-
-Menu mobile com drawer compacto.
-
-Grid de método: 1 coluna (mobile), 2 colunas (tablet), 4 colunas (desktop).
-
-Grid de serviços: 1 coluna (mobile), 2 colunas (sm+).
-
----
-
-# Objetivo Final
-
-O visitante deve sentir que está navegando pelo site de uma consultoria real, sólida e preparada para apoiar decisões críticas.
-
-O projeto deve parecer uma marca consolidada e pronta para receber leads qualificados via WhatsApp.
+- [ ] Hero tipográfico definido (sem stock central)
+- [ ] 3 fotos de resultados listadas
+- [ ] Capa de portfólio preparada
+- [ ] Métricas rotuladas como demonstrativas
+- [ ] Resultado **parece cliente real**

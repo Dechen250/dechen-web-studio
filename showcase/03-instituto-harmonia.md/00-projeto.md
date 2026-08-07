@@ -1,274 +1,149 @@
-# Projeto Conceito — Instituto Harmonia
+# Projeto — Instituto Harmonia
+
+**Tipo:** showcase · **Status:** ativo · **Versão:** 2.0
+
+Brief do showcase fictício de clínica multidisciplinar. Documentação irmã: [01-brand-guide.md](01-brand-guide.md) · [02-sitemap.md](02-sitemap.md) · [03-copy.md](03-copy.md) · [04-assets.md](04-assets.md) · [05-prompts.md](05-prompts.md) · [06-roadmap.md](06-roadmap.md)
+
+> **Projeto demonstrativo.** Instituto Harmonia é uma clínica fictícia criada para o portfólio da Dechen Web Studio. Contatos, endereço e equipe são ficção editorial.
 
 ## Objetivo
 
-Criar um site premium para uma clínica fictícia que demonstre a capacidade da Dechen Web Studio de desenvolver experiências digitais elegantes, modernas e altamente funcionais.
+Criar um site premium que **pareça cliente real** — visitante acredita que a clínica existe — e demonstre a capacidade da Dechen Web Studio em experiências digitais para saúde e bem-estar.
 
-Este projeto fará parte do portfólio oficial da agência.
+## Sobre a marca
 
-O objetivo não é apenas apresentar uma clínica, mas mostrar aos futuros clientes o nível de qualidade que entregamos.
-
----
-
-# Sobre a Marca
-
-## Nome
+### Nome
 
 Instituto Harmonia
 
-## Segmento
+### Segmento
 
 Clínica multidisciplinar de saúde e bem-estar.
 
-## Posicionamento
+### Posicionamento
 
-Uma clínica que une rigor técnico, acolhimento genuíno e acompanhamento personalizado.
+Rigor técnico, acolhimento genuíno e acompanhamento personalizado. Confiança e cuidado humano — sem frieza hospitalar nem estética de spa genérico.
 
-Cada detalhe transmite confiança e cuidado humano sem parecer hospital frio nem spa genérico.
+> Saúde com atenção de verdade.
 
-## Público-alvo
+### Público-alvo
 
-Adultos de 28 a 65 anos.
+- Adultos de 28 a 65 anos e famílias
+- Profissionais que valorizam prevenção e cuidado contínuo
+- Quem busca atendimento claro, respeitoso e com processo transparente
 
-Famílias.
+## Personalidade
 
-Profissionais que valorizam prevenção e cuidado contínuo.
+| É | Não é |
+|---|-------|
+| Calma | Fria ou burocrática |
+| Confiável | Agressiva comercialmente |
+| Humana | Infantil ou genérica |
+| Clara | Exagerada ou artificial |
 
-Pessoas que buscam atendimento claro, respeitoso e sem burocracia.
+## Direção visual
 
----
+Tema **claro e fresco**. Sensação: tranquilidade, confiança, leveza.
 
-# Personalidade da Marca
+### Paleta
 
-A marca deve transmitir:
+| Token | Hex | Uso |
+|-------|-----|-----|
+| Off-white | `#F4F8F7` | Fundo principal |
+| Branco | `#FFFFFF` | Superfícies |
+| Teal primário | `#2A7A6E` | CTA, links |
+| Teal suave | `#3D9B8C` | Hover |
+| Texto | `#1A2E2B` | Corpo e títulos |
+| Muted | `#5A6F6A` | Apoios |
+| Borda | `#D5E4E0` | Divisores |
+| Acento claro | `#E8F3F0` | Destaques suaves |
 
-- Calma
-- Confiança
-- Humanidade
-- Clareza
-- Cuidado
-- Modernidade leve
+Referência: saúde, natureza, limpeza, acolhimento.
 
-Nunca deve parecer fria, burocrática, agressiva ou infantil.
+Evitar: azul de agência `#0070F3`, cream + terracotta, roxo, cards sobrepostos no hero.
 
----
+### Tipografia
 
-# Direção Visual
+- Display: **Fraunces** — humanista, respirada
+- Corpo: **Outfit** — limpa, legível
 
-O site deve possuir aparência clara e fresca.
+## Princípios de layout
 
-Não utilizar tema escuro.
+- **Hero full-bleed** — foto de ambiente com wash à esquerda; sem cards sobre a imagem
+- **Marca primeiro** — Instituto Harmonia legível antes de ornamentos
+- **Uma função por seção** — especialidades, equipe, agendamento e local separados
+- **Conteúdo demonstrativo rotulado** — clínica, contatos e bios são ficção editorial
 
-A experiência deve transmitir tranquilidade, confiança e leveza.
+Ver [01-brand-guide.md](01-brand-guide.md) e [04-assets.md](04-assets.md).
 
-## Paleta
+## Objetivos do site
 
-- Off-white `#F4F8F7`
-- Branco `#FFFFFF`
-- Teal primário `#2A7A6E`
-- Teal suave `#3D9B8C`
-- Texto escuro `#1A2E2B`
-- Texto secundário `#5A6F6A`
-- Borda `#D5E4E0`
-- Acento claro `#E8F3F0`
+- Apresentar a clínica e despertar confiança
+- Mostrar especialidades e equipe
+- Conduzir para agendamento via WhatsApp
+- Transmitir acolhimento sem promessas clínicas absolutas
 
-A paleta deve remeter à saúde, natureza e bem-estar — frescor, limpeza e acolhimento.
+## CTA principal
 
-Evitar: azul de agência `#0070F3`, combinações cream + terracotta, roxo e cards sobrepostos no hero.
+**Agendar consulta**
 
----
+Repetir em navbar, hero e seção Agendar. Microcopy em [03-copy.md](03-copy.md).
 
-# Estilo
+## Estrutura da homepage
 
-Minimalista.
+Detalhes em [02-sitemap.md](02-sitemap.md).
 
-Muito espaço em branco.
+| Seção | Função |
+|-------|--------|
+| Hero | Marca + tagline + CTA |
+| Especialidades | Seis áreas de cuidado em grid |
+| Equipe | Três profissionais fictícios |
+| Como funciona | Três passos até a consulta |
+| Agendar | Formulário → WhatsApp |
+| Local | Endereço, horários, galeria |
+| Footer | Contato + nota demonstrativa |
 
-Tipografia humanista e limpa.
+### Especialidades
 
-Grandes imagens.
+Grid responsivo com seis categorias: Clínica geral · Cardiologia · Dermatologia · Ortopedia · Nutrição · Telemedicina.
 
-Animações suaves.
-
-Microinterações.
-
-Utilizar Fraunces no display e Outfit no corpo, transmitindo calma, clareza e modernidade leve.
-
-Elementos da interface devem possuir cantos arredondados, sombras discretas e uma estética refinada, inspirada em clínicas contemporâneas acolhedoras.
-
-O visual deve priorizar a sensação de cuidado e confiança, sem excesso de efeitos visuais.
-
----
-
-# Objetivos do Site
-
-- Apresentar a clínica.
-- Despertar confiança.
-- Mostrar as especialidades.
-- Apresentar a equipe.
-- Facilitar agendamento.
-- Transmitir acolhimento e profissionalismo.
-
----
-
-# CTA Principal
-
-Agendar consulta
-
-Este botão deve aparecer diversas vezes ao longo do site.
-
----
-
-# Estrutura
-
-## Hero
-
-Imagem full-bleed de ambiente clínico acolhedor.
-
-Wash suave à esquerda para legibilidade.
-
-Nome da marca como sinal principal.
-
-Headline com tagline.
-
-CTA de agendamento.
-
----
-
-## Especialidades
-
-As especialidades devem ser um dos destaques do projeto.
-
-Não utilizar listas simples.
-
-Criar uma experiência visual organizada em grid.
-
-### Funcionamento
-
-Grid responsivo com seis áreas de cuidado.
-
-Categorias:
-
-- Clínica geral
-- Cardiologia
-- Dermatologia
-- Ortopedia
-- Nutrição
-- Telemedicina
-
-Cada item possui título e descrição curta.
-
-Animação suave.
-
-Elegante.
-
-Natural.
-
----
-
-## Equipe
-
-Apresentação dos profissionais.
-
-Mostrar:
+### Equipe (ficção demonstrativa)
 
 - Dra. Helena Vasconcelos — Clínica geral · Diretora médica
 - Dr. Marcus Oliveira — Cardiologista
 - Dra. Sofia Mendes — Dermatologista
 
-Fotos profissionais com bios curtas.
+### Como funciona
 
----
+1. Escolha a especialidade
+2. Agende pelo site
+3. Receba o cuidado
 
-## Como funciona
+### Agendar
 
-Três passos claros até a consulta.
+Campos: Nome · Telefone/WhatsApp · Especialidade · Mensagem → WhatsApp com mensagem pré-preenchida.
 
-Passos:
-
-- 01 — Escolha a especialidade
-- 02 — Agende pelo site
-- 03 — Receba o cuidado
-
----
-
-## Agendar
-
-Botão principal:
-
-Agendar consulta
-
-Campos:
-
-- Nome
-- Telefone / WhatsApp
-- Especialidade
-- Mensagem
-
-O formulário abre conversa no WhatsApp com mensagem pré-preenchida.
-
----
-
-## Local
-
-Endereço.
-
-Horários.
-
-Telefone.
-
-Galeria de ambiente.
-
----
-
-## Footer
-
-Instagram.
-
-WhatsApp.
-
-Telefone.
-
-Endereço.
-
----
-
-# Funcionalidades
+## Funcionalidades
 
 - Formulário de agendamento via WhatsApp
-- Navegação por âncoras
-- Apresentação de especialidades
-- Equipe médica
-- Localização e horários
-- WhatsApp
-- Instagram
+- Navegação fixa com scroll suave por âncoras
+- Grid de especialidades e galeria de ambiente
 - Responsividade completa
 
----
+## Inspirações
 
-# Inspirações
-
-- Clínicas premium de São Paulo
-- Consultórios contemporâneos nos Jardins
+- Clínicas premium de São Paulo e consultórios nos Jardins
 - Experiências digitais de saúde humanizadas
-- Referências de design: Apple, Airbnb, Awwwards
+- Referências de craft: Apple, Airbnb, Awwwards (estrutura e hierarquia — não copiar visual)
 
----
+## Definition of Done
 
-# Experiência
+- [ ] Parece **cliente real**; ficção transparente no footer
+- [ ] Hero full-bleed; marca em destaque; sem cards no hero
+- [ ] Copy sem overclaims médicos ou promessas absolutas de resultado
+- [ ] Copy em [03-copy.md](03-copy.md); assets em [04-assets.md](04-assets.md)
+- [ ] Lighthouse Performance / SEO / Best Practices ≥ 95
 
-O visitante deve sentir que está conhecendo uma clínica real e acolhedora.
+## Objetivo para a Dechen Web Studio
 
-O site deve despertar vontade de agendar uma consulta antes mesmo do primeiro contato.
-
----
-
-# Objetivo para a Dechen Web Studio
-
-Este projeto deve parecer um trabalho entregue para um cliente real.
-
-Não deve aparentar ser uma demonstração.
-
-Qualquer visitante do portfólio deve acreditar que a clínica realmente existe.
-
-Este projeto servirá como referência para futuras demonstrações da agência.
+Case de portfólio que convence futuros clientes: brief completo, execução alinhada, resultado que **parece entrega real** — com ficção claramente rotulada.

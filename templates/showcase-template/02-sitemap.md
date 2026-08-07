@@ -1,254 +1,147 @@
 # Sitemap — [Nome do Projeto]
 
-> **Template oficial Dechen Web Studio**  
-> Adapte seções e labels ao segmento **[Segmento]**.
+**Tipo:** template · **Status:** ativo · **Versão:** 2.0
+
+Estrutura de navegação e função de cada seção. Brief: [00-projeto.md](00-projeto.md). Copy: [03-copy.md](03-copy.md). Brand: [01-brand-guide.md](01-brand-guide.md).
 
 ## Objetivo
 
-Organizar a estrutura de navegação do site para proporcionar uma experiência intuitiva, elegante e orientada à conversão.
+Organizar a homepage para que o visitante encontre informação e converta em poucos scrolls. Cada seção tem **uma função** — sem misturar apresentação, prova e conversão no mesmo bloco.
 
-O visitante deve conseguir encontrar qualquer informação importante em poucos segundos.
+## Estrutura geral
 
----
-
-# Estrutura Geral
-
+```
 Home
-
-├── Hero
-
-├── Sobre
-
-├── [Seção de Destaque — ex.: Serviços / Produtos / Planos]
-
-├── [Seção Visual — ex.: Galeria / Ambiente / Portfólio]
-
-├── [Seção de Conversão — ex.: Contato / Agendamento / Reservas]
-
-├── Localização
-
-└── Footer
-
----
-
-# Navegação
+├── Hero              → interesse imediato
+├── Sobre             → quem somos
+├── [Seção destaque]  → oferta principal
+├── [Seção visual]    → prova por imagem
+├── [Seção conversão] → lead / agendamento
+├── Localização       → presença física
+└── Footer            → contato e nota demonstrativa
+```
 
 ## Navbar
 
-Logo [Nome do Projeto]
+| Elemento | Conteúdo |
+|----------|----------|
+| Logo | [Nome do Projeto] |
+| Links | Sobre · [Link destaque] · [Link visual] · [Link conversão] · Localização |
+| CTA | [Texto do CTA] |
 
-Links:
+Fixa no scroll. Marca sempre legível.
 
-- Sobre
+## Hero
 
-- [Link da seção de destaque]
+**Função:** apresentar marca, proposta e CTA em segundos.
 
-- [Link da seção visual]
+**Layout:** full-bleed. Sem cards sobre mídia.
 
-- [Link da seção de conversão]
+| Elemento | Fonte |
+|----------|-------|
+| Headline | [03-copy.md](03-copy.md) — Hero |
+| Apoio | 1–2 frases |
+| CTA primário | [Texto do CTA] |
+| CTA secundário (opcional) | [ex.: Ver serviços] |
+| Mídia | [Foto full-bleed / atmosfera tipográfica — ver 04-assets.md](04-assets.md) |
 
-- Localização
+## Sobre
 
-CTA Principal:
+**Função:** humanizar a marca — origem, missão, diferencial.
 
-[Texto do CTA]
+| Elemento | Conteúdo |
+|----------|----------|
+| Título | [Título da seção] |
+| Texto | 2–3 parágrafos curtos |
+| Destaque opcional | [Número ou frase — se demonstrativo, rotular] |
 
-A navbar deve permanecer fixa durante a navegação.
+## [Seção de destaque — ex.: Serviços / Produtos / Planos]
 
----
+**Função:** mostrar a oferta principal com hierarquia clara.
 
-# Hero
+| Elemento | Conteúdo |
+|----------|----------|
+| Título | [Título] |
+| Introdução | 1 frase de contexto |
+| Categorias | [Cat. 1] · [Cat. 2] · [Cat. 3] · [Cat. 4] |
+| Interação | [Tabs / carrossel / grid estático — descrever] |
+| Preços (se houver) | Rotular **demonstrativo** |
 
-Objetivo:
+Cada categoria: nome + descrição curta + [preço ou duração demonstrativa].
 
-Criar interesse imediatamente.
+## [Seção visual — ex.: Galeria / Ambiente / Portfólio]
 
-Conteúdo:
+**Função:** prova visual — o visitante vê o negócio, não só lê.
 
-- Headline
+| Elemento | Conteúdo |
+|----------|----------|
+| Título | [Título] |
+| Apoio | 1–2 frases |
+| Mídia | [3–6 imagens — ver 04-assets.md](04-assets.md) |
+| Layout | [Grid / carrossel / mosaico] |
 
-- Subheadline
+## [Seção de conversão — ex.: Contato / Agendamento]
 
-- Botão "[Texto do CTA]"
+**Função:** capturar lead ou iniciar conversa.
 
-- Imagem principal do negócio
+| Elemento | Conteúdo |
+|----------|----------|
+| Título | [Título] |
+| Apoio | Convite + expectativa de retorno |
+| Campos | [Campo 1] · [Campo 2] · [Campo 3] · [Campo 4] |
+| CTA | [Texto do CTA] |
+| Alternativa | [WhatsApp / telefone — se aplicável] |
 
----
+Estados: enviando, sucesso, erro — ver [03-copy.md](03-copy.md).
 
-# Sobre
+## Localização
 
-Objetivo:
+**Função:** facilitar visita presencial ou contato direto.
 
-Apresentar a história da marca.
+- Endereço: [Endereço fictício ou placeholder]
+- Horário: [Horário de funcionamento]
+- Telefone: [(XX) XXXXX-XXXX]
+- WhatsApp: [link ou número]
+- Mapa: embed Google Maps ou placeholder
 
-Conteúdo:
+## Footer
 
-- História
+- Logo [Nome do Projeto]
+- Links rápidos (mesmos da navbar)
+- Redes: [Instagram] · [LinkedIn] · [outra]
+- Endereço e telefone
+- © [ano] [Nome do Projeto]. **Projeto demonstrativo.**
 
-- Filosofia
+## Jornada do visitante
 
-- [Diferencial 1 do segmento]
-
-- [Proposta de valor / experiência oferecida]
-
----
-
-# [Seção de Destaque]
-
-Objetivo:
-
-Apresentar [produtos / serviços / planos] de forma elegante.
-
-Categorias:
-
-- [Categoria 1]
-
-- [Categoria 2]
-
-- [Categoria 3]
-
-- [Categoria 4]
-
-Funcionalidade:
-
-[Descreva interação — ex.: carrossel automático, filtros, tabs.]
-
-O visitante também poderá navegar manualmente, se aplicável.
-
----
-
-# [Seção Visual]
-
-Objetivo:
-
-Mostrar o negócio visualmente.
-
-Conteúdo:
-
-- Galeria de fotos
-
-- [Elemento 1]
-
-- [Elemento 2]
-
-- [Elemento 3]
-
-- [Elemento 4]
-
----
-
-# [Seção de Conversão]
-
-Objetivo:
-
-Converter visitantes em clientes ou leads.
-
-Campos:
-
-- [Campo 1]
-
-- [Campo 2]
-
-- [Campo 3]
-
-- [Campo 4]
-
-- [Campo 5]
-
-CTA:
-
-[Texto do CTA]
-
----
-
-# Localização
-
-Objetivo:
-
-Facilitar o contato presencial ou a visita.
-
-Conteúdo:
-
-- Endereço
-
-- Horário de funcionamento
-
-- Telefone
-
-- WhatsApp
-
-- Google Maps
-
----
-
-# Footer
-
-Conteúdo:
-
-- Logo
-
-- Redes sociais
-
-- Endereço
-
-- Telefone
-
-- Direitos autorais
-
----
-
-# Jornada do Usuário
-
-Visitante
-
-↓
-
-Hero
-
-↓
-
-Conhece o negócio
-
-↓
-
-Visualiza [seção de destaque]
-
-↓
-
-Conhece [seção visual]
-
-↓
-
-Decide [ação de conversão]
-
-↓
-
-[Conversão realizada — ex.: contato enviado, agendamento solicitado]
-
----
-
-# Prioridade da Informação
-
-1. Hero
-
-2. [Seção de destaque]
-
-3. [Seção de conversão]
-
-4. [Seção visual]
-
-5. Sobre
-
-6. Localização
-
-> Ajuste a ordem conforme o objetivo principal do segmento.
-
----
-
-# Experiência Esperada
-
-A navegação deve ser simples.
-
-Nenhuma informação importante deve exigir mais de dois cliques.
-
-Toda a estrutura deve conduzir naturalmente o visitante até [ação de conversão principal].
+```
+Entrada (Hero)
+    ↓ confiança inicial
+Sobre
+    ↓ contexto
+[Seção destaque]
+    ↓ entende a oferta
+[Seção visual]
+    ↓ vê prova
+[Seção conversão]
+    ↓ age
+Localização / Footer
+```
+
+## Prioridade da informação
+
+Ordem sugerida no scroll (ajustar ao segmento):
+
+1. Hero — marca + CTA
+2. [Seção destaque] — oferta
+3. [Seção conversão] — conversão
+4. [Seção visual] — prova
+5. Sobre — contexto
+6. Localização — presença
+
+## Regras
+
+- Nenhuma informação crítica exige mais de dois cliques
+- Hero full-bleed; sem cards no hero
+- Conteúdo fictício sempre rotulado
+- DoD: **parece cliente real** — ver [00-projeto.md](00-projeto.md)

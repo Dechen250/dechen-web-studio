@@ -1,20 +1,21 @@
-Aqui está a página completa, já reescrita para copiar e colar.
+# Sistema — Royal Growth
 
-# SISTEMA
+**Tipo:** copy · **Status:** ativo · **Versão:** 2.0 · fonte SITE 2026
 
-## Título
-
-Escala depende de como a operação responde ao próprio crescimento.
+Copy da página Sistema. Tom: [0.0 - REFINO DO TEXTO.md](./0.0%20-%20REFINO%20DO%20TEXTO.md). Estrutura: [0.1 - ESTRUTURA.md](./0.1%20-%20ESTRUTURA.md). Implementação: [03-copy.md](../03-copy.md).
 
 ---
 
 ## Introdução
 
+**Título**  
+Escala depende de como a operação responde ao próprio crescimento.
+
 Crescer, por si só, raramente é o problema.
 
 Em algum momento, a demanda aparece, o investimento aumenta e o time acompanha. O ponto mais sensível começa depois, quando esse crescimento passa a exigir cada vez mais esforço para continuar acontecendo com consistência.
 
-Não costuma ser uma ruptura visível. É um desgaste progressivo.
+O que costuma aparecer é um desgaste progressivo — não uma ruptura visível.
 
 O que antes fluía passa a depender de atenção constante. Pequenos atrasos deixam de ser pontuais. O resultado continua vindo, mas com menos estabilidade, menos controle e mais necessidade de intervenção.
 
@@ -78,17 +79,14 @@ Ela não substitui leitura, estratégia ou processo. Ela garante que o que já p
 
 Na prática, isso significa preservar ritmo, reduzir esquecimentos, manter cadências, distribuir etapas e dar sequência ao fluxo sem transformar cada avanço em esforço operacional.
 
-O ganho não está só em velocidade.
-
-Está em consistência.
+O ganho principal está em consistência — não apenas em velocidade.
 
 ---
 
 ## Integração
 
-## Tecnologia deve servir ao processo.
-
-## Não o contrário.
+**Título**  
+Tecnologia deve servir ao processo. Não o contrário.
 
 As ferramentas passam a ter função clara dentro da operação.
 
@@ -108,9 +106,7 @@ Quando a operação é organizada, o comportamento da empresa muda.
 
 O crescimento deixa de oscilar tanto com a execução individual. O aumento de volume já não exige expansão proporcional de time para continuar funcionando. O processo ganha mais estabilidade, mais continuidade e mais capacidade de sustentar resultado sem depender de correção constante.
 
-O que muda não é apenas o volume vendido.
-
-É a forma como esse volume passa a ser absorvido.
+O que muda vai além do volume vendido: muda a forma como esse volume passa a ser absorvido.
 
 ---
 
@@ -122,8 +118,5 @@ Escalar não é apenas acelerar.
 
 Quando o processo suporta o próprio crescimento, a empresa deixa de depender de esforço crescente para continuar avançando. O resultado ganha continuidade. A operação ganha controle. E a escala deixa de ser uma fase instável para se tornar uma condição construída.
 
----
-
-## CTA
-
+**CTA**  
 Solicitar diagnóstico

@@ -1,217 +1,178 @@
 # Prompts — Vertex Consultoria
 
-## Objetivo
+**Tipo:** showcase · **Status:** ativo · **Versão:** 2.0
 
-Este documento reúne os prompts utilizados durante o desenvolvimento do projeto Vertex Consultoria.
+Prompts para desenvolvimento do showcase. Antes de gerar código, ler toda a pasta:
 
-Todos os prompts devem seguir rigorosamente a documentação existente nesta pasta.
+- [00-projeto.md](00-projeto.md)
+- [01-brand-guide.md](01-brand-guide.md)
+- [02-sitemap.md](02-sitemap.md)
+- [03-copy.md](03-copy.md)
+- [04-assets.md](04-assets.md)
+- [06-roadmap.md](06-roadmap.md)
 
-Antes de gerar qualquer código, a IA deve obrigatoriamente ler:
+Nenhuma decisão de UI ou copy deve contradizer esses documentos.
 
-- 00-projeto.md
+## Regras gerais (todas as fases)
 
-- 01-brand-guide.md
-
-- 02-sitemap.md
-
-- 03-copy.md
-
-- 04-assets.md
-
-Nenhuma decisão deve contrariar esses documentos.
+1. **Hero tipográfico full-bleed** — grade geométrica; sem foto de stock central
+2. **Marca primeiro** — VERTEX. (ponto ciano) legível no hero e navbar
+3. **Uma função por seção**
+4. **Métricas rotuladas como demonstrativas** — 38%, 2.4x, 90 dias
+5. **Botões rounded-none** — nunca arredondados
+6. Copy exata de [03-copy.md](03-copy.md) — não reescrever
+7. Nunca copiar visual de outros showcases (gold, teal, roxo)
+8. Lighthouse Performance / SEO / Best Practices ≥ 95
 
 ---
 
-# Prompt 01 — Desenvolvimento Inicial
+## Prompt 01 — Desenvolvimento inicial
 
-Você é o Lead Product Designer e Front-end Engineer da Dechen Web Studio.
+```
+Você é o desenvolvedor front-end da Dechen Web Studio.
 
-Sua missão é desenvolver o projeto Vertex Consultoria seguindo rigorosamente toda a documentação desta pasta.
+Desenvolva o showcase Vertex Consultoria (consultoria B2B fictícia)
+seguindo rigorosamente os arquivos desta pasta.
 
-Objetivo:
+Leia antes de codar:
+- 00-projeto.md, 01-brand-guide.md, 02-sitemap.md, 03-copy.md, 04-assets.md
 
-Criar um site premium para uma consultoria estratégica fictícia do segmento B2B.
-
-O resultado deve parecer um projeto entregue para um cliente real.
-
-Prioridades:
-
-- Experiência do usuário
-
-- Performance
-
-- Autoridade visual
-
-- Responsividade
-
-- Código limpo
-
-Requisitos visuais obrigatórios:
-
-- Tema escuro cold slate (#0B1118) + acento ciano (#22D3EE)
-
-- Tipografia Syne (display) + Manrope (sans)
-
-- Hero tipográfico full-bleed com grade geométrica — sem foto de stock no centro
-
-- Botões com cantos retos (rounded-none)
-
+Regras de layout:
+- Hero tipográfico full-bleed; grade geométrica; sem stock no centro
+- Tema escuro: cold slate #0B1118 + ciano #22D3EE
+- Syne (display) + Manrope (corpo); marca VERTEX.
+- Botões rounded-none
 - Seções: Hero → Método → Serviços → Resultados → Sobre → Contato → Footer
-
 - Formulário Nome, Empresa, Telefone, Desafio → WhatsApp
+- Métricas rotuladas como demonstrativas
 
-Nunca alterar a identidade da marca.
+Stack: Next.js (App Router), React, TypeScript, Tailwind CSS.
 
-Nunca copiar visual de outros showcases (Barbearia gold, Harmonia teal, gradientes roxos).
-
----
-
-# Prompt 02 — Melhorias
-
-Sua missão é melhorar o projeto existente.
-
-Não refaça o site.
-
-Mantenha toda a identidade visual.
-
-Melhore apenas:
-
-- UX
-
-- Performance
-
-- Microinterações
-
-- Responsividade
-
-- Organização do código
-
-- Acessibilidade
-
-Evite alterações desnecessárias.
-
-Preserve o hero tipográfico e a paleta dark/ciano.
+DoD: parece cliente real; ficção rotulada no footer.
+```
 
 ---
 
-# Prompt 03 — Componentes
+## Prompt 02 — Melhorias incrementais
 
-Crie componentes reutilizáveis para o projeto.
+```
+Melhore o showcase Vertex Consultoria existente.
 
-Seguir toda a documentação.
+NÃO refaça o site do zero. Mantenha identidade visual e sitemap.
 
-Priorizar:
+Melhorar apenas:
+- UX e fluxo de conversão
+- Microinterações (hover, fade-in up, grid pulse — sem exagero)
+- Responsividade e acessibilidade (focus, contraste, teclado)
+- Performance e organização do código
 
-- Legibilidade
+Preserve hero tipográfico e paleta dark/ciano.
 
-- Reutilização
+DoD: parece cliente real.
+```
 
-- Organização
+---
+
+## Prompt 03 — Componentes
+
+```
+Extraia componentes reutilizáveis do showcase Vertex Consultoria.
+
+Seguir tokens de 01-brand-guide.md e anatomia de 04-assets.md.
 
 Componentes esperados:
-
-- Navbar (fixa, scroll blur, menu mobile)
-
-- Hero (grade geométrica, VERTEX., headline, CTAs)
-
+- Navbar (fixa, scroll blur, menu mobile, VERTEX.)
+- Hero (grade geométrica, headline, CTAs)
 - Method (grid 4 etapas)
-
 - Services (grid 2×2)
-
-- Results (métricas + galeria)
-
+- Results (métricas demonstrativas + galeria)
 - About (pontos com borda ciano)
-
-- Contact (formulário → WhatsApp)
-
-- Footer
-
+- Contact (form → WhatsApp)
+- Footer (nota demonstrativa)
 - UI (Button, SectionHeading, FadeIn)
 
+Botões: rounded-none. Métricas: flag demonstrativa.
 Não instalar bibliotecas sem necessidade.
+```
 
 ---
 
-# Prompt 04 — Animações
+## Prompt 04 — Animações
 
-Adicionar microinterações elegantes.
+```
+Adicione motion ao showcase Vertex Consultoria.
 
-Nunca exagerar.
+Referência: 04-assets.md (Motion).
 
-Priorizar:
+Permitido:
+- Hover em botões (400ms, ease-out, glow ciano)
+- Fade-in up no scroll (Intersection Observer)
+- Grid pulse no hero (8s ease-in-out)
+- Hover opacidade na galeria (85%→100%)
 
-- Hover
+Proibido:
+- Parallax pesado, bounce, shake
+- Animações agressivas ou que atrasem leitura
+- Cards animados no hero
 
-- Fade
-
-- Fade-in up
-
-- Grid pulse no hero
-
-- Scroll Reveal
-
-- Transições naturais (400ms)
-
-Toda animação deve parecer precisa e sofisticada — nunca agressiva ou chamativa.
-
----
-
-# Prompt 05 — Responsividade
-
-Revisar completamente a responsividade.
-
-Garantir excelente experiência em:
-
-- Desktop
-
-- Notebook
-
-- Tablet
-
-- Smartphone
-
-Nenhum componente deve quebrar.
-
-Menu mobile funcional.
-
-Grids adaptáveis (método 1→2→4 colunas, serviços 1→2 colunas).
+Toda animação deve parecer precisa e sofisticada.
+```
 
 ---
 
-# Prompt 06 — Performance
+## Prompt 05 — Responsividade
 
-Revisar o projeto buscando:
+```
+Revise responsividade completa do showcase Vertex Consultoria.
 
-- Performance
+Breakpoints: mobile (~390px), tablet (768px), desktop (≥1280px).
 
-- SEO
-
-- Acessibilidade
-
-- Código limpo
-
-Eliminar código duplicado.
-
-Melhorar organização sempre que possível.
-
-Configurar meta tags, Open Graph e JSON-LD para Vertex Consultoria.
+Verificar:
+- Hero tipográfico legível em todas as larguras
+- Navbar → menu mobile funcional (drawer)
+- CTAs tocáveis (min 44px)
+- Grid método: 1→2→4 colunas
+- Grid serviços: 1→2 colunas
+- Formulário usável no mobile
+- Nenhum overflow horizontal
+```
 
 ---
 
-# Regras Gerais
+## Prompt 06 — Performance e SEO
 
-Sempre seguir a documentação.
+```
+Audite performance e SEO do showcase Vertex Consultoria.
 
-Nunca criar elementos que contrariem a identidade da marca.
+Metas: Lighthouse Performance, SEO, Best Practices ≥ 95.
 
-Toda melhoria deve aumentar a percepção de qualidade do projeto.
+Verificar:
+- Meta title e description de 03-copy.md
+- OG tags, favicon, JSON-LD (ProfessionalService)
+- Imagens: lazy load; hero sem foto pesada
+- HTML semântico (header, main, section, footer)
+- Alt text em galeria de resultados
+- Footer: "Projeto demonstrativo."
+```
 
-A experiência do usuário deve ter prioridade sobre efeitos visuais.
+---
 
-Nunca usar foto de stock no centro do hero.
+## Contato demonstrativo
 
-Nunca usar cantos arredondados nos botões.
+| Canal | Valor |
+|-------|-------|
+| Telefone | (11) 3045-8890 |
+| WhatsApp | 551130458890 |
+| E-mail | contato@vertexconsultoria.com.br |
+| Endereço | Av. Brigadeiro Faria Lima, 3477 — Itaim Bibi, São Paulo — SP |
+| LinkedIn | linkedin.com/company/vertexconsultoria |
 
-Nunca usar paleta dourada, teal suave ou gradientes roxos.
+Assets: `/showcase/vertex-consultoria/{capa,resultados}`
 
-O objetivo é criar um projeto que possa ser apresentado como um case real da Dechen Web Studio no segmento de consultoria B2B.
+## Checklist antes de entregar
+
+- [ ] Documentação da pasta lida e respeitada
+- [ ] Hero tipográfico; sem stock central; rounded-none
+- [ ] Métricas rotuladas como demonstrativas
+- [ ] Responsivo e Lighthouse ≥ 95
+- [ ] **Parece cliente real**

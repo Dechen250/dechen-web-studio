@@ -1,262 +1,142 @@
-# Projeto Conceito — Divina Cozinha
+**Tipo:** brief · **Status:** ativo · **Versão:** 2.0
+
+> Projeto fictício de portfólio — marca, contatos, preços e reservas são **demonstrativos**.
+
+# Divina Cozinha — Brief do Projeto
+
+Pack: [01-brand-guide.md](01-brand-guide.md) · [02-sitemap.md](02-sitemap.md) · [03-copy.md](03-copy.md) · [04-assets.md](04-assets.md) · [05-prompts.md](05-prompts.md) · [06-roadmap.md](06-roadmap.md)
 
 ## Objetivo
 
-Criar um site premium para um restaurante fictício que demonstre a capacidade da Dechen Web Studio de desenvolver experiências digitais elegantes, modernas e altamente funcionais.
+Site premium para restaurante fictício que demonstra a capacidade da Dechen Web Studio em experiências digitais elegantes, funcionais e orientadas à reserva. Case de referência em gastronomia contemporânea e hospitalidade digital.
 
-Este projeto fará parte do portfólio oficial da agência.
+O visitante do portfólio deve perceber um projeto entregue — não uma demo superficial.
 
-O objetivo não é apenas apresentar um restaurante, mas mostrar aos futuros clientes o nível de qualidade que entregamos.
+## Marca
 
----
+| Campo | Valor |
+|-------|-------|
+| Nome | Divina Cozinha |
+| Segmento | Restaurante de culinária contemporânea |
+| Tagline | Uma experiência gastronômica inesquecível. |
+| Posicionamento | Sofisticação que une gastronomia, ambiente acolhedor e atendimento impecável |
 
-# Sobre a Marca
+### Público-alvo
 
-## Nome
+Adultos de 25 a 60 anos — casais, famílias, executivos, turistas. Valorizam boa gastronomia e experiências memoráveis.
 
-Divina Cozinha
+### Personalidade
 
-## Segmento
+**Transmitir:** elegância, sofisticação, leveza, exclusividade, conforto, hospitalidade.
 
-Restaurante de culinária contemporânea.
+**Evitar:** frieza, luxo excessivo, barulho, artificialidade.
 
-## Posicionamento
+## Direção visual
 
-Um restaurante sofisticado que une gastronomia, ambiente acolhedor e atendimento impecável.
+Tema **claro** — nunca escuro. Minimalista, com espaço em branco generoso, tipografia elegante e fotografias em destaque.
 
-Cada detalhe transmite elegância sem parecer exagerado.
+### Paleta
 
-## Público-alvo
+| Token | Hex | Uso |
+|-------|-----|-----|
+| `--dc-bg` | `#FAF9F6` | Fundo principal |
+| `--dc-surface` | `#FFFDF8` | Cards, blocos |
+| `--dc-text` | `#3D3832` | Texto principal |
+| `--dc-muted` | `#6B6560` | Texto secundário |
+| `--dc-olive` | `#8B9A7D` | Acento natural |
+| `--dc-gold` | `#C9A962` | Destaques, CTAs |
+| `--dc-border` | `#E8E0D4` | Bordas |
 
-Adultos de 25 a 60 anos.
+Remete a ingredientes naturais, madeira, cerâmica e luz natural.
 
-Casais.
+### Tipografia
 
-Famílias.
+- **Display:** Cormorant Garamond — títulos e headlines
+- **Corpo:** Source Sans 3 — textos, labels, botões
 
-Executivos.
+## CTA principal
 
-Pessoas que valorizam boa gastronomia e experiências.
+**Reservar mesa** — navbar, hero, seção de reservas.
 
----
+## Estrutura da homepage
 
-# Personalidade da Marca
+1. **Hero** — headline, subheadline, CTA, imagem principal
+2. **Sobre** — história, filosofia, experiência gastronômica
+3. **Cardápio** — 4 categorias com troca automática a cada 10s (efeito virada de página)
+4. **Ambiente** — galeria de 6 imagens
+5. **Reservas** — formulário **demonstrativo**, sem envio real
+6. **Localização** — endereço, horários, mapa embed
+7. **Footer** — contato, redes, créditos Dechen
 
-A marca deve transmitir:
+Copy completa em [03-copy.md](03-copy.md). Mapa de seções em [02-sitemap.md](02-sitemap.md).
 
-- Elegância
-- Sofisticação
-- Leveza
-- Exclusividade
-- Conforto
-- Hospitalidade
+## Cardápio (preços demonstrativos)
 
-Nunca deve parecer fria ou luxuosa em excesso.
+### Entradas
 
----
+| Prato | Preço |
+|-------|-------|
+| Bruschetta de tomate confit | R$ 48 |
+| Burrata com figos | R$ 62 |
+| Carpaccio de vitela | R$ 58 |
 
-# Direção Visual
+### Pratos principais
 
-O site deve possuir aparência clara.
+| Prato | Preço |
+|-------|-------|
+| Risoto de funghi | R$ 89 |
+| Linguine ao frutos do mar | R$ 98 |
+| Filé ao molho de vinho | R$ 112 |
 
-Não utilizar tema escuro.
+### Sobremesas
 
-A experiência deve transmitir leveza e sofisticação.
+| Prato | Preço |
+|-------|-------|
+| Cheesecake de frutas vermelhas | R$ 38 |
+| Tiramisù clássico | R$ 42 |
+| Petit gâteau | R$ 45 |
 
-## Paleta
+### Bebidas
 
-- Off-white
-- Branco quente
-- Bege
-- Tons pastel
-- Verde oliva suave
-- Marrom claro
-- Dourado discreto
+| Item | Preço |
+|------|-------|
+| Seleção de vinhos | A partir de R$ 68 |
+| Spritz Divina | R$ 36 |
+| Espresso & digestivos | R$ 18 |
 
-A paleta deve remeter à gastronomia e ao aconchego.
+## Contato e localização (fictícios)
 
----
-
-# Estilo
-
-Minimalista.
-
-Muito espaço em branco.
-
-Tipografia elegante.
-
-Grandes imagens.
-
-Animações suaves.
-
-Microinterações.
-
-Utilizar uma paleta baseada em tons pastéis, transmitindo leveza, elegância e aconchego.
-
-Elementos da interface devem possuir cantos suaves, sombras discretas e uma estética refinada, inspirada em restaurantes contemporâneos.
-
-O visual deve priorizar a sensação de conforto e sofisticação, sem excesso de efeitos visuais.
-
----
-
-# Objetivos do Site
-
-- Apresentar o restaurante.
-- Despertar desejo.
-- Mostrar os pratos.
-- Mostrar o ambiente.
-- Facilitar reservas.
-- Transmitir confiança.
-
----
-
-# CTA Principal
-
-Reservar mesa
-
-Este botão deve aparecer diversas vezes ao longo do site.
-
----
-
-# Estrutura
-
-## Hero
-
-Imagem grande.
-
-Headline impactante.
-
-CTA de reserva.
-
----
-
-## Sobre
-
-História do restaurante.
-
-Missão.
-
-Experiência gastronômica.
-
----
-
-## Cardápio
-
-O cardápio deve ser um dos destaques do projeto.
-
-Não utilizar listas simples.
-
-Criar uma experiência visual.
-
-### Funcionamento
-
-O cardápio muda automaticamente a cada 10 segundos.
-
-Categorias:
-
-- Entradas
-- Pratos Principais
-- Sobremesas
-- Bebidas
-
-A troca deve lembrar páginas sendo viradas.
-
-Animação suave.
-
-Elegante.
-
-Natural.
-
----
-
-## Ambiente
-
-Galeria de imagens.
-
-Mostrar:
-
-- Salão
-- Mesas
-- Cozinha
-- Iluminação
-- Decoração
-
----
-
-## Reservas
-
-Botão principal:
-
-Reservar mesa
-
-Campos:
-
-- Nome
-- Pessoas
-- Data
-- Horário
-- Telefone
-
----
-
-## Localização
-
-Mapa.
-
-Horários.
-
-Telefone.
-
-Endereço.
-
----
-
-## Footer
-
-Instagram.
-
-WhatsApp.
-
-Telefone.
-
-Endereço.
-
----
-
-# Funcionalidades
-
-- Reserva de mesa
-- Cardápio visual animado
-- Localização
-- WhatsApp
-- Instagram
+| Canal | Valor |
+|-------|-------|
+| Telefone | (11) 3456-7890 |
+| WhatsApp | 551134567890 |
+| E-mail | reservas@divinacozinha.com.br |
+| Instagram | instagram.com/divinacozinha |
+| Endereço | Rua das Oliveiras, 128 — Jardins, São Paulo — SP |
+| CEP | 01415-000 |
+
+### Horários
+
+- Terça a Quinta: 12h — 15h · 19h — 23h
+- Sexta e Sábado: 12h — 00h
+- Domingo: 12h — 17h
+- Segunda: Fechado
+
+## Funcionalidades
+
+- Cardápio visual animado (troca automática + navegação manual)
+- Formulário de reserva demonstrativo com confirmação simulada
+- Galeria de ambiente
+- Google Maps embed
+- Links WhatsApp e Instagram
+- Schema.org `Restaurant`
 - Responsividade completa
+- Animações com respeito a `prefers-reduced-motion`
 
----
+## Inspirações
 
-# Inspirações
+Restaurantes italianos modernos, bistrôs franceses, casas contemporâneas, restaurantes Michelin, Apple (tipografia/espaçamento).
 
-- Restaurantes italianos modernos
-- Bistrôs franceses
-- Casas contemporâneas
-- Restaurantes Michelin
+## Objetivo Dechen
 
----
-
-# Experiência
-
-O visitante deve sentir que está entrando em um restaurante sofisticado.
-
-O site deve despertar vontade de conhecer o local antes mesmo da primeira refeição.
-
----
-
-# Objetivo para a Dechen Web Studio
-
-Este projeto deve parecer um trabalho entregue para um cliente real.
-
-Não deve aparentar ser uma demonstração.
-
-Qualquer visitante do portfólio deve acreditar que o restaurante realmente existe.
-
-Este projeto servirá como referência para futuras demonstrações da agência.
+Referência para futuras demonstrações em gastronomia e hospitalidade. Identidade clara, cardápio interativo e copy acolhedora devem permanecer intactos — ver [06-roadmap.md](06-roadmap.md).

@@ -1,208 +1,174 @@
 # Prompts — Instituto Harmonia
 
-## Objetivo
+**Tipo:** showcase · **Status:** ativo · **Versão:** 2.0
 
-Este documento reúne os prompts utilizados durante o desenvolvimento do projeto Instituto Harmonia.
+Prompts para desenvolvimento do showcase. Antes de gerar código, ler toda a pasta:
 
-Todos os prompts devem seguir rigorosamente a documentação existente nesta pasta.
+- [00-projeto.md](00-projeto.md)
+- [01-brand-guide.md](01-brand-guide.md)
+- [02-sitemap.md](02-sitemap.md)
+- [03-copy.md](03-copy.md)
+- [04-assets.md](04-assets.md)
+- [06-roadmap.md](06-roadmap.md)
 
-Antes de gerar qualquer código, a IA deve obrigatoriamente ler:
+Nenhuma decisão de UI ou copy deve contradizer esses documentos.
 
-- [00-projeto.md](http://00-projeto.md)
+## Regras gerais (todas as fases)
 
-- [01-brand-guide.md](http://01-brand-guide.md)
-
-- [02-sitemap.md](http://02-sitemap.md)
-
-- [03-copy.md](http://03-copy.md)
-
-- [04-assets.md](http://04-assets.md)
-
-Nenhuma decisão deve contrariar esses documentos.
-
----
-
-# Prompt 01 — Desenvolvimento Inicial
-
-Você é o Lead Product Designer e Front-end Engineer da Dechen Web Studio.
-
-Sua missão é desenvolver o projeto Instituto Harmonia seguindo rigorosamente toda a documentação desta pasta.
-
-Objetivo:
-
-Criar um site premium para uma clínica multidisciplinar de saúde e bem-estar.
-
-O resultado deve parecer um projeto entregue para um cliente real.
-
-Prioridades:
-
-- Experiência do usuário
-
-- Performance
-
-- Calma e confiança visual
-
-- Responsividade
-
-- Código limpo
-
-Direção visual:
-
-- Tema claro e fresco: off-white `#F4F8F7` + teal `#2A7A6E`
-
-- Fraunces no display, Outfit no corpo
-
-- Hero full-bleed com wash suave à esquerda
-
-- Botões arredondados
-
-- Sem cards no hero
-
-Evitar: azul `#0070F3`, cream + terracotta, roxo, visual frio/burocrático.
-
-Nunca alterar a identidade da marca.
+1. **Hero full-bleed** — foto de ambiente com wash; sem cards sobre a imagem
+2. **Marca primeiro** — Instituto Harmonia legível no hero e navbar
+3. **Uma função por seção**
+4. **Conteúdo demonstrativo rotulado** — clínica, equipe e contatos são ficção
+5. **Tom clínico calmo** — sem overclaims médicos ou promessas absolutas
+6. Copy exata de [03-copy.md](03-copy.md) — não reescrever
+7. Lighthouse Performance / SEO / Best Practices ≥ 95
 
 ---
 
-# Prompt 02 — Melhorias
+## Prompt 01 — Desenvolvimento inicial
 
-Sua missão é melhorar o projeto existente.
+```
+Você é o desenvolvedor front-end da Dechen Web Studio.
 
-Não refaça o site.
+Desenvolva o showcase Instituto Harmonia (clínica multidisciplinar fictícia)
+seguindo rigorosamente os arquivos desta pasta.
 
-Mantenha toda a identidade visual.
+Leia antes de codar:
+- 00-projeto.md, 01-brand-guide.md, 02-sitemap.md, 03-copy.md, 04-assets.md
 
-Melhore apenas:
+Regras de layout:
+- Hero full-bleed; wash à esquerda; sem cards no hero
+- Tema claro: off-white #F4F8F7 + teal #2A7A6E
+- Fraunces (display) + Outfit (corpo)
+- Seções: Hero → Especialidades → Equipe → Como funciona → Agendar → Local → Footer
+- Formulário Nome, Telefone, Especialidade, Mensagem → WhatsApp
 
-- UX
+Evitar: #0070F3, cream+terracotta, roxo, visual frio/burocrático.
+Copy sem overclaims médicos.
 
-- Performance
+Stack: Next.js (App Router), React, TypeScript, Tailwind CSS.
 
-- Microinterações
-
-- Responsividade
-
-- Organização do código
-
-- Acessibilidade
-
-Evite alterações desnecessárias.
+DoD: parece cliente real; ficção rotulada no footer.
+```
 
 ---
 
-# Prompt 03 — Componentes
+## Prompt 02 — Melhorias incrementais
 
-Crie componentes reutilizáveis para o projeto.
+```
+Melhore o showcase Instituto Harmonia existente.
 
-Seguir toda a documentação.
+NÃO refaça o site do zero. Mantenha identidade visual e sitemap.
 
-Priorizar:
+Melhorar apenas:
+- UX e fluxo de agendamento
+- Microinterações (hover, fade, scroll reveal — sem exagero)
+- Responsividade e acessibilidade (focus, contraste, teclado)
+- Performance e organização do código
 
-- Legibilidade
+Consulte 01-brand-guide.md e 04-assets.md para motion.
 
-- Reutilização
+DoD: parece cliente real.
+```
 
-- Organização
+---
 
-Não instalar bibliotecas sem necessidade.
+## Prompt 03 — Componentes
+
+```
+Extraia componentes reutilizáveis do showcase Instituto Harmonia.
+
+Seguir tokens de 01-brand-guide.md e anatomia de 04-assets.md.
 
 Componentes esperados:
+- Navbar (fixa, logo, links, CTA Agendar consulta)
+- Hero (full-bleed, wash, sem cards)
+- Specialties (grid 6 especialidades)
+- Team (3 profissionais fictícios)
+- HowItWorks (3 passos)
+- Appointment (form → WhatsApp)
+- Location (endereço, horários, galeria)
+- Footer (nota demonstrativa)
 
-- Navbar
-
-- Hero
-
-- Specialties
-
-- Team
-
-- HowItWorks
-
-- Appointment
-
-- Location
-
-- Footer
+Estados: default, hover, focus, disabled.
+Não instalar bibliotecas sem necessidade.
+```
 
 ---
 
-# Prompt 04 — Animações
+## Prompt 04 — Animações
 
-Adicionar microinterações elegantes.
+```
+Adicione motion ao showcase Instituto Harmonia.
 
-Nunca exagerar.
+Referência: 04-assets.md (Motion).
 
-Priorizar:
+Permitido:
+- Hover em botões (200–300ms, ease-out)
+- Fade in no scroll (Intersection Observer)
+- Wash e gradiente no hero
 
-- Hover
+Proibido:
+- Parallax pesado, bounce, shake
+- Animações agressivas ou que atrasem leitura
+- Cards animados no hero
 
-- Fade
-
-- Scale suave
-
-- Scroll Reveal
-
-- Transições naturais
-
-Toda animação deve parecer calma e sofisticada.
-
----
-
-# Prompt 05 — Responsividade
-
-Revisar completamente a responsividade.
-
-Garantir excelente experiência em:
-
-- Desktop
-
-- Notebook
-
-- Tablet
-
-- Smartphone
-
-Nenhum componente deve quebrar.
+Toda animação deve transmitir calma e sofisticação.
+```
 
 ---
 
-# Prompt 06 — Performance
+## Prompt 05 — Responsividade
 
-Revisar o projeto buscando:
+```
+Revise responsividade completa do showcase Instituto Harmonia.
 
-- Performance
+Breakpoints: mobile (~390px), tablet (768px), desktop (≥1280px).
 
-- SEO
-
-- Acessibilidade
-
-- Código limpo
-
-Eliminar código duplicado.
-
-Melhorar organização sempre que possível.
+Verificar:
+- Hero full-bleed legível em todas as larguras
+- Navbar → menu mobile funcional
+- CTAs tocáveis (min 44px)
+- Formulário de agendamento usável no mobile
+- Grid de especialidades adaptável
+- Nenhum overflow horizontal
+```
 
 ---
 
-# Regras Gerais
+## Prompt 06 — Performance e SEO
 
-Sempre seguir a documentação.
+```
+Audite performance e SEO do showcase Instituto Harmonia.
 
-Nunca criar elementos que contrariem a identidade da marca.
+Metas: Lighthouse Performance, SEO, Best Practices ≥ 95.
 
-Toda melhoria deve aumentar a percepção de qualidade do projeto.
+Verificar:
+- Meta title e description de 03-copy.md
+- OG tags e favicon
+- Imagens: lazy load, priority no hero
+- HTML semântico (header, main, section, footer)
+- Alt text em todas as imagens
+- Footer: "Projeto demonstrativo."
+```
 
-A experiência do usuário deve ter prioridade sobre efeitos visuais.
+---
 
-O objetivo é criar um projeto que possa ser apresentado como um case real da Dechen Web Studio.
+## Contato demonstrativo
 
-Contato da clínica:
+| Canal | Valor |
+|-------|-------|
+| Telefone | (11) 3088-4410 |
+| WhatsApp | 551130884410 |
+| E-mail | contato@institutoharmonia.com.br |
+| Endereço | Rua Oscar Freire, 742 — Jardins, São Paulo — SP |
 
-- Telefone: (11) 3088-4410
-- WhatsApp: 551130884410
-- Email: contato@institutoharmonia.com.br
-- Endereço: Rua Oscar Freire, 742 — Jardins, São Paulo — SP
+Assets: `public/showcase/instituto-harmonia/{capa,ambiente,equipe}`
 
-Assets em:
+## Checklist antes de entregar
 
-`public/showcase/instituto-harmonia/{capa,ambiente,equipe}`
+- [ ] Documentação da pasta lida e respeitada
+- [ ] Hero full-bleed; sem cards no hero
+- [ ] Demonstrativos rotulados; copy sem overclaims
+- [ ] Responsivo e Lighthouse ≥ 95
+- [ ] **Parece cliente real**
