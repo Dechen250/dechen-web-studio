@@ -12,13 +12,9 @@ Pack: [00-projeto.md](00-projeto.md) · [01-brand-guide.md](01-brand-guide.md) �
 - Domínio próprio ativo: **renebradock.com.br**
 - Referência de gosto: Roma Madeiras (estrutura)
 
-<<<<<<< Updated upstream
-## Fase 1 — MVP (atual)
-=======
 ---
 
 # Fase 1 — MVP
->>>>>>> Stashed changes
 
 - Documentação em `clients/02-rene-bradock/`
 - Site Next.js em `E:\DechenWebStudio\rene-bradock`
@@ -28,23 +24,21 @@ Pack: [00-projeto.md](00-projeto.md) · [01-brand-guide.md](01-brand-guide.md) �
 - Deploy em **VPS com Docker** (não Vercel)
 - Domínio **renebradock.com.br** apontado
 
-### Critério de pronto
+## Critério de pronto
 
 Visitante entende o que o Renê faz e consegue pedir orçamento em menos de 30 segundos no celular.
 
-## Fase 2 — Conteúdo real
+---
+
+# Fase 2 — Conteúdo real
 
 - Galeria de obras (quando houver fotos)
 - Depoimentos de clientes
 - Página ou seção de FAQ
 
-<<<<<<< Updated upstream
-## Fase 3 — Domínio e operação
-=======
 ---
 
 # Fase 3 — Domínio e operação (em andamento)
->>>>>>> Stashed changes
 
 - [x] Registrar e apontar `renebradock.com.br`
 - [ ] Confirmar SSL (HTTPS) na VPS
@@ -54,7 +48,9 @@ Visitante entende o que o Renê faz e consegue pedir orçamento em menos de 30 s
 - [ ] Analytics (GA4 / Plausible)
 - [ ] Formulário com e-mail/API se necessário
 
-## Fora do roadmap próximo
+---
+
+# Fora do roadmap próximo
 
 - E-commerce
 - App
