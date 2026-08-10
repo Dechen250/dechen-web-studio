@@ -77,8 +77,8 @@ clients/
 O site real deve possuir um repositório próprio, separado do site da agência.
 
 - Projeto Next.js independente em `E:\DechenWebStudio\rene-bradock`
-- Deploy independente na Vercel
-- Domínio próprio quando entrar no escopo comercial
+- Deploy em VPS com Docker
+- Domínio próprio: [renebradock.com.br](https://renebradock.com.br)
 
 Não desenvolver o site real dentro das rotas de `showcase/` da agência.
 
@@ -125,9 +125,16 @@ São Paulo e região (DDD 11).
 
 ## Domínio
 
-Sugestão: `renebradock.com.br`
+**Oficial:** [renebradock.com.br](https://renebradock.com.br)
 
-Status: **placeholder** — não incluso no orçamento atual. Deploy inicial via URL da Vercel.
+Status: **ativo** — domínio próprio do cliente.
+
+Garantir no site Next.js:
+
+- `metadata.metadataBase` / Open Graph apontando para `https://renebradock.com.br`
+- Canonical e `sitemap` / `robots` com o domínio final
+- Redirect de `www` ↔ apex conforme DNS configurado
+- SSL (HTTPS) na VPS
 
 ## Contatos oficiais
 
@@ -135,7 +142,7 @@ Status: **placeholder** — não incluso no orçamento atual. Deploy inicial via
 |-------|--------|
 | WhatsApp | +55 11 95254-1429 |
 | Área | São Paulo e região |
-| Domínio | Placeholder |
+| Domínio | [renebradock.com.br](https://renebradock.com.br) |
 
 ## Escopo do MVP
 

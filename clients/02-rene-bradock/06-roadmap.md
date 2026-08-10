@@ -9,10 +9,16 @@ Pack: [00-projeto.md](00-projeto.md) · [01-brand-guide.md](01-brand-guide.md) �
 - Cliente pago confirmado (primeiro pedido Dechen Web Studio)
 - Logo oficial recebida
 - WhatsApp e área definidos
-- Domínio fora do orçamento (placeholder)
+- Domínio próprio ativo: **renebradock.com.br**
 - Referência de gosto: Roma Madeiras (estrutura)
 
+<<<<<<< Updated upstream
 ## Fase 1 — MVP (atual)
+=======
+---
+
+# Fase 1 — MVP
+>>>>>>> Stashed changes
 
 - Documentação em `clients/02-rene-bradock/`
 - Site Next.js em `E:\DechenWebStudio\rene-bradock`
@@ -20,6 +26,7 @@ Pack: [00-projeto.md](00-projeto.md) · [01-brand-guide.md](01-brand-guide.md) �
 - Conversão WhatsApp
 - SEO local básico
 - Deploy em **VPS com Docker** (não Vercel)
+- Domínio **renebradock.com.br** apontado
 
 ### Critério de pronto
 
@@ -31,13 +38,21 @@ Visitante entende o que o Renê faz e consegue pedir orçamento em menos de 30 s
 - Depoimentos de clientes
 - Página ou seção de FAQ
 
+<<<<<<< Updated upstream
 ## Fase 3 — Domínio e operação
+=======
+---
 
-- Registrar `renebradock.com.br` (ou similar) quando entrar no orçamento
-- SSL (HTTPS) na VPS
-- E-mail profissional opcional
-- Analytics (GA4 / Plausible)
-- Formulário com e-mail/API se necessário
+# Fase 3 — Domínio e operação (em andamento)
+>>>>>>> Stashed changes
+
+- [x] Registrar e apontar `renebradock.com.br`
+- [ ] Confirmar SSL (HTTPS) na VPS
+- [ ] Atualizar metadata / canonical / OG / sitemap no Next.js para o domínio final
+- [ ] Redirect `www` ↔ apex
+- [ ] E-mail profissional opcional
+- [ ] Analytics (GA4 / Plausible)
+- [ ] Formulário com e-mail/API se necessário
 
 ## Fora do roadmap próximo
 
