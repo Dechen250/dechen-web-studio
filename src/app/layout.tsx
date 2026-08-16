@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { INSTAGRAM_URL } from "@/lib/site";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -65,6 +66,7 @@ const organizationJsonLd = {
   url: siteUrl,
   email: "contato@dechenwebstudio.com.br",
   telephone: "+55-11-97450-2226",
+  sameAs: [INSTAGRAM_URL],
   description: siteDescription,
   areaServed: {
     "@type": "Country",
