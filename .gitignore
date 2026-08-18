@@ -43,3 +43,6 @@ next-env.d.ts
 # Client archive dumps
 clients/*.zip
 
+# Relatórios gerados pela auditoria de site
+/reports
+

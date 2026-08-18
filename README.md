@@ -24,12 +24,20 @@ Abra [http://localhost:3000](http://localhost:3000).
 
 Outros scripts: `npm run build`, `npm run start`, `npm run lint`.
 
+Auditoria técnica de um site (Chrome headless, relatório em `reports/`):
+
+```bash
+npm run audit -- dechenwebstudio.com.br
+```
+
+Detalhes em [`systems/site-audit/`](systems/site-audit/00-visao.md).
+
 ## Mapa do repositório
 
 | Pasta | Função |
 |-------|--------|
 | [`agency/`](agency/00-index.md) | Sistema operacional da agência (estratégia, marca, produto, comercial, operação) |
-| [`systems/`](systems/client-acquisition/00-visao.md) | Captação de leads e processo comercial detalhado |
+| [`systems/`](systems/client-acquisition/00-visao.md) | Captação de leads, processo comercial detalhado e [auditoria técnica de site](systems/site-audit/00-visao.md) |
 | [`clients/`](clients/01-vitta-serena/00-projeto.md) | Packs de clientes reais (brief, copy, assets, roadmap) |
 | [`showcase/`](showcase/01-divina-cozinha.md/00-projeto.md) | Packs de projetos fictícios de portfólio |
 | [`templates/showcase-template/`](templates/showcase-template/00-projeto.md) | Template em branco para novos showcases |
