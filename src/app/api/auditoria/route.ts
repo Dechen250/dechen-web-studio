@@ -66,6 +66,14 @@ export async function POST(request: Request): Promise<Response> {
     });
   } catch (error) {
     const message = error instanceof Error ? error.message : "Falha na medição.";
-    return Response.json({ error: message }, { status: 502 });
+    const quota = /429|Quota exceeded/i.test(message);
+    return Response.json(
+      {
+        error: quota
+          ? "A cota pública do PageSpeed Insights esgotou neste servidor. Tente de novo mais tarde, ou use o console interno."
+          : message,
+      },
+      { status: quota ? 429 : 502 },
+    );
   }
 }

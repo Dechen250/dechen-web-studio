@@ -5,6 +5,7 @@ import Link from "next/link";
 import {
   useEffect,
   useState,
+  useSyncExternalStore,
   type FormEvent,
   type ReactNode,
 } from "react";
@@ -765,7 +766,19 @@ function FormField({
 const inputClass =
   "w-full rounded-xl border border-[#262626] bg-[#101010]/60 px-4 py-3 text-sm text-white placeholder:text-[#6B6B76] backdrop-blur-sm transition-colors focus:border-[#0070F3]/50 focus:outline-none focus:ring-2 focus:ring-[#0070F3]/35";
 
+function useSitePrefill(): string {
+  return useSyncExternalStore(
+    (onStoreChange) => {
+      window.addEventListener("popstate", onStoreChange);
+      return () => window.removeEventListener("popstate", onStoreChange);
+    },
+    () => new URLSearchParams(window.location.search).get("site") ?? "",
+    () => "",
+  );
+}
+
 function ContactForm() {
+  const sitePrefill = useSitePrefill();
   const [form, setForm] = useState<ContactFormData>(initialContactForm);
   const [honeypot, setHoneypot] = useState("");
   const [status, setStatus] = useState<"idle" | "loading" | "opened">("idle");
@@ -775,11 +788,7 @@ function ContactForm() {
     if (status === "opened") setStatus("idle");
   };
 
-  useEffect(() => {
-    const site = new URLSearchParams(window.location.search).get("site");
-    if (site) update("website", site);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  const website = form.website || sitePrefill;
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
@@ -789,7 +798,7 @@ function ContactForm() {
       await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...form, honeypot }),
+        body: JSON.stringify({ ...form, website, honeypot }),
       });
     } catch {
       /* o WhatsApp ainda abre — o lead não fica preso no formulário */
@@ -800,7 +809,7 @@ function ContactForm() {
       email: form.email,
       whatsapp: form.whatsapp,
       business: form.negocio,
-      website: form.website || undefined,
+      website: website || undefined,
       message: form.mensagem,
     });
     window.open(whatsappUrl(text), "_blank", "noopener,noreferrer");
@@ -890,7 +899,7 @@ function ContactForm() {
           type="text"
           autoComplete="url"
           placeholder="seudominio.com.br"
-          value={form.website}
+          value={website}
           onChange={(e) => update("website", e.target.value)}
           className={inputClass}
         />

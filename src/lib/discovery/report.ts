@@ -51,6 +51,10 @@ function auditBlurb(result: AuditResult | undefined, blockedTitle?: string): str
   return parts.join(". ") + ".";
 }
 
+function fieldOrigin(value: string, filled: string, pending: string): string {
+  return value === TO_CONFIRM ? pending : filled;
+}
+
 function statedFromMessage(message: string | undefined, keywords: RegExp): string {
   if (!message) return TO_CONFIRM;
   const sentences = message
@@ -64,6 +68,14 @@ function statedFromMessage(message: string | undefined, keywords: RegExp): strin
 export function buildDiscoveryMarkdown(input: DiscoveryInput, generatedAt: string): string {
   const { lead, facts = { contactChannels: [], measurement: [] } } = input;
   const siteLine = lead.website || facts.finalUrl || facts.url;
+  const objetivos = statedFromMessage(
+    lead.message,
+    /objetivo|quero|preciso|vender|lead|agenda|marcar/i,
+  );
+  const problemas = statedFromMessage(
+    lead.message,
+    /problema|lento|não|nao |dificuldade|hoje o site/i,
+  );
 
   return `# Rascunho de Descoberta — ${cell(lead.company || lead.name)}
 
@@ -86,9 +98,9 @@ Pack gerado a partir do lead e do que o site declara. **Não substitui a reuniã
 | E-mail | ${cell(orConfirm(lead.email))} | formulário |
 | WhatsApp | ${cell(orConfirm(lead.whatsapp))} | formulário |
 | Segmento | ${cell(orConfirm(lead.segment || lead.company))} | formulário |
-| Objetivos | ${cell(statedFromMessage(lead.message, /objetivo|quero|preciso|vender|lead|agenda|marcar/i))} | ${lead.message ? "formulário, se explícito" : "pendente"} |
+| Objetivos | ${cell(objetivos)} | ${fieldOrigin(objetivos, "formulário, se explícito", "pendente")} |
 | Público-alvo | ${TO_CONFIRM} | reunião |
-| Problemas relatados pelo cliente | ${cell(statedFromMessage(lead.message, /problema|lento|não|nao |dificuldade|hoje o site/i))} | ${lead.message ? "formulário, se explícito" : "pendente"} |
+| Problemas relatados pelo cliente | ${cell(problemas)} | ${fieldOrigin(problemas, "formulário, se explícito", "pendente")} |
 | Prazo | ${TO_CONFIRM} | reunião — nunca inventar |
 | Orçamento | ${TO_CONFIRM} | reunião — nunca inventar |
 | Observações | ${cell(orConfirm(lead.message))} | formulário |
@@ -97,7 +109,7 @@ Pack gerado a partir do lead e do que o site declara. **Não substitui a reuniã
 
 ### 1. Apresentação
 
-Ainda não houve reunião. Usar o roteiro de `systems/sales/02-descoberta.md`.
+Ainda não houve reunião. Usar o roteiro de systems/sales/02-descoberta.md.
 
 ### 2. Conhecendo a empresa
 
