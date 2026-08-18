@@ -21,7 +21,21 @@ IP do DNS: `72.61.56.103` (nginx 1.27.5 + Next.js).
 
 Não falta o site. Falta um `server` no nginx da porta 443 com `server_name renebradock.com.br` e um certificado Let’s Encrypt desse domínio. Hoje o HTTPS cai no vhost padrão, que é a AUREON.
 
-Não redirecionar HTTP→HTTPS antes do certificado válido: isso derruba o único caminho que ainda abre.
+## Resolução
+
+Aplicado na VPS `72.61.56.103` em 18/08/2026:
+
+- Let’s Encrypt em `renebradock.com.br` e `www` (emissor YR1, válido até 16/11/2026)
+- `server` 443 no `rene-bradock-proxy` apontando para o container `web:3000`
+- HTTP redireciona para HTTPS; ACME permanece na porta 80
+- AUREON continua só em `aureon.dechenwebstudio.com.br`
+- Hook `certbot renew` recarrega o nginx do proxy
+
+Conferência: `curl https://renebradock.com.br` → 200, título *Renê Bradock | Marido de aluguel em São Paulo e Guarulhos*, `ssl_verify=0`.
+
+Backups no servidor: `nginx.conf.bak-202608180122` e `docker-compose.yml.bak-*`.
+
+A AUREON estava no mesmo proxy por erro de empilhamento — não faz parte deste cliente. A partir de 18/08/2026: não testar este domínio sem ordem explícita; não colocar produto interno nesta stack. Ver [DWS AI OS](../../agency/04-dws-ai-operating-system.md).
 
 ## Como aplicar (na VPS)
 

@@ -1,6 +1,6 @@
 # Processo de Desenvolvimento
 
-**Tipo:** ops · **Status:** ativo · **Versão:** 2.0
+**Tipo:** ops · **Status:** ativo · **Versão:** 2.1
 
 Como construímos depois do kickoff. Detalhe comercial da etapa Build: [`systems/sales/05-build.md`](../systems/sales/05-build.md). Entrega: [`06-entrega.md`](../systems/sales/06-entrega.md).
 
@@ -36,6 +36,8 @@ Toda IA no fluxo segue o [DWS AI OS](04-dws-ai-operating-system.md).
 ### Testes (mínimo)
 
 Responsividade, links, forms, performance, SEO, a11y, browsers principais. Sem publicar sem revisão.
+
+Ambiente de teste da DWS ou preview do próprio projeto. **Site e domínio de cliente em produção só se o responsável pedir com ordem explícita** — ver [DWS AI OS](04-dws-ai-operating-system.md). Não usar cliente para experimentar produto interno.
 
 ### Aprovação
 

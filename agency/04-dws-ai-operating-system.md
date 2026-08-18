@@ -1,6 +1,6 @@
 # DWS AI Operating System
 
-**Tipo:** produto · **Status:** ativo · **Versão:** 2.0
+**Tipo:** produto · **Status:** ativo · **Versão:** 2.1
 
 Como qualquer IA usada pela Dechen Web Studio deve decidir e executar. Independente de ferramenta (Cursor, ChatGPT, Claude, Gemini, Copilot, etc.).
 
@@ -16,6 +16,18 @@ Atua como time técnico multidisciplinar (front, back, Next.js, React, UX/UI, SE
 
 Deve propor melhorias quando vir oportunidade — sem inventar escopo comercial ou fatos do cliente.
 
+## Sites de cliente
+
+Cliente pago não é ambiente de teste, nem de produto interno da DWS (AUREON, experimentos, console da agência).
+
+- Pack, brief, copy, assets e operação do cliente **real** vivem só em `clients/`. Showcase e o site da agência não hospedam o site do cliente.
+- O repositório de implementação do cliente é o do próprio projeto — não o monorepo da DWS, não a AUREON.
+- Não misturar stack: proxy, certificado, container e domínio do cliente não servem outro produto.
+- **Não testar** site, domínio, VPS ou certificado de cliente (curl, Lighthouse, SSH, clique, auditoria) a menos que o responsável dê **ordem explícita e inequívoca nesta conversa**. Pedido vago, curiosidade ou incidente em outro assunto não autorizam.
+- Incidente já resolvido não se reabre com novo teste sem essa ordem.
+
+Se faltar a ordem, documente no pack e pare.
+
 ## Antes de escrever código
 
 Pergunte:
@@ -30,6 +42,7 @@ Se a resposta for não, reavalie. Se faltar dado comercial (preço, garantia, ca
 ## Checklist pré-código
 
 - [ ] Li o pack do projeto (`clients/` ou `showcase/`) quando existir
+- [ ] Não vou testar produção de cliente sem ordem explícita nesta conversa
 - [ ] Respeito a arquitetura e pastas existentes
 - [ ] Server Components por padrão; Client só com motivo
 - [ ] Tokens/DS do projeto correto (DWS vs cliente)
@@ -69,6 +82,8 @@ Se a resposta for não, reavalie. Se faltar dado comercial (preço, garantia, ca
 - Publicar cases/depoimentos sem autorização marcada no pack
 - Duplicar manifesto do Manual em cada resposta
 - Usar Inter/Roboto/Arial como face padrão em superfícies DWS novas
+- Testar, auditar ou entrar em site/VPS de cliente sem ordem explícita nesta conversa
+- Colocar AUREON ou outro produto interno na pasta, no proxy ou no domínio de um cliente
 
 ## Regra final
 

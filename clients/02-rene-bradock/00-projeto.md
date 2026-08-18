@@ -82,6 +82,8 @@ O site real deve possuir um repositório próprio, separado do site da agência.
 
 Não desenvolver o site real dentro das rotas de `showcase/` da agência.
 
+Este projeto **não tem relação com a AUREON** nem com outros produtos internos da DWS. Documentação neste monorepo: somente `clients/02-rene-bradock/`. Proxy, certificado, container e domínio servem só o site do Renê.
+
 ## Objetivos de negócio
 
 ### Objetivo principal
