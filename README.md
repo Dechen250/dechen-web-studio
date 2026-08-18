@@ -47,6 +47,7 @@ Padrão editorial dos Markdown:
 - PT-BR
 - Fatos comerciais e IDs legais não se inventam
 - Showcases marcam conteúdo demonstrativo; clientes usam `[placeholders]` até confirmação
+- Pack de cliente real vive só em `clients/`; não testar o site em produção sem ordem explícita (ver [DWS AI OS](agency/04-dws-ai-operating-system.md))
 
 ## Showcases no app
 

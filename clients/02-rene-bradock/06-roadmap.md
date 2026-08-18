@@ -41,7 +41,8 @@ Visitante entende o que o Renê faz e consegue pedir orçamento em menos de 30 s
 # Fase 3 — Domínio e operação (em andamento)
 
 - [x] Registrar e apontar `renebradock.com.br`
-- [ ] Confirmar SSL (HTTPS) na VPS
+- [x] Confirmar SSL (HTTPS) na VPS — resolvido 18/08/2026; ver [07-hotfix-https.md](07-hotfix-https.md)
+- [ ] Atualizar metadata / canonical / OG / sitemap no Next.js para o domínio final
 - [ ] Atualizar metadata / canonical / OG / sitemap no Next.js para o domínio final
 - [ ] Redirect `www` ↔ apex
 - [ ] E-mail profissional opcional

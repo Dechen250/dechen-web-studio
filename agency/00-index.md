@@ -46,7 +46,7 @@ Captação técnica de leads: [`../systems/client-acquisition/`](../systems/clie
 
 | Área | Caminho |
 |------|---------|
-| Clientes reais | [`../clients/`](../clients/01-vitta-serena/00-projeto.md) |
+| Clientes reais | [`../clients/`](../clients/01-vitta-serena/00-projeto.md) — pack só; sem misturar produto interno |
 | Showcases | [`../showcase/`](../showcase/01-divina-cozinha.md/00-projeto.md) |
 | Template de showcase | [`../templates/showcase-template/`](../templates/showcase-template/00-projeto.md) |
 | README do monorepo | [`../README.md`](../README.md) |

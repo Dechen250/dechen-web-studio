@@ -2,7 +2,7 @@
 
 **Tipo:** brief · **Status:** ativo · **Versão:** 2.0
 
-Pack: [01-brand-guide.md](01-brand-guide.md) · [02-sitemap.md](02-sitemap.md) · [03-copy.md](03-copy.md) · [04-assets.md](04-assets.md) · [06-roadmap.md](06-roadmap.md)
+Pack: [01-brand-guide.md](01-brand-guide.md) · [02-sitemap.md](02-sitemap.md) · [03-copy.md](03-copy.md) · [04-assets.md](04-assets.md) · [06-roadmap.md](06-roadmap.md) · [07-hotfix-https.md](07-hotfix-https.md)
 
 ## Objetivo
 
@@ -81,6 +81,8 @@ O site real deve possuir um repositório próprio, separado do site da agência.
 - Domínio próprio: [renebradock.com.br](https://renebradock.com.br)
 
 Não desenvolver o site real dentro das rotas de `showcase/` da agência.
+
+Este projeto **não tem relação com a AUREON** nem com outros produtos internos da DWS. Documentação neste monorepo: somente `clients/02-rene-bradock/`. Proxy, certificado, container e domínio servem só o site do Renê.
 
 ## Objetivos de negócio
 
