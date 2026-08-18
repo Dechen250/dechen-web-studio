@@ -30,6 +30,8 @@ Auditoria técnica de um site (Chrome headless, relatório em `reports/`):
 npm run audit -- dechenwebstudio.com.br
 ```
 
+Para ver o agente trabalhando — tela do Chrome, log e relatório ao vivo — rode `npm run dev` e abra [http://localhost:3000/ops/audit](http://localhost:3000/ops/audit).
+
 Detalhes em [`systems/site-audit/`](systems/site-audit/00-visao.md).
 
 ## Mapa do repositório

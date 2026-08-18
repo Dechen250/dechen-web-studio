@@ -51,4 +51,21 @@ export type LighthouseResult = {
 export type AuditResult = {
   lighthouse: LighthouseResult;
   checks: CheckResult[];
+  screenshots: string[];
 };
+
+export type AuditEvent =
+  | { type: "status"; step: string; message: string }
+  | { type: "screenshot"; src: string; caption: string }
+  | { type: "check"; check: CheckResult }
+  | {
+      type: "blocked";
+      title: string;
+      summary: string;
+      evidence: string[];
+      reason: "dns" | "certificado" | "conexao";
+      priority: string;
+      markdown: string;
+    }
+  | { type: "complete"; result: AuditResult; markdown: string }
+  | { type: "error"; message: string };

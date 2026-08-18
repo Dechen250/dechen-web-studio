@@ -1,29 +1,11 @@
-import { worstSeverity } from "./checks";
+import { SEVERITY_LABEL, formatScore, scoreSeverity, worstSeverity } from "./format";
 import type { BlockReason, Preflight } from "./preflight";
-import type { AuditResult, CheckResult, MetricResult, Severity } from "./types";
-
-const SEVERITY_LABEL: Record<Severity, string> = {
-  ok: "OK",
-  atencao: "Atenção",
-  critico: "Crítico",
-};
+import type { AuditResult, CheckResult, MetricResult } from "./types";
 
 const FORM_FACTOR_LABEL = {
   mobile: "Celular (rede móvel simulada)",
   desktop: "Desktop",
 } as const;
-
-function scoreSeverity(score: number | null): Severity {
-  if (score === null) return "atencao";
-  if (score >= 0.9) return "ok";
-  if (score >= 0.5) return "atencao";
-
-  return "critico";
-}
-
-function formatScore(score: number | null): string {
-  return score === null ? "—" : `${Math.round(score * 100)}/100`;
-}
 
 function formatBytes(bytes: number | null): string {
   if (bytes === null) return "—";
@@ -183,7 +165,7 @@ function whySection(checks: CheckResult[]): string {
   return ["", "### Impacto de negócio dos achados", "", ...bullets].join("\n");
 }
 
-const PRIORITY_ZERO: Record<BlockReason, string> = {
+export const PRIORITY_ZERO: Record<BlockReason, string> = {
   certificado:
     "Emitir e instalar um certificado válido para o domínio. Enquanto o aviso de segurança aparecer, qualquer visita, anúncio ou indicação é perdida antes da página abrir.",
   dns: "Apontar o DNS do domínio para o servidor correto e confirmar que o registro do domínio não expirou.",

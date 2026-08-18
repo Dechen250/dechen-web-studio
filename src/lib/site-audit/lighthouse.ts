@@ -1,6 +1,8 @@
+import { launch } from "chrome-launcher";
 import { spawn } from "node:child_process";
 import { createRequire } from "node:module";
 
+import { capturePageScreenshot } from "./screenshot";
 import type {
   CategoryScore,
   FormFactor,
@@ -33,7 +35,8 @@ type Lhr = {
         type?: string;
         overallSavingsMs?: number;
         overallSavingsBytes?: number;
-        items?: unknown[];
+        items?: Array<{ data?: string }>;
+        data?: string;
       };
     }
   >;
@@ -135,30 +138,62 @@ function readOpportunities(audits: NonNullable<Lhr["audits"]>): Opportunity[] {
     .sort((a, b) => (b.savingsMs ?? 0) - (a.savingsMs ?? 0));
 }
 
+function readFilmstrip(audits: NonNullable<Lhr["audits"]>): string[] {
+  const frames: string[] = [];
+  const thumbs = audits["screenshot-thumbnails"]?.details?.items ?? [];
+
+  for (const item of thumbs) {
+    if (!item.data) continue;
+    frames.push(item.data.startsWith("data:") ? item.data : `data:image/jpeg;base64,${item.data}`);
+  }
+
+  const finalShot = audits["final-screenshot"]?.details?.data;
+  if (finalShot) {
+    frames.push(finalShot.startsWith("data:") ? finalShot : `data:image/jpeg;base64,${finalShot}`);
+  }
+
+  return frames;
+}
+
 const RUN_TIMEOUT_MS = 180_000;
+const SCREENSHOT_INTERVAL_MS = 900;
+
+type RunOptions = {
+  visible?: boolean;
+  onScreenshot?: (src: string) => void;
+};
+
+function chromeFlags(visible: boolean): string[] {
+  const flags = ["--disable-gpu", "--mute-audio"];
+
+  if (visible) {
+    flags.push("--window-size=1280,900");
+  } else {
+    flags.push("--headless=new", "--window-size=412,915");
+  }
+
+  if (process.getuid?.() === 0) {
+    flags.push("--no-sandbox");
+  }
+
+  return flags;
+}
 
 /**
  * O Lighthouse injeta funções serializadas na página auditada, o que quebra sob
  * transpiladores que renomeiam funções (o `__name is not defined` do esbuild).
  * Rodar a CLI em um processo Node limpo evita isso e mantém o JSON como contrato.
  */
-function lighthouseCli(url: string, formFactor: FormFactor): Promise<string> {
-  const chromeFlags = ["--headless=new", "--disable-gpu"];
-
-  // Contêineres e CI normalmente rodam como root, onde o sandbox do Chrome não sobe.
-  if (process.getuid?.() === 0) {
-    chromeFlags.push("--no-sandbox");
-  }
-
+function lighthouseCli(url: string, formFactor: FormFactor, port: number): Promise<string> {
   const args = [
     createRequire(import.meta.url).resolve("lighthouse/cli/index.js"),
     url,
+    `--port=${port}`,
     "--output=json",
     "--output-path=stdout",
     "--quiet",
     "--locale=pt-BR",
     "--only-categories=performance,accessibility,best-practices,seo",
-    `--chrome-flags=${chromeFlags.join(" ")}`,
   ];
 
   if (formFactor === "desktop") {
@@ -202,39 +237,78 @@ function lighthouseCli(url: string, formFactor: FormFactor): Promise<string> {
   });
 }
 
+export type LighthouseRun = LighthouseResult & { screenshots: string[] };
+
 export async function runLighthouse(
   url: string,
   formFactor: FormFactor,
-): Promise<LighthouseResult> {
-  const raw = await lighthouseCli(url, formFactor);
+  options: RunOptions = {},
+): Promise<LighthouseRun> {
+  const visible = options.visible ?? false;
+  const chrome = await launch({
+    chromeFlags: chromeFlags(visible),
+    // chrome-launcher herda DISPLAY do processo; sem isso o modo visível não abre janela.
+  });
 
-  let lhr: Lhr;
-  try {
-    lhr = JSON.parse(raw) as Lhr;
-  } catch {
-    throw new Error("Não foi possível interpretar o relatório JSON do Lighthouse.");
-  }
+  const liveShots: string[] = [];
+  let pumping = true;
 
-  const audits = lhr.audits ?? {};
-
-  const categories: CategoryScore[] = Object.entries(CATEGORY_LABELS).map(([id, label]) => ({
-    id,
-    label,
-    score: lhr.categories?.[id]?.score ?? null,
-  }));
-
-  return {
-    requestedUrl: lhr.requestedUrl ?? url,
-    finalUrl: lhr.finalDisplayedUrl ?? url,
-    fetchedAt: lhr.fetchTime ?? new Date().toISOString(),
-    lighthouseVersion: lhr.lighthouseVersion ?? "desconhecida",
-    formFactor,
-    categories,
-    metrics: readMetrics(audits),
-    opportunities: readOpportunities(audits),
-    diagnostics: {
-      totalByteWeight: audits["total-byte-weight"]?.numericValue ?? null,
-      requestCount: audits["network-requests"]?.details?.items?.length ?? null,
-    },
+  const pump = async () => {
+    while (pumping) {
+      try {
+        const src = await capturePageScreenshot(chrome.port);
+        if (src) {
+          liveShots.push(src);
+          options.onScreenshot?.(src);
+        }
+      } catch {
+        /* o Chrome ainda está subindo ou o Lighthouse trocou de aba */
+      }
+      await new Promise((resolve) => setTimeout(resolve, SCREENSHOT_INTERVAL_MS));
+    }
   };
+
+  const pumpPromise = pump();
+
+  try {
+    const raw = await lighthouseCli(url, formFactor, chrome.port);
+
+    let lhr: Lhr;
+    try {
+      lhr = JSON.parse(raw) as Lhr;
+    } catch {
+      throw new Error("Não foi possível interpretar o relatório JSON do Lighthouse.");
+    }
+
+    const audits = lhr.audits ?? {};
+
+    const categories: CategoryScore[] = Object.entries(CATEGORY_LABELS).map(([id, label]) => ({
+      id,
+      label,
+      score: lhr.categories?.[id]?.score ?? null,
+    }));
+
+    const filmstrip = readFilmstrip(audits);
+    const screenshots = liveShots.length > 0 ? liveShots : filmstrip;
+
+    return {
+      requestedUrl: lhr.requestedUrl ?? url,
+      finalUrl: lhr.finalDisplayedUrl ?? url,
+      fetchedAt: lhr.fetchTime ?? new Date().toISOString(),
+      lighthouseVersion: lhr.lighthouseVersion ?? "desconhecida",
+      formFactor,
+      categories,
+      metrics: readMetrics(audits),
+      opportunities: readOpportunities(audits),
+      diagnostics: {
+        totalByteWeight: audits["total-byte-weight"]?.numericValue ?? null,
+        requestCount: audits["network-requests"]?.details?.items?.length ?? null,
+      },
+      screenshots,
+    };
+  } finally {
+    pumping = false;
+    await chrome.kill();
+    await pumpPromise.catch(() => undefined);
+  }
 }

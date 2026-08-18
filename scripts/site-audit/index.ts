@@ -1,11 +1,10 @@
+import { writeSync } from "node:fs";
 import { mkdir, writeFile } from "node:fs/promises";
 import { dirname, join, resolve } from "node:path";
 
-import { runChecks, worstSeverity } from "./checks";
-import { runLighthouse } from "./lighthouse";
-import { preflight } from "./preflight";
-import { buildBlockedReport, buildReport } from "./report";
-import type { AuditResult, FormFactor } from "./types";
+import { worstSeverity } from "../../src/lib/site-audit/format";
+import { runAudit } from "../../src/lib/site-audit/run";
+import type { AuditEvent, FormFactor } from "../../src/lib/site-audit/types";
 
 type Options = {
   url: string;
@@ -13,6 +12,8 @@ type Options = {
   outDir: string;
   json: boolean;
   strict: boolean;
+  visible: boolean;
+  events: boolean;
 };
 
 const USAGE = `
@@ -26,17 +27,29 @@ Opções:
   --out <pasta>    Pasta de saída (padrão: reports)
   --json           Salva também o resultado bruto em JSON
   --strict         Sai com código 1 se houver achado crítico (útil em CI)
+  --visible        Abre o Chrome com janela em vez de headless (demonstração)
+  --events         Emite um JSON por linha no stdout (usado pelo console web)
   -h, --help       Mostra esta ajuda
+
+A interface web, com tela ao vivo, está em /ops/audit.
 
 Exemplos:
   npm run audit -- dechenwebstudio.com.br
   npm run audit -- https://exemplo.com.br --desktop --json
 `.trim();
 
-function normalizeUrl(input: string): string {
-  const withProtocol = /^https?:\/\//i.test(input) ? input : `https://${input}`;
+function slimEvent(event: AuditEvent): AuditEvent {
+  if (event.type !== "complete") return event;
 
-  return new URL(withProtocol).toString();
+  const screenshots = [...event.result.screenshots]
+    .sort((a, b) => b.length - a.length)
+    .slice(0, 4);
+
+  return {
+    ...event,
+    markdown: "",
+    result: { ...event.result, screenshots },
+  };
 }
 
 function slugify(hostname: string): string {
@@ -49,6 +62,8 @@ function parseArgs(argv: string[]): Options {
   let outDir = "reports";
   let json = false;
   let strict = false;
+  let visible = false;
+  let events = false;
 
   for (let index = 0; index < argv.length; index += 1) {
     const arg = argv[index];
@@ -62,6 +77,10 @@ function parseArgs(argv: string[]): Options {
       json = true;
     } else if (arg === "--strict") {
       strict = true;
+    } else if (arg === "--visible") {
+      visible = true;
+    } else if (arg === "--events") {
+      events = true;
     } else if (arg === "--out") {
       const value = argv[index + 1];
       if (!value) throw new Error("--out exige um caminho de pasta.");
@@ -78,62 +97,76 @@ function parseArgs(argv: string[]): Options {
     throw new Error("Informe a URL do site. Use --help para ver exemplos.");
   }
 
-  return { url: normalizeUrl(positional[0]), formFactor, outDir, json, strict };
+  return { url: positional[0], formFactor, outDir, json, strict, visible, events };
+}
+
+async function save(path: string, contents: string): Promise<string> {
+  const absolute = resolve(path);
+  await mkdir(dirname(absolute), { recursive: true });
+  await writeFile(absolute, contents, "utf8");
+  return absolute;
 }
 
 async function main(): Promise<void> {
   const options = parseArgs(process.argv.slice(2));
-  const hostname = new URL(options.url).hostname;
-
-  console.log(`Auditando ${options.url} (${options.formFactor})...`);
-
   const date = new Date().toISOString().slice(0, 10);
-  const access = await preflight(options.url);
+  const events: AuditEvent[] = [];
 
-  if (access.status === "bloqueado") {
-    const blockedPath = resolve(
+  await runAudit(options.url, {
+    formFactor: options.formFactor,
+    visible: options.visible,
+    emit: (event) => {
+      events.push(event);
+      if (options.events) {
+        writeSync(1, `${JSON.stringify(slimEvent(event))}\n`);
+        return;
+      }
+      if (event.type === "status") console.log(event.message);
+    },
+  });
+
+  if (options.events) return;
+
+  const blocked = events.find((event) => event.type === "blocked");
+  const complete = events.find((event) => event.type === "complete");
+
+  if (blocked) {
+    const hostname = new URL(
+      options.url.startsWith("http") ? options.url : `https://${options.url}`,
+    ).hostname;
+    const path = await save(
       join(options.outDir, `${slugify(hostname)}-bloqueado-${date}.md`),
+      blocked.markdown,
     );
 
-    await mkdir(dirname(blockedPath), { recursive: true });
-    await writeFile(blockedPath, buildBlockedReport(options.url, access), "utf8");
-
-    console.log(`\nBloqueado: ${access.title}`);
-    for (const item of access.evidence) {
+    console.log(`\nBloqueado: ${blocked.title}`);
+    for (const item of blocked.evidence) {
       console.log(`  ${item.replace(/`/g, "")}`);
     }
-    console.log(`\nRelatório: ${blockedPath}`);
+    console.log(`\nRelatório: ${path}`);
 
     if (options.strict) process.exitCode = 1;
     return;
   }
 
-  const [lighthouse, checks] = await Promise.all([
-    runLighthouse(options.url, options.formFactor),
-    runChecks(options.url),
-  ]);
-
-  const result: AuditResult = { lighthouse, checks };
-  const baseName = `${slugify(hostname)}-${options.formFactor}-${date}`;
-  const markdownPath = resolve(join(options.outDir, `${baseName}.md`));
-
-  await mkdir(dirname(markdownPath), { recursive: true });
-  await writeFile(markdownPath, buildReport(result), "utf8");
-
-  if (options.json) {
-    await writeFile(
-      resolve(join(options.outDir, `${baseName}.json`)),
-      JSON.stringify(result, null, 2),
-      "utf8",
-    );
+  if (!complete) {
+    throw new Error("A auditoria terminou sem relatório.");
   }
 
-  for (const category of lighthouse.categories) {
+  const hostname = new URL(complete.result.lighthouse.finalUrl).hostname;
+  const baseName = `${slugify(hostname)}-${options.formFactor}-${date}`;
+  const markdownPath = await save(join(options.outDir, `${baseName}.md`), complete.markdown);
+
+  if (options.json) {
+    await save(join(options.outDir, `${baseName}.json`), JSON.stringify(complete.result, null, 2));
+  }
+
+  for (const category of complete.result.lighthouse.categories) {
     const score = category.score === null ? "—" : Math.round(category.score * 100).toString();
     console.log(`  ${category.label.padEnd(14)} ${score.padStart(3)}`);
   }
 
-  const criticos = checks.filter((check) => check.severity === "critico");
+  const criticos = complete.result.checks.filter((check) => check.severity === "critico");
   console.log(
     criticos.length > 0
       ? `\n${criticos.length} achado(s) crítico(s): ${criticos.map((c) => c.label).join(", ")}`
@@ -141,7 +174,10 @@ async function main(): Promise<void> {
   );
   console.log(`\nRelatório: ${markdownPath}`);
 
-  if (options.strict && worstSeverity([...checks, ...lighthouse.metrics]) === "critico") {
+  if (
+    options.strict &&
+    worstSeverity([...complete.result.checks, ...complete.result.lighthouse.metrics]) === "critico"
+  ) {
     process.exitCode = 1;
   }
 }

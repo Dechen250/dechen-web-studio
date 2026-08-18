@@ -4,6 +4,16 @@
 
 Visão do sistema: [00-visao.md](./00-visao.md)
 
+A interface web, com tela ao vivo do Chrome, está em [`/ops/audit`](../../src/app/ops/audit/page.tsx) no site da DWS. É o jeito de assistir o agente trabalhar.
+
+## Console web
+
+1. `npm run dev`
+2. Abra http://localhost:3000/ops/audit
+3. Cole o domínio e aperte **Auditar**
+
+A página mostra a tela do Chrome ao vivo, o log de cada passo e o relatório quando a medição termina. Em produção o console só liga com `SITE_AUDIT_ENABLED=1`. Não entra no menu público e não é indexado.
+
 ## Requisito
 
 Google Chrome instalado na máquina. A ferramenta o localiza sozinha e o roda em modo headless — nenhuma janela abre e o navegador do dia a dia não é usado.
@@ -26,6 +36,7 @@ O `--` é obrigatório: separa os argumentos do npm dos da ferramenta.
 | `--out <pasta>` | Pasta de saída (padrão: `reports`) |
 | `--json` | Salva também o resultado bruto em JSON |
 | `--strict` | Sai com código 1 se houver achado crítico |
+| `--visible` | Abre o Chrome com janela (demonstração local) |
 | `-h`, `--help` | Mostra a ajuda |
 
 O padrão é celular porque é de onde vem a maior parte do tráfego dos negócios atendidos. Use `--desktop` quando o site tiver público majoritariamente de escritório.

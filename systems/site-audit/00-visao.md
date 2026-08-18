@@ -19,8 +19,13 @@ Serve para dois usos: qualificar prospect antes da reunião e verificar site de 
 ## Fluxo geral
 
 ```
-URL → verificação de acesso (DNS, TLS) → Lighthouse headless + checagens de HTML → relatório Markdown em reports/
+URL → verificação de acesso (DNS, TLS) → Lighthouse headless + checagens de HTML → relatório
 ```
+
+Duas superfícies:
+
+- **Console web** em `/ops/audit`: dispara a auditoria, mostra a tela do Chrome ao vivo, o log de atividade e o relatório na mesma página.
+- **CLI** `npm run audit -- <url>`: mesma medição, saída em Markdown na pasta `reports/`.
 
 A verificação de acesso vem antes de propósito. Se o domínio não resolve ou o certificado é inválido, o navegador nem carrega a página: medir performance seria irreal, e o achado relevante já é o próprio bloqueio. Nesse caso o relatório sai como **bloqueado**, com a evidência técnica e a prioridade zero.
 
