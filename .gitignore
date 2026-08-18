@@ -46,3 +46,6 @@ clients/*.zip
 # Relatórios gerados pela auditoria de site
 /reports
 
+# Leads e jobs do console interno (PII)
+/data/ops
+

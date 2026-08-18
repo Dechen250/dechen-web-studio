@@ -1,10 +1,10 @@
 # Uso — Auditoria Técnica de Site
 
-**Tipo:** Guia de uso · **Status:** ativo · **Versão:** 1.0
+**Tipo:** Guia de uso · **Status:** ativo · **Versão:** 1.1
 
 Visão do sistema: [00-visao.md](./00-visao.md)
 
-A interface web, com tela ao vivo do Chrome, está em [`/ops/audit`](../../src/app/ops/audit/page.tsx) no site da DWS. É o jeito de assistir o agente trabalhar.
+A interface interna, com tela ao vivo do Chrome, está em `/ops/audit` no site da DWS. É o jeito de assistir o agente trabalhar. A auditoria pública, sem Chrome, está em `/auditoria`.
 
 ## Console web
 
@@ -12,7 +12,17 @@ A interface web, com tela ao vivo do Chrome, está em [`/ops/audit`](../../src/a
 2. Abra http://localhost:3000/ops/audit
 3. Cole o domínio e aperte **Auditar**
 
-A página mostra a tela do Chrome ao vivo, o log de cada passo e o relatório quando a medição termina. Em produção o console só liga com `SITE_AUDIT_ENABLED=1`. Não entra no menu público e não é indexado.
+A página mostra a tela do Chrome ao vivo, o log de cada passo e o relatório quando a medição termina. Em produção o console só liga com `SITE_AUDIT_ENABLED=1` e pede a senha de `OPS_SECRET`. Não entra no menu público e não é indexado.
+
+Histórico e rascunhos de Descoberta ficam em `/ops`. Leads e jobs são gravados em `data/ops/` (fora do Git).
+
+## Auditoria pública (PageSpeed)
+
+1. `npm run dev`
+2. Abra http://localhost:3000/auditoria
+3. Cole o domínio
+
+A medição vai para a API do PageSpeed Insights. Chave opcional: `PAGESPEED_API_KEY`. Sem Chrome no servidor, então esta rota é a que o Vercel consegue hospedar. Há limite por IP.
 
 ## Requisito
 

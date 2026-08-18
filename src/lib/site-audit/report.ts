@@ -207,13 +207,20 @@ A medição de performance foi interrompida de propósito: o navegador não carr
 `;
 }
 
-export function buildReport(result: AuditResult): string {
+export function buildReport(
+  result: AuditResult,
+  engine: "lighthouse" | "pagespeed" = "lighthouse",
+): string {
   const { lighthouse } = result;
   const overall = worstSeverity([
     ...result.checks,
     ...lighthouse.metrics,
     ...lighthouse.categories.map((category) => ({ severity: scoreSeverity(category.score) })),
   ]);
+  const tool =
+    engine === "pagespeed"
+      ? `PageSpeed Insights (Lighthouse ${lighthouse.lighthouseVersion})`
+      : `Lighthouse ${lighthouse.lighthouseVersion}`;
 
   return `# Auditoria técnica — ${new URL(lighthouse.finalUrl).hostname}
 
@@ -225,7 +232,7 @@ export function buildReport(result: AuditResult): string {
 | URL final | ${cell(lighthouse.finalUrl)} |
 | Dispositivo simulado | ${FORM_FACTOR_LABEL[lighthouse.formFactor]} |
 | Data da medição | ${formatDate(lighthouse.fetchedAt)} |
-| Ferramenta | Lighthouse ${lighthouse.lighthouseVersion} |
+| Ferramenta | ${tool} |
 | Situação geral | ${SEVERITY_LABEL[overall]} |
 
 ## Resumo

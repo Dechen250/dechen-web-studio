@@ -183,13 +183,10 @@ export function AuditConsole() {
     liveFrame ?? result?.screenshots[result.screenshots.length - 1] ?? null;
 
   return (
-    <div className="min-h-screen bg-[#050505] text-white">
+    <div className="bg-[#050505] text-white">
       <div className="mx-auto flex max-w-[1280px] flex-col gap-8 px-5 py-8 md:px-8 md:py-10">
         <header className="flex flex-wrap items-end justify-between gap-4">
           <div className="space-y-2">
-            <p className="text-[13px] tracking-[0.18em] text-[#A1A1AA] uppercase">
-              Dechen Web Studio · interno
-            </p>
             <h1 className="font-sans text-3xl font-semibold tracking-[-0.04em] md:text-4xl">
               Console de auditoria
             </h1>

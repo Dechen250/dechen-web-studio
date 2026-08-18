@@ -10,13 +10,18 @@ Documentação relacionada: [00-visao.md](./00-visao.md) · [Roadmap Comercial](
 
 ## Status atual
 
-### Planejamento concluído
+### Em operação agora
 
-- Documentação
-- Arquitetura definida
-- Banco de dados planejado
-- API planejada
-- Sistema de e-mail planejado
+- Formulário da homepage
+- `POST /api/contact` com validação, honeypot e rate limit
+- Persistência em `data/ops/leads/`
+- Fila: auditoria PageSpeed + rascunho de Descoberta quando há URL
+- WhatsApp como canal de resposta imediata
+
+### Ainda no desenho
+
+- Banco de dados (Supabase)
+- Notificação por e-mail (Resend)
 
 ## Versão 1.0
 

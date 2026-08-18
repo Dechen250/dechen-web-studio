@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "audit": "tsx scripts/site-audit/index.ts"
+    "audit": "tsx scripts/site-audit/index.ts",
+    "discovery": "tsx scripts/discovery/index.ts"
   },
   "dependencies": {
     "next": "16.2.9",

@@ -36,6 +36,8 @@ Detalhamento do funil e etapas: [`../systems/sales/`](../systems/sales/00-visao.
 
 Captação técnica de leads: [`../systems/client-acquisition/`](../systems/client-acquisition/00-visao.md).
 
+Auditoria técnica e rascunho de Descoberta: [`../systems/site-audit/`](../systems/site-audit/00-visao.md) · [`../systems/discovery/`](../systems/discovery/00-visao.md).
+
 ## Planejamento
 
 | Doc | Arquivo |

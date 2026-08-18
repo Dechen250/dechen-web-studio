@@ -1,6 +1,6 @@
 # Auditoria Técnica de Site
 
-**Tipo:** Visão do sistema · **Status:** ativo · **Versão:** 1.0
+**Tipo:** Visão do sistema · **Status:** ativo · **Versão:** 1.1
 
 ## Objetivo
 
@@ -14,18 +14,20 @@ Serve para dois usos: qualificar prospect antes da reunião e verificar site de 
 |-----------|----------|
 | [01-uso.md](./01-uso.md) | Comandos, opções e saída |
 | [exemplo-relatorio.md](./exemplo-relatorio.md) | Relatório real gerado pela ferramenta |
+| [Preparador de Descoberta](../discovery/00-visao.md) | Rascunho da reunião a partir do lead + site |
 | [Diagnóstico](../sales/03-diagnostico.md) | Etapa do funil que consome o relatório |
 
 ## Fluxo geral
 
 ```
-URL → verificação de acesso (DNS, TLS) → Lighthouse headless + checagens de HTML → relatório
+URL → verificação de acesso (DNS, TLS) → Lighthouse (console/CLI) ou PageSpeed Insights (público) + checagens de HTML → relatório
 ```
 
-Duas superfícies:
+Duas superfícies internas e uma pública:
 
-- **Console web** em `/ops/audit`: dispara a auditoria, mostra a tela do Chrome ao vivo, o log de atividade e o relatório na mesma página.
+- **Console web** em `/ops/audit`: Lighthouse com Chrome no servidor, tela ao vivo, log e relatório. Protegido por `OPS_SECRET` em produção.
 - **CLI** `npm run audit -- <url>`: mesma medição, saída em Markdown na pasta `reports/`.
+- **Auditoria pública** em `/auditoria`: PageSpeed Insights API + checagens de HTML, sem Chrome. Serve no Vercel.
 
 A verificação de acesso vem antes de propósito. Se o domínio não resolve ou o certificado é inválido, o navegador nem carrega a página: medir performance seria irreal, e o achado relevante já é o próprio bloqueio. Nesse caso o relatório sai como **bloqueado**, com a evidência técnica e a prioridade zero.
 
@@ -71,7 +73,7 @@ O relatório declara os próprios limites: uma página, um carregamento, fundaç
 |-------|--------|
 | 1.1 | Auditar várias URLs numa execução e comparar com a medição anterior |
 | 1.2 | Execução agendada nos sites de clientes ativos, avisando quando algo regride |
-| 2.0 | Auditoria sob demanda no site da DWS, via PageSpeed Insights API (evita empacotar Chrome em serverless) |
+| 2.0 | `/auditoria` pública via PageSpeed Insights — feito |
 
 ## Resultado esperado
 
