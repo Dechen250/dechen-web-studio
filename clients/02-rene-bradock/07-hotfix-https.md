@@ -1,6 +1,6 @@
 # Hotfix HTTPS — renebradock.com.br
 
-**Tipo:** operação · **Status:** incidente aberto · **Versão:** 1.0
+**Tipo:** operação · **Status:** resolvido em 18/08/2026 · **Versão:** 1.1
 
 Pack: [00-projeto.md](00-projeto.md) · [06-roadmap.md](06-roadmap.md)
 
