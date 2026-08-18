@@ -2,7 +2,7 @@
 
 **Tipo:** brief · **Status:** ativo · **Versão:** 2.0
 
-Pack: [01-brand-guide.md](01-brand-guide.md) · [02-sitemap.md](02-sitemap.md) · [03-copy.md](03-copy.md) · [04-assets.md](04-assets.md) · [06-roadmap.md](06-roadmap.md)
+Pack: [01-brand-guide.md](01-brand-guide.md) · [02-sitemap.md](02-sitemap.md) · [03-copy.md](03-copy.md) · [04-assets.md](04-assets.md) · [06-roadmap.md](06-roadmap.md) · [07-hotfix-https.md](07-hotfix-https.md)
 
 ## Objetivo
 
