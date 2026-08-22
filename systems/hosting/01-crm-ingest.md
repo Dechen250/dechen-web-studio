@@ -4,7 +4,7 @@
 
 O agente do site da DWS grava no CRM Core (`crm.dechenwebstudio.com.br`) um **contato** e uma **empresa** por lead.
 
-O código do endpoint vive em [`integrations/crm-core/`](../../integrations/crm-core/) e é copiado para `/opt/crm-core` na VPS.
+O código do endpoint vive em [`integrations/crm-core/`](../../integrations/crm-core/) e é copiado para `/opt/crm-core` na VPS. Essa pasta **não entra** no build do site da DWS (`tsconfig` e `.dockerignore` a excluem): os aliases `@/` dela são do CRM.
 
 ## Contrato
 
