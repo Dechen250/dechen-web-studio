@@ -105,6 +105,7 @@ function LeadRow({ lead }: { lead: LeadRecord }) {
       </p>
       <p className="mt-1 font-mono text-xs text-[#A1A1AA]">
         {formatWhen(lead.createdAt)} · {lead.origin}
+        {lead.crmContactId ? " · CRM ok" : lead.crmError ? " · CRM falhou" : ""}
       </p>
     </li>
   );

@@ -19,7 +19,7 @@ Responsável por todos os envios do formulário de contato.
 ## Fluxo
 
 ```
-Cliente → Formulário → Validação frontend → POST /api/contact → Validação API → arquivo em data/ops → fila (auditoria + Descoberta) → Resposta → WhatsApp
+Cliente → Formulário → Validação frontend → POST /api/contact → Validação API → arquivo em data/ops → CRM (empresa + contato) → fila (auditoria + Descoberta) → Resposta → WhatsApp
 ```
 
 Supabase e Resend entram quando a captação 1.0 completa for ligada. Enquanto isso o lead não se perde: grava no servidor e a pessoa segue no WhatsApp.

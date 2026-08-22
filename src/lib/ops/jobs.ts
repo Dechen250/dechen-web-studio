@@ -1,3 +1,5 @@
+import { companyNameFromLead } from "@/lib/crm/company-name";
+import { ingestLeadToCrm } from "@/lib/crm/ingest";
 import { runDiscovery } from "@/lib/discovery/run";
 import type { DiscoveryLeadInput } from "@/lib/discovery/types";
 import { collectPagespeedAudit } from "@/lib/site-audit/run-pagespeed";
@@ -61,8 +63,39 @@ export async function createQueuedJobs(lead: LeadRecord): Promise<{
   lead.auditJobId = auditJob?.id;
   lead.discoveryJobId = discoveryJob.id;
   await saveLead(lead);
+  await syncLeadToCrm(lead);
 
   return { auditJob, discoveryJob };
+}
+
+export async function syncLeadToCrm(lead: LeadRecord): Promise<void> {
+  try {
+    const result = await ingestLeadToCrm({
+      name: lead.name,
+      email: lead.email,
+      whatsapp: lead.whatsapp,
+      company: companyNameFromLead({
+        company: lead.company,
+        segment: lead.segment,
+        website: lead.website,
+      }),
+      segment: lead.segment,
+      website: lead.website,
+      message: lead.message,
+      origin: lead.origin,
+      leadId: lead.id,
+    });
+    if (!result) return;
+    lead.crmContactId = result.contactId;
+    lead.crmCompanyId = result.companyId;
+    lead.crmError = undefined;
+    await saveLead(lead);
+  } catch (error) {
+    const message = error instanceof Error ? error.message : String(error);
+    lead.crmError = message;
+    await saveLead(lead);
+    console.error("[crm] falha ao enviar lead", message);
+  }
 }
 
 export async function processLeadJobs(

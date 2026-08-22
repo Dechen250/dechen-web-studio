@@ -16,6 +16,7 @@ export function buildQuoteMessage(input: {
   email: string;
   whatsapp: string;
   business: string;
+  company?: string;
   message: string;
   website?: string;
 }) {
@@ -27,6 +28,7 @@ export function buildQuoteMessage(input: {
     `WhatsApp: ${input.whatsapp}`,
     `Tipo de negócio: ${input.business}`,
   ];
+  if (input.company) lines.push(`Empresa: ${input.company}`);
   if (input.website) lines.push(`Site atual: ${input.website}`);
   lines.push(`Mensagem: ${input.message}`);
   return lines.join("\n");

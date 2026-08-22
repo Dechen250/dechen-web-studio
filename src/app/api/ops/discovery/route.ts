@@ -1,6 +1,7 @@
 import { runDiscovery } from "@/lib/discovery/run";
 import type { DiscoveryLeadInput } from "@/lib/discovery/types";
 import { requireOps, jsonError } from "@/lib/ops/http";
+import { syncLeadToCrm } from "@/lib/ops/jobs";
 import { collectPagespeedAudit } from "@/lib/site-audit/run-pagespeed";
 import { normalizeUrl } from "@/lib/site-audit/format";
 import {
@@ -73,6 +74,7 @@ export async function POST(request: Request): Promise<Response> {
     website: parsed.website,
     message: parsed.message ?? "",
     origin: "ops",
+    segment: parsed.segment,
   };
 
   const job: JobRecord = {
@@ -87,6 +89,7 @@ export async function POST(request: Request): Promise<Response> {
 
   lead.discoveryJobId = job.id;
   await saveLead(lead);
+  await syncLeadToCrm(lead);
   await saveJob(job);
 
   try {

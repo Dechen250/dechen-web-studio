@@ -5,6 +5,7 @@ export type ContactPayload = {
   email: string;
   whatsapp: string;
   negocio: string;
+  empresa?: string;
   mensagem: string;
   website?: string;
   honeypot?: string;
@@ -16,6 +17,7 @@ const LIMITS = {
   email: 120,
   whatsapp: 40,
   negocio: 80,
+  empresa: 120,
   mensagem: 2000,
   website: 200,
 };
@@ -43,7 +45,8 @@ export function validateContact(raw: unknown): ContactValidation {
     nome: trimField(body.nome ?? body.name, LIMITS.nome),
     email: trimField(body.email, LIMITS.email).toLowerCase(),
     whatsapp: trimField(body.whatsapp, LIMITS.whatsapp),
-    negocio: trimField(body.negocio ?? body.company ?? body.servico, LIMITS.negocio),
+    negocio: trimField(body.negocio ?? body.servico, LIMITS.negocio),
+    empresa: trimField(body.empresa ?? body.company, LIMITS.empresa) || undefined,
     mensagem: String(body.mensagem ?? body.message ?? "")
       .trim()
       .slice(0, LIMITS.mensagem),

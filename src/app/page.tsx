@@ -44,6 +44,7 @@ type ContactFormData = {
   email: string;
   whatsapp: string;
   negocio: string;
+  empresa: string;
   website: string;
   mensagem: string;
 };
@@ -53,6 +54,7 @@ const initialContactForm: ContactFormData = {
   email: "",
   whatsapp: "",
   negocio: "",
+  empresa: "",
   website: "",
   mensagem: "",
 };
@@ -809,6 +811,7 @@ function ContactForm() {
       email: form.email,
       whatsapp: form.whatsapp,
       business: form.negocio,
+      company: form.empresa || undefined,
       website: website || undefined,
       message: form.mensagem,
     });
@@ -892,6 +895,18 @@ function ContactForm() {
           </select>
         </FormField>
       </div>
+      <FormField label="Empresa (opcional)" htmlFor="contact-empresa">
+        <input
+          id="contact-empresa"
+          name="empresa"
+          type="text"
+          autoComplete="organization"
+          placeholder="Nome da empresa"
+          value={form.empresa}
+          onChange={(e) => update("empresa", e.target.value)}
+          className={inputClass}
+        />
+      </FormField>
       <FormField label="Site atual (opcional)" htmlFor="contact-website">
         <input
           id="contact-website"

@@ -27,6 +27,13 @@ Copie [`.env.example`](../../.env.example). Obrigatórias em produção:
 
 Opcionais: `PAGESPEED_API_KEY` (auditoria pública `/auditoria`).
 
+CRM interno (`crm.dechenwebstudio.com.br`, porta 3002):
+
+- `CRM_INGEST_URL=http://172.17.0.1:3002/api/ingest/leads`
+- `CRM_INGEST_SECRET` — o mesmo segredo do CRM
+
+Cada lead do formulário ou da Descoberta cria ou atualiza **empresa + contato** no CRM. Se o CRM estiver fora, o lead continua em `data/ops` e o WhatsApp abre.
+
 ## Porta nesta VPS
 
 | Serviço | Porta no host |

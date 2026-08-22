@@ -10,11 +10,15 @@ export type LeadRecord = {
   email: string;
   whatsapp: string;
   company: string;
+  segment?: string;
   website?: string;
   message: string;
   origin: "contact-form" | "ops";
   auditJobId?: string;
   discoveryJobId?: string;
+  crmContactId?: string;
+  crmCompanyId?: string;
+  crmError?: string;
 };
 
 export type JobKind = "audit" | "discovery";
