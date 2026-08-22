@@ -5,6 +5,7 @@ import Link from "next/link";
 import {
   useEffect,
   useState,
+  useSyncExternalStore,
   type FormEvent,
   type ReactNode,
 } from "react";
@@ -43,6 +44,7 @@ type ContactFormData = {
   email: string;
   whatsapp: string;
   negocio: string;
+  website: string;
   mensagem: string;
 };
 
@@ -51,6 +53,7 @@ const initialContactForm: ContactFormData = {
   email: "",
   whatsapp: "",
   negocio: "",
+  website: "",
   mensagem: "",
 };
 
@@ -763,8 +766,21 @@ function FormField({
 const inputClass =
   "w-full rounded-xl border border-[#262626] bg-[#101010]/60 px-4 py-3 text-sm text-white placeholder:text-[#6B6B76] backdrop-blur-sm transition-colors focus:border-[#0070F3]/50 focus:outline-none focus:ring-2 focus:ring-[#0070F3]/35";
 
+function useSitePrefill(): string {
+  return useSyncExternalStore(
+    (onStoreChange) => {
+      window.addEventListener("popstate", onStoreChange);
+      return () => window.removeEventListener("popstate", onStoreChange);
+    },
+    () => new URLSearchParams(window.location.search).get("site") ?? "",
+    () => "",
+  );
+}
+
 function ContactForm() {
+  const sitePrefill = useSitePrefill();
   const [form, setForm] = useState<ContactFormData>(initialContactForm);
+  const [honeypot, setHoneypot] = useState("");
   const [status, setStatus] = useState<"idle" | "loading" | "opened">("idle");
 
   const update = (field: keyof ContactFormData, value: string) => {
@@ -772,14 +788,28 @@ function ContactForm() {
     if (status === "opened") setStatus("idle");
   };
 
-  const handleSubmit = (e: FormEvent) => {
+  const website = form.website || sitePrefill;
+
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     setStatus("loading");
+
+    try {
+      await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ ...form, website, honeypot }),
+      });
+    } catch {
+      /* o WhatsApp ainda abre — o lead não fica preso no formulário */
+    }
+
     const text = buildQuoteMessage({
       name: form.nome,
       email: form.email,
       whatsapp: form.whatsapp,
       business: form.negocio,
+      website: website || undefined,
       message: form.mensagem,
     });
     window.open(whatsappUrl(text), "_blank", "noopener,noreferrer");
@@ -787,7 +817,18 @@ function ContactForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-5" noValidate={false}>
+    <form onSubmit={(e) => void handleSubmit(e)} className="space-y-5" noValidate={false}>
+      <div className="hidden" aria-hidden>
+        <label htmlFor="contact-website-hp">Site</label>
+        <input
+          id="contact-website-hp"
+          name="website_hp"
+          tabIndex={-1}
+          autoComplete="off"
+          value={honeypot}
+          onChange={(e) => setHoneypot(e.target.value)}
+        />
+      </div>
       <div className="grid gap-5 sm:grid-cols-2">
         <FormField label="Seu nome" htmlFor="contact-nome">
           <input
@@ -851,6 +892,18 @@ function ContactForm() {
           </select>
         </FormField>
       </div>
+      <FormField label="Site atual (opcional)" htmlFor="contact-website">
+        <input
+          id="contact-website"
+          name="website"
+          type="text"
+          autoComplete="url"
+          placeholder="seudominio.com.br"
+          value={website}
+          onChange={(e) => update("website", e.target.value)}
+          className={inputClass}
+        />
+      </FormField>
       <FormField label="Conte sobre seu projeto" htmlFor="contact-mensagem">
         <textarea
           id="contact-mensagem"
@@ -872,7 +925,7 @@ function ContactForm() {
         aria-live="polite"
       >
         {status === "opened"
-          ? "WhatsApp aberto com sua mensagem pronta. Se a janela foi bloqueada, permita pop-ups e envie de novo."
+          ? "WhatsApp aberto com sua mensagem pronta. Se passou o site, já olhamos a fundação técnica nos bastidores."
           : "Ao enviar, abrimos o WhatsApp com sua mensagem pronta — sem cadastro e sem compromisso."}
       </p>
     </form>
@@ -1424,7 +1477,8 @@ export default function Home() {
                       Solicite seu orçamento
                     </h3>
                     <p className="mb-6 text-sm text-[#A1A1AA]">
-                      Preencha o formulário e envie direto no WhatsApp.
+                      Preencha o formulário e envie direto no WhatsApp. Se já tem site, cole a URL
+                      — a fundação técnica entra na fila antes da reunião.
                     </p>
                     <ContactForm />
                   </div>
@@ -1469,6 +1523,9 @@ export default function Home() {
                     <NavLink href={link.href}>{link.label}</NavLink>
                   </li>
                 ))}
+                <li>
+                  <NavLink href="/auditoria">Auditoria</NavLink>
+                </li>
               </ul>
             </nav>
 

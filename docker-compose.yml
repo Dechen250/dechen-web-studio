@@ -1,0 +1,33 @@
+name: dechen-web-studio
+
+# Stack só do site da DWS. Não misturar com compose de cliente.
+
+services:
+  web:
+    build: .
+    restart: unless-stopped
+    env_file:
+      - .env
+    environment:
+      NODE_ENV: production
+      SITE_AUDIT_ENABLED: "1"
+      CHROME_NO_SANDBOX: "1"
+      CHROME_PATH: /usr/bin/chromium
+    ports:
+      - "${DWS_PUBLISH:-127.0.0.1:3000}:3000"
+    volumes:
+      - ./data/ops:/app/data/ops
+      - ./reports:/app/reports
+    shm_size: "1gb"
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "node",
+          "-e",
+          "fetch('http://127.0.0.1:3000/api/health').then((r)=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))",
+        ]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+      start_period: 40s

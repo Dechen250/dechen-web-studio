@@ -1,6 +1,6 @@
 # Arquitetura — Sistema de Captação
 
-**Tipo:** Arquitetura · **Status:** ativo · **Versão:** 2.0
+**Tipo:** Arquitetura · **Status:** ativo · **Versão:** 2.1
 
 ## Objetivo
 
@@ -12,11 +12,11 @@ Documentação relacionada: [00-visao.md](./00-visao.md) · [02-banco.md](./02-b
 
 1. Visitante preenche o formulário no site
 2. Frontend valida os campos
-3. Frontend envia dados para a API
+3. Frontend envia dados para a API e abre o WhatsApp
 4. API valida novamente (nunca confiar só no frontend)
-5. API salva o lead no Supabase
-6. API dispara notificação via Resend
-7. Usuário recebe mensagem de sucesso
+5. API grava o lead em `data/ops/leads/` (Supabase quando a captação 1.0 completar)
+6. Se houver URL de site, enfileira auditoria PageSpeed e rascunho de Descoberta
+7. Usuário recebe confirmação no próprio formulário
 
 ## Stack
 
@@ -24,8 +24,9 @@ Documentação relacionada: [00-visao.md](./00-visao.md) · [02-banco.md](./02-b
 |--------|------------|
 | Frontend | Formulário de contato (site) |
 | API | `POST /api/contact` |
-| Banco | Supabase (PostgreSQL) |
-| E-mail | Resend |
+| Persistência atual | Arquivos em `data/ops/` |
+| Banco planejado | Supabase (PostgreSQL) |
+| E-mail planejado | Resend |
 | Destino | contato@dechenwebstudio.com.br |
 
 ## Diagrama
@@ -33,15 +34,13 @@ Documentação relacionada: [00-visao.md](./00-visao.md) · [02-banco.md](./02-b
 ```txt
 Homepage
    ↓
-Contact Form
+Contact Form  →  WhatsApp
    ↓
 /api/contact
    ↓
-Supabase
+data/ops/leads
    ↓
-Resend
-   ↓
-contato@dechenwebstudio.com.br
+fila: PageSpeed + rascunho de Descoberta
 ```
 
 ## Responsabilidades por camada

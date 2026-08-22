@@ -24,12 +24,30 @@ Abra [http://localhost:3000](http://localhost:3000).
 
 Outros scripts: `npm run build`, `npm run start`, `npm run lint`.
 
+Auditoria técnica de um site (Chrome headless, relatório em `reports/`):
+
+```bash
+npm run audit -- dechenwebstudio.com.br
+```
+
+Rascunho da reunião de Descoberta (fatos do lead + HTML do site):
+
+```bash
+npm run discovery -- --name "Maria" --email maria@exemplo.com --whatsapp 11999999999 --company "Exemplo" --website dechenwebstudio.com.br
+```
+
+Para ver os agentes no console interno — auditoria com tela do Chrome, Descoberta e histórico — rode `npm run dev` e abra [http://localhost:3000/ops](http://localhost:3000/ops). A auditoria pública (PageSpeed, sem Chrome no pedido) está em [http://localhost:3000/auditoria](http://localhost:3000/auditoria).
+
+Produção do site da DWS é **VPS com Docker**, não Vercel. Guia: [`systems/hosting/00-vps.md`](systems/hosting/00-vps.md).
+
+Detalhes em [`systems/site-audit/`](systems/site-audit/00-visao.md) e [`systems/discovery/`](systems/discovery/00-visao.md).
+
 ## Mapa do repositório
 
 | Pasta | Função |
 |-------|--------|
 | [`agency/`](agency/00-index.md) | Sistema operacional da agência (estratégia, marca, produto, comercial, operação) |
-| [`systems/`](systems/client-acquisition/00-visao.md) | Captação de leads e processo comercial detalhado |
+| [`systems/`](systems/client-acquisition/00-visao.md) | Captação de leads, processo comercial, [auditoria técnica](systems/site-audit/00-visao.md) e [preparador de Descoberta](systems/discovery/00-visao.md) |
 | [`clients/`](clients/01-vitta-serena/00-projeto.md) | Packs de clientes reais (brief, copy, assets, roadmap) |
 | [`showcase/`](showcase/01-divina-cozinha.md/00-projeto.md) | Packs de projetos fictícios de portfólio |
 | [`templates/showcase-template/`](templates/showcase-template/00-projeto.md) | Template em branco para novos showcases |
