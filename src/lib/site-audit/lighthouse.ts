@@ -26,7 +26,7 @@ type RunOptions = {
 };
 
 function chromeFlags(visible: boolean): string[] {
-  const flags = ["--disable-gpu", "--mute-audio"];
+  const flags = ["--disable-gpu", "--mute-audio", "--disable-dev-shm-usage"];
 
   if (visible) {
     flags.push("--window-size=1280,900");
@@ -34,7 +34,7 @@ function chromeFlags(visible: boolean): string[] {
     flags.push("--headless=new", "--window-size=412,915");
   }
 
-  if (process.getuid?.() === 0) {
+  if (process.getuid?.() === 0 || process.env.CHROME_NO_SANDBOX === "1") {
     flags.push("--no-sandbox");
   }
 

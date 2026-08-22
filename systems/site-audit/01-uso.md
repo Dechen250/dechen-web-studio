@@ -22,7 +22,7 @@ Histórico e rascunhos de Descoberta ficam em `/ops`. Leads e jobs são gravados
 2. Abra http://localhost:3000/auditoria
 3. Cole o domínio
 
-A medição vai para a API do PageSpeed Insights. Chave opcional: `PAGESPEED_API_KEY`. Sem Chrome no servidor, então esta rota é a que o Vercel consegue hospedar. Há limite por IP.
+A medição vai para a API do PageSpeed Insights. Chave opcional: `PAGESPEED_API_KEY`. Há limite por IP. O console interno, na mesma VPS, usa Chrome/Lighthouse.
 
 ## Requisito
 

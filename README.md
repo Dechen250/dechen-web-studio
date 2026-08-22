@@ -36,7 +36,9 @@ Rascunho da reunião de Descoberta (fatos do lead + HTML do site):
 npm run discovery -- --name "Maria" --email maria@exemplo.com --whatsapp 11999999999 --company "Exemplo" --website dechenwebstudio.com.br
 ```
 
-Para ver os agentes no console interno — auditoria com tela do Chrome, Descoberta e histórico — rode `npm run dev` e abra [http://localhost:3000/ops](http://localhost:3000/ops). A auditoria pública (PageSpeed, sem Chrome) está em [http://localhost:3000/auditoria](http://localhost:3000/auditoria).
+Para ver os agentes no console interno — auditoria com tela do Chrome, Descoberta e histórico — rode `npm run dev` e abra [http://localhost:3000/ops](http://localhost:3000/ops). A auditoria pública (PageSpeed, sem Chrome no pedido) está em [http://localhost:3000/auditoria](http://localhost:3000/auditoria).
+
+Produção do site da DWS é **VPS com Docker**, não Vercel. Guia: [`systems/hosting/00-vps.md`](systems/hosting/00-vps.md).
 
 Detalhes em [`systems/site-audit/`](systems/site-audit/00-visao.md) e [`systems/discovery/`](systems/discovery/00-visao.md).
 

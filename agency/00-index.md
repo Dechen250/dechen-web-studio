@@ -38,6 +38,8 @@ Captação técnica de leads: [`../systems/client-acquisition/`](../systems/clie
 
 Auditoria técnica e rascunho de Descoberta: [`../systems/site-audit/`](../systems/site-audit/00-visao.md) · [`../systems/discovery/`](../systems/discovery/00-visao.md).
 
+Hospedagem do site da DWS (VPS, não Vercel): [`../systems/hosting/00-vps.md`](../systems/hosting/00-vps.md).
+
 ## Planejamento
 
 | Doc | Arquivo |

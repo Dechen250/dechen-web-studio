@@ -27,7 +27,7 @@ Duas superfícies internas e uma pública:
 
 - **Console web** em `/ops/audit`: Lighthouse com Chrome no servidor, tela ao vivo, log e relatório. Protegido por `OPS_SECRET` em produção.
 - **CLI** `npm run audit -- <url>`: mesma medição, saída em Markdown na pasta `reports/`.
-- **Auditoria pública** em `/auditoria`: PageSpeed Insights API + checagens de HTML, sem Chrome. Serve no Vercel.
+- **Auditoria pública** em `/auditoria`: PageSpeed Insights API + checagens de HTML, sem Chrome no pedido do visitante. O site da DWS hospeda isso na VPS ([hospedagem](../hosting/00-vps.md)).
 
 A verificação de acesso vem antes de propósito. Se o domínio não resolve ou o certificado é inválido, o navegador nem carrega a página: medir performance seria irreal, e o achado relevante já é o próprio bloqueio. Nesse caso o relatório sai como **bloqueado**, com a evidência técnica e a prioridade zero.
 
