@@ -1,10 +1,13 @@
-# Patch do CRM Core — ingestão de leads
+# Overlay do CRM Core — agente + ingestão
 
-Arquivos para copiar em `/opt/crm-core` (o CRM **não** está neste git).
+O CRM **não** tem git próprio. Esta pasta é o overlay copiado para `/opt/crm-core`.
 
-- `app/api/ingest/leads/route.ts` → `/opt/crm-core/app/api/ingest/leads/route.ts`
-- `features/ingest/site-lead.ts` → `/opt/crm-core/features/ingest/site-lead.ts`
+O agente comercial (Descoberta + leitura do site) é **função do CRM**, não um produto ao lado. Aparece em:
+
+- `/app/agent` — histórico e botão de rodar
+- contato e empresa — painel **Agente**
+- ingestão do site — cria contato/empresa e dispara o agente
 
 Os imports `@/` resolvem **só dentro do CRM**. Não compile esta pasta no Next da DWS.
 
-Depois de copiar: rebuild do compose de produção do CRM. Ver [`systems/hosting/01-crm-ingest.md`](../../systems/hosting/01-crm-ingest.md).
+Depois de copiar: `0009_agent_runs.sql` (migrate) e rebuild do compose de produção. Ver [`systems/hosting/01-crm-ingest.md`](../../systems/hosting/01-crm-ingest.md).

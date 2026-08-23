@@ -34,8 +34,19 @@ export default async function OpsHomePage() {
           Console
         </h1>
         <p className="max-w-2xl text-base text-[#A1A1AA]">
-          Leads do formulário, auditoria com Chrome e rascunho de Descoberta. O que o
-          visitante não disse fica como [a confirmar na reunião].
+          Console interno da DWS. O agente comercial — Descoberta e leitura do site —
+          é função do CRM, no contato e na empresa. Isto aqui é só ferramenta da
+          agência (Chrome ao vivo).
+        </p>
+        <p className="max-w-2xl text-sm text-[#A1A1AA]">
+          Abra{" "}
+          <a
+            href="https://crm.dechenwebstudio.com.br/app/agent"
+            className="text-[#5ec8f2] underline-offset-2 hover:underline"
+          >
+            crm.dechenwebstudio.com.br/app/agent
+          </a>
+          .
         </p>
       </header>
 

@@ -44,9 +44,9 @@ O rascunho segue a estrutura da reunião (apresentação → empresa → públic
 
 ## Superfícies
 
-- Console interno: `/ops/discovery`
-- CLI: `npm run discovery -- …`
-- Automático: `POST /api/contact` com URL de site enfileira Descoberta (e auditoria PageSpeed) depois de gravar o lead
+- **Produto:** agente do CRM em `/app/agent`, no contato e na empresa
+- CLI da agência: `npm run discovery -- …`
+- Site da DWS: `POST /api/contact` só envia o lead ao CRM; o agente roda lá
 
 ## Resultado esperado
 

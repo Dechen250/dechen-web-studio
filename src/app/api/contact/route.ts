@@ -1,5 +1,5 @@
 import { validateContact } from "@/lib/contact/validate";
-import { createQueuedJobs, startLeadJobs } from "@/lib/ops/jobs";
+import { syncLeadToCrm } from "@/lib/ops/jobs";
 import { allowRequest, clientKey } from "@/lib/ops/rate-limit";
 import { type LeadRecord, newId, nowIso, saveLead } from "@/lib/ops/store";
 
@@ -45,8 +45,7 @@ export async function POST(request: Request): Promise<Response> {
 
   try {
     await saveLead(lead);
-    const jobs = await createQueuedJobs(lead);
-    startLeadJobs(lead, jobs);
+    await syncLeadToCrm(lead);
   } catch (error) {
     console.error("[contact] falha ao persistir lead", error);
     return Response.json(
@@ -57,8 +56,6 @@ export async function POST(request: Request): Promise<Response> {
 
   return Response.json({
     success: true,
-    message: parsed.data.website
-      ? "Solicitação enviada. Se o site foi informado, a fundação técnica entra na fila."
-      : "Solicitação enviada com sucesso.",
+    message: "Solicitação enviada com sucesso.",
   });
 }

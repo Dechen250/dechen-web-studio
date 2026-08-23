@@ -1,4 +1,5 @@
 import { and, eq, ilike, isNull, or } from "drizzle-orm";
+import { queueAgentForIngest } from "@/features/agent/queries";
 import { companies, contacts } from "@/database/schema";
 import type { Database } from "@/lib/db";
 import {
@@ -24,6 +25,7 @@ export type SiteLeadResult = {
   contactId: string;
   companyCreated: boolean;
   contactCreated: boolean;
+  agentRunId?: string;
 };
 
 function splitName(name: string): { firstName: string; lastName: string | null } {
@@ -155,12 +157,12 @@ export async function ingestSiteLead(
       .where(eq(contacts.id, existingContact.id))
       .returning({ id: contacts.id });
 
-    return {
+    return finishIngest(db, organizationId, ownerId, raw, {
       companyId: existingCompany.id,
       contactId: updated.id,
       companyCreated,
       contactCreated: false,
-    };
+    });
   }
 
   const [createdContact] = await db
@@ -182,10 +184,35 @@ export async function ingestSiteLead(
     })
     .returning({ id: contacts.id });
 
-  return {
+  return finishIngest(db, organizationId, ownerId, raw, {
     companyId: existingCompany.id,
     contactId: createdContact.id,
     companyCreated,
     contactCreated: true,
-  };
+  });
+}
+
+async function finishIngest(
+  db: Database,
+  organizationId: string,
+  ownerId: string,
+  raw: SiteLeadInput,
+  result: SiteLeadResult,
+): Promise<SiteLeadResult> {
+  const agentRunId = await queueAgentForIngest(db, {
+    organizationId,
+    actorId: ownerId,
+    lead: {
+      contactId: result.contactId,
+      companyId: result.companyId,
+      name: raw.name,
+      email: raw.email,
+      whatsapp: raw.whatsapp,
+      company: raw.company,
+      website: raw.website,
+      segment: raw.segment,
+      message: raw.message,
+    },
+  });
+  return { ...result, agentRunId };
 }

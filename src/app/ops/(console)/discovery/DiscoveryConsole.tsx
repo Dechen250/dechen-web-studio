@@ -51,8 +51,14 @@ export function DiscoveryConsole() {
           Preparador de Descoberta
         </h1>
         <p className="max-w-2xl text-base text-[#A1A1AA]">
-          Lead entra, rascunho do pack sai. Só o que foi dito ou o que o site declara.
-          Orçamento e prazo ficam como [a confirmar na reunião].
+          Ferramenta interna da DWS. Para vender o CRM, o agente mora em{" "}
+          <a
+            href="https://crm.dechenwebstudio.com.br/app/agent"
+            className="text-[#5ec8f2] underline-offset-2 hover:underline"
+          >
+            Contatos, Empresas e Agente
+          </a>
+          . Aqui o rascunho ainda sai local; o produto é o CRM.
         </p>
       </header>
 
