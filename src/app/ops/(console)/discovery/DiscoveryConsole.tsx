@@ -51,14 +51,14 @@ export function DiscoveryConsole() {
           Preparador de Descoberta
         </h1>
         <p className="max-w-2xl text-base text-[#A1A1AA]">
-          Ferramenta interna da DWS. Para vender o CRM, o agente mora em{" "}
+          Ferramenta interna da DWS. O rascunho sai daqui; o CRM guarda o lead em{" "}
           <a
-            href="https://crm.dechenwebstudio.com.br/app/agent"
+            href="https://crm.dechenwebstudio.com.br/app/contacts"
             className="text-[#5ec8f2] underline-offset-2 hover:underline"
           >
-            Contatos, Empresas e Agente
+            Contatos
           </a>
-          . Aqui o rascunho ainda sai local; o produto é o CRM.
+          .
         </p>
       </header>
 

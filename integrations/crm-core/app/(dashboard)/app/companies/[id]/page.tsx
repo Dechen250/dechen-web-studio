@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { AgentPanel } from "@/features/agent/components/agent-panel";
 import { ActivityForm, ActivityTimeline } from "@/features/activities/components/activity-ui";
 import { listActivities } from "@/features/activities/queries";
 import {
@@ -86,8 +85,6 @@ export default async function CompanyDetailPage({
         </Panel>
 
         <div className="space-y-4">
-          <AgentPanel companyId={company.id} website={company.website} />
-
           <Panel title="Contatos">
             <ul className="space-y-2 text-sm">
               {linkedContacts.length === 0 ? (

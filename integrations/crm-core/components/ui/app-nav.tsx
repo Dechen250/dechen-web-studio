@@ -124,7 +124,6 @@ export function AppSidebar({
     { href: "/app/contacts", label: "Contatos", icon: "contacts" },
     { href: "/app/pipeline", label: "Negociações", icon: "deals" },
     { href: "/app/companies", label: "Empresas", icon: "companies" },
-    { href: "/app/agent", label: "Agente", icon: "agent" },
     {
       href: "/app/tasks",
       label: "Tarefas",

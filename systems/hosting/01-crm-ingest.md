@@ -1,20 +1,15 @@
-# CRM — ingestão e agente
+# CRM — ingestão
 
-**Tipo:** ops · **Status:** ativo · **Versão:** 2.0
+**Tipo:** ops · **Status:** ativo · **Versão:** 2.1
 
-O agente comercial vive **dentro do CRM** (`crm.dechenwebstudio.com.br`): menu Agente, painel no contato e na empresa. O site da DWS só captura o lead.
+O site da DWS captura o lead e grava **contato + empresa** no CRM (`crm.dechenwebstudio.com.br`). O agente BDR está pausado.
 
 O overlay está em [`integrations/crm-core/`](../../integrations/crm-core/) e é copiado para `/opt/crm-core` na VPS. Essa pasta **não entra** no build do site da DWS.
 
-## O que o agente faz no CRM
+## O que a ingestão faz
 
-1. Cria ou atualiza **empresa + contato** (formulário do site ou botão no registro).
-2. Lê o HTML do site (home e página de contato), extrai e-mail/telefone/WhatsApp públicos e grava em Contatos.
-3. Abre uma negociação `PROSPECÇÃO | {empresa}` na primeira etapa (Sem contato), se ainda não existir para a empresa.
-4. Grava o rascunho de Descoberta em `agent_runs` e no histórico.
-5. Orçamento e prazo ficam `[a confirmar na reunião]`.
-
-Medição PageSpeed só roda se o CRM tiver `PAGESPEED_API_KEY`.
+1. Cria ou atualiza **empresa + contato** (formulário do site).
+2. Não dispara o agente BDR (fica para uma fase seguinte).
 
 ## Contrato de ingestão (site → CRM)
 
@@ -23,14 +18,13 @@ POST /api/ingest/leads
 Authorization: Bearer <CRM_INGEST_SECRET>
 ```
 
-Resposta inclui `contactId`, `companyId` e `agentRunId`. O rascunho termina em segundo plano.
+Resposta inclui `contactId` e `companyId`.
 
 ## Variáveis no CRM
 
 - `CRM_INGEST_SECRET`
 - `CRM_INGEST_ORG_ID` — organização Dechen Web Studio
 - `CRM_INGEST_OWNER_ID` — dono que recebe o cadastro
-- `PAGESPEED_API_KEY` — opcional
 
 ## Variáveis no site da DWS
 

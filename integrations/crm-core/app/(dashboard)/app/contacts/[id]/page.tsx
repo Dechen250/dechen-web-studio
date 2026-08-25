@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { AgentPanel } from "@/features/agent/components/agent-panel";
 import { ActivityForm, ActivityTimeline } from "@/features/activities/components/activity-ui";
 import { listActivities } from "@/features/activities/queries";
 import {
@@ -44,7 +43,6 @@ export default async function ContactDetailPage({
   ]);
 
   const relatedOpps = opportunities.filter((item) => item.contactId === id);
-  const companyWebsite = companies.find((item) => item.id === contact.companyId)?.website;
 
   return (
     <div className="space-y-4">
@@ -91,12 +89,6 @@ export default async function ContactDetailPage({
         </Panel>
 
         <div className="space-y-4">
-          <AgentPanel
-            contactId={contact.id}
-            companyId={contact.companyId ?? undefined}
-            website={companyWebsite}
-          />
-
           <Panel
             title="Oportunidades"
             actions={

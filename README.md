@@ -36,7 +36,7 @@ Rascunho da reunião de Descoberta (fatos do lead + HTML do site):
 npm run discovery -- --name "Maria" --email maria@exemplo.com --whatsapp 11999999999 --company "Exemplo" --website dechenwebstudio.com.br
 ```
 
-O agente comercial (Descoberta + leitura do site) é função do CRM: [crm.dechenwebstudio.com.br/app/agent](https://crm.dechenwebstudio.com.br/app/agent). O `/ops` do site da DWS é só ferramenta interna da agência (Chrome ao vivo). A auditoria pública (PageSpeed) está em [http://localhost:3000/auditoria](http://localhost:3000/auditoria).
+O formulário do site envia o lead ao CRM (contato e empresa). O `/ops` do site da DWS é só ferramenta interna da agência (Chrome ao vivo). A auditoria pública (PageSpeed) está em [http://localhost:3000/auditoria](http://localhost:3000/auditoria).
 
 Produção do site da DWS é **VPS com Docker**, não Vercel. Guia: [`systems/hosting/00-vps.md`](systems/hosting/00-vps.md).
 

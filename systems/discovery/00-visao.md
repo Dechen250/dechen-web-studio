@@ -44,9 +44,9 @@ O rascunho segue a estrutura da reunião (apresentação → empresa → públic
 
 ## Superfícies
 
-- **Produto:** agente do CRM em `/app/agent`, no contato e na empresa
+- **CRM:** o formulário do site grava contato e empresa; o agente BDR está pausado
 - CLI da agência: `npm run discovery -- …`
-- Site da DWS: `POST /api/contact` só envia o lead ao CRM; o agente roda lá
+- Site da DWS: `POST /api/contact` envia o lead ao CRM
 
 ## Resultado esperado
 
