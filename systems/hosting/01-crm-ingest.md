@@ -10,7 +10,7 @@ O overlay está em [`integrations/crm-core/`](../../integrations/crm-core/) e é
 
 1. Cria ou atualiza **empresa + contato** (formulário do site ou botão no registro).
 2. Lê o HTML do site (home e página de contato), extrai e-mail/telefone/WhatsApp públicos e grava em Contatos.
-3. Abre uma negociação `Site encontrado` no funil, se ainda não existir para a empresa.
+3. Abre uma negociação `PROSPECÇÃO | {empresa}` na primeira etapa (Sem contato), se ainda não existir para a empresa.
 4. Grava o rascunho de Descoberta em `agent_runs` e no histórico.
 5. Orçamento e prazo ficam `[a confirmar na reunião]`.
 

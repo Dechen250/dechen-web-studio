@@ -361,8 +361,8 @@ async function ensureSiteOpportunity(
       contactId: input.contactId,
       companyId: input.companyId,
       ownerId: input.actorId,
-      title: `Site encontrado · ${input.companyName}`.slice(0, 160),
-      description: "Negociação aberta pelo agente a partir de contatos públicos no site.",
+      title: `PROSPECÇÃO | ${input.companyName}`.slice(0, 160),
+      description: "Negociação de prospecção aberta pelo agente a partir de contatos públicos no site.",
       source: "agent-site",
       probability: pipeline.stage.probability,
       status: "open",
@@ -380,7 +380,7 @@ function appendCrmLinks(markdown: string, findings: AgentRunFindings): string {
     return `- ${bits} (${state})`;
   });
   const opp = findings.opportunityId
-    ? `\nNegociação no funil: Site encontrado.`
+    ? `\nNegociação no funil: PROSPECÇÃO.`
     : "";
   return `${markdown}\n\n## Contatos gravados no CRM\n${lines.join("\n")}${opp}\n`;
 }
