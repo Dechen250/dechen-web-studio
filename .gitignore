@@ -32,6 +32,7 @@ yarn-error.log*
 
 # env files (can opt-in for committing if needed)
 .env*
+!.env.example
 
 # vercel
 .vercel
@@ -42,4 +43,10 @@ next-env.d.ts
 
 # Client archive dumps
 clients/*.zip
+
+# Relatórios gerados pela auditoria de site
+/reports
+
+# Leads e jobs do console interno (PII)
+/data/ops
 

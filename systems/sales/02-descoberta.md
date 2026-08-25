@@ -1,6 +1,6 @@
 # Descoberta
 
-**Tipo:** Etapa comercial · **Status:** ativo · **Versão:** 2.0
+**Tipo:** Etapa comercial · **Status:** ativo · **Versão:** 2.1
 
 ## Objetivo
 
@@ -110,3 +110,7 @@ Descoberta → Diagnóstico → Proposta → Build → Entrega
 ## Resultado esperado
 
 Informações suficientes para [Diagnóstico](./03-diagnostico.md) e proposta personalizada alinhada aos objetivos reais do cliente.
+
+## Rascunho automático
+
+Antes da reunião, o [preparador de Descoberta](../discovery/00-visao.md) monta um pack a partir do lead e do HTML do site atual. O que faltar fica `[a confirmar na reunião]`. Orçamento e prazo não são preenchidos pelo agente.

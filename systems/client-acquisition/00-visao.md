@@ -1,6 +1,6 @@
 # Sistema de Captação de Leads
 
-**Tipo:** Visão do sistema · **Status:** ativo · **Versão:** 2.0
+**Tipo:** Visão do sistema · **Status:** ativo · **Versão:** 2.1
 
 ## Objetivo
 
@@ -15,12 +15,15 @@ Transformar visitantes do site em leads registrados, notificados e prontos para 
 | [03-api.md](./03-api.md) | `POST /api/contact` |
 | [04-email.md](./04-email.md) | Notificações via Resend |
 | [05-roadmap.md](./05-roadmap.md) | Evolução planejada |
+| [Preparador de Descoberta](../discovery/00-visao.md) | Rascunho da reunião a partir do lead |
 
 ## Fluxo geral
 
 ```
-Visitante → Homepage → Formulário → POST /api/contact → Supabase → Resend → contato@dechenwebstudio.com.br → CRM (futuro)
+Visitante → Homepage → Formulário → POST /api/contact → gravação do lead → (site informado: fila de auditoria PageSpeed + rascunho de Descoberta) → WhatsApp
 ```
+
+Supabase e Resend continuam no desenho. Até a integração, o lead fica em `data/ops/leads/` no servidor.
 
 ## Objetivos operacionais
 

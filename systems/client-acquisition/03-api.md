@@ -1,6 +1,6 @@
 # API — Sistema de Captação
 
-**Tipo:** API · **Status:** ativo · **Versão:** 2.0
+**Tipo:** API · **Status:** ativo · **Versão:** 2.1
 
 ## Objetivo
 
@@ -19,24 +19,25 @@ Responsável por todos os envios do formulário de contato.
 ## Fluxo
 
 ```
-Cliente → Formulário → Validação frontend → POST /api/contact → Validação API → Supabase → Resend → Resposta ao usuário
+Cliente → Formulário → Validação frontend → POST /api/contact → Validação API → arquivo em data/ops → CRM (empresa + contato) → fila (auditoria + Descoberta) → Resposta → WhatsApp
 ```
+
+Supabase e Resend entram quando a captação 1.0 completa for ligada. Enquanto isso o lead não se perde: grava no servidor e a pessoa segue no WhatsApp.
 
 ## Payload
 
 ```json
 {
   "nome": "",
-  "empresa": "",
+  "negocio": "",
   "email": "",
   "whatsapp": "",
-  "servico": "",
-  "objetivo": "",
-  "prazo": "",
-  "orcamento": "",
+  "website": "",
   "mensagem": ""
 }
 ```
+
+`website` é opcional. Se vier preenchido, a API enfileira auditoria PageSpeed e rascunho de Descoberta. `negocio` cobre o campo "tipo de negócio" / serviço.
 
 ## Validações
 
@@ -45,7 +46,7 @@ Cliente → Formulário → Validação frontend → POST /api/contact → Valid
 - Nome
 - E-mail
 - WhatsApp
-- Serviço
+- Tipo de negócio
 - Mensagem
 
 ### Regras
@@ -87,14 +88,7 @@ Cliente → Formulário → Validação frontend → POST /api/contact → Valid
 
 ## Persistência
 
-Após validação, criar registro na tabela `leads`:
-
-| Campo | Valor inicial |
-|-------|---------------|
-| `status` | `novo` |
-| `origem` | `website` |
-
-Ver schema completo em [02-banco.md](./02-banco.md).
+Após validação, criar registro do lead (`status` implícito `novo`, origem `website`). Hoje: arquivo JSON em `data/ops/leads/`. Destino planejado: tabela `leads` no Supabase, ver [02-banco.md](./02-banco.md).
 
 ## E-mail
 
@@ -105,6 +99,8 @@ Após salvar, enviar notificação para `contato@dechenwebstudio.com.br` via Res
 - Validar todos os dados no servidor
 - Impedir campos vazios
 - Limitar tamanho das mensagens
+- Rate limit por IP
+- Honeypot silencioso
 - Registrar erros de forma segura
 
 ### Futuro
