@@ -61,6 +61,40 @@ export default async function AgentRunPage({
         </Panel>
       ) : null}
 
+      <Panel title="Contatos encontrados">
+        {run.findings?.contacts?.length ? (
+          <ul className="space-y-2 text-sm">
+            {run.findings.contacts.map((item) => (
+              <li key={item.id}>
+                <Link href={`/app/contacts/${item.id}`} className="font-semibold text-brand hover:underline">
+                  {item.name}
+                </Link>
+                <span className="text-text-muted">
+                  {" "}
+                  · {item.created ? "criado" : "atualizado"}
+                  {item.email ? ` · ${item.email}` : ""}
+                  {item.phone ? ` · ${item.phone}` : ""}
+                </span>
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <p className="text-sm text-text-muted">
+            Nenhum e-mail, telefone ou WhatsApp público gravado nesta execução.
+          </p>
+        )}
+        {run.findings?.opportunityId ? (
+          <p className="mt-3 text-sm">
+            <Link
+              href={`/app/opportunities/${run.findings.opportunityId}`}
+              className="font-semibold text-brand hover:underline"
+            >
+              Abrir negociação no funil
+            </Link>
+          </p>
+        ) : null}
+      </Panel>
+
       <Panel title="Rascunho">
         {run.markdown ? (
           <pre className="max-h-[70vh] overflow-auto whitespace-pre-wrap font-mono text-sm text-text">

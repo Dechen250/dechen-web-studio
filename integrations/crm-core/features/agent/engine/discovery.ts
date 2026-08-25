@@ -1,3 +1,4 @@
+import type { ExtractedContact } from "./contacts";
 import type { SiteFacts } from "./facts";
 
 export const TO_CONFIRM = "[a confirmar na reunião]";
@@ -43,10 +44,12 @@ function statedFromMessage(message: string | undefined, pattern: RegExp): string
 export function buildDiscoveryMarkdown(input: {
   lead: AgentLead;
   facts: SiteFacts;
+  extractedContacts?: ExtractedContact[];
   auditMarkdown?: string;
   generatedAt: string;
 }): string {
   const { lead, facts, generatedAt } = input;
+  const extracted = input.extractedContacts ?? [];
   const siteLine = lead.website || facts.finalUrl || facts.url;
   const objetivos = statedFromMessage(
     lead.message,
@@ -82,6 +85,25 @@ Gerado pelo agente do CRM a partir do contato e do que o site declara. **Não su
 | Prazo | ${TO_CONFIRM} |
 | Orçamento | ${TO_CONFIRM} |
 | Observações | ${cell(orConfirm(lead.message))} |
+
+## Contatos públicos no site
+${
+  extracted.length === 0
+    ? siteLine
+      ? "Nenhum e-mail, telefone ou WhatsApp público encontrado no HTML."
+      : TO_CONFIRM
+    : extracted
+        .map((item) => {
+          const bits = [
+            item.name || "Atendimento",
+            item.email,
+            item.whatsapp || item.phone,
+            item.jobTitle,
+          ].filter(Boolean);
+          return `- ${bits.join(" · ")}`;
+        })
+        .join("\n")
+}
 
 ## Roteiro da reunião
 

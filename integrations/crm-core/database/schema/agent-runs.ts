@@ -1,8 +1,20 @@
-import { index, pgTable, text, timestamp, uuid } from "drizzle-orm/pg-core";
+import { index, jsonb, pgTable, text, timestamp, uuid } from "drizzle-orm/pg-core";
 import { companies } from "./companies";
 import { contacts } from "./contacts";
 import { organizations } from "./organizations";
 import { users } from "./users";
+
+export type AgentRunFindings = {
+  contacts: Array<{
+    id: string;
+    created: boolean;
+    name: string;
+    email?: string | null;
+    phone?: string | null;
+    opportunityId?: string | null;
+  }>;
+  opportunityId?: string | null;
+};
 
 export const agentRuns = pgTable(
   "agent_runs",
@@ -24,6 +36,7 @@ export const agentRuns = pgTable(
     website: text("website"),
     markdown: text("markdown"),
     error: text("error"),
+    findings: jsonb("findings").$type<AgentRunFindings | null>(),
     createdAt: timestamp("created_at", { withTimezone: true }).defaultNow().notNull(),
     updatedAt: timestamp("updated_at", { withTimezone: true }).defaultNow().notNull(),
   },
