@@ -1,0 +1,181 @@
+@import "tailwindcss";
+
+:root {
+  --brand: #0176d3;
+  --brand-dark: #014486;
+  --brand-soft: #eaf5fe;
+  --utility: #032d60;
+  --utility-mid: #0b3a75;
+  --utility-top: #16325c;
+  --page: #f4f6f9;
+  --surface: #ffffff;
+  --border: #e4e9f0;
+  --border-strong: #cfd8e3;
+  --text: #181818;
+  --text-muted: #5b6775;
+  --success: #2e844a;
+  --warning: #fe9339;
+  --danger: #ba0517;
+  --thead: #f8fafc;
+  --radius-sm: 0.75rem;
+  --radius-md: 1rem;
+  --radius-lg: 1.25rem;
+  --radius-xl: 1.5rem;
+  --shadow-soft: 0 1px 2px rgba(15, 23, 42, 0.04), 0 8px 24px rgba(15, 23, 42, 0.06);
+  --shadow-lift: 0 12px 32px rgba(1, 118, 211, 0.12);
+  --background: var(--page);
+  --foreground: var(--text);
+  --accent: var(--brand);
+}
+
+@theme inline {
+  --color-brand: var(--brand);
+  --color-brand-dark: var(--brand-dark);
+  --color-brand-soft: var(--brand-soft);
+  --color-utility: var(--utility);
+  --color-utility-mid: var(--utility-mid);
+  --color-utility-top: var(--utility-top);
+  --color-page: var(--page);
+  --color-surface: var(--surface);
+  --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
+  --color-text: var(--text);
+  --color-text-muted: var(--text-muted);
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --color-danger: var(--danger);
+  --color-thead: var(--thead);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-accent: var(--accent);
+  --font-sans: var(--font-sans);
+  --shadow-soft: var(--shadow-soft);
+  --shadow-lift: var(--shadow-lift);
+  --radius-sm: 0.75rem;
+  --radius-md: 1rem;
+  --radius-lg: 1.25rem;
+  --radius-xl: 1.5rem;
+}
+
+* {
+  border-color: var(--border);
+}
+
+body {
+  background:
+    radial-gradient(1200px 500px at 0% -10%, rgba(1, 118, 211, 0.08), transparent 55%),
+    linear-gradient(180deg, #f7f9fc 0%, var(--page) 42%);
+  color: var(--text);
+  font-family: var(--font-sans), "Segoe UI", sans-serif;
+  min-height: 100vh;
+  letter-spacing: 0.01em;
+}
+
+::selection {
+  background: color-mix(in srgb, var(--brand) 28%, white);
+  color: var(--text);
+}
+
+a {
+  transition: color 140ms ease, background-color 140ms ease, opacity 140ms ease;
+}
+
+button,
+input,
+select,
+textarea {
+  transition:
+    border-color 140ms ease,
+    box-shadow 140ms ease,
+    background-color 140ms ease,
+    color 140ms ease;
+}
+
+.crm-surface {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-soft);
+}
+
+.crm-lift:hover {
+  box-shadow: var(--shadow-lift);
+  border-color: var(--border-strong);
+  transform: translateY(-1px);
+}
+
+@keyframes crm-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.crm-enter {
+  animation: crm-fade-up 220ms ease-out both;
+}
+
+@keyframes auth-wave {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(10px, 8px, 0) scale(1.04);
+  }
+}
+
+@keyframes auth-promo-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.auth-wave {
+  animation: auth-wave 7s ease-in-out infinite;
+}
+
+.auth-wave-delayed {
+  animation: auth-wave 7s ease-in-out infinite 1.2s;
+}
+
+.auth-promo-copy {
+  animation: auth-promo-in 420ms ease-out both;
+}
+
+.auth-card {
+  animation: crm-fade-up 280ms ease-out both 80ms;
+}
+
+@keyframes home-hero-in {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.home-hero-brand {
+  animation: home-hero-in 420ms ease-out both;
+}
+
+.home-hero-title {
+  animation: home-hero-in 520ms ease-out both 80ms;
+}
+
+.home-hero a,
+.home-hero p:not(.home-hero-brand) {
+  animation: home-hero-in 560ms ease-out both 140ms;
+}

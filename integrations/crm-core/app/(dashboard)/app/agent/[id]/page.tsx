@@ -33,7 +33,7 @@ export default async function AgentRunPage({
           <>
             <Link
               href="/app/agent"
-              className="inline-flex items-center justify-center rounded-sm border border-border bg-surface px-3.5 py-1.5 text-sm font-medium text-text hover:bg-page"
+              className="inline-flex items-center justify-center rounded-full border border-border bg-surface px-3.5 py-1.5 text-sm font-medium text-text hover:bg-page"
             >
               Todas as execuções
             </Link>

@@ -182,8 +182,8 @@ function StageBar({
   if (openStages.length === 0) return null;
 
   return (
-    <div className="space-y-2">
-      <div className="flex overflow-x-auto">
+    <div className="space-y-2 px-4 py-3 sm:px-5">
+      <div className="flex gap-1.5 overflow-x-auto pb-0.5">
         {openStages.map((stage, index) => {
           const current = stage.id === currentStageId && status === "open";
           const past = currentIndex >= 0 && index < currentIndex && status === "open";
@@ -198,12 +198,12 @@ function StageBar({
               disabled={status !== "open" || pending}
               onClick={() => moveTo(stage.id)}
               title={stage.name}
-              className={`min-w-[7.5rem] flex-1 px-2 py-2.5 text-center text-[11px] font-semibold leading-tight transition ${
+              className={`min-w-[7.5rem] flex-1 rounded-full px-3 py-2 text-center text-[11px] font-semibold leading-tight transition ${
                 current
-                  ? "bg-brand text-white"
+                  ? "bg-brand text-white shadow-sm"
                   : past
                     ? "bg-brand-soft text-brand-dark"
-                    : "bg-[#d8dde3] text-[#5c6b7a]"
+                    : "bg-[#e8edf2] text-[#5c6b7a]"
               } ${status === "open" ? "hover:brightness-95" : "cursor-default opacity-90"}`}
             >
               {label}
@@ -311,7 +311,7 @@ export function OpportunityDealView({
             <div className="flex flex-wrap gap-2">
               <Link
                 href={`/app/pipeline?pipelineId=${pipelineId}`}
-                className="inline-flex items-center justify-center rounded-sm border border-border bg-surface px-3.5 py-1.5 text-sm font-medium text-text hover:bg-page"
+                className="inline-flex items-center justify-center rounded-full border border-border bg-surface px-4 py-1.5 text-sm font-medium text-text hover:bg-page"
               >
                 Voltar ao funil
               </Link>
@@ -445,7 +445,7 @@ export function OpportunityDealView({
             ) : (
               <ul className="space-y-2">
                 {openTasks.map((task) => (
-                  <li key={task.id} className="rounded-sm border border-border p-3">
+                  <li key={task.id} className="rounded-xl border border-border p-3">
                     <p className="font-medium">
                       <Link href={`/app/tasks/${task.id}`} className={dataTableLinkClass()}>
                         {task.title}
@@ -472,7 +472,7 @@ export function OpportunityDealView({
           </section>
 
           <section className="crm-surface overflow-hidden">
-            <div className="flex gap-1 border-b border-border bg-thead/70 px-2 pt-2 sm:px-4">
+            <div className="flex flex-wrap gap-1.5 border-b border-border bg-thead/70 px-3 py-2.5 sm:px-4">
               {tabs.map((item) => {
                 const active = tab === item.id;
                 const count =
@@ -488,9 +488,9 @@ export function OpportunityDealView({
                     key={item.id}
                     type="button"
                     onClick={() => setTab(item.id)}
-                    className={`rounded-t-sm px-3 py-2 text-sm font-medium transition ${
+                    className={`rounded-full px-3 py-1.5 text-sm font-medium transition ${
                       active
-                        ? "border border-b-0 border-border bg-surface text-brand"
+                        ? "bg-brand text-white shadow-sm"
                         : "text-text-muted hover:bg-page hover:text-text"
                     }`}
                   >
@@ -522,7 +522,7 @@ export function OpportunityDealView({
                         {doneTasks.map((task) => (
                           <li
                             key={task.id}
-                            className="rounded-sm border border-border bg-page/50 p-3 text-sm"
+                            className="rounded-xl border border-border bg-page/50 p-3 text-sm"
                           >
                             <Link
                               href={`/app/tasks/${task.id}`}

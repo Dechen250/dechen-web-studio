@@ -9,6 +9,7 @@ O agente comercial (Descoberta + leitura do site) é **função do CRM**, não u
 - ingestão do site — cria contato/empresa e dispara o agente
 - extração de e-mail, telefone e WhatsApp públicos do HTML → Contatos + negociação **PROSPECÇÃO** no funil
 - ficha da negociação no funil de prospecção: Sem contato → Enriquecer dados → Primeiro contato → Levantamento → Agendamento → Apresentação → Proposta → Acompanhamento
+- design contemporâneo: cartões 12–16px, botões/chips em pílula, tokens em `app/globals.css`
 
 Os imports `@/` resolvem **só dentro do CRM**. Não compile esta pasta no Next da DWS.
 

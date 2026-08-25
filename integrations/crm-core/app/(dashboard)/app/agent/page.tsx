@@ -50,7 +50,7 @@ export default async function AgentPage() {
             Contato
             <select
               name="contactId"
-              className="mt-1 w-full rounded-sm border border-border bg-surface px-3 py-2 text-sm text-text"
+              className="mt-1 w-full rounded-xl border border-border bg-surface px-3 py-2 text-sm text-text"
             >
               <option value="">Selecionar…</option>
               {contacts.map((contact) => (
@@ -64,7 +64,7 @@ export default async function AgentPage() {
             Empresa
             <select
               name="companyId"
-              className="mt-1 w-full rounded-sm border border-border bg-surface px-3 py-2 text-sm text-text"
+              className="mt-1 w-full rounded-xl border border-border bg-surface px-3 py-2 text-sm text-text"
             >
               <option value="">Selecionar…</option>
               {companies.map((company) => (
@@ -79,7 +79,7 @@ export default async function AgentPage() {
             <input
               name="website"
               placeholder="https://empresa.com.br"
-              className="mt-1 w-full rounded-sm border border-border bg-surface px-3 py-2 text-sm text-text"
+              className="mt-1 w-full rounded-xl border border-border bg-surface px-3 py-2 text-sm text-text"
             />
           </label>
           <div className="flex items-end">

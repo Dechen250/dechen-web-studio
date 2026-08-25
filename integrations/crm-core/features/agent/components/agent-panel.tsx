@@ -36,7 +36,7 @@ export function AgentPanel({
             name="website"
             defaultValue={website ?? ""}
             placeholder="https://empresa.com.br"
-            className="mt-1 w-full rounded-sm border border-border bg-surface px-3 py-2 text-sm text-text outline-none focus:border-brand focus:ring-2 focus:ring-brand/20"
+            className="mt-1 w-full rounded-xl border border-border bg-surface px-3 py-2 text-sm text-text outline-none focus:border-brand focus:ring-2 focus:ring-brand/20"
           />
         </label>
         <Button type="submit">Rodar agente</Button>
