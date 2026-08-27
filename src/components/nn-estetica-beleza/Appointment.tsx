@@ -29,7 +29,7 @@ function Field({
 export function Appointment() {
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
-  const [treatment, setTreatment] = useState(treatments[0].title);
+  const [treatment, setTreatment] = useState<string>(treatments[0].title);
   const [message, setMessage] = useState("");
   const [loading, setLoading] = useState(false);
 
