@@ -4,6 +4,13 @@ export const WHATSAPP_DISPLAY = "(11) 97450-2226";
 export const INSTAGRAM_HANDLE = "dechenwebstudio";
 export const INSTAGRAM_URL = "https://www.instagram.com/dechenwebstudio";
 
+export const AGENCY = {
+  name: "Dechen Web Studio",
+  shortName: "Dechen",
+  domain: "dechenwebstudio.com.br",
+  email: "contato@dechenwebstudio.com.br",
+} as const;
+
 export const WHATSAPP_DEFAULT_MESSAGE =
   "Olá! Vim pelo site da Dechen Web Studio e gostaria de um orçamento.";
 
