@@ -1,0 +1,121 @@
+@import "tailwindcss";
+
+@keyframes nnDrift {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(8px, -14px, 0) scale(1.05);
+  }
+}
+
+@keyframes nnPulse {
+  0%,
+  100% {
+    opacity: 0.35;
+  }
+  50% {
+    opacity: 0.6;
+  }
+}
+
+.proposta-nn {
+  --nn-bg: #f7f1eb;
+  --nn-surface: #fffbfa;
+  --nn-text: #2b2420;
+  --nn-muted: #7a716a;
+  --nn-accent: #9a6b5a;
+  --nn-accent-hover: #825845;
+  --nn-line: #e6dcd4;
+  --nn-wash: #f3e7df;
+
+  scroll-behavior: smooth;
+  background-color: var(--nn-bg);
+  color: var(--nn-text);
+}
+
+html:has(.proposta-nn) {
+  scroll-padding-top: 8.5rem;
+}
+
+.proposta-nn .font-display {
+  font-family: var(--font-cormorant), "Times New Roman", serif;
+}
+
+.proposta-nn .font-sans {
+  font-family: var(--font-outfit), system-ui, sans-serif;
+}
+
+.proposta-nn .hero-atmosphere {
+  background:
+    radial-gradient(ellipse 80% 60% at 78% 18%, rgba(154, 107, 90, 0.22), transparent 55%),
+    radial-gradient(ellipse 50% 45% at 12% 82%, rgba(243, 231, 223, 0.95), transparent 50%),
+    linear-gradient(165deg, #f7f1eb 0%, #f3e7df 42%, #efe4d8 100%);
+}
+
+.proposta-nn .hero-orb {
+  background: radial-gradient(
+    circle,
+    rgba(154, 107, 90, 0.2) 0%,
+    rgba(154, 107, 90, 0.05) 42%,
+    transparent 70%
+  );
+  animation: nnDrift 16s ease-in-out infinite;
+}
+
+.proposta-nn .hero-grain {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.55'/%3E%3C/svg%3E");
+  opacity: 0.07;
+}
+
+.proposta-nn .section-glow {
+  background:
+    radial-gradient(ellipse 60% 40% at 0% 0%, rgba(154, 107, 90, 0.06), transparent 50%),
+    radial-gradient(ellipse 50% 40% at 100% 100%, rgba(243, 231, 223, 0.7), transparent 55%);
+}
+
+.proposta-nn .card-nn {
+  background: var(--nn-surface);
+  border: 1px solid var(--nn-line);
+  box-shadow: 0 2px 18px rgba(43, 36, 32, 0.04);
+  transition:
+    border-color 0.4s ease,
+    box-shadow 0.4s ease,
+    transform 0.4s ease;
+}
+
+.proposta-nn .card-nn:hover {
+  border-color: rgba(154, 107, 90, 0.4);
+  box-shadow: 0 10px 32px rgba(154, 107, 90, 0.1);
+}
+
+.proposta-nn .accent-line {
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(154, 107, 90, 0.5),
+    transparent
+  );
+  animation: nnPulse 8s ease-in-out infinite;
+}
+
+.proposta-nn .placeholder-tile {
+  background:
+    linear-gradient(180deg, rgba(243, 231, 223, 0.4), rgba(230, 220, 212, 0.8)),
+    repeating-linear-gradient(
+      -45deg,
+      transparent,
+      transparent 10px,
+      rgba(154, 107, 90, 0.04) 10px,
+      rgba(154, 107, 90, 0.04) 11px
+    );
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .proposta-nn * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
