@@ -17,12 +17,14 @@ Ordenar o trabalho da DWS do lead até o site no ar, sem pular descoberta nem in
 - [x] [04-assets.md](04-assets.md) — lista de pedidos
 - [x] [05-brand-guide.md](05-brand-guide.md) — hipótese visual
 - [x] [07-descoberta.md](07-descoberta.md) — roteiro da reunião
+- [x] [08-proposta.md](08-proposta.md) — rascunho interno (investimento em aberto)
+- [x] Preview one-page em `/proposta/nn-estetica-beleza`
 - [ ] Logo e dados operacionais da lead
-- [ ] Proposta comercial (depois da descoberta)
+- [ ] Proposta comercial enviada (depois da descoberta)
 
 ---
 
-## Fase 0 — Agora (planejamento)
+## Fase 0 — Agora (planejamento + esboço)
 
 **Meta:** pack utilizável internamente e na conversa com a lead.
 
@@ -33,8 +35,10 @@ Entregue neste PR:
 - Copy rascunho com placeholders
 - Hipótese de marca
 - Roteiro de descoberta
+- Rascunho de proposta comercial
+- Preview visual em `/proposta/nn-estetica-beleza`
 
-Critério de saída: a DWS consegue explicar o projeto em uma reunião sem improvisar estrutura.
+Critério de saída: a DWS consegue explicar o projeto em uma reunião e mostrar o layout no ar, sem inventar dado comercial.
 
 ---
 

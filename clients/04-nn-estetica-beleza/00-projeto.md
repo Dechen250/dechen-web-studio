@@ -2,7 +2,7 @@
 
 **Tipo:** brief · **Status:** lead / planejamento · **Versão:** 0.1
 
-Pack: [01-analise-presenca-digital.md](01-analise-presenca-digital.md) · [02-sitemap.md](02-sitemap.md) · [03-copy.md](03-copy.md) · [04-assets.md](04-assets.md) · [05-brand-guide.md](05-brand-guide.md) · [06-roadmap.md](06-roadmap.md) · [07-descoberta.md](07-descoberta.md)
+Pack: [01-analise-presenca-digital.md](01-analise-presenca-digital.md) · [02-sitemap.md](02-sitemap.md) · [03-copy.md](03-copy.md) · [04-assets.md](04-assets.md) · [05-brand-guide.md](05-brand-guide.md) · [06-roadmap.md](06-roadmap.md) · [07-descoberta.md](07-descoberta.md) · [08-proposta.md](08-proposta.md) · Preview: `/proposta/nn-estetica-beleza`
 
 > Lead da Dechen Web Studio. Nenhuma informação comercial não confirmada entra no site publicado. Dados extraídos de fontes públicas estão marcados; o restante usa `[placeholder]`.
 
@@ -197,6 +197,7 @@ clients/
     ├── 05-brand-guide.md
     ├── 06-roadmap.md
     ├── 07-descoberta.md
+    ├── 08-proposta.md
     └── assets/
         ├── _inbox/
         ├── brand/
@@ -214,6 +215,14 @@ O site real deve ter repositório próprio, fora de `src/app/showcase/`.
 - Stack alvo: Next.js + TypeScript + Tailwind (padrão DWS)
 - Deploy: VPS com Docker (padrão de cliente real neste monorepo), salvo decisão contrária na proposta
 - Domínio: `[domínio — confirmar]`
+
+Preview interno (placeholders, `noindex`) neste monorepo, só para a conversa comercial:
+
+```text
+/proposta/nn-estetica-beleza
+```
+
+Não é o site publicado da clínica. Não entra no portfólio como showcase fictício.
 
 ## Objetivos de negócio
 
