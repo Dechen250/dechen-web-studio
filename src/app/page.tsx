@@ -587,19 +587,21 @@ function DwsLogo({
 }) {
   const sizeClasses =
     size === "sm"
-      ? "h-8 w-8 rounded-[10px] text-[10px]"
-      : "h-8 w-8 rounded-[10px] text-[10px] sm:h-10 sm:w-10 sm:rounded-[12px] sm:text-xs";
+      ? "h-8 w-8 rounded-[10px]"
+      : "h-8 w-8 rounded-[10px] sm:h-10 sm:w-10 sm:rounded-[12px]";
 
   return (
     <span
-      className={`relative flex items-center justify-center border border-[#0070F3]/25 bg-[#101010]/60 font-bold tracking-tight shadow-[0_0_16px_rgba(0,112,243,0.1)] backdrop-blur-md ${TRANSITION} ${sizeClasses} ${className}`}
+      className={`relative inline-flex overflow-hidden border border-white/[0.06] bg-black shadow-[0_0_16px_rgba(0,112,243,0.12)] ${sizeClasses} ${className}`}
     >
-      <span
-        aria-hidden
-        className="pointer-events-none absolute inset-0 rounded-[inherit] bg-gradient-to-br from-[#0070F3]/20 via-transparent to-transparent"
+      <Image
+        src="/brand/dws-mark.png"
+        alt=""
+        fill
+        sizes="40px"
+        className="object-cover"
+        priority
       />
-      <GlassSheen />
-      <span className="relative">DWS</span>
     </span>
   );
 }
