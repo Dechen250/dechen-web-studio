@@ -40,6 +40,10 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/",
   },
+  icons: {
+    icon: [{ url: "/icon.png", type: "image/png" }],
+    apple: [{ url: "/apple-icon.png", type: "image/png" }],
+  },
   openGraph: {
     type: "website",
     locale: "pt_BR",
@@ -64,6 +68,8 @@ const organizationJsonLd = {
   "@type": "ProfessionalService",
   name: AGENCY.name,
   url: siteUrl,
+  logo: `${siteUrl}/brand/dws-logo.png`,
+  image: `${siteUrl}/brand/dws-logo.png`,
   email: AGENCY.email,
   telephone: "+55-11-97450-2226",
   sameAs: [INSTAGRAM_URL],

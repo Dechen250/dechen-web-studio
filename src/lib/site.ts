@@ -24,14 +24,19 @@ export function buildQuoteMessage(input: {
   whatsapp: string;
   business: string;
   message: string;
+  company?: string;
+  website?: string;
 }) {
-  return [
+  const lines = [
     "Olá! Vim pelo site da Dechen Web Studio.",
     "",
     `Nome: ${input.name}`,
     `E-mail: ${input.email}`,
     `WhatsApp: ${input.whatsapp}`,
     `Tipo de negócio: ${input.business}`,
-    `Mensagem: ${input.message}`,
-  ].join("\n");
+  ];
+  if (input.company) lines.push(`Empresa: ${input.company}`);
+  if (input.website) lines.push(`Site atual: ${input.website}`);
+  lines.push(`Mensagem: ${input.message}`);
+  return lines.join("\n");
 }

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, type FormEvent, type ReactNode } from "react";
+import { useState, useSyncExternalStore, type FormEvent, type ReactNode } from "react";
 import { FOCUS } from "@/components/dws/ui";
 import { buildQuoteMessage, whatsappUrl } from "@/lib/site";
 
@@ -9,6 +9,8 @@ type ContactFormData = {
   email: string;
   whatsapp: string;
   negocio: string;
+  empresa: string;
+  website: string;
   mensagem: string;
 };
 
@@ -17,6 +19,8 @@ const initialForm: ContactFormData = {
   email: "",
   whatsapp: "",
   negocio: "",
+  empresa: "",
+  website: "",
   mensagem: "",
 };
 
@@ -42,10 +46,7 @@ function Field({
 }) {
   return (
     <div>
-      <label
-        htmlFor={htmlFor}
-        className="mb-2 block text-sm text-[#C4C4CC]"
-      >
+      <label htmlFor={htmlFor} className="mb-2 block text-sm text-[#C4C4CC]">
         {label}
       </label>
       {children}
@@ -53,8 +54,21 @@ function Field({
   );
 }
 
+function useSitePrefill(): string {
+  return useSyncExternalStore(
+    (onStoreChange) => {
+      window.addEventListener("popstate", onStoreChange);
+      return () => window.removeEventListener("popstate", onStoreChange);
+    },
+    () => new URLSearchParams(window.location.search).get("site") ?? "",
+    () => "",
+  );
+}
+
 export function ContactForm() {
+  const sitePrefill = useSitePrefill();
   const [form, setForm] = useState<ContactFormData>(initialForm);
+  const [honeypot, setHoneypot] = useState("");
   const [status, setStatus] = useState<"idle" | "loading" | "opened">("idle");
 
   const update = (field: keyof ContactFormData, value: string) => {
@@ -62,14 +76,29 @@ export function ContactForm() {
     if (status === "opened") setStatus("idle");
   };
 
-  const handleSubmit = (e: FormEvent) => {
+  const website = form.website || sitePrefill;
+
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     setStatus("loading");
+
+    try {
+      await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ ...form, website, honeypot }),
+      });
+    } catch {
+      /* WhatsApp ainda abre — o lead não fica preso no formulário */
+    }
+
     const text = buildQuoteMessage({
       name: form.nome,
       email: form.email,
       whatsapp: form.whatsapp,
       business: form.negocio,
+      company: form.empresa || undefined,
+      website: website || undefined,
       message: form.mensagem,
     });
     window.open(whatsappUrl(text), "_blank", "noopener,noreferrer");
@@ -77,7 +106,18 @@ export function ContactForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-5">
+    <form onSubmit={(e) => void handleSubmit(e)} className="space-y-5">
+      <div className="hidden" aria-hidden>
+        <label htmlFor="contact-website-hp">Site</label>
+        <input
+          id="contact-website-hp"
+          name="website_hp"
+          tabIndex={-1}
+          autoComplete="off"
+          value={honeypot}
+          onChange={(e) => setHoneypot(e.target.value)}
+        />
+      </div>
       <div className="grid gap-5 sm:grid-cols-2">
         <Field label="Seu nome" htmlFor="contact-nome">
           <input
@@ -141,6 +181,30 @@ export function ContactForm() {
           </select>
         </Field>
       </div>
+      <Field label="Empresa (opcional)" htmlFor="contact-empresa">
+        <input
+          id="contact-empresa"
+          name="empresa"
+          type="text"
+          autoComplete="organization"
+          placeholder="Nome da empresa"
+          value={form.empresa}
+          onChange={(e) => update("empresa", e.target.value)}
+          className={inputClass}
+        />
+      </Field>
+      <Field label="Site atual (opcional)" htmlFor="contact-website">
+        <input
+          id="contact-website"
+          name="website"
+          type="text"
+          autoComplete="url"
+          placeholder="seudominio.com.br"
+          value={website}
+          onChange={(e) => update("website", e.target.value)}
+          className={inputClass}
+        />
+      </Field>
       <Field label="Sobre o projeto" htmlFor="contact-mensagem">
         <textarea
           id="contact-mensagem"
