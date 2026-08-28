@@ -1,5 +1,5 @@
-import Image from "next/image";
 import { ButtonLink } from "@/components/dws/ButtonLink";
+import { HeroShowcase } from "@/components/home/HeroShowcase";
 
 export function Hero() {
   return (
@@ -32,24 +32,7 @@ export function Hero() {
           </p>
         </div>
 
-        <div>
-          <a
-            href="#trabalhos"
-            className="group block overflow-hidden rounded-lg border border-[#262626] bg-[#0c0c0c] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#0070F3]"
-          >
-            <Image
-              src="/showcase/divina-cozinha/capa/capa.png"
-              alt="Demonstração Divina Cozinha, site de restaurante com cardápio e reservas"
-              width={1200}
-              height={750}
-              priority
-              className="h-auto w-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.02]"
-            />
-          </a>
-          <p className="mt-3 text-sm text-[#6B6B76]">
-            Divina Cozinha · Gastronomia · Demonstração
-          </p>
-        </div>
+        <HeroShowcase />
       </div>
     </section>
   );
