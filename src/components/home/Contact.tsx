@@ -1,5 +1,6 @@
 import { ContactForm } from "@/components/dws/ContactForm";
 import { SECTION } from "@/components/dws/ui";
+import { InView } from "@/components/motion/InView";
 import {
   AGENCY,
   INSTAGRAM_HANDLE,
@@ -19,7 +20,7 @@ function WhatsAppGlyph({ className = "h-5 w-5" }: { className?: string }) {
 export function Contact() {
   return (
     <section id="contato" className={SECTION}>
-      <div className="mx-auto grid max-w-6xl gap-12 lg:grid-cols-2 lg:gap-16 lg:items-start">
+      <InView className="dws-stagger mx-auto grid max-w-6xl gap-12 lg:grid-cols-2 lg:gap-16 lg:items-start">
         <div>
           <h2 className="text-3xl font-semibold tracking-tight text-white md:text-4xl">
             Vamos conversar
@@ -65,7 +66,7 @@ export function Contact() {
           </p>
           <ContactForm />
         </div>
-      </div>
+      </InView>
     </section>
   );
 }

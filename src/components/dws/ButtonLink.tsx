@@ -38,7 +38,7 @@ export function ButtonLink({
       href={href}
       target={target}
       rel={rel}
-      className={`inline-flex items-center justify-center rounded-md font-semibold transition-colors duration-200 ${sizes[size]} ${variants[variant]} ${FOCUS} ${className}`}
+      className={`inline-flex items-center justify-center rounded-md font-semibold transition-[color,background-color,border-color,transform] duration-200 hover:-translate-y-px active:translate-y-0 ${sizes[size]} ${variants[variant]} ${FOCUS} ${className}`}
     >
       {children}
     </a>

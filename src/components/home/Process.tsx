@@ -1,4 +1,5 @@
 import { SECTION } from "@/components/dws/ui";
+import { InView } from "@/components/motion/InView";
 
 const steps = [
   {
@@ -31,16 +32,19 @@ export function Process() {
   return (
     <section id="processo" className={SECTION}>
       <div className="mx-auto max-w-6xl">
-        <div className="max-w-2xl">
+        <InView className="dws-in max-w-2xl">
           <h2 className="text-3xl font-semibold tracking-tight text-white md:text-4xl">
             Como a gente trabalha
           </h2>
           <p className="mt-4 text-base leading-relaxed text-[#B4B4BE] md:text-lg">
             Quatro etapas. Você aprova antes de avançar.
           </p>
-        </div>
+        </InView>
 
-        <ol className="mt-12 grid gap-10 sm:grid-cols-2 lg:grid-cols-4 lg:gap-8">
+        <InView
+          as="ol"
+          className="dws-stagger mt-12 grid gap-10 sm:grid-cols-2 lg:grid-cols-4 lg:gap-8"
+        >
           {steps.map((step) => (
             <li key={step.n}>
               <p className="text-sm text-[#6B6B76]">{step.n}</p>
@@ -59,7 +63,7 @@ export function Process() {
               </ul>
             </li>
           ))}
-        </ol>
+        </InView>
       </div>
     </section>
   );

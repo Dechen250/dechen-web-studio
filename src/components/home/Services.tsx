@@ -1,4 +1,5 @@
 import { SECTION } from "@/components/dws/ui";
+import { InView } from "@/components/motion/InView";
 
 const services = [
   {
@@ -35,7 +36,7 @@ export function Services() {
   return (
     <section id="servicos" className={SECTION}>
       <div className="mx-auto max-w-6xl">
-        <div className="max-w-2xl">
+        <InView className="dws-in max-w-2xl">
           <h2 className="text-3xl font-semibold tracking-tight text-white md:text-4xl">
             O que fazemos
           </h2>
@@ -43,9 +44,9 @@ export function Services() {
             Landing, institucional, vitrine ou manutenção. A gente recomenda o
             que resolve, depois constrói.
           </p>
-        </div>
+        </InView>
 
-        <ul className="mt-12 border-t border-[#262626]">
+        <InView as="ul" className="dws-stagger mt-12 border-t border-[#262626]">
           {services.map((service) => (
             <li
               key={service.title}
@@ -64,7 +65,7 @@ export function Services() {
               </div>
             </li>
           ))}
-        </ul>
+        </InView>
       </div>
     </section>
   );

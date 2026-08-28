@@ -30,6 +30,123 @@ body {
   font-family: var(--font-sans), Arial, Helvetica, sans-serif;
 }
 
+@keyframes dws-up {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes dws-fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes dws-ken {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.04);
+  }
+}
+
+@keyframes dws-progress {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+.dws-hero-copy > * {
+  opacity: 0;
+  animation: dws-up 0.65s ease-out forwards;
+}
+
+.dws-hero-copy > *:nth-child(1) {
+  animation-delay: 40ms;
+}
+.dws-hero-copy > *:nth-child(2) {
+  animation-delay: 120ms;
+}
+.dws-hero-copy > *:nth-child(3) {
+  animation-delay: 200ms;
+}
+.dws-hero-copy > *:nth-child(4) {
+  animation-delay: 280ms;
+}
+.dws-hero-copy > *:nth-child(5) {
+  animation-delay: 360ms;
+}
+
+.dws-hero-media {
+  opacity: 0;
+  animation: dws-up 0.75s ease-out 160ms forwards;
+}
+
+.dws-in {
+  opacity: 0;
+  transform: translateY(14px);
+}
+
+.dws-in.is-in {
+  animation: dws-up 0.6s ease-out forwards;
+}
+
+.dws-stagger > * {
+  opacity: 0;
+  transform: translateY(14px);
+}
+
+.dws-stagger.is-in > * {
+  animation: dws-up 0.55s ease-out forwards;
+}
+
+.dws-stagger.is-in > *:nth-child(1) {
+  animation-delay: 0ms;
+}
+.dws-stagger.is-in > *:nth-child(2) {
+  animation-delay: 70ms;
+}
+.dws-stagger.is-in > *:nth-child(3) {
+  animation-delay: 140ms;
+}
+.dws-stagger.is-in > *:nth-child(4) {
+  animation-delay: 210ms;
+}
+
+.dws-ken {
+  animation: dws-ken 4s linear forwards;
+}
+
+.dws-progress {
+  transform-origin: left center;
+  animation: dws-progress 4s linear forwards;
+}
+
+.dws-paused {
+  animation-play-state: paused;
+}
+
+.dws-caption {
+  animation: dws-fade 0.35s ease-out;
+}
+
+.dws-float {
+  opacity: 0;
+  animation: dws-up 0.5s ease-out 0.8s forwards;
+}
+
 /* Reveal motion is driven by Web Animations API in Reveal.tsx */
 @media (prefers-reduced-motion: reduce) {
   html {
@@ -40,11 +157,37 @@ body {
     opacity: 1 !important;
     transform: none !important;
   }
+
+  .dws-hero-copy > *,
+  .dws-hero-media,
+  .dws-in,
+  .dws-stagger > *,
+  .dws-float {
+    opacity: 1 !important;
+    transform: none !important;
+    animation: none !important;
+  }
+
+  .dws-ken,
+  .dws-progress,
+  .dws-caption {
+    animation: none !important;
+  }
 }
 
 @media (scripting: none) {
   [data-reveal] {
     opacity: 1 !important;
     transform: none !important;
+  }
+
+  .dws-in,
+  .dws-stagger > *,
+  .dws-hero-copy > *,
+  .dws-hero-media,
+  .dws-float {
+    opacity: 1 !important;
+    transform: none !important;
+    animation: none !important;
   }
 }

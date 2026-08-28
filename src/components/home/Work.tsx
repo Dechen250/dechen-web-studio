@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { SECTION } from "@/components/dws/ui";
+import { InView } from "@/components/motion/InView";
 import { portfolioDemos } from "@/data/portfolio-demos";
 
 const blurbs: Record<string, string> = {
@@ -18,7 +19,7 @@ export function Work() {
   return (
     <section id="trabalhos" className={SECTION}>
       <div className="mx-auto max-w-6xl">
-        <div className="max-w-2xl">
+        <InView className="dws-in max-w-2xl">
           <h2 className="text-3xl font-semibold tracking-tight text-white md:text-4xl">
             Trabalhos
           </h2>
@@ -26,9 +27,12 @@ export function Work() {
             Quatro demonstrações. Segmentos diferentes, o mesmo critério:
             clareza, velocidade e um jeito óbvio de entrar em contato.
           </p>
-        </div>
+        </InView>
 
-        <ul className="mt-12 grid gap-10 sm:grid-cols-2 lg:gap-x-8 lg:gap-y-14">
+        <InView
+          as="ul"
+          className="dws-stagger mt-12 grid gap-10 sm:grid-cols-2 lg:gap-x-8 lg:gap-y-14"
+        >
           {portfolioDemos.map((demo) => {
             const href = demo.href ?? `/portfolio/${demo.slug}`;
             const blurb = blurbs[demo.slug] ?? demo.description;
@@ -63,7 +67,7 @@ export function Work() {
               </li>
             );
           })}
-        </ul>
+        </InView>
       </div>
     </section>
   );

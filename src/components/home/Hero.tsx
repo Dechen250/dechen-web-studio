@@ -5,7 +5,7 @@ export function Hero() {
   return (
     <section className="px-5 pt-28 pb-16 md:px-6 md:pt-32 md:pb-20 lg:px-8 lg:pt-36 lg:pb-24">
       <div className="mx-auto grid max-w-6xl items-center gap-12 lg:grid-cols-2 lg:gap-16">
-        <div>
+        <div className="dws-hero-copy">
           <p className="mb-5 text-sm text-[#8A8A96]">Studio de sites para negócios locais</p>
           <h1 className="text-balance text-[2.125rem] leading-[1.12] font-semibold tracking-[-0.03em] text-white sm:text-5xl sm:leading-[1.08] lg:text-[3.25rem] lg:leading-[1.06]">
             Um site que faz o cliente falar com você.
@@ -32,7 +32,9 @@ export function Hero() {
           </p>
         </div>
 
-        <HeroShowcase />
+        <div className="dws-hero-media">
+          <HeroShowcase />
+        </div>
       </div>
     </section>
   );
