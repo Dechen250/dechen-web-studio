@@ -3,54 +3,13 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
-
-  /* Design System DWS — agency/03-design-system.md */
-  --dws-primary: #0070f3;
-  --dws-bg: #050505;
-  --dws-surface: #101010;
-  --dws-border: #262626;
-  --dws-text: #ffffff;
-  --dws-text-muted: #a1a1aa;
-
-  --dws-radius-sm: 12px;
-  --dws-radius-md: 18px;
-  --dws-radius-lg: 24px;
-  --dws-radius-full: 9999px;
-
-  --dws-space-1: 4px;
-  --dws-space-2: 8px;
-  --dws-space-3: 12px;
-  --dws-space-4: 16px;
-  --dws-space-5: 24px;
-  --dws-space-6: 32px;
-  --dws-space-7: 48px;
-  --dws-space-8: 64px;
-  --dws-space-9: 96px;
-  --dws-space-10: 128px;
-
-  --dws-container-max: 1280px;
-  --dws-nav-height: 72px;
-  --dws-control-height: 56px;
-
-  --dws-motion-fast: 200ms;
-  --dws-motion-base: 250ms;
-  --dws-motion-slow: 300ms;
-  --dws-ease: ease-out;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --color-primary: var(--dws-primary);
-  --color-bg: var(--dws-bg);
-  --color-surface: var(--dws-surface);
-  --color-border: var(--dws-border);
-  --color-muted: var(--dws-text-muted);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-  --radius-sm: var(--dws-radius-sm);
-  --radius-md: var(--dws-radius-md);
-  --radius-lg: var(--dws-radius-lg);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -68,10 +27,132 @@ html {
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
 }
 
-/* Ambient background — slow orb drift, tokens from DWS */
+@keyframes dws-up {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes dws-fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes dws-ken {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.04);
+  }
+}
+
+@keyframes dws-progress {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+.dws-hero-copy > * {
+  opacity: 0;
+  animation: dws-up 0.65s ease-out forwards;
+}
+
+.dws-hero-copy > *:nth-child(1) {
+  animation-delay: 40ms;
+}
+.dws-hero-copy > *:nth-child(2) {
+  animation-delay: 120ms;
+}
+.dws-hero-copy > *:nth-child(3) {
+  animation-delay: 200ms;
+}
+.dws-hero-copy > *:nth-child(4) {
+  animation-delay: 280ms;
+}
+.dws-hero-copy > *:nth-child(5) {
+  animation-delay: 360ms;
+}
+
+.dws-hero-media {
+  opacity: 0;
+  animation: dws-up 0.75s ease-out 160ms forwards;
+}
+
+.dws-in {
+  opacity: 0;
+  transform: translateY(14px);
+}
+
+.dws-in.is-in {
+  animation: dws-up 0.6s ease-out forwards;
+}
+
+.dws-stagger > * {
+  opacity: 0;
+  transform: translateY(14px);
+}
+
+.dws-stagger.is-in > * {
+  animation: dws-up 0.55s ease-out forwards;
+}
+
+.dws-stagger.is-in > *:nth-child(1) {
+  animation-delay: 0ms;
+}
+.dws-stagger.is-in > *:nth-child(2) {
+  animation-delay: 70ms;
+}
+.dws-stagger.is-in > *:nth-child(3) {
+  animation-delay: 140ms;
+}
+.dws-stagger.is-in > *:nth-child(4) {
+  animation-delay: 210ms;
+}
+
+.dws-ken {
+  animation: dws-ken 4s linear forwards;
+}
+
+.dws-progress {
+  transform-origin: left center;
+  animation: dws-progress 4s linear forwards;
+}
+
+.dws-paused {
+  animation-play-state: paused;
+}
+
+.dws-caption {
+  animation: dws-fade 0.35s ease-out;
+}
+
+.dws-float {
+  opacity: 0;
+  animation: dws-up 0.5s ease-out 0.8s forwards;
+}
+
+.dws-hero-actions {
+  opacity: 0;
+  animation: dws-up 0.65s ease-out 0.35s forwards;
+}
+
+/* Ambient background — letters + orbs */
 @keyframes dws-orb-drift {
   0%,
   100% {
@@ -95,12 +176,54 @@ body {
   }
 }
 
+@keyframes dws-glyph-breathe {
+  0%,
+  100% {
+    opacity: 0.12;
+    transform: translate3d(0, 6%, 0) rotate(-5deg);
+  }
+  28% {
+    opacity: 0.34;
+    transform: translate3d(3%, -8%, 0) rotate(4deg);
+  }
+  55% {
+    opacity: 0.08;
+    transform: translate3d(-5%, 3%, 0) rotate(-2deg);
+  }
+  78% {
+    opacity: 0.28;
+    transform: translate3d(2%, -5%, 0) rotate(3deg);
+  }
+}
+
+@keyframes dws-letter-in {
+  from {
+    opacity: 0;
+    transform: translateY(0.5em);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes dws-letter-out {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-0.28em);
+  }
+}
+
 .dws-ambient__wash {
   position: absolute;
   inset: 0;
   background: radial-gradient(
     ellipse 80% 50% at 50% -8%,
-    color-mix(in srgb, var(--dws-primary) 22%, transparent) 0%,
+    color-mix(in srgb, #0070f3 24%, transparent) 0%,
     transparent 58%
   );
 }
@@ -124,40 +247,14 @@ body {
   font-weight: 600;
   line-height: 1;
   letter-spacing: -0.08em;
-  color: color-mix(in srgb, var(--dws-primary) 70%, white);
-  opacity: 0;
-  animation-name: dws-glyph-breathe;
-  animation-timing-function: ease-in-out;
-  animation-iteration-count: infinite;
+  color: color-mix(in srgb, #0070f3 55%, white);
+  mix-blend-mode: screen;
+  opacity: 0.16;
 }
 
 @media (max-width: 767px) {
   .dws-glyph--md {
     display: none;
-  }
-
-  .dws-glyph {
-    font-size: min(18vw, 5.5rem) !important;
-  }
-}
-
-@keyframes dws-glyph-breathe {
-  0%,
-  100% {
-    opacity: 0;
-    transform: translate3d(0, 8%, 0) rotate(-6deg);
-  }
-  22% {
-    opacity: 0.14;
-    transform: translate3d(4%, -10%, 0) rotate(4deg);
-  }
-  48% {
-    opacity: 0.04;
-    transform: translate3d(-6%, 4%, 0) rotate(-2deg);
-  }
-  72% {
-    opacity: 0.12;
-    transform: translate3d(3%, -6%, 0) rotate(5deg);
   }
 }
 
@@ -200,7 +297,7 @@ body {
   height: 480px;
   background: radial-gradient(
     ellipse at center,
-    color-mix(in srgb, var(--dws-primary) 18%, transparent) 0%,
+    color-mix(in srgb, #0070f3 20%, transparent) 0%,
     transparent 68%
   );
 }
@@ -210,13 +307,12 @@ body {
   height: 320px;
   background: radial-gradient(
     circle,
-    color-mix(in srgb, var(--dws-primary) 12%, transparent) 0%,
+    color-mix(in srgb, #0070f3 14%, transparent) 0%,
     transparent 72%
   );
   filter: blur(28px);
   animation-duration: 22s, 16s;
   animation-direction: reverse, normal;
-  animation-delay: 0s, 1.4s;
 }
 
 .dws-orb--right {
@@ -224,12 +320,11 @@ body {
   height: 380px;
   background: radial-gradient(
     circle,
-    color-mix(in srgb, var(--dws-primary) 7%, transparent) 0%,
+    color-mix(in srgb, #0070f3 12%, transparent) 0%,
     transparent 74%
   );
   filter: blur(36px);
   animation-duration: 30s, 14s;
-  animation-delay: 0s, 2.2s;
 }
 
 .dws-orb--core {
@@ -237,13 +332,12 @@ body {
   height: min(560px, 70vw);
   background: radial-gradient(
     circle,
-    color-mix(in srgb, var(--dws-primary) 5%, transparent) 0%,
+    color-mix(in srgb, #0070f3 8%, transparent) 0%,
     transparent 70%
   );
   filter: blur(90px);
   animation-duration: 34s, 18s;
   animation-direction: reverse, normal;
-  animation-delay: 0s, 0.8s;
 }
 
 .dws-ambient__vignette {
@@ -252,11 +346,26 @@ body {
   background: radial-gradient(
     ellipse at center,
     transparent 42%,
-    color-mix(in srgb, var(--dws-bg) 45%, transparent) 100%
+    color-mix(in srgb, #050505 40%, transparent) 100%
   );
 }
 
-/* Reveal / split motion is driven by Web Animations API */
+[data-split-char] {
+  opacity: 0;
+  transform: translateY(0.5em);
+}
+
+[data-split-heading][data-in-view] [data-split-char] {
+  animation: dws-letter-in 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation-delay: calc(var(--split-delay, 0ms) + (var(--i, 0) * 22ms));
+}
+
+[data-split-heading][data-seen]:not([data-in-view]) [data-split-char] {
+  animation: dws-letter-out 0.32s ease-in both;
+  animation-delay: calc(var(--i, 0) * 8ms);
+}
+
+/* Reveal / split motion */
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
@@ -270,20 +379,35 @@ body {
   [data-split-char] {
     opacity: 1 !important;
     transform: none !important;
-  }
-
-  .dws-orb,
-  .dws-card__glow,
-  .dws-glyph {
     animation: none !important;
   }
 
-  .dws-ambient__stage {
+  .dws-hero-copy > *,
+  .dws-hero-media,
+  .dws-hero-actions,
+  .dws-in,
+  .dws-stagger > *,
+  .dws-float {
+    opacity: 1 !important;
     transform: none !important;
+    animation: none !important;
+  }
+
+  .dws-ken,
+  .dws-progress,
+  .dws-caption,
+  .dws-orb,
+  .dws-glyph,
+  .dws-card__glow {
+    animation: none !important;
   }
 
   .dws-glyph {
-    opacity: 0.06 !important;
+    opacity: 0.12 !important;
+    transform: none !important;
+  }
+
+  .dws-ambient__stage {
     transform: none !important;
   }
 }
@@ -297,5 +421,16 @@ body {
   [data-split-char] {
     opacity: 1 !important;
     transform: none !important;
+  }
+
+  .dws-in,
+  .dws-stagger > *,
+  .dws-hero-copy > *,
+  .dws-hero-media,
+  .dws-hero-actions,
+  .dws-float {
+    opacity: 1 !important;
+    transform: none !important;
+    animation: none !important;
   }
 }

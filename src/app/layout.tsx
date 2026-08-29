@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import { INSTAGRAM_URL } from "@/lib/site";
+import { AGENCY, INSTAGRAM_URL } from "@/lib/site";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -13,10 +13,10 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-const siteUrl = "https://dechenwebstudio.com.br";
-const siteTitle = "Dechen Web Studio | Sites premium para negócios locais";
+const siteUrl = `https://${AGENCY.domain}`;
+const siteTitle = `${AGENCY.name} | Sites para negócios locais`;
 const siteDescription =
-  "Criamos sites rápidos, profissionais e pensados para gerar contatos — para clínicas, lojas, restaurantes e consultorias que querem vender mais pela internet.";
+  "Sites para clínicas, lojas, restaurantes e consultorias. Rápidos no celular, com um caminho claro para o WhatsApp.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     template: "%s | Dechen Web Studio",
   },
   description: siteDescription,
-  applicationName: "Dechen Web Studio",
+  applicationName: AGENCY.name,
   keywords: [
     "criação de sites",
     "sites para empresas",
@@ -35,16 +35,20 @@ export const metadata: Metadata = {
     "site para clínica",
     "site para restaurante",
   ],
-  authors: [{ name: "Dechen Web Studio", url: siteUrl }],
-  creator: "Dechen Web Studio",
+  authors: [{ name: AGENCY.name, url: siteUrl }],
+  creator: AGENCY.name,
   alternates: {
     canonical: "/",
+  },
+  icons: {
+    icon: [{ url: "/icon.png", type: "image/png" }],
+    apple: [{ url: "/apple-icon.png", type: "image/png" }],
   },
   openGraph: {
     type: "website",
     locale: "pt_BR",
     url: siteUrl,
-    siteName: "Dechen Web Studio",
+    siteName: AGENCY.name,
     title: siteTitle,
     description: siteDescription,
   },
@@ -62,9 +66,11 @@ export const metadata: Metadata = {
 const organizationJsonLd = {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
-  name: "Dechen Web Studio",
+  name: AGENCY.name,
   url: siteUrl,
-  email: "contato@dechenwebstudio.com.br",
+  logo: `${siteUrl}/brand/dws-logo.png`,
+  image: `${siteUrl}/brand/dws-logo.png`,
+  email: AGENCY.email,
   telephone: "+55-11-97450-2226",
   sameAs: [INSTAGRAM_URL],
   description: siteDescription,
@@ -90,7 +96,7 @@ export default function RootLayout({
       lang="pt-BR"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="flex min-h-full flex-col">
+      <body className="flex min-h-full flex-col font-sans">
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

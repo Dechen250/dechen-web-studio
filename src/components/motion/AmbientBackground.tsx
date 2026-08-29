@@ -87,8 +87,7 @@ export function AmbientBackground() {
                 left: glyph.x,
                 top: glyph.y,
                 fontSize: glyph.size,
-                animationDelay: glyph.delay,
-                animationDuration: glyph.duration,
+                animation: `dws-glyph-breathe ${glyph.duration} ${glyph.delay} ease-in-out infinite`,
               }}
             >
               {glyph.ch}

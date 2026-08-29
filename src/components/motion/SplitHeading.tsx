@@ -17,9 +17,7 @@ type SplitHeadingProps = {
   as?: SplitTag;
   children: ReactNode;
   className?: string;
-  /** Animate on mount when already above the fold */
   immediate?: boolean;
-  /** Extra delay before the first letter (ms) */
   delayMs?: number;
 };
 
@@ -53,10 +51,7 @@ function splitString(text: string, counter: Counter): ReactNode[] {
               key={index}
               data-split-char=""
               className="inline-block"
-              style={{
-                opacity: 0,
-                transform: "translateY(0.55em)",
-              }}
+              style={{ ["--i" as string]: String(index) }}
             >
               {ch}
             </span>
@@ -85,21 +80,9 @@ function renderSplit(node: ReactNode, counter: Counter): ReactNode {
   return node;
 }
 
-function commitAndCancel(animations: Animation[]) {
-  for (const animation of animations) {
-    try {
-      animation.commitStyles();
-    } catch {
-      /* ignore uncommitted animations */
-    }
-    animation.cancel();
-  }
-}
-
 /**
- * Splits heading text into letters that fade in when the heading enters
- * the viewport and fade out when it leaves. Screen readers get the full
- * sentence via a visually hidden copy.
+ * Letter-by-letter in/out driven by a CSS class toggled on intersection.
+ * Immediate headings start visible so the hero never renders as blank text.
  */
 export function SplitHeading({
   as: Tag = "h2",
@@ -117,126 +100,51 @@ export function SplitHeading({
     const node = ref.current;
     if (!node) return;
 
-    const chars = Array.from(
-      node.querySelectorAll<HTMLElement>("[data-split-char]"),
-    );
-    if (chars.length === 0) return;
-
-    let cancelled = false;
-    let visible = false;
-    let animations: Animation[] = [];
-    let timer = 0;
-
     const reduceMotion = window.matchMedia(
       "(prefers-reduced-motion: reduce)",
     ).matches;
 
-    const showFinal = () => {
-      for (const el of chars) {
-        el.style.opacity = "1";
-        el.style.transform = "translateY(0px)";
-      }
-    };
-
-    const hideFinal = () => {
-      for (const el of chars) {
-        el.style.opacity = "0";
-        el.style.transform = "translateY(0.55em)";
-      }
-    };
-
-    if (reduceMotion || typeof node.animate !== "function") {
-      showFinal();
+    if (reduceMotion) {
+      node.setAttribute("data-in-view", "");
       return;
     }
 
-    const playIn = () => {
-      if (cancelled) return;
-      commitAndCancel(animations);
-      animations = chars.map((el, i) =>
-        el.animate(
-          [
-            { opacity: 0, transform: "translateY(0.55em)" },
-            { opacity: 1, transform: "translateY(0px)" },
-          ],
-          {
-            duration: 720,
-            delay: delayMs + Math.min(i * 22, 880),
-            easing: "cubic-bezier(0.16, 1, 0.3, 1)",
-            fill: "forwards",
-          },
-        ),
-      );
-    };
-
-    const playOut = () => {
-      if (cancelled) return;
-      commitAndCancel(animations);
-      const last = chars.length - 1;
-      animations = chars.map((el, i) =>
-        el.animate(
-          [
-            { opacity: 1, transform: "translateY(0px)" },
-            { opacity: 0, transform: "translateY(-0.35em)" },
-          ],
-          {
-            duration: 340,
-            delay: Math.min((last - i) * 12, 280),
-            easing: "cubic-bezier(0.4, 0, 1, 1)",
-            fill: "forwards",
-          },
-        ),
-      );
-    };
-
     const show = () => {
-      if (visible) return;
-      visible = true;
-      playIn();
+      node.setAttribute("data-in-view", "");
+      node.setAttribute("data-seen", "");
     };
 
     const hide = () => {
-      if (!visible) return;
-      visible = false;
-      playOut();
+      if (!node.hasAttribute("data-seen")) return;
+      node.removeAttribute("data-in-view");
     };
+
+    const inViewport = () => {
+      const rect = node.getBoundingClientRect();
+      return rect.bottom > 40 && rect.top < window.innerHeight - 40;
+    };
+
+    if (immediate || inViewport()) show();
 
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting && entry.intersectionRatio >= 0.18) show();
-        else if (!entry.isIntersecting) hide();
+        if (entry.isIntersecting) show();
+        else hide();
       },
-      {
-        threshold: [0, 0.18, 0.4, 0.7],
-        rootMargin: "-10% 0px -16% 0px",
-      },
+      { threshold: 0.08, rootMargin: "0px 0px -6% 0px" },
     );
 
     observer.observe(node);
-
-    if (immediate) {
-      timer = window.setTimeout(() => {
-        const rect = node.getBoundingClientRect();
-        const inView = rect.bottom > 80 && rect.top < window.innerHeight - 80;
-        if (inView) show();
-      }, 60);
-    }
-
-    return () => {
-      cancelled = true;
-      window.clearTimeout(timer);
-      observer.disconnect();
-      commitAndCancel(animations);
-      if (visible) showFinal();
-      else hideFinal();
-    };
-  }, [delayMs, immediate]);
+    return () => observer.disconnect();
+  }, [immediate]);
 
   return (
     <Tag
       ref={ref as never}
       className={className}
       data-split-heading=""
+      {...(immediate ? { "data-in-view": "" } : {})}
+      style={{ ["--split-delay" as string]: `${delayMs}ms` }}
       aria-labelledby={labelId}
     >
       <span id={labelId} className="sr-only">
