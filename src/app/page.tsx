@@ -8,7 +8,9 @@ import {
   type FormEvent,
   type ReactNode,
 } from "react";
+import { AmbientBackground } from "@/components/motion/AmbientBackground";
 import { Reveal } from "@/components/motion/Reveal";
+import { SplitHeading } from "@/components/motion/SplitHeading";
 import { WhatsAppFloat } from "@/components/WhatsAppFloat";
 import { portfolioDemos } from "@/data/portfolio-demos";
 import {
@@ -336,11 +338,21 @@ function GlassCard({
   );
 }
 
-function SectionLabel({ children }: { children: ReactNode }) {
+function SectionLabel({
+  children,
+  immediate = false,
+}: {
+  children: ReactNode;
+  immediate?: boolean;
+}) {
   return (
-    <p className="mb-3 text-xs font-semibold tracking-[0.18em] text-[#0070F3] uppercase sm:mb-4 sm:text-sm sm:tracking-[0.15em]">
+    <SplitHeading
+      as="p"
+      immediate={immediate}
+      className="mb-3 text-xs font-semibold tracking-[0.18em] text-[#0070F3] uppercase sm:mb-4 sm:text-sm sm:tracking-[0.15em]"
+    >
       {children}
-    </p>
+    </SplitHeading>
   );
 }
 
@@ -360,20 +372,27 @@ function SectionHeader({
   return (
     <div className={`max-w-2xl ${className}`}>
       <SectionLabel>{label}</SectionLabel>
-      <h2 className="text-3xl font-semibold tracking-tight md:text-4xl lg:text-[2.75rem] lg:leading-[1.1]">
+      <SplitHeading
+        as="h2"
+        className="text-3xl font-semibold tracking-tight md:text-4xl lg:text-[2.75rem] lg:leading-[1.1]"
+      >
         {title}
-        {titleMuted && (
+        {titleMuted ? (
           <>
             <br />
             <span className="text-[#A1A1AA]">{titleMuted}</span>
           </>
-        )}
-      </h2>
-      {description && (
-        <p className="mt-5 text-base leading-relaxed text-[#B4B4BE] md:mt-6 md:text-lg md:leading-relaxed">
+        ) : null}
+      </SplitHeading>
+      {description ? (
+        <SplitHeading
+          as="p"
+          delayMs={180}
+          className="mt-5 text-base leading-relaxed text-[#B4B4BE] md:mt-6 md:text-lg md:leading-relaxed"
+        >
           {description}
-        </p>
-      )}
+        </SplitHeading>
+      ) : null}
     </div>
   );
 }
@@ -477,12 +496,19 @@ function ServiceExampleCard({
         <span className="mb-4 inline-flex w-fit rounded-full border border-[#0070F3]/25 bg-[#0070F3]/10 px-3 py-1 text-[10px] font-medium tracking-widest text-[#0070F3] uppercase">
           Exemplo conceitual
         </span>
-        <h3 className="text-lg font-semibold tracking-tight sm:text-xl">
+        <SplitHeading
+          as="h3"
+          className="text-lg font-semibold tracking-tight sm:text-xl"
+        >
           {title}
-        </h3>
-        <p className="mt-2 text-sm leading-relaxed text-[#A1A1AA]">
+        </SplitHeading>
+        <SplitHeading
+          as="p"
+          delayMs={80}
+          className="mt-2 text-sm leading-relaxed text-[#A1A1AA]"
+        >
           {description}
-        </p>
+        </SplitHeading>
 
         <div className="mt-6 flex flex-1 flex-col rounded-2xl border border-[#262626] bg-[#050505]/80 p-4">
           <div className="mb-4 flex items-center gap-1.5" aria-hidden>
@@ -551,9 +577,12 @@ function PrimaryServiceSlot({
       }
     >
       <div className="mb-3 flex items-start justify-between gap-4 sm:mb-4">
-        <h3 className="text-lg font-semibold tracking-tight sm:text-xl md:text-2xl">
+        <SplitHeading
+          as="h3"
+          className="text-lg font-semibold tracking-tight sm:text-xl md:text-2xl"
+        >
           {service.title}
-        </h3>
+        </SplitHeading>
         <span
           aria-hidden
           className={`mt-1 shrink-0 text-[#404040] ${TRANSITION} ${isOpen ? "rotate-90 text-[#0070F3]" : "group-hover/card:translate-x-1 group-hover/card:text-[#0070F3]"}`}
@@ -561,9 +590,13 @@ function PrimaryServiceSlot({
           →
         </span>
       </div>
-      <p className="text-sm leading-relaxed text-[#A1A1AA] md:text-base">
+      <SplitHeading
+        as="p"
+        delayMs={80}
+        className="text-sm leading-relaxed text-[#A1A1AA] md:text-base"
+      >
         {service.description}
-      </p>
+      </SplitHeading>
       <p
         className={`mt-4 text-xs ${TRANSITION} ${isOpen ? "text-[#0070F3]" : "text-[#404040] group-hover/card:text-[#0070F3]/70"}`}
       >
@@ -879,19 +912,6 @@ function ContactForm() {
   );
 }
 
-function HeroBackground() {
-  return (
-    <div aria-hidden className="pointer-events-none absolute inset-0">
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_0%,rgba(0,112,243,0.1)_0%,transparent_55%)]" />
-      <div className="absolute top-[12%] left-1/2 h-[480px] w-[820px] -translate-x-1/2 rounded-full bg-[radial-gradient(ellipse_at_center,rgba(0,112,243,0.09)_0%,transparent_65%)]" />
-      <div className="absolute top-[6%] left-[6%] h-[280px] w-[280px] rounded-full bg-[radial-gradient(circle,rgba(0,112,243,0.06)_0%,transparent_70%)] blur-2xl" />
-      <div className="absolute right-[5%] bottom-[15%] h-[340px] w-[340px] rounded-full bg-[radial-gradient(circle,rgba(0,112,243,0.05)_0%,transparent_72%)] blur-3xl" />
-      <div className="absolute top-1/2 left-1/2 h-[560px] w-[560px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#0070F3]/[0.025] blur-[110px]" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_40%,rgba(5,5,5,0.4)_100%)]" />
-    </div>
-  );
-}
-
 function TrustLine() {
   return (
     <ul className="mt-8 flex flex-col items-center gap-3 sm:mt-10 sm:flex-row sm:flex-wrap sm:justify-center sm:gap-x-6 sm:gap-y-2">
@@ -1027,32 +1047,39 @@ export default function Home() {
   );
 
   return (
-    <div className="min-h-full bg-[#050505] font-sans text-white selection:bg-[#0070F3]/30">
+    <div className="relative min-h-full bg-[#050505] font-sans text-white selection:bg-[#0070F3]/30">
+      <AmbientBackground />
+
+      <div className="relative z-10">
       <FloatingNavbar />
 
       <main>
         {/* Hero */}
-        <section className="relative flex min-h-[92vh] flex-col items-center justify-center overflow-hidden px-5 pt-28 pb-24 sm:px-6 sm:pt-32 sm:pb-28 md:pt-36 md:pb-36 lg:px-8 lg:pt-40 lg:pb-44">
-          <HeroBackground />
-
+        <section className="relative flex min-h-[92vh] flex-col items-center justify-center px-5 pt-28 pb-24 sm:px-6 sm:pt-32 sm:pb-28 md:pt-36 md:pb-36 lg:px-8 lg:pt-40 lg:pb-44">
           <div className="relative mx-auto w-full max-w-4xl text-center">
-            <Reveal immediate>
-              <SectionLabel>Para negócios locais e empreendedores</SectionLabel>
-            </Reveal>
-            <Reveal immediate delayMs={120}>
-              <h1 className="text-balance text-[2rem] leading-[1.12] font-semibold tracking-[-0.02em] sm:text-4xl md:text-5xl md:tracking-[-0.025em] lg:text-[3.5rem] lg:leading-[1.06] lg:tracking-[-0.03em]">
-                Transforme visitantes em clientes com um site que transmite{" "}
-                <span className="text-[#0070F3]">autoridade e confiança</span>
-              </h1>
-            </Reveal>
-            <Reveal immediate delayMs={240}>
-              <p className="mx-auto mt-6 max-w-2xl text-pretty text-base leading-[1.7] text-[#A1A1AA] sm:mt-8 sm:text-lg md:mt-10 md:text-xl md:leading-[1.65]">
-                Desenvolvemos sites premium para clínicas, lojas, consultorias e
-                empresas locais que precisam vender mais pela internet — com
-                design profissional, carregamento rápido e estrutura pensada para
-                gerar contatos.
-              </p>
-            </Reveal>
+            <SectionLabel immediate>
+              Para negócios locais e empreendedores
+            </SectionLabel>
+            <SplitHeading
+              as="h1"
+              immediate
+              delayMs={120}
+              className="text-balance text-[2rem] leading-[1.12] font-semibold tracking-[-0.02em] sm:text-4xl md:text-5xl md:tracking-[-0.025em] lg:text-[3.5rem] lg:leading-[1.06] lg:tracking-[-0.03em]"
+            >
+              Transforme visitantes em clientes com um site que transmite{" "}
+              <span className="text-[#0070F3]">autoridade e confiança</span>
+            </SplitHeading>
+            <SplitHeading
+              as="p"
+              immediate
+              delayMs={420}
+              className="mx-auto mt-6 max-w-2xl text-pretty text-base leading-[1.7] text-[#A1A1AA] sm:mt-8 sm:text-lg md:mt-10 md:text-xl md:leading-[1.65]"
+            >
+              Desenvolvemos sites premium para clínicas, lojas, consultorias e
+              empresas locais que precisam vender mais pela internet — com
+              design profissional, carregamento rápido e estrutura pensada para
+              gerar contatos.
+            </SplitHeading>
             <Reveal immediate delayMs={360}>
               <div className="mt-10 flex w-full flex-col items-stretch justify-center gap-3 sm:mt-12 sm:flex-row sm:items-center sm:gap-4">
                 <GlassButton
@@ -1087,15 +1114,27 @@ export default function Home() {
             {benefits.map((item, index) => (
               <Reveal key={item.label} delayMs={index * 60} className="h-full">
                 <GlassCard className="h-full p-5 sm:p-6">
-                  <p className="text-xl font-semibold tracking-tight text-[#0070F3] sm:text-2xl">
+                  <SplitHeading
+                    as="p"
+                    delayMs={index * 60}
+                    className="text-xl font-semibold tracking-tight text-[#0070F3] sm:text-2xl"
+                  >
                     {item.value}
-                  </p>
-                  <p className="mt-1 text-sm font-medium text-white">
+                  </SplitHeading>
+                  <SplitHeading
+                    as="p"
+                    delayMs={index * 60 + 80}
+                    className="mt-1 text-sm font-medium text-white"
+                  >
                     {item.label}
-                  </p>
-                  <p className="mt-1.5 text-xs leading-relaxed text-[#A1A1AA] sm:text-sm">
+                  </SplitHeading>
+                  <SplitHeading
+                    as="p"
+                    delayMs={index * 60 + 140}
+                    className="mt-1.5 text-xs leading-relaxed text-[#A1A1AA] sm:text-sm"
+                  >
                     {item.detail}
-                  </p>
+                  </SplitHeading>
                 </GlassCard>
               </Reveal>
             ))}
@@ -1155,9 +1194,13 @@ export default function Home() {
                       }
                     >
                       <div className="mb-3 flex items-start justify-between gap-4 sm:mb-4">
-                        <h3 className="text-lg font-semibold tracking-tight sm:text-xl md:text-2xl">
+                        <SplitHeading
+                          as="h3"
+                          delayMs={index * 70}
+                          className="text-lg font-semibold tracking-tight sm:text-xl md:text-2xl"
+                        >
                           {service.title}
-                        </h3>
+                        </SplitHeading>
                         <span
                           aria-hidden
                           className={`mt-1 shrink-0 text-[#404040] ${TRANSITION} ${open ? "rotate-90 text-[#0070F3]" : "group-hover/card:translate-x-1 group-hover/card:text-[#0070F3]"}`}
@@ -1165,9 +1208,13 @@ export default function Home() {
                           →
                         </span>
                       </div>
-                      <p className="text-sm leading-relaxed text-[#A1A1AA] md:text-base">
+                      <SplitHeading
+                        as="p"
+                        delayMs={index * 70 + 80}
+                        className="text-sm leading-relaxed text-[#A1A1AA] md:text-base"
+                      >
                         {service.description}
-                      </p>
+                      </SplitHeading>
                       <p
                         className={`mt-4 text-xs ${TRANSITION} ${open ? "text-[#0070F3]" : "text-[#404040] group-hover/card:text-[#0070F3]/70"}`}
                       >
@@ -1216,15 +1263,27 @@ export default function Home() {
                           </>
                         }
                       >
-                        <span className="mb-4 text-sm font-medium tracking-widest text-[#0070F3] sm:mb-6">
+                        <SplitHeading
+                          as="span"
+                          delayMs={index * 60}
+                          className="mb-4 block text-sm font-medium tracking-widest text-[#0070F3] sm:mb-6"
+                        >
                           {step.step}
-                        </span>
-                        <h3 className="mb-2 text-base font-semibold tracking-tight sm:text-lg md:text-xl">
+                        </SplitHeading>
+                        <SplitHeading
+                          as="h3"
+                          delayMs={index * 60 + 40}
+                          className="mb-2 text-base font-semibold tracking-tight sm:text-lg md:text-xl"
+                        >
                           {step.title}
-                        </h3>
-                        <p className="text-sm leading-relaxed text-[#A1A1AA]">
+                        </SplitHeading>
+                        <SplitHeading
+                          as="p"
+                          delayMs={index * 60 + 100}
+                          className="text-sm leading-relaxed text-[#A1A1AA]"
+                        >
                           {step.description}
-                        </p>
+                        </SplitHeading>
                         <p
                           className={`mt-auto pt-4 text-xs ${TRANSITION} ${open ? "text-[#0070F3]" : "text-[#404040] group-hover/card:text-[#0070F3]/70"}`}
                         >
@@ -1264,21 +1323,33 @@ export default function Home() {
                     >
                       {String(index + 1).padStart(2, "0")}
                     </span>
-                    <h3 className="text-lg font-semibold tracking-tight sm:text-xl">
+                    <SplitHeading
+                      as="h3"
+                      delayMs={index * 70}
+                      className="text-lg font-semibold tracking-tight sm:text-xl"
+                    >
                       {item.title}
-                    </h3>
-                    <p className="mt-3 text-sm leading-relaxed text-[#B4B4BE] md:text-base">
+                    </SplitHeading>
+                    <SplitHeading
+                      as="p"
+                      delayMs={index * 70 + 80}
+                      className="mt-3 text-sm leading-relaxed text-[#B4B4BE] md:text-base"
+                    >
                       {item.detail}
-                    </p>
+                    </SplitHeading>
                   </div>
                 </Reveal>
               ))}
             </div>
             <Reveal delayMs={120}>
-              <p className="mt-10 max-w-2xl text-sm leading-relaxed text-[#8A8A96] md:text-base">
+              <SplitHeading
+                as="p"
+                delayMs={120}
+                className="mt-10 max-w-2xl text-sm leading-relaxed text-[#8A8A96] md:text-base"
+              >
                 Demonstrações em gastronomia, beleza masculina, saúde e
                 consultoria — veja o padrão completo nos projetos abaixo.
-              </p>
+              </SplitHeading>
             </Reveal>
           </div>
         </section>
@@ -1324,14 +1395,20 @@ export default function Home() {
                     </span>
                   </div>
                   <div className="relative p-6 sm:p-8">
-                    <h3
+                    <SplitHeading
+                      as="h3"
+                      delayMs={index * 70}
                       className={`mb-2 text-lg font-semibold tracking-tight sm:text-xl md:text-2xl ${TRANSITION} group-hover/card:text-[#0070F3]`}
                     >
                       {demo.title}
-                    </h3>
-                    <p className="mb-5 text-sm leading-relaxed text-[#A1A1AA] sm:mb-6 md:text-base">
+                    </SplitHeading>
+                    <SplitHeading
+                      as="p"
+                      delayMs={index * 70 + 80}
+                      className="mb-5 text-sm leading-relaxed text-[#A1A1AA] sm:mb-6 md:text-base"
+                    >
                       {demo.description}
-                    </p>
+                    </SplitHeading>
                     <span
                       className={`inline-flex items-center gap-2 text-sm font-medium text-[#0070F3] ${TRANSITION} group-hover/card:gap-3`}
                     >
@@ -1420,12 +1497,19 @@ export default function Home() {
                     className="pointer-events-none absolute inset-0 rounded-3xl bg-gradient-to-b from-[#0070F3]/[0.05] to-transparent"
                   />
                   <div className="relative">
-                    <h3 className="mb-1 text-lg font-semibold tracking-tight">
+                    <SplitHeading
+                      as="h3"
+                      className="mb-1 text-lg font-semibold tracking-tight"
+                    >
                       Solicite seu orçamento
-                    </h3>
-                    <p className="mb-6 text-sm text-[#A1A1AA]">
+                    </SplitHeading>
+                    <SplitHeading
+                      as="p"
+                      delayMs={80}
+                      className="mb-6 text-sm text-[#A1A1AA]"
+                    >
                       Preencha o formulário e envie direto no WhatsApp.
-                    </p>
+                    </SplitHeading>
                     <ContactForm />
                   </div>
                 </div>
@@ -1502,6 +1586,7 @@ export default function Home() {
       </footer>
 
       <WhatsAppFloat />
+      </div>
     </div>
   );
 }

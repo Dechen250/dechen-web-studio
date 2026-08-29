@@ -3,13 +3,54 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+
+  /* Design System DWS — agency/03-design-system.md */
+  --dws-primary: #0070f3;
+  --dws-bg: #050505;
+  --dws-surface: #101010;
+  --dws-border: #262626;
+  --dws-text: #ffffff;
+  --dws-text-muted: #a1a1aa;
+
+  --dws-radius-sm: 12px;
+  --dws-radius-md: 18px;
+  --dws-radius-lg: 24px;
+  --dws-radius-full: 9999px;
+
+  --dws-space-1: 4px;
+  --dws-space-2: 8px;
+  --dws-space-3: 12px;
+  --dws-space-4: 16px;
+  --dws-space-5: 24px;
+  --dws-space-6: 32px;
+  --dws-space-7: 48px;
+  --dws-space-8: 64px;
+  --dws-space-9: 96px;
+  --dws-space-10: 128px;
+
+  --dws-container-max: 1280px;
+  --dws-nav-height: 72px;
+  --dws-control-height: 56px;
+
+  --dws-motion-fast: 200ms;
+  --dws-motion-base: 250ms;
+  --dws-motion-slow: 300ms;
+  --dws-ease: ease-out;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-primary: var(--dws-primary);
+  --color-bg: var(--dws-bg);
+  --color-surface: var(--dws-surface);
+  --color-border: var(--dws-border);
+  --color-muted: var(--dws-text-muted);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --radius-sm: var(--dws-radius-sm);
+  --radius-md: var(--dws-radius-md);
+  --radius-lg: var(--dws-radius-lg);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -30,7 +71,192 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-/* Reveal motion is driven by Web Animations API in Reveal.tsx */
+/* Ambient background — slow orb drift, tokens from DWS */
+@keyframes dws-orb-drift {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  40% {
+    transform: translate3d(5%, 7%, 0) scale(1.08);
+  }
+  70% {
+    transform: translate3d(-6%, 3%, 0) scale(0.94);
+  }
+}
+
+@keyframes dws-orb-pulse {
+  0%,
+  100% {
+    opacity: 0.72;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.dws-ambient__wash {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse 80% 50% at 50% -8%,
+    color-mix(in srgb, var(--dws-primary) 22%, transparent) 0%,
+    transparent 58%
+  );
+}
+
+.dws-ambient__stage {
+  position: absolute;
+  inset: -18% 0 auto;
+  width: 100%;
+  height: 136%;
+  will-change: transform;
+}
+
+.dws-letter-field {
+  position: absolute;
+  inset: 0;
+  font-family: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+}
+
+.dws-glyph {
+  position: absolute;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -0.08em;
+  color: color-mix(in srgb, var(--dws-primary) 70%, white);
+  opacity: 0;
+  animation-name: dws-glyph-breathe;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+@media (max-width: 767px) {
+  .dws-glyph--md {
+    display: none;
+  }
+
+  .dws-glyph {
+    font-size: min(18vw, 5.5rem) !important;
+  }
+}
+
+@keyframes dws-glyph-breathe {
+  0%,
+  100% {
+    opacity: 0;
+    transform: translate3d(0, 8%, 0) rotate(-6deg);
+  }
+  22% {
+    opacity: 0.14;
+    transform: translate3d(4%, -10%, 0) rotate(4deg);
+  }
+  48% {
+    opacity: 0.04;
+    transform: translate3d(-6%, 4%, 0) rotate(-2deg);
+  }
+  72% {
+    opacity: 0.12;
+    transform: translate3d(3%, -6%, 0) rotate(5deg);
+  }
+}
+
+.dws-orb-slot {
+  position: absolute;
+}
+
+.dws-orb-slot--hero {
+  top: 4%;
+  left: 50%;
+  translate: -50% 0;
+}
+
+.dws-orb-slot--left {
+  top: 18%;
+  left: -4%;
+}
+
+.dws-orb-slot--right {
+  right: -6%;
+  bottom: 12%;
+}
+
+.dws-orb-slot--core {
+  top: 42%;
+  left: 50%;
+  translate: -50% -40%;
+}
+
+.dws-orb {
+  border-radius: 9999px;
+  will-change: transform, opacity;
+  animation:
+    dws-orb-drift 26s ease-in-out infinite,
+    dws-orb-pulse 12s ease-in-out infinite;
+}
+
+.dws-orb--hero {
+  width: min(820px, 92vw);
+  height: 480px;
+  background: radial-gradient(
+    ellipse at center,
+    color-mix(in srgb, var(--dws-primary) 18%, transparent) 0%,
+    transparent 68%
+  );
+}
+
+.dws-orb--left {
+  width: 320px;
+  height: 320px;
+  background: radial-gradient(
+    circle,
+    color-mix(in srgb, var(--dws-primary) 12%, transparent) 0%,
+    transparent 72%
+  );
+  filter: blur(28px);
+  animation-duration: 22s, 16s;
+  animation-direction: reverse, normal;
+  animation-delay: 0s, 1.4s;
+}
+
+.dws-orb--right {
+  width: 380px;
+  height: 380px;
+  background: radial-gradient(
+    circle,
+    color-mix(in srgb, var(--dws-primary) 7%, transparent) 0%,
+    transparent 74%
+  );
+  filter: blur(36px);
+  animation-duration: 30s, 14s;
+  animation-delay: 0s, 2.2s;
+}
+
+.dws-orb--core {
+  width: min(560px, 70vw);
+  height: min(560px, 70vw);
+  background: radial-gradient(
+    circle,
+    color-mix(in srgb, var(--dws-primary) 5%, transparent) 0%,
+    transparent 70%
+  );
+  filter: blur(90px);
+  animation-duration: 34s, 18s;
+  animation-direction: reverse, normal;
+  animation-delay: 0s, 0.8s;
+}
+
+.dws-ambient__vignette {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse at center,
+    transparent 42%,
+    color-mix(in srgb, var(--dws-bg) 45%, transparent) 100%
+  );
+}
+
+/* Reveal / split motion is driven by Web Animations API */
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
@@ -40,10 +266,35 @@ body {
     opacity: 1 !important;
     transform: none !important;
   }
+
+  [data-split-char] {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .dws-orb,
+  .dws-card__glow,
+  .dws-glyph {
+    animation: none !important;
+  }
+
+  .dws-ambient__stage {
+    transform: none !important;
+  }
+
+  .dws-glyph {
+    opacity: 0.06 !important;
+    transform: none !important;
+  }
 }
 
 @media (scripting: none) {
   [data-reveal] {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  [data-split-char] {
     opacity: 1 !important;
     transform: none !important;
   }

@@ -1,6 +1,6 @@
 # Roadmap da Agência
 
-**Tipo:** estratégia · **Status:** ativo · **Versão:** 2.0
+**Tipo:** estratégia · **Status:** ativo · **Versão:** 2.1
 
 Prioridades da Dechen Web Studio no nível empresa. Detalhes técnicos: roadmaps em `systems/`.
 
@@ -10,6 +10,7 @@ Prioridades da Dechen Web Studio no nível empresa. Detalhes técnicos: roadmaps
 - [x] Processo comercial documentado (`systems/sales`)
 - [x] Captação planejada (`systems/client-acquisition`)
 - [x] Monorepo Next.js com showcases e packs de cliente
+- [x] Isolamento de projetos de cliente (repo próprio a partir de 28/08/2026)
 - [ ] Captação v1 em produção (form + API + Supabase + Resend)
 - [ ] README e índice sempre sincronizados com o filesystem
 

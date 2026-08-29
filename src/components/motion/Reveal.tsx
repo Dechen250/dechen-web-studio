@@ -12,11 +12,9 @@ type RevealProps = {
 };
 
 /**
- * Scroll-aware fade-up reveal powered by the Web Animations API.
+ * Scroll-aware lift-in powered by the Web Animations API.
+ * Opacity stays at 1 so nested SplitHeading letters remain visible.
  * Uses commitStyles() so the final state sticks after the animation ends.
- *
- * Important: play-state is local to the effect (not a ref) so React Strict Mode
- * remounts can still run the entrance animation.
  */
 export function Reveal({
   children,
@@ -53,16 +51,16 @@ export function Reveal({
         return;
       }
 
-      node.style.opacity = "0";
-      node.style.transform = "translateY(40px)";
+      node.style.opacity = "1";
+      node.style.transform = "translateY(28px)";
 
       animation = node.animate(
         [
-          { opacity: 0, transform: "translateY(40px)" },
-          { opacity: 1, transform: "translateY(0px)" },
+          { transform: "translateY(28px)" },
+          { transform: "translateY(0px)" },
         ],
         {
-          duration: 1100,
+          duration: 800,
           delay: delayMs,
           easing: "cubic-bezier(0.16, 1, 0.3, 1)",
           fill: "forwards",
@@ -124,8 +122,8 @@ export function Reveal({
       className={className}
       data-reveal=""
       style={{
-        opacity: 0,
-        transform: "translateY(40px)",
+        opacity: 1,
+        transform: "translateY(28px)",
       }}
     >
       {children}

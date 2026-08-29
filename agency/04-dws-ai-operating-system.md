@@ -1,6 +1,6 @@
 # DWS AI Operating System
 
-**Tipo:** produto · **Status:** ativo · **Versão:** 2.0
+**Tipo:** produto · **Status:** ativo · **Versão:** 2.1
 
 Como qualquer IA usada pela Dechen Web Studio deve decidir e executar. Independente de ferramenta (Cursor, ChatGPT, Claude, Gemini, Copilot, etc.).
 
@@ -9,6 +9,7 @@ Como qualquer IA usada pela Dechen Web Studio deve decidir e executar. Independe
 - [Manual](01-manual-da-agencia.md)
 - [Brand Guide](02-brand-guide.md)
 - [Design System](03-design-system.md)
+- [Isolamento de projetos](10-isolamento-de-projetos.md)
 
 ## Papel da IA
 
@@ -30,11 +31,13 @@ Se a resposta for não, reavalie. Se faltar dado comercial (preço, garantia, ca
 ## Checklist pré-código
 
 - [ ] Li o pack do projeto (`clients/` ou `showcase/`) quando existir
-- [ ] Respeito a arquitetura e pastas existentes
+- [ ] Site de cliente está no repositório **próprio** (`E:\DechenWebStudio\<slug>`), não no monorepo da agência nem em pasta compartilhada com outro cliente
+- [ ] Respeito a arquitetura e pastas existentes **desse** repo
 - [ ] Server Components por padrão; Client só com motivo
 - [ ] Tokens/DS do projeto correto (DWS vs cliente)
 - [ ] Sem Liquid Glass em site de cliente salvo se o brief pedir
 - [ ] Acessibilidade e performance no escopo, não “depois”
+- [ ] Nenhum import, token ou secret de outro cliente
 
 ## Código
 
@@ -42,6 +45,7 @@ Se a resposta for não, reavalie. Se faltar dado comercial (preço, garantia, ca
 - TypeScript estrito no espírito do repo
 - Não criar pastas/arquivos aleatórios
 - Não entregar exploits, malware ou dados inventados de cliente
+- Não misturar código de dois clientes no mesmo repositório ou pasta compartilhada
 
 ## Processo sugerido
 

@@ -1,6 +1,6 @@
 # Build
 
-**Tipo:** Etapa de execução · **Status:** ativo · **Versão:** 2.0
+**Tipo:** Etapa de execução · **Status:** ativo · **Versão:** 2.1
 
 ## Objetivo
 
@@ -34,7 +34,8 @@ Kickoff → Planejamento → Design → Desenvolvimento → Testes → Aprovaç�
 
 **Checklist:**
 
-- [ ] Criar pasta do cliente
+- [ ] Criar pack do cliente em `dechen-web-studio/clients/`
+- [ ] Criar repositório **próprio** do site (`E:\DechenWebStudio\<slug>`, Git separado)
 - [ ] Documentação com templates oficiais
 - [ ] Definir cronograma
 - [ ] Registrar informações do projeto
@@ -64,7 +65,7 @@ Todo design segue o Brand Guide antes da aprovação.
 - Componentização · Código limpo
 - Responsividade · SEO
 
-Implementação conforme documentação do projeto. Supabase e Resend quando necessário.
+Implementação conforme documentação do projeto, **no repositório daquele cliente**. Supabase e Resend quando necessário. Não misturar código com outro cliente nem com o monorepo da agência ([isolamento de projetos](../../agency/10-isolamento-de-projetos.md)).
 
 Toda IA segue o DWS AI Operating System.
 
@@ -87,7 +88,7 @@ Apresentar ao cliente. Registrar ajustes solicitados, melhorias aprovadas e alte
 - Design consistente · Código organizado
 - Performance otimizada · UX sólida
 - SEO básico · Responsividade completa
-- Componentes reutilizáveis
+- Componentes reutilizáveis **dentro** do repo daquele cliente
 
 ## Ferramentas
 

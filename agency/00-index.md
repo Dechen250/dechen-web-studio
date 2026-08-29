@@ -1,6 +1,6 @@
 # Dechen Web Studio — Índice
 
-**Tipo:** estratégia · **Status:** ativo · **Versão:** 2.0
+**Tipo:** estratégia · **Status:** ativo · **Versão:** 2.1
 
 Sistema operacional da agência. Toda decisão importante deve viver em um destes documentos (ou em `systems/` / packs de projeto).
 
@@ -33,6 +33,7 @@ Detalhamento do funil e etapas: [`../systems/sales/`](../systems/sales/00-visao.
 |-----|---------|
 | Processo de Desenvolvimento | [07-processo-desenvolvimento.md](07-processo-desenvolvimento.md) |
 | Copywriting | [08-copywriting.md](08-copywriting.md) |
+| Isolamento de projetos | [10-isolamento-de-projetos.md](10-isolamento-de-projetos.md) |
 
 Captação técnica de leads: [`../systems/client-acquisition/`](../systems/client-acquisition/00-visao.md).
 
@@ -46,7 +47,8 @@ Captação técnica de leads: [`../systems/client-acquisition/`](../systems/clie
 
 | Área | Caminho |
 |------|---------|
-| Clientes reais | [`../clients/`](../clients/01-vitta-serena/00-projeto.md) |
+| Clientes reais (packs) | [`../clients/`](../clients/01-vitta-serena/00-projeto.md) |
+| Sites de cliente (código) | Repo próprio em `E:\DechenWebStudio\<slug>` — [isolamento](10-isolamento-de-projetos.md) |
 | Showcases | [`../showcase/`](../showcase/01-divina-cozinha.md/00-projeto.md) |
 | Template de showcase | [`../templates/showcase-template/`](../templates/showcase-template/00-projeto.md) |
 | README do monorepo | [`../README.md`](../README.md) |
