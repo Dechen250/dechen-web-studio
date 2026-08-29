@@ -17,7 +17,7 @@ type SplitHeadingProps = {
   as?: SplitTag;
   children: ReactNode;
   className?: string;
-  /** Animate on mount when already above the fold */
+  /** Type on mount when already above the fold */
   immediate?: boolean;
   /** Extra delay before the first letter (ms) */
   delayMs?: number;
@@ -53,10 +53,7 @@ function splitString(text: string, counter: Counter): ReactNode[] {
               key={index}
               data-split-char=""
               className="inline-block"
-              style={{
-                opacity: 0,
-                transform: "translateY(0.45em)",
-              }}
+              style={{ opacity: 0 }}
             >
               {ch}
             </span>
@@ -97,9 +94,9 @@ function commitAndCancel(animations: Animation[]) {
 }
 
 /**
- * Splits heading text into letters that fade in when the heading enters
- * the viewport and fade out when it leaves. Screen readers get the full
- * sentence via a visually hidden copy.
+ * Types the heading letter by letter when it enters the viewport.
+ * The title stays in place after it is written. Screen readers get the
+ * full sentence via a visually hidden copy.
  */
 export function SplitHeading({
   as: Tag = "h2",
@@ -123,7 +120,7 @@ export function SplitHeading({
     if (chars.length === 0) return;
 
     let cancelled = false;
-    let visible = false;
+    let played = false;
     let animations: Animation[] = [];
     let timer = 0;
 
@@ -132,17 +129,8 @@ export function SplitHeading({
     ).matches;
 
     const showFinal = () => {
-      for (const el of chars) {
-        el.style.opacity = "1";
-        el.style.transform = "translateY(0px)";
-      }
-    };
-
-    const hideFinal = () => {
-      for (const el of chars) {
-        el.style.opacity = "0";
-        el.style.transform = "translateY(0.45em)";
-      }
+      node.removeAttribute("data-typing");
+      for (const el of chars) el.style.opacity = "1";
     };
 
     if (reduceMotion || typeof node.animate !== "function") {
@@ -150,81 +138,59 @@ export function SplitHeading({
       return;
     }
 
-    const playIn = () => {
-      if (cancelled) return;
-      commitAndCancel(animations);
+    const type = () => {
+      if (cancelled || played) return;
+      played = true;
+      node.setAttribute("data-typing", "");
+
+      const step = 52;
       animations = chars.map((el, i) =>
-        el.animate(
-          [
-            { opacity: 0, transform: "translateY(0.45em)" },
-            { opacity: 1, transform: "translateY(0px)" },
-          ],
-          {
-            duration: 640,
-            delay: delayMs + Math.min(i * 18, 720),
-            easing: "cubic-bezier(0.16, 1, 0.3, 1)",
-            fill: "forwards",
-          },
-        ),
+        el.animate([{ opacity: 1 }], {
+          duration: 1,
+          delay: delayMs + i * step,
+          easing: "step-end",
+          fill: "forwards",
+        }),
       );
+
+      const last = animations[animations.length - 1];
+      last?.finished
+        .then(() => {
+          if (cancelled) return;
+          node.removeAttribute("data-typing");
+          commitAndCancel(animations);
+          showFinal();
+        })
+        .catch(() => {
+          if (!cancelled) showFinal();
+        });
     };
 
-    const playOut = () => {
-      if (cancelled) return;
-      commitAndCancel(animations);
-      animations = chars.map((el, i) =>
-        el.animate(
-          [
-            { opacity: 1, transform: "translateY(0px)" },
-            { opacity: 0, transform: "translateY(-0.28em)" },
-          ],
-          {
-            duration: 280,
-            delay: Math.min(i * 10, 240),
-            easing: "cubic-bezier(0.4, 0, 1, 1)",
-            fill: "forwards",
-          },
-        ),
-      );
-    };
-
-    const show = () => {
-      if (visible) return;
-      visible = true;
-      playIn();
-    };
-
-    const hide = () => {
-      if (!visible) return;
-      visible = false;
-      playOut();
-    };
+    if (immediate) {
+      timer = window.setTimeout(type, 50);
+      return () => {
+        cancelled = true;
+        window.clearTimeout(timer);
+        commitAndCancel(animations);
+      };
+    }
 
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) show();
-        else hide();
+        if (entry.isIntersecting) {
+          type();
+          observer.disconnect();
+        }
       },
-      { threshold: 0.28, rootMargin: "0px 0px -12% 0px" },
+      { threshold: 0.35, rootMargin: "0px 0px -10% 0px" },
     );
 
     observer.observe(node);
 
-    if (immediate) {
-      timer = window.setTimeout(() => {
-        const rect = node.getBoundingClientRect();
-        const inView = rect.bottom > 0 && rect.top < window.innerHeight;
-        if (inView) show();
-      }, 50);
-    }
-
     return () => {
       cancelled = true;
-      window.clearTimeout(timer);
       observer.disconnect();
       commitAndCancel(animations);
-      if (visible) showFinal();
-      else hideFinal();
     };
   }, [delayMs, immediate]);
 
@@ -238,7 +204,10 @@ export function SplitHeading({
       <span id={labelId} className="sr-only">
         {plainText}
       </span>
-      <span aria-hidden="true">{splitChildren}</span>
+      <span aria-hidden="true">
+        {splitChildren}
+        <span className="dws-caret" />
+      </span>
     </Tag>
   );
 }
