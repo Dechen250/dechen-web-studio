@@ -40,13 +40,11 @@ export function Process() {
           >
             Como a gente trabalha
           </SplitHeading>
-          <SplitHeading
-            as="p"
-            delayMs={80}
-            className="mt-4 text-base leading-relaxed text-[#B4B4BE] md:text-lg"
-          >
-            Quatro etapas. Você aprova antes de avançar.
-          </SplitHeading>
+          <InView className="dws-in">
+            <p className="mt-4 text-base leading-relaxed text-[#B4B4BE] md:text-lg">
+              Quatro etapas. Você aprova antes de avançar.
+            </p>
+          </InView>
         </div>
 
         <InView
@@ -56,12 +54,9 @@ export function Process() {
           {steps.map((step) => (
             <li key={step.n}>
               <p className="text-sm text-[#6B6B76]">{step.n}</p>
-              <SplitHeading
-                as="h3"
-                className="mt-3 text-lg font-semibold tracking-tight text-white"
-              >
+              <h3 className="mt-3 text-lg font-semibold tracking-tight text-white">
                 {step.title}
-              </SplitHeading>
+              </h3>
               <p className="mt-2 text-sm leading-relaxed text-[#A1A1AA]">
                 {step.text}
               </p>

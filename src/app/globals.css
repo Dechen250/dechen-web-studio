@@ -3,6 +3,32 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+
+  --dws-primary: #0070f3;
+  --dws-bg: #050505;
+  --dws-surface: #101010;
+  --dws-border: #262626;
+  --dws-text: #ffffff;
+  --dws-text-muted: #a1a1aa;
+
+  --dws-radius-sm: 12px;
+  --dws-radius-md: 18px;
+  --dws-radius-lg: 24px;
+  --dws-radius-full: 9999px;
+
+  --dws-space-1: 4px;
+  --dws-space-2: 8px;
+  --dws-space-3: 12px;
+  --dws-space-4: 16px;
+  --dws-space-5: 24px;
+  --dws-space-6: 32px;
+  --dws-space-7: 48px;
+  --dws-space-8: 64px;
+
+  --dws-control-height: 56px;
+  --dws-motion-fast: 200ms;
+  --dws-motion-base: 250ms;
+  --dws-ease: ease-out;
 }
 
 @theme inline {
@@ -71,6 +97,11 @@ body {
 .dws-hero-copy > * {
   opacity: 0;
   animation: dws-up 0.65s ease-out forwards;
+}
+
+.dws-hero-copy > [data-split-heading] {
+  opacity: 1;
+  animation: none;
 }
 
 .dws-hero-copy > *:nth-child(1) {
@@ -147,12 +178,7 @@ body {
   animation: dws-up 0.5s ease-out 0.8s forwards;
 }
 
-.dws-hero-actions {
-  opacity: 0;
-  animation: dws-up 0.65s ease-out 0.35s forwards;
-}
-
-/* Ambient background — letters + orbs */
+/* Ambient background — slow orb drift, tokens from DWS */
 @keyframes dws-orb-drift {
   0%,
   100% {
@@ -176,86 +202,14 @@ body {
   }
 }
 
-@keyframes dws-glyph-breathe {
-  0%,
-  100% {
-    opacity: 0.12;
-    transform: translate3d(0, 6%, 0) rotate(-5deg);
-  }
-  28% {
-    opacity: 0.34;
-    transform: translate3d(3%, -8%, 0) rotate(4deg);
-  }
-  55% {
-    opacity: 0.08;
-    transform: translate3d(-5%, 3%, 0) rotate(-2deg);
-  }
-  78% {
-    opacity: 0.28;
-    transform: translate3d(2%, -5%, 0) rotate(3deg);
-  }
-}
-
-@keyframes dws-letter-in {
-  from {
-    opacity: 0;
-    transform: translateY(0.5em);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes dws-letter-out {
-  from {
-    opacity: 1;
-    transform: translateY(0);
-  }
-  to {
-    opacity: 0;
-    transform: translateY(-0.28em);
-  }
-}
-
 .dws-ambient__wash {
   position: absolute;
   inset: 0;
   background: radial-gradient(
     ellipse 80% 50% at 50% -8%,
-    color-mix(in srgb, #0070f3 24%, transparent) 0%,
+    color-mix(in srgb, var(--dws-primary) 16%, transparent) 0%,
     transparent 58%
   );
-}
-
-.dws-ambient__stage {
-  position: absolute;
-  inset: -18% 0 auto;
-  width: 100%;
-  height: 136%;
-  will-change: transform;
-}
-
-.dws-letter-field {
-  position: absolute;
-  inset: 0;
-  font-family: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
-}
-
-.dws-glyph {
-  position: absolute;
-  font-weight: 600;
-  line-height: 1;
-  letter-spacing: -0.08em;
-  color: color-mix(in srgb, #0070f3 55%, white);
-  mix-blend-mode: screen;
-  opacity: 0.16;
-}
-
-@media (max-width: 767px) {
-  .dws-glyph--md {
-    display: none;
-  }
 }
 
 .dws-orb-slot {
@@ -297,7 +251,7 @@ body {
   height: 480px;
   background: radial-gradient(
     ellipse at center,
-    color-mix(in srgb, #0070f3 20%, transparent) 0%,
+    color-mix(in srgb, var(--dws-primary) 11%, transparent) 0%,
     transparent 68%
   );
 }
@@ -307,12 +261,13 @@ body {
   height: 320px;
   background: radial-gradient(
     circle,
-    color-mix(in srgb, #0070f3 14%, transparent) 0%,
+    color-mix(in srgb, var(--dws-primary) 8%, transparent) 0%,
     transparent 72%
   );
   filter: blur(28px);
   animation-duration: 22s, 16s;
   animation-direction: reverse, normal;
+  animation-delay: 0s, 1.4s;
 }
 
 .dws-orb--right {
@@ -320,11 +275,12 @@ body {
   height: 380px;
   background: radial-gradient(
     circle,
-    color-mix(in srgb, #0070f3 12%, transparent) 0%,
+    color-mix(in srgb, var(--dws-primary) 7%, transparent) 0%,
     transparent 74%
   );
   filter: blur(36px);
   animation-duration: 30s, 14s;
+  animation-delay: 0s, 2.2s;
 }
 
 .dws-orb--core {
@@ -332,12 +288,13 @@ body {
   height: min(560px, 70vw);
   background: radial-gradient(
     circle,
-    color-mix(in srgb, #0070f3 8%, transparent) 0%,
+    color-mix(in srgb, var(--dws-primary) 5%, transparent) 0%,
     transparent 70%
   );
   filter: blur(90px);
   animation-duration: 34s, 18s;
   animation-direction: reverse, normal;
+  animation-delay: 0s, 0.8s;
 }
 
 .dws-ambient__vignette {
@@ -346,26 +303,11 @@ body {
   background: radial-gradient(
     ellipse at center,
     transparent 42%,
-    color-mix(in srgb, #050505 40%, transparent) 100%
+    color-mix(in srgb, var(--dws-bg) 45%, transparent) 100%
   );
 }
 
-[data-split-char] {
-  opacity: 0;
-  transform: translateY(0.5em);
-}
-
-[data-split-heading][data-in-view] [data-split-char] {
-  animation: dws-letter-in 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
-  animation-delay: calc(var(--split-delay, 0ms) + (var(--i, 0) * 22ms));
-}
-
-[data-split-heading][data-seen]:not([data-in-view]) [data-split-char] {
-  animation: dws-letter-out 0.32s ease-in both;
-  animation-delay: calc(var(--i, 0) * 8ms);
-}
-
-/* Reveal / split motion */
+/* Reveal / split motion is driven by Web Animations API */
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
@@ -379,12 +321,10 @@ body {
   [data-split-char] {
     opacity: 1 !important;
     transform: none !important;
-    animation: none !important;
   }
 
   .dws-hero-copy > *,
   .dws-hero-media,
-  .dws-hero-actions,
   .dws-in,
   .dws-stagger > *,
   .dws-float {
@@ -397,18 +337,8 @@ body {
   .dws-progress,
   .dws-caption,
   .dws-orb,
-  .dws-glyph,
   .dws-card__glow {
     animation: none !important;
-  }
-
-  .dws-glyph {
-    opacity: 0.12 !important;
-    transform: none !important;
-  }
-
-  .dws-ambient__stage {
-    transform: none !important;
   }
 }
 
@@ -427,7 +357,6 @@ body {
   .dws-stagger > *,
   .dws-hero-copy > *,
   .dws-hero-media,
-  .dws-hero-actions,
   .dws-float {
     opacity: 1 !important;
     transform: none !important;

@@ -44,14 +44,12 @@ export function Services() {
           >
             O que fazemos
           </SplitHeading>
-          <SplitHeading
-            as="p"
-            delayMs={80}
-            className="mt-4 text-base leading-relaxed text-[#B4B4BE] md:text-lg"
-          >
-            Landing, institucional, vitrine ou manutenção. A gente recomenda o
-            que resolve, depois constrói.
-          </SplitHeading>
+          <InView className="dws-in">
+            <p className="mt-4 text-base leading-relaxed text-[#B4B4BE] md:text-lg">
+              Landing, institucional, vitrine ou manutenção. A gente recomenda o
+              que resolve, depois constrói.
+            </p>
+          </InView>
         </div>
 
         <InView as="ul" className="dws-stagger mt-12 border-t border-[#262626]">
@@ -60,12 +58,9 @@ export function Services() {
               key={service.title}
               className="grid gap-3 border-b border-[#262626] py-8 md:grid-cols-[minmax(0,0.9fr)_minmax(0,1.4fr)] md:gap-12 md:py-10"
             >
-              <SplitHeading
-                as="h3"
-                className="text-xl font-semibold tracking-tight text-white md:text-2xl"
-              >
+              <h3 className="text-xl font-semibold tracking-tight text-white md:text-2xl">
                 {service.title}
-              </SplitHeading>
+              </h3>
               <div>
                 <p className="text-base leading-relaxed text-[#C4C4CC]">
                   {service.summary}

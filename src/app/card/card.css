@@ -295,47 +295,6 @@
   background: var(--dws-border);
 }
 
-.dws-card__letters {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  overflow: hidden;
-  pointer-events: none;
-  font-family: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
-}
-
-.dws-card__glyph {
-  position: absolute;
-  font-weight: 600;
-  line-height: 1;
-  letter-spacing: -0.08em;
-  color: color-mix(in srgb, var(--dws-primary) 65%, white);
-  animation: dws-glyph-breathe 12s ease-in-out infinite;
-}
-
-.dws-card__glyph--d {
-  left: 6%;
-  top: 8%;
-  font-size: clamp(4.5rem, 28vw, 8rem);
-  animation-delay: 0.2s;
-}
-
-.dws-card__glyph--w {
-  right: 4%;
-  top: 42%;
-  font-size: clamp(3.5rem, 22vw, 6.5rem);
-  animation-delay: 1.8s;
-  animation-duration: 14s;
-}
-
-.dws-card__glyph--s {
-  left: 12%;
-  bottom: 6%;
-  font-size: clamp(4rem, 24vw, 7rem);
-  animation-delay: 3.2s;
-  animation-duration: 11s;
-}
-
 @media (prefers-reduced-motion: reduce) {
   .dws-btn,
   .dws-card__footer a {
@@ -347,13 +306,8 @@
     transform: none;
   }
 
-  .dws-card__glow,
-  .dws-card__glyph {
+  .dws-card__glow {
     animation: none;
-  }
-
-  .dws-card__glyph {
-    opacity: 0.08;
   }
 }
 

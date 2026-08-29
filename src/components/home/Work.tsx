@@ -27,14 +27,12 @@ export function Work() {
           >
             Trabalhos
           </SplitHeading>
-          <SplitHeading
-            as="p"
-            delayMs={80}
-            className="mt-4 text-base leading-relaxed text-[#B4B4BE] md:text-lg"
-          >
-            Quatro demonstrações. Segmentos diferentes, o mesmo critério:
-            clareza, velocidade e um jeito óbvio de entrar em contato.
-          </SplitHeading>
+          <InView className="dws-in">
+            <p className="mt-4 text-base leading-relaxed text-[#B4B4BE] md:text-lg">
+              Quatro demonstrações. Segmentos diferentes, o mesmo critério:
+              clareza, velocidade e um jeito óbvio de entrar em contato.
+            </p>
+          </InView>
         </div>
 
         <InView
@@ -65,12 +63,9 @@ export function Work() {
                   <p className="mt-4 text-xs tracking-wide text-[#6B6B76]">
                     {demo.category} · Demonstração
                   </p>
-                  <SplitHeading
-                    as="h3"
-                    className="mt-1 text-lg font-semibold tracking-tight text-white transition-colors duration-200 group-hover:text-[#0070F3] sm:text-xl"
-                  >
+                  <h3 className="mt-1 text-lg font-semibold tracking-tight text-white transition-colors duration-200 group-hover:text-[#0070F3] sm:text-xl">
                     {demo.title}
-                  </SplitHeading>
+                  </h3>
                   <p className="mt-1.5 text-sm leading-relaxed text-[#A1A1AA]">
                     {blurb}
                   </p>

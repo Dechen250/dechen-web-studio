@@ -64,25 +64,18 @@ export default function CardPage() {
       />
       <div className="dws-card__glow" aria-hidden />
       <div className="dws-card__glow dws-card__glow--side" aria-hidden />
-      <div className="dws-card__letters" aria-hidden>
-        <span className="dws-card__glyph dws-card__glyph--d">D</span>
-        <span className="dws-card__glyph dws-card__glyph--w">W</span>
-        <span className="dws-card__glyph dws-card__glyph--s">S</span>
-      </div>
       <article className="dws-card__panel">
         <span className="dws-card__sheen" aria-hidden />
         <div className="dws-card__mark" aria-hidden>
           <span className="relative">DWS</span>
         </div>
-        <SplitHeading as="p" immediate className="dws-card__kicker">
+        <p className="dws-card__kicker">
           {cardProfile.role} · {cardProfile.company}
-        </SplitHeading>
-        <SplitHeading as="h1" immediate delayMs={80} className="dws-card__name">
+        </p>
+        <SplitHeading as="h1" immediate className="dws-card__name">
           {cardProfile.name}
         </SplitHeading>
-        <SplitHeading as="p" immediate delayMs={180} className="dws-card__tagline">
-          {cardProfile.tagline}
-        </SplitHeading>
+        <p className="dws-card__tagline">{cardProfile.tagline}</p>
         <nav className="dws-card__actions" aria-label="Contato">
           <a
             className="dws-btn dws-btn--primary"

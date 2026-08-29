@@ -29,14 +29,10 @@ export function Contact() {
           >
             Vamos conversar
           </SplitHeading>
-          <SplitHeading
-            as="p"
-            delayMs={80}
-            className="mt-4 max-w-md text-base leading-relaxed text-[#B4B4BE] md:text-lg"
-          >
+          <p className="mt-4 max-w-md text-base leading-relaxed text-[#B4B4BE] md:text-lg">
             Conta o que você precisa. A gente responde no WhatsApp, com prazo e
             investimento claros.
-          </SplitHeading>
+          </p>
 
           <div className="mt-8 flex flex-col items-start gap-4">
             <a
@@ -66,19 +62,12 @@ export function Contact() {
         </div>
 
         <div className="rounded-lg border border-[#262626] bg-[#0c0c0c] p-6 sm:p-8">
-          <SplitHeading
-            as="h3"
-            className="text-lg font-semibold tracking-tight text-white"
-          >
+          <h3 className="text-lg font-semibold tracking-tight text-white">
             Pedir orçamento
-          </SplitHeading>
-          <SplitHeading
-            as="p"
-            delayMs={60}
-            className="mt-1 mb-6 text-sm text-[#A1A1AA]"
-          >
+          </h3>
+          <p className="mt-1 mb-6 text-sm text-[#A1A1AA]">
             Preencha e envie direto no WhatsApp.
-          </SplitHeading>
+          </p>
           <ContactForm />
         </div>
       </InView>
