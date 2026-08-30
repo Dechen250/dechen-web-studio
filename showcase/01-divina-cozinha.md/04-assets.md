@@ -83,7 +83,7 @@ Caminho: `public/showcase/divina-cozinha/ambiente/`
 | `decoracao.webp` | Decoração |
 | `adega.webp` | Adega |
 
-Capa do portfólio: `public/showcase/divina-cozinha/capa/capa.png`
+Capa do portfólio: `public/showcase/divina-cozinha/capa/capa.jpg`
 
 Estilo: elegância, naturalidade, luz natural, ambiente acolhedor. Evitar stock genérico.
 

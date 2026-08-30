@@ -41,7 +41,7 @@ export const portfolioDemos: PortfolioDemo[] = [
     description:
       "Showcase editorial com hero bento, carta da estação, reservas e experiência premium para restaurante contemporâneo.",
     href: "/showcase/divina-cozinha",
-    cover: "/showcase/divina-cozinha/capa/capa.png",
+    cover: "/showcase/divina-cozinha/capa/capa.jpg",
     gradient: "from-rose-500/25 via-rose-900/10 to-transparent",
     accentText: "text-rose-400",
     accentBorder: "border-rose-500/30",

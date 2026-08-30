@@ -7,7 +7,7 @@ import { portfolioDemos } from "@/data/portfolio-demos";
 
 const blurbs: Record<string, string> = {
   restaurante:
-    "Cardápio, reservas e o tom de um restaurante contemporâneo.",
+    "Hero editorial, carta da estação e reservas para um restaurante contemporâneo.",
   barbearia:
     "Serviços, preços e agendamento para uma barbearia de corte clássico.",
   clinica:
