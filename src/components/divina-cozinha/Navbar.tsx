@@ -1,101 +1,86 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { navLinks, siteInfo } from "@/data/divina-cozinha";
+import { IconChefHat, IconLeaf, IconMenu, IconSearch } from "./icons";
 import { Button } from "./ui";
 
+const mobileIcons = [IconChefHat, IconLeaf, IconSearch, IconMenu];
+
 export function Navbar() {
-  const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 24);
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-
   return (
-    <header
-      className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ease-out ${
-        scrolled
-          ? "border-b border-[#E8E0D4]/80 bg-[#FFFDF8]/90 shadow-[0_2px_20px_rgba(61,56,50,0.06)] backdrop-blur-md"
-          : "bg-transparent"
-      }`}
-    >
-      <nav
-        className="mx-auto flex h-16 max-w-6xl items-center justify-between px-5 md:h-20 md:px-8"
-        aria-label="Principal"
-      >
+    <nav className="fixed top-6 right-0 left-0 z-50 flex flex-col items-center px-4">
+      <div className="glass-panel dc-shadow relative z-20 flex w-full max-w-4xl items-center justify-between gap-2 rounded-full p-2">
         <a
           href="#"
-          className="font-display text-xl font-medium tracking-tight text-[#3D3832] md:text-2xl"
+          className="group flex shrink-0 items-center gap-2 px-4"
+          onClick={() => setMenuOpen(false)}
         >
-          {siteInfo.name}
+          <div className="flex h-8 w-8 items-center justify-center rounded-full bg-[#0b0b0b] text-white transition-colors duration-300 group-hover:bg-[#e11d48]">
+            <span className="font-serif text-lg font-bold italic">D</span>
+          </div>
+          <span className="hidden font-bold tracking-tight sm:block">
+            {siteInfo.name}
+          </span>
         </a>
 
-        <ul className="hidden items-center gap-8 md:flex">
+        <div className="dc-shadow hidden items-center rounded-full bg-slate-100/50 p-1 md:flex">
           {navLinks.map((link) => (
-            <li key={link.href}>
-              <a
-                href={link.href}
-                className="font-sans text-sm text-[#6B6560] transition-colors duration-300 hover:text-[#3D3832]"
-              >
-                {link.label}
-              </a>
-            </li>
+            <a
+              key={link.href}
+              href={link.href}
+              className="rounded-full px-5 py-2 text-xs font-medium tracking-wider uppercase transition-all duration-300 hover:bg-white hover:shadow-sm"
+            >
+              {link.label}
+            </a>
           ))}
-        </ul>
-
-        <div className="hidden md:block">
-          <Button href="#reservas">Reservar Mesa</Button>
         </div>
 
-        <button
-          type="button"
-          className="flex h-10 w-10 items-center justify-center rounded-full border border-[#E8E0D4] md:hidden"
-          aria-expanded={menuOpen}
-          aria-label={menuOpen ? "Fechar menu" : "Abrir menu"}
-          onClick={() => setMenuOpen(!menuOpen)}
-        >
-          <span className="sr-only">Menu</span>
-          <svg
-            width="18"
-            height="14"
-            viewBox="0 0 18 14"
-            fill="none"
-            aria-hidden
+        <div className="flex shrink-0 items-center gap-2 pr-1">
+          <a
+            href="#cardapio"
+            className="flex h-10 w-10 items-center justify-center rounded-full transition-colors hover:bg-slate-100"
+            aria-label="Ver cardápio"
           >
-            <path
-              d="M0 1h18M0 7h18M0 13h18"
-              stroke="#3D3832"
-              strokeWidth="1.5"
-            />
-          </svg>
-        </button>
-      </nav>
+            <IconSearch className="h-5 w-5" />
+          </a>
+          <Button href="#reservas">Reservar</Button>
+          <button
+            type="button"
+            className="flex h-10 w-10 cursor-pointer items-center justify-center rounded-full text-slate-900 transition-colors hover:bg-slate-100 md:hidden"
+            aria-expanded={menuOpen}
+            aria-label={menuOpen ? "Fechar menu" : "Abrir menu"}
+            onClick={() => setMenuOpen((open) => !open)}
+          >
+            <IconMenu className="h-5 w-5" />
+          </button>
+        </div>
+      </div>
 
       {menuOpen && (
-        <div className="border-t border-[#E8E0D4] bg-[#FFFDF8]/95 px-5 py-6 backdrop-blur-md md:hidden">
-          <ul className="flex flex-col gap-4">
-            {navLinks.map((link) => (
-              <li key={link.href}>
+        <div className="animate-menu-in z-10 mt-2 flex w-full max-w-4xl flex-col gap-2 rounded-[2rem] border border-white/40 bg-white/90 p-3 shadow-[0px_10px_40px_-10px_rgba(0,0,0,0.1)] backdrop-blur-xl md:hidden">
+          <div className="flex flex-col gap-1 p-2">
+            {navLinks.map((link, index) => {
+              const Icon = mobileIcons[index] ?? IconMenu;
+              return (
                 <a
+                  key={link.href}
                   href={link.href}
-                  className="block font-sans text-base text-[#3D3832]"
+                  className="group flex items-center justify-between rounded-xl px-5 py-3 transition-colors hover:bg-slate-100/80"
                   onClick={() => setMenuOpen(false)}
                 >
-                  {link.label}
+                  <span className="text-sm font-bold tracking-wider text-slate-600 uppercase group-hover:text-slate-900">
+                    {link.label}
+                  </span>
+                  <Icon className="h-5 w-5 text-slate-400 transition-colors group-hover:text-[#e11d48]" />
                 </a>
-              </li>
-            ))}
-            <li className="pt-2">
-              <Button href="#reservas" className="w-full">
-                Reservar Mesa
-              </Button>
-            </li>
-          </ul>
+              );
+            })}
+          </div>
         </div>
       )}
-    </header>
+    </nav>
   );
 }

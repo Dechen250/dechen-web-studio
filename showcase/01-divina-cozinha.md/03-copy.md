@@ -14,9 +14,9 @@ Comunicação que desperta desejo, transmite sofisticação acolhedora e conduz 
 
 | Campo | Texto |
 |-------|-------|
-| Headline | Mais do que uma refeição. Uma experiência para ser lembrada. |
-| Subheadline | Na Divina Cozinha, ingredientes selecionados, ambiente acolhedor e alta gastronomia se unem para criar momentos inesquecíveis. |
-| CTA | Reservar mesa |
+| Headline | Mais do que uma *refeição* |
+| Subheadline | Ingredientes selecionados, ambiente acolhedor e alta gastronomia se unem para criar momentos inesquecíveis. |
+| CTA | Reservar |
 
 ## Sobre
 

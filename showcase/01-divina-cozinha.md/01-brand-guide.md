@@ -1,4 +1,4 @@
-**Tipo:** brief · **Status:** ativo · **Versão:** 2.0
+**Tipo:** brief · **Status:** ativo · **Versão:** 3.0
 
 > Identidade de marca fictícia para showcase Dechen Web Studio.
 
@@ -51,31 +51,34 @@ Leveza e tranquilidade na navegação. Design minimalista, claro e organizado. M
 | Token | Hex | Uso |
 |-------|-----|-----|
 | `--dc-bg` | `#FAF9F6` | Fundo principal |
-| `--dc-surface` | `#FFFDF8` | Cards, blocos |
-| `--dc-text` | `#3D3832` | Texto principal |
-| `--dc-muted` | `#6B6560` | Texto secundário |
-| `--dc-olive` | `#8B9A7D` | Acento natural |
-| `--dc-gold` | `#C9A962` | CTAs, destaques |
-| `--dc-border` | `#E8E0D4` | Bordas |
+| `--dc-rose` | `#E11D48` | Acento, hovers |
+| `--dc-black` | `#0B0B0B` | CTAs, marca |
+| `--dc-text` | `#1E293B` | Texto principal |
+| `--dc-muted` | `#64748B` | Texto secundário |
+| `--dc-border` | `#E2E8F0` | Bordas |
 
-Referência: ingredientes naturais, madeira, cerâmica, luz natural, tons pastel.
+Referência: editorial gastronômico claro — cream, rose, preto. Grid sutil no fundo, painéis glass.
 
 ## Tipografia
 
-### Display — Cormorant Garamond
+### Display — Playfair Display
 
-Títulos e headlines. Pesos: 400, 500, 600. Classe: `.font-display`.
+Títulos, headlines, wordmark. Pesos: 400–700, itálico. Classe: `.font-serif`.
 
-### Sans — Source Sans 3
+### Sans — Plus Jakarta Sans
 
-Corpo, labels, botões, navegação. Pesos: 400, 500, 600. Classe: `.font-sans`.
+Corpo, navegação, botões. Pesos: 400–800. Classe: `.font-sans`.
+
+### Mono — Geist Mono
+
+Labels, eyebrows, meta, preços. Classe: `.font-mono`.
 
 ### Hierarquia
 
-- **Títulos:** Cormorant, 3xl–5xl, `#3D3832`
-- **Corpo:** Source Sans, base–lg, `#6B6560`
-- **Preços:** Source Sans, sm, medium, `#C9A962`
-- **Labels:** uppercase opcional, tracking amplo, olive ou gold
+- **Títulos:** Playfair, 4xl–7xl, slate-800 / branco no hero
+- **Corpo:** Plus Jakarta, base–lg, slate-500/600
+- **Preços:** Geist Mono, 10px, em badge sobre a foto
+- **Labels:** uppercase, tracking amplo, Geist Mono ou Plus Jakarta bold
 
 Textos curtos. Sem blocos longos.
 

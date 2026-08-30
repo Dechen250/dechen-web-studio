@@ -1,25 +1,26 @@
 import type { Metadata } from "next";
-import { Cormorant_Garamond, Source_Sans_3 } from "next/font/google";
+import { Playfair_Display, Plus_Jakarta_Sans } from "next/font/google";
 import "./divina-cozinha.css";
 
-const cormorant = Cormorant_Garamond({
+const plusJakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
-  weight: ["400", "500", "600"],
-  variable: "--font-cormorant",
+  weight: ["400", "500", "600", "700", "800"],
+  variable: "--font-plus-jakarta",
   display: "swap",
 });
 
-const sourceSans = Source_Sans_3({
+const playfair = Playfair_Display({
   subsets: ["latin"],
-  weight: ["400", "500", "600"],
-  variable: "--font-source-sans",
+  weight: ["400", "500", "600", "700"],
+  style: ["normal", "italic"],
+  variable: "--font-playfair",
   display: "swap",
 });
 
 export const metadata: Metadata = {
   title: "Divina Cozinha | Restaurante Contemporâneo em São Paulo",
   description:
-    "Ingredientes selecionados, ambiente acolhedor e alta gastronomia. Reserve sua mesa na Divina Cozinha.",
+    "Ingredientes selecionados, ambiente acolhedor e alta gastronomia. Reserve sua mesa na Divina Cozinha. Showcase pela Dechen Web Studio.",
   openGraph: {
     title: "Divina Cozinha | Restaurante Contemporâneo",
     description:
@@ -55,7 +56,7 @@ export default function DivinaCozinhaLayout({
 }) {
   return (
     <div
-      className={`showcase-divina min-h-full ${cormorant.variable} ${sourceSans.variable}`}
+      className={`showcase-divina relative min-h-full antialiased ${plusJakarta.variable} ${playfair.variable}`}
     >
       <script
         type="application/ld+json"

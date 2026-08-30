@@ -1,7 +1,8 @@
 "use client";
 
 import { type FormEvent, type ReactNode, useState } from "react";
-import { Button, SectionHeading } from "./ui";
+import { IconCheck } from "./icons";
+import { Button } from "./ui";
 
 type FormData = {
   nome: string;
@@ -27,7 +28,7 @@ export function ReservasForm() {
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
     setLoading(true);
-    setTimeout(() => {
+    window.setTimeout(() => {
       setLoading(false);
       setSubmitted(true);
     }, 1200);
@@ -39,25 +40,20 @@ export function ReservasForm() {
 
   if (submitted) {
     return (
-      <section id="reservas" className="bg-[#FFFDF8] px-5 py-24 md:px-8 md:py-32">
+      <section id="reservas" className="py-24">
         <div className="mx-auto max-w-lg text-center">
-          <div className="rounded-3xl border border-[#E8E0D4] bg-[#FAF9F6] p-12 shadow-[0_8px_40px_rgba(61,56,50,0.06)]">
-            <div className="mx-auto mb-6 flex h-14 w-14 items-center justify-center rounded-full bg-[#8B9A7D]/15">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden>
-                <path
-                  d="M5 13l4 4L19 7"
-                  stroke="#8B9A7D"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
+          <div className="rounded-[2rem] border border-slate-200 bg-white p-12 shadow-sm">
+            <div className="mx-auto mb-6 flex h-14 w-14 items-center justify-center rounded-full bg-[#e11d48]/10 text-[#e11d48]">
+              <IconCheck />
             </div>
-            <h2 className="font-display text-2xl font-medium text-[#3D3832]">
+            <h2 className="font-serif text-3xl text-slate-900">
               Reserva realizada com sucesso.
             </h2>
-            <p className="mt-4 font-sans text-base text-[#6B6560]">
+            <p className="mt-4 text-base text-slate-500">
               Entraremos em contato em breve para confirmar sua mesa.
+            </p>
+            <p className="mt-2 font-mono text-[10px] tracking-widest text-slate-400 uppercase">
+              Demonstração — sem envio real
             </p>
             <Button
               variant="secondary"
@@ -76,17 +72,24 @@ export function ReservasForm() {
   }
 
   return (
-    <section id="reservas" className="bg-[#FFFDF8] px-5 py-24 md:px-8 md:py-32">
+    <section id="reservas" className="py-24">
       <div className="mx-auto max-w-xl">
-        <SectionHeading
-          label="Reservas"
-          title="Reserve sua mesa."
-          description="Garanta sua experiência na Divina Cozinha. Escolha a melhor data e horário, e deixe o restante conosco."
-        />
+        <div className="mb-10 text-center">
+          <span className="text-brand-rose mb-4 block font-mono text-xs font-semibold tracking-[0.2em] uppercase">
+            Reservas
+          </span>
+          <h2 className="font-serif text-4xl tracking-tight text-slate-900 md:text-5xl">
+            Reserve sua mesa.
+          </h2>
+          <p className="mt-4 text-slate-500">
+            Garanta sua experiência na Divina Cozinha. Escolha a melhor data e
+            horário, e deixe o restante conosco.
+          </p>
+        </div>
 
         <form
           onSubmit={handleSubmit}
-          className="rounded-3xl border border-[#E8E0D4] bg-[#FAF9F6] p-8 shadow-[0_8px_40px_rgba(61,56,50,0.06)] md:p-10"
+          className="rounded-[2rem] border border-slate-200 bg-white p-8 shadow-sm md:p-10"
         >
           <div className="space-y-5">
             <Field label="Nome" id="nome">
@@ -136,13 +139,20 @@ export function ReservasForm() {
                   className={inputClass}
                 >
                   <option value="">Selecione</option>
-                  {["12:00", "12:30", "13:00", "19:00", "19:30", "20:00", "20:30", "21:00"].map(
-                    (t) => (
-                      <option key={t} value={t}>
-                        {t}
-                      </option>
-                    ),
-                  )}
+                  {[
+                    "12:00",
+                    "12:30",
+                    "13:00",
+                    "19:00",
+                    "19:30",
+                    "20:00",
+                    "20:30",
+                    "21:00",
+                  ].map((t) => (
+                    <option key={t} value={t}>
+                      {t}
+                    </option>
+                  ))}
                 </select>
               </Field>
             </div>
@@ -162,10 +172,14 @@ export function ReservasForm() {
 
           <Button
             type="submit"
+            variant="solid"
             className={`mt-8 w-full ${loading ? "pointer-events-none opacity-70" : ""}`}
           >
-            {loading ? "Enviando..." : "Reservar Mesa"}
+            {loading ? "Enviando..." : "Reservar mesa"}
           </Button>
+          <p className="mt-4 text-center font-mono text-[10px] tracking-widest text-slate-400 uppercase">
+            Demonstração — formulário ilustrativo
+          </p>
         </form>
       </div>
     </section>
@@ -173,7 +187,7 @@ export function ReservasForm() {
 }
 
 const inputClass =
-  "w-full rounded-2xl border border-[#E8E0D4] bg-[#FFFDF8] px-4 py-3.5 font-sans text-sm text-[#3D3832] placeholder:text-[#9C958D] transition-colors duration-300 focus:border-[#8B9A7D] focus:outline-none focus:ring-2 focus:ring-[#8B9A7D]/20";
+  "w-full rounded-xl border border-slate-200 bg-[#faf9f6] px-4 py-3.5 font-sans text-sm text-slate-800 placeholder:text-slate-400 transition-colors duration-300 focus:border-slate-900 focus:outline-none focus:ring-2 focus:ring-[#e11d48]/20";
 
 function Field({
   label,
@@ -188,7 +202,7 @@ function Field({
     <div>
       <label
         htmlFor={id}
-        className="mb-2 block font-sans text-sm font-medium text-[#3D3832]"
+        className="mb-2 block text-xs font-bold tracking-widest text-slate-800 uppercase"
       >
         {label}
       </label>

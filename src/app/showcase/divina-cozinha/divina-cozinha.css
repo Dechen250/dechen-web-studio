@@ -1,9 +1,29 @@
 @import "tailwindcss";
 
-@keyframes fadeInUp {
+@keyframes dc-fade-up {
   from {
     opacity: 0;
-    transform: translateY(24px);
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes dc-marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes dc-menu-in {
+  from {
+    opacity: 0;
+    transform: translateY(-1rem);
   }
   to {
     opacity: 1;
@@ -13,32 +33,121 @@
 
 .showcase-divina {
   --dc-bg: #faf9f6;
-  --dc-surface: #fffdf8;
-  --dc-text: #3d3832;
-  --dc-muted: #6b6560;
-  --dc-olive: #8b9a7d;
-  --dc-gold: #c9a962;
-  --dc-border: #e8e0d4;
+  --dc-rose: #e11d48;
+  --dc-black: #0b0b0b;
+  --dc-text: #1e293b;
+  --dc-muted: #64748b;
+  --dc-border: #e2e8f0;
+  --dc-shadow:
+    0px 0px 0px 1px rgba(0, 0, 0, 0.06),
+    0px 1px 1px -0.5px rgba(0, 0, 0, 0.06),
+    0px 3px 3px -1.5px rgba(0, 0, 0, 0.06),
+    0px 6px 6px -3px rgba(0, 0, 0, 0.06),
+    0px 12px 12px -6px rgba(0, 0, 0, 0.06),
+    0px 24px 24px -12px rgba(0, 0, 0, 0.06);
 
   scroll-behavior: smooth;
   background-color: var(--dc-bg);
   color: var(--dc-text);
+  font-family: var(--font-plus-jakarta), "Plus Jakarta Sans", ui-sans-serif, sans-serif;
 }
 
-.showcase-divina .font-display {
-  font-family: var(--font-cormorant), Georgia, serif;
+.showcase-divina ::selection {
+  background-color: var(--dc-rose);
+  color: #fff;
 }
 
 .showcase-divina .font-sans {
-  font-family: var(--font-source-sans), system-ui, sans-serif;
+  font-family: var(--font-plus-jakarta), ui-sans-serif, sans-serif;
 }
 
-.showcase-divina .rotate-y-0 {
-  transform: rotateY(0deg);
+.showcase-divina .font-serif,
+.showcase-divina .font-display {
+  font-family: var(--font-playfair), "Playfair Display", Georgia, serif;
 }
 
-.showcase-divina .rotate-y-90 {
-  transform: rotateY(90deg);
+.showcase-divina .font-mono {
+  font-family: var(--font-geist-mono), ui-monospace, monospace;
+}
+
+.showcase-divina .bg-grid {
+  background-size: 40px 40px;
+  background-image:
+    linear-gradient(to right, rgba(0, 0, 0, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
+}
+
+.showcase-divina .glass-panel {
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.showcase-divina .dc-shadow {
+  box-shadow: var(--dc-shadow);
+}
+
+.showcase-divina .text-brand-rose {
+  color: var(--dc-rose);
+}
+
+.showcase-divina .bg-brand-rose {
+  background-color: var(--dc-rose);
+}
+
+.showcase-divina .bg-brand-black {
+  background-color: var(--dc-black);
+}
+
+.showcase-divina .hover\:bg-brand-rose:hover {
+  background-color: var(--dc-rose);
+}
+
+.showcase-divina .hover\:text-brand-rose:hover {
+  color: var(--dc-rose);
+}
+
+.showcase-divina .group:hover .group-hover\:text-brand-rose {
+  color: var(--dc-rose);
+}
+
+.showcase-divina .group:hover .group-hover\:bg-brand-rose {
+  background-color: var(--dc-rose);
+}
+
+.showcase-divina .group:hover .group-hover\:border-brand-rose {
+  border-color: var(--dc-rose);
+}
+
+.showcase-divina .animate-marquee {
+  animation: dc-marquee 30s linear infinite;
+}
+
+.showcase-divina .animate-enter {
+  opacity: 0;
+  animation: dc-fade-up 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.showcase-divina .animate-menu-in {
+  animation: dc-menu-in 0.2s ease-out both;
+}
+
+.showcase-divina .perspective-1000 {
+  perspective: 1000px;
+}
+
+.showcase-divina ::-webkit-scrollbar {
+  width: 6px;
+}
+
+.showcase-divina ::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.showcase-divina ::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 10px;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -46,5 +155,10 @@
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
+  }
+
+  .showcase-divina .animate-marquee {
+    animation: none;
+    transform: none;
   }
 }

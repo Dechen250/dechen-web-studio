@@ -39,13 +39,13 @@ export const portfolioDemos: PortfolioDemo[] = [
     title: "Divina Cozinha",
     category: "Gastronomia",
     description:
-      "Showcase completo com cardápio animado, reservas e experiência premium para restaurante contemporâneo.",
+      "Showcase editorial com hero bento, carta da estação, reservas e experiência premium para restaurante contemporâneo.",
     href: "/showcase/divina-cozinha",
     cover: "/showcase/divina-cozinha/capa/capa.png",
-    gradient: "from-amber-500/25 via-amber-900/10 to-transparent",
-    accentText: "text-amber-400",
-    accentBorder: "border-amber-500/30",
-    accentGlow: "shadow-[0_0_40px_rgba(245,158,11,0.12)]",
+    gradient: "from-rose-500/25 via-rose-900/10 to-transparent",
+    accentText: "text-rose-400",
+    accentBorder: "border-rose-500/30",
+    accentGlow: "shadow-[0_0_40px_rgba(225,29,72,0.12)]",
     hero: {
       eyebrow: "Culinária contemporânea",
       headline: "Mais do que uma refeição.",

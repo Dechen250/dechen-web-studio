@@ -1,4 +1,4 @@
-**Tipo:** ops · **Status:** ativo · **Versão:** 2.0
+**Tipo:** ops · **Status:** ativo · **Versão:** 3.0
 
 > Referências visuais e tokens do showcase Divina Cozinha — alinhados ao código em `src/`.
 
@@ -13,36 +13,41 @@ Definidos em `src/app/showcase/divina-cozinha/divina-cozinha.css`:
 | Token | Valor | Uso |
 |-------|-------|-----|
 | `--dc-bg` | `#FAF9F6` | Fundo principal |
-| `--dc-surface` | `#FFFDF8` | Cards, blocos |
-| `--dc-text` | `#3D3832` | Texto principal |
-| `--dc-muted` | `#6B6560` | Texto secundário |
-| `--dc-olive` | `#8B9A7D` | Acento natural |
-| `--dc-gold` | `#C9A962` | CTAs, preços, destaques |
-| `--dc-border` | `#E8E0D4` | Bordas |
+| `--dc-rose` | `#E11D48` | Acento |
+| `--dc-black` | `#0B0B0B` | CTAs, marca |
+| `--dc-text` | `#1E293B` | Texto principal |
+| `--dc-muted` | `#64748B` | Texto secundário |
+| `--dc-border` | `#E2E8F0` | Bordas |
 
 ## Tipografia
 
-### Cormorant Garamond
+### Playfair Display
 
-- Variável: `--font-cormorant`
-- Pesos: 400, 500, 600
-- Uso: títulos, headlines, logo
-- Classe: `.font-display`
+- Variável: `--font-playfair`
+- Pesos: 400, 500, 600, 700 + itálico
+- Uso: títulos, headlines, wordmark
+- Classe: `.font-serif`
 
-### Source Sans 3
+### Plus Jakarta Sans
 
-- Variável: `--font-source-sans`
-- Pesos: 400, 500, 600
+- Variável: `--font-plus-jakarta`
+- Pesos: 400–800
 - Uso: corpo, labels, botões, navegação
 - Classe: `.font-sans`
 
+### Geist Mono
+
+- Variável: `--font-geist-mono` (root)
+- Uso: eyebrows, meta, badges
+- Classe: `.font-mono`
+
 ## Hero
 
-Imagem principal via `heroImage` em `src/data/divina-cozinha.ts`.
+Imagem principal via `hero` em `src/data/divina-cozinha.ts` (Unsplash).
 
 Alt: "Prato sofisticado em mesa elegante no Divina Cozinha"
 
-Preferência visual: massa, risoto, filé ou frutos do mar, boa iluminação, mesa elegante.
+Layout: bento 8+4 com card sazonal e carta de vinhos.
 
 ## Fotografias — cardápio
 
@@ -82,13 +87,11 @@ Capa do portfólio: `public/showcase/divina-cozinha/capa/capa.png`
 
 Estilo: elegância, naturalidade, luz natural, ambiente acolhedor. Evitar stock genérico.
 
-## Cardápio — animação
+## Cardápio — interação
 
-Troca automática entre categorias a cada **10 segundos**.
+Navegação por pills de categoria e setas. Cards 3:4 com hover scale, badge e preço.
 
-Transição: efeito virada de página (`rotateY` 0deg ↔ 90deg).
-
-Navegação manual por tabs. Respeitar `prefers-reduced-motion`.
+**Reduced motion:** `prefers-reduced-motion: reduce` → 0.01ms.
 
 ## Ícones
 

@@ -1,4 +1,4 @@
-**Tipo:** ops · **Status:** ativo · **Versão:** 2.0
+**Tipo:** ops · **Status:** ativo · **Versão:** 3.0
 
 > Evolução planejada do showcase Divina Cozinha.
 
@@ -10,27 +10,18 @@ Pack: [00-projeto.md](00-projeto.md) · [04-assets.md](04-assets.md) · [05-prom
 
 ### Concluído
 
-- Docs pack completo (7 arquivos) — **v2.0**
-- Desenvolvimento v1.0 (site shipped)
-- Briefing, brand guide, sitemap, copy, assets, prompts
+- Docs pack — **v3.0** (Savory Plate DS)
+- Desenvolvimento v3.0 (rebuild editorial)
 
 ---
 
-## v1.0 — Concluído
+## v3.0 — Editorial (atual)
 
-Demonstração completa de restaurante contemporâneo.
-
-### Homepage
-
-Hero · Sobre · Cardápio (4 categorias, animação 10s) · Ambiente (6 imagens) · Reservas (formulário demonstrativo) · Localização (mapa embed) · Footer
-
-### Funcionalidades
-
-Cardápio animado com tabs manuais · reserva simulada com confirmação · scroll suave · navegação responsiva · WhatsApp/Instagram · Schema.org Restaurant · metadata/OG · prefers-reduced-motion · responsividade
+Rebuild visual a partir do design system Savory Plate: hero bento, navbar glass, marquee, carta 3:4, perfil da chef, swipe de depoimentos, wordmark no footer.
 
 ### Stack
 
-Next.js App Router · Tailwind CSS v4 · Cormorant Garamond + Source Sans 3 · `src/data/divina-cozinha.ts` · `src/components/divina-cozinha/` · `divina-cozinha.css` · rota `/showcase/divina-cozinha`
+Next.js App Router · Tailwind CSS v4 · Playfair Display + Plus Jakarta Sans + Geist Mono · `src/data/divina-cozinha.ts` · `src/components/divina-cozinha/` · `divina-cozinha.css` · rota `/showcase/divina-cozinha`
 
 ---
 

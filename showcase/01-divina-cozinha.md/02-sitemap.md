@@ -1,4 +1,4 @@
-**Tipo:** ops · **Status:** ativo · **Versão:** 2.0
+**Tipo:** ops · **Status:** ativo · **Versão:** 3.0
 
 > Estrutura de navegação fictícia — âncoras e jornada orientadas à reserva demonstrativa.
 
@@ -14,10 +14,14 @@ Navegação intuitiva que conduz o visitante à reserva em poucos cliques. Card�
 
 ```
 Home
-├── Hero
-├── Sobre (#sobre)
+├── Hero bento
+├── Marquee
 ├── Cardápio (#cardapio)
+├── Sobre (#sobre)
+├── Sabores da casa
 ├── Ambiente (#ambiente)
+├── Ofertas
+├── Depoimentos
 ├── Reservas (#reservas)
 ├── Localização (#localizacao)
 └── Footer
@@ -29,15 +33,14 @@ Home
 
 | Link | Âncora |
 |------|--------|
-| Sobre | `#sobre` |
 | Cardápio | `#cardapio` |
+| Sobre | `#sobre` |
 | Ambiente | `#ambiente` |
-| Reservas | `#reservas` |
-| Localização | `#localizacao` |
+| Local | `#localizacao` |
 
-**CTA:** Reservar mesa → `#reservas`
+**CTA:** Reservar → `#reservas`
 
-Fixa no scroll. Mobile: hamburger, links empilhados, CTA full-width.
+Navbar flutuante (pill glass, `top-6`). Mobile: hamburger, links empilhados com ícones.
 
 ## Seções
 
@@ -45,10 +48,10 @@ Fixa no scroll. Mobile: hamburger, links empilhados, CTA full-width.
 
 | Elemento | Conteúdo |
 |----------|----------|
-| Headline | Mais do que uma refeição. Uma experiência para ser lembrada. |
+| Badge | Escolha do Chef |
+| Headline | Mais do que uma *refeição* |
 | Subheadline | Ingredientes selecionados, ambiente acolhedor e alta gastronomia |
-| CTA | Reservar mesa |
-| Visual | Imagem principal do restaurante/prato |
+| Visual | Bento: prato principal + sazonal + carta de vinhos |
 
 ### Sobre — `#sobre`
 
@@ -60,7 +63,7 @@ História da marca, filosofia, ingredientes, experiência gastronômica.
 
 **Título:** Sabores preparados para surpreender.
 
-4 categorias com troca automática a cada **10 segundos** (efeito virada de página) + navegação manual por tabs.
+4 categorias em cards 3:4. Navegação por pills e setas. Sem virada de página.
 
 | Categoria | Itens |
 |-----------|-------|
@@ -69,7 +72,7 @@ História da marca, filosofia, ingredientes, experiência gastronômica.
 | Sobremesas | 3 pratos |
 | Bebidas | 3 itens |
 
-Preços **demonstrativos** — ver [03-copy.md](03-copy.md). Fotos em `public/showcase/divina-cozinha/cardapio/`.
+Preços **demonstrativos** — ver [03-copy.md](03-copy.md). Fotos via Unsplash (fallback editorial).
 
 ### Ambiente — `#ambiente`
 

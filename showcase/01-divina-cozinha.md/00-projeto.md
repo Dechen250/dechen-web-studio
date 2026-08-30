@@ -1,4 +1,4 @@
-**Tipo:** brief · **Status:** ativo · **Versão:** 2.0
+**Tipo:** brief · **Status:** ativo · **Versão:** 3.0
 
 > Projeto fictício de portfólio — marca, contatos, preços e reservas são **demonstrativos**.
 
@@ -40,19 +40,19 @@ Tema **claro** — nunca escuro. Minimalista, com espaço em branco generoso, ti
 | Token | Hex | Uso |
 |-------|-----|-----|
 | `--dc-bg` | `#FAF9F6` | Fundo principal |
-| `--dc-surface` | `#FFFDF8` | Cards, blocos |
-| `--dc-text` | `#3D3832` | Texto principal |
-| `--dc-muted` | `#6B6560` | Texto secundário |
-| `--dc-olive` | `#8B9A7D` | Acento natural |
-| `--dc-gold` | `#C9A962` | Destaques, CTAs |
-| `--dc-border` | `#E8E0D4` | Bordas |
+| `--dc-rose` | `#E11D48` | Acento, hovers, destaques |
+| `--dc-black` | `#0B0B0B` | CTAs, logo mark |
+| `--dc-text` | `#1E293B` | Texto principal (slate-800) |
+| `--dc-muted` | `#64748B` | Texto secundário |
+| `--dc-border` | `#E2E8F0` | Bordas |
 
-Remete a ingredientes naturais, madeira, cerâmica e luz natural.
+Editorial claro: cream, rose, preto. Referência: Savory Plate DS.
 
 ### Tipografia
 
-- **Display:** Cormorant Garamond — títulos e headlines
-- **Corpo:** Source Sans 3 — textos, labels, botões
+- **Display:** Playfair Display — títulos e wordmark
+- **Corpo:** Plus Jakarta Sans — textos, navegação, botões
+- **Mono:** Geist Mono — labels, eyebrows, meta
 
 ## CTA principal
 
@@ -60,13 +60,17 @@ Remete a ingredientes naturais, madeira, cerâmica e luz natural.
 
 ## Estrutura da homepage
 
-1. **Hero** — headline, subheadline, CTA, imagem principal
-2. **Sobre** — história, filosofia, experiência gastronômica
-3. **Cardápio** — 4 categorias com troca automática a cada 10s (efeito virada de página)
-4. **Ambiente** — galeria de 6 imagens
-5. **Reservas** — formulário **demonstrativo**, sem envio real
-6. **Localização** — endereço, horários, mapa embed
-7. **Footer** — contato, redes, créditos Dechen
+1. **Hero bento** — imagem principal + cards sazonal e carta de vinhos
+2. **Marquee** — ticker de valores da casa
+3. **Cardápio** — cartas 3:4 por categoria, navegação por setas e pills
+4. **Sobre** — perfil da chef Helena Duarte
+5. **Sabores da casa** — lista interativa + painel visual
+6. **Ambiente** — galeria de 6 imagens
+7. **Ofertas** — carta, reserva (destaque), eventos
+8. **Depoimentos** — stack de cards com swipe
+9. **Reservas** — formulário **demonstrativo**, sem envio real
+10. **Localização** — endereço, horários, mapa
+11. **Footer** — wordmark DIVINA, contato, créditos Dechen
 
 Copy completa em [03-copy.md](03-copy.md). Mapa de seções em [02-sitemap.md](02-sitemap.md).
 
