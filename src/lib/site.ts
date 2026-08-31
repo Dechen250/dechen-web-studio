@@ -18,19 +18,9 @@ export const SITE_EMAIL = AGENCY.email;
 export const WHATSAPP_DEFAULT_MESSAGE =
   "Olá! Vim pelo site da Dechen Web Studio e gostaria de um orçamento.";
 
-export const WHATSAPP_CARD_MESSAGE =
-  "Olá! Troquei contato pelo seu cartão e quero conversar.";
-
 export function whatsappUrl(message = WHATSAPP_DEFAULT_MESSAGE) {
   return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
 }
-
-export const cardProfile = {
-  name: "Pedro Dechen",
-  role: "Fundador",
-  company: "Dechen Web Studio",
-  tagline: "Sites premium para negócios que precisam transmitir confiança.",
-};
 
 export function buildQuoteMessage(input: {
   name: string;

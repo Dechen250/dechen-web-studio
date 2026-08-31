@@ -422,7 +422,6 @@ body {
   .dws-progress,
   .dws-caption,
   .dws-orb,
-  .dws-card__glow,
   .dws-rain-letter,
   .dws-caret {
     animation: none !important;
