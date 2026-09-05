@@ -11,7 +11,8 @@ Prioridades da Dechen Web Studio no nível empresa. Detalhes técnicos: roadmaps
 - [x] Captação planejada (`systems/client-acquisition`)
 - [x] Monorepo Next.js com showcases e packs de cliente
 - [x] Isolamento de projetos de cliente (repo próprio a partir de 28/08/2026)
-- [ ] Captação v1 em produção (form + API + Supabase + Resend)
+- [x] Mapa dos times de agentes (`agency/11-times-de-agentes.md`) — runtime no CRM Core
+- [ ] Captação v1 em produção (form → ingest CRM + Resend)
 - [ ] README e índice sempre sincronizados com o filesystem
 
 ## Próximo

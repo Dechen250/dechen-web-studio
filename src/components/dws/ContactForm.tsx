@@ -69,7 +69,7 @@ export function ContactForm() {
   const sitePrefill = useSitePrefill();
   const [form, setForm] = useState<ContactFormData>(initialForm);
   const [honeypot, setHoneypot] = useState("");
-  const [status, setStatus] = useState<"idle" | "loading" | "opened">("idle");
+  const [status, setStatus] = useState<"idle" | "opened">("idle");
 
   const update = (field: keyof ContactFormData, value: string) => {
     setForm((prev) => ({ ...prev, [field]: value }));
@@ -78,20 +78,10 @@ export function ContactForm() {
 
   const website = form.website || sitePrefill;
 
-  const handleSubmit = async (e: FormEvent) => {
+  const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
-    setStatus("loading");
 
-    try {
-      await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...form, website, honeypot }),
-      });
-    } catch {
-      /* WhatsApp ainda abre — o lead não fica preso no formulário */
-    }
-
+    const payload = { ...form, website, honeypot };
     const text = buildQuoteMessage({
       name: form.nome,
       email: form.email,
@@ -101,12 +91,24 @@ export function ContactForm() {
       website: website || undefined,
       message: form.mensagem,
     });
+
     window.open(whatsappUrl(text), "_blank", "noopener,noreferrer");
-    window.setTimeout(() => setStatus("opened"), 350);
+    setStatus("opened");
+
+    window.setTimeout(() => {
+      void fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+        keepalive: true,
+      }).catch(() => {
+        /* CRM lento ou fora do ar — o WhatsApp já abriu */
+      });
+    }, 0);
   };
 
   return (
-    <form onSubmit={(e) => void handleSubmit(e)} className="space-y-5">
+    <form onSubmit={handleSubmit} className="space-y-5">
       <div className="hidden" aria-hidden>
         <label htmlFor="contact-website-hp">Site</label>
         <input
@@ -219,10 +221,9 @@ export function ContactForm() {
       </Field>
       <button
         type="submit"
-        disabled={status === "loading"}
-        className={`inline-flex h-12 w-full items-center justify-center rounded-md bg-[#0070F3] px-6 text-sm font-semibold text-white transition-colors duration-200 hover:bg-[#0064d8] active:bg-[#0058c0] disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto ${FOCUS}`}
+        className={`inline-flex h-12 w-full items-center justify-center rounded-md bg-[#0070F3] px-6 text-sm font-semibold text-white transition-colors duration-200 hover:bg-[#0064d8] active:bg-[#0058c0] sm:w-auto ${FOCUS}`}
       >
-        {status === "loading" ? "Abrindo WhatsApp..." : "Enviar no WhatsApp"}
+        Enviar no WhatsApp
       </button>
       <p className="text-xs leading-relaxed text-[#6B6B76]" role="status" aria-live="polite">
         {status === "opened"

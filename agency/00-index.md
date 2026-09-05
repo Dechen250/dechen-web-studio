@@ -17,6 +17,7 @@ Sistema operacional da agência. Toda decisão importante deve viver em um deste
 |-----|---------|
 | Design System | [03-design-system.md](03-design-system.md) |
 | DWS AI Operating System | [04-dws-ai-operating-system.md](04-dws-ai-operating-system.md) |
+| Times de Agentes | [11-times-de-agentes.md](11-times-de-agentes.md) |
 
 ## Comercial
 
