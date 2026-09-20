@@ -76,7 +76,7 @@ export const portfolioDemos: PortfolioDemo[] = [
     title: "Barbearia Royal",
     category: "Beleza masculina",
     description:
-      "Showcase completo de barbearia premium: estética masculina sofisticada, serviços com preços e CTA de agendamento.",
+      "Showcase premium: hero 50/50, marquee, serviços em grade dourada e agendamento para barbearia.",
     href: "/showcase/barbearia-royal",
     cover: "/showcase/barbearia-royal/capa/capa.png",
     gradient: "from-amber-600/20 via-stone-900/30 to-transparent",

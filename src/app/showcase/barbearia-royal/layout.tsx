@@ -1,18 +1,26 @@
 import type { Metadata } from "next";
-import { DM_Sans, Playfair_Display } from "next/font/google";
+import { Bebas_Neue, Inter, Playfair_Display } from "next/font/google";
 import "./barbearia-royal.css";
+
+const bebas = Bebas_Neue({
+  subsets: ["latin"],
+  weight: "400",
+  variable: "--font-bebas",
+  display: "swap",
+});
+
+const inter = Inter({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-inter",
+  display: "swap",
+});
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
+  style: ["normal", "italic"],
   variable: "--font-playfair",
-  display: "swap",
-});
-
-const dmSans = DM_Sans({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  variable: "--font-dm-sans",
   display: "swap",
 });
 
@@ -54,7 +62,7 @@ export default function BarbeariaRoyalLayout({
 }) {
   return (
     <div
-      className={`showcase-royal min-h-full ${playfair.variable} ${dmSans.variable}`}
+      className={`showcase-royal min-h-full w-full bg-[#0A0A0A] text-[#FAFAF9] antialiased ${bebas.variable} ${inter.variable} ${playfair.variable}`}
     >
       <script
         type="application/ld+json"

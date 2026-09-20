@@ -9,7 +9,7 @@ const blurbs: Record<string, string> = {
   restaurante:
     "Hero editorial, carta da estação e reservas para um restaurante contemporâneo.",
   barbearia:
-    "Serviços, preços e agendamento para uma barbearia de corte clássico.",
+    "Hero 50/50, carta de serviços e agendamento para uma barbearia de corte clássico.",
   clinica:
     "Especialidades, equipe e WhatsApp para uma clínica multidisciplinar.",
   empresa:

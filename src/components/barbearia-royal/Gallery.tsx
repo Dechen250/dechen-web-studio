@@ -1,68 +1,41 @@
 import Image from "next/image";
 import { galleryItems } from "@/data/barbearia-royal";
-import { FadeIn, SectionHeading } from "./ui";
+import { SectionTag } from "./ui";
 
 export function Gallery() {
   return (
-    <section
-      id="ambiente"
-      className="border-t border-[rgba(196,163,90,0.08)] bg-[#0C0A09] px-5 py-24 md:px-8 md:py-32"
-    >
-      <div className="mx-auto max-w-6xl">
-        <FadeIn>
-          <SectionHeading
-            label="Ambiente"
-            title="Um espaço feito para presença."
-            description="Madeira escura, couro e luz âmbar — um espaço pensado para homens que valorizam privacidade e acabamento de alto padrão."
-          />
-        </FadeIn>
-
-        <div className="grid gap-4 sm:grid-cols-2">
-          {galleryItems.map((item, index) => (
-            <FadeIn
-              key={item.title}
-              delayMs={index * 70}
-              className={index === 0 ? "sm:col-span-2" : ""}
-            >
-              <figure
-                className={`group relative overflow-hidden rounded-xl border border-[rgba(196,163,90,0.14)] ${
-                  index === 0 ? "aspect-[21/9]" : "aspect-[4/3]"
-                }`}
-              >
-                <Image
-                  src={item.image}
-                  alt={item.alt}
-                  fill
-                  className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-                  sizes={
-                    index === 0
-                      ? "(max-width: 768px) 100vw, 1200px"
-                      : "(max-width: 768px) 100vw, 50vw"
-                  }
-                />
-                <div className="gallery-sheen absolute inset-0 bg-gradient-to-t from-[#0C0A09]/90 via-[#0C0A09]/25 to-transparent" />
-
-                <div
-                  className="absolute top-4 left-4 h-6 w-6 border-t border-l border-[#C4A35A]/40"
-                  aria-hidden
-                />
-                <div
-                  className="absolute right-4 bottom-4 h-6 w-6 border-r border-b border-[#C4A35A]/40"
-                  aria-hidden
-                />
-
-                <figcaption className="absolute inset-x-0 bottom-0 p-6 md:p-8">
-                  <span className="font-display text-xl font-medium text-[#F2EBE0] md:text-2xl">
-                    {item.title}
-                  </span>
-                  <span className="mt-1 block font-sans text-xs tracking-[0.2em] text-[#C4A35A] uppercase">
-                    {item.subtitle}
-                  </span>
-                </figcaption>
-              </figure>
-            </FadeIn>
-          ))}
-        </div>
+    <section className="px-5 pb-20 md:px-12 lg:px-20 lg:pb-32" id="galeria">
+      <div className="mb-12 text-center">
+        <SectionTag text="Nosso trabalho" centered />
+        <h2 className="font-bebas text-[clamp(2.2rem,4vw,4rem)] leading-[1.05] tracking-[0.05em]">
+          O{" "}
+          <span className="font-serif text-[0.72em] font-normal text-[#C8A97E] italic">
+            Ofício
+          </span>{" "}
+          EM DETALHES
+        </h2>
+      </div>
+      <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+        {galleryItems.map((item) => (
+          <figure
+            key={item.title}
+            className="group relative min-h-[280px] overflow-hidden md:min-h-[360px]"
+          >
+            <Image
+              src={item.image}
+              alt={item.alt}
+              fill
+              className="object-cover transition duration-700 group-hover:scale-105"
+              sizes="(max-width: 640px) 100vw, 50vw"
+            />
+            <div className="absolute inset-0 bg-black/20 transition group-hover:bg-black/40" />
+            <figcaption className="absolute inset-x-0 bottom-0 p-6">
+              <span className="font-bebas text-lg tracking-[0.18em] text-white">
+                {item.overlay}
+              </span>
+            </figcaption>
+          </figure>
+        ))}
       </div>
     </section>
   );
