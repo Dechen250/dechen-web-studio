@@ -2,17 +2,31 @@
 
 ## Cursor Cloud specific instructions
 
-This is a single **Next.js 16** (App Router, Turbopack) frontend app — "Dechen Web Studio", a Portuguese-language web-studio portfolio/showcase site. There is no backend, database, or external service; forms (e.g. the Divina Cozinha reservation form) are simulated client-side with `setTimeout`, so no API keys or env vars are required to run or test.
+Public marketing site for **Dechen Web Studio** — Next.js 16 App Router, React 19, Tailwind 4, Geist. Language: Portuguese (`pt-BR`).
 
-Dependencies are installed automatically by the startup update script (`npm ci`). Node 22 / npm 10 are available in the environment.
+Production is Vercel on `master` (`www.dechenwebstudio.com.br`). Do not invent commercial facts. Brand dark `#050505`, accent `#0070F3`.
 
-Standard commands (see `package.json` scripts):
+### Run
 
-- Dev server: `npm run dev` (serves at http://localhost:3000)
-- Lint: `npm run lint` (currently passes with 1 non-blocking `@next/next/no-img-element` warning in `src/components/divina-cozinha/MenuBook.tsx`)
+Dependencies install with `npm ci`. Node 22 / npm 10.
+
+- Dev: `npm run dev` (http://localhost:3000)
+- Lint: `npm run lint`
 - Build: `npm run build`
-- Prod start (after build): `npm start`
+- Prod: `npm start` (after build)
 
-Notable routes for manual testing: `/`, `/showcase/divina-cozinha` (has the reservation form), `/showcase/barbearia-royal`, `/portfolio/clinica`, `/portfolio/empresa`.
+The contact form posts to `/api/contact` and can forward leads to the CRM ingest API when `CRM_INGEST_SECRET` is set. Local runs work without that secret.
 
-Note: `next.config.ts` only allows remote images from `images.unsplash.com`; adding images from other hosts requires updating `images.remotePatterns`.
+### Notable routes
+
+- `/` — homepage
+- `/auditoria` — site audit
+- `/showcase/divina-cozinha`, `/showcase/barbearia-royal`, `/showcase/instituto-harmonia`, `/showcase/vertex-consultoria`
+- `/proposta/nn-estetica-beleza` — client preview (not a sold product page)
+- `/portfolio/[slug]`
+
+Do not present the CRM as a sellable product on the public site.
+
+### Extra apps
+
+`apps/crm`, `apps/aureon`, and `apps/helo` are extractable stubs. They are excluded from the root TypeScript and ESLint configs. Do not merge them into the marketing homepage.
