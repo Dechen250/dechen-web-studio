@@ -437,6 +437,16 @@ body {
   }
 }
 
+.dws-demo-stage {
+  box-sizing: border-box;
+}
+
+@media (min-width: 768px) {
+  .dws-demo-stage {
+    padding: 0 12px 12px;
+  }
+}
+
 @media (scripting: none) {
   [data-reveal] {
     opacity: 1 !important;

@@ -186,3 +186,18 @@ export const portfolioDemos: PortfolioDemo[] = [
 export function getPortfolioDemo(slug: string) {
   return portfolioDemos.find((demo) => demo.slug === slug);
 }
+
+export function showcaseSlug(demo: PortfolioDemo) {
+  if (!demo.href?.startsWith("/showcase/")) return null;
+  const slug = demo.href.slice("/showcase/".length).split("/")[0];
+  return slug || null;
+}
+
+export function demoWindowHref(demo: PortfolioDemo) {
+  const slug = showcaseSlug(demo);
+  return slug ? `/demo/${slug}` : `/portfolio/${demo.slug}`;
+}
+
+export function getDemoByShowcaseSlug(slug: string) {
+  return portfolioDemos.find((demo) => showcaseSlug(demo) === slug);
+}
