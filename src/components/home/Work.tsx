@@ -3,7 +3,7 @@ import Link from "next/link";
 import { SECTION } from "@/components/dws/ui";
 import { InView } from "@/components/motion/InView";
 import { SplitHeading } from "@/components/motion/SplitHeading";
-import { portfolioDemos } from "@/data/portfolio-demos";
+import { demoWindowHref, portfolioDemos } from "@/data/portfolio-demos";
 
 const blurbs: Record<string, string> = {
   restaurante:
@@ -40,7 +40,7 @@ export function Work() {
           className="dws-stagger mt-12 grid gap-10 sm:grid-cols-2 lg:gap-x-8 lg:gap-y-14"
         >
           {portfolioDemos.map((demo) => {
-            const href = demo.href ?? `/portfolio/${demo.slug}`;
+            const href = demoWindowHref(demo);
             const blurb = blurbs[demo.slug] ?? demo.description;
 
             return (

@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { portfolioDemos } from "@/data/portfolio-demos";
+import { demoWindowHref, portfolioDemos } from "@/data/portfolio-demos";
 
 const INTERVAL_MS = 4000;
 
@@ -35,7 +35,7 @@ export function HeroShowcase() {
   const current = slides[index];
   if (!current?.cover) return null;
 
-  const href = current.href ?? `/portfolio/${current.slug}`;
+  const href = demoWindowHref(current);
   const pauseClass = paused ? "dws-paused" : "";
 
   return (
